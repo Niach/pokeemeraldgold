@@ -10,6 +10,7 @@ void FadeInFromWhite(void);
 void FieldCB_ContinueScriptUnionRoom(void);
 void FieldCB_ContinueScriptHandleMusic(void);
 void FieldCB_ContinueScript(void);
+void FieldCB_NewGameFadeIn(void);
 void Task_ReturnToFieldRecordMixing(u8 taskId);
 void FieldCB_ReturnToFieldCableLink(void);
 void FieldCB_ReturnToFieldWirelessLink(void);

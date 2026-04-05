@@ -41,6 +41,7 @@ static void Task_DoContestHallWarp(u8);
 static void FillPalBufferWhite(void);
 static void Task_ExitDoor(u8);
 static bool32 WaitForWeatherFadeIn(void);
+static void Task_WaitForFadeAndUnlockControls(u8 taskId);
 static void Task_SpinEnterWarp(u8 taskId);
 static void Task_WarpAndLoadMap(u8 taskId);
 static void Task_DoDoorWarp(u8 taskId);
@@ -139,6 +140,15 @@ static void Task_WaitForFadeAndEnableScriptCtx(u8 taskID)
     }
 }
 
+static void Task_WaitForFadeAndUnlockControls(u8 taskId)
+{
+    if (WaitForWeatherFadeIn() == TRUE)
+    {
+        UnlockPlayerFieldControls();
+        DestroyTask(taskId);
+    }
+}
+
 void FieldCB_ContinueScriptHandleMusic(void)
 {
     LockPlayerFieldControls();
@@ -152,6 +162,14 @@ void FieldCB_ContinueScript(void)
     LockPlayerFieldControls();
     FadeInFromBlack();
     CreateTask(Task_WaitForFadeAndEnableScriptCtx, 10);
+}
+
+void FieldCB_NewGameFadeIn(void)
+{
+    LockPlayerFieldControls();
+    Overworld_PlaySpecialMapMusic();
+    FadeInFromBlack();
+    CreateTask(Task_WaitForFadeAndUnlockControls, 10);
 }
 
 static void Task_ReturnToFieldCableLink(u8 taskId)

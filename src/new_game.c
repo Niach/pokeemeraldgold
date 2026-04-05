@@ -44,12 +44,13 @@
 #include "berry_powder.h"
 #include "mystery_gift.h"
 #include "union_room_chat.h"
+#include "constants/heal_locations.h"
 #include "constants/items.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 
 static void ClearFrontierRecord(void);
-static void WarpToTruck(void);
+static void WarpToJohtoStart(void);
 static void ResetMiniGamesRecords(void);
 
 EWRAM_DATA bool8 gDifferentSaveFile = FALSE;
@@ -124,9 +125,10 @@ static void ClearFrontierRecord(void)
     gSaveBlock2Ptr->frontier.opponentNames[1][0] = EOS;
 }
 
-static void WarpToTruck(void)
+static void WarpToJohtoStart(void)
 {
-    SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
+    SetLastHealLocationWarp(HEAL_LOCATION_NEW_BARK_TOWN_PLAYERS_HOUSE_2F);
+    SetWarpDestinationToHealLocation(HEAL_LOCATION_NEW_BARK_TOWN_PLAYERS_HOUSE_2F);
     WarpIntoMap();
 }
 
@@ -165,6 +167,7 @@ void NewGameInitData(void)
     PlayTimeCounter_Reset();
     ClearPokedexFlags();
     InitEventData();
+    VarSet(VAR_JOHTO_INTRO_STATE, 1);
     ClearTVShowData();
     ResetGabbyAndTy();
     ClearSecretBases();
@@ -192,7 +195,7 @@ void NewGameInitData(void)
     InitDewfordTrend();
     ResetFanClub();
     ResetLotteryCorner();
-    WarpToTruck();
+    WarpToJohtoStart();
     RunScriptImmediately(EventScript_ResetAllMapFlags);
     ResetMiniGamesRecords();
     InitUnionRoomChatRegisteredTexts();
