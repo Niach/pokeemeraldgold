@@ -1633,4 +1633,6 @@ const u16 gTilesetPalettes_UnionRoom[][16] =
 	INCBIN_U16("data/tilesets/secondary/union_room/palettes/15.gbapal"),
 };
 
+#include "johto_graphics.h"
+
 const u32 gTilesetTiles_UnionRoom[] = INCBIN_U32("data/tilesets/secondary/union_room/tiles.4bpp.lz");

@@ -65,6 +65,78 @@ $(CASTFORMGFXDIR)/shiny.gbapal: $(CASTFORMGFXDIR)/normal/shiny.gbapal \
 
 ### Tilesets ###
 
+JOHTO_TILESET_SCRIPT := scripts/generate_johto_tilesets.py
+JOHTO_TILESET_INVENTORY := data/johto_tilesets/tileset_inventory.json
+JOHTO_TILESET_OUTPUTS := \
+	$(TILESETGFXDIR)/secondary/johto_traditional_city/tiles.png \
+	$(TILESETGFXDIR)/secondary/johto_urban_city/tiles.png \
+	$(TILESETGFXDIR)/secondary/johto_port/tiles.png \
+	$(TILESETGFXDIR)/secondary/johto_tower/tiles.png
+JOHTO_TILESET_STAMP := $(TILESETGFXDIR)/secondary/.johto_tilesets.stamp
+
+$(JOHTO_TILESET_STAMP): $(JOHTO_TILESET_SCRIPT) $(JOHTO_TILESET_INVENTORY)
+	python3 $(JOHTO_TILESET_SCRIPT)
+	@touch $@
+
+$(JOHTO_TILESET_OUTPUTS): $(JOHTO_TILESET_STAMP) ;
+
+JOHTO_CRYSTAL_TILESET_SCRIPT := scripts/generate_crystal_tilesets.py
+JOHTO_CRYSTAL_TILESET_SUPPORT := scripts/crystal_room_tilesets.py
+JOHTO_CRYSTAL_TILESET_OUTPUTS := \
+	$(TILESETGFXDIR)/secondary/johto_town_early/tiles.png \
+	$(TILESETGFXDIR)/secondary/johto_house/tiles.png \
+	$(TILESETGFXDIR)/secondary/johto_players_house/tiles.png \
+	$(TILESETGFXDIR)/secondary/johto_players_room/tiles.png \
+	$(TILESETGFXDIR)/secondary/johto_lab/tiles.png \
+	$(TILESETGFXDIR)/secondary/johto_gate/tiles.png \
+	$(TILESETGFXDIR)/secondary/johto_pokecenter/tiles.png \
+	$(TILESETGFXDIR)/secondary/johto_mart/tiles.png
+JOHTO_CRYSTAL_TILESET_STAMP := $(TILESETGFXDIR)/secondary/.johto_crystal_tilesets.stamp
+
+$(JOHTO_CRYSTAL_TILESET_STAMP): $(JOHTO_CRYSTAL_TILESET_SCRIPT) $(JOHTO_CRYSTAL_TILESET_SUPPORT) $(JOHTO_TILESET_INVENTORY)
+	python3 $(JOHTO_CRYSTAL_TILESET_SCRIPT)
+	@touch $@
+
+$(JOHTO_CRYSTAL_TILESET_OUTPUTS): $(JOHTO_CRYSTAL_TILESET_STAMP) ;
+
+$(C_BUILDDIR)/tilesets.o $(C_BUILDDIR)/tilesets.d: $(JOHTO_TILESET_OUTPUTS) $(JOHTO_CRYSTAL_TILESET_OUTPUTS)
+
+$(TILESETGFXDIR)/secondary/johto_town_early/tiles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 193 -Wnum_tiles
+
+$(TILESETGFXDIR)/secondary/johto_house/tiles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 193 -Wnum_tiles
+
+$(TILESETGFXDIR)/secondary/johto_players_house/tiles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 97 -Wnum_tiles
+
+$(TILESETGFXDIR)/secondary/johto_players_room/tiles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 97 -Wnum_tiles
+
+$(TILESETGFXDIR)/secondary/johto_lab/tiles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 193 -Wnum_tiles
+
+$(TILESETGFXDIR)/secondary/johto_gate/tiles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 193 -Wnum_tiles
+
+$(TILESETGFXDIR)/secondary/johto_pokecenter/tiles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 193 -Wnum_tiles
+
+$(TILESETGFXDIR)/secondary/johto_mart/tiles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 193 -Wnum_tiles
+
+$(TILESETGFXDIR)/secondary/johto_traditional_city/tiles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 448 -Wnum_tiles
+
+$(TILESETGFXDIR)/secondary/johto_urban_city/tiles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 503 -Wnum_tiles
+
+$(TILESETGFXDIR)/secondary/johto_port/tiles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 504 -Wnum_tiles
+
+$(TILESETGFXDIR)/secondary/johto_tower/tiles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 278 -Wnum_tiles
+
 $(TILESETGFXDIR)/secondary/petalburg/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 159 -Wnum_tiles
 

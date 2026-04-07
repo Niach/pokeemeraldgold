@@ -12,28 +12,41 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": [
+    {
+      "map": "MAP_ROUTE29",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE27",
+      "offset": 0,
+      "direction": "right"
+    }
+  ],
   "object_events": [
     {
+      "local_id": "LOCALID_NEW_BARK_TOWN_TEACHER",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
       "x": 6,
       "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NewBarkTown_EventScript_Teacher",
       "flag": "FLAG_HIDE_NEW_BARK_TOWN_ROUTE29_AIDE"
     },
     {
+      "local_id": "LOCALID_NEW_BARK_TOWN_FISHER",
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
       "x": 12,
-      "y": 8,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
+      "movement_range_x": 0,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
@@ -41,9 +54,10 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_NEW_BARK_TOWN_RIVAL",
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
       "x": 3,
-      "y": 6,
+      "y": 2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -56,6 +70,13 @@
   ],
   "warp_events": [
     {
+      "x": 6,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_ELMS_LAB",
+      "dest_warp_id": "0"
+    },
+    {
       "x": 13,
       "y": 5,
       "elevation": 0,
@@ -63,10 +84,17 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 6,
-      "y": 3,
+      "x": 3,
+      "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_ELMS_LAB",
+      "dest_map": "MAP_PLAYERS_NEIGHBORS_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 11,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_ELMS_HOUSE",
       "dest_warp_id": "0"
     }
   ],
@@ -78,7 +106,34 @@
       "elevation": 3,
       "var": "VAR_JOHTO_INTRO_STATE",
       "var_value": "1",
-      "script": "NewBarkTown_EventScript_Route29Blocked"
+      "script": "NewBarkTown_EventScript_TeacherStopsYouNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 8,
+      "elevation": 3,
+      "var": "VAR_JOHTO_INTRO_STATE",
+      "var_value": "2",
+      "script": "NewBarkTown_EventScript_TeacherStopsYouSouth"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 8,
+      "elevation": 3,
+      "var": "VAR_JOHTO_INTRO_STATE",
+      "var_value": "3",
+      "script": "NewBarkTown_EventScript_TeacherStopsYouNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 8,
+      "elevation": 3,
+      "var": "VAR_JOHTO_INTRO_STATE",
+      "var_value": "4",
+      "script": "NewBarkTown_EventScript_TeacherStopsYouSouth"
     },
     {
       "type": "trigger",
@@ -87,16 +142,7 @@
       "elevation": 3,
       "var": "VAR_JOHTO_INTRO_STATE",
       "var_value": "1",
-      "script": "NewBarkTown_EventScript_Route29Blocked"
-    },
-    {
-      "type": "trigger",
-      "x": 1,
-      "y": 8,
-      "elevation": 3,
-      "var": "VAR_JOHTO_INTRO_STATE",
-      "var_value": "2",
-      "script": "NewBarkTown_EventScript_Route29Blocked"
+      "script": "NewBarkTown_EventScript_TeacherStopsYouNorth"
     },
     {
       "type": "trigger",
@@ -105,16 +151,7 @@
       "elevation": 3,
       "var": "VAR_JOHTO_INTRO_STATE",
       "var_value": "2",
-      "script": "NewBarkTown_EventScript_Route29Blocked"
-    },
-    {
-      "type": "trigger",
-      "x": 1,
-      "y": 8,
-      "elevation": 3,
-      "var": "VAR_JOHTO_INTRO_STATE",
-      "var_value": "3",
-      "script": "NewBarkTown_EventScript_Route29Blocked"
+      "script": "NewBarkTown_EventScript_TeacherStopsYouSouth"
     },
     {
       "type": "trigger",
@@ -123,16 +160,7 @@
       "elevation": 3,
       "var": "VAR_JOHTO_INTRO_STATE",
       "var_value": "3",
-      "script": "NewBarkTown_EventScript_Route29Blocked"
-    },
-    {
-      "type": "trigger",
-      "x": 1,
-      "y": 8,
-      "elevation": 3,
-      "var": "VAR_JOHTO_INTRO_STATE",
-      "var_value": "4",
-      "script": "NewBarkTown_EventScript_Route29Blocked"
+      "script": "NewBarkTown_EventScript_TeacherStopsYouNorth"
     },
     {
       "type": "trigger",
@@ -141,7 +169,7 @@
       "elevation": 3,
       "var": "VAR_JOHTO_INTRO_STATE",
       "var_value": "4",
-      "script": "NewBarkTown_EventScript_Route29Blocked"
+      "script": "NewBarkTown_EventScript_TeacherStopsYouSouth"
     }
   ],
   "bg_events": [

@@ -3,7 +3,12 @@ NewBarkTown_PlayersHouse_1F_MapScripts::
 
 NewBarkTown_PlayersHouse_1F_EventScript_Mom::
 	goto_if_lt VAR_JOHTO_INTRO_STATE, 2, NewBarkTown_PlayersHouse_1F_EventScript_MomFirstTalk
-	msgbox NewBarkTown_PlayersHouse_1F_Text_MomRepeat, MSGBOX_NPC
+	goto_if_lt VAR_JOHTO_INTRO_STATE, 3, NewBarkTown_PlayersHouse_1F_EventScript_MomBeforeElm
+	msgbox NewBarkTown_PlayersHouse_1F_Text_MomAfterElm, MSGBOX_NPC
+	end
+
+NewBarkTown_PlayersHouse_1F_EventScript_MomBeforeElm::
+	msgbox NewBarkTown_PlayersHouse_1F_Text_MomBeforeElm, MSGBOX_NPC
 	end
 
 NewBarkTown_PlayersHouse_1F_EventScript_MomFirstTalk::
@@ -32,10 +37,16 @@ NewBarkTown_PlayersHouse_1F_Text_MomFirstTalk:
 	.string "PROF. ELM has been waiting for you\n"
 	.string "at the lab next door since sunrise.$"
 
-NewBarkTown_PlayersHouse_1F_Text_MomRepeat:
-	.string "Don't stay out too long.\p"
-	.string "Until the roads open up, NEW BARK\n"
-	.string "is the safest place to be.$"
+NewBarkTown_PlayersHouse_1F_Text_MomBeforeElm:
+	.string "ELM's lab is right next door.\p"
+	.string "You know how he gets when he's eager\n"
+	.string "to share a new idea.$"
+
+NewBarkTown_PlayersHouse_1F_Text_MomAfterElm:
+	.string "I'm glad you checked in with PROF.\n"
+	.string "ELM.\p"
+	.string "For now, stay close to NEW BARK\n"
+	.string "until the roads open.$"
 
 NewBarkTown_PlayersHouse_1F_Text_Stove:
 	.string "The stove is spotless.\p"

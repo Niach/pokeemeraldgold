@@ -1,0 +1,165 @@
+{
+  "crystal_map": "CherrygroveCity",
+  "map_id": "CHERRYGROVE_CITY",
+  "group": "CHERRYGROVE",
+  "group_index": 26,
+  "map_index": 3,
+  "tileset": "TILESET_JOHTO",
+  "environment": "TOWN",
+  "landmark": "LANDMARK_CHERRYGROVE_CITY",
+  "music": "MUSIC_CHERRYGROVE_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_AUTO",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 20,
+  "height_blocks": 9,
+  "border_block": "35",
+  "blk_path": "maps/CherrygroveCity.blk",
+  "source_asm": "maps/CherrygroveCity.asm",
+  "connections": [
+    {
+      "direction": "north",
+      "map": "Route30",
+      "target_map_id": "ROUTE_30",
+      "offset": 5
+    },
+    {
+      "direction": "east",
+      "map": "Route29",
+      "target_map_id": "ROUTE_29",
+      "offset": 0
+    }
+  ],
+  "events": {
+    "warp_events": [
+      {
+        "x": 23,
+        "y": 3,
+        "dest_map": "CHERRYGROVE_MART",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 29,
+        "y": 3,
+        "dest_map": "CHERRYGROVE_POKECENTER_1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 17,
+        "y": 7,
+        "dest_map": "CHERRYGROVE_GYM_SPEECH_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 25,
+        "y": 9,
+        "dest_map": "GUIDE_GENTS_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 31,
+        "y": 11,
+        "dest_map": "CHERRYGROVE_EVOLUTION_SPEECH_HOUSE",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 33,
+        "y": 6,
+        "scene": "SCENE_CHERRYGROVECITY_MEET_RIVAL",
+        "script": "CherrygroveRivalSceneNorth"
+      },
+      {
+        "x": 33,
+        "y": 7,
+        "scene": "SCENE_CHERRYGROVECITY_MEET_RIVAL",
+        "script": "CherrygroveRivalSceneSouth"
+      }
+    ],
+    "bg_events": [
+      {
+        "x": 30,
+        "y": 8,
+        "kind": "BGEVENT_READ",
+        "script": "CherrygroveCitySign"
+      },
+      {
+        "x": 23,
+        "y": 9,
+        "kind": "BGEVENT_READ",
+        "script": "GuideGentsHouseSign"
+      },
+      {
+        "x": 24,
+        "y": 3,
+        "kind": "BGEVENT_READ",
+        "script": "CherrygroveCityMartSign"
+      },
+      {
+        "x": 30,
+        "y": 3,
+        "kind": "BGEVENT_READ",
+        "script": "CherrygroveCityPokecenterSign"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 32,
+        "y": 6,
+        "sprite": "SPRITE_GRAMPS",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "script": "OBJECTTYPE_SCRIPT",
+        "flag": 0
+      },
+      {
+        "x": 39,
+        "y": 6,
+        "sprite": "SPRITE_RIVAL",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "script": "OBJECTTYPE_SCRIPT",
+        "flag": 0
+      },
+      {
+        "x": 27,
+        "y": 12,
+        "sprite": "SPRITE_TEACHER",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "script": "CherrygroveTeacherScript",
+        "flag": -1
+      },
+      {
+        "x": 23,
+        "y": 7,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "script": "CherrygroveYoungsterScript",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 12,
+        "sprite": "SPRITE_FISHER",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "script": "MysticWaterGuy",
+        "flag": -1
+      }
+    ]
+  },
+  "event_counts": {
+    "warp_events": 5,
+    "coord_events": 2,
+    "bg_events": 4,
+    "object_events": 5
+  }
+}

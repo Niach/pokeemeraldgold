@@ -1,0 +1,139 @@
+{
+  "crystal_map": "NewBarkTown",
+  "map_id": "NEW_BARK_TOWN",
+  "group": "NEW_BARK",
+  "group_index": 24,
+  "map_index": 4,
+  "tileset": "TILESET_JOHTO",
+  "environment": "TOWN",
+  "landmark": "LANDMARK_NEW_BARK_TOWN",
+  "music": "MUSIC_NEW_BARK_TOWN",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_AUTO",
+  "fishgroup": "FISHGROUP_OCEAN",
+  "width_blocks": 10,
+  "height_blocks": 9,
+  "border_block": "05",
+  "blk_path": "maps/NewBarkTown.blk",
+  "source_asm": "maps/NewBarkTown.asm",
+  "connections": [
+    {
+      "direction": "west",
+      "map": "Route29",
+      "target_map_id": "ROUTE_29",
+      "offset": 0
+    },
+    {
+      "direction": "east",
+      "map": "Route27",
+      "target_map_id": "ROUTE_27",
+      "offset": 0
+    }
+  ],
+  "events": {
+    "warp_events": [
+      {
+        "x": 6,
+        "y": 3,
+        "dest_map": "ELMS_LAB",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 13,
+        "y": 5,
+        "dest_map": "PLAYERS_HOUSE_1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 3,
+        "y": 11,
+        "dest_map": "PLAYERS_NEIGHBORS_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 11,
+        "y": 13,
+        "dest_map": "ELMS_HOUSE",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 1,
+        "y": 8,
+        "scene": "SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU",
+        "script": "NewBarkTown_TeacherStopsYouScene1"
+      },
+      {
+        "x": 1,
+        "y": 9,
+        "scene": "SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU",
+        "script": "NewBarkTown_TeacherStopsYouScene2"
+      }
+    ],
+    "bg_events": [
+      {
+        "x": 8,
+        "y": 8,
+        "kind": "BGEVENT_READ",
+        "script": "NewBarkTownSign"
+      },
+      {
+        "x": 11,
+        "y": 5,
+        "kind": "BGEVENT_READ",
+        "script": "NewBarkTownPlayersHouseSign"
+      },
+      {
+        "x": 3,
+        "y": 3,
+        "kind": "BGEVENT_READ",
+        "script": "NewBarkTownElmsLabSign"
+      },
+      {
+        "x": 9,
+        "y": 13,
+        "kind": "BGEVENT_READ",
+        "script": "NewBarkTownElmsHouseSign"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 6,
+        "y": 8,
+        "sprite": "SPRITE_TEACHER",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "script": "NewBarkTownTeacherScript",
+        "flag": -1
+      },
+      {
+        "x": 12,
+        "y": 9,
+        "sprite": "SPRITE_FISHER",
+        "movement": "SPRITEMOVEDATA_WALK_UP_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 1,
+        "script": "NewBarkTownFisherScript",
+        "flag": -1
+      },
+      {
+        "x": 3,
+        "y": 2,
+        "sprite": "SPRITE_RIVAL",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "script": "OBJECTTYPE_SCRIPT",
+        "flag": 0
+      }
+    ]
+  },
+  "event_counts": {
+    "warp_events": 4,
+    "coord_events": 2,
+    "bg_events": 4,
+    "object_events": 3
+  }
+}
