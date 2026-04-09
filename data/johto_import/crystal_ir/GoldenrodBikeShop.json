@@ -1,0 +1,910 @@
+{
+  "crystal_map": "GoldenrodBikeShop",
+  "map_id": "GOLDENROD_BIKE_SHOP",
+  "group": "GOLDENROD",
+  "group_index": 11,
+  "map_index": 4,
+  "tileset": "TILESET_CHAMPIONS_ROOM",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_GOLDENROD_CITY",
+  "music": "MUSIC_GOLDENROD_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/GoldenrodBikeShop.blk",
+  "source_asm": "maps/GoldenrodBikeShop.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 1,
+        "y": 2,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodBikeShopBicycle"
+      },
+      {
+        "x": 0,
+        "y": 3,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodBikeShopBicycle"
+      },
+      {
+        "x": 1,
+        "y": 3,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodBikeShopBicycle"
+      },
+      {
+        "x": 0,
+        "y": 5,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodBikeShopBicycle"
+      },
+      {
+        "x": 1,
+        "y": 5,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodBikeShopBicycle"
+      },
+      {
+        "x": 0,
+        "y": 6,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodBikeShopBicycle"
+      },
+      {
+        "x": 1,
+        "y": 6,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodBikeShopBicycle"
+      },
+      {
+        "x": 6,
+        "y": 6,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodBikeShopBicycle"
+      },
+      {
+        "x": 7,
+        "y": 6,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodBikeShopBicycle"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 7,
+        "y": 2,
+        "sprite": "SPRITE_CLERK",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodBikeShopClerkScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "GOLDENRODBIKESHOP_CLERK"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "GoldenrodBikeShop_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "GoldenrodBikeShopNoopScene",
+      "label_refs": [
+        "GoldenrodBikeShopNoopScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodBikeShopNoopScene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodBikeShopClerkScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_BICYCLE",
+        "iftrue .GotBicycle",
+        "writetext GoldenrodBikeShopClerkIntroText",
+        "yesorno",
+        "iffalse .Refused",
+        "writetext GoldenrodBikeShopClerkAgreedText",
+        "promptbutton",
+        "waitsfx",
+        "giveitem BICYCLE",
+        "writetext BorrowedABicycleText",
+        "playsound SFX_KEY_ITEM",
+        "waitsfx",
+        "itemnotify",
+        "setflag ENGINE_BIKE_SHOP_CALL_ENABLED",
+        "setevent EVENT_GOT_BICYCLE"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_BICYCLE"
+          ],
+          "raw": "checkevent EVENT_GOT_BICYCLE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoldenrodBikeShopClerkScript.GotBicycle"
+          ],
+          "raw": "iftrue .GotBicycle"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodBikeShopClerkIntroText"
+          ],
+          "raw": "writetext GoldenrodBikeShopClerkIntroText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodBikeShopClerkScript.Refused"
+          ],
+          "raw": "iffalse .Refused"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodBikeShopClerkAgreedText"
+          ],
+          "raw": "writetext GoldenrodBikeShopClerkAgreedText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "giveitem",
+          "args": [
+            "BICYCLE"
+          ],
+          "raw": "giveitem BICYCLE"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BorrowedABicycleText"
+          ],
+          "raw": "writetext BorrowedABicycleText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_KEY_ITEM"
+          ],
+          "raw": "playsound SFX_KEY_ITEM"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "itemnotify",
+          "args": [],
+          "raw": "itemnotify"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_BIKE_SHOP_CALL_ENABLED"
+          ],
+          "raw": "setflag ENGINE_BIKE_SHOP_CALL_ENABLED"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_BICYCLE"
+          ],
+          "raw": "setevent EVENT_GOT_BICYCLE"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "GoldenrodBikeShopClerkScript.GotBicycle",
+      "label_refs": [
+        "GoldenrodBikeShopClerkScript.GotBicycle",
+        "GoldenrodBikeShopClerkScript.Refused"
+      ],
+      "text_refs": [
+        "BorrowedABicycleText",
+        "GoldenrodBikeShopClerkAgreedText",
+        "GoldenrodBikeShopClerkIntroText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodBikeShopClerkScript.GotBicycle": {
+      "raw_lines": [
+        "writetext GoldenrodBikeShopClerkFirstRateBikesText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodBikeShopClerkFirstRateBikesText"
+          ],
+          "raw": "writetext GoldenrodBikeShopClerkFirstRateBikesText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodBikeShopClerkFirstRateBikesText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodBikeShopClerkScript.Refused": {
+      "raw_lines": [
+        "writetext GoldenrodBikeShopClerkRefusedText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodBikeShopClerkRefusedText"
+          ],
+          "raw": "writetext GoldenrodBikeShopClerkRefusedText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodBikeShopClerkRefusedText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodBikeShopJustReleasedCompactBike": {
+      "raw_lines": [
+        "jumptext GoldenrodBikeShopJustReleasedCompactBikeText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "GoldenrodBikeShopJustReleasedCompactBikeText"
+          ],
+          "raw": "jumptext GoldenrodBikeShopJustReleasedCompactBikeText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodBikeShopJustReleasedCompactBikeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodBikeShopBicycle": {
+      "raw_lines": [
+        "jumptext GoldenrodBikeShopBicycleText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "GoldenrodBikeShopBicycleText"
+          ],
+          "raw": "jumptext GoldenrodBikeShopBicycleText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodBikeShopBicycleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodBikeShop_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, GOLDENROD_CITY, 2",
+        "warp_event  3,  7, GOLDENROD_CITY, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  1,  2, BGEVENT_READ, GoldenrodBikeShopBicycle",
+        "bg_event  0,  3, BGEVENT_READ, GoldenrodBikeShopBicycle",
+        "bg_event  1,  3, BGEVENT_READ, GoldenrodBikeShopBicycle",
+        "bg_event  0,  5, BGEVENT_READ, GoldenrodBikeShopBicycle",
+        "bg_event  1,  5, BGEVENT_READ, GoldenrodBikeShopBicycle",
+        "bg_event  0,  6, BGEVENT_READ, GoldenrodBikeShopBicycle",
+        "bg_event  1,  6, BGEVENT_READ, GoldenrodBikeShopBicycle",
+        "bg_event  6,  6, BGEVENT_READ, GoldenrodBikeShopBicycle",
+        "bg_event  7,  6, BGEVENT_READ, GoldenrodBikeShopBicycle",
+        "def_object_events",
+        "object_event  7,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodBikeShopClerkScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "GOLDENROD_CITY",
+            "2"
+          ],
+          "raw": "warp_event  2,  7, GOLDENROD_CITY, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "GOLDENROD_CITY",
+            "2"
+          ],
+          "raw": "warp_event  3,  7, GOLDENROD_CITY, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "2",
+            "BGEVENT_READ",
+            "GoldenrodBikeShopBicycle"
+          ],
+          "raw": "bg_event  1,  2, BGEVENT_READ, GoldenrodBikeShopBicycle"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "3",
+            "BGEVENT_READ",
+            "GoldenrodBikeShopBicycle"
+          ],
+          "raw": "bg_event  0,  3, BGEVENT_READ, GoldenrodBikeShopBicycle"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "3",
+            "BGEVENT_READ",
+            "GoldenrodBikeShopBicycle"
+          ],
+          "raw": "bg_event  1,  3, BGEVENT_READ, GoldenrodBikeShopBicycle"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "5",
+            "BGEVENT_READ",
+            "GoldenrodBikeShopBicycle"
+          ],
+          "raw": "bg_event  0,  5, BGEVENT_READ, GoldenrodBikeShopBicycle"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "5",
+            "BGEVENT_READ",
+            "GoldenrodBikeShopBicycle"
+          ],
+          "raw": "bg_event  1,  5, BGEVENT_READ, GoldenrodBikeShopBicycle"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "6",
+            "BGEVENT_READ",
+            "GoldenrodBikeShopBicycle"
+          ],
+          "raw": "bg_event  0,  6, BGEVENT_READ, GoldenrodBikeShopBicycle"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "6",
+            "BGEVENT_READ",
+            "GoldenrodBikeShopBicycle"
+          ],
+          "raw": "bg_event  1,  6, BGEVENT_READ, GoldenrodBikeShopBicycle"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "6",
+            "6",
+            "BGEVENT_READ",
+            "GoldenrodBikeShopBicycle"
+          ],
+          "raw": "bg_event  6,  6, BGEVENT_READ, GoldenrodBikeShopBicycle"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "7",
+            "6",
+            "BGEVENT_READ",
+            "GoldenrodBikeShopBicycle"
+          ],
+          "raw": "bg_event  7,  6, BGEVENT_READ, GoldenrodBikeShopBicycle"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "2",
+            "SPRITE_CLERK",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodBikeShopClerkScript",
+            "-1"
+          ],
+          "raw": "object_event  7,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodBikeShopClerkScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "GoldenrodBikeShopClerkIntroText": {
+      "raw_lines": [
+        "text \"\u2026sigh\u2026 I moved\"",
+        "line \"here, but I can't\"",
+        "para \"sell my BICYCLES.\"",
+        "line \"Why is that?\"",
+        "para \"Could you ride a\"",
+        "line \"BICYCLE and adver-\"",
+        "cont \"tise for me?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026sigh\u2026 I moved"
+        },
+        {
+          "command": "line",
+          "value": "here, but I can't"
+        },
+        {
+          "command": "para",
+          "value": "sell my BICYCLES."
+        },
+        {
+          "command": "line",
+          "value": "Why is that?"
+        },
+        {
+          "command": "para",
+          "value": "Could you ride a"
+        },
+        {
+          "command": "line",
+          "value": "BICYCLE and adver-"
+        },
+        {
+          "command": "cont",
+          "value": "tise for me?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodBikeShopClerkAgreedText": {
+      "raw_lines": [
+        "text \"Really? Great!\"",
+        "para \"Give me your name\"",
+        "line \"and phone number,\"",
+        "para \"and I'll loan you\"",
+        "line \"a BICYCLE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Really? Great!"
+        },
+        {
+          "command": "para",
+          "value": "Give me your name"
+        },
+        {
+          "command": "line",
+          "value": "and phone number,"
+        },
+        {
+          "command": "para",
+          "value": "and I'll loan you"
+        },
+        {
+          "command": "line",
+          "value": "a BICYCLE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BorrowedABicycleText": {
+      "raw_lines": [
+        "text \"<PLAYER> borrowed a\"",
+        "line \"BICYCLE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> borrowed a"
+        },
+        {
+          "command": "line",
+          "value": "BICYCLE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodBikeShopClerkFirstRateBikesText": {
+      "raw_lines": [
+        "text \"My BICYCLES are\"",
+        "line \"first-rate! You\"",
+        "para \"can ride them\"",
+        "line \"anywhere.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My BICYCLES are"
+        },
+        {
+          "command": "line",
+          "value": "first-rate! You"
+        },
+        {
+          "command": "para",
+          "value": "can ride them"
+        },
+        {
+          "command": "line",
+          "value": "anywhere."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodBikeShopClerkRefusedText": {
+      "raw_lines": [
+        "text \"\u2026sigh\u2026 Oh, for\"",
+        "line \"the kindness of\"",
+        "cont \"people\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026sigh\u2026 Oh, for"
+        },
+        {
+          "command": "line",
+          "value": "the kindness of"
+        },
+        {
+          "command": "cont",
+          "value": "people\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodBikeShopJustReleasedCompactBikeText": {
+      "raw_lines": [
+        "text \"Just released!\"",
+        "para \"First-rate compact\"",
+        "line \"BICYCLES!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Just released!"
+        },
+        {
+          "command": "para",
+          "value": "First-rate compact"
+        },
+        {
+          "command": "line",
+          "value": "BICYCLES!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodBikeShopBicycleText": {
+      "raw_lines": [
+        "text \"It's a shiny new\"",
+        "line \"BICYCLE!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's a shiny new"
+        },
+        {
+          "command": "line",
+          "value": "BICYCLE!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "GoldenrodBikeShop_MapScripts": {
+      "label_refs": [
+        "GoldenrodBikeShopNoopScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodBikeShopNoopScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodBikeShopClerkScript": {
+      "label_refs": [
+        "GoldenrodBikeShopClerkScript.GotBicycle",
+        "GoldenrodBikeShopClerkScript.Refused"
+      ],
+      "text_refs": [
+        "BorrowedABicycleText",
+        "GoldenrodBikeShopClerkAgreedText",
+        "GoldenrodBikeShopClerkIntroText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodBikeShopClerkScript.GotBicycle": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodBikeShopClerkFirstRateBikesText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodBikeShopClerkScript.Refused": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodBikeShopClerkRefusedText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodBikeShopJustReleasedCompactBike": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodBikeShopJustReleasedCompactBikeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodBikeShopBicycle": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodBikeShopBicycleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodBikeShop_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 9,
+    "object_events": 1
+  }
+}

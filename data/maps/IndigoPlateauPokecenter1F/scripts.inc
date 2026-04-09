@@ -1,0 +1,127 @@
+@ Manually maintained after Johto import. Imported scaffold replaced.
+
+IndigoPlateauPokecenter1F_MapScripts::
+	.byte 0
+
+JohtoScript_IndigoPlateauPokecenter1F_AbraScript::
+	opentext
+	writetext Crystal_IndigoPlateauPokecenter1F_AbraText
+	cry SPECIES_ABRA
+	waitbutton
+	closetext
+	end
+
+JohtoScript_IndigoPlateauPokecenter1F_IndigoPlateauPokecenter1FClerkScript::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart JohtoScript_IndigoPlateauPokecenter1F_IndigoPlateauPokecenter1FClerkScript_Pokemart
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+JohtoScript_IndigoPlateauPokecenter1F_IndigoPlateauPokecenter1FClerkScript_Pokemart:
+	.2byte ITEM_ULTRA_BALL
+	.2byte ITEM_MAX_REPEL
+	.2byte ITEM_HYPER_POTION
+	.2byte ITEM_MAX_POTION
+	.2byte ITEM_FULL_RESTORE
+	.2byte ITEM_REVIVE
+	.2byte ITEM_FULL_HEAL
+	pokemartlistend
+
+JohtoScript_IndigoPlateauPokecenter1F_IndigoPlateauPokecenter1FCooltrainerMScript::
+	lock
+	faceplayer
+	msgbox Crystal_IndigoPlateauPokecenter1F_IndigoPlateauPokecenter1FCooltrainerMText, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_IndigoPlateauPokecenter1F_IndigoPlateauPokecenter1FNurseScript::
+	setorcopyvar VAR_0x800B, LOCALID_INDIGOPLATEAUPOKECENTER1F_NURSE
+	call Common_EventScript_PkmnCenterNurse
+	waitmessage
+	waitbuttonpress
+	release
+	end
+
+JohtoScript_IndigoPlateauPokecenter1F_ObjectEvent::
+	lock
+	faceplayer
+	goto JohtoScript_IndigoPlateauPokecenter1F_PlateauRivalBattleCommon
+
+JohtoScript_IndigoPlateauPokecenter1F_PlateauRivalBattle1::
+	lockall
+	turnobject LOCALID_PLAYER, DIR_SOUTH
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	special Script_FadeOutMapMusic
+	pause 15
+	setobjectxy LOCALID_INDIGOPLATEAUPOKECENTER1F_RIVAL, 17, 9
+	applymovement LOCALID_INDIGOPLATEAUPOKECENTER1F_RIVAL, Crystal_IndigoPlateauPokecenter1F_PlateauRivalMovement1
+	waitmovement 0
+	playbgm MUS_ENCOUNTER_MALE, FALSE
+	turnobject LOCALID_PLAYER, DIR_EAST
+	goto JohtoScript_IndigoPlateauPokecenter1F_PlateauRivalBattleCommon
+	end
+
+JohtoScript_IndigoPlateauPokecenter1F_PlateauRivalBattle2::
+	lockall
+	turnobject LOCALID_PLAYER, DIR_SOUTH
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	special Script_FadeOutMapMusic
+	pause 15
+	applymovement LOCALID_INDIGOPLATEAUPOKECENTER1F_RIVAL, Crystal_IndigoPlateauPokecenter1F_PlateauRivalMovement2
+	waitmovement 0
+	playbgm MUS_ENCOUNTER_MALE, FALSE
+	turnobject LOCALID_PLAYER, DIR_WEST
+	goto JohtoScript_IndigoPlateauPokecenter1F_PlateauRivalBattleCommon
+	end
+
+JohtoScript_IndigoPlateauPokecenter1F_PlateauRivalBattleCommon:
+	msgbox Crystal_IndigoPlateauPokecenter1F_PlateauRivalText1, MSGBOX_DEFAULT
+	setflag FLAG_JOHTO_ALLOW_LOSS_CONTINUE
+	goto_if_eq VAR_JOHTO_STARTER_SPECIES, SPECIES_TOTODILE, JohtoScript_IndigoPlateauPokecenter1F_RivalBattleChikorita
+	goto_if_eq VAR_JOHTO_STARTER_SPECIES, SPECIES_CHIKORITA, JohtoScript_IndigoPlateauPokecenter1F_RivalBattleCyndaquil
+	goto JohtoScript_IndigoPlateauPokecenter1F_RivalBattleTotodile
+
+JohtoScript_IndigoPlateauPokecenter1F_RivalBattleTotodile:
+	trainerbattle_single TRAINER_RIVAL1_RIVAL1_5_TOTODILE, Crystal_IndigoPlateauPokecenter1F_PlateauRivalText1, Crystal_IndigoPlateauPokecenter1F_PlateauRivalWinText, JohtoScript_IndigoPlateauPokecenter1F_PlateauRivalPostBattle, NO_MUSIC
+
+JohtoScript_IndigoPlateauPokecenter1F_RivalBattleChikorita:
+	trainerbattle_single TRAINER_RIVAL1_RIVAL1_5_CHIKORITA, Crystal_IndigoPlateauPokecenter1F_PlateauRivalText1, Crystal_IndigoPlateauPokecenter1F_PlateauRivalWinText, JohtoScript_IndigoPlateauPokecenter1F_PlateauRivalPostBattle, NO_MUSIC
+
+JohtoScript_IndigoPlateauPokecenter1F_RivalBattleCyndaquil:
+	trainerbattle_single TRAINER_RIVAL1_RIVAL1_5_CYNDAQUIL, Crystal_IndigoPlateauPokecenter1F_PlateauRivalText1, Crystal_IndigoPlateauPokecenter1F_PlateauRivalWinText, JohtoScript_IndigoPlateauPokecenter1F_PlateauRivalPostBattle, NO_MUSIC
+
+JohtoScript_IndigoPlateauPokecenter1F_PlateauRivalPostBattle:
+	setevent EVENT_INDIGO_PLATEAU_RIVAL_FOUGHT
+	special Overworld_PlaySpecialMapMusic
+	msgbox Crystal_IndigoPlateauPokecenter1F_PlateauRivalText2, MSGBOX_DEFAULT
+	turnobject LOCALID_PLAYER, DIR_SOUTH
+	applymovement LOCALID_INDIGOPLATEAUPOKECENTER1F_RIVAL, Crystal_IndigoPlateauPokecenter1F_PlateauRivalLeavesMovement
+	waitmovement 0
+	setvar VAR_JOHTO_ROUTE26_LEAGUE_SCENE_STATE, 1
+	removeobject LOCALID_INDIGOPLATEAUPOKECENTER1F_RIVAL
+	releaseall
+	end
+
+JohtoScript_IndigoPlateauPokecenter1F_TeleportGuyScript::
+	lock
+	faceplayer
+	msgbox Crystal_IndigoPlateauPokecenter1F_TeleportGuyText1, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, JohtoScript_IndigoPlateauPokecenter1F_TeleportGuyScript_No
+	msgbox Crystal_IndigoPlateauPokecenter1F_TeleportGuyYesText, MSGBOX_DEFAULT
+	playsound SE_WARP_OUT
+	fadescreenspeed FADE_TO_WHITE, 8
+	waitsfx
+	warp MAP_NEW_BARK_TOWN, 13, 6
+	end
+
+JohtoScript_IndigoPlateauPokecenter1F_TeleportGuyScript_No:
+	msgbox Crystal_IndigoPlateauPokecenter1F_TeleportGuyNoText, MSGBOX_DEFAULT
+	release
+	end

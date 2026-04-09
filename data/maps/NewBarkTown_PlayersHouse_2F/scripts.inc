@@ -3,18 +3,32 @@ NewBarkTown_PlayersHouse_2F_MapScripts::
 	.byte 0
 
 NewBarkTown_PlayersHouse_2F_OnTransition:
-	setflag FLAG_HIDE_NEW_BARK_TOWN_PLAYERS_HOUSE_2F_CONSOLE
-	setflag FLAG_HIDE_NEW_BARK_TOWN_PLAYERS_HOUSE_2F_DOLL_1
-	setflag FLAG_HIDE_NEW_BARK_TOWN_PLAYERS_HOUSE_2F_DOLL_2
-	setflag FLAG_HIDE_NEW_BARK_TOWN_PLAYERS_HOUSE_2F_BIG_DOLL
+	special SyncJohtoPlayersHouse2FDecorations
 	end
 
 NewBarkTown_PlayersHouse_2F_EventScript_PC::
-	msgbox NewBarkTown_PlayersHouse_2F_Text_PC, MSGBOX_SIGN
+	lockall
+	setvar VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE
+	special DoPCTurnOnEffect
+	playse SE_PC_ON
+	msgbox gText_PlayerHouseBootPC, MSGBOX_DEFAULT
+	special BedroomPC
+	waitstate
+	releaseall
 	end
 
 NewBarkTown_PlayersHouse_2F_EventScript_Radio::
-	msgbox NewBarkTown_PlayersHouse_2F_Text_Radio, MSGBOX_SIGN
+	goto_if_set FLAG_JOHTO_GOT_STARTER_FROM_ELM, NewBarkTown_PlayersHouse_2F_EventScript_RadioRepeat
+	goto_if_set FLAG_JOHTO_PLAYERS_HOUSE_RADIO_HEARD, NewBarkTown_PlayersHouse_2F_EventScript_RadioRepeat
+	msgbox Crystal_NewBarkTown_PlayersHouse_2F_PlayersRadioText1, MSGBOX_SIGN
+	msgbox Crystal_NewBarkTown_PlayersHouse_2F_PlayersRadioText2, MSGBOX_SIGN
+	msgbox Crystal_NewBarkTown_PlayersHouse_2F_PlayersRadioText3, MSGBOX_SIGN
+	msgbox Crystal_NewBarkTown_PlayersHouse_2F_PlayersRadioText4, MSGBOX_SIGN
+	setflag FLAG_JOHTO_PLAYERS_HOUSE_RADIO_HEARD
+	end
+
+NewBarkTown_PlayersHouse_2F_EventScript_RadioRepeat::
+	msgbox Crystal_NewBarkTown_PlayersHouse_2F_PlayersRadioText4, MSGBOX_SIGN
 	end
 
 NewBarkTown_PlayersHouse_2F_EventScript_GameConsole::
@@ -26,7 +40,6 @@ NewBarkTown_PlayersHouse_2F_EventScript_Bookshelf::
 	end
 
 NewBarkTown_PlayersHouse_2F_EventScript_Poster::
-	msgbox NewBarkTown_PlayersHouse_2F_Text_Poster, MSGBOX_SIGN
 	end
 
 NewBarkTown_PlayersHouse_2F_EventScript_Doll1::
@@ -41,37 +54,33 @@ NewBarkTown_PlayersHouse_2F_EventScript_BigDoll::
 	msgbox NewBarkTown_PlayersHouse_2F_Text_BigDoll, MSGBOX_NPC
 	end
 
-NewBarkTown_PlayersHouse_2F_Text_PC:
-	.string "The PC is freshly set up.\p"
-	.string "A note says: ELM can help once the\n"
-	.string "rest of the equipment arrives.$"
+NewBarkTown_PlayersHouse_2F_Text_RadioIntro1:
+	.string "PROF.OAK'S POKéMON TALK!\n"
+	.string "Please tune in next time!$"
 
-NewBarkTown_PlayersHouse_2F_Text_Radio:
-	.string "The radio is on.\p"
-	.string "A cheerful host is talking about\n"
-	.string "POKeMON discoveries across JOHTO.$"
+NewBarkTown_PlayersHouse_2F_Text_RadioIntro2:
+	.string "POKéMON CHANNEL!$"
+
+NewBarkTown_PlayersHouse_2F_Text_RadioIntro3:
+	.string "This is DJ MARY, your co-host!$"
+
+NewBarkTown_PlayersHouse_2F_Text_RadioIntro4:
+	.string "POKéMON!\n"
+	.string "POKéMON CHANNEL...$"
 
 NewBarkTown_PlayersHouse_2F_Text_GameConsole:
 	.string "A game console is connected.\p"
 	.string "It looks well loved.$"
 
 NewBarkTown_PlayersHouse_2F_Text_Bookshelf:
-	.string "Picture books and travel guides are\n"
-	.string "lined up in perfect order.$"
-
-NewBarkTown_PlayersHouse_2F_Text_Poster:
-	.string "It's a poster of a POKeMON trainer\n"
-	.string "setting out on a journey.$"
+	.string "A whole collection of POKéMON picture\n"
+	.string "books!$"
 
 NewBarkTown_PlayersHouse_2F_Text_Doll1:
-	.string "A CYNDAQUIL doll.\p"
-	.string "Someone set it beside the bed with\n"
-	.string "extra care.$"
+	.string "A CYNDAQUIL doll.$"
 
 NewBarkTown_PlayersHouse_2F_Text_Doll2:
-	.string "A TOTODILE doll splays its arms wide.\p"
-	.string "It looks ready to leap into battle.$"
+	.string "A TOTODILE doll.$"
 
 NewBarkTown_PlayersHouse_2F_Text_BigDoll:
-	.string "A huge SNORLAX doll takes up almost\n"
-	.string "the whole corner.$"
+	.string "A huge SNORLAX doll.$"

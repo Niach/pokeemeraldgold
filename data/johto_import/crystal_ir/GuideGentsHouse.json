@@ -18,6 +18,8 @@
   "source_asm": "maps/GuideGentsHouse.asm",
   "connections": [],
   "events": {
+    "scene_scripts": [],
+    "callbacks": [],
     "warp_events": [
       {
         "x": 2,
@@ -55,12 +57,299 @@
         "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_SCRIPT",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GuideGentsHouseGuideGent",
+        "flag": "EVENT_GUIDE_GENT_VISIBLE_IN_CHERRYGROVE"
       }
     ]
   },
+  "object_consts": [
+    "GUIDEGENTSHOUSE_GRAMPS"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "GuideGentsHouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "GuideGentsHouseGuideGent",
+      "label_refs": [
+        "GuideGentsHouseGuideGent"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GuideGentsHouseGuideGent": {
+      "raw_lines": [
+        "jumptextfaceplayer GuideGentsHouseGuideGentText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GuideGentsHouseGuideGentText"
+          ],
+          "raw": "jumptextfaceplayer GuideGentsHouseGuideGentText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GuideGentsHouseGuideGentText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GuideGentsHouseBookshelf": {
+      "raw_lines": [
+        "jumpstd MagazineBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "MagazineBookshelfScript"
+          ],
+          "raw": "jumpstd MagazineBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "GuideGentsHouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, CHERRYGROVE_CITY, 4",
+        "warp_event  3,  7, CHERRYGROVE_CITY, 4",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, GuideGentsHouseBookshelf",
+        "bg_event  1,  1, BGEVENT_READ, GuideGentsHouseBookshelf",
+        "def_object_events",
+        "object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GuideGentsHouseGuideGent, EVENT_GUIDE_GENT_VISIBLE_IN_CHERRYGROVE"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "CHERRYGROVE_CITY",
+            "4"
+          ],
+          "raw": "warp_event  2,  7, CHERRYGROVE_CITY, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "CHERRYGROVE_CITY",
+            "4"
+          ],
+          "raw": "warp_event  3,  7, CHERRYGROVE_CITY, 4"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "GuideGentsHouseBookshelf"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, GuideGentsHouseBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "GuideGentsHouseBookshelf"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, GuideGentsHouseBookshelf"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_GRAMPS",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GuideGentsHouseGuideGent",
+            "EVENT_GUIDE_GENT_VISIBLE_IN_CHERRYGROVE"
+          ],
+          "raw": "object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GuideGentsHouseGuideGent, EVENT_GUIDE_GENT_VISIBLE_IN_CHERRYGROVE"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "GuideGentsHouseGuideGentText": {
+      "raw_lines": [
+        "text \"When I was a wee\"",
+        "line \"lad, I was a hot-\"",
+        "cont \"shot trainer!\"",
+        "para \"Here's a word of\"",
+        "line \"advice: Catch lots\"",
+        "cont \"of #MON!\"",
+        "para \"Treat them all\"",
+        "line \"with kindness!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "When I was a wee"
+        },
+        {
+          "command": "line",
+          "value": "lad, I was a hot-"
+        },
+        {
+          "command": "cont",
+          "value": "shot trainer!"
+        },
+        {
+          "command": "para",
+          "value": "Here's a word of"
+        },
+        {
+          "command": "line",
+          "value": "advice: Catch lots"
+        },
+        {
+          "command": "cont",
+          "value": "of #MON!"
+        },
+        {
+          "command": "para",
+          "value": "Treat them all"
+        },
+        {
+          "command": "line",
+          "value": "with kindness!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "MagazineBookshelfScript"
+  ],
+  "dependencies": {
+    "GuideGentsHouse_MapScripts": {
+      "label_refs": [
+        "GuideGentsHouseGuideGent"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GuideGentsHouseGuideGent": {
+      "label_refs": [],
+      "text_refs": [
+        "GuideGentsHouseGuideGentText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GuideGentsHouseBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "GuideGentsHouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
   "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
     "warp_events": 2,
     "coord_events": 0,
     "bg_events": 2,

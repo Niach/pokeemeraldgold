@@ -1,0 +1,2581 @@
+{
+  "crystal_map": "MahoganyGym",
+  "map_id": "MAHOGANY_GYM",
+  "group": "MAHOGANY",
+  "group_index": 2,
+  "map_index": 2,
+  "tileset": "TILESET_ELITE_FOUR_ROOM",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_MAHOGANY_TOWN",
+  "music": "MUSIC_GYM",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 9,
+  "border_block": "00",
+  "blk_path": "maps/MahoganyGym.blk",
+  "source_asm": "maps/MahoganyGym.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 4,
+        "y": 17,
+        "dest_map": "MAHOGANY_TOWN",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 5,
+        "y": 17,
+        "dest_map": "MAHOGANY_TOWN",
+        "dest_warp_id": 3
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 3,
+        "y": 15,
+        "kind": "BGEVENT_READ",
+        "script": "MahoganyGymStatue"
+      },
+      {
+        "x": 6,
+        "y": 15,
+        "kind": "BGEVENT_READ",
+        "script": "MahoganyGymStatue"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 5,
+        "y": 3,
+        "sprite": "SPRITE_PRYCE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MahoganyGymPryceScript",
+        "flag": -1
+      },
+      {
+        "x": 4,
+        "y": 6,
+        "sprite": "SPRITE_BEAUTY",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerSkierRoxanne",
+        "flag": -1
+      },
+      {
+        "x": 0,
+        "y": 17,
+        "sprite": "SPRITE_ROCKER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerBoarderRonald",
+        "flag": -1
+      },
+      {
+        "x": 9,
+        "y": 17,
+        "sprite": "SPRITE_BEAUTY",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerSkierClarissa",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 9,
+        "sprite": "SPRITE_ROCKER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerBoarderBrad",
+        "flag": -1
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "sprite": "SPRITE_ROCKER",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_FAST",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerBoarderDouglas",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 15,
+        "sprite": "SPRITE_GYM_GUIDE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MahoganyGymGuideScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "MAHOGANYGYM_PRYCE",
+    "MAHOGANYGYM_BEAUTY1",
+    "MAHOGANYGYM_ROCKER1",
+    "MAHOGANYGYM_BEAUTY2",
+    "MAHOGANYGYM_ROCKER2",
+    "MAHOGANYGYM_ROCKER3",
+    "MAHOGANYGYM_GYM_GUIDE"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "MahoganyGym_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "MahoganyGymPryceScript",
+      "label_refs": [
+        "MahoganyGymPryceScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyGymPryceScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_BEAT_PRYCE",
+        "iftrue .FightDone",
+        "writetext PryceText_Intro",
+        "waitbutton",
+        "closetext",
+        "winlosstext PryceText_Impressed, 0",
+        "loadtrainer PRYCE, PRYCE1",
+        "startbattle",
+        "reloadmapafterbattle",
+        "setevent EVENT_BEAT_PRYCE",
+        "opentext",
+        "writetext Text_ReceivedGlacierBadge",
+        "playsound SFX_GET_BADGE",
+        "waitsfx",
+        "setflag ENGINE_GLACIERBADGE",
+        "readvar VAR_BADGES",
+        "scall MahoganyGymActivateRockets"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_PRYCE"
+          ],
+          "raw": "checkevent EVENT_BEAT_PRYCE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MahoganyGymPryceScript.FightDone"
+          ],
+          "raw": "iftrue .FightDone"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PryceText_Intro"
+          ],
+          "raw": "writetext PryceText_Intro"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "PryceText_Impressed",
+            "0"
+          ],
+          "raw": "winlosstext PryceText_Impressed, 0"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "PRYCE",
+            "PRYCE1"
+          ],
+          "raw": "loadtrainer PRYCE, PRYCE1"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_PRYCE"
+          ],
+          "raw": "setevent EVENT_BEAT_PRYCE"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_ReceivedGlacierBadge"
+          ],
+          "raw": "writetext Text_ReceivedGlacierBadge"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_GET_BADGE"
+          ],
+          "raw": "playsound SFX_GET_BADGE"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_GLACIERBADGE"
+          ],
+          "raw": "setflag ENGINE_GLACIERBADGE"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_BADGES"
+          ],
+          "raw": "readvar VAR_BADGES"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "MahoganyGymActivateRockets"
+          ],
+          "raw": "scall MahoganyGymActivateRockets"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "MahoganyGymPryceScript.FightDone",
+      "label_refs": [
+        "MahoganyGymActivateRockets",
+        "MahoganyGymPryceScript.FightDone"
+      ],
+      "text_refs": [
+        "PryceText_Intro",
+        "Text_ReceivedGlacierBadge"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyGymPryceScript.FightDone": {
+      "raw_lines": [
+        "checkevent EVENT_GOT_TM16_ICY_WIND",
+        "iftrue PryceScript_Defeat",
+        "setevent EVENT_BEAT_SKIER_ROXANNE",
+        "setevent EVENT_BEAT_SKIER_CLARISSA",
+        "setevent EVENT_BEAT_BOARDER_RONALD",
+        "setevent EVENT_BEAT_BOARDER_BRAD",
+        "setevent EVENT_BEAT_BOARDER_DOUGLAS",
+        "writetext PryceText_GlacierBadgeSpeech",
+        "promptbutton",
+        "verbosegiveitem TM_ICY_WIND",
+        "iffalse MahoganyGym_NoRoomForIcyWind",
+        "setevent EVENT_GOT_TM16_ICY_WIND",
+        "writetext PryceText_IcyWindSpeech",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TM16_ICY_WIND"
+          ],
+          "raw": "checkevent EVENT_GOT_TM16_ICY_WIND"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "PryceScript_Defeat"
+          ],
+          "raw": "iftrue PryceScript_Defeat"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_SKIER_ROXANNE"
+          ],
+          "raw": "setevent EVENT_BEAT_SKIER_ROXANNE"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_SKIER_CLARISSA"
+          ],
+          "raw": "setevent EVENT_BEAT_SKIER_CLARISSA"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_BOARDER_RONALD"
+          ],
+          "raw": "setevent EVENT_BEAT_BOARDER_RONALD"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_BOARDER_BRAD"
+          ],
+          "raw": "setevent EVENT_BEAT_BOARDER_BRAD"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_BOARDER_DOUGLAS"
+          ],
+          "raw": "setevent EVENT_BEAT_BOARDER_DOUGLAS"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PryceText_GlacierBadgeSpeech"
+          ],
+          "raw": "writetext PryceText_GlacierBadgeSpeech"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "TM_ICY_WIND"
+          ],
+          "raw": "verbosegiveitem TM_ICY_WIND"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "MahoganyGym_NoRoomForIcyWind"
+          ],
+          "raw": "iffalse MahoganyGym_NoRoomForIcyWind"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_TM16_ICY_WIND"
+          ],
+          "raw": "setevent EVENT_GOT_TM16_ICY_WIND"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PryceText_IcyWindSpeech"
+          ],
+          "raw": "writetext PryceText_IcyWindSpeech"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "MahoganyGym_NoRoomForIcyWind",
+        "PryceScript_Defeat"
+      ],
+      "text_refs": [
+        "PryceText_GlacierBadgeSpeech",
+        "PryceText_IcyWindSpeech"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PryceScript_Defeat": {
+      "raw_lines": [
+        "writetext PryceText_CherishYourPokemon",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "PryceText_CherishYourPokemon"
+          ],
+          "raw": "writetext PryceText_CherishYourPokemon"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "MahoganyGym_NoRoomForIcyWind",
+      "label_refs": [
+        "MahoganyGym_NoRoomForIcyWind"
+      ],
+      "text_refs": [
+        "PryceText_CherishYourPokemon"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyGym_NoRoomForIcyWind": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyGymActivateRockets": {
+      "raw_lines": [
+        "ifequal 7, .RadioTowerRockets",
+        "ifequal 6, .GoldenrodRockets",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "ifequal",
+          "args": [
+            "7",
+            "MahoganyGymActivateRockets.RadioTowerRockets"
+          ],
+          "raw": "ifequal 7, .RadioTowerRockets"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "6",
+            "MahoganyGymActivateRockets.GoldenrodRockets"
+          ],
+          "raw": "ifequal 6, .GoldenrodRockets"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "ifequal",
+      "label_refs": [
+        "MahoganyGymActivateRockets.GoldenrodRockets",
+        "MahoganyGymActivateRockets.RadioTowerRockets"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyGymActivateRockets.GoldenrodRockets": {
+      "raw_lines": [
+        "jumpstd GoldenrodRocketsScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "GoldenrodRocketsScript"
+          ],
+          "raw": "jumpstd GoldenrodRocketsScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GoldenrodRocketsScript"
+      ]
+    },
+    "MahoganyGymActivateRockets.RadioTowerRockets": {
+      "raw_lines": [
+        "jumpstd RadioTowerRocketsScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RadioTowerRocketsScript"
+          ],
+          "raw": "jumpstd RadioTowerRocketsScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RadioTowerRocketsScript"
+      ]
+    },
+    "TrainerSkierRoxanne": {
+      "raw_lines": [
+        "trainer SKIER, ROXANNE, EVENT_BEAT_SKIER_ROXANNE, SkierRoxanneSeenText, SkierRoxanneBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "SKIER",
+            "ROXANNE",
+            "EVENT_BEAT_SKIER_ROXANNE",
+            "SkierRoxanneSeenText",
+            "SkierRoxanneBeatenText",
+            "0",
+            "TrainerSkierRoxanne.Script"
+          ],
+          "raw": "trainer SKIER, ROXANNE, EVENT_BEAT_SKIER_ROXANNE, SkierRoxanneSeenText, SkierRoxanneBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerSkierRoxanne.Script",
+      "label_refs": [
+        "TrainerSkierRoxanne.Script"
+      ],
+      "text_refs": [
+        "SkierRoxanneBeatenText",
+        "SkierRoxanneSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSkierRoxanne.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext SkierRoxanneAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SkierRoxanneAfterBattleText"
+          ],
+          "raw": "writetext SkierRoxanneAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "SkierRoxanneAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSkierClarissa": {
+      "raw_lines": [
+        "trainer SKIER, CLARISSA, EVENT_BEAT_SKIER_CLARISSA, SkierClarissaSeenText, SkierClarissaBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "SKIER",
+            "CLARISSA",
+            "EVENT_BEAT_SKIER_CLARISSA",
+            "SkierClarissaSeenText",
+            "SkierClarissaBeatenText",
+            "0",
+            "TrainerSkierClarissa.Script"
+          ],
+          "raw": "trainer SKIER, CLARISSA, EVENT_BEAT_SKIER_CLARISSA, SkierClarissaSeenText, SkierClarissaBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerSkierClarissa.Script",
+      "label_refs": [
+        "TrainerSkierClarissa.Script"
+      ],
+      "text_refs": [
+        "SkierClarissaBeatenText",
+        "SkierClarissaSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSkierClarissa.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext SkierClarissaAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SkierClarissaAfterBattleText"
+          ],
+          "raw": "writetext SkierClarissaAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "SkierClarissaAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBoarderRonald": {
+      "raw_lines": [
+        "trainer BOARDER, RONALD, EVENT_BEAT_BOARDER_RONALD, BoarderRonaldSeenText, BoarderRonaldBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "BOARDER",
+            "RONALD",
+            "EVENT_BEAT_BOARDER_RONALD",
+            "BoarderRonaldSeenText",
+            "BoarderRonaldBeatenText",
+            "0",
+            "TrainerBoarderRonald.Script"
+          ],
+          "raw": "trainer BOARDER, RONALD, EVENT_BEAT_BOARDER_RONALD, BoarderRonaldSeenText, BoarderRonaldBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerBoarderRonald.Script",
+      "label_refs": [
+        "TrainerBoarderRonald.Script"
+      ],
+      "text_refs": [
+        "BoarderRonaldBeatenText",
+        "BoarderRonaldSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBoarderRonald.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext BoarderRonaldAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BoarderRonaldAfterBattleText"
+          ],
+          "raw": "writetext BoarderRonaldAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "BoarderRonaldAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBoarderBrad": {
+      "raw_lines": [
+        "trainer BOARDER, BRAD, EVENT_BEAT_BOARDER_BRAD, BoarderBradSeenText, BoarderBradBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "BOARDER",
+            "BRAD",
+            "EVENT_BEAT_BOARDER_BRAD",
+            "BoarderBradSeenText",
+            "BoarderBradBeatenText",
+            "0",
+            "TrainerBoarderBrad.Script"
+          ],
+          "raw": "trainer BOARDER, BRAD, EVENT_BEAT_BOARDER_BRAD, BoarderBradSeenText, BoarderBradBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerBoarderBrad.Script",
+      "label_refs": [
+        "TrainerBoarderBrad.Script"
+      ],
+      "text_refs": [
+        "BoarderBradBeatenText",
+        "BoarderBradSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBoarderBrad.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext BoarderBradAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BoarderBradAfterBattleText"
+          ],
+          "raw": "writetext BoarderBradAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "BoarderBradAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBoarderDouglas": {
+      "raw_lines": [
+        "trainer BOARDER, DOUGLAS, EVENT_BEAT_BOARDER_DOUGLAS, BoarderDouglasSeenText, BoarderDouglasBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "BOARDER",
+            "DOUGLAS",
+            "EVENT_BEAT_BOARDER_DOUGLAS",
+            "BoarderDouglasSeenText",
+            "BoarderDouglasBeatenText",
+            "0",
+            "TrainerBoarderDouglas.Script"
+          ],
+          "raw": "trainer BOARDER, DOUGLAS, EVENT_BEAT_BOARDER_DOUGLAS, BoarderDouglasSeenText, BoarderDouglasBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerBoarderDouglas.Script",
+      "label_refs": [
+        "TrainerBoarderDouglas.Script"
+      ],
+      "text_refs": [
+        "BoarderDouglasBeatenText",
+        "BoarderDouglasSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBoarderDouglas.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext BoarderDouglasAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BoarderDouglasAfterBattleText"
+          ],
+          "raw": "writetext BoarderDouglasAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "BoarderDouglasAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyGymGuideScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_BEAT_PRYCE",
+        "iftrue .MahoganyGymGuideWinScript",
+        "writetext MahoganyGymGuideText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_PRYCE"
+          ],
+          "raw": "checkevent EVENT_BEAT_PRYCE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MahoganyGymGuideScript.MahoganyGymGuideWinScript"
+          ],
+          "raw": "iftrue .MahoganyGymGuideWinScript"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MahoganyGymGuideText"
+          ],
+          "raw": "writetext MahoganyGymGuideText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "MahoganyGymGuideScript.MahoganyGymGuideWinScript"
+      ],
+      "text_refs": [
+        "MahoganyGymGuideText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyGymGuideScript.MahoganyGymGuideWinScript": {
+      "raw_lines": [
+        "writetext MahoganyGymGuideWinText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "MahoganyGymGuideWinText"
+          ],
+          "raw": "writetext MahoganyGymGuideWinText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyGymGuideWinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyGymStatue": {
+      "raw_lines": [
+        "checkflag ENGINE_GLACIERBADGE",
+        "iftrue .Beaten",
+        "jumpstd GymStatue1Script"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_GLACIERBADGE"
+          ],
+          "raw": "checkflag ENGINE_GLACIERBADGE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MahoganyGymStatue.Beaten"
+          ],
+          "raw": "iftrue .Beaten"
+        },
+        {
+          "command": "jumpstd",
+          "args": [
+            "GymStatue1Script"
+          ],
+          "raw": "jumpstd GymStatue1Script"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "MahoganyGymStatue.Beaten"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue1Script"
+      ]
+    },
+    "MahoganyGymStatue.Beaten": {
+      "raw_lines": [
+        "gettrainername STRING_BUFFER_4, PRYCE, PRYCE1",
+        "jumpstd GymStatue2Script"
+      ],
+      "commands": [
+        {
+          "command": "gettrainername",
+          "args": [
+            "STRING_BUFFER_4",
+            "PRYCE",
+            "PRYCE1"
+          ],
+          "raw": "gettrainername STRING_BUFFER_4, PRYCE, PRYCE1"
+        },
+        {
+          "command": "jumpstd",
+          "args": [
+            "GymStatue2Script"
+          ],
+          "raw": "jumpstd GymStatue2Script"
+        }
+      ],
+      "first_command": "gettrainername",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue2Script"
+      ]
+    },
+    "MahoganyGym_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  4, 17, MAHOGANY_TOWN, 3",
+        "warp_event  5, 17, MAHOGANY_TOWN, 3",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  3, 15, BGEVENT_READ, MahoganyGymStatue",
+        "bg_event  6, 15, BGEVENT_READ, MahoganyGymStatue",
+        "def_object_events",
+        "object_event  5,  3, SPRITE_PRYCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyGymPryceScript, -1",
+        "object_event  4,  6, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerSkierRoxanne, -1",
+        "object_event  0, 17, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBoarderRonald, -1",
+        "object_event  9, 17, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerSkierClarissa, -1",
+        "object_event  5,  9, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBoarderBrad, -1",
+        "object_event  2,  4, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBoarderDouglas, -1",
+        "object_event  7, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyGymGuideScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "17",
+            "MAHOGANY_TOWN",
+            "3"
+          ],
+          "raw": "warp_event  4, 17, MAHOGANY_TOWN, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "17",
+            "MAHOGANY_TOWN",
+            "3"
+          ],
+          "raw": "warp_event  5, 17, MAHOGANY_TOWN, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "15",
+            "BGEVENT_READ",
+            "MahoganyGymStatue"
+          ],
+          "raw": "bg_event  3, 15, BGEVENT_READ, MahoganyGymStatue"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "6",
+            "15",
+            "BGEVENT_READ",
+            "MahoganyGymStatue"
+          ],
+          "raw": "bg_event  6, 15, BGEVENT_READ, MahoganyGymStatue"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "3",
+            "SPRITE_PRYCE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MahoganyGymPryceScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  3, SPRITE_PRYCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyGymPryceScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "6",
+            "SPRITE_BEAUTY",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerSkierRoxanne",
+            "-1"
+          ],
+          "raw": "object_event  4,  6, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerSkierRoxanne, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "0",
+            "17",
+            "SPRITE_ROCKER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerBoarderRonald",
+            "-1"
+          ],
+          "raw": "object_event  0, 17, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBoarderRonald, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "17",
+            "SPRITE_BEAUTY",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerSkierClarissa",
+            "-1"
+          ],
+          "raw": "object_event  9, 17, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerSkierClarissa, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "9",
+            "SPRITE_ROCKER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerBoarderBrad",
+            "-1"
+          ],
+          "raw": "object_event  5,  9, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBoarderBrad, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "4",
+            "SPRITE_ROCKER",
+            "SPRITEMOVEDATA_SPINRANDOM_FAST",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerBoarderDouglas",
+            "-1"
+          ],
+          "raw": "object_event  2,  4, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBoarderDouglas, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "15",
+            "SPRITE_GYM_GUIDE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MahoganyGymGuideScript",
+            "-1"
+          ],
+          "raw": "object_event  7, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyGymGuideScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "PryceText_Intro": {
+      "raw_lines": [
+        "text \"#MON have many\"",
+        "line \"experiences in\"",
+        "para \"their lives, just \"",
+        "line \"like we do. \"",
+        "para \"I, too, have seen\"",
+        "line \"and suffered much\"",
+        "cont \"in my life.\"",
+        "para \"Since I am your\"",
+        "line \"elder, let me show\"",
+        "cont \"you what I mean.\"",
+        "para \"I have been with\"",
+        "line \"#MON since\"",
+        "para \"before you were\"",
+        "line \"born.\"",
+        "para \"I do not lose\"",
+        "line \"easily.\"",
+        "para \"I, PRYCE--the\"",
+        "line \"winter trainer--\"",
+        "para \"shall demonstrate\"",
+        "line \"my power!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#MON have many"
+        },
+        {
+          "command": "line",
+          "value": "experiences in"
+        },
+        {
+          "command": "para",
+          "value": "their lives, just "
+        },
+        {
+          "command": "line",
+          "value": "like we do. "
+        },
+        {
+          "command": "para",
+          "value": "I, too, have seen"
+        },
+        {
+          "command": "line",
+          "value": "and suffered much"
+        },
+        {
+          "command": "cont",
+          "value": "in my life."
+        },
+        {
+          "command": "para",
+          "value": "Since I am your"
+        },
+        {
+          "command": "line",
+          "value": "elder, let me show"
+        },
+        {
+          "command": "cont",
+          "value": "you what I mean."
+        },
+        {
+          "command": "para",
+          "value": "I have been with"
+        },
+        {
+          "command": "line",
+          "value": "#MON since"
+        },
+        {
+          "command": "para",
+          "value": "before you were"
+        },
+        {
+          "command": "line",
+          "value": "born."
+        },
+        {
+          "command": "para",
+          "value": "I do not lose"
+        },
+        {
+          "command": "line",
+          "value": "easily."
+        },
+        {
+          "command": "para",
+          "value": "I, PRYCE--the"
+        },
+        {
+          "command": "line",
+          "value": "winter trainer--"
+        },
+        {
+          "command": "para",
+          "value": "shall demonstrate"
+        },
+        {
+          "command": "line",
+          "value": "my power!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PryceText_Impressed": {
+      "raw_lines": [
+        "text \"Ah, I am impressed\"",
+        "line \"by your prowess.\"",
+        "para \"With your strong\"",
+        "line \"will, I know you\"",
+        "para \"will overcome all\"",
+        "line \"life's obstacles.\"",
+        "para \"You are worthy of\"",
+        "line \"this BADGE!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ah, I am impressed"
+        },
+        {
+          "command": "line",
+          "value": "by your prowess."
+        },
+        {
+          "command": "para",
+          "value": "With your strong"
+        },
+        {
+          "command": "line",
+          "value": "will, I know you"
+        },
+        {
+          "command": "para",
+          "value": "will overcome all"
+        },
+        {
+          "command": "line",
+          "value": "life's obstacles."
+        },
+        {
+          "command": "para",
+          "value": "You are worthy of"
+        },
+        {
+          "command": "line",
+          "value": "this BADGE!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_ReceivedGlacierBadge": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"GLACIERBADGE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "GLACIERBADGE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PryceText_GlacierBadgeSpeech": {
+      "raw_lines": [
+        "text \"That BADGE will\"",
+        "line \"raise the SPECIAL\"",
+        "cont \"stats of #MON.\"",
+        "para \"It also lets your\"",
+        "line \"#MON use WHIRL-\"",
+        "cont \"POOL to get across\"",
+        "cont \"real whirlpools.\"",
+        "para \"And this\u2026 This is\"",
+        "line \"a gift from me!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "That BADGE will"
+        },
+        {
+          "command": "line",
+          "value": "raise the SPECIAL"
+        },
+        {
+          "command": "cont",
+          "value": "stats of #MON."
+        },
+        {
+          "command": "para",
+          "value": "It also lets your"
+        },
+        {
+          "command": "line",
+          "value": "#MON use WHIRL-"
+        },
+        {
+          "command": "cont",
+          "value": "POOL to get across"
+        },
+        {
+          "command": "cont",
+          "value": "real whirlpools."
+        },
+        {
+          "command": "para",
+          "value": "And this\u2026 This is"
+        },
+        {
+          "command": "line",
+          "value": "a gift from me!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PryceText_IcyWindSpeech": {
+      "raw_lines": [
+        "text \"That TM contains\"",
+        "line \"ICY WIND.\"",
+        "para \"It inflicts damage\"",
+        "line \"and lowers speed.\"",
+        "para \"It demonstrates\"",
+        "line \"the harshness of\"",
+        "cont \"winter.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "That TM contains"
+        },
+        {
+          "command": "line",
+          "value": "ICY WIND."
+        },
+        {
+          "command": "para",
+          "value": "It inflicts damage"
+        },
+        {
+          "command": "line",
+          "value": "and lowers speed."
+        },
+        {
+          "command": "para",
+          "value": "It demonstrates"
+        },
+        {
+          "command": "line",
+          "value": "the harshness of"
+        },
+        {
+          "command": "cont",
+          "value": "winter."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PryceText_CherishYourPokemon": {
+      "raw_lines": [
+        "text \"When the ice and\"",
+        "line \"snow melt, spring\"",
+        "cont \"arrives.\"",
+        "para \"You and your #-\"",
+        "line \"MON will be to-\"",
+        "para \"gether for many\"",
+        "line \"years to come.\"",
+        "para \"Cherish your time\"",
+        "line \"together!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "When the ice and"
+        },
+        {
+          "command": "line",
+          "value": "snow melt, spring"
+        },
+        {
+          "command": "cont",
+          "value": "arrives."
+        },
+        {
+          "command": "para",
+          "value": "You and your #-"
+        },
+        {
+          "command": "line",
+          "value": "MON will be to-"
+        },
+        {
+          "command": "para",
+          "value": "gether for many"
+        },
+        {
+          "command": "line",
+          "value": "years to come."
+        },
+        {
+          "command": "para",
+          "value": "Cherish your time"
+        },
+        {
+          "command": "line",
+          "value": "together!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BoarderRonaldSeenText": {
+      "raw_lines": [
+        "text \"I'll freeze your\"",
+        "line \"#MON, so you\"",
+        "cont \"can't do a thing!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'll freeze your"
+        },
+        {
+          "command": "line",
+          "value": "#MON, so you"
+        },
+        {
+          "command": "cont",
+          "value": "can't do a thing!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BoarderRonaldBeatenText": {
+      "raw_lines": [
+        "text \"Darn. I couldn't\"",
+        "line \"do a thing.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Darn. I couldn't"
+        },
+        {
+          "command": "line",
+          "value": "do a thing."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BoarderRonaldAfterBattleText": {
+      "raw_lines": [
+        "text \"I think there's a\"",
+        "line \"move a #MON\"",
+        "para \"can use while it's\"",
+        "line \"frozen.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I think there's a"
+        },
+        {
+          "command": "line",
+          "value": "move a #MON"
+        },
+        {
+          "command": "para",
+          "value": "can use while it's"
+        },
+        {
+          "command": "line",
+          "value": "frozen."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BoarderBradSeenText": {
+      "raw_lines": [
+        "text \"This GYM has a\"",
+        "line \"slippery floor.\"",
+        "para \"It's fun, isn't\"",
+        "line \"it?\"",
+        "para \"But hey--we're\"",
+        "line \"not playing games\"",
+        "cont \"here!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This GYM has a"
+        },
+        {
+          "command": "line",
+          "value": "slippery floor."
+        },
+        {
+          "command": "para",
+          "value": "It's fun, isn't"
+        },
+        {
+          "command": "line",
+          "value": "it?"
+        },
+        {
+          "command": "para",
+          "value": "But hey--we're"
+        },
+        {
+          "command": "line",
+          "value": "not playing games"
+        },
+        {
+          "command": "cont",
+          "value": "here!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BoarderBradBeatenText": {
+      "raw_lines": [
+        "text \"Do you see how\"",
+        "line \"serious we are?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Do you see how"
+        },
+        {
+          "command": "line",
+          "value": "serious we are?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BoarderBradAfterBattleText": {
+      "raw_lines": [
+        "text \"This GYM is great.\"",
+        "line \"I love boarding\"",
+        "cont \"with my #MON!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This GYM is great."
+        },
+        {
+          "command": "line",
+          "value": "I love boarding"
+        },
+        {
+          "command": "cont",
+          "value": "with my #MON!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BoarderDouglasSeenText": {
+      "raw_lines": [
+        "text \"I know PRYCE's\"",
+        "line \"secret.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I know PRYCE's"
+        },
+        {
+          "command": "line",
+          "value": "secret."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BoarderDouglasBeatenText": {
+      "raw_lines": [
+        "text \"OK. I'll tell you\"",
+        "line \"PRYCE's secret.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OK. I'll tell you"
+        },
+        {
+          "command": "line",
+          "value": "PRYCE's secret."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BoarderDouglasAfterBattleText": {
+      "raw_lines": [
+        "text \"The secret behind\"",
+        "line \"PRYCE's power\u2026\"",
+        "para \"He meditates under\"",
+        "line \"a waterfall daily\"",
+        "para \"to strengthen his\"",
+        "line \"mind and body.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The secret behind"
+        },
+        {
+          "command": "line",
+          "value": "PRYCE's power\u2026"
+        },
+        {
+          "command": "para",
+          "value": "He meditates under"
+        },
+        {
+          "command": "line",
+          "value": "a waterfall daily"
+        },
+        {
+          "command": "para",
+          "value": "to strengthen his"
+        },
+        {
+          "command": "line",
+          "value": "mind and body."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SkierRoxanneSeenText": {
+      "raw_lines": [
+        "text \"To get to PRYCE,\"",
+        "line \"our GYM LEADER,\"",
+        "para \"you need to think\"",
+        "line \"before you skate.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "To get to PRYCE,"
+        },
+        {
+          "command": "line",
+          "value": "our GYM LEADER,"
+        },
+        {
+          "command": "para",
+          "value": "you need to think"
+        },
+        {
+          "command": "line",
+          "value": "before you skate."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SkierRoxanneBeatenText": {
+      "raw_lines": [
+        "text \"I wouldn't lose to\"",
+        "line \"you in skiing!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I wouldn't lose to"
+        },
+        {
+          "command": "line",
+          "value": "you in skiing!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SkierRoxanneAfterBattleText": {
+      "raw_lines": [
+        "text \"If you don't skate\"",
+        "line \"with precision,\"",
+        "para \"you won't get far\"",
+        "line \"in this GYM.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If you don't skate"
+        },
+        {
+          "command": "line",
+          "value": "with precision,"
+        },
+        {
+          "command": "para",
+          "value": "you won't get far"
+        },
+        {
+          "command": "line",
+          "value": "in this GYM."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SkierClarissaSeenText": {
+      "raw_lines": [
+        "text \"Check out my\"",
+        "line \"parallel turn!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Check out my"
+        },
+        {
+          "command": "line",
+          "value": "parallel turn!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SkierClarissaBeatenText": {
+      "raw_lines": [
+        "text \"No! You made me\"",
+        "line \"wipe out!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "No! You made me"
+        },
+        {
+          "command": "line",
+          "value": "wipe out!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SkierClarissaAfterBattleText": {
+      "raw_lines": [
+        "text \"I shouldn't have\"",
+        "line \"been bragging\"",
+        "cont \"about my skiing\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I shouldn't have"
+        },
+        {
+          "command": "line",
+          "value": "been bragging"
+        },
+        {
+          "command": "cont",
+          "value": "about my skiing\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MahoganyGymGuideText": {
+      "raw_lines": [
+        "text \"PRYCE is a veteran\"",
+        "line \"who has trained\"",
+        "para \"#MON for some\"",
+        "line \"50 years.\"",
+        "para \"He's said to be\"",
+        "line \"good at freezing\"",
+        "para \"opponents with\"",
+        "line \"ice-type moves.\"",
+        "para \"That means you\"",
+        "line \"should melt him\"",
+        "para \"with your burning\"",
+        "line \"ambition!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "PRYCE is a veteran"
+        },
+        {
+          "command": "line",
+          "value": "who has trained"
+        },
+        {
+          "command": "para",
+          "value": "#MON for some"
+        },
+        {
+          "command": "line",
+          "value": "50 years."
+        },
+        {
+          "command": "para",
+          "value": "He's said to be"
+        },
+        {
+          "command": "line",
+          "value": "good at freezing"
+        },
+        {
+          "command": "para",
+          "value": "opponents with"
+        },
+        {
+          "command": "line",
+          "value": "ice-type moves."
+        },
+        {
+          "command": "para",
+          "value": "That means you"
+        },
+        {
+          "command": "line",
+          "value": "should melt him"
+        },
+        {
+          "command": "para",
+          "value": "with your burning"
+        },
+        {
+          "command": "line",
+          "value": "ambition!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MahoganyGymGuideWinText": {
+      "raw_lines": [
+        "text \"PRYCE is some-\"",
+        "line \"thing, but you're\"",
+        "cont \"something else!\"",
+        "para \"That was a hot\"",
+        "line \"battle that\"",
+        "para \"bridged the gen-\"",
+        "line \"eration gap!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "PRYCE is some-"
+        },
+        {
+          "command": "line",
+          "value": "thing, but you're"
+        },
+        {
+          "command": "cont",
+          "value": "something else!"
+        },
+        {
+          "command": "para",
+          "value": "That was a hot"
+        },
+        {
+          "command": "line",
+          "value": "battle that"
+        },
+        {
+          "command": "para",
+          "value": "bridged the gen-"
+        },
+        {
+          "command": "line",
+          "value": "eration gap!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "GoldenrodRocketsScript",
+    "GymStatue1Script",
+    "GymStatue2Script",
+    "RadioTowerRocketsScript"
+  ],
+  "dependencies": {
+    "MahoganyGym_MapScripts": {
+      "label_refs": [
+        "MahoganyGymPryceScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyGymPryceScript": {
+      "label_refs": [
+        "MahoganyGymActivateRockets",
+        "MahoganyGymPryceScript.FightDone"
+      ],
+      "text_refs": [
+        "PryceText_Intro",
+        "Text_ReceivedGlacierBadge"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyGymPryceScript.FightDone": {
+      "label_refs": [
+        "MahoganyGym_NoRoomForIcyWind",
+        "PryceScript_Defeat"
+      ],
+      "text_refs": [
+        "PryceText_GlacierBadgeSpeech",
+        "PryceText_IcyWindSpeech"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PryceScript_Defeat": {
+      "label_refs": [
+        "MahoganyGym_NoRoomForIcyWind"
+      ],
+      "text_refs": [
+        "PryceText_CherishYourPokemon"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyGym_NoRoomForIcyWind": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyGymActivateRockets": {
+      "label_refs": [
+        "MahoganyGymActivateRockets.GoldenrodRockets",
+        "MahoganyGymActivateRockets.RadioTowerRockets"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyGymActivateRockets.GoldenrodRockets": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GoldenrodRocketsScript"
+      ]
+    },
+    "MahoganyGymActivateRockets.RadioTowerRockets": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RadioTowerRocketsScript"
+      ]
+    },
+    "TrainerSkierRoxanne": {
+      "label_refs": [
+        "TrainerSkierRoxanne.Script"
+      ],
+      "text_refs": [
+        "SkierRoxanneBeatenText",
+        "SkierRoxanneSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSkierRoxanne.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "SkierRoxanneAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSkierClarissa": {
+      "label_refs": [
+        "TrainerSkierClarissa.Script"
+      ],
+      "text_refs": [
+        "SkierClarissaBeatenText",
+        "SkierClarissaSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSkierClarissa.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "SkierClarissaAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBoarderRonald": {
+      "label_refs": [
+        "TrainerBoarderRonald.Script"
+      ],
+      "text_refs": [
+        "BoarderRonaldBeatenText",
+        "BoarderRonaldSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBoarderRonald.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "BoarderRonaldAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBoarderBrad": {
+      "label_refs": [
+        "TrainerBoarderBrad.Script"
+      ],
+      "text_refs": [
+        "BoarderBradBeatenText",
+        "BoarderBradSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBoarderBrad.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "BoarderBradAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBoarderDouglas": {
+      "label_refs": [
+        "TrainerBoarderDouglas.Script"
+      ],
+      "text_refs": [
+        "BoarderDouglasBeatenText",
+        "BoarderDouglasSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBoarderDouglas.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "BoarderDouglasAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyGymGuideScript": {
+      "label_refs": [
+        "MahoganyGymGuideScript.MahoganyGymGuideWinScript"
+      ],
+      "text_refs": [
+        "MahoganyGymGuideText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyGymGuideScript.MahoganyGymGuideWinScript": {
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyGymGuideWinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyGymStatue": {
+      "label_refs": [
+        "MahoganyGymStatue.Beaten"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue1Script"
+      ]
+    },
+    "MahoganyGymStatue.Beaten": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue2Script"
+      ]
+    },
+    "MahoganyGym_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 7
+  }
+}

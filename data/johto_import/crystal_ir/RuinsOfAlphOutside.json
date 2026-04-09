@@ -1,0 +1,2314 @@
+{
+  "crystal_map": "RuinsOfAlphOutside",
+  "map_id": "RUINS_OF_ALPH_OUTSIDE",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 22,
+  "tileset": "TILESET_JOHTO",
+  "environment": "ROUTE",
+  "landmark": "LANDMARK_RUINS_OF_ALPH",
+  "music": "MUSIC_UNION_CAVE",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_AUTO",
+  "fishgroup": "FISHGROUP_POND",
+  "width_blocks": 10,
+  "height_blocks": 18,
+  "border_block": "05",
+  "blk_path": "maps/RuinsOfAlphOutside.blk",
+  "source_asm": "maps/RuinsOfAlphOutside.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "RuinsOfAlphOutsideNoop1Scene",
+        "scene_id": "SCENE_RUINSOFALPHOUTSIDE_NOOP"
+      },
+      {
+        "script": "RuinsOfAlphOutsideNoop2Scene",
+        "scene_id": "SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "RuinsOfAlphOutsideScientistCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 17,
+        "dest_map": "RUINS_OF_ALPH_HO_OH_CHAMBER",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 14,
+        "y": 7,
+        "dest_map": "RUINS_OF_ALPH_KABUTO_CHAMBER",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 2,
+        "y": 29,
+        "dest_map": "RUINS_OF_ALPH_OMANYTE_CHAMBER",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 16,
+        "y": 33,
+        "dest_map": "RUINS_OF_ALPH_AERODACTYL_CHAMBER",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 10,
+        "y": 13,
+        "dest_map": "RUINS_OF_ALPH_INNER_CHAMBER",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 17,
+        "y": 11,
+        "dest_map": "RUINS_OF_ALPH_RESEARCH_CENTER",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 6,
+        "y": 19,
+        "dest_map": "UNION_CAVE_B1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 6,
+        "y": 27,
+        "dest_map": "UNION_CAVE_B1F",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 7,
+        "y": 5,
+        "dest_map": "ROUTE_36_RUINS_OF_ALPH_GATE",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 13,
+        "y": 20,
+        "dest_map": "ROUTE_32_RUINS_OF_ALPH_GATE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 13,
+        "y": 21,
+        "dest_map": "ROUTE_32_RUINS_OF_ALPH_GATE",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 11,
+        "y": 14,
+        "scene": "SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX",
+        "script": "RuinsOfAlphOutsideScientistScene1"
+      },
+      {
+        "x": 10,
+        "y": 15,
+        "scene": "SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX",
+        "script": "RuinsOfAlphOutsideScientistScene2"
+      }
+    ],
+    "bg_events": [
+      {
+        "x": 16,
+        "y": 8,
+        "kind": "BGEVENT_READ",
+        "script": "RuinsOfAlphOutsideMysteryChamberSign"
+      },
+      {
+        "x": 12,
+        "y": 16,
+        "kind": "BGEVENT_READ",
+        "script": "RuinsOfAlphSign"
+      },
+      {
+        "x": 18,
+        "y": 12,
+        "kind": "BGEVENT_READ",
+        "script": "RuinsOfAlphResearchCenterSign"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 4,
+        "y": 20,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerPsychicNathan",
+        "flag": -1
+      },
+      {
+        "x": 11,
+        "y": 15,
+        "sprite": "SPRITE_SCIENTIST",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RuinsOfAlphOutsideScientistScript",
+        "flag": "EVENT_RUINS_OF_ALPH_OUTSIDE_SCIENTIST"
+      },
+      {
+        "x": 13,
+        "y": 17,
+        "sprite": "SPRITE_FISHER",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RuinsOfAlphOutsideFisherScript",
+        "flag": "EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER"
+      },
+      {
+        "x": 14,
+        "y": 11,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RuinsOfAlphOutsideYoungster1Script",
+        "flag": "EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS"
+      },
+      {
+        "x": 12,
+        "y": 8,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RuinsOfAlphOutsideYoungster2Script",
+        "flag": "EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS"
+      }
+    ]
+  },
+  "object_consts": [
+    "RUINSOFALPHOUTSIDE_YOUNGSTER1",
+    "RUINSOFALPHOUTSIDE_SCIENTIST",
+    "RUINSOFALPHOUTSIDE_FISHER",
+    "RUINSOFALPHOUTSIDE_YOUNGSTER2",
+    "RUINSOFALPHOUTSIDE_YOUNGSTER3"
+  ],
+  "scene_ids": [
+    "SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX",
+    "SCENE_RUINSOFALPHOUTSIDE_NOOP",
+    "SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX"
+  ],
+  "scripts": {
+    "RuinsOfAlphOutside_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script RuinsOfAlphOutsideNoop1Scene, SCENE_RUINSOFALPHOUTSIDE_NOOP",
+        "scene_script RuinsOfAlphOutsideNoop2Scene, SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX",
+        "def_callbacks",
+        "callback MAPCALLBACK_OBJECTS, RuinsOfAlphOutsideScientistCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "RuinsOfAlphOutsideNoop1Scene",
+            "SCENE_RUINSOFALPHOUTSIDE_NOOP"
+          ],
+          "raw": "scene_script RuinsOfAlphOutsideNoop1Scene, SCENE_RUINSOFALPHOUTSIDE_NOOP"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "RuinsOfAlphOutsideNoop2Scene",
+            "SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX"
+          ],
+          "raw": "scene_script RuinsOfAlphOutsideNoop2Scene, SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "RuinsOfAlphOutsideScientistCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, RuinsOfAlphOutsideScientistCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "RuinsOfAlphOutsideNoop1Scene",
+      "label_refs": [
+        "RuinsOfAlphOutsideNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideScientistCallback": {
+      "raw_lines": [
+        "checkflag ENGINE_UNOWN_DEX",
+        "iftrue .NoScientist",
+        "checkevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS",
+        "iftrue .MaybeScientist",
+        "sjump .NoScientist"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_UNOWN_DEX"
+          ],
+          "raw": "checkflag ENGINE_UNOWN_DEX"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RuinsOfAlphOutsideScientistCallback.NoScientist"
+          ],
+          "raw": "iftrue .NoScientist"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_MADE_UNOWN_APPEAR_IN_RUINS"
+          ],
+          "raw": "checkevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RuinsOfAlphOutsideScientistCallback.MaybeScientist"
+          ],
+          "raw": "iftrue .MaybeScientist"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "RuinsOfAlphOutsideScientistCallback.NoScientist"
+          ],
+          "raw": "sjump .NoScientist"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "RuinsOfAlphOutsideScientistCallback.MaybeScientist",
+        "RuinsOfAlphOutsideScientistCallback.NoScientist"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideScientistCallback.MaybeScientist": {
+      "raw_lines": [
+        "readvar VAR_UNOWNCOUNT",
+        "ifgreater 2, .YesScientist",
+        "sjump .NoScientist"
+      ],
+      "commands": [
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_UNOWNCOUNT"
+          ],
+          "raw": "readvar VAR_UNOWNCOUNT"
+        },
+        {
+          "command": "ifgreater",
+          "args": [
+            "2",
+            "RuinsOfAlphOutsideScientistCallback.YesScientist"
+          ],
+          "raw": "ifgreater 2, .YesScientist"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "RuinsOfAlphOutsideScientistCallback.NoScientist"
+          ],
+          "raw": "sjump .NoScientist"
+        }
+      ],
+      "first_command": "readvar",
+      "label_refs": [
+        "RuinsOfAlphOutsideScientistCallback.NoScientist",
+        "RuinsOfAlphOutsideScientistCallback.YesScientist"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideScientistCallback.YesScientist": {
+      "raw_lines": [
+        "appear RUINSOFALPHOUTSIDE_SCIENTIST",
+        "setscene SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "appear",
+          "args": [
+            "RUINSOFALPHOUTSIDE_SCIENTIST"
+          ],
+          "raw": "appear RUINSOFALPHOUTSIDE_SCIENTIST"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX"
+          ],
+          "raw": "setscene SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "appear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX"
+      ],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideScientistCallback.NoScientist": {
+      "raw_lines": [
+        "disappear RUINSOFALPHOUTSIDE_SCIENTIST",
+        "setscene SCENE_RUINSOFALPHOUTSIDE_NOOP",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "disappear",
+          "args": [
+            "RUINSOFALPHOUTSIDE_SCIENTIST"
+          ],
+          "raw": "disappear RUINSOFALPHOUTSIDE_SCIENTIST"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_RUINSOFALPHOUTSIDE_NOOP"
+          ],
+          "raw": "setscene SCENE_RUINSOFALPHOUTSIDE_NOOP"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "disappear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_RUINSOFALPHOUTSIDE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideScientistScene1": {
+      "raw_lines": [
+        "turnobject RUINSOFALPHOUTSIDE_SCIENTIST, UP",
+        "turnobject PLAYER, DOWN",
+        "sjump RuinsOfAlphOutsideScientistSceneContinue"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "RUINSOFALPHOUTSIDE_SCIENTIST",
+            "UP"
+          ],
+          "raw": "turnobject RUINSOFALPHOUTSIDE_SCIENTIST, UP"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "RuinsOfAlphOutsideScientistSceneContinue"
+          ],
+          "raw": "sjump RuinsOfAlphOutsideScientistSceneContinue"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [
+        "RuinsOfAlphOutsideScientistSceneContinue"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideScientistScene2": {
+      "raw_lines": [
+        "turnobject RUINSOFALPHOUTSIDE_SCIENTIST, LEFT",
+        "turnobject PLAYER, RIGHT",
+        "sjump RuinsOfAlphOutsideScientistSceneContinue"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "RUINSOFALPHOUTSIDE_SCIENTIST",
+            "LEFT"
+          ],
+          "raw": "turnobject RUINSOFALPHOUTSIDE_SCIENTIST, LEFT"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "RuinsOfAlphOutsideScientistSceneContinue"
+          ],
+          "raw": "sjump RuinsOfAlphOutsideScientistSceneContinue"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [
+        "RuinsOfAlphOutsideScientistSceneContinue"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideScientistScript": {
+      "raw_lines": [
+        "faceplayer"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "RuinsOfAlphOutsideScientistSceneContinue",
+      "label_refs": [
+        "RuinsOfAlphOutsideScientistSceneContinue"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideScientistSceneContinue": {
+      "raw_lines": [
+        "opentext",
+        "writetext RuinsOfAlphOutsideScientistText",
+        "waitbutton",
+        "closetext",
+        "playmusic MUSIC_SHOW_ME_AROUND",
+        "follow RUINSOFALPHOUTSIDE_SCIENTIST, PLAYER",
+        "applymovement RUINSOFALPHOUTSIDE_SCIENTIST, RuinsOfAlphOutsideScientistWalkToLabMovement",
+        "disappear RUINSOFALPHOUTSIDE_SCIENTIST",
+        "stopfollow",
+        "applymovement PLAYER, RuinsOfAlphOutsidePlayerEnterLabMovement",
+        "setmapscene RUINS_OF_ALPH_RESEARCH_CENTER, SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX",
+        "warpcheck",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphOutsideScientistText"
+          ],
+          "raw": "writetext RuinsOfAlphOutsideScientistText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_SHOW_ME_AROUND"
+          ],
+          "raw": "playmusic MUSIC_SHOW_ME_AROUND"
+        },
+        {
+          "command": "follow",
+          "args": [
+            "RUINSOFALPHOUTSIDE_SCIENTIST",
+            "PLAYER"
+          ],
+          "raw": "follow RUINSOFALPHOUTSIDE_SCIENTIST, PLAYER"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "RUINSOFALPHOUTSIDE_SCIENTIST",
+            "RuinsOfAlphOutsideScientistWalkToLabMovement"
+          ],
+          "raw": "applymovement RUINSOFALPHOUTSIDE_SCIENTIST, RuinsOfAlphOutsideScientistWalkToLabMovement"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "RUINSOFALPHOUTSIDE_SCIENTIST"
+          ],
+          "raw": "disappear RUINSOFALPHOUTSIDE_SCIENTIST"
+        },
+        {
+          "command": "stopfollow",
+          "args": [],
+          "raw": "stopfollow"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "RuinsOfAlphOutsidePlayerEnterLabMovement"
+          ],
+          "raw": "applymovement PLAYER, RuinsOfAlphOutsidePlayerEnterLabMovement"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "RUINS_OF_ALPH_RESEARCH_CENTER",
+            "SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX"
+          ],
+          "raw": "setmapscene RUINS_OF_ALPH_RESEARCH_CENTER, SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX"
+        },
+        {
+          "command": "warpcheck",
+          "args": [],
+          "raw": "warpcheck"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOutsideScientistText"
+      ],
+      "movement_refs": [
+        "RuinsOfAlphOutsidePlayerEnterLabMovement",
+        "RuinsOfAlphOutsideScientistWalkToLabMovement"
+      ],
+      "scene_refs": [
+        "SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX"
+      ],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideFisherScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_TALKED_TO_RUINS_COWARD",
+        "iftrue .Next",
+        "setevent EVENT_TALKED_TO_RUINS_COWARD",
+        "writetext RuinsOfAlphOutsideFisherText1",
+        "promptbutton"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TALKED_TO_RUINS_COWARD"
+          ],
+          "raw": "checkevent EVENT_TALKED_TO_RUINS_COWARD"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RuinsOfAlphOutsideFisherScript.Next"
+          ],
+          "raw": "iftrue .Next"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TALKED_TO_RUINS_COWARD"
+          ],
+          "raw": "setevent EVENT_TALKED_TO_RUINS_COWARD"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphOutsideFisherText1"
+          ],
+          "raw": "writetext RuinsOfAlphOutsideFisherText1"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "RuinsOfAlphOutsideFisherScript.Next",
+      "label_refs": [
+        "RuinsOfAlphOutsideFisherScript.Next"
+      ],
+      "text_refs": [
+        "RuinsOfAlphOutsideFisherText1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideFisherScript.Next": {
+      "raw_lines": [
+        "writetext RuinsOfAlphOutsideFisherText2",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphOutsideFisherText2"
+          ],
+          "raw": "writetext RuinsOfAlphOutsideFisherText2"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOutsideFisherText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideYoungster1Script": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext RuinsOfAlphOutsideYoungster1Text",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphOutsideYoungster1Text"
+          ],
+          "raw": "writetext RuinsOfAlphOutsideYoungster1Text"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOutsideYoungster1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideYoungster2Script": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext RuinsOfAlphOutsideYoungster2Text",
+        "waitbutton",
+        "closetext",
+        "turnobject RUINSOFALPHOUTSIDE_YOUNGSTER3, UP",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphOutsideYoungster2Text"
+          ],
+          "raw": "writetext RuinsOfAlphOutsideYoungster2Text"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "RUINSOFALPHOUTSIDE_YOUNGSTER3",
+            "UP"
+          ],
+          "raw": "turnobject RUINSOFALPHOUTSIDE_YOUNGSTER3, UP"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOutsideYoungster2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPsychicNathan": {
+      "raw_lines": [
+        "trainer PSYCHIC_T, NATHAN, EVENT_BEAT_PSYCHIC_NATHAN, PsychicNathanSeenText, PsychicNathanBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "PSYCHIC_T",
+            "NATHAN",
+            "EVENT_BEAT_PSYCHIC_NATHAN",
+            "PsychicNathanSeenText",
+            "PsychicNathanBeatenText",
+            "0",
+            "TrainerPsychicNathan.Script"
+          ],
+          "raw": "trainer PSYCHIC_T, NATHAN, EVENT_BEAT_PSYCHIC_NATHAN, PsychicNathanSeenText, PsychicNathanBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerPsychicNathan.Script",
+      "label_refs": [
+        "TrainerPsychicNathan.Script"
+      ],
+      "text_refs": [
+        "PsychicNathanBeatenText",
+        "PsychicNathanSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPsychicNathan.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext PsychicNathanAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PsychicNathanAfterBattleText"
+          ],
+          "raw": "writetext PsychicNathanAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "PsychicNathanAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSuperNerdStan": {
+      "raw_lines": [
+        "trainer SUPER_NERD, STAN, EVENT_BEAT_SUPER_NERD_STAN, SuperNerdStanSeenText, SuperNerdStanBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "SUPER_NERD",
+            "STAN",
+            "EVENT_BEAT_SUPER_NERD_STAN",
+            "SuperNerdStanSeenText",
+            "SuperNerdStanBeatenText",
+            "0",
+            "TrainerSuperNerdStan.Script"
+          ],
+          "raw": "trainer SUPER_NERD, STAN, EVENT_BEAT_SUPER_NERD_STAN, SuperNerdStanSeenText, SuperNerdStanBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerSuperNerdStan.Script",
+      "label_refs": [
+        "TrainerSuperNerdStan.Script"
+      ],
+      "text_refs": [
+        "SuperNerdStanBeatenText",
+        "SuperNerdStanSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSuperNerdStan.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext SuperNerdStanAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SuperNerdStanAfterBattleText"
+          ],
+          "raw": "writetext SuperNerdStanAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "SuperNerdStanAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideMysteryChamberSign": {
+      "raw_lines": [
+        "jumptext RuinsOfAlphOutsideMysteryChamberSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "RuinsOfAlphOutsideMysteryChamberSignText"
+          ],
+          "raw": "jumptext RuinsOfAlphOutsideMysteryChamberSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOutsideMysteryChamberSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphSign": {
+      "raw_lines": [
+        "jumptext RuinsOfAlphSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "RuinsOfAlphSignText"
+          ],
+          "raw": "jumptext RuinsOfAlphSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterSign": {
+      "raw_lines": [
+        "jumptext RuinsOfAlphResearchCenterSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "RuinsOfAlphResearchCenterSignText"
+          ],
+          "raw": "jumptext RuinsOfAlphResearchCenterSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutside_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2, 17, RUINS_OF_ALPH_HO_OH_CHAMBER, 1",
+        "warp_event 14,  7, RUINS_OF_ALPH_KABUTO_CHAMBER, 1",
+        "warp_event  2, 29, RUINS_OF_ALPH_OMANYTE_CHAMBER, 1",
+        "warp_event 16, 33, RUINS_OF_ALPH_AERODACTYL_CHAMBER, 1",
+        "warp_event 10, 13, RUINS_OF_ALPH_INNER_CHAMBER, 1",
+        "warp_event 17, 11, RUINS_OF_ALPH_RESEARCH_CENTER, 1",
+        "warp_event  6, 19, UNION_CAVE_B1F, 1",
+        "warp_event  6, 27, UNION_CAVE_B1F, 2",
+        "warp_event  7,  5, ROUTE_36_RUINS_OF_ALPH_GATE, 3",
+        "warp_event 13, 20, ROUTE_32_RUINS_OF_ALPH_GATE, 1",
+        "warp_event 13, 21, ROUTE_32_RUINS_OF_ALPH_GATE, 2",
+        "def_coord_events",
+        "coord_event 11, 14, SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX, RuinsOfAlphOutsideScientistScene1",
+        "coord_event 10, 15, SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX, RuinsOfAlphOutsideScientistScene2",
+        "def_bg_events",
+        "bg_event 16,  8, BGEVENT_READ, RuinsOfAlphOutsideMysteryChamberSign",
+        "bg_event 12, 16, BGEVENT_READ, RuinsOfAlphSign",
+        "bg_event 18, 12, BGEVENT_READ, RuinsOfAlphResearchCenterSign",
+        "def_object_events",
+        "object_event  4, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerPsychicNathan, -1",
+        "object_event 11, 15, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientistScript, EVENT_RUINS_OF_ALPH_OUTSIDE_SCIENTIST",
+        "object_event 13, 17, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideFisherScript, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER",
+        "object_event 14, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster1Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS",
+        "object_event 12,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster2Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "17",
+            "RUINS_OF_ALPH_HO_OH_CHAMBER",
+            "1"
+          ],
+          "raw": "warp_event  2, 17, RUINS_OF_ALPH_HO_OH_CHAMBER, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "14",
+            "7",
+            "RUINS_OF_ALPH_KABUTO_CHAMBER",
+            "1"
+          ],
+          "raw": "warp_event 14,  7, RUINS_OF_ALPH_KABUTO_CHAMBER, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "29",
+            "RUINS_OF_ALPH_OMANYTE_CHAMBER",
+            "1"
+          ],
+          "raw": "warp_event  2, 29, RUINS_OF_ALPH_OMANYTE_CHAMBER, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "16",
+            "33",
+            "RUINS_OF_ALPH_AERODACTYL_CHAMBER",
+            "1"
+          ],
+          "raw": "warp_event 16, 33, RUINS_OF_ALPH_AERODACTYL_CHAMBER, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "10",
+            "13",
+            "RUINS_OF_ALPH_INNER_CHAMBER",
+            "1"
+          ],
+          "raw": "warp_event 10, 13, RUINS_OF_ALPH_INNER_CHAMBER, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "11",
+            "RUINS_OF_ALPH_RESEARCH_CENTER",
+            "1"
+          ],
+          "raw": "warp_event 17, 11, RUINS_OF_ALPH_RESEARCH_CENTER, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "6",
+            "19",
+            "UNION_CAVE_B1F",
+            "1"
+          ],
+          "raw": "warp_event  6, 19, UNION_CAVE_B1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "6",
+            "27",
+            "UNION_CAVE_B1F",
+            "2"
+          ],
+          "raw": "warp_event  6, 27, UNION_CAVE_B1F, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "7",
+            "5",
+            "ROUTE_36_RUINS_OF_ALPH_GATE",
+            "3"
+          ],
+          "raw": "warp_event  7,  5, ROUTE_36_RUINS_OF_ALPH_GATE, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "13",
+            "20",
+            "ROUTE_32_RUINS_OF_ALPH_GATE",
+            "1"
+          ],
+          "raw": "warp_event 13, 20, ROUTE_32_RUINS_OF_ALPH_GATE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "13",
+            "21",
+            "ROUTE_32_RUINS_OF_ALPH_GATE",
+            "2"
+          ],
+          "raw": "warp_event 13, 21, ROUTE_32_RUINS_OF_ALPH_GATE, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "11",
+            "14",
+            "SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX",
+            "RuinsOfAlphOutsideScientistScene1"
+          ],
+          "raw": "coord_event 11, 14, SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX, RuinsOfAlphOutsideScientistScene1"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "10",
+            "15",
+            "SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX",
+            "RuinsOfAlphOutsideScientistScene2"
+          ],
+          "raw": "coord_event 10, 15, SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX, RuinsOfAlphOutsideScientistScene2"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "16",
+            "8",
+            "BGEVENT_READ",
+            "RuinsOfAlphOutsideMysteryChamberSign"
+          ],
+          "raw": "bg_event 16,  8, BGEVENT_READ, RuinsOfAlphOutsideMysteryChamberSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "12",
+            "16",
+            "BGEVENT_READ",
+            "RuinsOfAlphSign"
+          ],
+          "raw": "bg_event 12, 16, BGEVENT_READ, RuinsOfAlphSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "18",
+            "12",
+            "BGEVENT_READ",
+            "RuinsOfAlphResearchCenterSign"
+          ],
+          "raw": "bg_event 18, 12, BGEVENT_READ, RuinsOfAlphResearchCenterSign"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "20",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerPsychicNathan",
+            "-1"
+          ],
+          "raw": "object_event  4, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerPsychicNathan, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "11",
+            "15",
+            "SPRITE_SCIENTIST",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RuinsOfAlphOutsideScientistScript",
+            "EVENT_RUINS_OF_ALPH_OUTSIDE_SCIENTIST"
+          ],
+          "raw": "object_event 11, 15, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientistScript, EVENT_RUINS_OF_ALPH_OUTSIDE_SCIENTIST"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "13",
+            "17",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RuinsOfAlphOutsideFisherScript",
+            "EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER"
+          ],
+          "raw": "object_event 13, 17, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideFisherScript, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "14",
+            "11",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RuinsOfAlphOutsideYoungster1Script",
+            "EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS"
+          ],
+          "raw": "object_event 14, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster1Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "12",
+            "8",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RuinsOfAlphOutsideYoungster2Script",
+            "EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS"
+          ],
+          "raw": "object_event 12,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster2Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "RuinsOfAlphOutsideScientistText": {
+      "raw_lines": [
+        "text \"Hm? That's a #-\"",
+        "line \"DEX, isn't it?\"",
+        "cont \"May I see it?\"",
+        "para \"There are so many\"",
+        "line \"kinds of #MON.\"",
+        "para \"Hm? What's this?\"",
+        "para \"What is this\"",
+        "line \"#MON?\"",
+        "para \"It looks like the\"",
+        "line \"strange writing on\"",
+        "para \"the walls of the\"",
+        "line \"RUINS.\"",
+        "para \"If those drawings\"",
+        "line \"are really #-\"",
+        "cont \"MON, there should\"",
+        "cont \"be many more.\"",
+        "para \"I know! Let me up-\"",
+        "line \"grade your #-\"",
+        "cont \"DEX. Follow me.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hm? That's a #-"
+        },
+        {
+          "command": "line",
+          "value": "DEX, isn't it?"
+        },
+        {
+          "command": "cont",
+          "value": "May I see it?"
+        },
+        {
+          "command": "para",
+          "value": "There are so many"
+        },
+        {
+          "command": "line",
+          "value": "kinds of #MON."
+        },
+        {
+          "command": "para",
+          "value": "Hm? What's this?"
+        },
+        {
+          "command": "para",
+          "value": "What is this"
+        },
+        {
+          "command": "line",
+          "value": "#MON?"
+        },
+        {
+          "command": "para",
+          "value": "It looks like the"
+        },
+        {
+          "command": "line",
+          "value": "strange writing on"
+        },
+        {
+          "command": "para",
+          "value": "the walls of the"
+        },
+        {
+          "command": "line",
+          "value": "RUINS."
+        },
+        {
+          "command": "para",
+          "value": "If those drawings"
+        },
+        {
+          "command": "line",
+          "value": "are really #-"
+        },
+        {
+          "command": "cont",
+          "value": "MON, there should"
+        },
+        {
+          "command": "cont",
+          "value": "be many more."
+        },
+        {
+          "command": "para",
+          "value": "I know! Let me up-"
+        },
+        {
+          "command": "line",
+          "value": "grade your #-"
+        },
+        {
+          "command": "cont",
+          "value": "DEX. Follow me."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SuperNerdStanSeenText": {
+      "raw_lines": [
+        "text \"What do you want?\"",
+        "line \"I'm studying--\"",
+        "cont \"don't disturb me!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What do you want?"
+        },
+        {
+          "command": "line",
+          "value": "I'm studying--"
+        },
+        {
+          "command": "cont",
+          "value": "don't disturb me!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SuperNerdStanBeatenText": {
+      "raw_lines": [
+        "text \"Sorry\u2026\"",
+        "line \"I'm frustrated by\"",
+        "para \"our lack of real\"",
+        "line \"understanding\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Sorry\u2026"
+        },
+        {
+          "command": "line",
+          "value": "I'm frustrated by"
+        },
+        {
+          "command": "para",
+          "value": "our lack of real"
+        },
+        {
+          "command": "line",
+          "value": "understanding\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SuperNerdStanAfterBattleText": {
+      "raw_lines": [
+        "text \"The RUINS are from\"",
+        "line \"about 1500 years\"",
+        "cont \"ago.\"",
+        "para \"Nobody knows who\"",
+        "line \"built them.\"",
+        "para \"It's also not\"",
+        "line \"known if the #-\"",
+        "cont \"MON statues have\"",
+        "cont \"any meaning.\"",
+        "para \"It's all one big\"",
+        "line \"mystery\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The RUINS are from"
+        },
+        {
+          "command": "line",
+          "value": "about 1500 years"
+        },
+        {
+          "command": "cont",
+          "value": "ago."
+        },
+        {
+          "command": "para",
+          "value": "Nobody knows who"
+        },
+        {
+          "command": "line",
+          "value": "built them."
+        },
+        {
+          "command": "para",
+          "value": "It's also not"
+        },
+        {
+          "command": "line",
+          "value": "known if the #-"
+        },
+        {
+          "command": "cont",
+          "value": "MON statues have"
+        },
+        {
+          "command": "cont",
+          "value": "any meaning."
+        },
+        {
+          "command": "para",
+          "value": "It's all one big"
+        },
+        {
+          "command": "line",
+          "value": "mystery\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PsychicNathanSeenText": {
+      "raw_lines": [
+        "text \"Hmmm\u2026 This is a\"",
+        "line \"strange place.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hmmm\u2026 This is a"
+        },
+        {
+          "command": "line",
+          "value": "strange place."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PsychicNathanBeatenText": {
+      "raw_lines": [
+        "text \"\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PsychicNathanAfterBattleText": {
+      "raw_lines": [
+        "text \"I like thinking\"",
+        "line \"here.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I like thinking"
+        },
+        {
+          "command": "line",
+          "value": "here."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphOutsideMysteryChamberSignText": {
+      "raw_lines": [
+        "text \"MYSTERY STONE\"",
+        "line \"PANEL CHAMBER\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MYSTERY STONE"
+        },
+        {
+          "command": "line",
+          "value": "PANEL CHAMBER"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphSignText": {
+      "raw_lines": [
+        "text \"RUINS OF ALPH\"",
+        "line \"VISITORS WELCOME\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "RUINS OF ALPH"
+        },
+        {
+          "command": "line",
+          "value": "VISITORS WELCOME"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterSignText": {
+      "raw_lines": [
+        "text \"RUINS OF ALPH\"",
+        "line \"RESEARCH CENTER\"",
+        "para \"THE AUTHORITY ON\"",
+        "line \"THE RUINS OF ALPH\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "RUINS OF ALPH"
+        },
+        {
+          "command": "line",
+          "value": "RESEARCH CENTER"
+        },
+        {
+          "command": "para",
+          "value": "THE AUTHORITY ON"
+        },
+        {
+          "command": "line",
+          "value": "THE RUINS OF ALPH"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphOutsideFisherText1": {
+      "raw_lines": [
+        "text \"While exploring\"",
+        "line \"the RUINS, we\"",
+        "para \"suddenly noticed\"",
+        "line \"an odd presence.\"",
+        "para \"We all got scared\"",
+        "line \"and ran away.\"",
+        "para \"You should be\"",
+        "line \"careful too.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "While exploring"
+        },
+        {
+          "command": "line",
+          "value": "the RUINS, we"
+        },
+        {
+          "command": "para",
+          "value": "suddenly noticed"
+        },
+        {
+          "command": "line",
+          "value": "an odd presence."
+        },
+        {
+          "command": "para",
+          "value": "We all got scared"
+        },
+        {
+          "command": "line",
+          "value": "and ran away."
+        },
+        {
+          "command": "para",
+          "value": "You should be"
+        },
+        {
+          "command": "line",
+          "value": "careful too."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphOutsideFisherText2": {
+      "raw_lines": [
+        "text \"The RUINS hide a\"",
+        "line \"huge secret!\"",
+        "para \"\u2026I think\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The RUINS hide a"
+        },
+        {
+          "command": "line",
+          "value": "huge secret!"
+        },
+        {
+          "command": "para",
+          "value": "\u2026I think\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphOutsideYoungster1Text": {
+      "raw_lines": [
+        "text \"There are many\"",
+        "line \"kinds of UNOWN, so\"",
+        "para \"we use them for\"",
+        "line \"our secret codes.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "There are many"
+        },
+        {
+          "command": "line",
+          "value": "kinds of UNOWN, so"
+        },
+        {
+          "command": "para",
+          "value": "we use them for"
+        },
+        {
+          "command": "line",
+          "value": "our secret codes."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphOutsideYoungster2Text": {
+      "raw_lines": [
+        "text \"A\u2026 H\u2026 E\u2026 A\u2026 D\u2026\"",
+        "line \"Hmm\u2026\"",
+        "para \"What?\"",
+        "para \"I'm decoding this\"",
+        "line \"message!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A\u2026 H\u2026 E\u2026 A\u2026 D\u2026"
+        },
+        {
+          "command": "line",
+          "value": "Hmm\u2026"
+        },
+        {
+          "command": "para",
+          "value": "What?"
+        },
+        {
+          "command": "para",
+          "value": "I'm decoding this"
+        },
+        {
+          "command": "line",
+          "value": "message!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "RuinsOfAlphOutsideScientistWalkToLabMovement": {
+      "raw_lines": [
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step UP",
+        "step UP",
+        "step RIGHT",
+        "step RIGHT",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "RuinsOfAlphOutsidePlayerEnterLabMovement": {
+      "raw_lines": [
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "RuinsOfAlphOutside_MapScripts": {
+      "label_refs": [
+        "RuinsOfAlphOutsideNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideScientistCallback": {
+      "label_refs": [
+        "RuinsOfAlphOutsideScientistCallback.MaybeScientist",
+        "RuinsOfAlphOutsideScientistCallback.NoScientist"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideScientistCallback.MaybeScientist": {
+      "label_refs": [
+        "RuinsOfAlphOutsideScientistCallback.NoScientist",
+        "RuinsOfAlphOutsideScientistCallback.YesScientist"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideScientistCallback.YesScientist": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX"
+      ],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideScientistCallback.NoScientist": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_RUINSOFALPHOUTSIDE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideScientistScene1": {
+      "label_refs": [
+        "RuinsOfAlphOutsideScientistSceneContinue"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideScientistScene2": {
+      "label_refs": [
+        "RuinsOfAlphOutsideScientistSceneContinue"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideScientistScript": {
+      "label_refs": [
+        "RuinsOfAlphOutsideScientistSceneContinue"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideScientistSceneContinue": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOutsideScientistText"
+      ],
+      "movement_refs": [
+        "RuinsOfAlphOutsidePlayerEnterLabMovement",
+        "RuinsOfAlphOutsideScientistWalkToLabMovement"
+      ],
+      "scene_refs": [
+        "SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX"
+      ],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideFisherScript": {
+      "label_refs": [
+        "RuinsOfAlphOutsideFisherScript.Next"
+      ],
+      "text_refs": [
+        "RuinsOfAlphOutsideFisherText1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideFisherScript.Next": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOutsideFisherText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideYoungster1Script": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOutsideYoungster1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideYoungster2Script": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOutsideYoungster2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPsychicNathan": {
+      "label_refs": [
+        "TrainerPsychicNathan.Script"
+      ],
+      "text_refs": [
+        "PsychicNathanBeatenText",
+        "PsychicNathanSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPsychicNathan.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "PsychicNathanAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSuperNerdStan": {
+      "label_refs": [
+        "TrainerSuperNerdStan.Script"
+      ],
+      "text_refs": [
+        "SuperNerdStanBeatenText",
+        "SuperNerdStanSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSuperNerdStan.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "SuperNerdStanAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutsideMysteryChamberSign": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOutsideMysteryChamberSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphSign": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterSign": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOutside_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
+    "warp_events": 11,
+    "coord_events": 2,
+    "bg_events": 3,
+    "object_events": 5
+  }
+}

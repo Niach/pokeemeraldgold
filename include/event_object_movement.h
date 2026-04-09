@@ -188,6 +188,9 @@ void ObjectEventForceSetHeldMovement(struct ObjectEvent *objectEvent, u8 movemen
 bool8 ObjectEventIsMovementOverridden(struct ObjectEvent *objectEvent);
 u8 ObjectEventCheckHeldMovementStatus(struct ObjectEvent *objectEvent);
 u8 ObjectEventGetHeldMovementActionId(struct ObjectEvent *objectEvent);
+bool8 StartObjectEventFollow(u8 leaderLocalId, u8 followerLocalId, u8 mapNum, u8 mapGroup);
+void StopObjectEventFollow(void);
+bool8 IsObjectEventFollowFinishedByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup);
 void TryOverrideTemplateCoordsForObjectEvent(const struct ObjectEvent *objectEvent, u8 movementType);
 void OverrideTemplateCoordsForObjectEvent(const struct ObjectEvent *objectEvent);
 void ShiftStillObjectEventCoords(struct ObjectEvent *objEvent);

@@ -1,2 +1,241 @@
 Pokecenter2F_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Pokecenter2F_OnFrame
+	map_script MAP_SCRIPT_ON_TRANSITION, CableClub_OnTransition
 	.byte 0
+
+Pokecenter2F_OnFrame:
+	map_script_2 VAR_CABLE_CLUB_STATE, USING_SINGLE_BATTLE, JohtoScript_Pokecenter2F_ExitBattleCenter
+	map_script_2 VAR_CABLE_CLUB_STATE, USING_DOUBLE_BATTLE, JohtoScript_Pokecenter2F_ExitBattleCenter
+	map_script_2 VAR_CABLE_CLUB_STATE, USING_MULTI_BATTLE, JohtoScript_Pokecenter2F_ExitBattleCenter
+	map_script_2 VAR_CABLE_CLUB_STATE, USING_TRADE_CENTER, JohtoScript_Pokecenter2F_ExitTradeCenter
+	map_script_2 VAR_CABLE_CLUB_STATE, USING_RECORD_CORNER, JohtoScript_Pokecenter2F_ExitRecordCorner
+	.2byte 0
+
+JohtoScript_Pokecenter2F_TradeReceptionist::
+	lock
+	faceplayer
+	goto_if_unset FLAG_SYS_POKEDEX_GET, JohtoScript_Pokecenter2F_TradeReceptionist_Closed
+	msgbox Crystal_Pokecenter2F_Text_TradeReceptionistIntro, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, JohtoScript_Pokecenter2F_Release
+	call CableClub_EventScript_CheckPartyTradeRequirements
+	goto_if_eq VAR_RESULT, 0, JohtoScript_Pokecenter2F_Release
+	call Common_EventScript_SaveGame
+	goto_if_eq VAR_RESULT, 0, CableClub_EventScript_AbortLink
+	message gText_PleaseWaitForLink
+	waitmessage
+	special TryTradeLinkup
+	waitstate
+	goto_if_eq VAR_RESULT, LINKUP_SUCCESS, JohtoScript_Pokecenter2F_TradeReceptionist_Enter
+	goto_if_eq VAR_RESULT, LINKUP_OFFICIAL_COMPAT_BLOCKED, CableClub_EventScript_AbortLinkOfficialCompatibility
+	goto_if_eq VAR_RESULT, LINKUP_SOMEONE_NOT_READY, CableClub_EventScript_AbortLinkSomeoneNotReady
+	goto_if_eq VAR_RESULT, LINKUP_DIFF_SELECTIONS, CableClub_EventScript_AbortLinkDifferentSelections
+	goto_if_eq VAR_RESULT, LINKUP_WRONG_NUM_PLAYERS, CableClub_EventScript_AbortLinkIncorrectNumberOfParticipants
+	goto_if_eq VAR_RESULT, LINKUP_FAILED, CableClub_EventScript_AbortLink
+	goto_if_eq VAR_RESULT, LINKUP_CONNECTION_ERROR, CableClub_EventScript_AbortLinkConnectionError
+	goto_if_eq VAR_RESULT, LINKUP_PLAYER_NOT_READY, CableClub_EventScript_AbortLinkPlayerNotReady
+	goto_if_eq VAR_RESULT, LINKUP_PARTNER_NOT_READY, CableClub_EventScript_AbortLinkOtherTrainerNotReady
+	end
+
+JohtoScript_Pokecenter2F_TradeReceptionist_Closed:
+	msgbox Crystal_Pokecenter2F_Text_TradeRoomClosed, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_Pokecenter2F_TradeReceptionist_Enter:
+	setvar VAR_CABLE_CLUB_STATE, USING_TRADE_CENTER
+	msgbox Crystal_Pokecenter2F_Text_PleaseComeIn, MSGBOX_DEFAULT
+	applymovement LOCALID_POKECENTER2F_TRADE_RECEPTIONIST, Crystal_Pokecenter2F_Pokecenter2FMovementData_ReceptionistWalksUpAndLeft_LookRight
+	applymovement LOCALID_PLAYER, Crystal_Pokecenter2F_Pokecenter2FMovementData_PlayerTakesThreeStepsUp
+	waitmovement 0
+	hideplayer
+	release
+	special SetCableClubWarp
+	setwarp MAP_TRADE_CENTER, 5, 8
+	special DoCableClubWarp
+	waitstate
+	end
+
+JohtoScript_Pokecenter2F_BattleReceptionist::
+	lock
+	faceplayer
+	setvar VAR_FRONTIER_FACILITY, FACILITY_MULTI_OR_EREADER
+	goto_if_unset FLAG_SYS_POKEDEX_GET, JohtoScript_Pokecenter2F_BattleReceptionist_Closed
+	msgbox Crystal_Pokecenter2F_Text_BattleReceptionistIntro, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, JohtoScript_Pokecenter2F_Release
+
+JohtoScript_Pokecenter2F_BattleReceptionist_SelectMode:
+	message CableClub_Text_PlayWhichBattleMode
+	waitmessage
+	multichoice 0, 0, MULTI_BATTLE_MODE, FALSE
+	switch VAR_RESULT
+	case 0, JohtoScript_Pokecenter2F_BattleReceptionist_Single
+	case 1, JohtoScript_Pokecenter2F_BattleReceptionist_Double
+	case 2, JohtoScript_Pokecenter2F_BattleReceptionist_Multi
+	case 3, JohtoScript_Pokecenter2F_BattleReceptionist_Info
+	case 4, JohtoScript_Pokecenter2F_Release
+	case MULTI_B_PRESSED, JohtoScript_Pokecenter2F_Release
+	end
+
+JohtoScript_Pokecenter2F_BattleReceptionist_Closed:
+	msgbox Crystal_Pokecenter2F_Text_BattleRoomClosed, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_Pokecenter2F_BattleReceptionist_Info:
+	msgbox CableClub_Text_ExplainBattleModes, MSGBOX_DEFAULT
+	goto JohtoScript_Pokecenter2F_BattleReceptionist_SelectMode
+
+JohtoScript_Pokecenter2F_BattleReceptionist_Single:
+	setvar VAR_0x8004, USING_SINGLE_BATTLE
+	goto JohtoScript_Pokecenter2F_BattleReceptionist_TryEnter
+
+JohtoScript_Pokecenter2F_BattleReceptionist_Double:
+	special HasEnoughMonsForDoubleBattle
+	goto_if_ne VAR_RESULT, PLAYER_HAS_TWO_USABLE_MONS, JohtoScript_Pokecenter2F_BattleReceptionist_NeedTwoMonsForDoubleBattle
+	setvar VAR_0x8004, USING_DOUBLE_BATTLE
+	goto JohtoScript_Pokecenter2F_BattleReceptionist_TryEnter
+
+JohtoScript_Pokecenter2F_BattleReceptionist_NeedTwoMonsForDoubleBattle:
+	msgbox CableClub_Text_NeedTwoMonsForDoubleBattle, MSGBOX_DEFAULT
+	goto JohtoScript_Pokecenter2F_BattleReceptionist_SelectMode
+
+JohtoScript_Pokecenter2F_BattleReceptionist_Multi:
+	setvar VAR_0x8004, USING_MULTI_BATTLE
+	goto JohtoScript_Pokecenter2F_BattleReceptionist_TryEnter
+
+JohtoScript_Pokecenter2F_BattleReceptionist_TryEnter:
+	specialvar VAR_RESULT, CheckOfficialLinkCompatibility
+	goto_if_eq VAR_RESULT, FALSE, CableClub_EventScript_AbortLinkOfficialCompatibility
+	call Common_EventScript_SaveGame
+	goto_if_eq VAR_RESULT, 0, CableClub_EventScript_AbortLink
+	message gText_PleaseWaitForLink
+	waitmessage
+	special TryBattleLinkup
+	waitstate
+	goto_if_eq VAR_RESULT, LINKUP_SUCCESS, JohtoScript_Pokecenter2F_BattleReceptionist_Enter
+	goto_if_eq VAR_RESULT, LINKUP_OFFICIAL_COMPAT_BLOCKED, CableClub_EventScript_AbortLinkOfficialCompatibility
+	goto_if_eq VAR_RESULT, LINKUP_SOMEONE_NOT_READY, CableClub_EventScript_AbortLinkSomeoneNotReady
+	goto_if_eq VAR_RESULT, LINKUP_DIFF_SELECTIONS, CableClub_EventScript_AbortLinkDifferentSelections
+	goto_if_eq VAR_RESULT, LINKUP_WRONG_NUM_PLAYERS, CableClub_EventScript_AbortLinkIncorrectNumberOfBattlers
+	goto_if_eq VAR_RESULT, LINKUP_FAILED, CableClub_EventScript_AbortLink
+	goto_if_eq VAR_RESULT, LINKUP_CONNECTION_ERROR, CableClub_EventScript_AbortLinkConnectionError
+	end
+
+JohtoScript_Pokecenter2F_BattleReceptionist_Enter:
+	copyvar VAR_CABLE_CLUB_STATE, VAR_0x8004
+	msgbox Crystal_Pokecenter2F_Text_PleaseComeIn, MSGBOX_DEFAULT
+	applymovement LOCALID_POKECENTER2F_BATTLE_RECEPTIONIST, Crystal_Pokecenter2F_Pokecenter2FMovementData_ReceptionistWalksUpAndLeft_LookRight
+	applymovement LOCALID_PLAYER, Crystal_Pokecenter2F_Pokecenter2FMovementData_PlayerTakesThreeStepsUp
+	waitmovement 0
+	hideplayer
+	release
+	goto_if_eq VAR_0x8004, USING_MULTI_BATTLE, JohtoScript_Pokecenter2F_BattleReceptionist_Warp4P
+	special SetCableClubWarp
+	setwarp MAP_BATTLE_COLOSSEUM_2P, 6, 8
+	special DoCableClubWarp
+	waitstate
+	end
+
+JohtoScript_Pokecenter2F_BattleReceptionist_Warp4P:
+	special SetCableClubWarp
+	setwarp MAP_BATTLE_COLOSSEUM_4P, 5, 8
+	special DoCableClubWarp
+	waitstate
+	end
+
+JohtoScript_Pokecenter2F_RecordReceptionist::
+	lock
+	faceplayer
+	goto_if_unset FLAG_SYS_POKEDEX_GET, JohtoScript_Pokecenter2F_RecordReceptionist_Closed
+	msgbox Pokecenter2F_Text_RecordReceptionistIntro, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, JohtoScript_Pokecenter2F_Release
+	call Common_EventScript_SaveGame
+	goto_if_eq VAR_RESULT, 0, CableClub_EventScript_AbortLink
+	message gText_PleaseWaitForLink
+	waitmessage
+	special TryRecordMixLinkup
+	waitstate
+	special ValidateMixingGameLanguage
+	waitstate
+	goto_if_eq VAR_RESULT, LINKUP_FOREIGN_GAME, CableClub_EventScript_AbortLinkForeignGame
+	goto_if_eq VAR_RESULT, LINKUP_SUCCESS, JohtoScript_Pokecenter2F_RecordReceptionist_Enter
+	goto_if_eq VAR_RESULT, LINKUP_SOMEONE_NOT_READY, CableClub_EventScript_AbortLinkSomeoneNotReady
+	goto_if_eq VAR_RESULT, LINKUP_DIFF_SELECTIONS, CableClub_EventScript_AbortLinkDifferentSelections
+	goto_if_eq VAR_RESULT, LINKUP_WRONG_NUM_PLAYERS, CableClub_EventScript_AbortLinkIncorrectNumberOfParticipants
+	goto_if_eq VAR_RESULT, LINKUP_FAILED, CableClub_EventScript_AbortLink
+	goto_if_eq VAR_RESULT, LINKUP_CONNECTION_ERROR, CableClub_EventScript_AbortLinkConnectionError
+	end
+
+JohtoScript_Pokecenter2F_RecordReceptionist_Closed:
+	msgbox Pokecenter2F_Text_RecordCornerClosed, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_Pokecenter2F_RecordReceptionist_Enter:
+	setvar VAR_CABLE_CLUB_STATE, USING_RECORD_CORNER
+	msgbox Crystal_Pokecenter2F_Text_PleaseEnter, MSGBOX_DEFAULT
+	applymovement LOCALID_POKECENTER2F_RECORD_RECEPTIONIST, Crystal_Pokecenter2F_Pokecenter2FMovementData_ReceptionistStepsLeftLooksRight
+	applymovement LOCALID_PLAYER, Crystal_Pokecenter2F_Pokecenter2FMovementData_PlayerTakesTwoStepsUp
+	waitmovement 0
+	hideplayer
+	release
+	special SetCableClubWarp
+	setwarp MAP_RECORD_CORNER, 8, 9
+	special DoCableClubWarp
+	waitstate
+	end
+
+JohtoScript_Pokecenter2F_ExitTradeCenter::
+	lockall
+	special CloseLink
+	setvar VAR_CABLE_CLUB_STATE, 0
+	applymovement LOCALID_POKECENTER2F_TRADE_RECEPTIONIST, Crystal_Pokecenter2F_Pokecenter2FMovementData_ReceptionistStepsRightLooksDown_3
+	applymovement LOCALID_PLAYER, Crystal_Pokecenter2F_Pokecenter2FMovementData_PlayerTakesThreeStepsDown
+	applymovement LOCALID_POKECENTER2F_TRADE_RECEPTIONIST, Crystal_Pokecenter2F_Pokecenter2FMovementData_ReceptionistStepsRightAndDown
+	waitmovement 0
+	special DrawWholeMapView
+	playse SE_CLICK
+	erasebox 0, 0, 29, 19
+	releaseall
+	end
+
+JohtoScript_Pokecenter2F_ExitBattleCenter::
+	lockall
+	special CloseLink
+	setvar VAR_CABLE_CLUB_STATE, 0
+	applymovement LOCALID_POKECENTER2F_BATTLE_RECEPTIONIST, Crystal_Pokecenter2F_Pokecenter2FMovementData_ReceptionistStepsRightLooksDown_3
+	applymovement LOCALID_PLAYER, Crystal_Pokecenter2F_Pokecenter2FMovementData_PlayerTakesThreeStepsDown
+	applymovement LOCALID_POKECENTER2F_BATTLE_RECEPTIONIST, Crystal_Pokecenter2F_Pokecenter2FMovementData_ReceptionistStepsRightAndDown
+	waitmovement 0
+	special DrawWholeMapView
+	playse SE_CLICK
+	erasebox 0, 0, 29, 19
+	releaseall
+	end
+
+JohtoScript_Pokecenter2F_ExitRecordCorner::
+	lockall
+	special CloseLink
+	setvar VAR_CABLE_CLUB_STATE, 0
+	applymovement LOCALID_POKECENTER2F_RECORD_RECEPTIONIST, Crystal_Pokecenter2F_Pokecenter2FMovementData_ReceptionistStepsLeftLooksRight
+	applymovement LOCALID_PLAYER, Crystal_Pokecenter2F_Pokecenter2FMovementData_PlayerTakesTwoStepsDown
+	applymovement LOCALID_POKECENTER2F_RECORD_RECEPTIONIST, Crystal_Pokecenter2F_Pokecenter2FMovementData_ReceptionistStepsRightLooksDown_2
+	waitmovement 0
+	special DrawWholeMapView
+	playse SE_CLICK
+	erasebox 0, 0, 29, 19
+	releaseall
+	end
+
+JohtoScript_Pokecenter2F_LinkRecordSign::
+	goto EventScript_CableBoxResults
+
+JohtoScript_Pokecenter2F_Release:
+	release
+	end
+
+Pokecenter2F_Text_RecordReceptionistIntro:
+	.string "Welcome to the\nRECORD CORNER.\pWould you like to\nmix records?$"
+
+Pokecenter2F_Text_RecordCornerClosed:
+	.string "The RECORD CORNER\nisn't ready yet.$"

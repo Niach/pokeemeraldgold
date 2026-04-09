@@ -1,0 +1,1486 @@
+{
+  "crystal_map": "EcruteakPokecenter1F",
+  "map_id": "ECRUTEAK_POKECENTER_1F",
+  "group": "ECRUTEAK",
+  "group_index": 4,
+  "map_index": 3,
+  "tileset": "TILESET_POKECENTER",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_ECRUTEAK_CITY",
+  "music": "MUSIC_POKEMON_CENTER",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/Pokecenter1F.blk",
+  "source_asm": "maps/EcruteakPokecenter1F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "EcruteakPokecenter1FMeetBillScene",
+        "scene_id": "SCENE_ECRUTEAKPOKECENTER1F_MEET_BILL"
+      },
+      {
+        "script": "EcruteakPokecenter1FNoopScene",
+        "scene_id": "SCENE_ECRUTEAKPOKECENTER1F_NOOP"
+      }
+    ],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "ECRUTEAK_CITY",
+        "dest_warp_id": 6
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "dest_map": "ECRUTEAK_CITY",
+        "dest_warp_id": 6
+      },
+      {
+        "x": 0,
+        "y": 7,
+        "dest_map": "POKECENTER_2F",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 3,
+        "y": 1,
+        "sprite": "SPRITE_NURSE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakPokecenter1FNurseScript",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 6,
+        "sprite": "SPRITE_POKEFAN_M",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_FAST",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakPokecenter1FPokefanMScript",
+        "flag": -1
+      },
+      {
+        "x": 1,
+        "y": 4,
+        "sprite": "SPRITE_COOLTRAINER_F",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakPokecenter1FCooltrainerFScript",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 1,
+        "sprite": "SPRITE_GYM_GUIDE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakPokecenter1FGymGuideScript",
+        "flag": -1
+      },
+      {
+        "x": 0,
+        "y": 7,
+        "sprite": "SPRITE_BILL",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_ECRUTEAK_POKE_CENTER_BILL"
+      }
+    ]
+  },
+  "object_consts": [
+    "ECRUTEAKPOKECENTER1F_NURSE",
+    "ECRUTEAKPOKECENTER1F_POKEFAN_M",
+    "ECRUTEAKPOKECENTER1F_COOLTRAINER_F",
+    "ECRUTEAKPOKECENTER1F_GYM_GUIDE",
+    "ECRUTEAKPOKECENTER1F_BILL"
+  ],
+  "scene_ids": [
+    "SCENE_ECRUTEAKPOKECENTER1F_MEET_BILL",
+    "SCENE_ECRUTEAKPOKECENTER1F_NOOP"
+  ],
+  "scripts": {
+    "EcruteakPokecenter1F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script EcruteakPokecenter1FMeetBillScene, SCENE_ECRUTEAKPOKECENTER1F_MEET_BILL",
+        "scene_script EcruteakPokecenter1FNoopScene,     SCENE_ECRUTEAKPOKECENTER1F_NOOP",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "EcruteakPokecenter1FMeetBillScene",
+            "SCENE_ECRUTEAKPOKECENTER1F_MEET_BILL"
+          ],
+          "raw": "scene_script EcruteakPokecenter1FMeetBillScene, SCENE_ECRUTEAKPOKECENTER1F_MEET_BILL"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "EcruteakPokecenter1FNoopScene",
+            "SCENE_ECRUTEAKPOKECENTER1F_NOOP"
+          ],
+          "raw": "scene_script EcruteakPokecenter1FNoopScene,     SCENE_ECRUTEAKPOKECENTER1F_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "EcruteakPokecenter1FMeetBillScene",
+      "label_refs": [
+        "EcruteakPokecenter1FMeetBillScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakPokecenter1FMeetBillScene": {
+      "raw_lines": [
+        "sdefer EcruteakPokcenter1FBillActivatesTimeCapsuleScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "sdefer",
+          "args": [
+            "EcruteakPokcenter1FBillActivatesTimeCapsuleScript"
+          ],
+          "raw": "sdefer EcruteakPokcenter1FBillActivatesTimeCapsuleScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "sdefer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakPokecenter1FNoopScene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakPokcenter1FBillActivatesTimeCapsuleScript": {
+      "raw_lines": [
+        "pause 30",
+        "playsound SFX_EXIT_BUILDING",
+        "appear ECRUTEAKPOKECENTER1F_BILL",
+        "waitsfx",
+        "applymovement ECRUTEAKPOKECENTER1F_BILL, EcruteakPokecenter1FBillMovement1",
+        "applymovement PLAYER, EcruteakPokecenter1FPlayerMovement1",
+        "turnobject ECRUTEAKPOKECENTER1F_NURSE, UP",
+        "pause 10",
+        "turnobject ECRUTEAKPOKECENTER1F_NURSE, DOWN",
+        "pause 30",
+        "turnobject ECRUTEAKPOKECENTER1F_NURSE, UP",
+        "pause 10",
+        "turnobject ECRUTEAKPOKECENTER1F_NURSE, DOWN",
+        "pause 20",
+        "turnobject ECRUTEAKPOKECENTER1F_BILL, DOWN",
+        "pause 10",
+        "opentext",
+        "writetext EcruteakPokecenter1F_BillText1",
+        "promptbutton",
+        "sjump .PointlessJump"
+      ],
+      "commands": [
+        {
+          "command": "pause",
+          "args": [
+            "30"
+          ],
+          "raw": "pause 30"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ECRUTEAKPOKECENTER1F_BILL"
+          ],
+          "raw": "appear ECRUTEAKPOKECENTER1F_BILL"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ECRUTEAKPOKECENTER1F_BILL",
+            "EcruteakPokecenter1FBillMovement1"
+          ],
+          "raw": "applymovement ECRUTEAKPOKECENTER1F_BILL, EcruteakPokecenter1FBillMovement1"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "EcruteakPokecenter1FPlayerMovement1"
+          ],
+          "raw": "applymovement PLAYER, EcruteakPokecenter1FPlayerMovement1"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "ECRUTEAKPOKECENTER1F_NURSE",
+            "UP"
+          ],
+          "raw": "turnobject ECRUTEAKPOKECENTER1F_NURSE, UP"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "10"
+          ],
+          "raw": "pause 10"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "ECRUTEAKPOKECENTER1F_NURSE",
+            "DOWN"
+          ],
+          "raw": "turnobject ECRUTEAKPOKECENTER1F_NURSE, DOWN"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "30"
+          ],
+          "raw": "pause 30"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "ECRUTEAKPOKECENTER1F_NURSE",
+            "UP"
+          ],
+          "raw": "turnobject ECRUTEAKPOKECENTER1F_NURSE, UP"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "10"
+          ],
+          "raw": "pause 10"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "ECRUTEAKPOKECENTER1F_NURSE",
+            "DOWN"
+          ],
+          "raw": "turnobject ECRUTEAKPOKECENTER1F_NURSE, DOWN"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "20"
+          ],
+          "raw": "pause 20"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "ECRUTEAKPOKECENTER1F_BILL",
+            "DOWN"
+          ],
+          "raw": "turnobject ECRUTEAKPOKECENTER1F_BILL, DOWN"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "10"
+          ],
+          "raw": "pause 10"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakPokecenter1F_BillText1"
+          ],
+          "raw": "writetext EcruteakPokecenter1F_BillText1"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "EcruteakPokcenter1FBillActivatesTimeCapsuleScript.PointlessJump"
+          ],
+          "raw": "sjump .PointlessJump"
+        }
+      ],
+      "first_command": "pause",
+      "label_refs": [
+        "EcruteakPokcenter1FBillActivatesTimeCapsuleScript.PointlessJump"
+      ],
+      "text_refs": [
+        "EcruteakPokecenter1F_BillText1"
+      ],
+      "movement_refs": [
+        "EcruteakPokecenter1FBillMovement1",
+        "EcruteakPokecenter1FPlayerMovement1"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakPokcenter1FBillActivatesTimeCapsuleScript.PointlessJump": {
+      "raw_lines": [
+        "writetext EcruteakPokecenter1F_BillText2",
+        "waitbutton",
+        "closetext",
+        "turnobject PLAYER, DOWN",
+        "applymovement ECRUTEAKPOKECENTER1F_BILL, EcruteakPokecenter1FBillMovement2",
+        "playsound SFX_EXIT_BUILDING",
+        "disappear ECRUTEAKPOKECENTER1F_BILL",
+        "clearevent EVENT_MET_BILL",
+        "setflag ENGINE_TIME_CAPSULE",
+        "setscene SCENE_ECRUTEAKPOKECENTER1F_NOOP",
+        "waitsfx",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakPokecenter1F_BillText2"
+          ],
+          "raw": "writetext EcruteakPokecenter1F_BillText2"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ECRUTEAKPOKECENTER1F_BILL",
+            "EcruteakPokecenter1FBillMovement2"
+          ],
+          "raw": "applymovement ECRUTEAKPOKECENTER1F_BILL, EcruteakPokecenter1FBillMovement2"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ECRUTEAKPOKECENTER1F_BILL"
+          ],
+          "raw": "disappear ECRUTEAKPOKECENTER1F_BILL"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_MET_BILL"
+          ],
+          "raw": "clearevent EVENT_MET_BILL"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_TIME_CAPSULE"
+          ],
+          "raw": "setflag ENGINE_TIME_CAPSULE"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_ECRUTEAKPOKECENTER1F_NOOP"
+          ],
+          "raw": "setscene SCENE_ECRUTEAKPOKECENTER1F_NOOP"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakPokecenter1F_BillText2"
+      ],
+      "movement_refs": [
+        "EcruteakPokecenter1FBillMovement2"
+      ],
+      "scene_refs": [
+        "SCENE_ECRUTEAKPOKECENTER1F_NOOP"
+      ],
+      "std_calls": []
+    },
+    "EcruteakPokecenter1FNurseScript": {
+      "raw_lines": [
+        "jumpstd PokecenterNurseScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PokecenterNurseScript"
+          ],
+          "raw": "jumpstd PokecenterNurseScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterNurseScript"
+      ]
+    },
+    "EcruteakPokecenter1FPokefanMScript": {
+      "raw_lines": [
+        "special CheckMobileAdapterStatusSpecial",
+        "iftrue .mobile",
+        "jumptextfaceplayer EcruteakPokecenter1FPokefanMText"
+      ],
+      "commands": [
+        {
+          "command": "special",
+          "args": [
+            "CheckMobileAdapterStatusSpecial"
+          ],
+          "raw": "special CheckMobileAdapterStatusSpecial"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EcruteakPokecenter1FPokefanMScript.mobile"
+          ],
+          "raw": "iftrue .mobile"
+        },
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "EcruteakPokecenter1FPokefanMText"
+          ],
+          "raw": "jumptextfaceplayer EcruteakPokecenter1FPokefanMText"
+        }
+      ],
+      "first_command": "special",
+      "label_refs": [
+        "EcruteakPokecenter1FPokefanMScript.mobile"
+      ],
+      "text_refs": [
+        "EcruteakPokecenter1FPokefanMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakPokecenter1FPokefanMScript.mobile": {
+      "raw_lines": [
+        "jumptextfaceplayer EcruteakPokecenter1FPokefanMTextMobile"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "EcruteakPokecenter1FPokefanMTextMobile"
+          ],
+          "raw": "jumptextfaceplayer EcruteakPokecenter1FPokefanMTextMobile"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakPokecenter1FPokefanMTextMobile"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakPokecenter1FCooltrainerFScript": {
+      "raw_lines": [
+        "jumptextfaceplayer EcruteakPokecenter1FCooltrainerFText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "EcruteakPokecenter1FCooltrainerFText"
+          ],
+          "raw": "jumptextfaceplayer EcruteakPokecenter1FCooltrainerFText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakPokecenter1FCooltrainerFText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakPokecenter1FGymGuideScript": {
+      "raw_lines": [
+        "jumptextfaceplayer EcruteakPokecenter1FGymGuideText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "EcruteakPokecenter1FGymGuideText"
+          ],
+          "raw": "jumptextfaceplayer EcruteakPokecenter1FGymGuideText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakPokecenter1FGymGuideText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakPokecenter1F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  7, ECRUTEAK_CITY, 6",
+        "warp_event  4,  7, ECRUTEAK_CITY, 6",
+        "warp_event  0,  7, POKECENTER_2F, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FNurseScript, -1",
+        "object_event  7,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FPokefanMScript, -1",
+        "object_event  1,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FCooltrainerFScript, -1",
+        "object_event  7,  1, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FGymGuideScript, -1",
+        "object_event  0,  7, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_POKE_CENTER_BILL"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "ECRUTEAK_CITY",
+            "6"
+          ],
+          "raw": "warp_event  3,  7, ECRUTEAK_CITY, 6"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "ECRUTEAK_CITY",
+            "6"
+          ],
+          "raw": "warp_event  4,  7, ECRUTEAK_CITY, 6"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "7",
+            "POKECENTER_2F",
+            "1"
+          ],
+          "raw": "warp_event  0,  7, POKECENTER_2F, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "1",
+            "SPRITE_NURSE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakPokecenter1FNurseScript",
+            "-1"
+          ],
+          "raw": "object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FNurseScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "6",
+            "SPRITE_POKEFAN_M",
+            "SPRITEMOVEDATA_SPINRANDOM_FAST",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakPokecenter1FPokefanMScript",
+            "-1"
+          ],
+          "raw": "object_event  7,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FPokefanMScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "4",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakPokecenter1FCooltrainerFScript",
+            "-1"
+          ],
+          "raw": "object_event  1,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FCooltrainerFScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "1",
+            "SPRITE_GYM_GUIDE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakPokecenter1FGymGuideScript",
+            "-1"
+          ],
+          "raw": "object_event  7,  1, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FGymGuideScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "0",
+            "7",
+            "SPRITE_BILL",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_ECRUTEAK_POKE_CENTER_BILL"
+          ],
+          "raw": "object_event  0,  7, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_POKE_CENTER_BILL"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "EcruteakPokecenter1F_BillText1": {
+      "raw_lines": [
+        "text \"Hi, I'm BILL. And\"",
+        "line \"who are you?\"",
+        "para \"Hmm, <PLAYER>, huh?\"",
+        "line \"You've come at the\"",
+        "cont \"right time.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hi, I'm BILL. And"
+        },
+        {
+          "command": "line",
+          "value": "who are you?"
+        },
+        {
+          "command": "para",
+          "value": "Hmm, <PLAYER>, huh?"
+        },
+        {
+          "command": "line",
+          "value": "You've come at the"
+        },
+        {
+          "command": "cont",
+          "value": "right time."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakPokecenter1F_BillText2": {
+      "raw_lines": [
+        "text \"I just finished\"",
+        "line \"adjustments on my\"",
+        "cont \"TIME CAPSULE.\"",
+        "para \"You know that\"",
+        "line \"#MON can be\"",
+        "cont \"traded, right?\"",
+        "para \"My TIME CAPSULE\"",
+        "line \"was developed to\"",
+        "para \"enable trades with\"",
+        "line \"the past.\"",
+        "para \"But you can't send\"",
+        "line \"anything that\"",
+        "para \"didn't exist in\"",
+        "line \"the past.\"",
+        "para \"If you did, the PC\"",
+        "line \"in the past would\"",
+        "cont \"have a breakdown.\"",
+        "para \"So you have to\"",
+        "line \"remove anything\"",
+        "para \"that wasn't around\"",
+        "line \"in the past.\"",
+        "para \"Put simply, no\"",
+        "line \"sending new moves\"",
+        "para \"or new #MON in\"",
+        "line \"the TIME CAPSULE.\"",
+        "para \"Don't you worry.\"",
+        "line \"I'm done with the\"",
+        "cont \"adjustments.\"",
+        "para \"Tomorrow, TIME\"",
+        "line \"CAPSULES will be\"",
+        "para \"running at all\"",
+        "line \"#MON CENTERS.\"",
+        "para \"I have to hurry on\"",
+        "line \"back to GOLDENROD\"",
+        "cont \"and see my folks.\"",
+        "para \"Buh-bye!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I just finished"
+        },
+        {
+          "command": "line",
+          "value": "adjustments on my"
+        },
+        {
+          "command": "cont",
+          "value": "TIME CAPSULE."
+        },
+        {
+          "command": "para",
+          "value": "You know that"
+        },
+        {
+          "command": "line",
+          "value": "#MON can be"
+        },
+        {
+          "command": "cont",
+          "value": "traded, right?"
+        },
+        {
+          "command": "para",
+          "value": "My TIME CAPSULE"
+        },
+        {
+          "command": "line",
+          "value": "was developed to"
+        },
+        {
+          "command": "para",
+          "value": "enable trades with"
+        },
+        {
+          "command": "line",
+          "value": "the past."
+        },
+        {
+          "command": "para",
+          "value": "But you can't send"
+        },
+        {
+          "command": "line",
+          "value": "anything that"
+        },
+        {
+          "command": "para",
+          "value": "didn't exist in"
+        },
+        {
+          "command": "line",
+          "value": "the past."
+        },
+        {
+          "command": "para",
+          "value": "If you did, the PC"
+        },
+        {
+          "command": "line",
+          "value": "in the past would"
+        },
+        {
+          "command": "cont",
+          "value": "have a breakdown."
+        },
+        {
+          "command": "para",
+          "value": "So you have to"
+        },
+        {
+          "command": "line",
+          "value": "remove anything"
+        },
+        {
+          "command": "para",
+          "value": "that wasn't around"
+        },
+        {
+          "command": "line",
+          "value": "in the past."
+        },
+        {
+          "command": "para",
+          "value": "Put simply, no"
+        },
+        {
+          "command": "line",
+          "value": "sending new moves"
+        },
+        {
+          "command": "para",
+          "value": "or new #MON in"
+        },
+        {
+          "command": "line",
+          "value": "the TIME CAPSULE."
+        },
+        {
+          "command": "para",
+          "value": "Don't you worry."
+        },
+        {
+          "command": "line",
+          "value": "I'm done with the"
+        },
+        {
+          "command": "cont",
+          "value": "adjustments."
+        },
+        {
+          "command": "para",
+          "value": "Tomorrow, TIME"
+        },
+        {
+          "command": "line",
+          "value": "CAPSULES will be"
+        },
+        {
+          "command": "para",
+          "value": "running at all"
+        },
+        {
+          "command": "line",
+          "value": "#MON CENTERS."
+        },
+        {
+          "command": "para",
+          "value": "I have to hurry on"
+        },
+        {
+          "command": "line",
+          "value": "back to GOLDENROD"
+        },
+        {
+          "command": "cont",
+          "value": "and see my folks."
+        },
+        {
+          "command": "para",
+          "value": "Buh-bye!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakPokecenter1FPokefanMText": {
+      "raw_lines": [
+        "text \"The way the KIMONO\"",
+        "line \"GIRLS dance is\"",
+        "para \"marvelous. Just\"",
+        "line \"like the way they\"",
+        "cont \"use their #MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The way the KIMONO"
+        },
+        {
+          "command": "line",
+          "value": "GIRLS dance is"
+        },
+        {
+          "command": "para",
+          "value": "marvelous. Just"
+        },
+        {
+          "command": "line",
+          "value": "like the way they"
+        },
+        {
+          "command": "cont",
+          "value": "use their #MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakPokecenter1FPokefanMTextMobile": {
+      "raw_lines": [
+        "text \"You must be hoping\"",
+        "line \"to battle more\"",
+        "para \"people, right?\"",
+        "line \"There's apparently\"",
+        "para \"some place where\"",
+        "line \"trainers gather.\"",
+        "para \"Where, you ask?\"",
+        "para \"It's a little past\"",
+        "line \"OLIVINE CITY.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You must be hoping"
+        },
+        {
+          "command": "line",
+          "value": "to battle more"
+        },
+        {
+          "command": "para",
+          "value": "people, right?"
+        },
+        {
+          "command": "line",
+          "value": "There's apparently"
+        },
+        {
+          "command": "para",
+          "value": "some place where"
+        },
+        {
+          "command": "line",
+          "value": "trainers gather."
+        },
+        {
+          "command": "para",
+          "value": "Where, you ask?"
+        },
+        {
+          "command": "para",
+          "value": "It's a little past"
+        },
+        {
+          "command": "line",
+          "value": "OLIVINE CITY."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakPokecenter1FCooltrainerFText": {
+      "raw_lines": [
+        "text \"MORTY, the GYM\"",
+        "line \"LEADER, is soooo\"",
+        "cont \"cool.\"",
+        "para \"His #MON are\"",
+        "line \"really tough too.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MORTY, the GYM"
+        },
+        {
+          "command": "line",
+          "value": "LEADER, is soooo"
+        },
+        {
+          "command": "cont",
+          "value": "cool."
+        },
+        {
+          "command": "para",
+          "value": "His #MON are"
+        },
+        {
+          "command": "line",
+          "value": "really tough too."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakPokecenter1FGymGuideText": {
+      "raw_lines": [
+        "text \"LAKE OF RAGE\u2026\"",
+        "para \"The appearance of\"",
+        "line \"a GYARADOS swarm\u2026\"",
+        "para \"I smell a conspir-\"",
+        "line \"acy. I know it!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "LAKE OF RAGE\u2026"
+        },
+        {
+          "command": "para",
+          "value": "The appearance of"
+        },
+        {
+          "command": "line",
+          "value": "a GYARADOS swarm\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I smell a conspir-"
+        },
+        {
+          "command": "line",
+          "value": "acy. I know it!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "EcruteakPokecenter1FBillMovement1": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "EcruteakPokecenter1FBillMovement2": {
+      "raw_lines": [
+        "step RIGHT",
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "EcruteakPokecenter1FPlayerMovement1": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "PokecenterNurseScript"
+  ],
+  "dependencies": {
+    "EcruteakPokecenter1F_MapScripts": {
+      "label_refs": [
+        "EcruteakPokecenter1FMeetBillScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakPokecenter1FMeetBillScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakPokecenter1FNoopScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakPokcenter1FBillActivatesTimeCapsuleScript": {
+      "label_refs": [
+        "EcruteakPokcenter1FBillActivatesTimeCapsuleScript.PointlessJump"
+      ],
+      "text_refs": [
+        "EcruteakPokecenter1F_BillText1"
+      ],
+      "movement_refs": [
+        "EcruteakPokecenter1FBillMovement1",
+        "EcruteakPokecenter1FPlayerMovement1"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakPokcenter1FBillActivatesTimeCapsuleScript.PointlessJump": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakPokecenter1F_BillText2"
+      ],
+      "movement_refs": [
+        "EcruteakPokecenter1FBillMovement2"
+      ],
+      "scene_refs": [
+        "SCENE_ECRUTEAKPOKECENTER1F_NOOP"
+      ],
+      "std_calls": []
+    },
+    "EcruteakPokecenter1FNurseScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterNurseScript"
+      ]
+    },
+    "EcruteakPokecenter1FPokefanMScript": {
+      "label_refs": [
+        "EcruteakPokecenter1FPokefanMScript.mobile"
+      ],
+      "text_refs": [
+        "EcruteakPokecenter1FPokefanMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakPokecenter1FPokefanMScript.mobile": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakPokecenter1FPokefanMTextMobile"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakPokecenter1FCooltrainerFScript": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakPokecenter1FCooltrainerFText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakPokecenter1FGymGuideScript": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakPokecenter1FGymGuideText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakPokecenter1F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 0,
+    "warp_events": 3,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 5
+  }
+}

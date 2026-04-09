@@ -1,0 +1,429 @@
+{
+  "crystal_map": "Route43MahoganyGate",
+  "map_id": "ROUTE_43_MAHOGANY_GATE",
+  "group": "LAKE_OF_RAGE",
+  "group_index": 9,
+  "map_index": 3,
+  "tileset": "TILESET_GATE",
+  "environment": "GATE",
+  "landmark": "LANDMARK_ROUTE_43",
+  "music": "MUSIC_LAKE_OF_RAGE",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/NorthSouthGate.blk",
+  "source_asm": "maps/Route43MahoganyGate.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 4,
+        "y": 0,
+        "dest_map": "ROUTE_43",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 5,
+        "y": 0,
+        "dest_map": "ROUTE_43",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "dest_map": "MAHOGANY_TOWN",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 5,
+        "y": 7,
+        "dest_map": "MAHOGANY_TOWN",
+        "dest_warp_id": 5
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 0,
+        "y": 4,
+        "sprite": "SPRITE_OFFICER",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route43MahoganyGateOfficer",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "ROUTE43MAHOGANYGATE_OFFICER"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "Route43MahoganyGate_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "Route43MahoganyGateOfficer",
+      "label_refs": [
+        "Route43MahoganyGateOfficer"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route43MahoganyGateOfficer": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_CLEARED_ROCKET_HIDEOUT",
+        "iftrue .RocketsCleared",
+        "writetext Route43MahoganyGateOfficerText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_ROCKET_HIDEOUT"
+          ],
+          "raw": "checkevent EVENT_CLEARED_ROCKET_HIDEOUT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route43MahoganyGateOfficer.RocketsCleared"
+          ],
+          "raw": "iftrue .RocketsCleared"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route43MahoganyGateOfficerText"
+          ],
+          "raw": "writetext Route43MahoganyGateOfficerText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "Route43MahoganyGateOfficer.RocketsCleared"
+      ],
+      "text_refs": [
+        "Route43MahoganyGateOfficerText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route43MahoganyGateOfficer.RocketsCleared": {
+      "raw_lines": [
+        "writetext Route43MahoganyGateOfficerRocketsClearedText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route43MahoganyGateOfficerRocketsClearedText"
+          ],
+          "raw": "writetext Route43MahoganyGateOfficerRocketsClearedText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route43MahoganyGateOfficerRocketsClearedText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route43MahoganyGate_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  4,  0, ROUTE_43, 1",
+        "warp_event  5,  0, ROUTE_43, 2",
+        "warp_event  4,  7, MAHOGANY_TOWN, 5",
+        "warp_event  5,  7, MAHOGANY_TOWN, 5",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route43MahoganyGateOfficer, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "0",
+            "ROUTE_43",
+            "1"
+          ],
+          "raw": "warp_event  4,  0, ROUTE_43, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "0",
+            "ROUTE_43",
+            "2"
+          ],
+          "raw": "warp_event  5,  0, ROUTE_43, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "MAHOGANY_TOWN",
+            "5"
+          ],
+          "raw": "warp_event  4,  7, MAHOGANY_TOWN, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "7",
+            "MAHOGANY_TOWN",
+            "5"
+          ],
+          "raw": "warp_event  5,  7, MAHOGANY_TOWN, 5"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "0",
+            "4",
+            "SPRITE_OFFICER",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route43MahoganyGateOfficer",
+            "-1"
+          ],
+          "raw": "object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route43MahoganyGateOfficer, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "Route43MahoganyGateOfficerText": {
+      "raw_lines": [
+        "text \"Only people headed\"",
+        "line \"up to LAKE OF RAGE\"",
+        "para \"have been through\"",
+        "line \"here lately.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Only people headed"
+        },
+        {
+          "command": "line",
+          "value": "up to LAKE OF RAGE"
+        },
+        {
+          "command": "para",
+          "value": "have been through"
+        },
+        {
+          "command": "line",
+          "value": "here lately."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route43MahoganyGateOfficerRocketsClearedText": {
+      "raw_lines": [
+        "text \"Nobody goes up to\"",
+        "line \"LAKE OF RAGE these\"",
+        "cont \"days.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Nobody goes up to"
+        },
+        {
+          "command": "line",
+          "value": "LAKE OF RAGE these"
+        },
+        {
+          "command": "cont",
+          "value": "days."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "Route43MahoganyGate_MapScripts": {
+      "label_refs": [
+        "Route43MahoganyGateOfficer"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route43MahoganyGateOfficer": {
+      "label_refs": [
+        "Route43MahoganyGateOfficer.RocketsCleared"
+      ],
+      "text_refs": [
+        "Route43MahoganyGateOfficerText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route43MahoganyGateOfficer.RocketsCleared": {
+      "label_refs": [],
+      "text_refs": [
+        "Route43MahoganyGateOfficerRocketsClearedText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route43MahoganyGate_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 4,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 1
+  }
+}

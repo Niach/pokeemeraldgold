@@ -1,0 +1,1182 @@
+{
+  "crystal_map": "GoldenrodFlowerShop",
+  "map_id": "GOLDENROD_FLOWER_SHOP",
+  "group": "GOLDENROD",
+  "group_index": 11,
+  "map_index": 8,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_GOLDENROD_CITY",
+  "music": "MUSIC_GOLDENROD_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/GoldenrodFlowerShop.blk",
+  "source_asm": "maps/GoldenrodFlowerShop.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 6
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 6
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 4,
+        "sprite": "SPRITE_TEACHER",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "FlowerShopTeacherScript",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 6,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "FlowerShopFloriaScript",
+        "flag": "EVENT_FLORIA_AT_FLOWER_SHOP"
+      }
+    ]
+  },
+  "object_consts": [
+    "GOLDENRODFLOWERSHOP_TEACHER",
+    "GOLDENRODFLOWERSHOP_FLORIA"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "GoldenrodFlowerShop_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "FlowerShopTeacherScript",
+      "label_refs": [
+        "FlowerShopTeacherScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FlowerShopTeacherScript": {
+      "raw_lines": [
+        "checkevent EVENT_FOUGHT_SUDOWOODO",
+        "iftrue .Lalala",
+        "checkevent EVENT_GOT_SQUIRTBOTTLE",
+        "iftrue .GotSquirtbottle",
+        "checkevent EVENT_MET_FLORIA",
+        "iffalse .HaventMetFloria",
+        "checkevent EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP",
+        "iffalse .Lalala",
+        "checkflag ENGINE_PLAINBADGE",
+        "iffalse .NoPlainBadge",
+        "faceplayer",
+        "opentext",
+        "writetext GoldenrodFlowerShopTeacherHeresTheSquirtbottleText",
+        "promptbutton",
+        "verbosegiveitem SQUIRTBOTTLE",
+        "setevent EVENT_GOT_SQUIRTBOTTLE",
+        "closetext",
+        "setevent EVENT_FLORIA_AT_SUDOWOODO",
+        "clearevent EVENT_FLORIA_AT_FLOWER_SHOP",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_FOUGHT_SUDOWOODO"
+          ],
+          "raw": "checkevent EVENT_FOUGHT_SUDOWOODO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "FlowerShopTeacherScript.Lalala"
+          ],
+          "raw": "iftrue .Lalala"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_SQUIRTBOTTLE"
+          ],
+          "raw": "checkevent EVENT_GOT_SQUIRTBOTTLE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "FlowerShopTeacherScript.GotSquirtbottle"
+          ],
+          "raw": "iftrue .GotSquirtbottle"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_MET_FLORIA"
+          ],
+          "raw": "checkevent EVENT_MET_FLORIA"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "FlowerShopTeacherScript.HaventMetFloria"
+          ],
+          "raw": "iffalse .HaventMetFloria"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP"
+          ],
+          "raw": "checkevent EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "FlowerShopTeacherScript.Lalala"
+          ],
+          "raw": "iffalse .Lalala"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_PLAINBADGE"
+          ],
+          "raw": "checkflag ENGINE_PLAINBADGE"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "FlowerShopTeacherScript.NoPlainBadge"
+          ],
+          "raw": "iffalse .NoPlainBadge"
+        },
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodFlowerShopTeacherHeresTheSquirtbottleText"
+          ],
+          "raw": "writetext GoldenrodFlowerShopTeacherHeresTheSquirtbottleText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "SQUIRTBOTTLE"
+          ],
+          "raw": "verbosegiveitem SQUIRTBOTTLE"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_SQUIRTBOTTLE"
+          ],
+          "raw": "setevent EVENT_GOT_SQUIRTBOTTLE"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_FLORIA_AT_SUDOWOODO"
+          ],
+          "raw": "setevent EVENT_FLORIA_AT_SUDOWOODO"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_FLORIA_AT_FLOWER_SHOP"
+          ],
+          "raw": "clearevent EVENT_FLORIA_AT_FLOWER_SHOP"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "FlowerShopTeacherScript.GotSquirtbottle",
+        "FlowerShopTeacherScript.HaventMetFloria",
+        "FlowerShopTeacherScript.Lalala",
+        "FlowerShopTeacherScript.NoPlainBadge"
+      ],
+      "text_refs": [
+        "GoldenrodFlowerShopTeacherHeresTheSquirtbottleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FlowerShopTeacherScript.Lalala": {
+      "raw_lines": [
+        "turnobject GOLDENRODFLOWERSHOP_TEACHER, LEFT",
+        "opentext",
+        "writetext GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "GOLDENRODFLOWERSHOP_TEACHER",
+            "LEFT"
+          ],
+          "raw": "turnobject GOLDENRODFLOWERSHOP_TEACHER, LEFT"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText"
+          ],
+          "raw": "writetext GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FlowerShopTeacherScript.GotSquirtbottle": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodFlowerShopTeacherDontDoAnythingDangerousText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodFlowerShopTeacherDontDoAnythingDangerousText"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodFlowerShopTeacherDontDoAnythingDangerousText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodFlowerShopTeacherDontDoAnythingDangerousText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FlowerShopTeacherScript.NoPlainBadge": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodFlowerShopTeacherAskWantToBorrowWaterBottleText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodFlowerShopTeacherAskWantToBorrowWaterBottleText"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodFlowerShopTeacherAskWantToBorrowWaterBottleText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodFlowerShopTeacherAskWantToBorrowWaterBottleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FlowerShopTeacherScript.HaventMetFloria": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodFlowerShopTeacherMySisterWentToSeeWigglyTreeRoute36Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodFlowerShopTeacherMySisterWentToSeeWigglyTreeRoute36Text"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodFlowerShopTeacherMySisterWentToSeeWigglyTreeRoute36Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodFlowerShopTeacherMySisterWentToSeeWigglyTreeRoute36Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FlowerShopFloriaScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_FOUGHT_SUDOWOODO",
+        "iftrue .FoughtSudowoodo",
+        "checkevent EVENT_GOT_SQUIRTBOTTLE",
+        "iftrue .GotSquirtbottle",
+        "writetext GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP",
+        "setevent EVENT_FLORIA_AT_FLOWER_SHOP",
+        "clearevent EVENT_FLORIA_AT_SUDOWOODO",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_FOUGHT_SUDOWOODO"
+          ],
+          "raw": "checkevent EVENT_FOUGHT_SUDOWOODO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "FlowerShopFloriaScript.FoughtSudowoodo"
+          ],
+          "raw": "iftrue .FoughtSudowoodo"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_SQUIRTBOTTLE"
+          ],
+          "raw": "checkevent EVENT_GOT_SQUIRTBOTTLE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "FlowerShopFloriaScript.GotSquirtbottle"
+          ],
+          "raw": "iftrue .GotSquirtbottle"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText"
+          ],
+          "raw": "writetext GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP"
+          ],
+          "raw": "setevent EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_FLORIA_AT_FLOWER_SHOP"
+          ],
+          "raw": "setevent EVENT_FLORIA_AT_FLOWER_SHOP"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_FLORIA_AT_SUDOWOODO"
+          ],
+          "raw": "clearevent EVENT_FLORIA_AT_SUDOWOODO"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "FlowerShopFloriaScript.FoughtSudowoodo",
+        "FlowerShopFloriaScript.GotSquirtbottle"
+      ],
+      "text_refs": [
+        "GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FlowerShopFloriaScript.GotSquirtbottle": {
+      "raw_lines": [
+        "writetext GoldenrodFlowerShopFloriaYouBeatWhitneyText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodFlowerShopFloriaYouBeatWhitneyText"
+          ],
+          "raw": "writetext GoldenrodFlowerShopFloriaYouBeatWhitneyText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodFlowerShopFloriaYouBeatWhitneyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FlowerShopFloriaScript.FoughtSudowoodo": {
+      "raw_lines": [
+        "writetext GoldenrodFlowerShopFloriaItReallyWasAMonText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodFlowerShopFloriaItReallyWasAMonText"
+          ],
+          "raw": "writetext GoldenrodFlowerShopFloriaItReallyWasAMonText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodFlowerShopFloriaItReallyWasAMonText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FlowerShopShelf1": {
+      "raw_lines": [
+        "jumpstd PictureBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PictureBookshelfScript"
+          ],
+          "raw": "jumpstd PictureBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "FlowerShopShelf2": {
+      "raw_lines": [
+        "jumpstd MagazineBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "MagazineBookshelfScript"
+          ],
+          "raw": "jumpstd MagazineBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "FlowerShopRadio": {
+      "raw_lines": [
+        "jumpstd Radio2Script"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "Radio2Script"
+          ],
+          "raw": "jumpstd Radio2Script"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "Radio2Script"
+      ]
+    },
+    "GoldenrodFlowerShop_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, GOLDENROD_CITY, 6",
+        "warp_event  3,  7, GOLDENROD_CITY, 6",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  2,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FlowerShopTeacherScript, -1",
+        "object_event  5,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FlowerShopFloriaScript, EVENT_FLORIA_AT_FLOWER_SHOP"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "GOLDENROD_CITY",
+            "6"
+          ],
+          "raw": "warp_event  2,  7, GOLDENROD_CITY, 6"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "GOLDENROD_CITY",
+            "6"
+          ],
+          "raw": "warp_event  3,  7, GOLDENROD_CITY, 6"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "4",
+            "SPRITE_TEACHER",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "FlowerShopTeacherScript",
+            "-1"
+          ],
+          "raw": "object_event  2,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FlowerShopTeacherScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "6",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "FlowerShopFloriaScript",
+            "EVENT_FLORIA_AT_FLOWER_SHOP"
+          ],
+          "raw": "object_event  5,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FlowerShopFloriaScript, EVENT_FLORIA_AT_FLOWER_SHOP"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "GoldenrodFlowerShopTeacherMySisterWentToSeeWigglyTreeRoute36Text": {
+      "raw_lines": [
+        "text \"Have you seen that\"",
+        "line \"wiggly tree that's\"",
+        "para \"growing on ROUTE\"",
+        "line \"36?\"",
+        "para \"My little sister\"",
+        "line \"got all excited\"",
+        "para \"and went to see\"",
+        "line \"it\u2026\"",
+        "para \"I'm worried\u2026 Isn't\"",
+        "line \"it dangerous?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Have you seen that"
+        },
+        {
+          "command": "line",
+          "value": "wiggly tree that's"
+        },
+        {
+          "command": "para",
+          "value": "growing on ROUTE"
+        },
+        {
+          "command": "line",
+          "value": "36?"
+        },
+        {
+          "command": "para",
+          "value": "My little sister"
+        },
+        {
+          "command": "line",
+          "value": "got all excited"
+        },
+        {
+          "command": "para",
+          "value": "and went to see"
+        },
+        {
+          "command": "line",
+          "value": "it\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I'm worried\u2026 Isn't"
+        },
+        {
+          "command": "line",
+          "value": "it dangerous?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodFlowerShopTeacherAskWantToBorrowWaterBottleText": {
+      "raw_lines": [
+        "text \"Do you want to\"",
+        "line \"borrow the water\"",
+        "para \"bottle too?\"",
+        "line \"I don't want you\"",
+        "para \"doing anything\"",
+        "line \"dangerous with it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Do you want to"
+        },
+        {
+          "command": "line",
+          "value": "borrow the water"
+        },
+        {
+          "command": "para",
+          "value": "bottle too?"
+        },
+        {
+          "command": "line",
+          "value": "I don't want you"
+        },
+        {
+          "command": "para",
+          "value": "doing anything"
+        },
+        {
+          "command": "line",
+          "value": "dangerous with it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodFlowerShopTeacherHeresTheSquirtbottleText": {
+      "raw_lines": [
+        "text \"Oh, you're better\"",
+        "line \"than WHITNEY\u2026\"",
+        "para \"You'll be OK,\"",
+        "line \"then. Here's the\"",
+        "cont \"SQUIRTBOTTLE!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, you're better"
+        },
+        {
+          "command": "line",
+          "value": "than WHITNEY\u2026"
+        },
+        {
+          "command": "para",
+          "value": "You'll be OK,"
+        },
+        {
+          "command": "line",
+          "value": "then. Here's the"
+        },
+        {
+          "command": "cont",
+          "value": "SQUIRTBOTTLE!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodFlowerShopTeacherDontDoAnythingDangerousText": {
+      "raw_lines": [
+        "text \"Don't do anything\"",
+        "line \"too dangerous!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Don't do anything"
+        },
+        {
+          "command": "line",
+          "value": "too dangerous!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText": {
+      "raw_lines": [
+        "text \"Lalala lalalala.\"",
+        "line \"Have plenty of\"",
+        "cont \"water, my lovely!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Lalala lalalala."
+        },
+        {
+          "command": "line",
+          "value": "Have plenty of"
+        },
+        {
+          "command": "cont",
+          "value": "water, my lovely!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText": {
+      "raw_lines": [
+        "text \"When I told my sis\"",
+        "line \"about the jiggly\"",
+        "para \"tree, she told me\"",
+        "line \"it's dangerous.\"",
+        "para \"If I beat WHITNEY,\"",
+        "line \"I wonder if she'll\"",
+        "para \"lend me her water\"",
+        "line \"bottle\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "When I told my sis"
+        },
+        {
+          "command": "line",
+          "value": "about the jiggly"
+        },
+        {
+          "command": "para",
+          "value": "tree, she told me"
+        },
+        {
+          "command": "line",
+          "value": "it's dangerous."
+        },
+        {
+          "command": "para",
+          "value": "If I beat WHITNEY,"
+        },
+        {
+          "command": "line",
+          "value": "I wonder if she'll"
+        },
+        {
+          "command": "para",
+          "value": "lend me her water"
+        },
+        {
+          "command": "line",
+          "value": "bottle\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodFlowerShopFloriaYouBeatWhitneyText": {
+      "raw_lines": [
+        "text \"Wow, you beat\"",
+        "line \"WHITNEY? Cool!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Wow, you beat"
+        },
+        {
+          "command": "line",
+          "value": "WHITNEY? Cool!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodFlowerShopFloriaItReallyWasAMonText": {
+      "raw_lines": [
+        "text \"So it really was a\"",
+        "line \"#MON!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "So it really was a"
+        },
+        {
+          "command": "line",
+          "value": "#MON!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "MagazineBookshelfScript",
+    "PictureBookshelfScript",
+    "Radio2Script"
+  ],
+  "dependencies": {
+    "GoldenrodFlowerShop_MapScripts": {
+      "label_refs": [
+        "FlowerShopTeacherScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FlowerShopTeacherScript": {
+      "label_refs": [
+        "FlowerShopTeacherScript.GotSquirtbottle",
+        "FlowerShopTeacherScript.HaventMetFloria",
+        "FlowerShopTeacherScript.Lalala",
+        "FlowerShopTeacherScript.NoPlainBadge"
+      ],
+      "text_refs": [
+        "GoldenrodFlowerShopTeacherHeresTheSquirtbottleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FlowerShopTeacherScript.Lalala": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FlowerShopTeacherScript.GotSquirtbottle": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodFlowerShopTeacherDontDoAnythingDangerousText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FlowerShopTeacherScript.NoPlainBadge": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodFlowerShopTeacherAskWantToBorrowWaterBottleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FlowerShopTeacherScript.HaventMetFloria": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodFlowerShopTeacherMySisterWentToSeeWigglyTreeRoute36Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FlowerShopFloriaScript": {
+      "label_refs": [
+        "FlowerShopFloriaScript.FoughtSudowoodo",
+        "FlowerShopFloriaScript.GotSquirtbottle"
+      ],
+      "text_refs": [
+        "GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FlowerShopFloriaScript.GotSquirtbottle": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodFlowerShopFloriaYouBeatWhitneyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FlowerShopFloriaScript.FoughtSudowoodo": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodFlowerShopFloriaItReallyWasAMonText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FlowerShopShelf1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "FlowerShopShelf2": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "FlowerShopRadio": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "Radio2Script"
+      ]
+    },
+    "GoldenrodFlowerShop_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 2
+  }
+}

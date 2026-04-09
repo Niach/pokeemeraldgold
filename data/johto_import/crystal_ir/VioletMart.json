@@ -1,0 +1,490 @@
+{
+  "crystal_map": "VioletMart",
+  "map_id": "VIOLET_MART",
+  "group": "VIOLET",
+  "group_index": 10,
+  "map_index": 6,
+  "tileset": "TILESET_MART",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_VIOLET_CITY",
+  "music": "MUSIC_VIOLET_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 6,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/Mart.blk",
+  "source_asm": "maps/VioletMart.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "VIOLET_CITY",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "VIOLET_CITY",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 1,
+        "y": 3,
+        "sprite": "SPRITE_CLERK",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "VioletMartClerkScript",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 6,
+        "sprite": "SPRITE_GRANNY",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "VioletMartGrannyScript",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 2,
+        "sprite": "SPRITE_COOLTRAINER_M",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "VioletMartCooltrainerMScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "VIOLETMART_CLERK",
+    "VIOLETMART_GRANNY",
+    "VIOLETMART_COOLTRAINER_M"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "VioletMart_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "VioletMartClerkScript",
+      "label_refs": [
+        "VioletMartClerkScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletMartClerkScript": {
+      "raw_lines": [
+        "opentext",
+        "pokemart MARTTYPE_STANDARD, MART_VIOLET",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "pokemart",
+          "args": [
+            "MARTTYPE_STANDARD",
+            "MART_VIOLET"
+          ],
+          "raw": "pokemart MARTTYPE_STANDARD, MART_VIOLET"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletMartGrannyScript": {
+      "raw_lines": [
+        "jumptextfaceplayer VioletMartGrannyText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "VioletMartGrannyText"
+          ],
+          "raw": "jumptextfaceplayer VioletMartGrannyText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "VioletMartGrannyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletMartCooltrainerMScript": {
+      "raw_lines": [
+        "jumptextfaceplayer VioletMartCooltrainerMText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "VioletMartCooltrainerMText"
+          ],
+          "raw": "jumptextfaceplayer VioletMartCooltrainerMText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "VioletMartCooltrainerMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletMart_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, VIOLET_CITY, 1",
+        "warp_event  3,  7, VIOLET_CITY, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletMartClerkScript, -1",
+        "object_event  7,  6, SPRITE_GRANNY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletMartGrannyScript, -1",
+        "object_event  5,  2, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletMartCooltrainerMScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "VIOLET_CITY",
+            "1"
+          ],
+          "raw": "warp_event  2,  7, VIOLET_CITY, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "VIOLET_CITY",
+            "1"
+          ],
+          "raw": "warp_event  3,  7, VIOLET_CITY, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "3",
+            "SPRITE_CLERK",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "VioletMartClerkScript",
+            "-1"
+          ],
+          "raw": "object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletMartClerkScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "6",
+            "SPRITE_GRANNY",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "VioletMartGrannyScript",
+            "-1"
+          ],
+          "raw": "object_event  7,  6, SPRITE_GRANNY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletMartGrannyScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "2",
+            "SPRITE_COOLTRAINER_M",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "VioletMartCooltrainerMScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  2, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletMartCooltrainerMScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "VioletMartGrannyText": {
+      "raw_lines": [
+        "text \"When you first\"",
+        "line \"catch a #MON,\"",
+        "cont \"it may be weak.\"",
+        "para \"But it will even-\"",
+        "line \"tually grow to be\"",
+        "cont \"strong.\"",
+        "para \"It's important to\"",
+        "line \"treat #MON with\"",
+        "cont \"love.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "When you first"
+        },
+        {
+          "command": "line",
+          "value": "catch a #MON,"
+        },
+        {
+          "command": "cont",
+          "value": "it may be weak."
+        },
+        {
+          "command": "para",
+          "value": "But it will even-"
+        },
+        {
+          "command": "line",
+          "value": "tually grow to be"
+        },
+        {
+          "command": "cont",
+          "value": "strong."
+        },
+        {
+          "command": "para",
+          "value": "It's important to"
+        },
+        {
+          "command": "line",
+          "value": "treat #MON with"
+        },
+        {
+          "command": "cont",
+          "value": "love."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "VioletMartCooltrainerMText": {
+      "raw_lines": [
+        "text \"#MON can hold\"",
+        "line \"items like POTION\"",
+        "cont \"and ANTIDOTE.\"",
+        "para \"But they don't\"",
+        "line \"appear to know how\"",
+        "para \"to use manmade\"",
+        "line \"items.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#MON can hold"
+        },
+        {
+          "command": "line",
+          "value": "items like POTION"
+        },
+        {
+          "command": "cont",
+          "value": "and ANTIDOTE."
+        },
+        {
+          "command": "para",
+          "value": "But they don't"
+        },
+        {
+          "command": "line",
+          "value": "appear to know how"
+        },
+        {
+          "command": "para",
+          "value": "to use manmade"
+        },
+        {
+          "command": "line",
+          "value": "items."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "VioletMart_MapScripts": {
+      "label_refs": [
+        "VioletMartClerkScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletMartClerkScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletMartGrannyScript": {
+      "label_refs": [],
+      "text_refs": [
+        "VioletMartGrannyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletMartCooltrainerMScript": {
+      "label_refs": [],
+      "text_refs": [
+        "VioletMartCooltrainerMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletMart_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 3
+  }
+}

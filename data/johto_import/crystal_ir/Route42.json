@@ -1,0 +1,3068 @@
+{
+  "crystal_map": "Route42",
+  "map_id": "ROUTE_42",
+  "group": "MAHOGANY",
+  "group_index": 2,
+  "map_index": 5,
+  "tileset": "TILESET_JOHTO",
+  "environment": "ROUTE",
+  "landmark": "LANDMARK_ROUTE_42",
+  "music": "MUSIC_LAKE_OF_RAGE",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_AUTO",
+  "fishgroup": "FISHGROUP_LAKE",
+  "width_blocks": 30,
+  "height_blocks": 9,
+  "border_block": "05",
+  "blk_path": "maps/Route42.blk",
+  "source_asm": "maps/Route42.asm",
+  "connections": [
+    {
+      "direction": "west",
+      "map": "EcruteakCity",
+      "target_map_id": "ECRUTEAK_CITY",
+      "offset": -9
+    },
+    {
+      "direction": "east",
+      "map": "MahoganyTown",
+      "target_map_id": "MAHOGANY_TOWN",
+      "offset": 0
+    }
+  ],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "Route42Noop1Scene",
+        "scene_id": "SCENE_ROUTE42_NOOP"
+      },
+      {
+        "script": "Route42Noop2Scene",
+        "scene_id": "SCENE_ROUTE42_SUICUNE"
+      }
+    ],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 0,
+        "y": 8,
+        "dest_map": "ROUTE_42_ECRUTEAK_GATE",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 0,
+        "y": 9,
+        "dest_map": "ROUTE_42_ECRUTEAK_GATE",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 10,
+        "y": 5,
+        "dest_map": "MOUNT_MORTAR_1F_OUTSIDE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 28,
+        "y": 9,
+        "dest_map": "MOUNT_MORTAR_1F_OUTSIDE",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 46,
+        "y": 7,
+        "dest_map": "MOUNT_MORTAR_1F_OUTSIDE",
+        "dest_warp_id": 3
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 24,
+        "y": 14,
+        "scene": "SCENE_ROUTE42_SUICUNE",
+        "script": "Route42SuicuneScript"
+      }
+    ],
+    "bg_events": [
+      {
+        "x": 4,
+        "y": 10,
+        "kind": "BGEVENT_READ",
+        "script": "Route42Sign1"
+      },
+      {
+        "x": 7,
+        "y": 5,
+        "kind": "BGEVENT_READ",
+        "script": "MtMortarSign1"
+      },
+      {
+        "x": 45,
+        "y": 9,
+        "kind": "BGEVENT_READ",
+        "script": "MtMortarSign2"
+      },
+      {
+        "x": 54,
+        "y": 8,
+        "kind": "BGEVENT_READ",
+        "script": "Route42Sign2"
+      },
+      {
+        "x": 16,
+        "y": 11,
+        "kind": "BGEVENT_ITEM",
+        "script": "Route42HiddenMaxPotion"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 40,
+        "y": 10,
+        "sprite": "SPRITE_FISHER",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerFisherTully",
+        "flag": -1
+      },
+      {
+        "x": 51,
+        "y": 9,
+        "sprite": "SPRITE_POKEFAN_M",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_FAST",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerHikerBenjamin",
+        "flag": -1
+      },
+      {
+        "x": 47,
+        "y": 8,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerPokemaniacShane",
+        "flag": -1
+      },
+      {
+        "x": 27,
+        "y": 16,
+        "sprite": "SPRITE_FRUIT_TREE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route42FruitTree1",
+        "flag": -1
+      },
+      {
+        "x": 28,
+        "y": 16,
+        "sprite": "SPRITE_FRUIT_TREE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route42FruitTree2",
+        "flag": -1
+      },
+      {
+        "x": 29,
+        "y": 16,
+        "sprite": "SPRITE_FRUIT_TREE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route42FruitTree3",
+        "flag": -1
+      },
+      {
+        "x": 6,
+        "y": 4,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "Route42UltraBall",
+        "flag": "EVENT_ROUTE_42_ULTRA_BALL"
+      },
+      {
+        "x": 33,
+        "y": 8,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "Route42SuperPotion",
+        "flag": "EVENT_ROUTE_42_SUPER_POTION"
+      },
+      {
+        "x": 26,
+        "y": 16,
+        "sprite": "SPRITE_SUICUNE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_SAW_SUICUNE_ON_ROUTE_42"
+      }
+    ]
+  },
+  "object_consts": [
+    "ROUTE42_FISHER",
+    "ROUTE42_POKEFAN_M",
+    "ROUTE42_SUPER_NERD",
+    "ROUTE42_FRUIT_TREE1",
+    "ROUTE42_FRUIT_TREE2",
+    "ROUTE42_FRUIT_TREE3",
+    "ROUTE42_POKE_BALL1",
+    "ROUTE42_POKE_BALL2",
+    "ROUTE42_SUICUNE"
+  ],
+  "scene_ids": [
+    "SCENE_ROUTE36_SUICUNE",
+    "SCENE_ROUTE42_NOOP",
+    "SCENE_ROUTE42_SUICUNE"
+  ],
+  "scripts": {
+    "Route42_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script Route42Noop1Scene, SCENE_ROUTE42_NOOP",
+        "scene_script Route42Noop2Scene, SCENE_ROUTE42_SUICUNE",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "Route42Noop1Scene",
+            "SCENE_ROUTE42_NOOP"
+          ],
+          "raw": "scene_script Route42Noop1Scene, SCENE_ROUTE42_NOOP"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "Route42Noop2Scene",
+            "SCENE_ROUTE42_SUICUNE"
+          ],
+          "raw": "scene_script Route42Noop2Scene, SCENE_ROUTE42_SUICUNE"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "Route42Noop1Scene",
+      "label_refs": [
+        "Route42Noop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42Noop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42Noop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42SuicuneScript": {
+      "raw_lines": [
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "pause 15",
+        "playsound SFX_WARP_FROM",
+        "applymovement ROUTE42_SUICUNE, Route42SuicuneMovement",
+        "disappear ROUTE42_SUICUNE",
+        "pause 10",
+        "setscene SCENE_ROUTE42_NOOP",
+        "clearevent EVENT_SAW_SUICUNE_ON_ROUTE_36",
+        "setmapscene ROUTE_36, SCENE_ROUTE36_SUICUNE",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_WARP_FROM"
+          ],
+          "raw": "playsound SFX_WARP_FROM"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE42_SUICUNE",
+            "Route42SuicuneMovement"
+          ],
+          "raw": "applymovement ROUTE42_SUICUNE, Route42SuicuneMovement"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ROUTE42_SUICUNE"
+          ],
+          "raw": "disappear ROUTE42_SUICUNE"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "10"
+          ],
+          "raw": "pause 10"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_ROUTE42_NOOP"
+          ],
+          "raw": "setscene SCENE_ROUTE42_NOOP"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_SAW_SUICUNE_ON_ROUTE_36"
+          ],
+          "raw": "clearevent EVENT_SAW_SUICUNE_ON_ROUTE_36"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "ROUTE_36",
+            "SCENE_ROUTE36_SUICUNE"
+          ],
+          "raw": "setmapscene ROUTE_36, SCENE_ROUTE36_SUICUNE"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "showemote",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "Route42SuicuneMovement"
+      ],
+      "scene_refs": [
+        "SCENE_ROUTE36_SUICUNE",
+        "SCENE_ROUTE42_NOOP"
+      ],
+      "std_calls": []
+    },
+    "TrainerFisherTully": {
+      "raw_lines": [
+        "trainer FISHER, TULLY1, EVENT_BEAT_FISHER_TULLY, FisherTullySeenText, FisherTullyBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "FISHER",
+            "TULLY1",
+            "EVENT_BEAT_FISHER_TULLY",
+            "FisherTullySeenText",
+            "FisherTullyBeatenText",
+            "0",
+            "TrainerFisherTully.Script"
+          ],
+          "raw": "trainer FISHER, TULLY1, EVENT_BEAT_FISHER_TULLY, FisherTullySeenText, FisherTullyBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerFisherTully.Script",
+      "label_refs": [
+        "TrainerFisherTully.Script"
+      ],
+      "text_refs": [
+        "FisherTullyBeatenText",
+        "FisherTullySeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.Script": {
+      "raw_lines": [
+        "loadvar VAR_CALLERID, PHONE_FISHER_TULLY",
+        "endifjustbattled",
+        "opentext",
+        "checkflag ENGINE_TULLY_READY_FOR_REMATCH",
+        "iftrue .WantsBattle",
+        "checkflag ENGINE_TULLY_HAS_WATER_STONE",
+        "iftrue .HasWaterStone",
+        "checkcellnum PHONE_FISHER_TULLY",
+        "iftrue .NumberAccepted",
+        "checkevent EVENT_TULLY_ASKED_FOR_PHONE_NUMBER",
+        "iftrue .AskedAlready",
+        "writetext FisherTullyAfterBattleText",
+        "promptbutton",
+        "setevent EVENT_TULLY_ASKED_FOR_PHONE_NUMBER",
+        "scall .AskNumber1",
+        "sjump .AskForNumber"
+      ],
+      "commands": [
+        {
+          "command": "loadvar",
+          "args": [
+            "VAR_CALLERID",
+            "PHONE_FISHER_TULLY"
+          ],
+          "raw": "loadvar VAR_CALLERID, PHONE_FISHER_TULLY"
+        },
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_TULLY_READY_FOR_REMATCH"
+          ],
+          "raw": "checkflag ENGINE_TULLY_READY_FOR_REMATCH"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerFisherTully.WantsBattle"
+          ],
+          "raw": "iftrue .WantsBattle"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_TULLY_HAS_WATER_STONE"
+          ],
+          "raw": "checkflag ENGINE_TULLY_HAS_WATER_STONE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerFisherTully.HasWaterStone"
+          ],
+          "raw": "iftrue .HasWaterStone"
+        },
+        {
+          "command": "checkcellnum",
+          "args": [
+            "PHONE_FISHER_TULLY"
+          ],
+          "raw": "checkcellnum PHONE_FISHER_TULLY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerFisherTully.NumberAccepted"
+          ],
+          "raw": "iftrue .NumberAccepted"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TULLY_ASKED_FOR_PHONE_NUMBER"
+          ],
+          "raw": "checkevent EVENT_TULLY_ASKED_FOR_PHONE_NUMBER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerFisherTully.AskedAlready"
+          ],
+          "raw": "iftrue .AskedAlready"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "FisherTullyAfterBattleText"
+          ],
+          "raw": "writetext FisherTullyAfterBattleText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TULLY_ASKED_FOR_PHONE_NUMBER"
+          ],
+          "raw": "setevent EVENT_TULLY_ASKED_FOR_PHONE_NUMBER"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "TrainerFisherTully.AskNumber1"
+          ],
+          "raw": "scall .AskNumber1"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerFisherTully.AskForNumber"
+          ],
+          "raw": "sjump .AskForNumber"
+        }
+      ],
+      "first_command": "loadvar",
+      "label_refs": [
+        "TrainerFisherTully.AskForNumber",
+        "TrainerFisherTully.AskNumber1",
+        "TrainerFisherTully.AskedAlready",
+        "TrainerFisherTully.HasWaterStone",
+        "TrainerFisherTully.NumberAccepted",
+        "TrainerFisherTully.WantsBattle"
+      ],
+      "text_refs": [
+        "FisherTullyAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.AskedAlready": {
+      "raw_lines": [
+        "scall .AskNumber2"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "TrainerFisherTully.AskNumber2"
+          ],
+          "raw": "scall .AskNumber2"
+        }
+      ],
+      "first_command": "scall",
+      "fallthrough_label": "TrainerFisherTully.AskForNumber",
+      "label_refs": [
+        "TrainerFisherTully.AskForNumber",
+        "TrainerFisherTully.AskNumber2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.AskForNumber": {
+      "raw_lines": [
+        "askforphonenumber PHONE_FISHER_TULLY",
+        "ifequal PHONE_CONTACTS_FULL, .PhoneFull",
+        "ifequal PHONE_CONTACT_REFUSED, .NumberDeclined",
+        "gettrainername STRING_BUFFER_3, FISHER, TULLY1",
+        "scall .RegisteredNumber",
+        "sjump .NumberAccepted"
+      ],
+      "commands": [
+        {
+          "command": "askforphonenumber",
+          "args": [
+            "PHONE_FISHER_TULLY"
+          ],
+          "raw": "askforphonenumber PHONE_FISHER_TULLY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PHONE_CONTACTS_FULL",
+            "TrainerFisherTully.PhoneFull"
+          ],
+          "raw": "ifequal PHONE_CONTACTS_FULL, .PhoneFull"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PHONE_CONTACT_REFUSED",
+            "TrainerFisherTully.NumberDeclined"
+          ],
+          "raw": "ifequal PHONE_CONTACT_REFUSED, .NumberDeclined"
+        },
+        {
+          "command": "gettrainername",
+          "args": [
+            "STRING_BUFFER_3",
+            "FISHER",
+            "TULLY1"
+          ],
+          "raw": "gettrainername STRING_BUFFER_3, FISHER, TULLY1"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "TrainerFisherTully.RegisteredNumber"
+          ],
+          "raw": "scall .RegisteredNumber"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerFisherTully.NumberAccepted"
+          ],
+          "raw": "sjump .NumberAccepted"
+        }
+      ],
+      "first_command": "askforphonenumber",
+      "label_refs": [
+        "TrainerFisherTully.NumberAccepted",
+        "TrainerFisherTully.NumberDeclined",
+        "TrainerFisherTully.PhoneFull",
+        "TrainerFisherTully.RegisteredNumber"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.WantsBattle": {
+      "raw_lines": [
+        "scall .Rematch",
+        "winlosstext FisherTullyBeatenText, 0",
+        "readmem wTullyFightCount",
+        "ifequal 3, .Fight3",
+        "ifequal 2, .Fight2",
+        "ifequal 1, .Fight1",
+        "ifequal 0, .LoadFight0"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "TrainerFisherTully.Rematch"
+          ],
+          "raw": "scall .Rematch"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "FisherTullyBeatenText",
+            "0"
+          ],
+          "raw": "winlosstext FisherTullyBeatenText, 0"
+        },
+        {
+          "command": "readmem",
+          "args": [
+            "wTullyFightCount"
+          ],
+          "raw": "readmem wTullyFightCount"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "3",
+            "TrainerFisherTully.Fight3"
+          ],
+          "raw": "ifequal 3, .Fight3"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "TrainerFisherTully.Fight2"
+          ],
+          "raw": "ifequal 2, .Fight2"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "TrainerFisherTully.Fight1"
+          ],
+          "raw": "ifequal 1, .Fight1"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "0",
+            "TrainerFisherTully.LoadFight0"
+          ],
+          "raw": "ifequal 0, .LoadFight0"
+        }
+      ],
+      "first_command": "scall",
+      "fallthrough_label": "TrainerFisherTully.Fight3",
+      "label_refs": [
+        "TrainerFisherTully.Fight1",
+        "TrainerFisherTully.Fight2",
+        "TrainerFisherTully.Fight3",
+        "TrainerFisherTully.LoadFight0",
+        "TrainerFisherTully.Rematch"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.Fight3": {
+      "raw_lines": [
+        "checkevent EVENT_RESTORED_POWER_TO_KANTO",
+        "iftrue .LoadFight3"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_RESTORED_POWER_TO_KANTO"
+          ],
+          "raw": "checkevent EVENT_RESTORED_POWER_TO_KANTO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerFisherTully.LoadFight3"
+          ],
+          "raw": "iftrue .LoadFight3"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerFisherTully.Fight2",
+      "label_refs": [
+        "TrainerFisherTully.Fight2",
+        "TrainerFisherTully.LoadFight3"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.Fight2": {
+      "raw_lines": [
+        "checkevent EVENT_BEAT_ELITE_FOUR",
+        "iftrue .LoadFight2"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_ELITE_FOUR"
+          ],
+          "raw": "checkevent EVENT_BEAT_ELITE_FOUR"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerFisherTully.LoadFight2"
+          ],
+          "raw": "iftrue .LoadFight2"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerFisherTully.Fight1",
+      "label_refs": [
+        "TrainerFisherTully.Fight1",
+        "TrainerFisherTully.LoadFight2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.Fight1": {
+      "raw_lines": [
+        "checkevent EVENT_CLEARED_ROCKET_HIDEOUT",
+        "iftrue .LoadFight1"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_ROCKET_HIDEOUT"
+          ],
+          "raw": "checkevent EVENT_CLEARED_ROCKET_HIDEOUT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerFisherTully.LoadFight1"
+          ],
+          "raw": "iftrue .LoadFight1"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerFisherTully.LoadFight0",
+      "label_refs": [
+        "TrainerFisherTully.LoadFight0",
+        "TrainerFisherTully.LoadFight1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.LoadFight0": {
+      "raw_lines": [
+        "loadtrainer FISHER, TULLY1",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wTullyFightCount, 1",
+        "clearflag ENGINE_TULLY_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "FISHER",
+            "TULLY1"
+          ],
+          "raw": "loadtrainer FISHER, TULLY1"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wTullyFightCount",
+            "1"
+          ],
+          "raw": "loadmem wTullyFightCount, 1"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_TULLY_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_TULLY_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.LoadFight1": {
+      "raw_lines": [
+        "loadtrainer FISHER, TULLY2",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wTullyFightCount, 2",
+        "clearflag ENGINE_TULLY_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "FISHER",
+            "TULLY2"
+          ],
+          "raw": "loadtrainer FISHER, TULLY2"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wTullyFightCount",
+            "2"
+          ],
+          "raw": "loadmem wTullyFightCount, 2"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_TULLY_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_TULLY_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.LoadFight2": {
+      "raw_lines": [
+        "loadtrainer FISHER, TULLY3",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wTullyFightCount, 3",
+        "clearflag ENGINE_TULLY_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "FISHER",
+            "TULLY3"
+          ],
+          "raw": "loadtrainer FISHER, TULLY3"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wTullyFightCount",
+            "3"
+          ],
+          "raw": "loadmem wTullyFightCount, 3"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_TULLY_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_TULLY_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.LoadFight3": {
+      "raw_lines": [
+        "loadtrainer FISHER, TULLY4",
+        "startbattle",
+        "reloadmapafterbattle",
+        "clearflag ENGINE_TULLY_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "FISHER",
+            "TULLY4"
+          ],
+          "raw": "loadtrainer FISHER, TULLY4"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_TULLY_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_TULLY_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.HasWaterStone": {
+      "raw_lines": [
+        "scall .Gift",
+        "verbosegiveitem WATER_STONE",
+        "iffalse .NoRoom",
+        "clearflag ENGINE_TULLY_HAS_WATER_STONE",
+        "setevent EVENT_TULLY_GAVE_WATER_STONE",
+        "sjump .NumberAccepted"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "TrainerFisherTully.Gift"
+          ],
+          "raw": "scall .Gift"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "WATER_STONE"
+          ],
+          "raw": "verbosegiveitem WATER_STONE"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "TrainerFisherTully.NoRoom"
+          ],
+          "raw": "iffalse .NoRoom"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_TULLY_HAS_WATER_STONE"
+          ],
+          "raw": "clearflag ENGINE_TULLY_HAS_WATER_STONE"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TULLY_GAVE_WATER_STONE"
+          ],
+          "raw": "setevent EVENT_TULLY_GAVE_WATER_STONE"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerFisherTully.NumberAccepted"
+          ],
+          "raw": "sjump .NumberAccepted"
+        }
+      ],
+      "first_command": "scall",
+      "label_refs": [
+        "TrainerFisherTully.Gift",
+        "TrainerFisherTully.NoRoom",
+        "TrainerFisherTully.NumberAccepted"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.NoRoom": {
+      "raw_lines": [
+        "sjump .PackFull"
+      ],
+      "commands": [
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerFisherTully.PackFull"
+          ],
+          "raw": "sjump .PackFull"
+        }
+      ],
+      "first_command": "sjump",
+      "label_refs": [
+        "TrainerFisherTully.PackFull"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.AskNumber1": {
+      "raw_lines": [
+        "jumpstd AskNumber1MScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "AskNumber1MScript"
+          ],
+          "raw": "jumpstd AskNumber1MScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber1MScript"
+      ]
+    },
+    "TrainerFisherTully.AskNumber2": {
+      "raw_lines": [
+        "jumpstd AskNumber2MScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "AskNumber2MScript"
+          ],
+          "raw": "jumpstd AskNumber2MScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber2MScript"
+      ]
+    },
+    "TrainerFisherTully.RegisteredNumber": {
+      "raw_lines": [
+        "jumpstd RegisteredNumberMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RegisteredNumberMScript"
+          ],
+          "raw": "jumpstd RegisteredNumberMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RegisteredNumberMScript"
+      ]
+    },
+    "TrainerFisherTully.NumberAccepted": {
+      "raw_lines": [
+        "jumpstd NumberAcceptedMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "NumberAcceptedMScript"
+          ],
+          "raw": "jumpstd NumberAcceptedMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberAcceptedMScript"
+      ]
+    },
+    "TrainerFisherTully.NumberDeclined": {
+      "raw_lines": [
+        "jumpstd NumberDeclinedMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "NumberDeclinedMScript"
+          ],
+          "raw": "jumpstd NumberDeclinedMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberDeclinedMScript"
+      ]
+    },
+    "TrainerFisherTully.PhoneFull": {
+      "raw_lines": [
+        "jumpstd PhoneFullMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PhoneFullMScript"
+          ],
+          "raw": "jumpstd PhoneFullMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PhoneFullMScript"
+      ]
+    },
+    "TrainerFisherTully.Rematch": {
+      "raw_lines": [
+        "jumpstd RematchMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RematchMScript"
+          ],
+          "raw": "jumpstd RematchMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchMScript"
+      ]
+    },
+    "TrainerFisherTully.Gift": {
+      "raw_lines": [
+        "jumpstd GiftMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "GiftMScript"
+          ],
+          "raw": "jumpstd GiftMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GiftMScript"
+      ]
+    },
+    "TrainerFisherTully.PackFull": {
+      "raw_lines": [
+        "jumpstd PackFullMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PackFullMScript"
+          ],
+          "raw": "jumpstd PackFullMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PackFullMScript"
+      ]
+    },
+    "TrainerPokemaniacShane": {
+      "raw_lines": [
+        "trainer POKEMANIAC, SHANE, EVENT_BEAT_POKEMANIAC_SHANE, PokemaniacShaneSeenText, PokemaniacShaneBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "POKEMANIAC",
+            "SHANE",
+            "EVENT_BEAT_POKEMANIAC_SHANE",
+            "PokemaniacShaneSeenText",
+            "PokemaniacShaneBeatenText",
+            "0",
+            "TrainerPokemaniacShane.Script"
+          ],
+          "raw": "trainer POKEMANIAC, SHANE, EVENT_BEAT_POKEMANIAC_SHANE, PokemaniacShaneSeenText, PokemaniacShaneBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerPokemaniacShane.Script",
+      "label_refs": [
+        "TrainerPokemaniacShane.Script"
+      ],
+      "text_refs": [
+        "PokemaniacShaneBeatenText",
+        "PokemaniacShaneSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPokemaniacShane.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext PokemaniacShaneAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PokemaniacShaneAfterBattleText"
+          ],
+          "raw": "writetext PokemaniacShaneAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "PokemaniacShaneAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerBenjamin": {
+      "raw_lines": [
+        "trainer HIKER, BENJAMIN, EVENT_BEAT_HIKER_BENJAMIN, HikerBenjaminSeenText, HikerBenjaminBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "HIKER",
+            "BENJAMIN",
+            "EVENT_BEAT_HIKER_BENJAMIN",
+            "HikerBenjaminSeenText",
+            "HikerBenjaminBeatenText",
+            "0",
+            "TrainerHikerBenjamin.Script"
+          ],
+          "raw": "trainer HIKER, BENJAMIN, EVENT_BEAT_HIKER_BENJAMIN, HikerBenjaminSeenText, HikerBenjaminBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerHikerBenjamin.Script",
+      "label_refs": [
+        "TrainerHikerBenjamin.Script"
+      ],
+      "text_refs": [
+        "HikerBenjaminBeatenText",
+        "HikerBenjaminSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerBenjamin.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext HikerBenjaminAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "HikerBenjaminAfterBattleText"
+          ],
+          "raw": "writetext HikerBenjaminAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "HikerBenjaminAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42Sign1": {
+      "raw_lines": [
+        "jumptext Route42Sign1Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "Route42Sign1Text"
+          ],
+          "raw": "jumptext Route42Sign1Text"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "Route42Sign1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MtMortarSign1": {
+      "raw_lines": [
+        "jumptext MtMortarSign1Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "MtMortarSign1Text"
+          ],
+          "raw": "jumptext MtMortarSign1Text"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "MtMortarSign1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MtMortarSign2": {
+      "raw_lines": [
+        "jumptext MtMortarSign2Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "MtMortarSign2Text"
+          ],
+          "raw": "jumptext MtMortarSign2Text"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "MtMortarSign2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42Sign2": {
+      "raw_lines": [
+        "jumptext Route42Sign2Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "Route42Sign2Text"
+          ],
+          "raw": "jumptext Route42Sign2Text"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "Route42Sign2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42UltraBall": {
+      "raw_lines": [
+        "itemball ULTRA_BALL"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "ULTRA_BALL"
+          ],
+          "raw": "itemball ULTRA_BALL"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "Route42SuperPotion",
+      "label_refs": [
+        "Route42SuperPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42SuperPotion": {
+      "raw_lines": [
+        "itemball SUPER_POTION"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "SUPER_POTION"
+          ],
+          "raw": "itemball SUPER_POTION"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "Route42FruitTree1",
+      "label_refs": [
+        "Route42FruitTree1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42FruitTree1": {
+      "raw_lines": [
+        "fruittree FRUITTREE_ROUTE_42_1"
+      ],
+      "commands": [
+        {
+          "command": "fruittree",
+          "args": [
+            "FRUITTREE_ROUTE_42_1"
+          ],
+          "raw": "fruittree FRUITTREE_ROUTE_42_1"
+        }
+      ],
+      "first_command": "fruittree",
+      "fallthrough_label": "Route42FruitTree2",
+      "label_refs": [
+        "Route42FruitTree2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42FruitTree2": {
+      "raw_lines": [
+        "fruittree FRUITTREE_ROUTE_42_2"
+      ],
+      "commands": [
+        {
+          "command": "fruittree",
+          "args": [
+            "FRUITTREE_ROUTE_42_2"
+          ],
+          "raw": "fruittree FRUITTREE_ROUTE_42_2"
+        }
+      ],
+      "first_command": "fruittree",
+      "fallthrough_label": "Route42FruitTree3",
+      "label_refs": [
+        "Route42FruitTree3"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42FruitTree3": {
+      "raw_lines": [
+        "fruittree FRUITTREE_ROUTE_42_3"
+      ],
+      "commands": [
+        {
+          "command": "fruittree",
+          "args": [
+            "FRUITTREE_ROUTE_42_3"
+          ],
+          "raw": "fruittree FRUITTREE_ROUTE_42_3"
+        }
+      ],
+      "first_command": "fruittree",
+      "fallthrough_label": "Route42HiddenMaxPotion",
+      "label_refs": [
+        "Route42HiddenMaxPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42HiddenMaxPotion": {
+      "raw_lines": [
+        "hiddenitem MAX_POTION, EVENT_ROUTE_42_HIDDEN_MAX_POTION"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "MAX_POTION",
+            "EVENT_ROUTE_42_HIDDEN_MAX_POTION"
+          ],
+          "raw": "hiddenitem MAX_POTION, EVENT_ROUTE_42_HIDDEN_MAX_POTION"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "Route42SuicuneMovement",
+      "label_refs": [
+        "Route42SuicuneMovement"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42SuicuneMovement": {
+      "raw_lines": [
+        "set_sliding",
+        "fast_jump_step UP",
+        "fast_jump_step UP",
+        "fast_jump_step UP",
+        "fast_jump_step RIGHT",
+        "fast_jump_step RIGHT",
+        "fast_jump_step RIGHT",
+        "remove_sliding",
+        "step_end"
+      ],
+      "commands": [
+        {
+          "command": "set_sliding",
+          "args": [],
+          "raw": "set_sliding"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "UP"
+          ],
+          "raw": "fast_jump_step UP"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "UP"
+          ],
+          "raw": "fast_jump_step UP"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "UP"
+          ],
+          "raw": "fast_jump_step UP"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "RIGHT"
+          ],
+          "raw": "fast_jump_step RIGHT"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "RIGHT"
+          ],
+          "raw": "fast_jump_step RIGHT"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "RIGHT"
+          ],
+          "raw": "fast_jump_step RIGHT"
+        },
+        {
+          "command": "remove_sliding",
+          "args": [],
+          "raw": "remove_sliding"
+        },
+        {
+          "command": "step_end",
+          "args": [],
+          "raw": "step_end"
+        }
+      ],
+      "first_command": "set_sliding",
+      "fallthrough_label": "Route42_MapEvents",
+      "label_refs": [
+        "Route42_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  0,  8, ROUTE_42_ECRUTEAK_GATE, 3",
+        "warp_event  0,  9, ROUTE_42_ECRUTEAK_GATE, 4",
+        "warp_event 10,  5, MOUNT_MORTAR_1F_OUTSIDE, 1",
+        "warp_event 28,  9, MOUNT_MORTAR_1F_OUTSIDE, 2",
+        "warp_event 46,  7, MOUNT_MORTAR_1F_OUTSIDE, 3",
+        "def_coord_events",
+        "coord_event 24, 14, SCENE_ROUTE42_SUICUNE, Route42SuicuneScript",
+        "def_bg_events",
+        "bg_event  4, 10, BGEVENT_READ, Route42Sign1",
+        "bg_event  7,  5, BGEVENT_READ, MtMortarSign1",
+        "bg_event 45,  9, BGEVENT_READ, MtMortarSign2",
+        "bg_event 54,  8, BGEVENT_READ, Route42Sign2",
+        "bg_event 16, 11, BGEVENT_ITEM, Route42HiddenMaxPotion",
+        "def_object_events",
+        "object_event 40, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherTully, -1",
+        "object_event 51,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerBenjamin, -1",
+        "object_event 47,  8, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacShane, -1",
+        "object_event 27, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route42FruitTree1, -1",
+        "object_event 28, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route42FruitTree2, -1",
+        "object_event 29, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route42FruitTree3, -1",
+        "object_event  6,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42UltraBall, EVENT_ROUTE_42_ULTRA_BALL",
+        "object_event 33,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42SuperPotion, EVENT_ROUTE_42_SUPER_POTION",
+        "object_event 26, 16, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_42"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "8",
+            "ROUTE_42_ECRUTEAK_GATE",
+            "3"
+          ],
+          "raw": "warp_event  0,  8, ROUTE_42_ECRUTEAK_GATE, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "9",
+            "ROUTE_42_ECRUTEAK_GATE",
+            "4"
+          ],
+          "raw": "warp_event  0,  9, ROUTE_42_ECRUTEAK_GATE, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "10",
+            "5",
+            "MOUNT_MORTAR_1F_OUTSIDE",
+            "1"
+          ],
+          "raw": "warp_event 10,  5, MOUNT_MORTAR_1F_OUTSIDE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "28",
+            "9",
+            "MOUNT_MORTAR_1F_OUTSIDE",
+            "2"
+          ],
+          "raw": "warp_event 28,  9, MOUNT_MORTAR_1F_OUTSIDE, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "46",
+            "7",
+            "MOUNT_MORTAR_1F_OUTSIDE",
+            "3"
+          ],
+          "raw": "warp_event 46,  7, MOUNT_MORTAR_1F_OUTSIDE, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "24",
+            "14",
+            "SCENE_ROUTE42_SUICUNE",
+            "Route42SuicuneScript"
+          ],
+          "raw": "coord_event 24, 14, SCENE_ROUTE42_SUICUNE, Route42SuicuneScript"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "4",
+            "10",
+            "BGEVENT_READ",
+            "Route42Sign1"
+          ],
+          "raw": "bg_event  4, 10, BGEVENT_READ, Route42Sign1"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "7",
+            "5",
+            "BGEVENT_READ",
+            "MtMortarSign1"
+          ],
+          "raw": "bg_event  7,  5, BGEVENT_READ, MtMortarSign1"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "45",
+            "9",
+            "BGEVENT_READ",
+            "MtMortarSign2"
+          ],
+          "raw": "bg_event 45,  9, BGEVENT_READ, MtMortarSign2"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "54",
+            "8",
+            "BGEVENT_READ",
+            "Route42Sign2"
+          ],
+          "raw": "bg_event 54,  8, BGEVENT_READ, Route42Sign2"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "16",
+            "11",
+            "BGEVENT_ITEM",
+            "Route42HiddenMaxPotion"
+          ],
+          "raw": "bg_event 16, 11, BGEVENT_ITEM, Route42HiddenMaxPotion"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "40",
+            "10",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerFisherTully",
+            "-1"
+          ],
+          "raw": "object_event 40, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherTully, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "51",
+            "9",
+            "SPRITE_POKEFAN_M",
+            "SPRITEMOVEDATA_SPINRANDOM_FAST",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerHikerBenjamin",
+            "-1"
+          ],
+          "raw": "object_event 51,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerBenjamin, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "47",
+            "8",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerPokemaniacShane",
+            "-1"
+          ],
+          "raw": "object_event 47,  8, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacShane, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "27",
+            "16",
+            "SPRITE_FRUIT_TREE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route42FruitTree1",
+            "-1"
+          ],
+          "raw": "object_event 27, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route42FruitTree1, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "28",
+            "16",
+            "SPRITE_FRUIT_TREE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route42FruitTree2",
+            "-1"
+          ],
+          "raw": "object_event 28, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route42FruitTree2, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "29",
+            "16",
+            "SPRITE_FRUIT_TREE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route42FruitTree3",
+            "-1"
+          ],
+          "raw": "object_event 29, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route42FruitTree3, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "4",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "Route42UltraBall",
+            "EVENT_ROUTE_42_ULTRA_BALL"
+          ],
+          "raw": "object_event  6,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42UltraBall, EVENT_ROUTE_42_ULTRA_BALL"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "33",
+            "8",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "Route42SuperPotion",
+            "EVENT_ROUTE_42_SUPER_POTION"
+          ],
+          "raw": "object_event 33,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42SuperPotion, EVENT_ROUTE_42_SUPER_POTION"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "26",
+            "16",
+            "SPRITE_SUICUNE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_SAW_SUICUNE_ON_ROUTE_42"
+          ],
+          "raw": "object_event 26, 16, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_42"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "FisherTullySeenText": {
+      "raw_lines": [
+        "text \"Let me demonstrate\"",
+        "line \"the power of the\"",
+        "cont \"#MON I caught!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Let me demonstrate"
+        },
+        {
+          "command": "line",
+          "value": "the power of the"
+        },
+        {
+          "command": "cont",
+          "value": "#MON I caught!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FisherTullyBeatenText": {
+      "raw_lines": [
+        "text \"What? That's not\"",
+        "line \"right.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What? That's not"
+        },
+        {
+          "command": "line",
+          "value": "right."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FisherTullyAfterBattleText": {
+      "raw_lines": [
+        "text \"I want to become\"",
+        "line \"the trainer CHAMP\"",
+        "para \"using the #MON\"",
+        "line \"I caught.\"",
+        "para \"That's the best\"",
+        "line \"part of fishing!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I want to become"
+        },
+        {
+          "command": "line",
+          "value": "the trainer CHAMP"
+        },
+        {
+          "command": "para",
+          "value": "using the #MON"
+        },
+        {
+          "command": "line",
+          "value": "I caught."
+        },
+        {
+          "command": "para",
+          "value": "That's the best"
+        },
+        {
+          "command": "line",
+          "value": "part of fishing!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "HikerBenjaminSeenText": {
+      "raw_lines": [
+        "text \"Ah, it's good to\"",
+        "line \"be outside!\"",
+        "cont \"I feel so free!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ah, it's good to"
+        },
+        {
+          "command": "line",
+          "value": "be outside!"
+        },
+        {
+          "command": "cont",
+          "value": "I feel so free!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "HikerBenjaminBeatenText": {
+      "raw_lines": [
+        "text \"Gahahah!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Gahahah!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "HikerBenjaminAfterBattleText": {
+      "raw_lines": [
+        "text \"Losing feels in-\"",
+        "line \"significant if you\"",
+        "para \"look up at the big\"",
+        "line \"sky!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Losing feels in-"
+        },
+        {
+          "command": "line",
+          "value": "significant if you"
+        },
+        {
+          "command": "para",
+          "value": "look up at the big"
+        },
+        {
+          "command": "line",
+          "value": "sky!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PokemaniacShaneSeenText": {
+      "raw_lines": [
+        "text \"HEY!\"",
+        "para \"This is my secret\"",
+        "line \"place! Get lost,\"",
+        "cont \"you outsider!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "HEY!"
+        },
+        {
+          "command": "para",
+          "value": "This is my secret"
+        },
+        {
+          "command": "line",
+          "value": "place! Get lost,"
+        },
+        {
+          "command": "cont",
+          "value": "you outsider!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PokemaniacShaneBeatenText": {
+      "raw_lines": [
+        "text \"I should have used\"",
+        "line \"my MOON STONE\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I should have used"
+        },
+        {
+          "command": "line",
+          "value": "my MOON STONE\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PokemaniacShaneAfterBattleText": {
+      "raw_lines": [
+        "text \"You're working on\"",
+        "line \"a #DEX?\"",
+        "para \"Wow, you must know\"",
+        "line \"some pretty rare\"",
+        "cont \"#MON!\"",
+        "para \"May I please see\"",
+        "line \"it. Please?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You're working on"
+        },
+        {
+          "command": "line",
+          "value": "a #DEX?"
+        },
+        {
+          "command": "para",
+          "value": "Wow, you must know"
+        },
+        {
+          "command": "line",
+          "value": "some pretty rare"
+        },
+        {
+          "command": "cont",
+          "value": "#MON!"
+        },
+        {
+          "command": "para",
+          "value": "May I please see"
+        },
+        {
+          "command": "line",
+          "value": "it. Please?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route42Sign1Text": {
+      "raw_lines": [
+        "text \"ROUTE 42\"",
+        "para \"ECRUTEAK CITY -\"",
+        "line \"MAHOGANY TOWN\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ROUTE 42"
+        },
+        {
+          "command": "para",
+          "value": "ECRUTEAK CITY -"
+        },
+        {
+          "command": "line",
+          "value": "MAHOGANY TOWN"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MtMortarSign1Text": {
+      "raw_lines": [
+        "text \"MT.MORTAR\"",
+        "para \"WATERFALL CAVE\"",
+        "line \"INSIDE\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MT.MORTAR"
+        },
+        {
+          "command": "para",
+          "value": "WATERFALL CAVE"
+        },
+        {
+          "command": "line",
+          "value": "INSIDE"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MtMortarSign2Text": {
+      "raw_lines": [
+        "text \"MT.MORTAR\"",
+        "para \"WATERFALL CAVE\"",
+        "line \"INSIDE\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MT.MORTAR"
+        },
+        {
+          "command": "para",
+          "value": "WATERFALL CAVE"
+        },
+        {
+          "command": "line",
+          "value": "INSIDE"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route42Sign2Text": {
+      "raw_lines": [
+        "text \"ROUTE 42\"",
+        "para \"ECRUTEAK CITY -\"",
+        "line \"MAHOGANY TOWN\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ROUTE 42"
+        },
+        {
+          "command": "para",
+          "value": "ECRUTEAK CITY -"
+        },
+        {
+          "command": "line",
+          "value": "MAHOGANY TOWN"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "AskNumber1MScript",
+    "AskNumber2MScript",
+    "GiftMScript",
+    "NumberAcceptedMScript",
+    "NumberDeclinedMScript",
+    "PackFullMScript",
+    "PhoneFullMScript",
+    "RegisteredNumberMScript",
+    "RematchMScript"
+  ],
+  "dependencies": {
+    "Route42_MapScripts": {
+      "label_refs": [
+        "Route42Noop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42Noop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42Noop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42SuicuneScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "Route42SuicuneMovement"
+      ],
+      "scene_refs": [
+        "SCENE_ROUTE36_SUICUNE",
+        "SCENE_ROUTE42_NOOP"
+      ],
+      "std_calls": []
+    },
+    "TrainerFisherTully": {
+      "label_refs": [
+        "TrainerFisherTully.Script"
+      ],
+      "text_refs": [
+        "FisherTullyBeatenText",
+        "FisherTullySeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.Script": {
+      "label_refs": [
+        "TrainerFisherTully.AskForNumber",
+        "TrainerFisherTully.AskNumber1",
+        "TrainerFisherTully.AskedAlready",
+        "TrainerFisherTully.HasWaterStone",
+        "TrainerFisherTully.NumberAccepted",
+        "TrainerFisherTully.WantsBattle"
+      ],
+      "text_refs": [
+        "FisherTullyAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.AskedAlready": {
+      "label_refs": [
+        "TrainerFisherTully.AskForNumber",
+        "TrainerFisherTully.AskNumber2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.AskForNumber": {
+      "label_refs": [
+        "TrainerFisherTully.NumberAccepted",
+        "TrainerFisherTully.NumberDeclined",
+        "TrainerFisherTully.PhoneFull",
+        "TrainerFisherTully.RegisteredNumber"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.WantsBattle": {
+      "label_refs": [
+        "TrainerFisherTully.Fight1",
+        "TrainerFisherTully.Fight2",
+        "TrainerFisherTully.Fight3",
+        "TrainerFisherTully.LoadFight0",
+        "TrainerFisherTully.Rematch"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.Fight3": {
+      "label_refs": [
+        "TrainerFisherTully.Fight2",
+        "TrainerFisherTully.LoadFight3"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.Fight2": {
+      "label_refs": [
+        "TrainerFisherTully.Fight1",
+        "TrainerFisherTully.LoadFight2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.Fight1": {
+      "label_refs": [
+        "TrainerFisherTully.LoadFight0",
+        "TrainerFisherTully.LoadFight1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.LoadFight0": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.LoadFight1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.LoadFight2": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.LoadFight3": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.HasWaterStone": {
+      "label_refs": [
+        "TrainerFisherTully.Gift",
+        "TrainerFisherTully.NoRoom",
+        "TrainerFisherTully.NumberAccepted"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.NoRoom": {
+      "label_refs": [
+        "TrainerFisherTully.PackFull"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherTully.AskNumber1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber1MScript"
+      ]
+    },
+    "TrainerFisherTully.AskNumber2": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber2MScript"
+      ]
+    },
+    "TrainerFisherTully.RegisteredNumber": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RegisteredNumberMScript"
+      ]
+    },
+    "TrainerFisherTully.NumberAccepted": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberAcceptedMScript"
+      ]
+    },
+    "TrainerFisherTully.NumberDeclined": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberDeclinedMScript"
+      ]
+    },
+    "TrainerFisherTully.PhoneFull": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PhoneFullMScript"
+      ]
+    },
+    "TrainerFisherTully.Rematch": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchMScript"
+      ]
+    },
+    "TrainerFisherTully.Gift": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GiftMScript"
+      ]
+    },
+    "TrainerFisherTully.PackFull": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PackFullMScript"
+      ]
+    },
+    "TrainerPokemaniacShane": {
+      "label_refs": [
+        "TrainerPokemaniacShane.Script"
+      ],
+      "text_refs": [
+        "PokemaniacShaneBeatenText",
+        "PokemaniacShaneSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPokemaniacShane.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "PokemaniacShaneAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerBenjamin": {
+      "label_refs": [
+        "TrainerHikerBenjamin.Script"
+      ],
+      "text_refs": [
+        "HikerBenjaminBeatenText",
+        "HikerBenjaminSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerBenjamin.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "HikerBenjaminAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42Sign1": {
+      "label_refs": [],
+      "text_refs": [
+        "Route42Sign1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MtMortarSign1": {
+      "label_refs": [],
+      "text_refs": [
+        "MtMortarSign1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MtMortarSign2": {
+      "label_refs": [],
+      "text_refs": [
+        "MtMortarSign2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42Sign2": {
+      "label_refs": [],
+      "text_refs": [
+        "Route42Sign2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42UltraBall": {
+      "label_refs": [
+        "Route42SuperPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42SuperPotion": {
+      "label_refs": [
+        "Route42FruitTree1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42FruitTree1": {
+      "label_refs": [
+        "Route42FruitTree2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42FruitTree2": {
+      "label_refs": [
+        "Route42FruitTree3"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42FruitTree3": {
+      "label_refs": [
+        "Route42HiddenMaxPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42HiddenMaxPotion": {
+      "label_refs": [
+        "Route42SuicuneMovement"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42SuicuneMovement": {
+      "label_refs": [
+        "Route42_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route42_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear"
+  ],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 0,
+    "warp_events": 5,
+    "coord_events": 1,
+    "bg_events": 5,
+    "object_events": 9
+  }
+}

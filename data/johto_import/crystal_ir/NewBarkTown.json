@@ -31,6 +31,22 @@
     }
   ],
   "events": {
+    "scene_scripts": [
+      {
+        "script": "NewBarkTownNoop1Scene",
+        "scene_id": "SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU"
+      },
+      {
+        "script": "NewBarkTownNoop2Scene",
+        "scene_id": "SCENE_NEWBARKTOWN_NOOP"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "NewBarkTownFlypointCallback"
+      }
+    ],
     "warp_events": [
       {
         "x": 6,
@@ -105,6 +121,11 @@
         "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
         "movement_range_x": 1,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "NewBarkTownTeacherScript",
         "flag": -1
       },
@@ -115,6 +136,11 @@
         "movement": "SPRITEMOVEDATA_WALK_UP_DOWN",
         "movement_range_x": 0,
         "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "NewBarkTownFisherScript",
         "flag": -1
       },
@@ -125,12 +151,2025 @@
         "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_SCRIPT",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "NewBarkTownRivalScript",
+        "flag": "EVENT_RIVAL_NEW_BARK_TOWN"
       }
     ]
   },
+  "object_consts": [
+    "NEWBARKTOWN_TEACHER",
+    "NEWBARKTOWN_FISHER",
+    "NEWBARKTOWN_RIVAL"
+  ],
+  "scene_ids": [
+    "SCENE_NEWBARKTOWN_NOOP",
+    "SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU"
+  ],
+  "scripts": {
+    "NewBarkTown_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script NewBarkTownNoop1Scene, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU",
+        "scene_script NewBarkTownNoop2Scene, SCENE_NEWBARKTOWN_NOOP",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, NewBarkTownFlypointCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "NewBarkTownNoop1Scene",
+            "SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU"
+          ],
+          "raw": "scene_script NewBarkTownNoop1Scene, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "NewBarkTownNoop2Scene",
+            "SCENE_NEWBARKTOWN_NOOP"
+          ],
+          "raw": "scene_script NewBarkTownNoop2Scene, SCENE_NEWBARKTOWN_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "NewBarkTownFlypointCallback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, NewBarkTownFlypointCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "NewBarkTownNoop1Scene",
+      "label_refs": [
+        "NewBarkTownNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownFlypointCallback": {
+      "raw_lines": [
+        "setflag ENGINE_FLYPOINT_NEW_BARK",
+        "clearevent EVENT_FIRST_TIME_BANKING_WITH_MOM",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_FLYPOINT_NEW_BARK"
+          ],
+          "raw": "setflag ENGINE_FLYPOINT_NEW_BARK"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_FIRST_TIME_BANKING_WITH_MOM"
+          ],
+          "raw": "clearevent EVENT_FIRST_TIME_BANKING_WITH_MOM"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "setflag",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTown_TeacherStopsYouScene1": {
+      "raw_lines": [
+        "playmusic MUSIC_MOM",
+        "turnobject NEWBARKTOWN_TEACHER, LEFT",
+        "opentext",
+        "writetext Text_WaitPlayer",
+        "waitbutton",
+        "closetext",
+        "turnobject PLAYER, RIGHT",
+        "applymovement NEWBARKTOWN_TEACHER, NewBarkTown_TeacherRunsToYouMovement1",
+        "opentext",
+        "writetext Text_WhatDoYouThinkYoureDoing",
+        "waitbutton",
+        "closetext",
+        "follow NEWBARKTOWN_TEACHER, PLAYER",
+        "applymovement NEWBARKTOWN_TEACHER, NewBarkTown_TeacherBringsYouBackMovement1",
+        "stopfollow",
+        "opentext",
+        "writetext Text_ItsDangerousToGoAlone",
+        "waitbutton",
+        "closetext",
+        "special RestartMapMusic",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_MOM"
+          ],
+          "raw": "playmusic MUSIC_MOM"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "NEWBARKTOWN_TEACHER",
+            "LEFT"
+          ],
+          "raw": "turnobject NEWBARKTOWN_TEACHER, LEFT"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_WaitPlayer"
+          ],
+          "raw": "writetext Text_WaitPlayer"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "NEWBARKTOWN_TEACHER",
+            "NewBarkTown_TeacherRunsToYouMovement1"
+          ],
+          "raw": "applymovement NEWBARKTOWN_TEACHER, NewBarkTown_TeacherRunsToYouMovement1"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_WhatDoYouThinkYoureDoing"
+          ],
+          "raw": "writetext Text_WhatDoYouThinkYoureDoing"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "follow",
+          "args": [
+            "NEWBARKTOWN_TEACHER",
+            "PLAYER"
+          ],
+          "raw": "follow NEWBARKTOWN_TEACHER, PLAYER"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "NEWBARKTOWN_TEACHER",
+            "NewBarkTown_TeacherBringsYouBackMovement1"
+          ],
+          "raw": "applymovement NEWBARKTOWN_TEACHER, NewBarkTown_TeacherBringsYouBackMovement1"
+        },
+        {
+          "command": "stopfollow",
+          "args": [],
+          "raw": "stopfollow"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_ItsDangerousToGoAlone"
+          ],
+          "raw": "writetext Text_ItsDangerousToGoAlone"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playmusic",
+      "label_refs": [],
+      "text_refs": [
+        "Text_ItsDangerousToGoAlone",
+        "Text_WaitPlayer",
+        "Text_WhatDoYouThinkYoureDoing"
+      ],
+      "movement_refs": [
+        "NewBarkTown_TeacherBringsYouBackMovement1",
+        "NewBarkTown_TeacherRunsToYouMovement1"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTown_TeacherStopsYouScene2": {
+      "raw_lines": [
+        "playmusic MUSIC_MOM",
+        "turnobject NEWBARKTOWN_TEACHER, LEFT",
+        "opentext",
+        "writetext Text_WaitPlayer",
+        "waitbutton",
+        "closetext",
+        "turnobject PLAYER, RIGHT",
+        "applymovement NEWBARKTOWN_TEACHER, NewBarkTown_TeacherRunsToYouMovement2",
+        "turnobject PLAYER, UP",
+        "opentext",
+        "writetext Text_WhatDoYouThinkYoureDoing",
+        "waitbutton",
+        "closetext",
+        "follow NEWBARKTOWN_TEACHER, PLAYER",
+        "applymovement NEWBARKTOWN_TEACHER, NewBarkTown_TeacherBringsYouBackMovement2",
+        "stopfollow",
+        "opentext",
+        "writetext Text_ItsDangerousToGoAlone",
+        "waitbutton",
+        "closetext",
+        "special RestartMapMusic",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_MOM"
+          ],
+          "raw": "playmusic MUSIC_MOM"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "NEWBARKTOWN_TEACHER",
+            "LEFT"
+          ],
+          "raw": "turnobject NEWBARKTOWN_TEACHER, LEFT"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_WaitPlayer"
+          ],
+          "raw": "writetext Text_WaitPlayer"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "NEWBARKTOWN_TEACHER",
+            "NewBarkTown_TeacherRunsToYouMovement2"
+          ],
+          "raw": "applymovement NEWBARKTOWN_TEACHER, NewBarkTown_TeacherRunsToYouMovement2"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "UP"
+          ],
+          "raw": "turnobject PLAYER, UP"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_WhatDoYouThinkYoureDoing"
+          ],
+          "raw": "writetext Text_WhatDoYouThinkYoureDoing"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "follow",
+          "args": [
+            "NEWBARKTOWN_TEACHER",
+            "PLAYER"
+          ],
+          "raw": "follow NEWBARKTOWN_TEACHER, PLAYER"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "NEWBARKTOWN_TEACHER",
+            "NewBarkTown_TeacherBringsYouBackMovement2"
+          ],
+          "raw": "applymovement NEWBARKTOWN_TEACHER, NewBarkTown_TeacherBringsYouBackMovement2"
+        },
+        {
+          "command": "stopfollow",
+          "args": [],
+          "raw": "stopfollow"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_ItsDangerousToGoAlone"
+          ],
+          "raw": "writetext Text_ItsDangerousToGoAlone"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playmusic",
+      "label_refs": [],
+      "text_refs": [
+        "Text_ItsDangerousToGoAlone",
+        "Text_WaitPlayer",
+        "Text_WhatDoYouThinkYoureDoing"
+      ],
+      "movement_refs": [
+        "NewBarkTown_TeacherBringsYouBackMovement2",
+        "NewBarkTown_TeacherRunsToYouMovement2"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownTeacherScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST",
+        "iftrue .CallMom",
+        "checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM",
+        "iftrue .TellMomYoureLeaving",
+        "checkevent EVENT_GOT_A_POKEMON_FROM_ELM",
+        "iftrue .MonIsAdorable",
+        "writetext Text_GearIsImpressive",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST"
+          ],
+          "raw": "checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "NewBarkTownTeacherScript.CallMom"
+          ],
+          "raw": "iftrue .CallMom"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GAVE_MYSTERY_EGG_TO_ELM"
+          ],
+          "raw": "checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "NewBarkTownTeacherScript.TellMomYoureLeaving"
+          ],
+          "raw": "iftrue .TellMomYoureLeaving"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_A_POKEMON_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_A_POKEMON_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "NewBarkTownTeacherScript.MonIsAdorable"
+          ],
+          "raw": "iftrue .MonIsAdorable"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_GearIsImpressive"
+          ],
+          "raw": "writetext Text_GearIsImpressive"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "NewBarkTownTeacherScript.CallMom",
+        "NewBarkTownTeacherScript.MonIsAdorable",
+        "NewBarkTownTeacherScript.TellMomYoureLeaving"
+      ],
+      "text_refs": [
+        "Text_GearIsImpressive"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownTeacherScript.MonIsAdorable": {
+      "raw_lines": [
+        "writetext Text_YourMonIsAdorable",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Text_YourMonIsAdorable"
+          ],
+          "raw": "writetext Text_YourMonIsAdorable"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Text_YourMonIsAdorable"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownTeacherScript.TellMomYoureLeaving": {
+      "raw_lines": [
+        "writetext Text_TellMomIfLeaving",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Text_TellMomIfLeaving"
+          ],
+          "raw": "writetext Text_TellMomIfLeaving"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Text_TellMomIfLeaving"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownTeacherScript.CallMom": {
+      "raw_lines": [
+        "writetext Text_CallMomOnGear",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Text_CallMomOnGear"
+          ],
+          "raw": "writetext Text_CallMomOnGear"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Text_CallMomOnGear"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownFisherScript": {
+      "raw_lines": [
+        "jumptextfaceplayer Text_ElmDiscoveredNewMon"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Text_ElmDiscoveredNewMon"
+          ],
+          "raw": "jumptextfaceplayer Text_ElmDiscoveredNewMon"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Text_ElmDiscoveredNewMon"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownRivalScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext NewBarkTownRivalText1",
+        "waitbutton",
+        "closetext",
+        "turnobject NEWBARKTOWN_RIVAL, LEFT",
+        "opentext",
+        "writetext NewBarkTownRivalText2",
+        "waitbutton",
+        "closetext",
+        "follow PLAYER, NEWBARKTOWN_RIVAL",
+        "applymovement PLAYER, NewBarkTown_RivalPushesYouAwayMovement",
+        "stopfollow",
+        "pause 5",
+        "turnobject NEWBARKTOWN_RIVAL, DOWN",
+        "pause 5",
+        "playsound SFX_TACKLE",
+        "applymovement PLAYER, NewBarkTown_RivalShovesYouOutMovement",
+        "applymovement NEWBARKTOWN_RIVAL, NewBarkTown_RivalReturnsToTheShadowsMovement",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "NewBarkTownRivalText1"
+          ],
+          "raw": "writetext NewBarkTownRivalText1"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "NEWBARKTOWN_RIVAL",
+            "LEFT"
+          ],
+          "raw": "turnobject NEWBARKTOWN_RIVAL, LEFT"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "NewBarkTownRivalText2"
+          ],
+          "raw": "writetext NewBarkTownRivalText2"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "follow",
+          "args": [
+            "PLAYER",
+            "NEWBARKTOWN_RIVAL"
+          ],
+          "raw": "follow PLAYER, NEWBARKTOWN_RIVAL"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "NewBarkTown_RivalPushesYouAwayMovement"
+          ],
+          "raw": "applymovement PLAYER, NewBarkTown_RivalPushesYouAwayMovement"
+        },
+        {
+          "command": "stopfollow",
+          "args": [],
+          "raw": "stopfollow"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "5"
+          ],
+          "raw": "pause 5"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "NEWBARKTOWN_RIVAL",
+            "DOWN"
+          ],
+          "raw": "turnobject NEWBARKTOWN_RIVAL, DOWN"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "5"
+          ],
+          "raw": "pause 5"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_TACKLE"
+          ],
+          "raw": "playsound SFX_TACKLE"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "NewBarkTown_RivalShovesYouOutMovement"
+          ],
+          "raw": "applymovement PLAYER, NewBarkTown_RivalShovesYouOutMovement"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "NEWBARKTOWN_RIVAL",
+            "NewBarkTown_RivalReturnsToTheShadowsMovement"
+          ],
+          "raw": "applymovement NEWBARKTOWN_RIVAL, NewBarkTown_RivalReturnsToTheShadowsMovement"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "NewBarkTownRivalText1",
+        "NewBarkTownRivalText2"
+      ],
+      "movement_refs": [
+        "NewBarkTown_RivalPushesYouAwayMovement",
+        "NewBarkTown_RivalReturnsToTheShadowsMovement",
+        "NewBarkTown_RivalShovesYouOutMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownSign": {
+      "raw_lines": [
+        "jumptext NewBarkTownSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "NewBarkTownSignText"
+          ],
+          "raw": "jumptext NewBarkTownSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "NewBarkTownSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownPlayersHouseSign": {
+      "raw_lines": [
+        "jumptext NewBarkTownPlayersHouseSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "NewBarkTownPlayersHouseSignText"
+          ],
+          "raw": "jumptext NewBarkTownPlayersHouseSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "NewBarkTownPlayersHouseSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownElmsLabSign": {
+      "raw_lines": [
+        "jumptext NewBarkTownElmsLabSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "NewBarkTownElmsLabSignText"
+          ],
+          "raw": "jumptext NewBarkTownElmsLabSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "NewBarkTownElmsLabSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownElmsHouseSign": {
+      "raw_lines": [
+        "jumptext NewBarkTownElmsHouseSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "NewBarkTownElmsHouseSignText"
+          ],
+          "raw": "jumptext NewBarkTownElmsHouseSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "NewBarkTownElmsHouseSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTown_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  6,  3, ELMS_LAB, 1",
+        "warp_event 13,  5, PLAYERS_HOUSE_1F, 1",
+        "warp_event  3, 11, PLAYERS_NEIGHBORS_HOUSE, 1",
+        "warp_event 11, 13, ELMS_HOUSE, 1",
+        "def_coord_events",
+        "coord_event  1,  8, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU, NewBarkTown_TeacherStopsYouScene1",
+        "coord_event  1,  9, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU, NewBarkTown_TeacherStopsYouScene2",
+        "def_bg_events",
+        "bg_event  8,  8, BGEVENT_READ, NewBarkTownSign",
+        "bg_event 11,  5, BGEVENT_READ, NewBarkTownPlayersHouseSign",
+        "bg_event  3,  3, BGEVENT_READ, NewBarkTownElmsLabSign",
+        "bg_event  9, 13, BGEVENT_READ, NewBarkTownElmsHouseSign",
+        "def_object_events",
+        "object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1",
+        "object_event 12,  9, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1",
+        "object_event  3,  2, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRivalScript, EVENT_RIVAL_NEW_BARK_TOWN"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "6",
+            "3",
+            "ELMS_LAB",
+            "1"
+          ],
+          "raw": "warp_event  6,  3, ELMS_LAB, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "13",
+            "5",
+            "PLAYERS_HOUSE_1F",
+            "1"
+          ],
+          "raw": "warp_event 13,  5, PLAYERS_HOUSE_1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "11",
+            "PLAYERS_NEIGHBORS_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event  3, 11, PLAYERS_NEIGHBORS_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "11",
+            "13",
+            "ELMS_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event 11, 13, ELMS_HOUSE, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "1",
+            "8",
+            "SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU",
+            "NewBarkTown_TeacherStopsYouScene1"
+          ],
+          "raw": "coord_event  1,  8, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU, NewBarkTown_TeacherStopsYouScene1"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "1",
+            "9",
+            "SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU",
+            "NewBarkTown_TeacherStopsYouScene2"
+          ],
+          "raw": "coord_event  1,  9, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU, NewBarkTown_TeacherStopsYouScene2"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "8",
+            "8",
+            "BGEVENT_READ",
+            "NewBarkTownSign"
+          ],
+          "raw": "bg_event  8,  8, BGEVENT_READ, NewBarkTownSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "11",
+            "5",
+            "BGEVENT_READ",
+            "NewBarkTownPlayersHouseSign"
+          ],
+          "raw": "bg_event 11,  5, BGEVENT_READ, NewBarkTownPlayersHouseSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "3",
+            "BGEVENT_READ",
+            "NewBarkTownElmsLabSign"
+          ],
+          "raw": "bg_event  3,  3, BGEVENT_READ, NewBarkTownElmsLabSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "9",
+            "13",
+            "BGEVENT_READ",
+            "NewBarkTownElmsHouseSign"
+          ],
+          "raw": "bg_event  9, 13, BGEVENT_READ, NewBarkTownElmsHouseSign"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "8",
+            "SPRITE_TEACHER",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "NewBarkTownTeacherScript",
+            "-1"
+          ],
+          "raw": "object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "12",
+            "9",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_WALK_UP_DOWN",
+            "0",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "NewBarkTownFisherScript",
+            "-1"
+          ],
+          "raw": "object_event 12,  9, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "2",
+            "SPRITE_RIVAL",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "NewBarkTownRivalScript",
+            "EVENT_RIVAL_NEW_BARK_TOWN"
+          ],
+          "raw": "object_event  3,  2, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRivalScript, EVENT_RIVAL_NEW_BARK_TOWN"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "Text_GearIsImpressive": {
+      "raw_lines": [
+        "text \"Wow, your #GEAR\"",
+        "line \"is impressive!\"",
+        "para \"Did your mom get\"",
+        "line \"it for you?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Wow, your #GEAR"
+        },
+        {
+          "command": "line",
+          "value": "is impressive!"
+        },
+        {
+          "command": "para",
+          "value": "Did your mom get"
+        },
+        {
+          "command": "line",
+          "value": "it for you?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_WaitPlayer": {
+      "raw_lines": [
+        "text \"Wait, <PLAY_G>!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Wait, <PLAY_G>!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_WhatDoYouThinkYoureDoing": {
+      "raw_lines": [
+        "text \"What do you think\"",
+        "line \"you're doing?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What do you think"
+        },
+        {
+          "command": "line",
+          "value": "you're doing?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_ItsDangerousToGoAlone": {
+      "raw_lines": [
+        "text \"It's dangerous to\"",
+        "line \"go out without a\"",
+        "cont \"#MON!\"",
+        "para \"Wild #MON\"",
+        "line \"jump out of the\"",
+        "para \"grass on the way\"",
+        "line \"to the next town.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's dangerous to"
+        },
+        {
+          "command": "line",
+          "value": "go out without a"
+        },
+        {
+          "command": "cont",
+          "value": "#MON!"
+        },
+        {
+          "command": "para",
+          "value": "Wild #MON"
+        },
+        {
+          "command": "line",
+          "value": "jump out of the"
+        },
+        {
+          "command": "para",
+          "value": "grass on the way"
+        },
+        {
+          "command": "line",
+          "value": "to the next town."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_YourMonIsAdorable": {
+      "raw_lines": [
+        "text \"Oh! Your #MON\"",
+        "line \"is adorable!\"",
+        "cont \"I wish I had one!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh! Your #MON"
+        },
+        {
+          "command": "line",
+          "value": "is adorable!"
+        },
+        {
+          "command": "cont",
+          "value": "I wish I had one!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_TellMomIfLeaving": {
+      "raw_lines": [
+        "text \"Hi, <PLAY_G>!\"",
+        "line \"Leaving again?\"",
+        "para \"You should tell\"",
+        "line \"your mom if you\"",
+        "cont \"are leaving.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hi, <PLAY_G>!"
+        },
+        {
+          "command": "line",
+          "value": "Leaving again?"
+        },
+        {
+          "command": "para",
+          "value": "You should tell"
+        },
+        {
+          "command": "line",
+          "value": "your mom if you"
+        },
+        {
+          "command": "cont",
+          "value": "are leaving."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_CallMomOnGear": {
+      "raw_lines": [
+        "text \"Call your mom on\"",
+        "line \"your #GEAR to\"",
+        "para \"let her know how\"",
+        "line \"you're doing.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Call your mom on"
+        },
+        {
+          "command": "line",
+          "value": "your #GEAR to"
+        },
+        {
+          "command": "para",
+          "value": "let her know how"
+        },
+        {
+          "command": "line",
+          "value": "you're doing."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_ElmDiscoveredNewMon": {
+      "raw_lines": [
+        "text \"Yo, <PLAYER>!\"",
+        "para \"I hear PROF.ELM\"",
+        "line \"discovered some\"",
+        "cont \"new #MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Yo, <PLAYER>!"
+        },
+        {
+          "command": "para",
+          "value": "I hear PROF.ELM"
+        },
+        {
+          "command": "line",
+          "value": "discovered some"
+        },
+        {
+          "command": "cont",
+          "value": "new #MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "NewBarkTownRivalText1": {
+      "raw_lines": [
+        "text \"<\u2026\u2026>\"",
+        "para \"So this is the\"",
+        "line \"famous ELM #MON\"",
+        "cont \"LAB\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<\u2026\u2026>"
+        },
+        {
+          "command": "para",
+          "value": "So this is the"
+        },
+        {
+          "command": "line",
+          "value": "famous ELM #MON"
+        },
+        {
+          "command": "cont",
+          "value": "LAB\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "NewBarkTownRivalText2": {
+      "raw_lines": [
+        "text \"\u2026What are you\"",
+        "line \"staring at?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026What are you"
+        },
+        {
+          "command": "line",
+          "value": "staring at?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "NewBarkTownSignText": {
+      "raw_lines": [
+        "text \"NEW BARK TOWN\"",
+        "para \"The Town Where the\"",
+        "line \"Winds of a New\"",
+        "cont \"Beginning Blow\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "NEW BARK TOWN"
+        },
+        {
+          "command": "para",
+          "value": "The Town Where the"
+        },
+        {
+          "command": "line",
+          "value": "Winds of a New"
+        },
+        {
+          "command": "cont",
+          "value": "Beginning Blow"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "NewBarkTownPlayersHouseSignText": {
+      "raw_lines": [
+        "text \"<PLAYER>'s House\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER>'s House"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "NewBarkTownElmsLabSignText": {
+      "raw_lines": [
+        "text \"ELM #MON LAB\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ELM #MON LAB"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "NewBarkTownElmsHouseSignText": {
+      "raw_lines": [
+        "text \"ELM'S HOUSE\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ELM'S HOUSE"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "NewBarkTown_TeacherRunsToYouMovement1": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "NewBarkTown_TeacherRunsToYouMovement2": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "NewBarkTown_TeacherBringsYouBackMovement1": {
+      "raw_lines": [
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "turn_head LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "NewBarkTown_TeacherBringsYouBackMovement2": {
+      "raw_lines": [
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "turn_head LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "NewBarkTown_RivalPushesYouAwayMovement": {
+      "raw_lines": [
+        "turn_head UP",
+        "step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "NewBarkTown_RivalShovesYouOutMovement": {
+      "raw_lines": [
+        "turn_head UP",
+        "fix_facing",
+        "jump_step DOWN",
+        "remove_fixed_facing",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "fix_facing",
+          "args": []
+        },
+        {
+          "command": "jump_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "remove_fixed_facing",
+          "args": []
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "NewBarkTown_RivalReturnsToTheShadowsMovement": {
+      "raw_lines": [
+        "step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "NewBarkTown_MapScripts": {
+      "label_refs": [
+        "NewBarkTownNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownFlypointCallback": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTown_TeacherStopsYouScene1": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_ItsDangerousToGoAlone",
+        "Text_WaitPlayer",
+        "Text_WhatDoYouThinkYoureDoing"
+      ],
+      "movement_refs": [
+        "NewBarkTown_TeacherBringsYouBackMovement1",
+        "NewBarkTown_TeacherRunsToYouMovement1"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTown_TeacherStopsYouScene2": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_ItsDangerousToGoAlone",
+        "Text_WaitPlayer",
+        "Text_WhatDoYouThinkYoureDoing"
+      ],
+      "movement_refs": [
+        "NewBarkTown_TeacherBringsYouBackMovement2",
+        "NewBarkTown_TeacherRunsToYouMovement2"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownTeacherScript": {
+      "label_refs": [
+        "NewBarkTownTeacherScript.CallMom",
+        "NewBarkTownTeacherScript.MonIsAdorable",
+        "NewBarkTownTeacherScript.TellMomYoureLeaving"
+      ],
+      "text_refs": [
+        "Text_GearIsImpressive"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownTeacherScript.MonIsAdorable": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_YourMonIsAdorable"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownTeacherScript.TellMomYoureLeaving": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_TellMomIfLeaving"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownTeacherScript.CallMom": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_CallMomOnGear"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownFisherScript": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_ElmDiscoveredNewMon"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownRivalScript": {
+      "label_refs": [],
+      "text_refs": [
+        "NewBarkTownRivalText1",
+        "NewBarkTownRivalText2"
+      ],
+      "movement_refs": [
+        "NewBarkTown_RivalPushesYouAwayMovement",
+        "NewBarkTown_RivalReturnsToTheShadowsMovement",
+        "NewBarkTown_RivalShovesYouOutMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownSign": {
+      "label_refs": [],
+      "text_refs": [
+        "NewBarkTownSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownPlayersHouseSign": {
+      "label_refs": [],
+      "text_refs": [
+        "NewBarkTownPlayersHouseSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownElmsLabSign": {
+      "label_refs": [],
+      "text_refs": [
+        "NewBarkTownElmsLabSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTownElmsHouseSign": {
+      "label_refs": [],
+      "text_refs": [
+        "NewBarkTownElmsHouseSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NewBarkTown_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear"
+  ],
   "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
     "warp_events": 4,
     "coord_events": 2,
     "bg_events": 4,

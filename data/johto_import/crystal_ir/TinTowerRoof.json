@@ -1,0 +1,477 @@
+{
+  "crystal_map": "TinTowerRoof",
+  "map_id": "TIN_TOWER_ROOF",
+  "group": "FAST_SHIP",
+  "group_index": 15,
+  "map_index": 12,
+  "tileset": "TILESET_TOWER",
+  "environment": "ROUTE",
+  "landmark": "LANDMARK_TIN_TOWER",
+  "music": "MUSIC_TIN_TOWER",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_AUTO",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 10,
+  "height_blocks": 9,
+  "border_block": "00",
+  "blk_path": "maps/TinTowerRoof.blk",
+  "source_asm": "maps/TinTowerRoof.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "TinTowerRoofHoOhCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 9,
+        "y": 13,
+        "dest_map": "TIN_TOWER_9F",
+        "dest_warp_id": 4
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 9,
+        "y": 5,
+        "sprite": "SPRITE_HO_OH",
+        "movement": "SPRITEMOVEDATA_POKEMON",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "TinTowerHoOh",
+        "flag": "EVENT_TIN_TOWER_ROOF_HO_OH"
+      }
+    ]
+  },
+  "object_consts": [
+    "TINTOWERROOF_HO_OH"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "TinTowerRoof_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks",
+        "callback MAPCALLBACK_OBJECTS, TinTowerRoofHoOhCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "TinTowerRoofHoOhCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, TinTowerRoofHoOhCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "TinTowerRoofHoOhCallback",
+      "label_refs": [
+        "TinTowerRoofHoOhCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTowerRoofHoOhCallback": {
+      "raw_lines": [
+        "checkevent EVENT_FOUGHT_HO_OH",
+        "iftrue .NoAppear",
+        "checkitem RAINBOW_WING",
+        "iftrue .Appear",
+        "sjump .NoAppear"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_FOUGHT_HO_OH"
+          ],
+          "raw": "checkevent EVENT_FOUGHT_HO_OH"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TinTowerRoofHoOhCallback.NoAppear"
+          ],
+          "raw": "iftrue .NoAppear"
+        },
+        {
+          "command": "checkitem",
+          "args": [
+            "RAINBOW_WING"
+          ],
+          "raw": "checkitem RAINBOW_WING"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TinTowerRoofHoOhCallback.Appear"
+          ],
+          "raw": "iftrue .Appear"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TinTowerRoofHoOhCallback.NoAppear"
+          ],
+          "raw": "sjump .NoAppear"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "TinTowerRoofHoOhCallback.Appear",
+        "TinTowerRoofHoOhCallback.NoAppear"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTowerRoofHoOhCallback.Appear": {
+      "raw_lines": [
+        "appear TINTOWERROOF_HO_OH",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "appear",
+          "args": [
+            "TINTOWERROOF_HO_OH"
+          ],
+          "raw": "appear TINTOWERROOF_HO_OH"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "appear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTowerRoofHoOhCallback.NoAppear": {
+      "raw_lines": [
+        "disappear TINTOWERROOF_HO_OH",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "disappear",
+          "args": [
+            "TINTOWERROOF_HO_OH"
+          ],
+          "raw": "disappear TINTOWERROOF_HO_OH"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "disappear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTowerHoOh": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext HoOhText",
+        "cry HO_OH",
+        "pause 15",
+        "closetext",
+        "setevent EVENT_FOUGHT_HO_OH",
+        "loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM",
+        "loadwildmon HO_OH, 60",
+        "startbattle",
+        "disappear TINTOWERROOF_HO_OH",
+        "reloadmapafterbattle",
+        "setevent EVENT_SET_WHEN_FOUGHT_HO_OH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "HoOhText"
+          ],
+          "raw": "writetext HoOhText"
+        },
+        {
+          "command": "cry",
+          "args": [
+            "HO_OH"
+          ],
+          "raw": "cry HO_OH"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_FOUGHT_HO_OH"
+          ],
+          "raw": "setevent EVENT_FOUGHT_HO_OH"
+        },
+        {
+          "command": "loadvar",
+          "args": [
+            "VAR_BATTLETYPE",
+            "BATTLETYPE_FORCEITEM"
+          ],
+          "raw": "loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM"
+        },
+        {
+          "command": "loadwildmon",
+          "args": [
+            "HO_OH",
+            "60"
+          ],
+          "raw": "loadwildmon HO_OH, 60"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "TINTOWERROOF_HO_OH"
+          ],
+          "raw": "disappear TINTOWERROOF_HO_OH"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_SET_WHEN_FOUGHT_HO_OH"
+          ],
+          "raw": "setevent EVENT_SET_WHEN_FOUGHT_HO_OH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "HoOhText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTowerRoof_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  9, 13, TIN_TOWER_9F, 4",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  9,  5, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TinTowerHoOh, EVENT_TIN_TOWER_ROOF_HO_OH"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "13",
+            "TIN_TOWER_9F",
+            "4"
+          ],
+          "raw": "warp_event  9, 13, TIN_TOWER_9F, 4"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "5",
+            "SPRITE_HO_OH",
+            "SPRITEMOVEDATA_POKEMON",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "TinTowerHoOh",
+            "EVENT_TIN_TOWER_ROOF_HO_OH"
+          ],
+          "raw": "object_event  9,  5, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TinTowerHoOh, EVENT_TIN_TOWER_ROOF_HO_OH"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "HoOhText": {
+      "raw_lines": [
+        "text \"Shaoooh!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Shaoooh!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "TinTowerRoof_MapScripts": {
+      "label_refs": [
+        "TinTowerRoofHoOhCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTowerRoofHoOhCallback": {
+      "label_refs": [
+        "TinTowerRoofHoOhCallback.Appear",
+        "TinTowerRoofHoOhCallback.NoAppear"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTowerRoofHoOhCallback.Appear": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTowerRoofHoOhCallback.NoAppear": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTowerHoOh": {
+      "label_refs": [],
+      "text_refs": [
+        "HoOhText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTowerRoof_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 1,
+    "warp_events": 1,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 1
+  }
+}

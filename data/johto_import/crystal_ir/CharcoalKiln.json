@@ -1,0 +1,1191 @@
+{
+  "crystal_map": "CharcoalKiln",
+  "map_id": "CHARCOAL_KILN",
+  "group": "AZALEA",
+  "group_index": 8,
+  "map_index": 2,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_AZALEA_TOWN",
+  "music": "MUSIC_AZALEA_TOWN",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/House1.blk",
+  "source_asm": "maps/CharcoalKiln.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "AZALEA_TOWN",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "AZALEA_TOWN",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 0,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "CharcoalKilnBookshelf"
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "CharcoalKilnBookshelf"
+      },
+      {
+        "x": 7,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "CharcoalKilnRadio"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 3,
+        "sprite": "SPRITE_BLACK_BELT",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CharcoalKilnBoss",
+        "flag": "EVENT_CHARCOAL_KILN_BOSS"
+      },
+      {
+        "x": 5,
+        "y": 3,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CharcoalKilnApprentice",
+        "flag": "EVENT_CHARCOAL_KILN_APPRENTICE"
+      },
+      {
+        "x": 5,
+        "y": 6,
+        "sprite": "SPRITE_MOLTRES",
+        "movement": "SPRITEMOVEDATA_POKEMON",
+        "movement_range_x": 2,
+        "movement_range_y": 2,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CharcoalKilnFarfetchd",
+        "flag": "EVENT_CHARCOAL_KILN_FARFETCH_D"
+      }
+    ]
+  },
+  "object_consts": [
+    "CHARCOALKILN_BLACK_BELT",
+    "CHARCOALKILN_YOUNGSTER",
+    "CHARCOALKILN_MOLTRES"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "CharcoalKiln_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "CharcoalKilnBoss",
+      "label_refs": [
+        "CharcoalKilnBoss"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnBoss": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_HM01_CUT",
+        "iftrue .GotCut",
+        "checkevent EVENT_CLEARED_SLOWPOKE_WELL",
+        "iftrue .SavedSlowpoke",
+        "writetext CharcoalKilnBossText1",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_HM01_CUT"
+          ],
+          "raw": "checkevent EVENT_GOT_HM01_CUT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CharcoalKilnBoss.GotCut"
+          ],
+          "raw": "iftrue .GotCut"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_SLOWPOKE_WELL"
+          ],
+          "raw": "checkevent EVENT_CLEARED_SLOWPOKE_WELL"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CharcoalKilnBoss.SavedSlowpoke"
+          ],
+          "raw": "iftrue .SavedSlowpoke"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CharcoalKilnBossText1"
+          ],
+          "raw": "writetext CharcoalKilnBossText1"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "CharcoalKilnBoss.GotCut",
+        "CharcoalKilnBoss.SavedSlowpoke"
+      ],
+      "text_refs": [
+        "CharcoalKilnBossText1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnBoss.SavedSlowpoke": {
+      "raw_lines": [
+        "writetext CharcoalKilnBossText2",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "CharcoalKilnBossText2"
+          ],
+          "raw": "writetext CharcoalKilnBossText2"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "CharcoalKilnBossText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnBoss.GotCut": {
+      "raw_lines": [
+        "writetext CharcoalKilnBossText3",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "CharcoalKilnBossText3"
+          ],
+          "raw": "writetext CharcoalKilnBossText3"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "CharcoalKilnBossText3"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnApprentice": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_CHARCOAL_IN_CHARCOAL_KILN",
+        "iftrue .YoureTheCoolest",
+        "checkevent EVENT_GOT_HM01_CUT",
+        "iftrue .Thanks",
+        "writetext CharcoalKilnApprenticeText1",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_CHARCOAL_IN_CHARCOAL_KILN"
+          ],
+          "raw": "checkevent EVENT_GOT_CHARCOAL_IN_CHARCOAL_KILN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CharcoalKilnApprentice.YoureTheCoolest"
+          ],
+          "raw": "iftrue .YoureTheCoolest"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_HM01_CUT"
+          ],
+          "raw": "checkevent EVENT_GOT_HM01_CUT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CharcoalKilnApprentice.Thanks"
+          ],
+          "raw": "iftrue .Thanks"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CharcoalKilnApprenticeText1"
+          ],
+          "raw": "writetext CharcoalKilnApprenticeText1"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "CharcoalKilnApprentice.Thanks",
+        "CharcoalKilnApprentice.YoureTheCoolest"
+      ],
+      "text_refs": [
+        "CharcoalKilnApprenticeText1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnApprentice.Thanks": {
+      "raw_lines": [
+        "writetext CharcoalKilnApprenticeText2",
+        "promptbutton",
+        "verbosegiveitem CHARCOAL",
+        "iffalse .Done",
+        "setevent EVENT_GOT_CHARCOAL_IN_CHARCOAL_KILN",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "CharcoalKilnApprenticeText2"
+          ],
+          "raw": "writetext CharcoalKilnApprenticeText2"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "CHARCOAL"
+          ],
+          "raw": "verbosegiveitem CHARCOAL"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "CharcoalKilnApprentice.Done"
+          ],
+          "raw": "iffalse .Done"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_CHARCOAL_IN_CHARCOAL_KILN"
+          ],
+          "raw": "setevent EVENT_GOT_CHARCOAL_IN_CHARCOAL_KILN"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "CharcoalKilnApprentice.Done"
+      ],
+      "text_refs": [
+        "CharcoalKilnApprenticeText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnApprentice.YoureTheCoolest": {
+      "raw_lines": [
+        "writetext CharcoalKilnApprenticeText3",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "CharcoalKilnApprenticeText3"
+          ],
+          "raw": "writetext CharcoalKilnApprenticeText3"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "CharcoalKilnApprentice.Done",
+      "label_refs": [
+        "CharcoalKilnApprentice.Done"
+      ],
+      "text_refs": [
+        "CharcoalKilnApprenticeText3"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnApprentice.Done": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnFarfetchd": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext FarfetchdText",
+        "cry FARFETCH_D",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "FarfetchdText"
+          ],
+          "raw": "writetext FarfetchdText"
+        },
+        {
+          "command": "cry",
+          "args": [
+            "FARFETCH_D"
+          ],
+          "raw": "cry FARFETCH_D"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "FarfetchdText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnBookshelf": {
+      "raw_lines": [
+        "jumpstd MagazineBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "MagazineBookshelfScript"
+          ],
+          "raw": "jumpstd MagazineBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "CharcoalKilnRadio": {
+      "raw_lines": [
+        "jumpstd Radio2Script"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "Radio2Script"
+          ],
+          "raw": "jumpstd Radio2Script"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "Radio2Script"
+      ]
+    },
+    "CharcoalKiln_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, AZALEA_TOWN, 2",
+        "warp_event  3,  7, AZALEA_TOWN, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, CharcoalKilnBookshelf",
+        "bg_event  1,  1, BGEVENT_READ, CharcoalKilnBookshelf",
+        "bg_event  7,  1, BGEVENT_READ, CharcoalKilnRadio",
+        "def_object_events",
+        "object_event  2,  3, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharcoalKilnBoss, EVENT_CHARCOAL_KILN_BOSS",
+        "object_event  5,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharcoalKilnApprentice, EVENT_CHARCOAL_KILN_APPRENTICE",
+        "object_event  5,  6, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CharcoalKilnFarfetchd, EVENT_CHARCOAL_KILN_FARFETCH_D"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "AZALEA_TOWN",
+            "2"
+          ],
+          "raw": "warp_event  2,  7, AZALEA_TOWN, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "AZALEA_TOWN",
+            "2"
+          ],
+          "raw": "warp_event  3,  7, AZALEA_TOWN, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "CharcoalKilnBookshelf"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, CharcoalKilnBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "CharcoalKilnBookshelf"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, CharcoalKilnBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "7",
+            "1",
+            "BGEVENT_READ",
+            "CharcoalKilnRadio"
+          ],
+          "raw": "bg_event  7,  1, BGEVENT_READ, CharcoalKilnRadio"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_BLACK_BELT",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CharcoalKilnBoss",
+            "EVENT_CHARCOAL_KILN_BOSS"
+          ],
+          "raw": "object_event  2,  3, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharcoalKilnBoss, EVENT_CHARCOAL_KILN_BOSS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "3",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CharcoalKilnApprentice",
+            "EVENT_CHARCOAL_KILN_APPRENTICE"
+          ],
+          "raw": "object_event  5,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharcoalKilnApprentice, EVENT_CHARCOAL_KILN_APPRENTICE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "6",
+            "SPRITE_MOLTRES",
+            "SPRITEMOVEDATA_POKEMON",
+            "2",
+            "2",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CharcoalKilnFarfetchd",
+            "EVENT_CHARCOAL_KILN_FARFETCH_D"
+          ],
+          "raw": "object_event  5,  6, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CharcoalKilnFarfetchd, EVENT_CHARCOAL_KILN_FARFETCH_D"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "CharcoalKilnBossText1": {
+      "raw_lines": [
+        "text \"All the SLOWPOKE\"",
+        "line \"have disappeared\"",
+        "cont \"from the town.\"",
+        "para \"The forest's pro-\"",
+        "line \"tector may be\"",
+        "cont \"angry with us\u2026\"",
+        "para \"It may be a bad\"",
+        "line \"omen. We should\"",
+        "cont \"stay in.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "All the SLOWPOKE"
+        },
+        {
+          "command": "line",
+          "value": "have disappeared"
+        },
+        {
+          "command": "cont",
+          "value": "from the town."
+        },
+        {
+          "command": "para",
+          "value": "The forest's pro-"
+        },
+        {
+          "command": "line",
+          "value": "tector may be"
+        },
+        {
+          "command": "cont",
+          "value": "angry with us\u2026"
+        },
+        {
+          "command": "para",
+          "value": "It may be a bad"
+        },
+        {
+          "command": "line",
+          "value": "omen. We should"
+        },
+        {
+          "command": "cont",
+          "value": "stay in."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CharcoalKilnBossText2": {
+      "raw_lines": [
+        "text \"The SLOWPOKE have\"",
+        "line \"returned\u2026\"",
+        "para \"But my APPRENTICE\"",
+        "line \"hasn't come back\"",
+        "cont \"from ILEX FOREST.\"",
+        "para \"Where in the world\"",
+        "line \"is that lazy guy?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The SLOWPOKE have"
+        },
+        {
+          "command": "line",
+          "value": "returned\u2026"
+        },
+        {
+          "command": "para",
+          "value": "But my APPRENTICE"
+        },
+        {
+          "command": "line",
+          "value": "hasn't come back"
+        },
+        {
+          "command": "cont",
+          "value": "from ILEX FOREST."
+        },
+        {
+          "command": "para",
+          "value": "Where in the world"
+        },
+        {
+          "command": "line",
+          "value": "is that lazy guy?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CharcoalKilnBossText3": {
+      "raw_lines": [
+        "text \"You chased off\"",
+        "line \"TEAM ROCKET and\"",
+        "para \"went to ILEX\"",
+        "line \"FOREST alone?\"",
+        "para \"That takes guts!\"",
+        "line \"I like that. Come\"",
+        "cont \"train with us.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You chased off"
+        },
+        {
+          "command": "line",
+          "value": "TEAM ROCKET and"
+        },
+        {
+          "command": "para",
+          "value": "went to ILEX"
+        },
+        {
+          "command": "line",
+          "value": "FOREST alone?"
+        },
+        {
+          "command": "para",
+          "value": "That takes guts!"
+        },
+        {
+          "command": "line",
+          "value": "I like that. Come"
+        },
+        {
+          "command": "cont",
+          "value": "train with us."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CharcoalKilnApprenticeText1": {
+      "raw_lines": [
+        "text \"Where have all the\"",
+        "line \"SLOWPOKE gone?\"",
+        "para \"Are they out play-\"",
+        "line \"ing somewhere?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Where have all the"
+        },
+        {
+          "command": "line",
+          "value": "SLOWPOKE gone?"
+        },
+        {
+          "command": "para",
+          "value": "Are they out play-"
+        },
+        {
+          "command": "line",
+          "value": "ing somewhere?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CharcoalKilnApprenticeText2": {
+      "raw_lines": [
+        "text \"I'm sorry--I for-\"",
+        "line \"got to thank you.\"",
+        "para \"This is CHARCOAL\"",
+        "line \"that I made.\"",
+        "para \"Fire-type #MON\"",
+        "line \"would be happy to\"",
+        "cont \"hold that.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm sorry--I for-"
+        },
+        {
+          "command": "line",
+          "value": "got to thank you."
+        },
+        {
+          "command": "para",
+          "value": "This is CHARCOAL"
+        },
+        {
+          "command": "line",
+          "value": "that I made."
+        },
+        {
+          "command": "para",
+          "value": "Fire-type #MON"
+        },
+        {
+          "command": "line",
+          "value": "would be happy to"
+        },
+        {
+          "command": "cont",
+          "value": "hold that."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CharcoalKilnApprenticeText3": {
+      "raw_lines": [
+        "text \"The SLOWPOKE came\"",
+        "line \"back, and you even\"",
+        "cont \"found FARFETCH'D.\"",
+        "para \"You're the cool-\"",
+        "line \"est, man!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The SLOWPOKE came"
+        },
+        {
+          "command": "line",
+          "value": "back, and you even"
+        },
+        {
+          "command": "cont",
+          "value": "found FARFETCH'D."
+        },
+        {
+          "command": "para",
+          "value": "You're the cool-"
+        },
+        {
+          "command": "line",
+          "value": "est, man!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FarfetchdText": {
+      "raw_lines": [
+        "text \"FARFETCH'D: Kwaa!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "FARFETCH'D: Kwaa!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "MagazineBookshelfScript",
+    "Radio2Script"
+  ],
+  "dependencies": {
+    "CharcoalKiln_MapScripts": {
+      "label_refs": [
+        "CharcoalKilnBoss"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnBoss": {
+      "label_refs": [
+        "CharcoalKilnBoss.GotCut",
+        "CharcoalKilnBoss.SavedSlowpoke"
+      ],
+      "text_refs": [
+        "CharcoalKilnBossText1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnBoss.SavedSlowpoke": {
+      "label_refs": [],
+      "text_refs": [
+        "CharcoalKilnBossText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnBoss.GotCut": {
+      "label_refs": [],
+      "text_refs": [
+        "CharcoalKilnBossText3"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnApprentice": {
+      "label_refs": [
+        "CharcoalKilnApprentice.Thanks",
+        "CharcoalKilnApprentice.YoureTheCoolest"
+      ],
+      "text_refs": [
+        "CharcoalKilnApprenticeText1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnApprentice.Thanks": {
+      "label_refs": [
+        "CharcoalKilnApprentice.Done"
+      ],
+      "text_refs": [
+        "CharcoalKilnApprenticeText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnApprentice.YoureTheCoolest": {
+      "label_refs": [
+        "CharcoalKilnApprentice.Done"
+      ],
+      "text_refs": [
+        "CharcoalKilnApprenticeText3"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnApprentice.Done": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnFarfetchd": {
+      "label_refs": [],
+      "text_refs": [
+        "FarfetchdText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "CharcoalKilnRadio": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "Radio2Script"
+      ]
+    },
+    "CharcoalKiln_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 3,
+    "object_events": 3
+  }
+}

@@ -18,6 +18,8 @@
   "source_asm": "maps/Route29Route46Gate.asm",
   "connections": [],
   "events": {
+    "scene_scripts": [],
+    "callbacks": [],
     "warp_events": [
       {
         "x": 4,
@@ -54,6 +56,11 @@
         "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "Route29Route46GateOfficerScript",
         "flag": -1
       },
@@ -64,12 +71,349 @@
         "movement": "SPRITEMOVEDATA_WALK_UP_DOWN",
         "movement_range_x": 0,
         "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "Route29Route46GateYoungsterScript",
         "flag": -1
       }
     ]
   },
+  "object_consts": [
+    "ROUTE29ROUTE46GATE_OFFICER",
+    "ROUTE29ROUTE46GATE_YOUNGSTER"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "Route29Route46Gate_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "Route29Route46GateOfficerScript",
+      "label_refs": [
+        "Route29Route46GateOfficerScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29Route46GateOfficerScript": {
+      "raw_lines": [
+        "jumptextfaceplayer Route29Route46GateOfficerText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Route29Route46GateOfficerText"
+          ],
+          "raw": "jumptextfaceplayer Route29Route46GateOfficerText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Route29Route46GateOfficerText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29Route46GateYoungsterScript": {
+      "raw_lines": [
+        "jumptextfaceplayer Route29Route46GateYoungsterText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Route29Route46GateYoungsterText"
+          ],
+          "raw": "jumptextfaceplayer Route29Route46GateYoungsterText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Route29Route46GateYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29Route46Gate_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  4,  0, ROUTE_46, 1",
+        "warp_event  5,  0, ROUTE_46, 2",
+        "warp_event  4,  7, ROUTE_29, 1",
+        "warp_event  5,  7, ROUTE_29, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route29Route46GateOfficerScript, -1",
+        "object_event  6,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29Route46GateYoungsterScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "0",
+            "ROUTE_46",
+            "1"
+          ],
+          "raw": "warp_event  4,  0, ROUTE_46, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "0",
+            "ROUTE_46",
+            "2"
+          ],
+          "raw": "warp_event  5,  0, ROUTE_46, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "ROUTE_29",
+            "1"
+          ],
+          "raw": "warp_event  4,  7, ROUTE_29, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "7",
+            "ROUTE_29",
+            "1"
+          ],
+          "raw": "warp_event  5,  7, ROUTE_29, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "0",
+            "4",
+            "SPRITE_OFFICER",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route29Route46GateOfficerScript",
+            "-1"
+          ],
+          "raw": "object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route29Route46GateOfficerScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "4",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_WALK_UP_DOWN",
+            "0",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route29Route46GateYoungsterScript",
+            "-1"
+          ],
+          "raw": "object_event  6,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29Route46GateYoungsterScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "Route29Route46GateOfficerText": {
+      "raw_lines": [
+        "text \"You can't climb\"",
+        "line \"ledges.\"",
+        "para \"But you can jump\"",
+        "line \"down from them to\"",
+        "cont \"take a shortcut.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You can't climb"
+        },
+        {
+          "command": "line",
+          "value": "ledges."
+        },
+        {
+          "command": "para",
+          "value": "But you can jump"
+        },
+        {
+          "command": "line",
+          "value": "down from them to"
+        },
+        {
+          "command": "cont",
+          "value": "take a shortcut."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route29Route46GateYoungsterText": {
+      "raw_lines": [
+        "text \"Different kinds of\"",
+        "line \"#MON appear\"",
+        "cont \"past here.\"",
+        "para \"If you want to\"",
+        "line \"catch them all,\"",
+        "para \"you have to look\"",
+        "line \"everywhere.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Different kinds of"
+        },
+        {
+          "command": "line",
+          "value": "#MON appear"
+        },
+        {
+          "command": "cont",
+          "value": "past here."
+        },
+        {
+          "command": "para",
+          "value": "If you want to"
+        },
+        {
+          "command": "line",
+          "value": "catch them all,"
+        },
+        {
+          "command": "para",
+          "value": "you have to look"
+        },
+        {
+          "command": "line",
+          "value": "everywhere."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "Route29Route46Gate_MapScripts": {
+      "label_refs": [
+        "Route29Route46GateOfficerScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29Route46GateOfficerScript": {
+      "label_refs": [],
+      "text_refs": [
+        "Route29Route46GateOfficerText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29Route46GateYoungsterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "Route29Route46GateYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29Route46Gate_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
   "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
     "warp_events": 4,
     "coord_events": 0,
     "bg_events": 0,

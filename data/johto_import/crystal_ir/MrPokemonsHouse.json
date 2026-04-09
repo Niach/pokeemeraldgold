@@ -1,0 +1,2444 @@
+{
+  "crystal_map": "MrPokemonsHouse",
+  "map_id": "MR_POKEMONS_HOUSE",
+  "group": "CHERRYGROVE",
+  "group_index": 26,
+  "map_index": 10,
+  "tileset": "TILESET_FACILITY",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_ROUTE_30",
+  "music": "MUSIC_CHERRYGROVE_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/MrPokemonsHouse.blk",
+  "source_asm": "maps/MrPokemonsHouse.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "MrPokemonsHouseMeetMrPokemonScene",
+        "scene_id": "SCENE_MRPOKEMONSHOUSE_MEET_MR_POKEMON"
+      },
+      {
+        "script": "MrPokemonsHouseNoopScene",
+        "scene_id": "SCENE_MRPOKEMONSHOUSE_NOOP"
+      }
+    ],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "ROUTE_30",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "ROUTE_30",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 0,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "MrPokemonsHouse_ForeignMagazines"
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "MrPokemonsHouse_ForeignMagazines"
+      },
+      {
+        "x": 6,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "MrPokemonsHouse_BrokenComputer"
+      },
+      {
+        "x": 7,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "MrPokemonsHouse_BrokenComputer"
+      },
+      {
+        "x": 6,
+        "y": 4,
+        "kind": "BGEVENT_READ",
+        "script": "MrPokemonsHouse_StrangeCoins"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 3,
+        "y": 5,
+        "sprite": "SPRITE_GENTLEMAN",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MrPokemonsHouse_MrPokemonScript",
+        "flag": -1
+      },
+      {
+        "x": 6,
+        "y": 5,
+        "sprite": "SPRITE_OAK",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_MR_POKEMONS_HOUSE_OAK"
+      }
+    ]
+  },
+  "object_consts": [
+    "MRPOKEMONSHOUSE_GENTLEMAN",
+    "MRPOKEMONSHOUSE_OAK"
+  ],
+  "scene_ids": [
+    "SCENE_CHERRYGROVECITY_MEET_RIVAL",
+    "SCENE_ELMSLAB_MEET_OFFICER",
+    "SCENE_MRPOKEMONSHOUSE_MEET_MR_POKEMON",
+    "SCENE_MRPOKEMONSHOUSE_NOOP"
+  ],
+  "scripts": {
+    "MrPokemonsHouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script MrPokemonsHouseMeetMrPokemonScene, SCENE_MRPOKEMONSHOUSE_MEET_MR_POKEMON",
+        "scene_script MrPokemonsHouseNoopScene,          SCENE_MRPOKEMONSHOUSE_NOOP",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "MrPokemonsHouseMeetMrPokemonScene",
+            "SCENE_MRPOKEMONSHOUSE_MEET_MR_POKEMON"
+          ],
+          "raw": "scene_script MrPokemonsHouseMeetMrPokemonScene, SCENE_MRPOKEMONSHOUSE_MEET_MR_POKEMON"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "MrPokemonsHouseNoopScene",
+            "SCENE_MRPOKEMONSHOUSE_NOOP"
+          ],
+          "raw": "scene_script MrPokemonsHouseNoopScene,          SCENE_MRPOKEMONSHOUSE_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "MrPokemonsHouseMeetMrPokemonScene",
+      "label_refs": [
+        "MrPokemonsHouseMeetMrPokemonScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouseMeetMrPokemonScene": {
+      "raw_lines": [
+        "sdefer MrPokemonsHouseMrPokemonEventScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "sdefer",
+          "args": [
+            "MrPokemonsHouseMrPokemonEventScript"
+          ],
+          "raw": "sdefer MrPokemonsHouseMrPokemonEventScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "sdefer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouseNoopScene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouseMrPokemonEventScript": {
+      "raw_lines": [
+        "showemote EMOTE_SHOCK, MRPOKEMONSHOUSE_GENTLEMAN, 15",
+        "turnobject MRPOKEMONSHOUSE_GENTLEMAN, DOWN",
+        "opentext",
+        "writetext MrPokemonIntroText1",
+        "waitbutton",
+        "closetext",
+        "applymovement PLAYER, MrPokemonsHouse_PlayerWalksToMrPokemon",
+        "opentext",
+        "writetext MrPokemonIntroText2",
+        "promptbutton",
+        "waitsfx",
+        "giveitem MYSTERY_EGG",
+        "writetext MrPokemonsHouse_GotEggText",
+        "playsound SFX_KEY_ITEM",
+        "waitsfx",
+        "itemnotify",
+        "setevent EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON",
+        "blackoutmod CHERRYGROVE_CITY",
+        "writetext MrPokemonIntroText3",
+        "promptbutton",
+        "turnobject MRPOKEMONSHOUSE_GENTLEMAN, RIGHT",
+        "writetext MrPokemonIntroText4",
+        "promptbutton",
+        "turnobject MRPOKEMONSHOUSE_GENTLEMAN, DOWN",
+        "turnobject MRPOKEMONSHOUSE_OAK, LEFT",
+        "writetext MrPokemonIntroText5",
+        "waitbutton",
+        "closetext",
+        "sjump MrPokemonsHouse_OakScript"
+      ],
+      "commands": [
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "MRPOKEMONSHOUSE_GENTLEMAN",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, MRPOKEMONSHOUSE_GENTLEMAN, 15"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "MRPOKEMONSHOUSE_GENTLEMAN",
+            "DOWN"
+          ],
+          "raw": "turnobject MRPOKEMONSHOUSE_GENTLEMAN, DOWN"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MrPokemonIntroText1"
+          ],
+          "raw": "writetext MrPokemonIntroText1"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "MrPokemonsHouse_PlayerWalksToMrPokemon"
+          ],
+          "raw": "applymovement PLAYER, MrPokemonsHouse_PlayerWalksToMrPokemon"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MrPokemonIntroText2"
+          ],
+          "raw": "writetext MrPokemonIntroText2"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "giveitem",
+          "args": [
+            "MYSTERY_EGG"
+          ],
+          "raw": "giveitem MYSTERY_EGG"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MrPokemonsHouse_GotEggText"
+          ],
+          "raw": "writetext MrPokemonsHouse_GotEggText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_KEY_ITEM"
+          ],
+          "raw": "playsound SFX_KEY_ITEM"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "itemnotify",
+          "args": [],
+          "raw": "itemnotify"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON"
+          ],
+          "raw": "setevent EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON"
+        },
+        {
+          "command": "blackoutmod",
+          "args": [
+            "CHERRYGROVE_CITY"
+          ],
+          "raw": "blackoutmod CHERRYGROVE_CITY"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MrPokemonIntroText3"
+          ],
+          "raw": "writetext MrPokemonIntroText3"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "MRPOKEMONSHOUSE_GENTLEMAN",
+            "RIGHT"
+          ],
+          "raw": "turnobject MRPOKEMONSHOUSE_GENTLEMAN, RIGHT"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MrPokemonIntroText4"
+          ],
+          "raw": "writetext MrPokemonIntroText4"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "MRPOKEMONSHOUSE_GENTLEMAN",
+            "DOWN"
+          ],
+          "raw": "turnobject MRPOKEMONSHOUSE_GENTLEMAN, DOWN"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "MRPOKEMONSHOUSE_OAK",
+            "LEFT"
+          ],
+          "raw": "turnobject MRPOKEMONSHOUSE_OAK, LEFT"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MrPokemonIntroText5"
+          ],
+          "raw": "writetext MrPokemonIntroText5"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "MrPokemonsHouse_OakScript"
+          ],
+          "raw": "sjump MrPokemonsHouse_OakScript"
+        }
+      ],
+      "first_command": "showemote",
+      "label_refs": [
+        "MrPokemonsHouse_OakScript"
+      ],
+      "text_refs": [
+        "MrPokemonIntroText1",
+        "MrPokemonIntroText2",
+        "MrPokemonIntroText3",
+        "MrPokemonIntroText4",
+        "MrPokemonIntroText5",
+        "MrPokemonsHouse_GotEggText"
+      ],
+      "movement_refs": [
+        "MrPokemonsHouse_PlayerWalksToMrPokemon"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_MrPokemonScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkitem RED_SCALE",
+        "iftrue .RedScale",
+        "checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM",
+        "iftrue .AlwaysNewDiscoveries",
+        "writetext MrPokemonText_ImDependingOnYou",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkitem",
+          "args": [
+            "RED_SCALE"
+          ],
+          "raw": "checkitem RED_SCALE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MrPokemonsHouse_MrPokemonScript.RedScale"
+          ],
+          "raw": "iftrue .RedScale"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GAVE_MYSTERY_EGG_TO_ELM"
+          ],
+          "raw": "checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MrPokemonsHouse_MrPokemonScript.AlwaysNewDiscoveries"
+          ],
+          "raw": "iftrue .AlwaysNewDiscoveries"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MrPokemonText_ImDependingOnYou"
+          ],
+          "raw": "writetext MrPokemonText_ImDependingOnYou"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "MrPokemonsHouse_MrPokemonScript.AlwaysNewDiscoveries",
+        "MrPokemonsHouse_MrPokemonScript.RedScale"
+      ],
+      "text_refs": [
+        "MrPokemonText_ImDependingOnYou"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_MrPokemonScript.AlwaysNewDiscoveries": {
+      "raw_lines": [
+        "writetext MrPokemonText_AlwaysNewDiscoveries",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "MrPokemonText_AlwaysNewDiscoveries"
+          ],
+          "raw": "writetext MrPokemonText_AlwaysNewDiscoveries"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "MrPokemonText_AlwaysNewDiscoveries"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_MrPokemonScript.RedScale": {
+      "raw_lines": [
+        "writetext MrPokemonText_GimmeTheScale",
+        "yesorno",
+        "iffalse .refused",
+        "verbosegiveitem EXP_SHARE",
+        "iffalse .full",
+        "takeitem RED_SCALE",
+        "sjump .AlwaysNewDiscoveries"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "MrPokemonText_GimmeTheScale"
+          ],
+          "raw": "writetext MrPokemonText_GimmeTheScale"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "MrPokemonsHouse_MrPokemonScript.refused"
+          ],
+          "raw": "iffalse .refused"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "EXP_SHARE"
+          ],
+          "raw": "verbosegiveitem EXP_SHARE"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "MrPokemonsHouse_MrPokemonScript.full"
+          ],
+          "raw": "iffalse .full"
+        },
+        {
+          "command": "takeitem",
+          "args": [
+            "RED_SCALE"
+          ],
+          "raw": "takeitem RED_SCALE"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "MrPokemonsHouse_MrPokemonScript.AlwaysNewDiscoveries"
+          ],
+          "raw": "sjump .AlwaysNewDiscoveries"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "MrPokemonsHouse_MrPokemonScript.AlwaysNewDiscoveries",
+        "MrPokemonsHouse_MrPokemonScript.full",
+        "MrPokemonsHouse_MrPokemonScript.refused"
+      ],
+      "text_refs": [
+        "MrPokemonText_GimmeTheScale"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_MrPokemonScript.refused": {
+      "raw_lines": [
+        "writetext MrPokemonText_Disappointed",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "MrPokemonText_Disappointed"
+          ],
+          "raw": "writetext MrPokemonText_Disappointed"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "MrPokemonsHouse_MrPokemonScript.full",
+      "label_refs": [
+        "MrPokemonsHouse_MrPokemonScript.full"
+      ],
+      "text_refs": [
+        "MrPokemonText_Disappointed"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_MrPokemonScript.full": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_OakScript": {
+      "raw_lines": [
+        "playmusic MUSIC_PROF_OAK",
+        "applymovement MRPOKEMONSHOUSE_OAK, MrPokemonsHouse_OakWalksToPlayer",
+        "turnobject PLAYER, RIGHT",
+        "opentext",
+        "writetext MrPokemonsHouse_OakText1",
+        "promptbutton",
+        "waitsfx",
+        "writetext MrPokemonsHouse_GetDexText",
+        "playsound SFX_ITEM",
+        "waitsfx",
+        "setflag ENGINE_POKEDEX",
+        "writetext MrPokemonsHouse_OakText2",
+        "waitbutton",
+        "closetext",
+        "turnobject PLAYER, DOWN",
+        "applymovement MRPOKEMONSHOUSE_OAK, MrPokemonsHouse_OakExits",
+        "playsound SFX_EXIT_BUILDING",
+        "disappear MRPOKEMONSHOUSE_OAK",
+        "waitsfx",
+        "special RestartMapMusic",
+        "pause 15",
+        "turnobject PLAYER, UP",
+        "opentext",
+        "writetext MrPokemonsHouse_MrPokemonHealText",
+        "waitbutton",
+        "closetext",
+        "special FadeOutToBlack",
+        "special ReloadSpritesNoPalettes",
+        "playmusic MUSIC_HEAL",
+        "special StubbedTrainerRankings_Healings",
+        "special HealParty",
+        "pause 60",
+        "special FadeInFromBlack",
+        "special RestartMapMusic",
+        "opentext",
+        "writetext MrPokemonText_ImDependingOnYou",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_RIVAL_NEW_BARK_TOWN",
+        "setevent EVENT_PLAYERS_HOUSE_1F_NEIGHBOR",
+        "clearevent EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR",
+        "setscene SCENE_MRPOKEMONSHOUSE_NOOP",
+        "setmapscene CHERRYGROVE_CITY, SCENE_CHERRYGROVECITY_MEET_RIVAL",
+        "setmapscene ELMS_LAB, SCENE_ELMSLAB_MEET_OFFICER",
+        "specialphonecall SPECIALCALL_ROBBED",
+        "clearevent EVENT_COP_IN_ELMS_LAB",
+        "checkevent EVENT_GOT_TOTODILE_FROM_ELM",
+        "iftrue .RivalTakesChikorita",
+        "checkevent EVENT_GOT_CHIKORITA_FROM_ELM",
+        "iftrue .RivalTakesCyndaquil",
+        "setevent EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_PROF_OAK"
+          ],
+          "raw": "playmusic MUSIC_PROF_OAK"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "MRPOKEMONSHOUSE_OAK",
+            "MrPokemonsHouse_OakWalksToPlayer"
+          ],
+          "raw": "applymovement MRPOKEMONSHOUSE_OAK, MrPokemonsHouse_OakWalksToPlayer"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MrPokemonsHouse_OakText1"
+          ],
+          "raw": "writetext MrPokemonsHouse_OakText1"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MrPokemonsHouse_GetDexText"
+          ],
+          "raw": "writetext MrPokemonsHouse_GetDexText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ITEM"
+          ],
+          "raw": "playsound SFX_ITEM"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_POKEDEX"
+          ],
+          "raw": "setflag ENGINE_POKEDEX"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MrPokemonsHouse_OakText2"
+          ],
+          "raw": "writetext MrPokemonsHouse_OakText2"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "MRPOKEMONSHOUSE_OAK",
+            "MrPokemonsHouse_OakExits"
+          ],
+          "raw": "applymovement MRPOKEMONSHOUSE_OAK, MrPokemonsHouse_OakExits"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "MRPOKEMONSHOUSE_OAK"
+          ],
+          "raw": "disappear MRPOKEMONSHOUSE_OAK"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "UP"
+          ],
+          "raw": "turnobject PLAYER, UP"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MrPokemonsHouse_MrPokemonHealText"
+          ],
+          "raw": "writetext MrPokemonsHouse_MrPokemonHealText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutToBlack"
+          ],
+          "raw": "special FadeOutToBlack"
+        },
+        {
+          "command": "special",
+          "args": [
+            "ReloadSpritesNoPalettes"
+          ],
+          "raw": "special ReloadSpritesNoPalettes"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_HEAL"
+          ],
+          "raw": "playmusic MUSIC_HEAL"
+        },
+        {
+          "command": "special",
+          "args": [
+            "StubbedTrainerRankings_Healings"
+          ],
+          "raw": "special StubbedTrainerRankings_Healings"
+        },
+        {
+          "command": "special",
+          "args": [
+            "HealParty"
+          ],
+          "raw": "special HealParty"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "60"
+          ],
+          "raw": "pause 60"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeInFromBlack"
+          ],
+          "raw": "special FadeInFromBlack"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MrPokemonText_ImDependingOnYou"
+          ],
+          "raw": "writetext MrPokemonText_ImDependingOnYou"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_RIVAL_NEW_BARK_TOWN"
+          ],
+          "raw": "setevent EVENT_RIVAL_NEW_BARK_TOWN"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_PLAYERS_HOUSE_1F_NEIGHBOR"
+          ],
+          "raw": "setevent EVENT_PLAYERS_HOUSE_1F_NEIGHBOR"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR"
+          ],
+          "raw": "clearevent EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_MRPOKEMONSHOUSE_NOOP"
+          ],
+          "raw": "setscene SCENE_MRPOKEMONSHOUSE_NOOP"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "CHERRYGROVE_CITY",
+            "SCENE_CHERRYGROVECITY_MEET_RIVAL"
+          ],
+          "raw": "setmapscene CHERRYGROVE_CITY, SCENE_CHERRYGROVECITY_MEET_RIVAL"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "ELMS_LAB",
+            "SCENE_ELMSLAB_MEET_OFFICER"
+          ],
+          "raw": "setmapscene ELMS_LAB, SCENE_ELMSLAB_MEET_OFFICER"
+        },
+        {
+          "command": "specialphonecall",
+          "args": [
+            "SPECIALCALL_ROBBED"
+          ],
+          "raw": "specialphonecall SPECIALCALL_ROBBED"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_COP_IN_ELMS_LAB"
+          ],
+          "raw": "clearevent EVENT_COP_IN_ELMS_LAB"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TOTODILE_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_TOTODILE_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MrPokemonsHouse_OakScript.RivalTakesChikorita"
+          ],
+          "raw": "iftrue .RivalTakesChikorita"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_CHIKORITA_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_CHIKORITA_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MrPokemonsHouse_OakScript.RivalTakesCyndaquil"
+          ],
+          "raw": "iftrue .RivalTakesCyndaquil"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB"
+          ],
+          "raw": "setevent EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playmusic",
+      "label_refs": [
+        "MrPokemonsHouse_OakScript.RivalTakesChikorita",
+        "MrPokemonsHouse_OakScript.RivalTakesCyndaquil"
+      ],
+      "text_refs": [
+        "MrPokemonText_ImDependingOnYou",
+        "MrPokemonsHouse_GetDexText",
+        "MrPokemonsHouse_MrPokemonHealText",
+        "MrPokemonsHouse_OakText1",
+        "MrPokemonsHouse_OakText2"
+      ],
+      "movement_refs": [
+        "MrPokemonsHouse_OakExits",
+        "MrPokemonsHouse_OakWalksToPlayer"
+      ],
+      "scene_refs": [
+        "SCENE_CHERRYGROVECITY_MEET_RIVAL",
+        "SCENE_ELMSLAB_MEET_OFFICER",
+        "SCENE_MRPOKEMONSHOUSE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_OakScript.RivalTakesChikorita": {
+      "raw_lines": [
+        "setevent EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB"
+          ],
+          "raw": "setevent EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "setevent",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_OakScript.RivalTakesCyndaquil": {
+      "raw_lines": [
+        "setevent EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB"
+          ],
+          "raw": "setevent EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "setevent",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_ForeignMagazines": {
+      "raw_lines": [
+        "jumptext MrPokemonsHouse_ForeignMagazinesText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "MrPokemonsHouse_ForeignMagazinesText"
+          ],
+          "raw": "jumptext MrPokemonsHouse_ForeignMagazinesText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "MrPokemonsHouse_ForeignMagazinesText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_BrokenComputer": {
+      "raw_lines": [
+        "jumptext MrPokemonsHouse_BrokenComputerText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "MrPokemonsHouse_BrokenComputerText"
+          ],
+          "raw": "jumptext MrPokemonsHouse_BrokenComputerText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "MrPokemonsHouse_BrokenComputerText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_StrangeCoins": {
+      "raw_lines": [
+        "jumptext MrPokemonsHouse_StrangeCoinsText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "MrPokemonsHouse_StrangeCoinsText"
+          ],
+          "raw": "jumptext MrPokemonsHouse_StrangeCoinsText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "MrPokemonsHouse_StrangeCoinsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, ROUTE_30, 2",
+        "warp_event  3,  7, ROUTE_30, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, MrPokemonsHouse_ForeignMagazines",
+        "bg_event  1,  1, BGEVENT_READ, MrPokemonsHouse_ForeignMagazines",
+        "bg_event  6,  1, BGEVENT_READ, MrPokemonsHouse_BrokenComputer",
+        "bg_event  7,  1, BGEVENT_READ, MrPokemonsHouse_BrokenComputer",
+        "bg_event  6,  4, BGEVENT_READ, MrPokemonsHouse_StrangeCoins",
+        "def_object_events",
+        "object_event  3,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrPokemonsHouse_MrPokemonScript, -1",
+        "object_event  6,  5, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MR_POKEMONS_HOUSE_OAK"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "ROUTE_30",
+            "2"
+          ],
+          "raw": "warp_event  2,  7, ROUTE_30, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "ROUTE_30",
+            "2"
+          ],
+          "raw": "warp_event  3,  7, ROUTE_30, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "MrPokemonsHouse_ForeignMagazines"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, MrPokemonsHouse_ForeignMagazines"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "MrPokemonsHouse_ForeignMagazines"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, MrPokemonsHouse_ForeignMagazines"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "6",
+            "1",
+            "BGEVENT_READ",
+            "MrPokemonsHouse_BrokenComputer"
+          ],
+          "raw": "bg_event  6,  1, BGEVENT_READ, MrPokemonsHouse_BrokenComputer"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "7",
+            "1",
+            "BGEVENT_READ",
+            "MrPokemonsHouse_BrokenComputer"
+          ],
+          "raw": "bg_event  7,  1, BGEVENT_READ, MrPokemonsHouse_BrokenComputer"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "6",
+            "4",
+            "BGEVENT_READ",
+            "MrPokemonsHouse_StrangeCoins"
+          ],
+          "raw": "bg_event  6,  4, BGEVENT_READ, MrPokemonsHouse_StrangeCoins"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "5",
+            "SPRITE_GENTLEMAN",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MrPokemonsHouse_MrPokemonScript",
+            "-1"
+          ],
+          "raw": "object_event  3,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrPokemonsHouse_MrPokemonScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "5",
+            "SPRITE_OAK",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_MR_POKEMONS_HOUSE_OAK"
+          ],
+          "raw": "object_event  6,  5, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MR_POKEMONS_HOUSE_OAK"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "MrPokemonIntroText1": {
+      "raw_lines": [
+        "text \"Hello, hello! You\"",
+        "line \"must be <PLAY_G>.\"",
+        "para \"PROF.ELM said that\"",
+        "line \"you would visit.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hello, hello! You"
+        },
+        {
+          "command": "line",
+          "value": "must be <PLAY_G>."
+        },
+        {
+          "command": "para",
+          "value": "PROF.ELM said that"
+        },
+        {
+          "command": "line",
+          "value": "you would visit."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MrPokemonIntroText2": {
+      "raw_lines": [
+        "text \"This is what I\"",
+        "line \"want PROF.ELM to\"",
+        "cont \"examine.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This is what I"
+        },
+        {
+          "command": "line",
+          "value": "want PROF.ELM to"
+        },
+        {
+          "command": "cont",
+          "value": "examine."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MrPokemonsHouse_GotEggText": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"MYSTERY EGG.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "MYSTERY EGG."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MrPokemonIntroText3": {
+      "raw_lines": [
+        "text \"I know a couple\"",
+        "line \"who run a #MON\"",
+        "cont \"DAY-CARE service.\"",
+        "para \"They gave me that\"",
+        "line \"EGG.\"",
+        "para \"I was intrigued,\"",
+        "line \"so I sent mail to\"",
+        "cont \"PROF.ELM.\"",
+        "para \"For #MON evolu-\"",
+        "line \"tion, PROF.ELM is\"",
+        "cont \"the authority.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I know a couple"
+        },
+        {
+          "command": "line",
+          "value": "who run a #MON"
+        },
+        {
+          "command": "cont",
+          "value": "DAY-CARE service."
+        },
+        {
+          "command": "para",
+          "value": "They gave me that"
+        },
+        {
+          "command": "line",
+          "value": "EGG."
+        },
+        {
+          "command": "para",
+          "value": "I was intrigued,"
+        },
+        {
+          "command": "line",
+          "value": "so I sent mail to"
+        },
+        {
+          "command": "cont",
+          "value": "PROF.ELM."
+        },
+        {
+          "command": "para",
+          "value": "For #MON evolu-"
+        },
+        {
+          "command": "line",
+          "value": "tion, PROF.ELM is"
+        },
+        {
+          "command": "cont",
+          "value": "the authority."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MrPokemonIntroText4": {
+      "raw_lines": [
+        "text \"Even PROF.OAK here\"",
+        "line \"recognizes that.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Even PROF.OAK here"
+        },
+        {
+          "command": "line",
+          "value": "recognizes that."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MrPokemonIntroText5": {
+      "raw_lines": [
+        "text \"If my assumption\"",
+        "line \"is correct, PROF.\"",
+        "cont \"ELM will know it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If my assumption"
+        },
+        {
+          "command": "line",
+          "value": "is correct, PROF."
+        },
+        {
+          "command": "cont",
+          "value": "ELM will know it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MrPokemonsHouse_MrPokemonHealText": {
+      "raw_lines": [
+        "text \"You are returning\"",
+        "line \"to PROF.ELM?\"",
+        "para \"Here. Your #MON\"",
+        "line \"should have some\"",
+        "cont \"rest.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You are returning"
+        },
+        {
+          "command": "line",
+          "value": "to PROF.ELM?"
+        },
+        {
+          "command": "para",
+          "value": "Here. Your #MON"
+        },
+        {
+          "command": "line",
+          "value": "should have some"
+        },
+        {
+          "command": "cont",
+          "value": "rest."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MrPokemonText_ImDependingOnYou": {
+      "raw_lines": [
+        "text \"I'm depending on\"",
+        "line \"you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm depending on"
+        },
+        {
+          "command": "line",
+          "value": "you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MrPokemonText_AlwaysNewDiscoveries": {
+      "raw_lines": [
+        "text \"Life is delight-\"",
+        "line \"ful! Always, new\"",
+        "para \"discoveries to be\"",
+        "line \"made!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Life is delight-"
+        },
+        {
+          "command": "line",
+          "value": "ful! Always, new"
+        },
+        {
+          "command": "para",
+          "value": "discoveries to be"
+        },
+        {
+          "command": "line",
+          "value": "made!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MrPokemonsHouse_OakText1": {
+      "raw_lines": [
+        "text \"OAK: Aha! So\"",
+        "line \"you're <PLAY_G>!\"",
+        "para \"I'm OAK! A #MON\"",
+        "line \"researcher.\"",
+        "para \"I was just visit-\"",
+        "line \"ing my old friend\"",
+        "cont \"MR.#MON.\"",
+        "para \"I heard you were\"",
+        "line \"running an errand\"",
+        "para \"for PROF.ELM, so I\"",
+        "line \"waited here.\"",
+        "para \"Oh! What's this?\"",
+        "line \"A rare #MON!\"",
+        "para \"Let's see\u2026\"",
+        "para \"Hm, I see!\"",
+        "para \"I understand why\"",
+        "line \"PROF.ELM gave you\"",
+        "para \"a #MON for this\"",
+        "line \"errand.\"",
+        "para \"To researchers\"",
+        "line \"like PROF.ELM and\"",
+        "para \"I, #MON are our\"",
+        "line \"friends.\"",
+        "para \"He saw that you\"",
+        "line \"would treat your\"",
+        "para \"#MON with love\"",
+        "line \"and care.\"",
+        "para \"\u2026Ah!\"",
+        "para \"You seem to be\"",
+        "line \"dependable.\"",
+        "para \"How would you like\"",
+        "line \"to help me out?\"",
+        "para \"See? This is the\"",
+        "line \"latest version of\"",
+        "cont \"#DEX.\"",
+        "para \"It automatically\"",
+        "line \"records data on\"",
+        "para \"#MON you've\"",
+        "line \"seen or caught.\"",
+        "para \"It's a hi-tech\"",
+        "line \"encyclopedia!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OAK: Aha! So"
+        },
+        {
+          "command": "line",
+          "value": "you're <PLAY_G>!"
+        },
+        {
+          "command": "para",
+          "value": "I'm OAK! A #MON"
+        },
+        {
+          "command": "line",
+          "value": "researcher."
+        },
+        {
+          "command": "para",
+          "value": "I was just visit-"
+        },
+        {
+          "command": "line",
+          "value": "ing my old friend"
+        },
+        {
+          "command": "cont",
+          "value": "MR.#MON."
+        },
+        {
+          "command": "para",
+          "value": "I heard you were"
+        },
+        {
+          "command": "line",
+          "value": "running an errand"
+        },
+        {
+          "command": "para",
+          "value": "for PROF.ELM, so I"
+        },
+        {
+          "command": "line",
+          "value": "waited here."
+        },
+        {
+          "command": "para",
+          "value": "Oh! What's this?"
+        },
+        {
+          "command": "line",
+          "value": "A rare #MON!"
+        },
+        {
+          "command": "para",
+          "value": "Let's see\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Hm, I see!"
+        },
+        {
+          "command": "para",
+          "value": "I understand why"
+        },
+        {
+          "command": "line",
+          "value": "PROF.ELM gave you"
+        },
+        {
+          "command": "para",
+          "value": "a #MON for this"
+        },
+        {
+          "command": "line",
+          "value": "errand."
+        },
+        {
+          "command": "para",
+          "value": "To researchers"
+        },
+        {
+          "command": "line",
+          "value": "like PROF.ELM and"
+        },
+        {
+          "command": "para",
+          "value": "I, #MON are our"
+        },
+        {
+          "command": "line",
+          "value": "friends."
+        },
+        {
+          "command": "para",
+          "value": "He saw that you"
+        },
+        {
+          "command": "line",
+          "value": "would treat your"
+        },
+        {
+          "command": "para",
+          "value": "#MON with love"
+        },
+        {
+          "command": "line",
+          "value": "and care."
+        },
+        {
+          "command": "para",
+          "value": "\u2026Ah!"
+        },
+        {
+          "command": "para",
+          "value": "You seem to be"
+        },
+        {
+          "command": "line",
+          "value": "dependable."
+        },
+        {
+          "command": "para",
+          "value": "How would you like"
+        },
+        {
+          "command": "line",
+          "value": "to help me out?"
+        },
+        {
+          "command": "para",
+          "value": "See? This is the"
+        },
+        {
+          "command": "line",
+          "value": "latest version of"
+        },
+        {
+          "command": "cont",
+          "value": "#DEX."
+        },
+        {
+          "command": "para",
+          "value": "It automatically"
+        },
+        {
+          "command": "line",
+          "value": "records data on"
+        },
+        {
+          "command": "para",
+          "value": "#MON you've"
+        },
+        {
+          "command": "line",
+          "value": "seen or caught."
+        },
+        {
+          "command": "para",
+          "value": "It's a hi-tech"
+        },
+        {
+          "command": "line",
+          "value": "encyclopedia!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MrPokemonsHouse_GetDexText": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"#DEX!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "#DEX!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MrPokemonsHouse_OakText2": {
+      "raw_lines": [
+        "text \"Go meet many kinds\"",
+        "line \"of #MON and\"",
+        "para \"complete that\"",
+        "line \"#DEX!\"",
+        "para \"But I've stayed\"",
+        "line \"too long.\"",
+        "para \"I have to get to\"",
+        "line \"GOLDENROD for my\"",
+        "cont \"usual radio show.\"",
+        "para \"<PLAY_G>, I'm\"",
+        "line \"counting on you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Go meet many kinds"
+        },
+        {
+          "command": "line",
+          "value": "of #MON and"
+        },
+        {
+          "command": "para",
+          "value": "complete that"
+        },
+        {
+          "command": "line",
+          "value": "#DEX!"
+        },
+        {
+          "command": "para",
+          "value": "But I've stayed"
+        },
+        {
+          "command": "line",
+          "value": "too long."
+        },
+        {
+          "command": "para",
+          "value": "I have to get to"
+        },
+        {
+          "command": "line",
+          "value": "GOLDENROD for my"
+        },
+        {
+          "command": "cont",
+          "value": "usual radio show."
+        },
+        {
+          "command": "para",
+          "value": "<PLAY_G>, I'm"
+        },
+        {
+          "command": "line",
+          "value": "counting on you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MrPokemonText_GimmeTheScale": {
+      "raw_lines": [
+        "text \"Hm? That SCALE!\"",
+        "line \"What's that?\"",
+        "cont \"A red GYARADOS?\"",
+        "para \"That's rare! \"",
+        "line \"I, I want it\u2026\"",
+        "para \"<PLAY_G>, would you\"",
+        "line \"care to trade it?\"",
+        "para \"I can offer this\"",
+        "line \"EXP.SHARE I got\"",
+        "cont \"from PROF.OAK.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hm? That SCALE!"
+        },
+        {
+          "command": "line",
+          "value": "What's that?"
+        },
+        {
+          "command": "cont",
+          "value": "A red GYARADOS?"
+        },
+        {
+          "command": "para",
+          "value": "That's rare! "
+        },
+        {
+          "command": "line",
+          "value": "I, I want it\u2026"
+        },
+        {
+          "command": "para",
+          "value": "<PLAY_G>, would you"
+        },
+        {
+          "command": "line",
+          "value": "care to trade it?"
+        },
+        {
+          "command": "para",
+          "value": "I can offer this"
+        },
+        {
+          "command": "line",
+          "value": "EXP.SHARE I got"
+        },
+        {
+          "command": "cont",
+          "value": "from PROF.OAK."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MrPokemonText_Disappointed": {
+      "raw_lines": [
+        "text \"That's disappoint-\"",
+        "line \"ing. That happens\"",
+        "cont \"to be very rare.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "That's disappoint-"
+        },
+        {
+          "command": "line",
+          "value": "ing. That happens"
+        },
+        {
+          "command": "cont",
+          "value": "to be very rare."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MrPokemonsHouse_ForeignMagazinesText": {
+      "raw_lines": [
+        "text \"It's packed with\"",
+        "line \"foreign magazines.\"",
+        "para \"Can't even read\"",
+        "line \"their titles\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's packed with"
+        },
+        {
+          "command": "line",
+          "value": "foreign magazines."
+        },
+        {
+          "command": "para",
+          "value": "Can't even read"
+        },
+        {
+          "command": "line",
+          "value": "their titles\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MrPokemonsHouse_BrokenComputerText": {
+      "raw_lines": [
+        "text \"It's a big com-\"",
+        "line \"puter. Hmm. It's\"",
+        "cont \"broken.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's a big com-"
+        },
+        {
+          "command": "line",
+          "value": "puter. Hmm. It's"
+        },
+        {
+          "command": "cont",
+          "value": "broken."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MrPokemonsHouse_StrangeCoinsText": {
+      "raw_lines": [
+        "text \"A whole pile of\"",
+        "line \"strange coins!\"",
+        "para \"Maybe they're from\"",
+        "line \"another country\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A whole pile of"
+        },
+        {
+          "command": "line",
+          "value": "strange coins!"
+        },
+        {
+          "command": "para",
+          "value": "Maybe they're from"
+        },
+        {
+          "command": "line",
+          "value": "another country\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "MrPokemonsHouse_PlayerWalksToMrPokemon": {
+      "raw_lines": [
+        "step RIGHT",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MrPokemonsHouse_OakWalksToPlayer": {
+      "raw_lines": [
+        "step DOWN",
+        "step LEFT",
+        "step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MrPokemonsHouse_OakExits": {
+      "raw_lines": [
+        "step DOWN",
+        "step LEFT",
+        "turn_head DOWN",
+        "step_sleep 2",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_sleep",
+          "args": [
+            "2"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "MrPokemonsHouse_MapScripts": {
+      "label_refs": [
+        "MrPokemonsHouseMeetMrPokemonScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouseMeetMrPokemonScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouseNoopScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouseMrPokemonEventScript": {
+      "label_refs": [
+        "MrPokemonsHouse_OakScript"
+      ],
+      "text_refs": [
+        "MrPokemonIntroText1",
+        "MrPokemonIntroText2",
+        "MrPokemonIntroText3",
+        "MrPokemonIntroText4",
+        "MrPokemonIntroText5",
+        "MrPokemonsHouse_GotEggText"
+      ],
+      "movement_refs": [
+        "MrPokemonsHouse_PlayerWalksToMrPokemon"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_MrPokemonScript": {
+      "label_refs": [
+        "MrPokemonsHouse_MrPokemonScript.AlwaysNewDiscoveries",
+        "MrPokemonsHouse_MrPokemonScript.RedScale"
+      ],
+      "text_refs": [
+        "MrPokemonText_ImDependingOnYou"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_MrPokemonScript.AlwaysNewDiscoveries": {
+      "label_refs": [],
+      "text_refs": [
+        "MrPokemonText_AlwaysNewDiscoveries"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_MrPokemonScript.RedScale": {
+      "label_refs": [
+        "MrPokemonsHouse_MrPokemonScript.AlwaysNewDiscoveries",
+        "MrPokemonsHouse_MrPokemonScript.full",
+        "MrPokemonsHouse_MrPokemonScript.refused"
+      ],
+      "text_refs": [
+        "MrPokemonText_GimmeTheScale"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_MrPokemonScript.refused": {
+      "label_refs": [
+        "MrPokemonsHouse_MrPokemonScript.full"
+      ],
+      "text_refs": [
+        "MrPokemonText_Disappointed"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_MrPokemonScript.full": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_OakScript": {
+      "label_refs": [
+        "MrPokemonsHouse_OakScript.RivalTakesChikorita",
+        "MrPokemonsHouse_OakScript.RivalTakesCyndaquil"
+      ],
+      "text_refs": [
+        "MrPokemonText_ImDependingOnYou",
+        "MrPokemonsHouse_GetDexText",
+        "MrPokemonsHouse_MrPokemonHealText",
+        "MrPokemonsHouse_OakText1",
+        "MrPokemonsHouse_OakText2"
+      ],
+      "movement_refs": [
+        "MrPokemonsHouse_OakExits",
+        "MrPokemonsHouse_OakWalksToPlayer"
+      ],
+      "scene_refs": [
+        "SCENE_CHERRYGROVECITY_MEET_RIVAL",
+        "SCENE_ELMSLAB_MEET_OFFICER",
+        "SCENE_MRPOKEMONSHOUSE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_OakScript.RivalTakesChikorita": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_OakScript.RivalTakesCyndaquil": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_ForeignMagazines": {
+      "label_refs": [],
+      "text_refs": [
+        "MrPokemonsHouse_ForeignMagazinesText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_BrokenComputer": {
+      "label_refs": [],
+      "text_refs": [
+        "MrPokemonsHouse_BrokenComputerText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_StrangeCoins": {
+      "label_refs": [],
+      "text_refs": [
+        "MrPokemonsHouse_StrangeCoinsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MrPokemonsHouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear",
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 5,
+    "object_events": 2
+  }
+}

@@ -20,6 +20,7 @@
 #include "rtc.h"
 #include "script.h"
 #include "script_movement.h"
+#include "johto_story.h"
 #include "sound.h"
 #include "string_util.h"
 #include "strings.h"
@@ -1689,7 +1690,7 @@ static void PopulateTrainerName(int matchCallId, u8 *destStr)
         }
     }
 
-    StringCopy(destStr, gTrainers[trainerId].trainerName);
+    StringCopy(destStr, GetTrainerNameWithJohtoOverride(trainerId));
 }
 
 static void PopulateMapName(int matchCallId, u8 *destStr)

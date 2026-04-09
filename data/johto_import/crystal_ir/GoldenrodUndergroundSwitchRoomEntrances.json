@@ -1,0 +1,5817 @@
+{
+  "crystal_map": "GoldenrodUndergroundSwitchRoomEntrances",
+  "map_id": "GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 54,
+  "tileset": "TILESET_ELITE_FOUR_ROOM",
+  "environment": "DUNGEON",
+  "landmark": "LANDMARK_GOLDENROD_CITY",
+  "music": "MUSIC_UNION_CAVE",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 15,
+  "height_blocks": 18,
+  "border_block": "00",
+  "blk_path": "maps/GoldenrodUndergroundSwitchRoomEntrances.blk",
+  "source_asm": "maps/GoldenrodUndergroundSwitchRoomEntrances.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "GoldenrodUndergroundSwitchRoomEntrancesNoop1Scene",
+        "scene_id": "SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL_BATTLE"
+      },
+      {
+        "script": "GoldenrodUndergroundSwitchRoomEntrancesNoop2Scene",
+        "scene_id": "SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_NOOP"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_TILES",
+        "script": "GoldenrodUndergroundSwitchRoomEntrancesUpdateDoorPositionsCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 23,
+        "y": 3,
+        "dest_map": "GOLDENROD_UNDERGROUND",
+        "dest_warp_id": 6
+      },
+      {
+        "x": 22,
+        "y": 10,
+        "dest_map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 23,
+        "y": 10,
+        "dest_map": "GOLDENROD_UNDERGROUND_WAREHOUSE",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 5,
+        "y": 25,
+        "dest_map": "GOLDENROD_UNDERGROUND",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 4,
+        "y": 29,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 14
+      },
+      {
+        "x": 5,
+        "y": 29,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 14
+      },
+      {
+        "x": 21,
+        "y": 25,
+        "dest_map": "GOLDENROD_UNDERGROUND",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 20,
+        "y": 29,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 13
+      },
+      {
+        "x": 21,
+        "y": 29,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 13
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 19,
+        "y": 4,
+        "scene": "SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL_BATTLE",
+        "script": "UndergroundRivalScene1"
+      },
+      {
+        "x": 19,
+        "y": 5,
+        "scene": "SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL_BATTLE",
+        "script": "UndergroundRivalScene2"
+      }
+    ],
+    "bg_events": [
+      {
+        "x": 16,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "Switch1Script"
+      },
+      {
+        "x": 10,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "Switch2Script"
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "Switch3Script"
+      },
+      {
+        "x": 20,
+        "y": 11,
+        "kind": "BGEVENT_READ",
+        "script": "EmergencySwitchScript"
+      },
+      {
+        "x": 8,
+        "y": 9,
+        "kind": "BGEVENT_ITEM",
+        "script": "GoldenrodUndergroundSwitchRoomEntrancesHiddenMaxPotion"
+      },
+      {
+        "x": 1,
+        "y": 8,
+        "kind": "BGEVENT_ITEM",
+        "script": "GoldenrodUndergroundSwitchRoomEntrancesHiddenRevive"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 9,
+        "y": 12,
+        "sprite": "SPRITE_PHARMACIST",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 2,
+        "script": "TrainerBurglarDuncan",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 4,
+        "y": 8,
+        "sprite": "SPRITE_PHARMACIST",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 2,
+        "script": "TrainerBurglarEddie",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 17,
+        "y": 2,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerGruntM13",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 11,
+        "y": 2,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerGruntM11",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 3,
+        "y": 2,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerGruntM25",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 19,
+        "y": 12,
+        "sprite": "SPRITE_ROCKET_GIRL",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerGruntF3",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 3,
+        "y": 27,
+        "sprite": "SPRITE_TEACHER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodUndergroundSwitchRoomEntrancesTeacherScript",
+        "flag": -1
+      },
+      {
+        "x": 19,
+        "y": 27,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodUndergroundSwitchRoomEntrancesSuperNerdScript",
+        "flag": -1
+      },
+      {
+        "x": 1,
+        "y": 12,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodUndergroundSwitchRoomEntrancesSmokeBall",
+        "flag": "EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_SMOKE_BALL"
+      },
+      {
+        "x": 14,
+        "y": 9,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodUndergroundSwitchRoomEntrancesFullHeal",
+        "flag": "EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_FULL_HEAL"
+      },
+      {
+        "x": 23,
+        "y": 3,
+        "sprite": "SPRITE_RIVAL",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_RIVAL_GOLDENROD_UNDERGROUND"
+      }
+    ]
+  },
+  "object_consts": [
+    "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_PHARMACIST1",
+    "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_PHARMACIST2",
+    "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_ROCKET1",
+    "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_ROCKET2",
+    "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_ROCKET3",
+    "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_ROCKET_GIRL",
+    "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_TEACHER",
+    "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_SUPER_NERD",
+    "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_POKE_BALL1",
+    "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_POKE_BALL2",
+    "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL"
+  ],
+  "scene_ids": [
+    "SCENE_BURNEDTOWER1F_RIVAL_BATTLE",
+    "SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_NOOP",
+    "SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL_BATTLE"
+  ],
+  "scripts": {
+    "GoldenrodUndergroundSwitchRoomEntrances_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script GoldenrodUndergroundSwitchRoomEntrancesNoop1Scene, SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL_BATTLE",
+        "scene_script GoldenrodUndergroundSwitchRoomEntrancesNoop2Scene, SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_NOOP",
+        "def_callbacks",
+        "callback MAPCALLBACK_TILES, GoldenrodUndergroundSwitchRoomEntrancesUpdateDoorPositionsCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrancesNoop1Scene",
+            "SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL_BATTLE"
+          ],
+          "raw": "scene_script GoldenrodUndergroundSwitchRoomEntrancesNoop1Scene, SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL_BATTLE"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrancesNoop2Scene",
+            "SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_NOOP"
+          ],
+          "raw": "scene_script GoldenrodUndergroundSwitchRoomEntrancesNoop2Scene, SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_TILES",
+            "GoldenrodUndergroundSwitchRoomEntrancesUpdateDoorPositionsCallback"
+          ],
+          "raw": "callback MAPCALLBACK_TILES, GoldenrodUndergroundSwitchRoomEntrancesUpdateDoorPositionsCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "GoldenrodUndergroundSwitchRoomEntrancesNoop1Scene",
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrancesNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrancesNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrancesNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrancesUpdateDoorPositionsCallback": {
+      "raw_lines": [
+        "for n, 1, ugdoor_n + 1",
+        "checkevent EVENT_DOOR_{d:n}_OPEN",
+        "iffalse .door_{d:n}_closed",
+        "changeugdoor n, OPEN",
+        ".door_{d:n}_closed",
+        "endr",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "for",
+          "args": [
+            "n",
+            "1",
+            "ugdoor_n + 1"
+          ],
+          "raw": "for n, 1, ugdoor_n + 1"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_DOOR_{d:n}_OPEN"
+          ],
+          "raw": "checkevent EVENT_DOOR_{d:n}_OPEN"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrancesUpdateDoorPositionsCallback.door_{d:n}_closed"
+          ],
+          "raw": "iffalse .door_{d:n}_closed"
+        },
+        {
+          "command": "changeugdoor",
+          "args": [
+            "n",
+            "OPEN"
+          ],
+          "raw": "changeugdoor n, OPEN"
+        },
+        {
+          "command": ".door_{d:n}_closed",
+          "args": [],
+          "raw": ".door_{d:n}_closed"
+        },
+        {
+          "command": "endr",
+          "args": [],
+          "raw": "endr"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "for",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrancesSuperNerdScript": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodUndergroundSwitchRoomEntrances_SuperNerdText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_SuperNerdText"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodUndergroundSwitchRoomEntrances_SuperNerdText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_SuperNerdText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrancesTeacherScript": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodUndergroundSwitchRoomEntrances_TeacherText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_TeacherText"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodUndergroundSwitchRoomEntrances_TeacherText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_TeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UndergroundRivalScene1": {
+      "raw_lines": [
+        "turnobject PLAYER, RIGHT",
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "special FadeOutMusic",
+        "pause 15",
+        "playsound SFX_EXIT_BUILDING",
+        "appear GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL",
+        "waitsfx",
+        "applymovement GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL, UndergroundRivalApproachMovement1",
+        "turnobject PLAYER, RIGHT",
+        "scall UndergroundRivalBattleScript",
+        "applymovement GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL, UndergroundRivalRetreatMovement1",
+        "playsound SFX_EXIT_BUILDING",
+        "disappear GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL",
+        "setscene SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_NOOP",
+        "waitsfx",
+        "playmapmusic",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL"
+          ],
+          "raw": "appear GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL",
+            "UndergroundRivalApproachMovement1"
+          ],
+          "raw": "applymovement GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL, UndergroundRivalApproachMovement1"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "UndergroundRivalBattleScript"
+          ],
+          "raw": "scall UndergroundRivalBattleScript"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL",
+            "UndergroundRivalRetreatMovement1"
+          ],
+          "raw": "applymovement GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL, UndergroundRivalRetreatMovement1"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_NOOP"
+          ],
+          "raw": "setscene SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_NOOP"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "playmapmusic",
+          "args": [],
+          "raw": "playmapmusic"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [
+        "UndergroundRivalBattleScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "UndergroundRivalApproachMovement1",
+        "UndergroundRivalRetreatMovement1"
+      ],
+      "scene_refs": [
+        "SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_NOOP"
+      ],
+      "std_calls": []
+    },
+    "UndergroundRivalScene2": {
+      "raw_lines": [
+        "turnobject PLAYER, RIGHT",
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "special FadeOutMusic",
+        "pause 15",
+        "playsound SFX_EXIT_BUILDING",
+        "appear GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL",
+        "waitsfx",
+        "applymovement GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL, UndergroundRivalApproachMovement2",
+        "turnobject PLAYER, RIGHT",
+        "scall UndergroundRivalBattleScript",
+        "applymovement GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL, UndergroundRivalRetreatMovement2",
+        "playsound SFX_EXIT_BUILDING",
+        "disappear GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL",
+        "setscene SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_NOOP",
+        "waitsfx",
+        "playmapmusic",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL"
+          ],
+          "raw": "appear GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL",
+            "UndergroundRivalApproachMovement2"
+          ],
+          "raw": "applymovement GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL, UndergroundRivalApproachMovement2"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "UndergroundRivalBattleScript"
+          ],
+          "raw": "scall UndergroundRivalBattleScript"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL",
+            "UndergroundRivalRetreatMovement2"
+          ],
+          "raw": "applymovement GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL, UndergroundRivalRetreatMovement2"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_NOOP"
+          ],
+          "raw": "setscene SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_NOOP"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "playmapmusic",
+          "args": [],
+          "raw": "playmapmusic"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [
+        "UndergroundRivalBattleScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "UndergroundRivalApproachMovement2",
+        "UndergroundRivalRetreatMovement2"
+      ],
+      "scene_refs": [
+        "SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_NOOP"
+      ],
+      "std_calls": []
+    },
+    "UndergroundRivalBattleScript": {
+      "raw_lines": [
+        "checkevent EVENT_RIVAL_BURNED_TOWER",
+        "iftrue .Continue",
+        "setevent EVENT_RIVAL_BURNED_TOWER",
+        "setmapscene BURNED_TOWER_1F, SCENE_BURNEDTOWER1F_RIVAL_BATTLE"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_RIVAL_BURNED_TOWER"
+          ],
+          "raw": "checkevent EVENT_RIVAL_BURNED_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "UndergroundRivalBattleScript.Continue"
+          ],
+          "raw": "iftrue .Continue"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_RIVAL_BURNED_TOWER"
+          ],
+          "raw": "setevent EVENT_RIVAL_BURNED_TOWER"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "BURNED_TOWER_1F",
+            "SCENE_BURNEDTOWER1F_RIVAL_BATTLE"
+          ],
+          "raw": "setmapscene BURNED_TOWER_1F, SCENE_BURNEDTOWER1F_RIVAL_BATTLE"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "UndergroundRivalBattleScript.Continue",
+      "label_refs": [
+        "UndergroundRivalBattleScript.Continue"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_BURNEDTOWER1F_RIVAL_BATTLE"
+      ],
+      "std_calls": []
+    },
+    "UndergroundRivalBattleScript.Continue": {
+      "raw_lines": [
+        "playmusic MUSIC_RIVAL_ENCOUNTER",
+        "opentext",
+        "writetext UndergroundRivalBeforeText",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_RIVAL_GOLDENROD_UNDERGROUND",
+        "checkevent EVENT_GOT_TOTODILE_FROM_ELM",
+        "iftrue .Totodile",
+        "checkevent EVENT_GOT_CHIKORITA_FROM_ELM",
+        "iftrue .Chikorita",
+        "winlosstext UndergroundRivalWinText, UndergroundRivalLossText",
+        "setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL",
+        "loadtrainer RIVAL1, RIVAL1_4_TOTODILE",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmapafterbattle",
+        "sjump .FinishRivalBattle"
+      ],
+      "commands": [
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_ENCOUNTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_ENCOUNTER"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "UndergroundRivalBeforeText"
+          ],
+          "raw": "writetext UndergroundRivalBeforeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_RIVAL_GOLDENROD_UNDERGROUND"
+          ],
+          "raw": "setevent EVENT_RIVAL_GOLDENROD_UNDERGROUND"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TOTODILE_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_TOTODILE_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "UndergroundRivalBattleScript.Totodile"
+          ],
+          "raw": "iftrue .Totodile"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_CHIKORITA_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_CHIKORITA_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "UndergroundRivalBattleScript.Chikorita"
+          ],
+          "raw": "iftrue .Chikorita"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "UndergroundRivalWinText",
+            "UndergroundRivalLossText"
+          ],
+          "raw": "winlosstext UndergroundRivalWinText, UndergroundRivalLossText"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL"
+          ],
+          "raw": "setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "RIVAL1",
+            "RIVAL1_4_TOTODILE"
+          ],
+          "raw": "loadtrainer RIVAL1, RIVAL1_4_TOTODILE"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "UndergroundRivalBattleScript.FinishRivalBattle"
+          ],
+          "raw": "sjump .FinishRivalBattle"
+        }
+      ],
+      "first_command": "playmusic",
+      "label_refs": [
+        "UndergroundRivalBattleScript.Chikorita",
+        "UndergroundRivalBattleScript.FinishRivalBattle",
+        "UndergroundRivalBattleScript.Totodile"
+      ],
+      "text_refs": [
+        "UndergroundRivalBeforeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UndergroundRivalBattleScript.Totodile": {
+      "raw_lines": [
+        "winlosstext UndergroundRivalWinText, UndergroundRivalLossText",
+        "setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL",
+        "loadtrainer RIVAL1, RIVAL1_4_CHIKORITA",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmapafterbattle",
+        "sjump .FinishRivalBattle"
+      ],
+      "commands": [
+        {
+          "command": "winlosstext",
+          "args": [
+            "UndergroundRivalWinText",
+            "UndergroundRivalLossText"
+          ],
+          "raw": "winlosstext UndergroundRivalWinText, UndergroundRivalLossText"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL"
+          ],
+          "raw": "setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "RIVAL1",
+            "RIVAL1_4_CHIKORITA"
+          ],
+          "raw": "loadtrainer RIVAL1, RIVAL1_4_CHIKORITA"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "UndergroundRivalBattleScript.FinishRivalBattle"
+          ],
+          "raw": "sjump .FinishRivalBattle"
+        }
+      ],
+      "first_command": "winlosstext",
+      "label_refs": [
+        "UndergroundRivalBattleScript.FinishRivalBattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UndergroundRivalBattleScript.Chikorita": {
+      "raw_lines": [
+        "winlosstext UndergroundRivalWinText, UndergroundRivalLossText",
+        "setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL",
+        "loadtrainer RIVAL1, RIVAL1_4_CYNDAQUIL",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmapafterbattle",
+        "sjump .FinishRivalBattle"
+      ],
+      "commands": [
+        {
+          "command": "winlosstext",
+          "args": [
+            "UndergroundRivalWinText",
+            "UndergroundRivalLossText"
+          ],
+          "raw": "winlosstext UndergroundRivalWinText, UndergroundRivalLossText"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL"
+          ],
+          "raw": "setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "RIVAL1",
+            "RIVAL1_4_CYNDAQUIL"
+          ],
+          "raw": "loadtrainer RIVAL1, RIVAL1_4_CYNDAQUIL"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "UndergroundRivalBattleScript.FinishRivalBattle"
+          ],
+          "raw": "sjump .FinishRivalBattle"
+        }
+      ],
+      "first_command": "winlosstext",
+      "label_refs": [
+        "UndergroundRivalBattleScript.FinishRivalBattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UndergroundRivalBattleScript.FinishRivalBattle": {
+      "raw_lines": [
+        "playmusic MUSIC_RIVAL_AFTER",
+        "opentext",
+        "writetext UndergroundRivalAfterText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_AFTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_AFTER"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "UndergroundRivalAfterText"
+          ],
+          "raw": "writetext UndergroundRivalAfterText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playmusic",
+      "label_refs": [],
+      "text_refs": [
+        "UndergroundRivalAfterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM11": {
+      "raw_lines": [
+        "trainer GRUNTM, GRUNTM_11, EVENT_BEAT_ROCKET_GRUNTM_11, GruntM11SeenText, GruntM11BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "GRUNTM",
+            "GRUNTM_11",
+            "EVENT_BEAT_ROCKET_GRUNTM_11",
+            "GruntM11SeenText",
+            "GruntM11BeatenText",
+            "0",
+            "TrainerGruntM11.Script"
+          ],
+          "raw": "trainer GRUNTM, GRUNTM_11, EVENT_BEAT_ROCKET_GRUNTM_11, GruntM11SeenText, GruntM11BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerGruntM11.Script",
+      "label_refs": [
+        "TrainerGruntM11.Script"
+      ],
+      "text_refs": [
+        "GruntM11BeatenText",
+        "GruntM11SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM11.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext GruntM11AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GruntM11AfterBattleText"
+          ],
+          "raw": "writetext GruntM11AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "GruntM11AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM25": {
+      "raw_lines": [
+        "trainer GRUNTM, GRUNTM_25, EVENT_BEAT_ROCKET_GRUNTM_25, GruntM25SeenText, GruntM25BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "GRUNTM",
+            "GRUNTM_25",
+            "EVENT_BEAT_ROCKET_GRUNTM_25",
+            "GruntM25SeenText",
+            "GruntM25BeatenText",
+            "0",
+            "TrainerGruntM25.Script"
+          ],
+          "raw": "trainer GRUNTM, GRUNTM_25, EVENT_BEAT_ROCKET_GRUNTM_25, GruntM25SeenText, GruntM25BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerGruntM25.Script",
+      "label_refs": [
+        "TrainerGruntM25.Script"
+      ],
+      "text_refs": [
+        "GruntM25BeatenText",
+        "GruntM25SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM25.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext GruntM25AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GruntM25AfterBattleText"
+          ],
+          "raw": "writetext GruntM25AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "GruntM25AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBurglarDuncan": {
+      "raw_lines": [
+        "trainer BURGLAR, DUNCAN, EVENT_BEAT_BURGLAR_DUNCAN, BurglarDuncanSeenText, BurglarDuncanBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "BURGLAR",
+            "DUNCAN",
+            "EVENT_BEAT_BURGLAR_DUNCAN",
+            "BurglarDuncanSeenText",
+            "BurglarDuncanBeatenText",
+            "0",
+            "TrainerBurglarDuncan.Script"
+          ],
+          "raw": "trainer BURGLAR, DUNCAN, EVENT_BEAT_BURGLAR_DUNCAN, BurglarDuncanSeenText, BurglarDuncanBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerBurglarDuncan.Script",
+      "label_refs": [
+        "TrainerBurglarDuncan.Script"
+      ],
+      "text_refs": [
+        "BurglarDuncanBeatenText",
+        "BurglarDuncanSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBurglarDuncan.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext BurglarDuncanAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BurglarDuncanAfterBattleText"
+          ],
+          "raw": "writetext BurglarDuncanAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "BurglarDuncanAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBurglarEddie": {
+      "raw_lines": [
+        "trainer BURGLAR, EDDIE, EVENT_BEAT_BURGLAR_EDDIE, BurglarEddieSeenText, BurglarEddieBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "BURGLAR",
+            "EDDIE",
+            "EVENT_BEAT_BURGLAR_EDDIE",
+            "BurglarEddieSeenText",
+            "BurglarEddieBeatenText",
+            "0",
+            "TrainerBurglarEddie.Script"
+          ],
+          "raw": "trainer BURGLAR, EDDIE, EVENT_BEAT_BURGLAR_EDDIE, BurglarEddieSeenText, BurglarEddieBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerBurglarEddie.Script",
+      "label_refs": [
+        "TrainerBurglarEddie.Script"
+      ],
+      "text_refs": [
+        "BurglarEddieBeatenText",
+        "BurglarEddieSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBurglarEddie.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext BurglarEddieAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BurglarEddieAfterBattleText"
+          ],
+          "raw": "writetext BurglarEddieAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "BurglarEddieAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM13": {
+      "raw_lines": [
+        "trainer GRUNTM, GRUNTM_13, EVENT_BEAT_ROCKET_GRUNTM_13, GruntM13SeenText, GruntM13BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "GRUNTM",
+            "GRUNTM_13",
+            "EVENT_BEAT_ROCKET_GRUNTM_13",
+            "GruntM13SeenText",
+            "GruntM13BeatenText",
+            "0",
+            "TrainerGruntM13.Script"
+          ],
+          "raw": "trainer GRUNTM, GRUNTM_13, EVENT_BEAT_ROCKET_GRUNTM_13, GruntM13SeenText, GruntM13BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerGruntM13.Script",
+      "label_refs": [
+        "TrainerGruntM13.Script"
+      ],
+      "text_refs": [
+        "GruntM13BeatenText",
+        "GruntM13SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM13.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext GruntM13AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GruntM13AfterBattleText"
+          ],
+          "raw": "writetext GruntM13AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "GruntM13AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntF3": {
+      "raw_lines": [
+        "trainer GRUNTF, GRUNTF_3, EVENT_BEAT_ROCKET_GRUNTF_3, GruntF3SeenText, GruntF3BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "GRUNTF",
+            "GRUNTF_3",
+            "EVENT_BEAT_ROCKET_GRUNTF_3",
+            "GruntF3SeenText",
+            "GruntF3BeatenText",
+            "0",
+            "TrainerGruntF3.Script"
+          ],
+          "raw": "trainer GRUNTF, GRUNTF_3, EVENT_BEAT_ROCKET_GRUNTF_3, GruntF3SeenText, GruntF3BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerGruntF3.Script",
+      "label_refs": [
+        "TrainerGruntF3.Script"
+      ],
+      "text_refs": [
+        "GruntF3BeatenText",
+        "GruntF3SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntF3.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext GruntF3AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GruntF3AfterBattleText"
+          ],
+          "raw": "writetext GruntF3AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "GruntF3AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Switch1Script": {
+      "raw_lines": [
+        "opentext",
+        "writetext SwitchRoomText_Switch1",
+        "promptbutton",
+        "checkevent EVENT_SWITCH_1",
+        "iftrue .On",
+        "writetext SwitchRoomText_OffTurnOn",
+        "yesorno",
+        "iffalse GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "readmem wUndergroundSwitchPositions",
+        "addval 1",
+        "writemem wUndergroundSwitchPositions",
+        "setevent EVENT_SWITCH_1",
+        "sjump GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SwitchRoomText_Switch1"
+          ],
+          "raw": "writetext SwitchRoomText_Switch1"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_SWITCH_1"
+          ],
+          "raw": "checkevent EVENT_SWITCH_1"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Switch1Script.On"
+          ],
+          "raw": "iftrue .On"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SwitchRoomText_OffTurnOn"
+          ],
+          "raw": "writetext SwitchRoomText_OffTurnOn"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_DontToggle"
+          ],
+          "raw": "iffalse GoldenrodUndergroundSwitchRoomEntrances_DontToggle"
+        },
+        {
+          "command": "readmem",
+          "args": [
+            "wUndergroundSwitchPositions"
+          ],
+          "raw": "readmem wUndergroundSwitchPositions"
+        },
+        {
+          "command": "addval",
+          "args": [
+            "1"
+          ],
+          "raw": "addval 1"
+        },
+        {
+          "command": "writemem",
+          "args": [
+            "wUndergroundSwitchPositions"
+          ],
+          "raw": "writemem wUndergroundSwitchPositions"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_SWITCH_1"
+          ],
+          "raw": "setevent EVENT_SWITCH_1"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+          ],
+          "raw": "sjump GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors",
+        "Switch1Script.On"
+      ],
+      "text_refs": [
+        "SwitchRoomText_OffTurnOn",
+        "SwitchRoomText_Switch1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Switch1Script.On": {
+      "raw_lines": [
+        "writetext SwitchRoomText_OnTurnOff",
+        "yesorno",
+        "iffalse GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "readmem wUndergroundSwitchPositions",
+        "addval -1",
+        "writemem wUndergroundSwitchPositions",
+        "clearevent EVENT_SWITCH_1",
+        "sjump GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "SwitchRoomText_OnTurnOff"
+          ],
+          "raw": "writetext SwitchRoomText_OnTurnOff"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_DontToggle"
+          ],
+          "raw": "iffalse GoldenrodUndergroundSwitchRoomEntrances_DontToggle"
+        },
+        {
+          "command": "readmem",
+          "args": [
+            "wUndergroundSwitchPositions"
+          ],
+          "raw": "readmem wUndergroundSwitchPositions"
+        },
+        {
+          "command": "addval",
+          "args": [
+            "-1"
+          ],
+          "raw": "addval -1"
+        },
+        {
+          "command": "writemem",
+          "args": [
+            "wUndergroundSwitchPositions"
+          ],
+          "raw": "writemem wUndergroundSwitchPositions"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_SWITCH_1"
+          ],
+          "raw": "clearevent EVENT_SWITCH_1"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+          ],
+          "raw": "sjump GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+      ],
+      "text_refs": [
+        "SwitchRoomText_OnTurnOff"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Switch2Script": {
+      "raw_lines": [
+        "opentext",
+        "writetext SwitchRoomText_Switch2",
+        "promptbutton",
+        "checkevent EVENT_SWITCH_2",
+        "iftrue .On",
+        "writetext SwitchRoomText_OffTurnOn",
+        "yesorno",
+        "iffalse GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "readmem wUndergroundSwitchPositions",
+        "addval 2",
+        "writemem wUndergroundSwitchPositions",
+        "setevent EVENT_SWITCH_2",
+        "sjump GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SwitchRoomText_Switch2"
+          ],
+          "raw": "writetext SwitchRoomText_Switch2"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_SWITCH_2"
+          ],
+          "raw": "checkevent EVENT_SWITCH_2"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Switch2Script.On"
+          ],
+          "raw": "iftrue .On"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SwitchRoomText_OffTurnOn"
+          ],
+          "raw": "writetext SwitchRoomText_OffTurnOn"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_DontToggle"
+          ],
+          "raw": "iffalse GoldenrodUndergroundSwitchRoomEntrances_DontToggle"
+        },
+        {
+          "command": "readmem",
+          "args": [
+            "wUndergroundSwitchPositions"
+          ],
+          "raw": "readmem wUndergroundSwitchPositions"
+        },
+        {
+          "command": "addval",
+          "args": [
+            "2"
+          ],
+          "raw": "addval 2"
+        },
+        {
+          "command": "writemem",
+          "args": [
+            "wUndergroundSwitchPositions"
+          ],
+          "raw": "writemem wUndergroundSwitchPositions"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_SWITCH_2"
+          ],
+          "raw": "setevent EVENT_SWITCH_2"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+          ],
+          "raw": "sjump GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors",
+        "Switch2Script.On"
+      ],
+      "text_refs": [
+        "SwitchRoomText_OffTurnOn",
+        "SwitchRoomText_Switch2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Switch2Script.On": {
+      "raw_lines": [
+        "writetext SwitchRoomText_OnTurnOff",
+        "yesorno",
+        "iffalse GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "readmem wUndergroundSwitchPositions",
+        "addval -2",
+        "writemem wUndergroundSwitchPositions",
+        "clearevent EVENT_SWITCH_2",
+        "sjump GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "SwitchRoomText_OnTurnOff"
+          ],
+          "raw": "writetext SwitchRoomText_OnTurnOff"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_DontToggle"
+          ],
+          "raw": "iffalse GoldenrodUndergroundSwitchRoomEntrances_DontToggle"
+        },
+        {
+          "command": "readmem",
+          "args": [
+            "wUndergroundSwitchPositions"
+          ],
+          "raw": "readmem wUndergroundSwitchPositions"
+        },
+        {
+          "command": "addval",
+          "args": [
+            "-2"
+          ],
+          "raw": "addval -2"
+        },
+        {
+          "command": "writemem",
+          "args": [
+            "wUndergroundSwitchPositions"
+          ],
+          "raw": "writemem wUndergroundSwitchPositions"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_SWITCH_2"
+          ],
+          "raw": "clearevent EVENT_SWITCH_2"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+          ],
+          "raw": "sjump GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+      ],
+      "text_refs": [
+        "SwitchRoomText_OnTurnOff"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Switch3Script": {
+      "raw_lines": [
+        "opentext",
+        "writetext SwitchRoomText_Switch3",
+        "promptbutton",
+        "checkevent EVENT_SWITCH_3",
+        "iftrue .On",
+        "writetext SwitchRoomText_OffTurnOn",
+        "yesorno",
+        "iffalse GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "readmem wUndergroundSwitchPositions",
+        "addval 3",
+        "writemem wUndergroundSwitchPositions",
+        "setevent EVENT_SWITCH_3",
+        "sjump GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SwitchRoomText_Switch3"
+          ],
+          "raw": "writetext SwitchRoomText_Switch3"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_SWITCH_3"
+          ],
+          "raw": "checkevent EVENT_SWITCH_3"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Switch3Script.On"
+          ],
+          "raw": "iftrue .On"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SwitchRoomText_OffTurnOn"
+          ],
+          "raw": "writetext SwitchRoomText_OffTurnOn"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_DontToggle"
+          ],
+          "raw": "iffalse GoldenrodUndergroundSwitchRoomEntrances_DontToggle"
+        },
+        {
+          "command": "readmem",
+          "args": [
+            "wUndergroundSwitchPositions"
+          ],
+          "raw": "readmem wUndergroundSwitchPositions"
+        },
+        {
+          "command": "addval",
+          "args": [
+            "3"
+          ],
+          "raw": "addval 3"
+        },
+        {
+          "command": "writemem",
+          "args": [
+            "wUndergroundSwitchPositions"
+          ],
+          "raw": "writemem wUndergroundSwitchPositions"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_SWITCH_3"
+          ],
+          "raw": "setevent EVENT_SWITCH_3"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+          ],
+          "raw": "sjump GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors",
+        "Switch3Script.On"
+      ],
+      "text_refs": [
+        "SwitchRoomText_OffTurnOn",
+        "SwitchRoomText_Switch3"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Switch3Script.On": {
+      "raw_lines": [
+        "writetext SwitchRoomText_OnTurnOff",
+        "yesorno",
+        "iffalse GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "readmem wUndergroundSwitchPositions",
+        "addval -3",
+        "writemem wUndergroundSwitchPositions",
+        "clearevent EVENT_SWITCH_3",
+        "sjump GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "SwitchRoomText_OnTurnOff"
+          ],
+          "raw": "writetext SwitchRoomText_OnTurnOff"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_DontToggle"
+          ],
+          "raw": "iffalse GoldenrodUndergroundSwitchRoomEntrances_DontToggle"
+        },
+        {
+          "command": "readmem",
+          "args": [
+            "wUndergroundSwitchPositions"
+          ],
+          "raw": "readmem wUndergroundSwitchPositions"
+        },
+        {
+          "command": "addval",
+          "args": [
+            "-3"
+          ],
+          "raw": "addval -3"
+        },
+        {
+          "command": "writemem",
+          "args": [
+            "wUndergroundSwitchPositions"
+          ],
+          "raw": "writemem wUndergroundSwitchPositions"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_SWITCH_3"
+          ],
+          "raw": "clearevent EVENT_SWITCH_3"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+          ],
+          "raw": "sjump GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+      ],
+      "text_refs": [
+        "SwitchRoomText_OnTurnOff"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EmergencySwitchScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext SwitchRoomText_Emergency",
+        "promptbutton",
+        "checkevent EVENT_EMERGENCY_SWITCH",
+        "iftrue .On",
+        "writetext SwitchRoomText_OffTurnOn",
+        "yesorno",
+        "iffalse GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "setval 7",
+        "writemem wUndergroundSwitchPositions",
+        "setevent EVENT_EMERGENCY_SWITCH",
+        "setevent EVENT_SWITCH_1",
+        "setevent EVENT_SWITCH_2",
+        "setevent EVENT_SWITCH_3",
+        "sjump GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SwitchRoomText_Emergency"
+          ],
+          "raw": "writetext SwitchRoomText_Emergency"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_EMERGENCY_SWITCH"
+          ],
+          "raw": "checkevent EVENT_EMERGENCY_SWITCH"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EmergencySwitchScript.On"
+          ],
+          "raw": "iftrue .On"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SwitchRoomText_OffTurnOn"
+          ],
+          "raw": "writetext SwitchRoomText_OffTurnOn"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_DontToggle"
+          ],
+          "raw": "iffalse GoldenrodUndergroundSwitchRoomEntrances_DontToggle"
+        },
+        {
+          "command": "setval",
+          "args": [
+            "7"
+          ],
+          "raw": "setval 7"
+        },
+        {
+          "command": "writemem",
+          "args": [
+            "wUndergroundSwitchPositions"
+          ],
+          "raw": "writemem wUndergroundSwitchPositions"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_EMERGENCY_SWITCH"
+          ],
+          "raw": "setevent EVENT_EMERGENCY_SWITCH"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_SWITCH_1"
+          ],
+          "raw": "setevent EVENT_SWITCH_1"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_SWITCH_2"
+          ],
+          "raw": "setevent EVENT_SWITCH_2"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_SWITCH_3"
+          ],
+          "raw": "setevent EVENT_SWITCH_3"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+          ],
+          "raw": "sjump GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "EmergencySwitchScript.On",
+        "GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+      ],
+      "text_refs": [
+        "SwitchRoomText_Emergency",
+        "SwitchRoomText_OffTurnOn"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EmergencySwitchScript.On": {
+      "raw_lines": [
+        "writetext SwitchRoomText_OnTurnOff",
+        "yesorno",
+        "iffalse GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "setval 0",
+        "writemem wUndergroundSwitchPositions",
+        "clearevent EVENT_EMERGENCY_SWITCH",
+        "clearevent EVENT_SWITCH_1",
+        "clearevent EVENT_SWITCH_2",
+        "clearevent EVENT_SWITCH_3",
+        "sjump GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "SwitchRoomText_OnTurnOff"
+          ],
+          "raw": "writetext SwitchRoomText_OnTurnOff"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_DontToggle"
+          ],
+          "raw": "iffalse GoldenrodUndergroundSwitchRoomEntrances_DontToggle"
+        },
+        {
+          "command": "setval",
+          "args": [
+            "0"
+          ],
+          "raw": "setval 0"
+        },
+        {
+          "command": "writemem",
+          "args": [
+            "wUndergroundSwitchPositions"
+          ],
+          "raw": "writemem wUndergroundSwitchPositions"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_EMERGENCY_SWITCH"
+          ],
+          "raw": "clearevent EVENT_EMERGENCY_SWITCH"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_SWITCH_1"
+          ],
+          "raw": "clearevent EVENT_SWITCH_1"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_SWITCH_2"
+          ],
+          "raw": "clearevent EVENT_SWITCH_2"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_SWITCH_3"
+          ],
+          "raw": "clearevent EVENT_SWITCH_3"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+          ],
+          "raw": "sjump GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+      ],
+      "text_refs": [
+        "SwitchRoomText_OnTurnOff"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_DontToggle": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors": {
+      "raw_lines": [
+        "readmem wUndergroundSwitchPositions",
+        "ifequal 0, .Position0",
+        "ifequal 1, .Position1",
+        "ifequal 2, .Position2",
+        "ifequal 3, .Position3",
+        "ifequal 4, .Position4",
+        "ifequal 5, .Position5",
+        "ifequal 6, .Position6",
+        "ifequal 7, .EmergencyPosition"
+      ],
+      "commands": [
+        {
+          "command": "readmem",
+          "args": [
+            "wUndergroundSwitchPositions"
+          ],
+          "raw": "readmem wUndergroundSwitchPositions"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "0",
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position0"
+          ],
+          "raw": "ifequal 0, .Position0"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position1"
+          ],
+          "raw": "ifequal 1, .Position1"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position2"
+          ],
+          "raw": "ifequal 2, .Position2"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "3",
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position3"
+          ],
+          "raw": "ifequal 3, .Position3"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "4",
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position4"
+          ],
+          "raw": "ifequal 4, .Position4"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "5",
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position5"
+          ],
+          "raw": "ifequal 5, .Position5"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "6",
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position6"
+          ],
+          "raw": "ifequal 6, .Position6"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "7",
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.EmergencyPosition"
+          ],
+          "raw": "ifequal 7, .EmergencyPosition"
+        }
+      ],
+      "first_command": "readmem",
+      "fallthrough_label": "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position0",
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.EmergencyPosition",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position0",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position1",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position2",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position3",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position4",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position5",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position6"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position0": {
+      "raw_lines": [
+        "playsound SFX_ENTER_DOOR",
+        "scall .CloseDoor1",
+        "scall .CloseDoor2",
+        "scall .CloseDoor3",
+        "scall .CloseDoor4",
+        "scall .CloseDoor5",
+        "scall .CloseDoor6",
+        "scall .CloseDoor7",
+        "scall .CloseDoor8",
+        "scall .CloseDoor9",
+        "scall .CloseDoor10",
+        "scall .CloseDoor11",
+        "refreshmap",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor1"
+          ],
+          "raw": "scall .CloseDoor1"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor2"
+          ],
+          "raw": "scall .CloseDoor2"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor3"
+          ],
+          "raw": "scall .CloseDoor3"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor4"
+          ],
+          "raw": "scall .CloseDoor4"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor5"
+          ],
+          "raw": "scall .CloseDoor5"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor6"
+          ],
+          "raw": "scall .CloseDoor6"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor7"
+          ],
+          "raw": "scall .CloseDoor7"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor8"
+          ],
+          "raw": "scall .CloseDoor8"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor9"
+          ],
+          "raw": "scall .CloseDoor9"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor10"
+          ],
+          "raw": "scall .CloseDoor10"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor11"
+          ],
+          "raw": "scall .CloseDoor11"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playsound",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position1": {
+      "raw_lines": [
+        "playsound SFX_ENTER_DOOR",
+        "scall .OpenDoor1",
+        "scall .OpenDoor7",
+        "scall .OpenDoor10",
+        "scall .CloseDoor6",
+        "scall .CloseDoor8",
+        "scall .CloseDoor9",
+        "scall .CloseDoor11",
+        "refreshmap",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor1"
+          ],
+          "raw": "scall .OpenDoor1"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor7"
+          ],
+          "raw": "scall .OpenDoor7"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor10"
+          ],
+          "raw": "scall .OpenDoor10"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor6"
+          ],
+          "raw": "scall .CloseDoor6"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor8"
+          ],
+          "raw": "scall .CloseDoor8"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor9"
+          ],
+          "raw": "scall .CloseDoor9"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor11"
+          ],
+          "raw": "scall .CloseDoor11"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playsound",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position2": {
+      "raw_lines": [
+        "playsound SFX_ENTER_DOOR",
+        "scall .OpenDoor2",
+        "scall .OpenDoor8",
+        "scall .OpenDoor9",
+        "scall .CloseDoor5",
+        "scall .CloseDoor7",
+        "scall .CloseDoor10",
+        "scall .CloseDoor11",
+        "refreshmap",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor2"
+          ],
+          "raw": "scall .OpenDoor2"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor8"
+          ],
+          "raw": "scall .OpenDoor8"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor9"
+          ],
+          "raw": "scall .OpenDoor9"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor5"
+          ],
+          "raw": "scall .CloseDoor5"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor7"
+          ],
+          "raw": "scall .CloseDoor7"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor10"
+          ],
+          "raw": "scall .CloseDoor10"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor11"
+          ],
+          "raw": "scall .CloseDoor11"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playsound",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position3": {
+      "raw_lines": [
+        "playsound SFX_ENTER_DOOR",
+        "scall .OpenDoor3",
+        "scall .OpenDoor7",
+        "scall .OpenDoor10",
+        "scall .CloseDoor4",
+        "scall .CloseDoor8",
+        "scall .CloseDoor9",
+        "scall .CloseDoor11",
+        "refreshmap",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor3"
+          ],
+          "raw": "scall .OpenDoor3"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor7"
+          ],
+          "raw": "scall .OpenDoor7"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor10"
+          ],
+          "raw": "scall .OpenDoor10"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor4"
+          ],
+          "raw": "scall .CloseDoor4"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor8"
+          ],
+          "raw": "scall .CloseDoor8"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor9"
+          ],
+          "raw": "scall .CloseDoor9"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor11"
+          ],
+          "raw": "scall .CloseDoor11"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playsound",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position4": {
+      "raw_lines": [
+        "playsound SFX_ENTER_DOOR",
+        "scall .OpenDoor4",
+        "scall .OpenDoor8",
+        "scall .OpenDoor9",
+        "scall .CloseDoor3",
+        "scall .CloseDoor7",
+        "scall .CloseDoor10",
+        "scall .CloseDoor11",
+        "refreshmap",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor4"
+          ],
+          "raw": "scall .OpenDoor4"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor8"
+          ],
+          "raw": "scall .OpenDoor8"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor9"
+          ],
+          "raw": "scall .OpenDoor9"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor3"
+          ],
+          "raw": "scall .CloseDoor3"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor7"
+          ],
+          "raw": "scall .CloseDoor7"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor10"
+          ],
+          "raw": "scall .CloseDoor10"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor11"
+          ],
+          "raw": "scall .CloseDoor11"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playsound",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position5": {
+      "raw_lines": [
+        "playsound SFX_ENTER_DOOR",
+        "scall .OpenDoor5",
+        "scall .OpenDoor7",
+        "scall .OpenDoor10",
+        "scall .CloseDoor2",
+        "scall .CloseDoor8",
+        "scall .CloseDoor9",
+        "scall .CloseDoor11",
+        "refreshmap",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor5"
+          ],
+          "raw": "scall .OpenDoor5"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor7"
+          ],
+          "raw": "scall .OpenDoor7"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor10"
+          ],
+          "raw": "scall .OpenDoor10"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor2"
+          ],
+          "raw": "scall .CloseDoor2"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor8"
+          ],
+          "raw": "scall .CloseDoor8"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor9"
+          ],
+          "raw": "scall .CloseDoor9"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor11"
+          ],
+          "raw": "scall .CloseDoor11"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playsound",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position6": {
+      "raw_lines": [
+        "playsound SFX_ENTER_DOOR",
+        "scall .OpenDoor6",
+        "scall .OpenDoor8",
+        "scall .OpenDoor9",
+        "scall .OpenDoor11",
+        "scall .CloseDoor1",
+        "scall .CloseDoor7",
+        "scall .CloseDoor10",
+        "refreshmap",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor6"
+          ],
+          "raw": "scall .OpenDoor6"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor8"
+          ],
+          "raw": "scall .OpenDoor8"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor9"
+          ],
+          "raw": "scall .OpenDoor9"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor11"
+          ],
+          "raw": "scall .OpenDoor11"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor1"
+          ],
+          "raw": "scall .CloseDoor1"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor7"
+          ],
+          "raw": "scall .CloseDoor7"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor10"
+          ],
+          "raw": "scall .CloseDoor10"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playsound",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.EmergencyPosition": {
+      "raw_lines": [
+        "playsound SFX_ENTER_DOOR",
+        "scall .CloseDoor1",
+        "scall .CloseDoor2",
+        "scall .OpenDoor3",
+        "scall .CloseDoor4",
+        "scall .OpenDoor5",
+        "scall .OpenDoor6",
+        "scall .CloseDoor7",
+        "scall .OpenDoor8",
+        "scall .OpenDoor9",
+        "scall .CloseDoor10",
+        "scall .OpenDoor11",
+        "refreshmap",
+        "closetext",
+        "setval 6",
+        "writemem wUndergroundSwitchPositions",
+        "end",
+        "for n, 1, ugdoor_n + 1",
+        ".OpenDoor{d:n}:",
+        "changeugdoor n, OPEN",
+        "setevent EVENT_DOOR_{d:n}_OPEN",
+        "end",
+        "endr",
+        "for n, 1, ugdoor_n + 1",
+        ".CloseDoor{d:n}:",
+        "changeugdoor n, CLOSED",
+        "clearevent EVENT_DOOR_{d:n}_OPEN",
+        "end",
+        "endr"
+      ],
+      "commands": [
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor1"
+          ],
+          "raw": "scall .CloseDoor1"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor2"
+          ],
+          "raw": "scall .CloseDoor2"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor3"
+          ],
+          "raw": "scall .OpenDoor3"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor4"
+          ],
+          "raw": "scall .CloseDoor4"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor5"
+          ],
+          "raw": "scall .OpenDoor5"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor6"
+          ],
+          "raw": "scall .OpenDoor6"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor7"
+          ],
+          "raw": "scall .CloseDoor7"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor8"
+          ],
+          "raw": "scall .OpenDoor8"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor9"
+          ],
+          "raw": "scall .OpenDoor9"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.CloseDoor10"
+          ],
+          "raw": "scall .CloseDoor10"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.OpenDoor11"
+          ],
+          "raw": "scall .OpenDoor11"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setval",
+          "args": [
+            "6"
+          ],
+          "raw": "setval 6"
+        },
+        {
+          "command": "writemem",
+          "args": [
+            "wUndergroundSwitchPositions"
+          ],
+          "raw": "writemem wUndergroundSwitchPositions"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        },
+        {
+          "command": "for",
+          "args": [
+            "n",
+            "1",
+            "ugdoor_n + 1"
+          ],
+          "raw": "for n, 1, ugdoor_n + 1"
+        },
+        {
+          "command": ".OpenDoor{d:n}:",
+          "args": [],
+          "raw": ".OpenDoor{d:n}:"
+        },
+        {
+          "command": "changeugdoor",
+          "args": [
+            "n",
+            "OPEN"
+          ],
+          "raw": "changeugdoor n, OPEN"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_DOOR_{d:n}_OPEN"
+          ],
+          "raw": "setevent EVENT_DOOR_{d:n}_OPEN"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        },
+        {
+          "command": "endr",
+          "args": [],
+          "raw": "endr"
+        },
+        {
+          "command": "for",
+          "args": [
+            "n",
+            "1",
+            "ugdoor_n + 1"
+          ],
+          "raw": "for n, 1, ugdoor_n + 1"
+        },
+        {
+          "command": ".CloseDoor{d:n}:",
+          "args": [],
+          "raw": ".CloseDoor{d:n}:"
+        },
+        {
+          "command": "changeugdoor",
+          "args": [
+            "n",
+            "CLOSED"
+          ],
+          "raw": "changeugdoor n, CLOSED"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_DOOR_{d:n}_OPEN"
+          ],
+          "raw": "clearevent EVENT_DOOR_{d:n}_OPEN"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        },
+        {
+          "command": "endr",
+          "args": [],
+          "raw": "endr"
+        }
+      ],
+      "first_command": "playsound",
+      "fallthrough_label": "GoldenrodUndergroundSwitchRoomEntrancesSmokeBall",
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrancesSmokeBall"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrancesSmokeBall": {
+      "raw_lines": [
+        "itemball SMOKE_BALL"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "SMOKE_BALL"
+          ],
+          "raw": "itemball SMOKE_BALL"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "GoldenrodUndergroundSwitchRoomEntrancesFullHeal",
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrancesFullHeal"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrancesFullHeal": {
+      "raw_lines": [
+        "itemball FULL_HEAL"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "FULL_HEAL"
+          ],
+          "raw": "itemball FULL_HEAL"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "GoldenrodUndergroundSwitchRoomEntrancesHiddenMaxPotion",
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrancesHiddenMaxPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrancesHiddenMaxPotion": {
+      "raw_lines": [
+        "hiddenitem MAX_POTION, EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_HIDDEN_MAX_POTION"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "MAX_POTION",
+            "EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_HIDDEN_MAX_POTION"
+          ],
+          "raw": "hiddenitem MAX_POTION, EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_HIDDEN_MAX_POTION"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "GoldenrodUndergroundSwitchRoomEntrancesHiddenRevive",
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrancesHiddenRevive"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrancesHiddenRevive": {
+      "raw_lines": [
+        "hiddenitem REVIVE, EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_HIDDEN_REVIVE"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "REVIVE",
+            "EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_HIDDEN_REVIVE"
+          ],
+          "raw": "hiddenitem REVIVE, EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_HIDDEN_REVIVE"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "GoldenrodUndergroundSwitchRoomEntrances_MapEvents",
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 23,  3, GOLDENROD_UNDERGROUND, 6",
+        "warp_event 22, 10, GOLDENROD_UNDERGROUND_WAREHOUSE, 1",
+        "warp_event 23, 10, GOLDENROD_UNDERGROUND_WAREHOUSE, 2",
+        "warp_event  5, 25, GOLDENROD_UNDERGROUND, 2",
+        "warp_event  4, 29, GOLDENROD_CITY, 14",
+        "warp_event  5, 29, GOLDENROD_CITY, 14",
+        "warp_event 21, 25, GOLDENROD_UNDERGROUND, 1",
+        "warp_event 20, 29, GOLDENROD_CITY, 13",
+        "warp_event 21, 29, GOLDENROD_CITY, 13",
+        "def_coord_events",
+        "coord_event 19,  4, SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL_BATTLE, UndergroundRivalScene1",
+        "coord_event 19,  5, SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL_BATTLE, UndergroundRivalScene2",
+        "def_bg_events",
+        "bg_event 16,  1, BGEVENT_READ, Switch1Script",
+        "bg_event 10,  1, BGEVENT_READ, Switch2Script",
+        "bg_event  2,  1, BGEVENT_READ, Switch3Script",
+        "bg_event 20, 11, BGEVENT_READ, EmergencySwitchScript",
+        "bg_event  8,  9, BGEVENT_ITEM, GoldenrodUndergroundSwitchRoomEntrancesHiddenMaxPotion",
+        "bg_event  1,  8, BGEVENT_ITEM, GoldenrodUndergroundSwitchRoomEntrancesHiddenRevive",
+        "def_object_events",
+        "object_event  9, 12, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBurglarDuncan, EVENT_RADIO_TOWER_ROCKET_TAKEOVER",
+        "object_event  4,  8, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBurglarEddie, EVENT_RADIO_TOWER_ROCKET_TAKEOVER",
+        "object_event 17,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM13, EVENT_RADIO_TOWER_ROCKET_TAKEOVER",
+        "object_event 11,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM11, EVENT_RADIO_TOWER_ROCKET_TAKEOVER",
+        "object_event  3,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM25, EVENT_RADIO_TOWER_ROCKET_TAKEOVER",
+        "object_event 19, 12, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGruntF3, EVENT_RADIO_TOWER_ROCKET_TAKEOVER",
+        "object_event  3, 27, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundSwitchRoomEntrancesTeacherScript, -1",
+        "object_event 19, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundSwitchRoomEntrancesSuperNerdScript, -1",
+        "object_event  1, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundSwitchRoomEntrancesSmokeBall, EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_SMOKE_BALL",
+        "object_event 14,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundSwitchRoomEntrancesFullHeal, EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_FULL_HEAL",
+        "object_event 23,  3, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_GOLDENROD_UNDERGROUND"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "23",
+            "3",
+            "GOLDENROD_UNDERGROUND",
+            "6"
+          ],
+          "raw": "warp_event 23,  3, GOLDENROD_UNDERGROUND, 6"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "22",
+            "10",
+            "GOLDENROD_UNDERGROUND_WAREHOUSE",
+            "1"
+          ],
+          "raw": "warp_event 22, 10, GOLDENROD_UNDERGROUND_WAREHOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "23",
+            "10",
+            "GOLDENROD_UNDERGROUND_WAREHOUSE",
+            "2"
+          ],
+          "raw": "warp_event 23, 10, GOLDENROD_UNDERGROUND_WAREHOUSE, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "25",
+            "GOLDENROD_UNDERGROUND",
+            "2"
+          ],
+          "raw": "warp_event  5, 25, GOLDENROD_UNDERGROUND, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "29",
+            "GOLDENROD_CITY",
+            "14"
+          ],
+          "raw": "warp_event  4, 29, GOLDENROD_CITY, 14"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "29",
+            "GOLDENROD_CITY",
+            "14"
+          ],
+          "raw": "warp_event  5, 29, GOLDENROD_CITY, 14"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "21",
+            "25",
+            "GOLDENROD_UNDERGROUND",
+            "1"
+          ],
+          "raw": "warp_event 21, 25, GOLDENROD_UNDERGROUND, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "20",
+            "29",
+            "GOLDENROD_CITY",
+            "13"
+          ],
+          "raw": "warp_event 20, 29, GOLDENROD_CITY, 13"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "21",
+            "29",
+            "GOLDENROD_CITY",
+            "13"
+          ],
+          "raw": "warp_event 21, 29, GOLDENROD_CITY, 13"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "19",
+            "4",
+            "SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL_BATTLE",
+            "UndergroundRivalScene1"
+          ],
+          "raw": "coord_event 19,  4, SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL_BATTLE, UndergroundRivalScene1"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "19",
+            "5",
+            "SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL_BATTLE",
+            "UndergroundRivalScene2"
+          ],
+          "raw": "coord_event 19,  5, SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL_BATTLE, UndergroundRivalScene2"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "16",
+            "1",
+            "BGEVENT_READ",
+            "Switch1Script"
+          ],
+          "raw": "bg_event 16,  1, BGEVENT_READ, Switch1Script"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "10",
+            "1",
+            "BGEVENT_READ",
+            "Switch2Script"
+          ],
+          "raw": "bg_event 10,  1, BGEVENT_READ, Switch2Script"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "2",
+            "1",
+            "BGEVENT_READ",
+            "Switch3Script"
+          ],
+          "raw": "bg_event  2,  1, BGEVENT_READ, Switch3Script"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "20",
+            "11",
+            "BGEVENT_READ",
+            "EmergencySwitchScript"
+          ],
+          "raw": "bg_event 20, 11, BGEVENT_READ, EmergencySwitchScript"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "8",
+            "9",
+            "BGEVENT_ITEM",
+            "GoldenrodUndergroundSwitchRoomEntrancesHiddenMaxPotion"
+          ],
+          "raw": "bg_event  8,  9, BGEVENT_ITEM, GoldenrodUndergroundSwitchRoomEntrancesHiddenMaxPotion"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "8",
+            "BGEVENT_ITEM",
+            "GoldenrodUndergroundSwitchRoomEntrancesHiddenRevive"
+          ],
+          "raw": "bg_event  1,  8, BGEVENT_ITEM, GoldenrodUndergroundSwitchRoomEntrancesHiddenRevive"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "12",
+            "SPRITE_PHARMACIST",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_TRAINER",
+            "2",
+            "TrainerBurglarDuncan",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event  9, 12, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBurglarDuncan, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "8",
+            "SPRITE_PHARMACIST",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_TRAINER",
+            "2",
+            "TrainerBurglarEddie",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event  4,  8, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBurglarEddie, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "17",
+            "2",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerGruntM13",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event 17,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM13, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "11",
+            "2",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerGruntM11",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event 11,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM11, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "2",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerGruntM25",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event  3,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM25, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "19",
+            "12",
+            "SPRITE_ROCKET_GIRL",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerGruntF3",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event 19, 12, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGruntF3, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "27",
+            "SPRITE_TEACHER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodUndergroundSwitchRoomEntrancesTeacherScript",
+            "-1"
+          ],
+          "raw": "object_event  3, 27, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundSwitchRoomEntrancesTeacherScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "19",
+            "27",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodUndergroundSwitchRoomEntrancesSuperNerdScript",
+            "-1"
+          ],
+          "raw": "object_event 19, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundSwitchRoomEntrancesSuperNerdScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "12",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "GoldenrodUndergroundSwitchRoomEntrancesSmokeBall",
+            "EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_SMOKE_BALL"
+          ],
+          "raw": "object_event  1, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundSwitchRoomEntrancesSmokeBall, EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_SMOKE_BALL"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "14",
+            "9",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "GoldenrodUndergroundSwitchRoomEntrancesFullHeal",
+            "EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_FULL_HEAL"
+          ],
+          "raw": "object_event 14,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundSwitchRoomEntrancesFullHeal, EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_FULL_HEAL"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "23",
+            "3",
+            "SPRITE_RIVAL",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_RIVAL_GOLDENROD_UNDERGROUND"
+          ],
+          "raw": "object_event 23,  3, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_GOLDENROD_UNDERGROUND"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "UndergroundRivalBeforeText": {
+      "raw_lines": [
+        "text \"Hold it!\"",
+        "para \"I saw you, so I\"",
+        "line \"tailed you.\"",
+        "para \"I don't need you\"",
+        "line \"underfoot while I\"",
+        "para \"take care of TEAM\"",
+        "line \"ROCKET.\"",
+        "para \"\u2026Wait a second.\"",
+        "line \"You beat me be-\"",
+        "cont \"fore, didn't you?\"",
+        "para \"That was just a\"",
+        "line \"fluke.\"",
+        "para \"But I repay my\"",
+        "line \"debts!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hold it!"
+        },
+        {
+          "command": "para",
+          "value": "I saw you, so I"
+        },
+        {
+          "command": "line",
+          "value": "tailed you."
+        },
+        {
+          "command": "para",
+          "value": "I don't need you"
+        },
+        {
+          "command": "line",
+          "value": "underfoot while I"
+        },
+        {
+          "command": "para",
+          "value": "take care of TEAM"
+        },
+        {
+          "command": "line",
+          "value": "ROCKET."
+        },
+        {
+          "command": "para",
+          "value": "\u2026Wait a second."
+        },
+        {
+          "command": "line",
+          "value": "You beat me be-"
+        },
+        {
+          "command": "cont",
+          "value": "fore, didn't you?"
+        },
+        {
+          "command": "para",
+          "value": "That was just a"
+        },
+        {
+          "command": "line",
+          "value": "fluke."
+        },
+        {
+          "command": "para",
+          "value": "But I repay my"
+        },
+        {
+          "command": "line",
+          "value": "debts!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "UndergroundRivalWinText": {
+      "raw_lines": [
+        "text \"\u2026Why\u2026\"",
+        "line \"Why do I lose?\"",
+        "para \"I've assembled the\"",
+        "line \"toughest #MON.\"",
+        "para \"I didn't ease up\"",
+        "line \"on the gas.\"",
+        "para \"So why do I lose?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026Why\u2026"
+        },
+        {
+          "command": "line",
+          "value": "Why do I lose?"
+        },
+        {
+          "command": "para",
+          "value": "I've assembled the"
+        },
+        {
+          "command": "line",
+          "value": "toughest #MON."
+        },
+        {
+          "command": "para",
+          "value": "I didn't ease up"
+        },
+        {
+          "command": "line",
+          "value": "on the gas."
+        },
+        {
+          "command": "para",
+          "value": "So why do I lose?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "UndergroundRivalAfterText": {
+      "raw_lines": [
+        "text \"\u2026I don't under-\"",
+        "line \"stand\u2026\"",
+        "para \"Is what that LANCE\"",
+        "line \"guy said true?\"",
+        "para \"That I don't treat\"",
+        "line \"#MON properly?\"",
+        "para \"Love\u2026\"",
+        "para \"Trust\u2026\"",
+        "para \"Are they really\"",
+        "line \"what I lack?\"",
+        "para \"Are they keeping\"",
+        "line \"me from winning?\"",
+        "para \"I\u2026 I just don't\"",
+        "line \"understand.\"",
+        "para \"But it's not going\"",
+        "line \"to end here.\"",
+        "para \"Not now. Not\"",
+        "line \"because of this.\"",
+        "para \"I won't give up my\"",
+        "line \"dream of becoming\"",
+        "para \"the world's best\"",
+        "line \"#MON trainer!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026I don't under-"
+        },
+        {
+          "command": "line",
+          "value": "stand\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Is what that LANCE"
+        },
+        {
+          "command": "line",
+          "value": "guy said true?"
+        },
+        {
+          "command": "para",
+          "value": "That I don't treat"
+        },
+        {
+          "command": "line",
+          "value": "#MON properly?"
+        },
+        {
+          "command": "para",
+          "value": "Love\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Trust\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Are they really"
+        },
+        {
+          "command": "line",
+          "value": "what I lack?"
+        },
+        {
+          "command": "para",
+          "value": "Are they keeping"
+        },
+        {
+          "command": "line",
+          "value": "me from winning?"
+        },
+        {
+          "command": "para",
+          "value": "I\u2026 I just don't"
+        },
+        {
+          "command": "line",
+          "value": "understand."
+        },
+        {
+          "command": "para",
+          "value": "But it's not going"
+        },
+        {
+          "command": "line",
+          "value": "to end here."
+        },
+        {
+          "command": "para",
+          "value": "Not now. Not"
+        },
+        {
+          "command": "line",
+          "value": "because of this."
+        },
+        {
+          "command": "para",
+          "value": "I won't give up my"
+        },
+        {
+          "command": "line",
+          "value": "dream of becoming"
+        },
+        {
+          "command": "para",
+          "value": "the world's best"
+        },
+        {
+          "command": "line",
+          "value": "#MON trainer!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "UndergroundRivalLossText": {
+      "raw_lines": [
+        "text \"Humph. This is my\"",
+        "line \"real power, wimp.\"",
+        "para \"I'll make TEAM\"",
+        "line \"ROCKET history.\"",
+        "para \"And I'm going to\"",
+        "line \"grind that LANCE\"",
+        "cont \"under my heels.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Humph. This is my"
+        },
+        {
+          "command": "line",
+          "value": "real power, wimp."
+        },
+        {
+          "command": "para",
+          "value": "I'll make TEAM"
+        },
+        {
+          "command": "line",
+          "value": "ROCKET history."
+        },
+        {
+          "command": "para",
+          "value": "And I'm going to"
+        },
+        {
+          "command": "line",
+          "value": "grind that LANCE"
+        },
+        {
+          "command": "cont",
+          "value": "under my heels."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_SuperNerdText": {
+      "raw_lines": [
+        "text \"I was challenged\"",
+        "line \"to a battle down-\"",
+        "cont \"stairs.\"",
+        "para \"It's rough down\"",
+        "line \"there. You'd\"",
+        "cont \"better be careful.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I was challenged"
+        },
+        {
+          "command": "line",
+          "value": "to a battle down-"
+        },
+        {
+          "command": "cont",
+          "value": "stairs."
+        },
+        {
+          "command": "para",
+          "value": "It's rough down"
+        },
+        {
+          "command": "line",
+          "value": "there. You'd"
+        },
+        {
+          "command": "cont",
+          "value": "better be careful."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_TeacherText": {
+      "raw_lines": [
+        "text \"There are some\"",
+        "line \"shops downstairs\u2026\"",
+        "para \"But there are\"",
+        "line \"also trainers.\"",
+        "para \"I'm scared to go\"",
+        "line \"down there.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "There are some"
+        },
+        {
+          "command": "line",
+          "value": "shops downstairs\u2026"
+        },
+        {
+          "command": "para",
+          "value": "But there are"
+        },
+        {
+          "command": "line",
+          "value": "also trainers."
+        },
+        {
+          "command": "para",
+          "value": "I'm scared to go"
+        },
+        {
+          "command": "line",
+          "value": "down there."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM11SeenText": {
+      "raw_lines": [
+        "text \"Open one shutter,\"",
+        "line \"another closes.\"",
+        "para \"Bet you can't get\"",
+        "line \"where you want!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Open one shutter,"
+        },
+        {
+          "command": "line",
+          "value": "another closes."
+        },
+        {
+          "command": "para",
+          "value": "Bet you can't get"
+        },
+        {
+          "command": "line",
+          "value": "where you want!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM11BeatenText": {
+      "raw_lines": [
+        "text \"Drat! I was sunk\"",
+        "line \"by indecision!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Drat! I was sunk"
+        },
+        {
+          "command": "line",
+          "value": "by indecision!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM11AfterBattleText": {
+      "raw_lines": [
+        "text \"I'm confused too\u2026\"",
+        "line \"The switch on the\"",
+        "para \"end is the one to\"",
+        "line \"press first, but\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm confused too\u2026"
+        },
+        {
+          "command": "line",
+          "value": "The switch on the"
+        },
+        {
+          "command": "para",
+          "value": "end is the one to"
+        },
+        {
+          "command": "line",
+          "value": "press first, but\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM25SeenText": {
+      "raw_lines": [
+        "text \"Kwahaha!\"",
+        "para \"Confounded by the\"",
+        "line \"shutters, are we?\"",
+        "para \"I'll let you in on\"",
+        "line \"a secret if you\"",
+        "cont \"can beat me!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Kwahaha!"
+        },
+        {
+          "command": "para",
+          "value": "Confounded by the"
+        },
+        {
+          "command": "line",
+          "value": "shutters, are we?"
+        },
+        {
+          "command": "para",
+          "value": "I'll let you in on"
+        },
+        {
+          "command": "line",
+          "value": "a secret if you"
+        },
+        {
+          "command": "cont",
+          "value": "can beat me!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM25BeatenText": {
+      "raw_lines": [
+        "text \"Uwww\u2026\"",
+        "line \"I blew it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Uwww\u2026"
+        },
+        {
+          "command": "line",
+          "value": "I blew it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM25AfterBattleText": {
+      "raw_lines": [
+        "text \"All right. A hint!\"",
+        "para \"Change the order\"",
+        "line \"of switching.\"",
+        "para \"That'll change the\"",
+        "line \"ways the shutters\"",
+        "cont \"open and close.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "All right. A hint!"
+        },
+        {
+          "command": "para",
+          "value": "Change the order"
+        },
+        {
+          "command": "line",
+          "value": "of switching."
+        },
+        {
+          "command": "para",
+          "value": "That'll change the"
+        },
+        {
+          "command": "line",
+          "value": "ways the shutters"
+        },
+        {
+          "command": "cont",
+          "value": "open and close."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BurglarDuncanSeenText": {
+      "raw_lines": [
+        "text \"Fork over your\"",
+        "line \"goodies!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Fork over your"
+        },
+        {
+          "command": "line",
+          "value": "goodies!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BurglarDuncanBeatenText": {
+      "raw_lines": [
+        "text \"Mercy!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Mercy!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BurglarDuncanAfterBattleText": {
+      "raw_lines": [
+        "text \"Steal and sell!\"",
+        "line \"That's basic in\"",
+        "cont \"crime, kid!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Steal and sell!"
+        },
+        {
+          "command": "line",
+          "value": "That's basic in"
+        },
+        {
+          "command": "cont",
+          "value": "crime, kid!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BurglarEddieSeenText": {
+      "raw_lines": [
+        "text \"They ditched this\"",
+        "line \"project before\"",
+        "cont \"they finished.\"",
+        "para \"I'm searching for\"",
+        "line \"leftover loot.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "They ditched this"
+        },
+        {
+          "command": "line",
+          "value": "project before"
+        },
+        {
+          "command": "cont",
+          "value": "they finished."
+        },
+        {
+          "command": "para",
+          "value": "I'm searching for"
+        },
+        {
+          "command": "line",
+          "value": "leftover loot."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BurglarEddieBeatenText": {
+      "raw_lines": [
+        "text \"Over the top!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Over the top!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BurglarEddieAfterBattleText": {
+      "raw_lines": [
+        "text \"UNDERGROUND WARE-\"",
+        "line \"HOUSE?\"",
+        "para \"What do you want\"",
+        "line \"to go there for?\"",
+        "para \"There's nothing\"",
+        "line \"down there.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "UNDERGROUND WARE-"
+        },
+        {
+          "command": "line",
+          "value": "HOUSE?"
+        },
+        {
+          "command": "para",
+          "value": "What do you want"
+        },
+        {
+          "command": "line",
+          "value": "to go there for?"
+        },
+        {
+          "command": "para",
+          "value": "There's nothing"
+        },
+        {
+          "command": "line",
+          "value": "down there."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM13SeenText": {
+      "raw_lines": [
+        "text \"I don't care if\"",
+        "line \"you're lost.\"",
+        "para \"You show up here,\"",
+        "line \"you're nothing but\"",
+        "cont \"a victim!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I don't care if"
+        },
+        {
+          "command": "line",
+          "value": "you're lost."
+        },
+        {
+          "command": "para",
+          "value": "You show up here,"
+        },
+        {
+          "command": "line",
+          "value": "you're nothing but"
+        },
+        {
+          "command": "cont",
+          "value": "a victim!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM13BeatenText": {
+      "raw_lines": [
+        "text \"Urk! Yeah, think\"",
+        "line \"you're cool, huh?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Urk! Yeah, think"
+        },
+        {
+          "command": "line",
+          "value": "you're cool, huh?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM13AfterBattleText": {
+      "raw_lines": [
+        "text \"You must have ice\"",
+        "line \"in your veins to\"",
+        "cont \"dis TEAM ROCKET.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You must have ice"
+        },
+        {
+          "command": "line",
+          "value": "in your veins to"
+        },
+        {
+          "command": "cont",
+          "value": "dis TEAM ROCKET."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SwitchRoomText_Switch1": {
+      "raw_lines": [
+        "text \"It's labeled\"",
+        "line \"SWITCH 1.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's labeled"
+        },
+        {
+          "command": "line",
+          "value": "SWITCH 1."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntF3SeenText": {
+      "raw_lines": [
+        "text \"Are you lost? No,\"",
+        "line \"you can't be.\"",
+        "para \"You don't have\"",
+        "line \"that scared look.\"",
+        "para \"I'll give you\"",
+        "line \"something to be\"",
+        "cont \"scared about!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Are you lost? No,"
+        },
+        {
+          "command": "line",
+          "value": "you can't be."
+        },
+        {
+          "command": "para",
+          "value": "You don't have"
+        },
+        {
+          "command": "line",
+          "value": "that scared look."
+        },
+        {
+          "command": "para",
+          "value": "I'll give you"
+        },
+        {
+          "command": "line",
+          "value": "something to be"
+        },
+        {
+          "command": "cont",
+          "value": "scared about!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntF3BeatenText": {
+      "raw_lines": [
+        "text \"How could you?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "How could you?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntF3AfterBattleText": {
+      "raw_lines": [
+        "text \"Go wherever you'd\"",
+        "line \"like! Get lost!\"",
+        "cont \"See if I care!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Go wherever you'd"
+        },
+        {
+          "command": "line",
+          "value": "like! Get lost!"
+        },
+        {
+          "command": "cont",
+          "value": "See if I care!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SwitchRoomText_OffTurnOn": {
+      "raw_lines": [
+        "text \"It's OFF.\"",
+        "line \"Turn it ON?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's OFF."
+        },
+        {
+          "command": "line",
+          "value": "Turn it ON?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SwitchRoomText_OnTurnOff": {
+      "raw_lines": [
+        "text \"It's ON.\"",
+        "line \"Turn it OFF?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's ON."
+        },
+        {
+          "command": "line",
+          "value": "Turn it OFF?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SwitchRoomText_Switch2": {
+      "raw_lines": [
+        "text \"It's labeled\"",
+        "line \"SWITCH 2.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's labeled"
+        },
+        {
+          "command": "line",
+          "value": "SWITCH 2."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SwitchRoomText_Switch3": {
+      "raw_lines": [
+        "text \"It's labeled\"",
+        "line \"SWITCH 3.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's labeled"
+        },
+        {
+          "command": "line",
+          "value": "SWITCH 3."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SwitchRoomText_Emergency": {
+      "raw_lines": [
+        "text \"It's labeled\"",
+        "line \"EMERGENCY.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's labeled"
+        },
+        {
+          "command": "line",
+          "value": "EMERGENCY."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "UndergroundRivalApproachMovement1": {
+      "raw_lines": [
+        "step DOWN",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "UndergroundRivalApproachMovement2": {
+      "raw_lines": [
+        "step DOWN",
+        "step DOWN",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "UndergroundRivalRetreatMovement1": {
+      "raw_lines": [
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "UndergroundRivalRetreatMovement2": {
+      "raw_lines": [
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "GoldenrodUndergroundSwitchRoomEntrances_MapScripts": {
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrancesNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrancesNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrancesNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrancesUpdateDoorPositionsCallback": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrancesSuperNerdScript": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_SuperNerdText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrancesTeacherScript": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_TeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UndergroundRivalScene1": {
+      "label_refs": [
+        "UndergroundRivalBattleScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "UndergroundRivalApproachMovement1",
+        "UndergroundRivalRetreatMovement1"
+      ],
+      "scene_refs": [
+        "SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_NOOP"
+      ],
+      "std_calls": []
+    },
+    "UndergroundRivalScene2": {
+      "label_refs": [
+        "UndergroundRivalBattleScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "UndergroundRivalApproachMovement2",
+        "UndergroundRivalRetreatMovement2"
+      ],
+      "scene_refs": [
+        "SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_NOOP"
+      ],
+      "std_calls": []
+    },
+    "UndergroundRivalBattleScript": {
+      "label_refs": [
+        "UndergroundRivalBattleScript.Continue"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_BURNEDTOWER1F_RIVAL_BATTLE"
+      ],
+      "std_calls": []
+    },
+    "UndergroundRivalBattleScript.Continue": {
+      "label_refs": [
+        "UndergroundRivalBattleScript.Chikorita",
+        "UndergroundRivalBattleScript.FinishRivalBattle",
+        "UndergroundRivalBattleScript.Totodile"
+      ],
+      "text_refs": [
+        "UndergroundRivalBeforeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UndergroundRivalBattleScript.Totodile": {
+      "label_refs": [
+        "UndergroundRivalBattleScript.FinishRivalBattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UndergroundRivalBattleScript.Chikorita": {
+      "label_refs": [
+        "UndergroundRivalBattleScript.FinishRivalBattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UndergroundRivalBattleScript.FinishRivalBattle": {
+      "label_refs": [],
+      "text_refs": [
+        "UndergroundRivalAfterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM11": {
+      "label_refs": [
+        "TrainerGruntM11.Script"
+      ],
+      "text_refs": [
+        "GruntM11BeatenText",
+        "GruntM11SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM11.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GruntM11AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM25": {
+      "label_refs": [
+        "TrainerGruntM25.Script"
+      ],
+      "text_refs": [
+        "GruntM25BeatenText",
+        "GruntM25SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM25.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GruntM25AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBurglarDuncan": {
+      "label_refs": [
+        "TrainerBurglarDuncan.Script"
+      ],
+      "text_refs": [
+        "BurglarDuncanBeatenText",
+        "BurglarDuncanSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBurglarDuncan.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "BurglarDuncanAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBurglarEddie": {
+      "label_refs": [
+        "TrainerBurglarEddie.Script"
+      ],
+      "text_refs": [
+        "BurglarEddieBeatenText",
+        "BurglarEddieSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBurglarEddie.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "BurglarEddieAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM13": {
+      "label_refs": [
+        "TrainerGruntM13.Script"
+      ],
+      "text_refs": [
+        "GruntM13BeatenText",
+        "GruntM13SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM13.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GruntM13AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntF3": {
+      "label_refs": [
+        "TrainerGruntF3.Script"
+      ],
+      "text_refs": [
+        "GruntF3BeatenText",
+        "GruntF3SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntF3.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GruntF3AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Switch1Script": {
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors",
+        "Switch1Script.On"
+      ],
+      "text_refs": [
+        "SwitchRoomText_OffTurnOn",
+        "SwitchRoomText_Switch1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Switch1Script.On": {
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+      ],
+      "text_refs": [
+        "SwitchRoomText_OnTurnOff"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Switch2Script": {
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors",
+        "Switch2Script.On"
+      ],
+      "text_refs": [
+        "SwitchRoomText_OffTurnOn",
+        "SwitchRoomText_Switch2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Switch2Script.On": {
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+      ],
+      "text_refs": [
+        "SwitchRoomText_OnTurnOff"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Switch3Script": {
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors",
+        "Switch3Script.On"
+      ],
+      "text_refs": [
+        "SwitchRoomText_OffTurnOn",
+        "SwitchRoomText_Switch3"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Switch3Script.On": {
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+      ],
+      "text_refs": [
+        "SwitchRoomText_OnTurnOff"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EmergencySwitchScript": {
+      "label_refs": [
+        "EmergencySwitchScript.On",
+        "GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+      ],
+      "text_refs": [
+        "SwitchRoomText_Emergency",
+        "SwitchRoomText_OffTurnOn"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EmergencySwitchScript.On": {
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_DontToggle",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors"
+      ],
+      "text_refs": [
+        "SwitchRoomText_OnTurnOff"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_DontToggle": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors": {
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.EmergencyPosition",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position0",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position1",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position2",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position3",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position4",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position5",
+        "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position6"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position0": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position2": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position3": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position4": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position5": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.Position6": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_UpdateDoors.EmergencyPosition": {
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrancesSmokeBall"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrancesSmokeBall": {
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrancesFullHeal"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrancesFullHeal": {
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrancesHiddenMaxPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrancesHiddenMaxPotion": {
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrancesHiddenRevive"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrancesHiddenRevive": {
+      "label_refs": [
+        "GoldenrodUndergroundSwitchRoomEntrances_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundSwitchRoomEntrances_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
+    "warp_events": 9,
+    "coord_events": 2,
+    "bg_events": 6,
+    "object_events": 11
+  }
+}

@@ -16,6 +16,7 @@
 #include "m4a.h"
 #include "menu.h"
 #include "overworld.h"
+#include "official_link_compat.h"
 #include "palette.h"
 #include "union_room.h"
 #include "mystery_gift.h"
@@ -598,6 +599,13 @@ void TryBattleLinkup(void)
         break;
     }
 
+    if (!IsRetailSafePartyForOfficialLink())
+    {
+        gLinkType = 0;
+        gSpecialVar_Result = LINKUP_OFFICIAL_COMPAT_BLOCKED;
+        return;
+    }
+
     CreateLinkupTask(minPlayers, maxPlayers);
 }
 
@@ -609,6 +617,14 @@ void TryBattleLinkup(void)
 
 void TryTradeLinkup(void)
 {
+    if (!IsRetailSafePartyForOfficialLink())
+    {
+        gLinkType = 0;
+        gBattleTypeFlags = 0;
+        gSpecialVar_Result = LINKUP_OFFICIAL_COMPAT_BLOCKED;
+        return;
+    }
+
     gLinkType = LINKTYPE_TRADE_SETUP;
     gBattleTypeFlags = 0;
     CreateLinkupTask(2, 2);

@@ -1011,9 +1011,25 @@ bool8 ScrCmd_applymovementat(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_follow(struct ScriptContext *ctx)
+{
+    u16 leaderLocalId = VarGet(ScriptReadHalfword(ctx));
+    u16 followerLocalId = VarGet(ScriptReadHalfword(ctx));
+
+    StartObjectEventFollow((u8)leaderLocalId, (u8)followerLocalId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+    return FALSE;
+}
+
+bool8 ScrCmd_stopfollow(struct ScriptContext *ctx)
+{
+    StopObjectEventFollow();
+    return FALSE;
+}
+
 static bool8 WaitForMovementFinish(void)
 {
-    return ScriptMovement_IsObjectMovementFinished(sMovingNpcId, sMovingNpcMapNum, sMovingNpcMapGroup);
+    return ScriptMovement_IsObjectMovementFinished(sMovingNpcId, sMovingNpcMapNum, sMovingNpcMapGroup)
+        && IsObjectEventFollowFinishedByLocalIdAndMap(sMovingNpcId, sMovingNpcMapNum, sMovingNpcMapGroup);
 }
 
 bool8 ScrCmd_waitmovement(struct ScriptContext *ctx)

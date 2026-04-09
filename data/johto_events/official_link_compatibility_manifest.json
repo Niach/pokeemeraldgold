@@ -1,0 +1,60 @@
+{
+  "compatibility_target": "retail_gba_gen3",
+  "supported_titles": [
+    "Pokemon Emerald",
+    "Pokemon FireRed",
+    "Pokemon LeafGreen",
+    "Pokemon Ruby",
+    "Pokemon Sapphire"
+  ],
+  "unsupported_targets": [
+    "retail_save_file_interchange",
+    "Pokemon Colosseum",
+    "Pokemon XD"
+  ],
+  "wire_contract": {
+    "game_version": "VERSION_EMERALD",
+    "pokemon_struct_layout": "retail_gen3",
+    "link_player_layout": "retail_gen3",
+    "trade_payload_layout": "retail_gen3",
+    "battle_flow": "stock_link_opponent"
+  },
+  "subsystems": [
+    {
+      "id": "johto_story_state",
+      "classification": "save_only",
+      "status": "retail_safe",
+      "notes": "Stored only in local save data and never transmitted over official link paths."
+    },
+    {
+      "id": "johto_rival_name_override",
+      "classification": "local_battle_story",
+      "status": "retail_safe",
+      "notes": "Applies only to Silver trainer ids and is explicitly excluded from TRAINER_LINK_OPPONENT and TRAINER_UNION_ROOM."
+    },
+    {
+      "id": "cable_club_guardrails",
+      "classification": "link_visible",
+      "status": "retail_safe",
+      "notes": "Uses stock Gen 3 link flow and blocks official link entry when the local party is not retail-safe."
+    },
+    {
+      "id": "union_room_guardrails",
+      "classification": "link_visible",
+      "status": "retail_safe",
+      "notes": "Uses stock Gen 3 wireless flow and blocks battle or trade group creation/join when the local party is not retail-safe."
+    },
+    {
+      "id": "apricorn_substitute",
+      "classification": "local_battle_story",
+      "status": "link_blocked_until_retail_safe",
+      "notes": "Must resolve to retail-safe inventory and held-item ids before official link use."
+    },
+    {
+      "id": "johto_generated_story_scripts",
+      "classification": "local_battle_story",
+      "status": "retail_safe",
+      "notes": "Generated Crystal story flow may affect local presentation, but must not replace stock Cable Club or Union Room protocols."
+    }
+  ]
+}

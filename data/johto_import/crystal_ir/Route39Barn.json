@@ -1,0 +1,1496 @@
+{
+  "crystal_map": "Route39Barn",
+  "map_id": "ROUTE_39_BARN",
+  "group": "OLIVINE",
+  "group_index": 1,
+  "map_index": 10,
+  "tileset": "TILESET_TRADITIONAL_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_ROUTE_39",
+  "music": "MUSIC_ECRUTEAK_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/Route39Barn.blk",
+  "source_asm": "maps/Route39Barn.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "ROUTE_39",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "dest_map": "ROUTE_39",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 3,
+        "sprite": "SPRITE_TWIN",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route39BarnTwin1Script",
+        "flag": -1
+      },
+      {
+        "x": 4,
+        "y": 3,
+        "sprite": "SPRITE_TWIN",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route39BarnTwin2Script",
+        "flag": -1
+      },
+      {
+        "x": 3,
+        "y": 3,
+        "sprite": "SPRITE_TAUROS",
+        "movement": "SPRITEMOVEDATA_POKEMON",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MoomooScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "ROUTE39BARN_TWIN1",
+    "ROUTE39BARN_TWIN2",
+    "ROUTE39BARN_MOOMOO"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "Route39Barn_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "Route39BarnTwin1Script",
+      "label_refs": [
+        "Route39BarnTwin1Script"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route39BarnTwin1Script": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_HEALED_MOOMOO",
+        "iftrue .FeedingMooMoo",
+        "writetext Route39BarnTwinMoomooIsSickText",
+        "waitbutton",
+        "closetext",
+        "turnobject ROUTE39BARN_TWIN1, RIGHT",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_HEALED_MOOMOO"
+          ],
+          "raw": "checkevent EVENT_HEALED_MOOMOO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route39BarnTwin1Script.FeedingMooMoo"
+          ],
+          "raw": "iftrue .FeedingMooMoo"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route39BarnTwinMoomooIsSickText"
+          ],
+          "raw": "writetext Route39BarnTwinMoomooIsSickText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "ROUTE39BARN_TWIN1",
+            "RIGHT"
+          ],
+          "raw": "turnobject ROUTE39BARN_TWIN1, RIGHT"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "Route39BarnTwin1Script.FeedingMooMoo"
+      ],
+      "text_refs": [
+        "Route39BarnTwinMoomooIsSickText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route39BarnTwin1Script.FeedingMooMoo": {
+      "raw_lines": [
+        "writetext Route39BarnTwinWereFeedingMoomooText",
+        "waitbutton",
+        "closetext",
+        "turnobject ROUTE39BARN_TWIN1, RIGHT",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route39BarnTwinWereFeedingMoomooText"
+          ],
+          "raw": "writetext Route39BarnTwinWereFeedingMoomooText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "ROUTE39BARN_TWIN1",
+            "RIGHT"
+          ],
+          "raw": "turnobject ROUTE39BARN_TWIN1, RIGHT"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route39BarnTwinWereFeedingMoomooText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route39BarnTwin2Script": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_HEALED_MOOMOO",
+        "iftrue .FeedingMooMoo",
+        "writetext Route39BarnTwinMoomooIsSickText",
+        "waitbutton",
+        "closetext",
+        "turnobject ROUTE39BARN_TWIN2, LEFT",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_HEALED_MOOMOO"
+          ],
+          "raw": "checkevent EVENT_HEALED_MOOMOO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route39BarnTwin2Script.FeedingMooMoo"
+          ],
+          "raw": "iftrue .FeedingMooMoo"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route39BarnTwinMoomooIsSickText"
+          ],
+          "raw": "writetext Route39BarnTwinMoomooIsSickText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "ROUTE39BARN_TWIN2",
+            "LEFT"
+          ],
+          "raw": "turnobject ROUTE39BARN_TWIN2, LEFT"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "Route39BarnTwin2Script.FeedingMooMoo"
+      ],
+      "text_refs": [
+        "Route39BarnTwinMoomooIsSickText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route39BarnTwin2Script.FeedingMooMoo": {
+      "raw_lines": [
+        "writetext Route39BarnTwinWereFeedingMoomooText",
+        "waitbutton",
+        "closetext",
+        "turnobject ROUTE39BARN_TWIN2, LEFT",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route39BarnTwinWereFeedingMoomooText"
+          ],
+          "raw": "writetext Route39BarnTwinWereFeedingMoomooText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "ROUTE39BARN_TWIN2",
+            "LEFT"
+          ],
+          "raw": "turnobject ROUTE39BARN_TWIN2, LEFT"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route39BarnTwinWereFeedingMoomooText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoomooScript": {
+      "raw_lines": [
+        "opentext",
+        "checkevent EVENT_HEALED_MOOMOO",
+        "iftrue .HappyCow",
+        "writetext MoomooWeakMooText",
+        "setval MILTANK",
+        "special PlaySlowCry",
+        "promptbutton",
+        "writetext Route39BarnItsCryIsWeakText",
+        "checkevent EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO",
+        "iftrue .GiveBerry",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_HEALED_MOOMOO"
+          ],
+          "raw": "checkevent EVENT_HEALED_MOOMOO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MoomooScript.HappyCow"
+          ],
+          "raw": "iftrue .HappyCow"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MoomooWeakMooText"
+          ],
+          "raw": "writetext MoomooWeakMooText"
+        },
+        {
+          "command": "setval",
+          "args": [
+            "MILTANK"
+          ],
+          "raw": "setval MILTANK"
+        },
+        {
+          "command": "special",
+          "args": [
+            "PlaySlowCry"
+          ],
+          "raw": "special PlaySlowCry"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route39BarnItsCryIsWeakText"
+          ],
+          "raw": "writetext Route39BarnItsCryIsWeakText"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO"
+          ],
+          "raw": "checkevent EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MoomooScript.GiveBerry"
+          ],
+          "raw": "iftrue .GiveBerry"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "MoomooScript.GiveBerry",
+        "MoomooScript.HappyCow"
+      ],
+      "text_refs": [
+        "MoomooWeakMooText",
+        "Route39BarnItsCryIsWeakText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoomooScript.GiveBerry": {
+      "raw_lines": [
+        "promptbutton",
+        "writetext Route39BarnAskGiveBerryText",
+        "yesorno",
+        "iffalse .Refused",
+        "checkitem BERRY",
+        "iffalse .NoBerriesInBag",
+        "takeitem BERRY",
+        "readmem wMooMooBerries",
+        "addval 1",
+        "writemem wMooMooBerries",
+        "ifequal 3, .ThreeBerries",
+        "ifequal 5, .FiveBerries",
+        "ifequal 7, .SevenBerries",
+        "writetext Route39BarnGaveBerryText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route39BarnAskGiveBerryText"
+          ],
+          "raw": "writetext Route39BarnAskGiveBerryText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "MoomooScript.Refused"
+          ],
+          "raw": "iffalse .Refused"
+        },
+        {
+          "command": "checkitem",
+          "args": [
+            "BERRY"
+          ],
+          "raw": "checkitem BERRY"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "MoomooScript.NoBerriesInBag"
+          ],
+          "raw": "iffalse .NoBerriesInBag"
+        },
+        {
+          "command": "takeitem",
+          "args": [
+            "BERRY"
+          ],
+          "raw": "takeitem BERRY"
+        },
+        {
+          "command": "readmem",
+          "args": [
+            "wMooMooBerries"
+          ],
+          "raw": "readmem wMooMooBerries"
+        },
+        {
+          "command": "addval",
+          "args": [
+            "1"
+          ],
+          "raw": "addval 1"
+        },
+        {
+          "command": "writemem",
+          "args": [
+            "wMooMooBerries"
+          ],
+          "raw": "writemem wMooMooBerries"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "3",
+            "MoomooScript.ThreeBerries"
+          ],
+          "raw": "ifequal 3, .ThreeBerries"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "5",
+            "MoomooScript.FiveBerries"
+          ],
+          "raw": "ifequal 5, .FiveBerries"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "7",
+            "MoomooScript.SevenBerries"
+          ],
+          "raw": "ifequal 7, .SevenBerries"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route39BarnGaveBerryText"
+          ],
+          "raw": "writetext Route39BarnGaveBerryText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "promptbutton",
+      "label_refs": [
+        "MoomooScript.FiveBerries",
+        "MoomooScript.NoBerriesInBag",
+        "MoomooScript.Refused",
+        "MoomooScript.SevenBerries",
+        "MoomooScript.ThreeBerries"
+      ],
+      "text_refs": [
+        "Route39BarnAskGiveBerryText",
+        "Route39BarnGaveBerryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoomooScript.ThreeBerries": {
+      "raw_lines": [
+        "writetext Route39BarnGaveBerryText",
+        "promptbutton",
+        "writetext Route39BarnLittleHealthierText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route39BarnGaveBerryText"
+          ],
+          "raw": "writetext Route39BarnGaveBerryText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route39BarnLittleHealthierText"
+          ],
+          "raw": "writetext Route39BarnLittleHealthierText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route39BarnGaveBerryText",
+        "Route39BarnLittleHealthierText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoomooScript.FiveBerries": {
+      "raw_lines": [
+        "writetext Route39BarnGaveBerryText",
+        "promptbutton",
+        "writetext Route39BarnQuiteHealthyText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route39BarnGaveBerryText"
+          ],
+          "raw": "writetext Route39BarnGaveBerryText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route39BarnQuiteHealthyText"
+          ],
+          "raw": "writetext Route39BarnQuiteHealthyText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route39BarnGaveBerryText",
+        "Route39BarnQuiteHealthyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoomooScript.SevenBerries": {
+      "raw_lines": [
+        "playmusic MUSIC_HEAL",
+        "writetext Route39BarnGaveBerryText",
+        "pause 60",
+        "promptbutton",
+        "special RestartMapMusic",
+        "writetext Route39BarnTotallyHealthyText",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_HEALED_MOOMOO",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_HEAL"
+          ],
+          "raw": "playmusic MUSIC_HEAL"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route39BarnGaveBerryText"
+          ],
+          "raw": "writetext Route39BarnGaveBerryText"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "60"
+          ],
+          "raw": "pause 60"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route39BarnTotallyHealthyText"
+          ],
+          "raw": "writetext Route39BarnTotallyHealthyText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_HEALED_MOOMOO"
+          ],
+          "raw": "setevent EVENT_HEALED_MOOMOO"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playmusic",
+      "label_refs": [],
+      "text_refs": [
+        "Route39BarnGaveBerryText",
+        "Route39BarnTotallyHealthyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoomooScript.NoBerriesInBag": {
+      "raw_lines": [
+        "writetext Route39BarnNoBerriesText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route39BarnNoBerriesText"
+          ],
+          "raw": "writetext Route39BarnNoBerriesText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route39BarnNoBerriesText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoomooScript.Refused": {
+      "raw_lines": [
+        "writetext Route39BarnRefusedBerryText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route39BarnRefusedBerryText"
+          ],
+          "raw": "writetext Route39BarnRefusedBerryText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route39BarnRefusedBerryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoomooScript.HappyCow": {
+      "raw_lines": [
+        "writetext MoomooHappyMooText",
+        "cry MILTANK",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "MoomooHappyMooText"
+          ],
+          "raw": "writetext MoomooHappyMooText"
+        },
+        {
+          "command": "cry",
+          "args": [
+            "MILTANK"
+          ],
+          "raw": "cry MILTANK"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "MoomooHappyMooText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route39Barn_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  7, ROUTE_39, 1",
+        "warp_event  4,  7, ROUTE_39, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  2,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin1Script, -1",
+        "object_event  4,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin2Script, -1",
+        "object_event  3,  3, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoomooScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "ROUTE_39",
+            "1"
+          ],
+          "raw": "warp_event  3,  7, ROUTE_39, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "ROUTE_39",
+            "1"
+          ],
+          "raw": "warp_event  4,  7, ROUTE_39, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_TWIN",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route39BarnTwin1Script",
+            "-1"
+          ],
+          "raw": "object_event  2,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin1Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "3",
+            "SPRITE_TWIN",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route39BarnTwin2Script",
+            "-1"
+          ],
+          "raw": "object_event  4,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin2Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "3",
+            "SPRITE_TAUROS",
+            "SPRITEMOVEDATA_POKEMON",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MoomooScript",
+            "-1"
+          ],
+          "raw": "object_event  3,  3, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoomooScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "Route39BarnTwinMoomooIsSickText": {
+      "raw_lines": [
+        "text \"MOOMOO is sick\u2026\"",
+        "para \"She needs lots of\"",
+        "line \"BERRIES.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MOOMOO is sick\u2026"
+        },
+        {
+          "command": "para",
+          "value": "She needs lots of"
+        },
+        {
+          "command": "line",
+          "value": "BERRIES."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route39BarnTwinWereFeedingMoomooText": {
+      "raw_lines": [
+        "text \"We're feeding\"",
+        "line \"MOOMOO!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We're feeding"
+        },
+        {
+          "command": "line",
+          "value": "MOOMOO!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MoomooWeakMooText": {
+      "raw_lines": [
+        "text \"MILTANK: \u2026Moo\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MILTANK: \u2026Moo\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route39BarnItsCryIsWeakText": {
+      "raw_lines": [
+        "text \"Its cry is weak\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Its cry is weak\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MoomooHappyMooText": {
+      "raw_lines": [
+        "text \"MILTANK: Mooo!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MILTANK: Mooo!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route39BarnAskGiveBerryText": {
+      "raw_lines": [
+        "text \"Give a BERRY to\"",
+        "line \"MILTANK?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Give a BERRY to"
+        },
+        {
+          "command": "line",
+          "value": "MILTANK?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route39BarnGaveBerryText": {
+      "raw_lines": [
+        "text \"<PLAYER> gave a\"",
+        "line \"BERRY to MILTANK.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> gave a"
+        },
+        {
+          "command": "line",
+          "value": "BERRY to MILTANK."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route39BarnLittleHealthierText": {
+      "raw_lines": [
+        "text \"MILTANK became a\"",
+        "line \"little healthier!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MILTANK became a"
+        },
+        {
+          "command": "line",
+          "value": "little healthier!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route39BarnQuiteHealthyText": {
+      "raw_lines": [
+        "text \"MILTANK became\"",
+        "line \"quite healthy!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MILTANK became"
+        },
+        {
+          "command": "line",
+          "value": "quite healthy!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route39BarnTotallyHealthyText": {
+      "raw_lines": [
+        "text \"MILTANK became\"",
+        "line \"totally healthy!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MILTANK became"
+        },
+        {
+          "command": "line",
+          "value": "totally healthy!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route39BarnNoBerriesText": {
+      "raw_lines": [
+        "text \"<PLAYER> has no\"",
+        "line \"BERRIES\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> has no"
+        },
+        {
+          "command": "line",
+          "value": "BERRIES\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route39BarnRefusedBerryText": {
+      "raw_lines": [
+        "text \"<PLAYER> wouldn't\"",
+        "line \"give a BERRY.\"",
+        "para \"MILTANK looks sad.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> wouldn't"
+        },
+        {
+          "command": "line",
+          "value": "give a BERRY."
+        },
+        {
+          "command": "para",
+          "value": "MILTANK looks sad."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "Route39Barn_MapScripts": {
+      "label_refs": [
+        "Route39BarnTwin1Script"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route39BarnTwin1Script": {
+      "label_refs": [
+        "Route39BarnTwin1Script.FeedingMooMoo"
+      ],
+      "text_refs": [
+        "Route39BarnTwinMoomooIsSickText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route39BarnTwin1Script.FeedingMooMoo": {
+      "label_refs": [],
+      "text_refs": [
+        "Route39BarnTwinWereFeedingMoomooText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route39BarnTwin2Script": {
+      "label_refs": [
+        "Route39BarnTwin2Script.FeedingMooMoo"
+      ],
+      "text_refs": [
+        "Route39BarnTwinMoomooIsSickText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route39BarnTwin2Script.FeedingMooMoo": {
+      "label_refs": [],
+      "text_refs": [
+        "Route39BarnTwinWereFeedingMoomooText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoomooScript": {
+      "label_refs": [
+        "MoomooScript.GiveBerry",
+        "MoomooScript.HappyCow"
+      ],
+      "text_refs": [
+        "MoomooWeakMooText",
+        "Route39BarnItsCryIsWeakText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoomooScript.GiveBerry": {
+      "label_refs": [
+        "MoomooScript.FiveBerries",
+        "MoomooScript.NoBerriesInBag",
+        "MoomooScript.Refused",
+        "MoomooScript.SevenBerries",
+        "MoomooScript.ThreeBerries"
+      ],
+      "text_refs": [
+        "Route39BarnAskGiveBerryText",
+        "Route39BarnGaveBerryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoomooScript.ThreeBerries": {
+      "label_refs": [],
+      "text_refs": [
+        "Route39BarnGaveBerryText",
+        "Route39BarnLittleHealthierText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoomooScript.FiveBerries": {
+      "label_refs": [],
+      "text_refs": [
+        "Route39BarnGaveBerryText",
+        "Route39BarnQuiteHealthyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoomooScript.SevenBerries": {
+      "label_refs": [],
+      "text_refs": [
+        "Route39BarnGaveBerryText",
+        "Route39BarnTotallyHealthyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoomooScript.NoBerriesInBag": {
+      "label_refs": [],
+      "text_refs": [
+        "Route39BarnNoBerriesText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoomooScript.Refused": {
+      "label_refs": [],
+      "text_refs": [
+        "Route39BarnRefusedBerryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoomooScript.HappyCow": {
+      "label_refs": [],
+      "text_refs": [
+        "MoomooHappyMooText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route39Barn_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 3
+  }
+}

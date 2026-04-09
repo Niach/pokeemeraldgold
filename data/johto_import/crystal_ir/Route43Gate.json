@@ -1,0 +1,2024 @@
+{
+  "crystal_map": "Route43Gate",
+  "map_id": "ROUTE_43_GATE",
+  "group": "LAKE_OF_RAGE",
+  "group_index": 9,
+  "map_index": 4,
+  "tileset": "TILESET_GATE",
+  "environment": "GATE",
+  "landmark": "LANDMARK_ROUTE_43",
+  "music": "MUSIC_LAKE_OF_RAGE",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/NorthSouthGate.blk",
+  "source_asm": "maps/Route43Gate.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "Route43GateRocketShakedownScene",
+        "scene_id": "SCENE_ROUTE43GATE_ROCKET_SHAKEDOWN"
+      },
+      {
+        "script": "Route43GateNoopScene",
+        "scene_id": "SCENE_ROUTE43GATE_NOOP"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "Route43GateCheckIfRocketsCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 4,
+        "y": 0,
+        "dest_map": "ROUTE_43",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 5,
+        "y": 0,
+        "dest_map": "ROUTE_43",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "dest_map": "ROUTE_43",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 5,
+        "y": 7,
+        "dest_map": "ROUTE_43",
+        "dest_warp_id": 3
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 0,
+        "y": 4,
+        "sprite": "SPRITE_OFFICER",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "OfficerScript_GuardWithSludgeBomb",
+        "flag": "EVENT_LAKE_OF_RAGE_CIVILIANS"
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RocketScript_MakingABundle",
+        "flag": "EVENT_ROUTE_43_GATE_ROCKETS"
+      },
+      {
+        "x": 7,
+        "y": 4,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RocketScript_MakingABundle",
+        "flag": "EVENT_ROUTE_43_GATE_ROCKETS"
+      }
+    ]
+  },
+  "object_consts": [
+    "ROUTE43GATE_OFFICER",
+    "ROUTE43GATE_ROCKET1",
+    "ROUTE43GATE_ROCKET2"
+  ],
+  "scene_ids": [
+    "0",
+    "1",
+    "SCENE_ROUTE43GATE_NOOP",
+    "SCENE_ROUTE43GATE_ROCKET_SHAKEDOWN"
+  ],
+  "scripts": {
+    "Route43Gate_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script Route43GateRocketShakedownScene, SCENE_ROUTE43GATE_ROCKET_SHAKEDOWN",
+        "scene_script Route43GateNoopScene,            SCENE_ROUTE43GATE_NOOP",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, Route43GateCheckIfRocketsCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "Route43GateRocketShakedownScene",
+            "SCENE_ROUTE43GATE_ROCKET_SHAKEDOWN"
+          ],
+          "raw": "scene_script Route43GateRocketShakedownScene, SCENE_ROUTE43GATE_ROCKET_SHAKEDOWN"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "Route43GateNoopScene",
+            "SCENE_ROUTE43GATE_NOOP"
+          ],
+          "raw": "scene_script Route43GateNoopScene,            SCENE_ROUTE43GATE_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "Route43GateCheckIfRocketsCallback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, Route43GateCheckIfRocketsCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "Route43GateRocketShakedownScene",
+      "label_refs": [
+        "Route43GateRocketShakedownScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route43GateRocketShakedownScene": {
+      "raw_lines": [
+        "sdefer Route43GateRocketTakeoverScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "sdefer",
+          "args": [
+            "Route43GateRocketTakeoverScript"
+          ],
+          "raw": "sdefer Route43GateRocketTakeoverScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "sdefer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route43GateNoopScene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route43GateCheckIfRocketsCallback": {
+      "raw_lines": [
+        "checkevent EVENT_CLEARED_ROCKET_HIDEOUT",
+        "iftrue .NoRockets",
+        "setmapscene ROUTE_43, 0",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_ROCKET_HIDEOUT"
+          ],
+          "raw": "checkevent EVENT_CLEARED_ROCKET_HIDEOUT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route43GateCheckIfRocketsCallback.NoRockets"
+          ],
+          "raw": "iftrue .NoRockets"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "ROUTE_43",
+            "0"
+          ],
+          "raw": "setmapscene ROUTE_43, 0"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "Route43GateCheckIfRocketsCallback.NoRockets"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "0"
+      ],
+      "std_calls": []
+    },
+    "Route43GateCheckIfRocketsCallback.NoRockets": {
+      "raw_lines": [
+        "setmapscene ROUTE_43, 1",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "setmapscene",
+          "args": [
+            "ROUTE_43",
+            "1"
+          ],
+          "raw": "setmapscene ROUTE_43, 1"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "setmapscene",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "1"
+      ],
+      "std_calls": []
+    },
+    "Route43GateRocketTakeoverScript": {
+      "raw_lines": [
+        "playmusic MUSIC_ROCKET_ENCOUNTER",
+        "readvar VAR_FACING",
+        "ifequal DOWN, RocketScript_Southbound",
+        "ifequal UP, RocketScript_Northbound",
+        "setscene SCENE_ROUTE43GATE_NOOP",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_ROCKET_ENCOUNTER"
+          ],
+          "raw": "playmusic MUSIC_ROCKET_ENCOUNTER"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_FACING"
+          ],
+          "raw": "readvar VAR_FACING"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "DOWN",
+            "RocketScript_Southbound"
+          ],
+          "raw": "ifequal DOWN, RocketScript_Southbound"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "UP",
+            "RocketScript_Northbound"
+          ],
+          "raw": "ifequal UP, RocketScript_Northbound"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_ROUTE43GATE_NOOP"
+          ],
+          "raw": "setscene SCENE_ROUTE43GATE_NOOP"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playmusic",
+      "label_refs": [
+        "RocketScript_Northbound",
+        "RocketScript_Southbound"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_ROUTE43GATE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "RocketScript_Southbound": {
+      "raw_lines": [
+        "applymovement PLAYER, PlayerStepsIn",
+        "showemote EMOTE_SHOCK, ROUTE43GATE_ROCKET2, 15",
+        "applymovement ROUTE43GATE_ROCKET2, Rocket2Script_BlocksYouSouth",
+        "turnobject ROUTE43GATE_ROCKET1, UP",
+        "showemote EMOTE_SHOCK, ROUTE43GATE_ROCKET1, 15",
+        "applymovement ROUTE43GATE_ROCKET1, Rocket1Script_BlocksYouSouth",
+        "opentext",
+        "writetext RocketText_TollFee",
+        "promptbutton",
+        "checkmoney YOUR_MONEY, ROUTE43GATE_TOLL - 1",
+        "ifequal HAVE_MORE, RocketScript_TollSouth",
+        "sjump RocketScript_YoureBrokeSouth"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "PlayerStepsIn"
+          ],
+          "raw": "applymovement PLAYER, PlayerStepsIn"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "ROUTE43GATE_ROCKET2",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, ROUTE43GATE_ROCKET2, 15"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE43GATE_ROCKET2",
+            "Rocket2Script_BlocksYouSouth"
+          ],
+          "raw": "applymovement ROUTE43GATE_ROCKET2, Rocket2Script_BlocksYouSouth"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "ROUTE43GATE_ROCKET1",
+            "UP"
+          ],
+          "raw": "turnobject ROUTE43GATE_ROCKET1, UP"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "ROUTE43GATE_ROCKET1",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, ROUTE43GATE_ROCKET1, 15"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE43GATE_ROCKET1",
+            "Rocket1Script_BlocksYouSouth"
+          ],
+          "raw": "applymovement ROUTE43GATE_ROCKET1, Rocket1Script_BlocksYouSouth"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RocketText_TollFee"
+          ],
+          "raw": "writetext RocketText_TollFee"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "checkmoney",
+          "args": [
+            "YOUR_MONEY",
+            "ROUTE43GATE_TOLL - 1"
+          ],
+          "raw": "checkmoney YOUR_MONEY, ROUTE43GATE_TOLL - 1"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "HAVE_MORE",
+            "RocketScript_TollSouth"
+          ],
+          "raw": "ifequal HAVE_MORE, RocketScript_TollSouth"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "RocketScript_YoureBrokeSouth"
+          ],
+          "raw": "sjump RocketScript_YoureBrokeSouth"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [
+        "RocketScript_TollSouth",
+        "RocketScript_YoureBrokeSouth"
+      ],
+      "text_refs": [
+        "RocketText_TollFee"
+      ],
+      "movement_refs": [
+        "PlayerStepsIn",
+        "Rocket1Script_BlocksYouSouth",
+        "Rocket2Script_BlocksYouSouth"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RocketScript_TollSouth": {
+      "raw_lines": [
+        "takemoney YOUR_MONEY, ROUTE43GATE_TOLL",
+        "writetext RocketText_ThankYou",
+        "sjump RocketScript_ShakeDownSouth"
+      ],
+      "commands": [
+        {
+          "command": "takemoney",
+          "args": [
+            "YOUR_MONEY",
+            "ROUTE43GATE_TOLL"
+          ],
+          "raw": "takemoney YOUR_MONEY, ROUTE43GATE_TOLL"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RocketText_ThankYou"
+          ],
+          "raw": "writetext RocketText_ThankYou"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "RocketScript_ShakeDownSouth"
+          ],
+          "raw": "sjump RocketScript_ShakeDownSouth"
+        }
+      ],
+      "first_command": "takemoney",
+      "label_refs": [
+        "RocketScript_ShakeDownSouth"
+      ],
+      "text_refs": [
+        "RocketText_ThankYou"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RocketScript_YoureBrokeSouth": {
+      "raw_lines": [
+        "takemoney YOUR_MONEY, ROUTE43GATE_TOLL",
+        "writetext RocketText_AllYouGot",
+        "sjump RocketScript_ShakeDownSouth"
+      ],
+      "commands": [
+        {
+          "command": "takemoney",
+          "args": [
+            "YOUR_MONEY",
+            "ROUTE43GATE_TOLL"
+          ],
+          "raw": "takemoney YOUR_MONEY, ROUTE43GATE_TOLL"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RocketText_AllYouGot"
+          ],
+          "raw": "writetext RocketText_AllYouGot"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "RocketScript_ShakeDownSouth"
+          ],
+          "raw": "sjump RocketScript_ShakeDownSouth"
+        }
+      ],
+      "first_command": "takemoney",
+      "label_refs": [
+        "RocketScript_ShakeDownSouth"
+      ],
+      "text_refs": [
+        "RocketText_AllYouGot"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RocketScript_ShakeDownSouth": {
+      "raw_lines": [
+        "promptbutton",
+        "closetext",
+        "applymovement ROUTE43GATE_ROCKET1, Rocket1Script_LetsYouPassSouth",
+        "applymovement ROUTE43GATE_ROCKET2, Rocket2Script_LetsYouPassSouth",
+        "setscene SCENE_ROUTE43GATE_NOOP",
+        "special RestartMapMusic",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE43GATE_ROCKET1",
+            "Rocket1Script_LetsYouPassSouth"
+          ],
+          "raw": "applymovement ROUTE43GATE_ROCKET1, Rocket1Script_LetsYouPassSouth"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE43GATE_ROCKET2",
+            "Rocket2Script_LetsYouPassSouth"
+          ],
+          "raw": "applymovement ROUTE43GATE_ROCKET2, Rocket2Script_LetsYouPassSouth"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_ROUTE43GATE_NOOP"
+          ],
+          "raw": "setscene SCENE_ROUTE43GATE_NOOP"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "promptbutton",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "Rocket1Script_LetsYouPassSouth",
+        "Rocket2Script_LetsYouPassSouth"
+      ],
+      "scene_refs": [
+        "SCENE_ROUTE43GATE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "RocketScript_Northbound": {
+      "raw_lines": [
+        "showemote EMOTE_SHOCK, ROUTE43GATE_ROCKET1, 15",
+        "applymovement ROUTE43GATE_ROCKET1, Rocket1Script_BlocksYouNorth",
+        "turnobject ROUTE43GATE_ROCKET2, DOWN",
+        "showemote EMOTE_SHOCK, ROUTE43GATE_ROCKET2, 15",
+        "applymovement ROUTE43GATE_ROCKET2, Rocket2Script_BlocksYouNorth",
+        "opentext",
+        "writetext RocketText_TollFee",
+        "promptbutton",
+        "checkmoney YOUR_MONEY, ROUTE43GATE_TOLL - 1",
+        "ifequal HAVE_MORE, RocketScript_TollNorth",
+        "sjump RocketScript_YoureBrokeNorth"
+      ],
+      "commands": [
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "ROUTE43GATE_ROCKET1",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, ROUTE43GATE_ROCKET1, 15"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE43GATE_ROCKET1",
+            "Rocket1Script_BlocksYouNorth"
+          ],
+          "raw": "applymovement ROUTE43GATE_ROCKET1, Rocket1Script_BlocksYouNorth"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "ROUTE43GATE_ROCKET2",
+            "DOWN"
+          ],
+          "raw": "turnobject ROUTE43GATE_ROCKET2, DOWN"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "ROUTE43GATE_ROCKET2",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, ROUTE43GATE_ROCKET2, 15"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE43GATE_ROCKET2",
+            "Rocket2Script_BlocksYouNorth"
+          ],
+          "raw": "applymovement ROUTE43GATE_ROCKET2, Rocket2Script_BlocksYouNorth"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RocketText_TollFee"
+          ],
+          "raw": "writetext RocketText_TollFee"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "checkmoney",
+          "args": [
+            "YOUR_MONEY",
+            "ROUTE43GATE_TOLL - 1"
+          ],
+          "raw": "checkmoney YOUR_MONEY, ROUTE43GATE_TOLL - 1"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "HAVE_MORE",
+            "RocketScript_TollNorth"
+          ],
+          "raw": "ifequal HAVE_MORE, RocketScript_TollNorth"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "RocketScript_YoureBrokeNorth"
+          ],
+          "raw": "sjump RocketScript_YoureBrokeNorth"
+        }
+      ],
+      "first_command": "showemote",
+      "label_refs": [
+        "RocketScript_TollNorth",
+        "RocketScript_YoureBrokeNorth"
+      ],
+      "text_refs": [
+        "RocketText_TollFee"
+      ],
+      "movement_refs": [
+        "Rocket1Script_BlocksYouNorth",
+        "Rocket2Script_BlocksYouNorth"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RocketScript_TollNorth": {
+      "raw_lines": [
+        "takemoney YOUR_MONEY, ROUTE43GATE_TOLL",
+        "writetext RocketText_ThankYou",
+        "sjump RocketScript_ShakeDownNorth"
+      ],
+      "commands": [
+        {
+          "command": "takemoney",
+          "args": [
+            "YOUR_MONEY",
+            "ROUTE43GATE_TOLL"
+          ],
+          "raw": "takemoney YOUR_MONEY, ROUTE43GATE_TOLL"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RocketText_ThankYou"
+          ],
+          "raw": "writetext RocketText_ThankYou"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "RocketScript_ShakeDownNorth"
+          ],
+          "raw": "sjump RocketScript_ShakeDownNorth"
+        }
+      ],
+      "first_command": "takemoney",
+      "label_refs": [
+        "RocketScript_ShakeDownNorth"
+      ],
+      "text_refs": [
+        "RocketText_ThankYou"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RocketScript_YoureBrokeNorth": {
+      "raw_lines": [
+        "takemoney YOUR_MONEY, ROUTE43GATE_TOLL",
+        "writetext RocketText_AllYouGot",
+        "sjump RocketScript_ShakeDownNorth"
+      ],
+      "commands": [
+        {
+          "command": "takemoney",
+          "args": [
+            "YOUR_MONEY",
+            "ROUTE43GATE_TOLL"
+          ],
+          "raw": "takemoney YOUR_MONEY, ROUTE43GATE_TOLL"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RocketText_AllYouGot"
+          ],
+          "raw": "writetext RocketText_AllYouGot"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "RocketScript_ShakeDownNorth"
+          ],
+          "raw": "sjump RocketScript_ShakeDownNorth"
+        }
+      ],
+      "first_command": "takemoney",
+      "label_refs": [
+        "RocketScript_ShakeDownNorth"
+      ],
+      "text_refs": [
+        "RocketText_AllYouGot"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RocketScript_ShakeDownNorth": {
+      "raw_lines": [
+        "promptbutton",
+        "closetext",
+        "applymovement ROUTE43GATE_ROCKET2, Rocket2Script_LetsYouPassNorth",
+        "applymovement ROUTE43GATE_ROCKET1, Rocket1Script_LetsYouPassNorth",
+        "setscene SCENE_ROUTE43GATE_NOOP",
+        "special RestartMapMusic",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE43GATE_ROCKET2",
+            "Rocket2Script_LetsYouPassNorth"
+          ],
+          "raw": "applymovement ROUTE43GATE_ROCKET2, Rocket2Script_LetsYouPassNorth"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE43GATE_ROCKET1",
+            "Rocket1Script_LetsYouPassNorth"
+          ],
+          "raw": "applymovement ROUTE43GATE_ROCKET1, Rocket1Script_LetsYouPassNorth"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_ROUTE43GATE_NOOP"
+          ],
+          "raw": "setscene SCENE_ROUTE43GATE_NOOP"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "promptbutton",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "Rocket1Script_LetsYouPassNorth",
+        "Rocket2Script_LetsYouPassNorth"
+      ],
+      "scene_refs": [
+        "SCENE_ROUTE43GATE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "RocketScript_MakingABundle": {
+      "raw_lines": [
+        "jumptextfaceplayer RocketText_MakingABundle"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "RocketText_MakingABundle"
+          ],
+          "raw": "jumptextfaceplayer RocketText_MakingABundle"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "RocketText_MakingABundle"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OfficerScript_GuardWithSludgeBomb": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_TM36_SLUDGE_BOMB",
+        "iftrue .GotSludgeBomb",
+        "writetext OfficerText_FoundTM",
+        "promptbutton",
+        "verbosegiveitem TM_SLUDGE_BOMB",
+        "iffalse .NoRoomForSludgeBomb",
+        "setevent EVENT_GOT_TM36_SLUDGE_BOMB",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TM36_SLUDGE_BOMB"
+          ],
+          "raw": "checkevent EVENT_GOT_TM36_SLUDGE_BOMB"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "OfficerScript_GuardWithSludgeBomb.GotSludgeBomb"
+          ],
+          "raw": "iftrue .GotSludgeBomb"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "OfficerText_FoundTM"
+          ],
+          "raw": "writetext OfficerText_FoundTM"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "TM_SLUDGE_BOMB"
+          ],
+          "raw": "verbosegiveitem TM_SLUDGE_BOMB"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "OfficerScript_GuardWithSludgeBomb.NoRoomForSludgeBomb"
+          ],
+          "raw": "iffalse .NoRoomForSludgeBomb"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_TM36_SLUDGE_BOMB"
+          ],
+          "raw": "setevent EVENT_GOT_TM36_SLUDGE_BOMB"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "OfficerScript_GuardWithSludgeBomb.GotSludgeBomb",
+        "OfficerScript_GuardWithSludgeBomb.NoRoomForSludgeBomb"
+      ],
+      "text_refs": [
+        "OfficerText_FoundTM"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OfficerScript_GuardWithSludgeBomb.GotSludgeBomb": {
+      "raw_lines": [
+        "writetext OfficerText_AvoidGrass",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "OfficerText_AvoidGrass"
+          ],
+          "raw": "writetext OfficerText_AvoidGrass"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "OfficerScript_GuardWithSludgeBomb.NoRoomForSludgeBomb",
+      "label_refs": [
+        "OfficerScript_GuardWithSludgeBomb.NoRoomForSludgeBomb"
+      ],
+      "text_refs": [
+        "OfficerText_AvoidGrass"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OfficerScript_GuardWithSludgeBomb.NoRoomForSludgeBomb": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route43Gate_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  4,  0, ROUTE_43, 4",
+        "warp_event  5,  0, ROUTE_43, 5",
+        "warp_event  4,  7, ROUTE_43, 3",
+        "warp_event  5,  7, ROUTE_43, 3",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OfficerScript_GuardWithSludgeBomb, EVENT_LAKE_OF_RAGE_CIVILIANS",
+        "object_event  2,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketScript_MakingABundle, EVENT_ROUTE_43_GATE_ROCKETS",
+        "object_event  7,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketScript_MakingABundle, EVENT_ROUTE_43_GATE_ROCKETS"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "0",
+            "ROUTE_43",
+            "4"
+          ],
+          "raw": "warp_event  4,  0, ROUTE_43, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "0",
+            "ROUTE_43",
+            "5"
+          ],
+          "raw": "warp_event  5,  0, ROUTE_43, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "ROUTE_43",
+            "3"
+          ],
+          "raw": "warp_event  4,  7, ROUTE_43, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "7",
+            "ROUTE_43",
+            "3"
+          ],
+          "raw": "warp_event  5,  7, ROUTE_43, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "0",
+            "4",
+            "SPRITE_OFFICER",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "OfficerScript_GuardWithSludgeBomb",
+            "EVENT_LAKE_OF_RAGE_CIVILIANS"
+          ],
+          "raw": "object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OfficerScript_GuardWithSludgeBomb, EVENT_LAKE_OF_RAGE_CIVILIANS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "4",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RocketScript_MakingABundle",
+            "EVENT_ROUTE_43_GATE_ROCKETS"
+          ],
+          "raw": "object_event  2,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketScript_MakingABundle, EVENT_ROUTE_43_GATE_ROCKETS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "4",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RocketScript_MakingABundle",
+            "EVENT_ROUTE_43_GATE_ROCKETS"
+          ],
+          "raw": "object_event  7,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketScript_MakingABundle, EVENT_ROUTE_43_GATE_ROCKETS"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "RocketText_TollFee": {
+      "raw_lines": [
+        "text \"Hold it there,\"",
+        "line \"kiddo!\"",
+        "para \"The toll is \u00a5{d:ROUTE43GATE_TOLL}\"",
+        "line \"to go through.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hold it there,"
+        },
+        {
+          "command": "line",
+          "value": "kiddo!"
+        },
+        {
+          "command": "para",
+          "value": "The toll is \u00a5{d:ROUTE43GATE_TOLL}"
+        },
+        {
+          "command": "line",
+          "value": "to go through."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RocketText_ThankYou": {
+      "raw_lines": [
+        "text \"Thank you very\"",
+        "line \"much!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Thank you very"
+        },
+        {
+          "command": "line",
+          "value": "much!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RocketText_AllYouGot": {
+      "raw_lines": [
+        "text \"Then pay what you\"",
+        "line \"have, please.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Then pay what you"
+        },
+        {
+          "command": "line",
+          "value": "have, please."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RocketText_MakingABundle": {
+      "raw_lines": [
+        "text \"He-he-he. We're\"",
+        "line \"making a bundle.\"",
+        "para \"Everyone wants to\"",
+        "line \"see what's going\"",
+        "para \"on up at LAKE OF\"",
+        "line \"RAGE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "He-he-he. We're"
+        },
+        {
+          "command": "line",
+          "value": "making a bundle."
+        },
+        {
+          "command": "para",
+          "value": "Everyone wants to"
+        },
+        {
+          "command": "line",
+          "value": "see what's going"
+        },
+        {
+          "command": "para",
+          "value": "on up at LAKE OF"
+        },
+        {
+          "command": "line",
+          "value": "RAGE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "OfficerText_FoundTM": {
+      "raw_lines": [
+        "text \"I got chased from\"",
+        "line \"my post by these\"",
+        "cont \"thugs in black.\"",
+        "para \"They left this\"",
+        "line \"behind.\"",
+        "para \"It makes me uncom-\"",
+        "line \"fortable. Could\"",
+        "cont \"you take it away?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I got chased from"
+        },
+        {
+          "command": "line",
+          "value": "my post by these"
+        },
+        {
+          "command": "cont",
+          "value": "thugs in black."
+        },
+        {
+          "command": "para",
+          "value": "They left this"
+        },
+        {
+          "command": "line",
+          "value": "behind."
+        },
+        {
+          "command": "para",
+          "value": "It makes me uncom-"
+        },
+        {
+          "command": "line",
+          "value": "fortable. Could"
+        },
+        {
+          "command": "cont",
+          "value": "you take it away?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_ReceivedTM30": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"TM30.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "TM30."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "OfficerText_AvoidGrass": {
+      "raw_lines": [
+        "text \"Use this gate to\"",
+        "line \"avoid walking in\"",
+        "cont \"the grass.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Use this gate to"
+        },
+        {
+          "command": "line",
+          "value": "avoid walking in"
+        },
+        {
+          "command": "cont",
+          "value": "the grass."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "PlayerStepsIn": {
+      "raw_lines": [
+        "step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "Rocket1Script_BlocksYouSouth": {
+      "raw_lines": [
+        "big_step UP",
+        "big_step UP",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "Rocket1Script_LetsYouPassSouth": {
+      "raw_lines": [
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step DOWN",
+        "big_step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "Rocket1Script_BlocksYouNorth": {
+      "raw_lines": [
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "Rocket1Script_LetsYouPassNorth": {
+      "raw_lines": [
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step UP",
+        "big_step UP",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "Rocket2Script_BlocksYouSouth": {
+      "raw_lines": [
+        "big_step UP",
+        "big_step UP",
+        "big_step LEFT",
+        "big_step LEFT",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "Rocket2Script_LetsYouPassSouth": {
+      "raw_lines": [
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step DOWN",
+        "big_step DOWN",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "Rocket2Script_BlocksYouNorth": {
+      "raw_lines": [
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step LEFT",
+        "big_step LEFT",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "Rocket2Script_LetsYouPassNorth": {
+      "raw_lines": [
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step UP",
+        "big_step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "Route43Gate_MapScripts": {
+      "label_refs": [
+        "Route43GateRocketShakedownScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route43GateRocketShakedownScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route43GateNoopScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route43GateCheckIfRocketsCallback": {
+      "label_refs": [
+        "Route43GateCheckIfRocketsCallback.NoRockets"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "0"
+      ],
+      "std_calls": []
+    },
+    "Route43GateCheckIfRocketsCallback.NoRockets": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "1"
+      ],
+      "std_calls": []
+    },
+    "Route43GateRocketTakeoverScript": {
+      "label_refs": [
+        "RocketScript_Northbound",
+        "RocketScript_Southbound"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_ROUTE43GATE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "RocketScript_Southbound": {
+      "label_refs": [
+        "RocketScript_TollSouth",
+        "RocketScript_YoureBrokeSouth"
+      ],
+      "text_refs": [
+        "RocketText_TollFee"
+      ],
+      "movement_refs": [
+        "PlayerStepsIn",
+        "Rocket1Script_BlocksYouSouth",
+        "Rocket2Script_BlocksYouSouth"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RocketScript_TollSouth": {
+      "label_refs": [
+        "RocketScript_ShakeDownSouth"
+      ],
+      "text_refs": [
+        "RocketText_ThankYou"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RocketScript_YoureBrokeSouth": {
+      "label_refs": [
+        "RocketScript_ShakeDownSouth"
+      ],
+      "text_refs": [
+        "RocketText_AllYouGot"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RocketScript_ShakeDownSouth": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "Rocket1Script_LetsYouPassSouth",
+        "Rocket2Script_LetsYouPassSouth"
+      ],
+      "scene_refs": [
+        "SCENE_ROUTE43GATE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "RocketScript_Northbound": {
+      "label_refs": [
+        "RocketScript_TollNorth",
+        "RocketScript_YoureBrokeNorth"
+      ],
+      "text_refs": [
+        "RocketText_TollFee"
+      ],
+      "movement_refs": [
+        "Rocket1Script_BlocksYouNorth",
+        "Rocket2Script_BlocksYouNorth"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RocketScript_TollNorth": {
+      "label_refs": [
+        "RocketScript_ShakeDownNorth"
+      ],
+      "text_refs": [
+        "RocketText_ThankYou"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RocketScript_YoureBrokeNorth": {
+      "label_refs": [
+        "RocketScript_ShakeDownNorth"
+      ],
+      "text_refs": [
+        "RocketText_AllYouGot"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RocketScript_ShakeDownNorth": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "Rocket1Script_LetsYouPassNorth",
+        "Rocket2Script_LetsYouPassNorth"
+      ],
+      "scene_refs": [
+        "SCENE_ROUTE43GATE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "RocketScript_MakingABundle": {
+      "label_refs": [],
+      "text_refs": [
+        "RocketText_MakingABundle"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OfficerScript_GuardWithSludgeBomb": {
+      "label_refs": [
+        "OfficerScript_GuardWithSludgeBomb.GotSludgeBomb",
+        "OfficerScript_GuardWithSludgeBomb.NoRoomForSludgeBomb"
+      ],
+      "text_refs": [
+        "OfficerText_FoundTM"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OfficerScript_GuardWithSludgeBomb.GotSludgeBomb": {
+      "label_refs": [
+        "OfficerScript_GuardWithSludgeBomb.NoRoomForSludgeBomb"
+      ],
+      "text_refs": [
+        "OfficerText_AvoidGrass"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OfficerScript_GuardWithSludgeBomb.NoRoomForSludgeBomb": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route43Gate_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
+    "warp_events": 4,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 3
+  }
+}

@@ -1,0 +1,332 @@
+{
+  "crystal_map": "BlackthornEmysHouse",
+  "map_id": "BLACKTHORN_EMYS_HOUSE",
+  "group": "BLACKTHORN",
+  "group_index": 5,
+  "map_index": 4,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_BLACKTHORN_CITY",
+  "music": "MUSIC_AZALEA_TOWN",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/House1.blk",
+  "source_asm": "maps/BlackthornEmysHouse.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "BLACKTHORN_CITY",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "BLACKTHORN_CITY",
+        "dest_warp_id": 3
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 0,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "EmysHouseBookshelf"
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "EmysHouseBookshelf"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 3,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Emy",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "BLACKTHORNEMYSHOUSE_EMY"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "BlackthornEmysHouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "Emy",
+      "label_refs": [
+        "Emy"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Emy": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "trade NPC_TRADE_EMY",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "trade",
+          "args": [
+            "NPC_TRADE_EMY"
+          ],
+          "raw": "trade NPC_TRADE_EMY"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EmysHouseBookshelf": {
+      "raw_lines": [
+        "jumpstd MagazineBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "MagazineBookshelfScript"
+          ],
+          "raw": "jumpstd MagazineBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "BlackthornEmysHouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, BLACKTHORN_CITY, 3",
+        "warp_event  3,  7, BLACKTHORN_CITY, 3",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, EmysHouseBookshelf",
+        "bg_event  1,  1, BGEVENT_READ, EmysHouseBookshelf",
+        "def_object_events",
+        "object_event  2,  3, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Emy, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "BLACKTHORN_CITY",
+            "3"
+          ],
+          "raw": "warp_event  2,  7, BLACKTHORN_CITY, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "BLACKTHORN_CITY",
+            "3"
+          ],
+          "raw": "warp_event  3,  7, BLACKTHORN_CITY, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "EmysHouseBookshelf"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, EmysHouseBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "EmysHouseBookshelf"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, EmysHouseBookshelf"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Emy",
+            "-1"
+          ],
+          "raw": "object_event  2,  3, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Emy, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {},
+  "movements": {},
+  "std_calls": [
+    "MagazineBookshelfScript"
+  ],
+  "dependencies": {
+    "BlackthornEmysHouse_MapScripts": {
+      "label_refs": [
+        "Emy"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Emy": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EmysHouseBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "BlackthornEmysHouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 1
+  }
+}

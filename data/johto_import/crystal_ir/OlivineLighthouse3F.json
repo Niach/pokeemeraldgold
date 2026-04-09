@@ -1,0 +1,1046 @@
+{
+  "crystal_map": "OlivineLighthouse3F",
+  "map_id": "OLIVINE_LIGHTHOUSE_3F",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 44,
+  "tileset": "TILESET_LIGHTHOUSE",
+  "environment": "DUNGEON",
+  "landmark": "LANDMARK_LIGHTHOUSE",
+  "music": "MUSIC_LIGHTHOUSE",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 10,
+  "height_blocks": 9,
+  "border_block": "00",
+  "blk_path": "maps/OlivineLighthouse3F.blk",
+  "source_asm": "maps/OlivineLighthouse3F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 13,
+        "y": 3,
+        "dest_map": "OLIVINE_LIGHTHOUSE_4F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 5,
+        "y": 3,
+        "dest_map": "OLIVINE_LIGHTHOUSE_2F",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 9,
+        "y": 5,
+        "dest_map": "OLIVINE_LIGHTHOUSE_4F",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 16,
+        "y": 11,
+        "dest_map": "OLIVINE_LIGHTHOUSE_2F",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 17,
+        "y": 11,
+        "dest_map": "OLIVINE_LIGHTHOUSE_2F",
+        "dest_warp_id": 6
+      },
+      {
+        "x": 16,
+        "y": 9,
+        "dest_map": "OLIVINE_LIGHTHOUSE_4F",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 17,
+        "y": 9,
+        "dest_map": "OLIVINE_LIGHTHOUSE_4F",
+        "dest_warp_id": 6
+      },
+      {
+        "x": 8,
+        "y": 3,
+        "dest_map": "OLIVINE_LIGHTHOUSE_4F",
+        "dest_warp_id": 7
+      },
+      {
+        "x": 9,
+        "y": 3,
+        "dest_map": "OLIVINE_LIGHTHOUSE_4F",
+        "dest_warp_id": 8
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 9,
+        "y": 2,
+        "sprite": "SPRITE_SAILOR",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerSailorTerrell",
+        "flag": -1
+      },
+      {
+        "x": 13,
+        "y": 5,
+        "sprite": "SPRITE_GENTLEMAN",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 4,
+        "script": "TrainerGentlemanPreston",
+        "flag": -1
+      },
+      {
+        "x": 3,
+        "y": 9,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerBirdKeeperTheo",
+        "flag": -1
+      },
+      {
+        "x": 8,
+        "y": 2,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "OlivineLighthouse3FEther",
+        "flag": "EVENT_OLIVINE_LIGHTHOUSE_3F_ETHER"
+      }
+    ]
+  },
+  "object_consts": [
+    "OLIVINELIGHTHOUSE3F_SAILOR",
+    "OLIVINELIGHTHOUSE3F_GENTLEMAN",
+    "OLIVINELIGHTHOUSE3F_YOUNGSTER",
+    "OLIVINELIGHTHOUSE3F_POKE_BALL"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "OlivineLighthouse3F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "TrainerBirdKeeperTheo",
+      "label_refs": [
+        "TrainerBirdKeeperTheo"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperTheo": {
+      "raw_lines": [
+        "trainer BIRD_KEEPER, THEO, EVENT_BEAT_BIRD_KEEPER_THEO, BirdKeeperTheoSeenText, BirdKeeperTheoBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "BIRD_KEEPER",
+            "THEO",
+            "EVENT_BEAT_BIRD_KEEPER_THEO",
+            "BirdKeeperTheoSeenText",
+            "BirdKeeperTheoBeatenText",
+            "0",
+            "TrainerBirdKeeperTheo.Script"
+          ],
+          "raw": "trainer BIRD_KEEPER, THEO, EVENT_BEAT_BIRD_KEEPER_THEO, BirdKeeperTheoSeenText, BirdKeeperTheoBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerBirdKeeperTheo.Script",
+      "label_refs": [
+        "TrainerBirdKeeperTheo.Script"
+      ],
+      "text_refs": [
+        "BirdKeeperTheoBeatenText",
+        "BirdKeeperTheoSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperTheo.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext BirdKeeperTheoAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BirdKeeperTheoAfterBattleText"
+          ],
+          "raw": "writetext BirdKeeperTheoAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "BirdKeeperTheoAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGentlemanPreston": {
+      "raw_lines": [
+        "trainer GENTLEMAN, PRESTON, EVENT_BEAT_GENTLEMAN_PRESTON, GentlemanPrestonSeenText, GentlemanPrestonBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "GENTLEMAN",
+            "PRESTON",
+            "EVENT_BEAT_GENTLEMAN_PRESTON",
+            "GentlemanPrestonSeenText",
+            "GentlemanPrestonBeatenText",
+            "0",
+            "TrainerGentlemanPreston.Script"
+          ],
+          "raw": "trainer GENTLEMAN, PRESTON, EVENT_BEAT_GENTLEMAN_PRESTON, GentlemanPrestonSeenText, GentlemanPrestonBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerGentlemanPreston.Script",
+      "label_refs": [
+        "TrainerGentlemanPreston.Script"
+      ],
+      "text_refs": [
+        "GentlemanPrestonBeatenText",
+        "GentlemanPrestonSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGentlemanPreston.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext GentlemanPrestonAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GentlemanPrestonAfterBattleText"
+          ],
+          "raw": "writetext GentlemanPrestonAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "GentlemanPrestonAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorTerrell": {
+      "raw_lines": [
+        "trainer SAILOR, TERRELL, EVENT_BEAT_SAILOR_TERRELL, SailorTerrellSeenText, SailorTerrellBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "SAILOR",
+            "TERRELL",
+            "EVENT_BEAT_SAILOR_TERRELL",
+            "SailorTerrellSeenText",
+            "SailorTerrellBeatenText",
+            "0",
+            "TrainerSailorTerrell.Script"
+          ],
+          "raw": "trainer SAILOR, TERRELL, EVENT_BEAT_SAILOR_TERRELL, SailorTerrellSeenText, SailorTerrellBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerSailorTerrell.Script",
+      "label_refs": [
+        "TrainerSailorTerrell.Script"
+      ],
+      "text_refs": [
+        "SailorTerrellBeatenText",
+        "SailorTerrellSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorTerrell.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext SailorTerrellAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SailorTerrellAfterBattleText"
+          ],
+          "raw": "writetext SailorTerrellAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "SailorTerrellAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineLighthouse3FEther": {
+      "raw_lines": [
+        "itemball ETHER"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "ETHER"
+          ],
+          "raw": "itemball ETHER"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "OlivineLighthouse3F_MapEvents",
+      "label_refs": [
+        "OlivineLighthouse3F_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineLighthouse3F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 13,  3, OLIVINE_LIGHTHOUSE_4F, 1",
+        "warp_event  5,  3, OLIVINE_LIGHTHOUSE_2F, 2",
+        "warp_event  9,  5, OLIVINE_LIGHTHOUSE_4F, 4",
+        "warp_event 16, 11, OLIVINE_LIGHTHOUSE_2F, 5",
+        "warp_event 17, 11, OLIVINE_LIGHTHOUSE_2F, 6",
+        "warp_event 16,  9, OLIVINE_LIGHTHOUSE_4F, 5",
+        "warp_event 17,  9, OLIVINE_LIGHTHOUSE_4F, 6",
+        "warp_event  8,  3, OLIVINE_LIGHTHOUSE_4F, 7",
+        "warp_event  9,  3, OLIVINE_LIGHTHOUSE_4F, 8",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  9,  2, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSailorTerrell, -1",
+        "object_event 13,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerGentlemanPreston, -1",
+        "object_event  3,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperTheo, -1",
+        "object_event  8,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OlivineLighthouse3FEther, EVENT_OLIVINE_LIGHTHOUSE_3F_ETHER"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "13",
+            "3",
+            "OLIVINE_LIGHTHOUSE_4F",
+            "1"
+          ],
+          "raw": "warp_event 13,  3, OLIVINE_LIGHTHOUSE_4F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "3",
+            "OLIVINE_LIGHTHOUSE_2F",
+            "2"
+          ],
+          "raw": "warp_event  5,  3, OLIVINE_LIGHTHOUSE_2F, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "5",
+            "OLIVINE_LIGHTHOUSE_4F",
+            "4"
+          ],
+          "raw": "warp_event  9,  5, OLIVINE_LIGHTHOUSE_4F, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "16",
+            "11",
+            "OLIVINE_LIGHTHOUSE_2F",
+            "5"
+          ],
+          "raw": "warp_event 16, 11, OLIVINE_LIGHTHOUSE_2F, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "11",
+            "OLIVINE_LIGHTHOUSE_2F",
+            "6"
+          ],
+          "raw": "warp_event 17, 11, OLIVINE_LIGHTHOUSE_2F, 6"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "16",
+            "9",
+            "OLIVINE_LIGHTHOUSE_4F",
+            "5"
+          ],
+          "raw": "warp_event 16,  9, OLIVINE_LIGHTHOUSE_4F, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "9",
+            "OLIVINE_LIGHTHOUSE_4F",
+            "6"
+          ],
+          "raw": "warp_event 17,  9, OLIVINE_LIGHTHOUSE_4F, 6"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "8",
+            "3",
+            "OLIVINE_LIGHTHOUSE_4F",
+            "7"
+          ],
+          "raw": "warp_event  8,  3, OLIVINE_LIGHTHOUSE_4F, 7"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "3",
+            "OLIVINE_LIGHTHOUSE_4F",
+            "8"
+          ],
+          "raw": "warp_event  9,  3, OLIVINE_LIGHTHOUSE_4F, 8"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "2",
+            "SPRITE_SAILOR",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerSailorTerrell",
+            "-1"
+          ],
+          "raw": "object_event  9,  2, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSailorTerrell, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "13",
+            "5",
+            "SPRITE_GENTLEMAN",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "4",
+            "TrainerGentlemanPreston",
+            "-1"
+          ],
+          "raw": "object_event 13,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerGentlemanPreston, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "9",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerBirdKeeperTheo",
+            "-1"
+          ],
+          "raw": "object_event  3,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperTheo, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "2",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "OlivineLighthouse3FEther",
+            "EVENT_OLIVINE_LIGHTHOUSE_3F_ETHER"
+          ],
+          "raw": "object_event  8,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OlivineLighthouse3FEther, EVENT_OLIVINE_LIGHTHOUSE_3F_ETHER"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "BirdKeeperTheoSeenText": {
+      "raw_lines": [
+        "text \"Why are you here?\"",
+        "line \"Are you just going\"",
+        "para \"to gawk? I suggest\"",
+        "line \"that you leave!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Why are you here?"
+        },
+        {
+          "command": "line",
+          "value": "Are you just going"
+        },
+        {
+          "command": "para",
+          "value": "to gawk? I suggest"
+        },
+        {
+          "command": "line",
+          "value": "that you leave!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BirdKeeperTheoBeatenText": {
+      "raw_lines": [
+        "text \"You really are\"",
+        "line \"concerned\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You really are"
+        },
+        {
+          "command": "line",
+          "value": "concerned\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BirdKeeperTheoAfterBattleText": {
+      "raw_lines": [
+        "text \"How the heck do\"",
+        "line \"you go up?\"",
+        "para \"I want to visit\"",
+        "line \"the sick #MON,\"",
+        "para \"but I can't get up\"",
+        "line \"there\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "How the heck do"
+        },
+        {
+          "command": "line",
+          "value": "you go up?"
+        },
+        {
+          "command": "para",
+          "value": "I want to visit"
+        },
+        {
+          "command": "line",
+          "value": "the sick #MON,"
+        },
+        {
+          "command": "para",
+          "value": "but I can't get up"
+        },
+        {
+          "command": "line",
+          "value": "there\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SailorTerrellSeenText": {
+      "raw_lines": [
+        "text \"Sailors are both\"",
+        "line \"kind and strong.\"",
+        "cont \"How about you?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Sailors are both"
+        },
+        {
+          "command": "line",
+          "value": "kind and strong."
+        },
+        {
+          "command": "cont",
+          "value": "How about you?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SailorTerrellBeatenText": {
+      "raw_lines": [
+        "text \"You are both kind\"",
+        "line \"and strong\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You are both kind"
+        },
+        {
+          "command": "line",
+          "value": "and strong\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SailorTerrellAfterBattleText": {
+      "raw_lines": [
+        "text \"Every time I come\"",
+        "line \"back to OLIVINE, I\"",
+        "cont \"visit the GYM.\"",
+        "para \"The GYM LEADER's\"",
+        "line \"#MON type has\"",
+        "para \"changed without me\"",
+        "line \"noticing.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Every time I come"
+        },
+        {
+          "command": "line",
+          "value": "back to OLIVINE, I"
+        },
+        {
+          "command": "cont",
+          "value": "visit the GYM."
+        },
+        {
+          "command": "para",
+          "value": "The GYM LEADER's"
+        },
+        {
+          "command": "line",
+          "value": "#MON type has"
+        },
+        {
+          "command": "para",
+          "value": "changed without me"
+        },
+        {
+          "command": "line",
+          "value": "noticing."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GentlemanPrestonSeenText": {
+      "raw_lines": [
+        "text \"I travel the world\"",
+        "line \"to train my #-\"",
+        "cont \"MON. I wish to\"",
+        "cont \"battle with you.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I travel the world"
+        },
+        {
+          "command": "line",
+          "value": "to train my #-"
+        },
+        {
+          "command": "cont",
+          "value": "MON. I wish to"
+        },
+        {
+          "command": "cont",
+          "value": "battle with you."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GentlemanPrestonBeatenText": {
+      "raw_lines": [
+        "text \"\u2026sigh\u2026 I must\"",
+        "line \"train some more\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026sigh\u2026 I must"
+        },
+        {
+          "command": "line",
+          "value": "train some more\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GentlemanPrestonAfterBattleText": {
+      "raw_lines": [
+        "text \"JASMINE used to\"",
+        "line \"use rock #MON\"",
+        "cont \"like ONIX.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "JASMINE used to"
+        },
+        {
+          "command": "line",
+          "value": "use rock #MON"
+        },
+        {
+          "command": "cont",
+          "value": "like ONIX."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "OlivineLighthouse3F_MapScripts": {
+      "label_refs": [
+        "TrainerBirdKeeperTheo"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperTheo": {
+      "label_refs": [
+        "TrainerBirdKeeperTheo.Script"
+      ],
+      "text_refs": [
+        "BirdKeeperTheoBeatenText",
+        "BirdKeeperTheoSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperTheo.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "BirdKeeperTheoAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGentlemanPreston": {
+      "label_refs": [
+        "TrainerGentlemanPreston.Script"
+      ],
+      "text_refs": [
+        "GentlemanPrestonBeatenText",
+        "GentlemanPrestonSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGentlemanPreston.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GentlemanPrestonAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorTerrell": {
+      "label_refs": [
+        "TrainerSailorTerrell.Script"
+      ],
+      "text_refs": [
+        "SailorTerrellBeatenText",
+        "SailorTerrellSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorTerrell.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "SailorTerrellAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineLighthouse3FEther": {
+      "label_refs": [
+        "OlivineLighthouse3F_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineLighthouse3F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 9,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 4
+  }
+}

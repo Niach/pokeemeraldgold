@@ -1,0 +1,443 @@
+{
+  "crystal_map": "CianwoodPhotoStudio",
+  "map_id": "CIANWOOD_PHOTO_STUDIO",
+  "group": "CIANWOOD",
+  "group_index": 22,
+  "map_index": 8,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_CIANWOOD_CITY",
+  "music": "MUSIC_ECRUTEAK_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/House1.blk",
+  "source_asm": "maps/CianwoodPhotoStudio.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "CIANWOOD_CITY",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "CIANWOOD_CITY",
+        "dest_warp_id": 5
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 3,
+        "sprite": "SPRITE_FISHING_GURU",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodPhotoStudioFishingGuruScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "CIANWOODPHOTOSTUDIO_FISHING_GURU"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "CianwoodPhotoStudio_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "CianwoodPhotoStudioFishingGuruScript",
+      "label_refs": [
+        "CianwoodPhotoStudioFishingGuruScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPhotoStudioFishingGuruScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext CianwoodPhotoStudioFishingGuruText_Question",
+        "yesorno",
+        "iffalse .Refused",
+        "writetext CianwoodPhotoStudioFishingGuruText_Yes",
+        "waitbutton",
+        "special PhotoStudio",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CianwoodPhotoStudioFishingGuruText_Question"
+          ],
+          "raw": "writetext CianwoodPhotoStudioFishingGuruText_Question"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "CianwoodPhotoStudioFishingGuruScript.Refused"
+          ],
+          "raw": "iffalse .Refused"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CianwoodPhotoStudioFishingGuruText_Yes"
+          ],
+          "raw": "writetext CianwoodPhotoStudioFishingGuruText_Yes"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "special",
+          "args": [
+            "PhotoStudio"
+          ],
+          "raw": "special PhotoStudio"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "CianwoodPhotoStudioFishingGuruScript.Refused"
+      ],
+      "text_refs": [
+        "CianwoodPhotoStudioFishingGuruText_Question",
+        "CianwoodPhotoStudioFishingGuruText_Yes"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPhotoStudioFishingGuruScript.Refused": {
+      "raw_lines": [
+        "writetext CianwoodPhotoStudioFishingGuruText_No",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "CianwoodPhotoStudioFishingGuruText_No"
+          ],
+          "raw": "writetext CianwoodPhotoStudioFishingGuruText_No"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodPhotoStudioFishingGuruText_No"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPhotoStudio_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, CIANWOOD_CITY, 5",
+        "warp_event  3,  7, CIANWOOD_CITY, 5",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  2,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodPhotoStudioFishingGuruScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "CIANWOOD_CITY",
+            "5"
+          ],
+          "raw": "warp_event  2,  7, CIANWOOD_CITY, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "CIANWOOD_CITY",
+            "5"
+          ],
+          "raw": "warp_event  3,  7, CIANWOOD_CITY, 5"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_FISHING_GURU",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodPhotoStudioFishingGuruScript",
+            "-1"
+          ],
+          "raw": "object_event  2,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodPhotoStudioFishingGuruScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "CianwoodPhotoStudioFishingGuruText_Question": {
+      "raw_lines": [
+        "text \"You have magnifi-\"",
+        "line \"cent #MON with\"",
+        "cont \"you.\"",
+        "para \"How about a photo\"",
+        "line \"for a souvenir?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You have magnifi-"
+        },
+        {
+          "command": "line",
+          "value": "cent #MON with"
+        },
+        {
+          "command": "cont",
+          "value": "you."
+        },
+        {
+          "command": "para",
+          "value": "How about a photo"
+        },
+        {
+          "command": "line",
+          "value": "for a souvenir?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CianwoodPhotoStudioFishingGuruText_Yes": {
+      "raw_lines": [
+        "text \"OK! Big smile now!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OK! Big smile now!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CianwoodPhotoStudioFishingGuruText_No": {
+      "raw_lines": [
+        "text \"Oh, that's too\"",
+        "line \"bad. I thought it\"",
+        "para \"would be a great\"",
+        "line \"memento\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, that's too"
+        },
+        {
+          "command": "line",
+          "value": "bad. I thought it"
+        },
+        {
+          "command": "para",
+          "value": "would be a great"
+        },
+        {
+          "command": "line",
+          "value": "memento\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "CianwoodPhotoStudio_MapScripts": {
+      "label_refs": [
+        "CianwoodPhotoStudioFishingGuruScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPhotoStudioFishingGuruScript": {
+      "label_refs": [
+        "CianwoodPhotoStudioFishingGuruScript.Refused"
+      ],
+      "text_refs": [
+        "CianwoodPhotoStudioFishingGuruText_Question",
+        "CianwoodPhotoStudioFishingGuruText_Yes"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPhotoStudioFishingGuruScript.Refused": {
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodPhotoStudioFishingGuruText_No"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPhotoStudio_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 1
+  }
+}

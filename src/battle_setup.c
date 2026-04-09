@@ -1330,6 +1330,11 @@ static void CB2_EndTrainerBattle(void)
     {
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
     }
+    else if (IsPlayerDefeated(gBattleOutcome) == TRUE && FlagGet(FLAG_JOHTO_ALLOW_LOSS_CONTINUE))
+    {
+        FlagClear(FLAG_JOHTO_ALLOW_LOSS_CONTINUE);
+        SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+    }
     else if (IsPlayerDefeated(gBattleOutcome) == TRUE)
     {
         if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || InTrainerHillChallenge())
@@ -1339,6 +1344,7 @@ static void CB2_EndTrainerBattle(void)
     }
     else
     {
+        FlagClear(FLAG_JOHTO_ALLOW_LOSS_CONTINUE);
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         if (CurrentBattlePyramidLocation() == PYRAMID_LOCATION_NONE && !InTrainerHillChallenge())
         {

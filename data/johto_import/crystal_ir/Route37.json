@@ -1,0 +1,1924 @@
+{
+  "crystal_map": "Route37",
+  "map_id": "ROUTE_37",
+  "group": "VIOLET",
+  "group_index": 10,
+  "map_index": 4,
+  "tileset": "TILESET_JOHTO",
+  "environment": "ROUTE",
+  "landmark": "LANDMARK_ROUTE_37",
+  "music": "MUSIC_ROUTE_36",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_AUTO",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 10,
+  "height_blocks": 9,
+  "border_block": "05",
+  "blk_path": "maps/Route37.blk",
+  "source_asm": "maps/Route37.asm",
+  "connections": [
+    {
+      "direction": "north",
+      "map": "EcruteakCity",
+      "target_map_id": "ECRUTEAK_CITY",
+      "offset": -5
+    },
+    {
+      "direction": "south",
+      "map": "Route36",
+      "target_map_id": "ROUTE_36",
+      "offset": -10
+    }
+  ],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "Route37SunnyCallback"
+      }
+    ],
+    "warp_events": [],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 5,
+        "y": 3,
+        "kind": "BGEVENT_READ",
+        "script": "Route37Sign"
+      },
+      {
+        "x": 4,
+        "y": 2,
+        "kind": "BGEVENT_ITEM",
+        "script": "Route37HiddenEther"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 6,
+        "y": 12,
+        "sprite": "SPRITE_WEIRD_TREE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerTwinsAnnandanne1",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 12,
+        "sprite": "SPRITE_WEIRD_TREE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerTwinsAnnandanne2",
+        "flag": -1
+      },
+      {
+        "x": 6,
+        "y": 6,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_FAST",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerPsychicGreg",
+        "flag": -1
+      },
+      {
+        "x": 13,
+        "y": 5,
+        "sprite": "SPRITE_FRUIT_TREE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route37FruitTree1",
+        "flag": -1
+      },
+      {
+        "x": 16,
+        "y": 8,
+        "sprite": "SPRITE_BUG_CATCHER",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "SunnyScript",
+        "flag": "EVENT_ROUTE_37_SUNNY_OF_SUNDAY"
+      },
+      {
+        "x": 16,
+        "y": 5,
+        "sprite": "SPRITE_FRUIT_TREE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route37FruitTree2",
+        "flag": -1
+      },
+      {
+        "x": 15,
+        "y": 7,
+        "sprite": "SPRITE_FRUIT_TREE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route37FruitTree3",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "ROUTE37_WEIRD_TREE1",
+    "ROUTE37_WEIRD_TREE2",
+    "ROUTE37_YOUNGSTER",
+    "ROUTE37_FRUIT_TREE1",
+    "ROUTE37_SUNNY",
+    "ROUTE37_FRUIT_TREE2",
+    "ROUTE37_FRUIT_TREE3"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "Route37_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks",
+        "callback MAPCALLBACK_OBJECTS, Route37SunnyCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "Route37SunnyCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, Route37SunnyCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "Route37SunnyCallback",
+      "label_refs": [
+        "Route37SunnyCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route37SunnyCallback": {
+      "raw_lines": [
+        "readvar VAR_WEEKDAY",
+        "ifequal SUNDAY, .SunnyAppears",
+        "disappear ROUTE37_SUNNY",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SUNDAY",
+            "Route37SunnyCallback.SunnyAppears"
+          ],
+          "raw": "ifequal SUNDAY, .SunnyAppears"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ROUTE37_SUNNY"
+          ],
+          "raw": "disappear ROUTE37_SUNNY"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "readvar",
+      "label_refs": [
+        "Route37SunnyCallback.SunnyAppears"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route37SunnyCallback.SunnyAppears": {
+      "raw_lines": [
+        "appear ROUTE37_SUNNY",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE37_SUNNY"
+          ],
+          "raw": "appear ROUTE37_SUNNY"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "appear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsAnnandanne1": {
+      "raw_lines": [
+        "trainer TWINS, ANNANDANNE1, EVENT_BEAT_TWINS_ANN_AND_ANNE, TwinsAnnandanne1SeenText, TwinsAnnandanne1BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "TWINS",
+            "ANNANDANNE1",
+            "EVENT_BEAT_TWINS_ANN_AND_ANNE",
+            "TwinsAnnandanne1SeenText",
+            "TwinsAnnandanne1BeatenText",
+            "0",
+            "TrainerTwinsAnnandanne1.Script"
+          ],
+          "raw": "trainer TWINS, ANNANDANNE1, EVENT_BEAT_TWINS_ANN_AND_ANNE, TwinsAnnandanne1SeenText, TwinsAnnandanne1BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerTwinsAnnandanne1.Script",
+      "label_refs": [
+        "TrainerTwinsAnnandanne1.Script"
+      ],
+      "text_refs": [
+        "TwinsAnnandanne1BeatenText",
+        "TwinsAnnandanne1SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsAnnandanne1.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext TwinsAnnandanne1AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "TwinsAnnandanne1AfterBattleText"
+          ],
+          "raw": "writetext TwinsAnnandanne1AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "TwinsAnnandanne1AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsAnnandanne2": {
+      "raw_lines": [
+        "trainer TWINS, ANNANDANNE2, EVENT_BEAT_TWINS_ANN_AND_ANNE, TwinsAnnandanne2SeenText, TwinsAnnandanne2BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "TWINS",
+            "ANNANDANNE2",
+            "EVENT_BEAT_TWINS_ANN_AND_ANNE",
+            "TwinsAnnandanne2SeenText",
+            "TwinsAnnandanne2BeatenText",
+            "0",
+            "TrainerTwinsAnnandanne2.Script"
+          ],
+          "raw": "trainer TWINS, ANNANDANNE2, EVENT_BEAT_TWINS_ANN_AND_ANNE, TwinsAnnandanne2SeenText, TwinsAnnandanne2BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerTwinsAnnandanne2.Script",
+      "label_refs": [
+        "TrainerTwinsAnnandanne2.Script"
+      ],
+      "text_refs": [
+        "TwinsAnnandanne2BeatenText",
+        "TwinsAnnandanne2SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsAnnandanne2.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext TwinsAnnandanne2AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "TwinsAnnandanne2AfterBattleText"
+          ],
+          "raw": "writetext TwinsAnnandanne2AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "TwinsAnnandanne2AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPsychicGreg": {
+      "raw_lines": [
+        "trainer PSYCHIC_T, GREG, EVENT_BEAT_PSYCHIC_GREG, PsychicGregSeenText, PsychicGregBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "PSYCHIC_T",
+            "GREG",
+            "EVENT_BEAT_PSYCHIC_GREG",
+            "PsychicGregSeenText",
+            "PsychicGregBeatenText",
+            "0",
+            "TrainerPsychicGreg.Script"
+          ],
+          "raw": "trainer PSYCHIC_T, GREG, EVENT_BEAT_PSYCHIC_GREG, PsychicGregSeenText, PsychicGregBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerPsychicGreg.Script",
+      "label_refs": [
+        "TrainerPsychicGreg.Script"
+      ],
+      "text_refs": [
+        "PsychicGregBeatenText",
+        "PsychicGregSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPsychicGreg.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext PsychicGregAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PsychicGregAfterBattleText"
+          ],
+          "raw": "writetext PsychicGregAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "PsychicGregAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SunnyScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_MAGNET_FROM_SUNNY",
+        "iftrue SunnySundayScript",
+        "readvar VAR_WEEKDAY",
+        "ifnotequal SUNDAY, SunnyNotSundayScript",
+        "checkevent EVENT_MET_SUNNY_OF_SUNDAY",
+        "iftrue .MetSunny",
+        "writetext MeetSunnyText",
+        "promptbutton",
+        "setevent EVENT_MET_SUNNY_OF_SUNDAY"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_MAGNET_FROM_SUNNY"
+          ],
+          "raw": "checkevent EVENT_GOT_MAGNET_FROM_SUNNY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "SunnySundayScript"
+          ],
+          "raw": "iftrue SunnySundayScript"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifnotequal",
+          "args": [
+            "SUNDAY",
+            "SunnyNotSundayScript"
+          ],
+          "raw": "ifnotequal SUNDAY, SunnyNotSundayScript"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_MET_SUNNY_OF_SUNDAY"
+          ],
+          "raw": "checkevent EVENT_MET_SUNNY_OF_SUNDAY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "SunnyScript.MetSunny"
+          ],
+          "raw": "iftrue .MetSunny"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MeetSunnyText"
+          ],
+          "raw": "writetext MeetSunnyText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_MET_SUNNY_OF_SUNDAY"
+          ],
+          "raw": "setevent EVENT_MET_SUNNY_OF_SUNDAY"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "SunnyScript.MetSunny",
+      "label_refs": [
+        "SunnyNotSundayScript",
+        "SunnyScript.MetSunny",
+        "SunnySundayScript"
+      ],
+      "text_refs": [
+        "MeetSunnyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SunnyScript.MetSunny": {
+      "raw_lines": [
+        "checkflag ENGINE_PLAYER_IS_FEMALE",
+        "iftrue .Kris",
+        "writetext SunnyGivesGiftText1",
+        "promptbutton",
+        "sjump .next"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_PLAYER_IS_FEMALE"
+          ],
+          "raw": "checkflag ENGINE_PLAYER_IS_FEMALE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "SunnyScript.Kris"
+          ],
+          "raw": "iftrue .Kris"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SunnyGivesGiftText1"
+          ],
+          "raw": "writetext SunnyGivesGiftText1"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "SunnyScript.next"
+          ],
+          "raw": "sjump .next"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "SunnyScript.Kris",
+        "SunnyScript.next"
+      ],
+      "text_refs": [
+        "SunnyGivesGiftText1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SunnyScript.Kris": {
+      "raw_lines": [
+        "writetext SunnyGivesGiftText2",
+        "promptbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "SunnyGivesGiftText2"
+          ],
+          "raw": "writetext SunnyGivesGiftText2"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "SunnyScript.next",
+      "label_refs": [
+        "SunnyScript.next"
+      ],
+      "text_refs": [
+        "SunnyGivesGiftText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SunnyScript.next": {
+      "raw_lines": [
+        "verbosegiveitem MAGNET",
+        "iffalse SunnyDoneScript",
+        "setevent EVENT_GOT_MAGNET_FROM_SUNNY",
+        "writetext SunnyGaveGiftText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "MAGNET"
+          ],
+          "raw": "verbosegiveitem MAGNET"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "SunnyDoneScript"
+          ],
+          "raw": "iffalse SunnyDoneScript"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_MAGNET_FROM_SUNNY"
+          ],
+          "raw": "setevent EVENT_GOT_MAGNET_FROM_SUNNY"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SunnyGaveGiftText"
+          ],
+          "raw": "writetext SunnyGaveGiftText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "verbosegiveitem",
+      "label_refs": [
+        "SunnyDoneScript"
+      ],
+      "text_refs": [
+        "SunnyGaveGiftText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SunnySundayScript": {
+      "raw_lines": [
+        "writetext SunnySundayText",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "SunnySundayText"
+          ],
+          "raw": "writetext SunnySundayText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "SunnyDoneScript",
+      "label_refs": [
+        "SunnyDoneScript"
+      ],
+      "text_refs": [
+        "SunnySundayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SunnyDoneScript": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SunnyNotSundayScript": {
+      "raw_lines": [
+        "writetext SunnyNotSundayText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "SunnyNotSundayText"
+          ],
+          "raw": "writetext SunnyNotSundayText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "SunnyNotSundayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route37Sign": {
+      "raw_lines": [
+        "jumptext Route37SignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "Route37SignText"
+          ],
+          "raw": "jumptext Route37SignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "Route37SignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route37FruitTree1": {
+      "raw_lines": [
+        "fruittree FRUITTREE_ROUTE_37_1"
+      ],
+      "commands": [
+        {
+          "command": "fruittree",
+          "args": [
+            "FRUITTREE_ROUTE_37_1"
+          ],
+          "raw": "fruittree FRUITTREE_ROUTE_37_1"
+        }
+      ],
+      "first_command": "fruittree",
+      "fallthrough_label": "Route37FruitTree2",
+      "label_refs": [
+        "Route37FruitTree2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route37FruitTree2": {
+      "raw_lines": [
+        "fruittree FRUITTREE_ROUTE_37_2"
+      ],
+      "commands": [
+        {
+          "command": "fruittree",
+          "args": [
+            "FRUITTREE_ROUTE_37_2"
+          ],
+          "raw": "fruittree FRUITTREE_ROUTE_37_2"
+        }
+      ],
+      "first_command": "fruittree",
+      "fallthrough_label": "Route37FruitTree3",
+      "label_refs": [
+        "Route37FruitTree3"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route37FruitTree3": {
+      "raw_lines": [
+        "fruittree FRUITTREE_ROUTE_37_3"
+      ],
+      "commands": [
+        {
+          "command": "fruittree",
+          "args": [
+            "FRUITTREE_ROUTE_37_3"
+          ],
+          "raw": "fruittree FRUITTREE_ROUTE_37_3"
+        }
+      ],
+      "first_command": "fruittree",
+      "fallthrough_label": "Route37HiddenEther",
+      "label_refs": [
+        "Route37HiddenEther"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route37HiddenEther": {
+      "raw_lines": [
+        "hiddenitem ETHER, EVENT_ROUTE_37_HIDDEN_ETHER"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "ETHER",
+            "EVENT_ROUTE_37_HIDDEN_ETHER"
+          ],
+          "raw": "hiddenitem ETHER, EVENT_ROUTE_37_HIDDEN_ETHER"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "Route37_MapEvents",
+      "label_refs": [
+        "Route37_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route37_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  5,  3, BGEVENT_READ, Route37Sign",
+        "bg_event  4,  2, BGEVENT_ITEM, Route37HiddenEther",
+        "def_object_events",
+        "object_event  6, 12, SPRITE_WEIRD_TREE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAnnandanne1, -1",
+        "object_event  7, 12, SPRITE_WEIRD_TREE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAnnandanne2, -1",
+        "object_event  6,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicGreg, -1",
+        "object_event 13,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree1, -1",
+        "object_event 16,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SunnyScript, EVENT_ROUTE_37_SUNNY_OF_SUNDAY",
+        "object_event 16,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree2, -1",
+        "object_event 15,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree3, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "5",
+            "3",
+            "BGEVENT_READ",
+            "Route37Sign"
+          ],
+          "raw": "bg_event  5,  3, BGEVENT_READ, Route37Sign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "4",
+            "2",
+            "BGEVENT_ITEM",
+            "Route37HiddenEther"
+          ],
+          "raw": "bg_event  4,  2, BGEVENT_ITEM, Route37HiddenEther"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "12",
+            "SPRITE_WEIRD_TREE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerTwinsAnnandanne1",
+            "-1"
+          ],
+          "raw": "object_event  6, 12, SPRITE_WEIRD_TREE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAnnandanne1, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "12",
+            "SPRITE_WEIRD_TREE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerTwinsAnnandanne2",
+            "-1"
+          ],
+          "raw": "object_event  7, 12, SPRITE_WEIRD_TREE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAnnandanne2, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "6",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_SPINRANDOM_FAST",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerPsychicGreg",
+            "-1"
+          ],
+          "raw": "object_event  6,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicGreg, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "13",
+            "5",
+            "SPRITE_FRUIT_TREE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route37FruitTree1",
+            "-1"
+          ],
+          "raw": "object_event 13,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree1, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "16",
+            "8",
+            "SPRITE_BUG_CATCHER",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "SunnyScript",
+            "EVENT_ROUTE_37_SUNNY_OF_SUNDAY"
+          ],
+          "raw": "object_event 16,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SunnyScript, EVENT_ROUTE_37_SUNNY_OF_SUNDAY"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "16",
+            "5",
+            "SPRITE_FRUIT_TREE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route37FruitTree2",
+            "-1"
+          ],
+          "raw": "object_event 16,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree2, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "15",
+            "7",
+            "SPRITE_FRUIT_TREE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route37FruitTree3",
+            "-1"
+          ],
+          "raw": "object_event 15,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route37FruitTree3, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "TwinsAnnandanne1SeenText": {
+      "raw_lines": [
+        "text \"ANN: ANNE and I\"",
+        "line \"are in this to-\"",
+        "cont \"gether!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ANN: ANNE and I"
+        },
+        {
+          "command": "line",
+          "value": "are in this to-"
+        },
+        {
+          "command": "cont",
+          "value": "gether!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TwinsAnnandanne1BeatenText": {
+      "raw_lines": [
+        "text \"ANN & ANNE: Nnn\u2026 A\"",
+        "line \"little too strong.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ANN & ANNE: Nnn\u2026 A"
+        },
+        {
+          "command": "line",
+          "value": "little too strong."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TwinsAnnandanne1AfterBattleText": {
+      "raw_lines": [
+        "text \"ANN: I can tell\"",
+        "line \"what my sister and\"",
+        "para \"my #MON are\"",
+        "line \"thinking.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ANN: I can tell"
+        },
+        {
+          "command": "line",
+          "value": "what my sister and"
+        },
+        {
+          "command": "para",
+          "value": "my #MON are"
+        },
+        {
+          "command": "line",
+          "value": "thinking."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TwinsAnnandanne2SeenText": {
+      "raw_lines": [
+        "text \"ANNE: ANN and I\"",
+        "line \"are in this to-\"",
+        "cont \"gether!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ANNE: ANN and I"
+        },
+        {
+          "command": "line",
+          "value": "are in this to-"
+        },
+        {
+          "command": "cont",
+          "value": "gether!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TwinsAnnandanne2BeatenText": {
+      "raw_lines": [
+        "text \"ANN & ANNE: Nnn\u2026 A\"",
+        "line \"little too strong.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ANN & ANNE: Nnn\u2026 A"
+        },
+        {
+          "command": "line",
+          "value": "little too strong."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TwinsAnnandanne2AfterBattleText": {
+      "raw_lines": [
+        "text \"ANNE: We share the\"",
+        "line \"same feelings as\"",
+        "cont \"our #MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ANNE: We share the"
+        },
+        {
+          "command": "line",
+          "value": "same feelings as"
+        },
+        {
+          "command": "cont",
+          "value": "our #MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PsychicGregSeenText": {
+      "raw_lines": [
+        "text \"#MON can't do a\"",
+        "line \"thing if they are\"",
+        "cont \"asleep.\"",
+        "para \"I'll show you how\"",
+        "line \"scary that is!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#MON can't do a"
+        },
+        {
+          "command": "line",
+          "value": "thing if they are"
+        },
+        {
+          "command": "cont",
+          "value": "asleep."
+        },
+        {
+          "command": "para",
+          "value": "I'll show you how"
+        },
+        {
+          "command": "line",
+          "value": "scary that is!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PsychicGregBeatenText": {
+      "raw_lines": [
+        "text \"I lost. That's\"",
+        "line \"pretty sad\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I lost. That's"
+        },
+        {
+          "command": "line",
+          "value": "pretty sad\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PsychicGregAfterBattleText": {
+      "raw_lines": [
+        "text \"Putting #MON to\"",
+        "line \"sleep or paralyz-\"",
+        "cont \"ing them are good\"",
+        "cont \"battle techniques.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Putting #MON to"
+        },
+        {
+          "command": "line",
+          "value": "sleep or paralyz-"
+        },
+        {
+          "command": "cont",
+          "value": "ing them are good"
+        },
+        {
+          "command": "cont",
+          "value": "battle techniques."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MeetSunnyText": {
+      "raw_lines": [
+        "text \"SUNNY: Hi!\"",
+        "para \"I'm SUNNY of Sun-\"",
+        "line \"day, meaning it's\"",
+        "cont \"Sunday today!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "SUNNY: Hi!"
+        },
+        {
+          "command": "para",
+          "value": "I'm SUNNY of Sun-"
+        },
+        {
+          "command": "line",
+          "value": "day, meaning it's"
+        },
+        {
+          "command": "cont",
+          "value": "Sunday today!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SunnyGivesGiftText1": {
+      "raw_lines": [
+        "text \"I was told to give\"",
+        "line \"you this if I saw\"",
+        "cont \"you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I was told to give"
+        },
+        {
+          "command": "line",
+          "value": "you this if I saw"
+        },
+        {
+          "command": "cont",
+          "value": "you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SunnyGivesGiftText2": {
+      "raw_lines": [
+        "text \"I was told to give\"",
+        "line \"you this if I saw\"",
+        "cont \"you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I was told to give"
+        },
+        {
+          "command": "line",
+          "value": "you this if I saw"
+        },
+        {
+          "command": "cont",
+          "value": "you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SunnyGaveGiftText": {
+      "raw_lines": [
+        "text \"SUNNY: That thing\u2026\"",
+        "para \"Um\u2026\"",
+        "para \"\u2026 What was it now\u2026\"",
+        "para \"\u2026\"",
+        "para \"Oh! I remember\"",
+        "line \"now!\"",
+        "para \"A #MON that\"",
+        "line \"knows electric\"",
+        "para \"moves should hold\"",
+        "line \"it.\"",
+        "para \"My sis MONICA said\"",
+        "line \"it powers up\"",
+        "cont \"electric moves!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "SUNNY: That thing\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Um\u2026"
+        },
+        {
+          "command": "para",
+          "value": "\u2026 What was it now\u2026"
+        },
+        {
+          "command": "para",
+          "value": "\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Oh! I remember"
+        },
+        {
+          "command": "line",
+          "value": "now!"
+        },
+        {
+          "command": "para",
+          "value": "A #MON that"
+        },
+        {
+          "command": "line",
+          "value": "knows electric"
+        },
+        {
+          "command": "para",
+          "value": "moves should hold"
+        },
+        {
+          "command": "line",
+          "value": "it."
+        },
+        {
+          "command": "para",
+          "value": "My sis MONICA said"
+        },
+        {
+          "command": "line",
+          "value": "it powers up"
+        },
+        {
+          "command": "cont",
+          "value": "electric moves!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SunnySundayText": {
+      "raw_lines": [
+        "text \"SUNNY: My sisters\"",
+        "line \"and brothers are\"",
+        "cont \"MONICA, TUSCANY,\"",
+        "cont \"WESLEY, ARTHUR,\"",
+        "cont \"FRIEDA and SANTOS.\"",
+        "para \"They're all older\"",
+        "line \"than me!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "SUNNY: My sisters"
+        },
+        {
+          "command": "line",
+          "value": "and brothers are"
+        },
+        {
+          "command": "cont",
+          "value": "MONICA, TUSCANY,"
+        },
+        {
+          "command": "cont",
+          "value": "WESLEY, ARTHUR,"
+        },
+        {
+          "command": "cont",
+          "value": "FRIEDA and SANTOS."
+        },
+        {
+          "command": "para",
+          "value": "They're all older"
+        },
+        {
+          "command": "line",
+          "value": "than me!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SunnyNotSundayText": {
+      "raw_lines": [
+        "text \"SUNNY: Isn't today\"",
+        "line \"Sunday?\"",
+        "cont \"Um\u2026 I forgot!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "SUNNY: Isn't today"
+        },
+        {
+          "command": "line",
+          "value": "Sunday?"
+        },
+        {
+          "command": "cont",
+          "value": "Um\u2026 I forgot!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route37SignText": {
+      "raw_lines": [
+        "text \"ROUTE 37\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ROUTE 37"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "Route37_MapScripts": {
+      "label_refs": [
+        "Route37SunnyCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route37SunnyCallback": {
+      "label_refs": [
+        "Route37SunnyCallback.SunnyAppears"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route37SunnyCallback.SunnyAppears": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsAnnandanne1": {
+      "label_refs": [
+        "TrainerTwinsAnnandanne1.Script"
+      ],
+      "text_refs": [
+        "TwinsAnnandanne1BeatenText",
+        "TwinsAnnandanne1SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsAnnandanne1.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "TwinsAnnandanne1AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsAnnandanne2": {
+      "label_refs": [
+        "TrainerTwinsAnnandanne2.Script"
+      ],
+      "text_refs": [
+        "TwinsAnnandanne2BeatenText",
+        "TwinsAnnandanne2SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsAnnandanne2.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "TwinsAnnandanne2AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPsychicGreg": {
+      "label_refs": [
+        "TrainerPsychicGreg.Script"
+      ],
+      "text_refs": [
+        "PsychicGregBeatenText",
+        "PsychicGregSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPsychicGreg.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "PsychicGregAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SunnyScript": {
+      "label_refs": [
+        "SunnyNotSundayScript",
+        "SunnyScript.MetSunny",
+        "SunnySundayScript"
+      ],
+      "text_refs": [
+        "MeetSunnyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SunnyScript.MetSunny": {
+      "label_refs": [
+        "SunnyScript.Kris",
+        "SunnyScript.next"
+      ],
+      "text_refs": [
+        "SunnyGivesGiftText1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SunnyScript.Kris": {
+      "label_refs": [
+        "SunnyScript.next"
+      ],
+      "text_refs": [
+        "SunnyGivesGiftText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SunnyScript.next": {
+      "label_refs": [
+        "SunnyDoneScript"
+      ],
+      "text_refs": [
+        "SunnyGaveGiftText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SunnySundayScript": {
+      "label_refs": [
+        "SunnyDoneScript"
+      ],
+      "text_refs": [
+        "SunnySundayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SunnyDoneScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SunnyNotSundayScript": {
+      "label_refs": [],
+      "text_refs": [
+        "SunnyNotSundayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route37Sign": {
+      "label_refs": [],
+      "text_refs": [
+        "Route37SignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route37FruitTree1": {
+      "label_refs": [
+        "Route37FruitTree2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route37FruitTree2": {
+      "label_refs": [
+        "Route37FruitTree3"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route37FruitTree3": {
+      "label_refs": [
+        "Route37HiddenEther"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route37HiddenEther": {
+      "label_refs": [
+        "Route37_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route37_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "day_time"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 1,
+    "warp_events": 0,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 7
+  }
+}

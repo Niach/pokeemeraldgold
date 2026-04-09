@@ -18,6 +18,8 @@
   "source_asm": "maps/CherrygroveEvolutionSpeechHouse.asm",
   "connections": [],
   "events": {
+    "scene_scripts": [],
+    "callbacks": [],
     "warp_events": [
       {
         "x": 2,
@@ -55,6 +57,11 @@
         "movement": "SPRITEMOVEDATA_STANDING_LEFT",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "CherrygroveEvolutionSpeechHouseLassScript",
         "flag": -1
       },
@@ -65,12 +72,405 @@
         "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "CherrygroveEvolutionSpeechHouseYoungsterScript",
         "flag": -1
       }
     ]
   },
+  "object_consts": [
+    "CHERRYGROVEEVOLUTIONSPEECHHOUSE_LASS",
+    "CHERRYGROVEEVOLUTIONSPEECHHOUSE_YOUNGSTER"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "CherrygroveEvolutionSpeechHouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "CherrygroveEvolutionSpeechHouseYoungsterScript",
+      "label_refs": [
+        "CherrygroveEvolutionSpeechHouseYoungsterScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveEvolutionSpeechHouseYoungsterScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext CherrygroveEvolutionSpeechHouseYoungsterText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CherrygroveEvolutionSpeechHouseYoungsterText"
+          ],
+          "raw": "writetext CherrygroveEvolutionSpeechHouseYoungsterText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "CherrygroveEvolutionSpeechHouseYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveEvolutionSpeechHouseLassScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext CherrygroveEvolutionSpeechHouseLassText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CherrygroveEvolutionSpeechHouseLassText"
+          ],
+          "raw": "writetext CherrygroveEvolutionSpeechHouseLassText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "CherrygroveEvolutionSpeechHouseLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveEvolutionSpeechHouseBookshelf": {
+      "raw_lines": [
+        "jumpstd MagazineBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "MagazineBookshelfScript"
+          ],
+          "raw": "jumpstd MagazineBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "CherrygroveEvolutionSpeechHouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, CHERRYGROVE_CITY, 5",
+        "warp_event  3,  7, CHERRYGROVE_CITY, 5",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, CherrygroveEvolutionSpeechHouseBookshelf",
+        "bg_event  1,  1, BGEVENT_READ, CherrygroveEvolutionSpeechHouseBookshelf",
+        "def_object_events",
+        "object_event  3,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CherrygroveEvolutionSpeechHouseLassScript, -1",
+        "object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveEvolutionSpeechHouseYoungsterScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "CHERRYGROVE_CITY",
+            "5"
+          ],
+          "raw": "warp_event  2,  7, CHERRYGROVE_CITY, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "CHERRYGROVE_CITY",
+            "5"
+          ],
+          "raw": "warp_event  3,  7, CHERRYGROVE_CITY, 5"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "CherrygroveEvolutionSpeechHouseBookshelf"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, CherrygroveEvolutionSpeechHouseBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "CherrygroveEvolutionSpeechHouseBookshelf"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, CherrygroveEvolutionSpeechHouseBookshelf"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "5",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CherrygroveEvolutionSpeechHouseLassScript",
+            "-1"
+          ],
+          "raw": "object_event  3,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CherrygroveEvolutionSpeechHouseLassScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "5",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CherrygroveEvolutionSpeechHouseYoungsterScript",
+            "-1"
+          ],
+          "raw": "object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveEvolutionSpeechHouseYoungsterScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "CherrygroveEvolutionSpeechHouseYoungsterText": {
+      "raw_lines": [
+        "text \"#MON gain expe-\"",
+        "line \"rience in battle\"",
+        "para \"and change their\"",
+        "line \"form.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#MON gain expe-"
+        },
+        {
+          "command": "line",
+          "value": "rience in battle"
+        },
+        {
+          "command": "para",
+          "value": "and change their"
+        },
+        {
+          "command": "line",
+          "value": "form."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CherrygroveEvolutionSpeechHouseLassText": {
+      "raw_lines": [
+        "text \"#MON change?\"",
+        "para \"I would be shocked\"",
+        "line \"if one did that!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#MON change?"
+        },
+        {
+          "command": "para",
+          "value": "I would be shocked"
+        },
+        {
+          "command": "line",
+          "value": "if one did that!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "MagazineBookshelfScript"
+  ],
+  "dependencies": {
+    "CherrygroveEvolutionSpeechHouse_MapScripts": {
+      "label_refs": [
+        "CherrygroveEvolutionSpeechHouseYoungsterScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveEvolutionSpeechHouseYoungsterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "CherrygroveEvolutionSpeechHouseYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveEvolutionSpeechHouseLassScript": {
+      "label_refs": [],
+      "text_refs": [
+        "CherrygroveEvolutionSpeechHouseLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveEvolutionSpeechHouseBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "CherrygroveEvolutionSpeechHouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
   "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
     "warp_events": 2,
     "coord_events": 0,
     "bg_events": 2,

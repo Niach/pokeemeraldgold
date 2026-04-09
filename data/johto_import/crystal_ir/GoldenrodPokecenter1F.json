@@ -1,0 +1,4082 @@
+{
+  "crystal_map": "GoldenrodPokecenter1F",
+  "map_id": "GOLDENROD_POKECENTER_1F",
+  "group": "GOLDENROD",
+  "group_index": 11,
+  "map_index": 20,
+  "tileset": "TILESET_POKECENTER",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_GOLDENROD_CITY",
+  "music": "MUSIC_POKEMON_CENTER",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/Pokecenter1F.blk",
+  "source_asm": "maps/GoldenrodPokecenter1F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": null,
+        "scene_id": "SCENE_GOLDENRODPOKECENTER1F_GS_BALL"
+      }
+    ],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 15
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 15
+      },
+      {
+        "x": 0,
+        "y": 6,
+        "dest_map": "POKECOM_CENTER_ADMIN_OFFICE_MOBILE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 0,
+        "y": 7,
+        "dest_map": "POKECENTER_2F",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 3,
+        "y": 7,
+        "scene": "SCENE_GOLDENRODPOKECENTER1F_GS_BALL",
+        "script": "GoldenrodPokecenter1F_GSBallSceneLeft"
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "scene": "SCENE_GOLDENRODPOKECENTER1F_GS_BALL",
+        "script": "GoldenrodPokecenter1F_GSBallSceneRight"
+      }
+    ],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 3,
+        "y": 1,
+        "sprite": "SPRITE_NURSE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodPokecenter1FNurseScript",
+        "flag": -1
+      },
+      {
+        "x": 16,
+        "y": 8,
+        "sprite": "SPRITE_LINK_RECEPTIONIST",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": -1
+      },
+      {
+        "x": 6,
+        "y": 1,
+        "sprite": "SPRITE_GAMEBOY_KID",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodPokecenter1FGameboyKidScript",
+        "flag": -1
+      },
+      {
+        "x": 1,
+        "y": 4,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodPokecenter1FLassScript",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 5,
+        "sprite": "SPRITE_POKEFAN_F",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodPokecenter1FPokefanF",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "GOLDENRODPOKECENTER1F_NURSE",
+    "GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST",
+    "GOLDENRODPOKECENTER1F_GAMEBOY_KID",
+    "GOLDENRODPOKECENTER1F_LASS",
+    "GOLDENRODPOKECENTER1F_POKEFAN_F"
+  ],
+  "scene_ids": [
+    "SCENE_GOLDENRODPOKECENTER1F_GS_BALL"
+  ],
+  "scripts": {
+    "GoldenrodPokecenter1F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_const SCENE_GOLDENRODPOKECENTER1F_GS_BALL",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_const",
+          "args": [
+            "SCENE_GOLDENRODPOKECENTER1F_GS_BALL"
+          ],
+          "raw": "scene_const SCENE_GOLDENRODPOKECENTER1F_GS_BALL"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "GoldenrodPokecenter1FNurseScript",
+      "label_refs": [
+        "GoldenrodPokecenter1FNurseScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1FNurseScript": {
+      "raw_lines": [
+        "jumpstd PokecenterNurseScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PokecenterNurseScript"
+          ],
+          "raw": "jumpstd PokecenterNurseScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterNurseScript"
+      ]
+    },
+    "GoldenrodPokecenter1F_GSBallSceneLeft": {
+      "raw_lines": [
+        "setval BATTLETOWERACTION_GSBALL",
+        "special BattleTowerAction",
+        "ifequal GS_BALL_AVAILABLE, .gsball",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "setval",
+          "args": [
+            "BATTLETOWERACTION_GSBALL"
+          ],
+          "raw": "setval BATTLETOWERACTION_GSBALL"
+        },
+        {
+          "command": "special",
+          "args": [
+            "BattleTowerAction"
+          ],
+          "raw": "special BattleTowerAction"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "GS_BALL_AVAILABLE",
+            "GoldenrodPokecenter1F_GSBallSceneLeft.gsball"
+          ],
+          "raw": "ifequal GS_BALL_AVAILABLE, .gsball"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "setval",
+      "label_refs": [
+        "GoldenrodPokecenter1F_GSBallSceneLeft.gsball"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1F_GSBallSceneLeft.gsball": {
+      "raw_lines": [
+        "checkevent EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER",
+        "iftrue .cancel",
+        "playsound SFX_EXIT_BUILDING",
+        "moveobject GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST, 0, 7",
+        "disappear GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST",
+        "appear GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST",
+        "playmusic MUSIC_SHOW_ME_AROUND",
+        "applymovement GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokeCenter1FLinkReceptionistApproachPlayerAtLeftDoorwayTileMovement",
+        "turnobject PLAYER, UP",
+        "opentext",
+        "writetext GoldenrodPokeCenter1FLinkReceptionistPleaseAcceptGSBallText",
+        "waitbutton",
+        "verbosegiveitem GS_BALL",
+        "setevent EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER",
+        "setevent EVENT_CAN_GIVE_GS_BALL_TO_KURT",
+        "writetext GoldenrodPokeCenter1FLinkReceptionistPleaseDoComeAgainText",
+        "waitbutton",
+        "closetext",
+        "applymovement GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokeCenter1FLinkReceptionistWalkToStairsFromLeftDoorwayTileMovement",
+        "special RestartMapMusic",
+        "disappear GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST",
+        "playsound SFX_EXIT_BUILDING"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER"
+          ],
+          "raw": "checkevent EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoldenrodPokecenter1F_GSBallSceneLeft.cancel"
+          ],
+          "raw": "iftrue .cancel"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST",
+            "0",
+            "7"
+          ],
+          "raw": "moveobject GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST, 0, 7"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST"
+          ],
+          "raw": "disappear GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST"
+          ],
+          "raw": "appear GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_SHOW_ME_AROUND"
+          ],
+          "raw": "playmusic MUSIC_SHOW_ME_AROUND"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST",
+            "GoldenrodPokeCenter1FLinkReceptionistApproachPlayerAtLeftDoorwayTileMovement"
+          ],
+          "raw": "applymovement GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokeCenter1FLinkReceptionistApproachPlayerAtLeftDoorwayTileMovement"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "UP"
+          ],
+          "raw": "turnobject PLAYER, UP"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodPokeCenter1FLinkReceptionistPleaseAcceptGSBallText"
+          ],
+          "raw": "writetext GoldenrodPokeCenter1FLinkReceptionistPleaseAcceptGSBallText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "GS_BALL"
+          ],
+          "raw": "verbosegiveitem GS_BALL"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER"
+          ],
+          "raw": "setevent EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_CAN_GIVE_GS_BALL_TO_KURT"
+          ],
+          "raw": "setevent EVENT_CAN_GIVE_GS_BALL_TO_KURT"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodPokeCenter1FLinkReceptionistPleaseDoComeAgainText"
+          ],
+          "raw": "writetext GoldenrodPokeCenter1FLinkReceptionistPleaseDoComeAgainText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST",
+            "GoldenrodPokeCenter1FLinkReceptionistWalkToStairsFromLeftDoorwayTileMovement"
+          ],
+          "raw": "applymovement GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokeCenter1FLinkReceptionistWalkToStairsFromLeftDoorwayTileMovement"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST"
+          ],
+          "raw": "disappear GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "GoldenrodPokecenter1F_GSBallSceneLeft.cancel",
+      "label_refs": [
+        "GoldenrodPokecenter1F_GSBallSceneLeft.cancel"
+      ],
+      "text_refs": [
+        "GoldenrodPokeCenter1FLinkReceptionistPleaseAcceptGSBallText",
+        "GoldenrodPokeCenter1FLinkReceptionistPleaseDoComeAgainText"
+      ],
+      "movement_refs": [
+        "GoldenrodPokeCenter1FLinkReceptionistApproachPlayerAtLeftDoorwayTileMovement",
+        "GoldenrodPokeCenter1FLinkReceptionistWalkToStairsFromLeftDoorwayTileMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1F_GSBallSceneLeft.cancel": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1F_GSBallSceneRight": {
+      "raw_lines": [
+        "setval BATTLETOWERACTION_GSBALL",
+        "special BattleTowerAction",
+        "ifequal GS_BALL_AVAILABLE, .gsball",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "setval",
+          "args": [
+            "BATTLETOWERACTION_GSBALL"
+          ],
+          "raw": "setval BATTLETOWERACTION_GSBALL"
+        },
+        {
+          "command": "special",
+          "args": [
+            "BattleTowerAction"
+          ],
+          "raw": "special BattleTowerAction"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "GS_BALL_AVAILABLE",
+            "GoldenrodPokecenter1F_GSBallSceneRight.gsball"
+          ],
+          "raw": "ifequal GS_BALL_AVAILABLE, .gsball"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "setval",
+      "label_refs": [
+        "GoldenrodPokecenter1F_GSBallSceneRight.gsball"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1F_GSBallSceneRight.gsball": {
+      "raw_lines": [
+        "checkevent EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER",
+        "iftrue .cancel",
+        "playsound SFX_EXIT_BUILDING",
+        "moveobject GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST, 0, 7",
+        "disappear GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST",
+        "appear GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST",
+        "playmusic MUSIC_SHOW_ME_AROUND",
+        "applymovement GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokeCenter1FLinkReceptionistApproachPlayerAtRightDoorwayTileMovement",
+        "turnobject PLAYER, UP",
+        "opentext",
+        "writetext GoldenrodPokeCenter1FLinkReceptionistPleaseAcceptGSBallText",
+        "waitbutton",
+        "verbosegiveitem GS_BALL",
+        "setevent EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER",
+        "setevent EVENT_CAN_GIVE_GS_BALL_TO_KURT",
+        "writetext GoldenrodPokeCenter1FLinkReceptionistPleaseDoComeAgainText",
+        "waitbutton",
+        "closetext",
+        "applymovement GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokeCenter1FLinkReceptionistWalkToStairsFromRightDoorwayTileMovement",
+        "special RestartMapMusic",
+        "disappear GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST",
+        "playsound SFX_EXIT_BUILDING"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER"
+          ],
+          "raw": "checkevent EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoldenrodPokecenter1F_GSBallSceneRight.cancel"
+          ],
+          "raw": "iftrue .cancel"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST",
+            "0",
+            "7"
+          ],
+          "raw": "moveobject GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST, 0, 7"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST"
+          ],
+          "raw": "disappear GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST"
+          ],
+          "raw": "appear GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_SHOW_ME_AROUND"
+          ],
+          "raw": "playmusic MUSIC_SHOW_ME_AROUND"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST",
+            "GoldenrodPokeCenter1FLinkReceptionistApproachPlayerAtRightDoorwayTileMovement"
+          ],
+          "raw": "applymovement GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokeCenter1FLinkReceptionistApproachPlayerAtRightDoorwayTileMovement"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "UP"
+          ],
+          "raw": "turnobject PLAYER, UP"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodPokeCenter1FLinkReceptionistPleaseAcceptGSBallText"
+          ],
+          "raw": "writetext GoldenrodPokeCenter1FLinkReceptionistPleaseAcceptGSBallText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "GS_BALL"
+          ],
+          "raw": "verbosegiveitem GS_BALL"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER"
+          ],
+          "raw": "setevent EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_CAN_GIVE_GS_BALL_TO_KURT"
+          ],
+          "raw": "setevent EVENT_CAN_GIVE_GS_BALL_TO_KURT"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodPokeCenter1FLinkReceptionistPleaseDoComeAgainText"
+          ],
+          "raw": "writetext GoldenrodPokeCenter1FLinkReceptionistPleaseDoComeAgainText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST",
+            "GoldenrodPokeCenter1FLinkReceptionistWalkToStairsFromRightDoorwayTileMovement"
+          ],
+          "raw": "applymovement GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokeCenter1FLinkReceptionistWalkToStairsFromRightDoorwayTileMovement"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST"
+          ],
+          "raw": "disappear GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "GoldenrodPokecenter1F_GSBallSceneRight.cancel",
+      "label_refs": [
+        "GoldenrodPokecenter1F_GSBallSceneRight.cancel"
+      ],
+      "text_refs": [
+        "GoldenrodPokeCenter1FLinkReceptionistPleaseAcceptGSBallText",
+        "GoldenrodPokeCenter1FLinkReceptionistPleaseDoComeAgainText"
+      ],
+      "movement_refs": [
+        "GoldenrodPokeCenter1FLinkReceptionistApproachPlayerAtRightDoorwayTileMovement",
+        "GoldenrodPokeCenter1FLinkReceptionistWalkToStairsFromRightDoorwayTileMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1F_GSBallSceneRight.cancel": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1FGameboyKidScript": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodPokecenter1FGameboyKidText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodPokecenter1FGameboyKidText"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodPokecenter1FGameboyKidText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodPokecenter1FGameboyKidText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1FLassScript": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodPokecenter1FLassText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodPokecenter1FLassText"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodPokecenter1FLassText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodPokecenter1FLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1FPokefanF": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext GoldenrodPokecenter1FPokefanFDoYouHaveEonMailText",
+        "waitbutton",
+        "writetext GoldenrodPokecenter1FAskGiveAwayAnEonMailText",
+        "yesorno",
+        "iffalse .NoEonMail",
+        "takeitem EON_MAIL",
+        "iffalse .NoEonMail",
+        "writetext GoldenrodPokecenter1FPlayerGaveAwayTheEonMailText",
+        "waitbutton",
+        "writetext GoldenrodPokecenter1FPokefanFThisIsForYouText",
+        "waitbutton",
+        "verbosegiveitem REVIVE",
+        "iffalse .NoRoom",
+        "writetext GoldenrodPokecenter1FPokefanFDaughterWillBeDelightedText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodPokecenter1FPokefanFDoYouHaveEonMailText"
+          ],
+          "raw": "writetext GoldenrodPokecenter1FPokefanFDoYouHaveEonMailText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodPokecenter1FAskGiveAwayAnEonMailText"
+          ],
+          "raw": "writetext GoldenrodPokecenter1FAskGiveAwayAnEonMailText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodPokecenter1FPokefanF.NoEonMail"
+          ],
+          "raw": "iffalse .NoEonMail"
+        },
+        {
+          "command": "takeitem",
+          "args": [
+            "EON_MAIL"
+          ],
+          "raw": "takeitem EON_MAIL"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodPokecenter1FPokefanF.NoEonMail"
+          ],
+          "raw": "iffalse .NoEonMail"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodPokecenter1FPlayerGaveAwayTheEonMailText"
+          ],
+          "raw": "writetext GoldenrodPokecenter1FPlayerGaveAwayTheEonMailText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodPokecenter1FPokefanFThisIsForYouText"
+          ],
+          "raw": "writetext GoldenrodPokecenter1FPokefanFThisIsForYouText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "REVIVE"
+          ],
+          "raw": "verbosegiveitem REVIVE"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodPokecenter1FPokefanF.NoRoom"
+          ],
+          "raw": "iffalse .NoRoom"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodPokecenter1FPokefanFDaughterWillBeDelightedText"
+          ],
+          "raw": "writetext GoldenrodPokecenter1FPokefanFDaughterWillBeDelightedText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "GoldenrodPokecenter1FPokefanF.NoEonMail",
+        "GoldenrodPokecenter1FPokefanF.NoRoom"
+      ],
+      "text_refs": [
+        "GoldenrodPokecenter1FAskGiveAwayAnEonMailText",
+        "GoldenrodPokecenter1FPlayerGaveAwayTheEonMailText",
+        "GoldenrodPokecenter1FPokefanFDaughterWillBeDelightedText",
+        "GoldenrodPokecenter1FPokefanFDoYouHaveEonMailText",
+        "GoldenrodPokecenter1FPokefanFThisIsForYouText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1FPokefanF.NoEonMail": {
+      "raw_lines": [
+        "writetext GoldenrodPokecenter1FPokefanFTooBadText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodPokecenter1FPokefanFTooBadText"
+          ],
+          "raw": "writetext GoldenrodPokecenter1FPokefanFTooBadText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodPokecenter1FPokefanFTooBadText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1FPokefanF.NoRoom": {
+      "raw_lines": [
+        "giveitem EON_MAIL",
+        "writetext GoldenrodPokecenter1FPokefanFAnotherTimeThenText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "giveitem",
+          "args": [
+            "EON_MAIL"
+          ],
+          "raw": "giveitem EON_MAIL"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodPokecenter1FPokefanFAnotherTimeThenText"
+          ],
+          "raw": "writetext GoldenrodPokecenter1FPokefanFAnotherTimeThenText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "giveitem",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodPokecenter1FPokefanFAnotherTimeThenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  7, GOLDENROD_CITY, 15",
+        "warp_event  4,  7, GOLDENROD_CITY, 15",
+        "warp_event  0,  6, POKECOM_CENTER_ADMIN_OFFICE_MOBILE, 1",
+        "warp_event  0,  7, POKECENTER_2F, 1",
+        "def_coord_events",
+        "coord_event  3,  7, SCENE_GOLDENRODPOKECENTER1F_GS_BALL, GoldenrodPokecenter1F_GSBallSceneLeft",
+        "coord_event  4,  7, SCENE_GOLDENRODPOKECENTER1F_GS_BALL, GoldenrodPokecenter1F_GSBallSceneRight",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FNurseScript, -1",
+        "object_event 16,  8, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1",
+        "object_event  6,  1, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FGameboyKidScript, -1",
+        "object_event  1,  4, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FLassScript, -1",
+        "object_event  7,  5, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FPokefanF, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "GOLDENROD_CITY",
+            "15"
+          ],
+          "raw": "warp_event  3,  7, GOLDENROD_CITY, 15"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "GOLDENROD_CITY",
+            "15"
+          ],
+          "raw": "warp_event  4,  7, GOLDENROD_CITY, 15"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "6",
+            "POKECOM_CENTER_ADMIN_OFFICE_MOBILE",
+            "1"
+          ],
+          "raw": "warp_event  0,  6, POKECOM_CENTER_ADMIN_OFFICE_MOBILE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "7",
+            "POKECENTER_2F",
+            "1"
+          ],
+          "raw": "warp_event  0,  7, POKECENTER_2F, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "3",
+            "7",
+            "SCENE_GOLDENRODPOKECENTER1F_GS_BALL",
+            "GoldenrodPokecenter1F_GSBallSceneLeft"
+          ],
+          "raw": "coord_event  3,  7, SCENE_GOLDENRODPOKECENTER1F_GS_BALL, GoldenrodPokecenter1F_GSBallSceneLeft"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "4",
+            "7",
+            "SCENE_GOLDENRODPOKECENTER1F_GS_BALL",
+            "GoldenrodPokecenter1F_GSBallSceneRight"
+          ],
+          "raw": "coord_event  4,  7, SCENE_GOLDENRODPOKECENTER1F_GS_BALL, GoldenrodPokecenter1F_GSBallSceneRight"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "1",
+            "SPRITE_NURSE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodPokecenter1FNurseScript",
+            "-1"
+          ],
+          "raw": "object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FNurseScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "16",
+            "8",
+            "SPRITE_LINK_RECEPTIONIST",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "-1"
+          ],
+          "raw": "object_event 16,  8, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "1",
+            "SPRITE_GAMEBOY_KID",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodPokecenter1FGameboyKidScript",
+            "-1"
+          ],
+          "raw": "object_event  6,  1, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FGameboyKidScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "4",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodPokecenter1FLassScript",
+            "-1"
+          ],
+          "raw": "object_event  1,  4, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FLassScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "5",
+            "SPRITE_POKEFAN_F",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodPokecenter1FPokefanF",
+            "-1"
+          ],
+          "raw": "object_event  7,  5, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FPokefanF, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "GoldenrodPokecomCenterWelcomeToTradeCornerText": {
+      "raw_lines": [
+        "text \"Hello! Welcome to\"",
+        "line \"#COM CENTER\"",
+        "cont \"TRADE CORNER.\"",
+        "para \"You can trade\"",
+        "line \"#MON with other\"",
+        "cont \"people far away.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hello! Welcome to"
+        },
+        {
+          "command": "line",
+          "value": "#COM CENTER"
+        },
+        {
+          "command": "cont",
+          "value": "TRADE CORNER."
+        },
+        {
+          "command": "para",
+          "value": "You can trade"
+        },
+        {
+          "command": "line",
+          "value": "#MON with other"
+        },
+        {
+          "command": "cont",
+          "value": "people far away."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterWeMustHoldYourMonText": {
+      "raw_lines": [
+        "text \"To make a trade,\"",
+        "line \"we must hold your\"",
+        "cont \"#MON.\"",
+        "para \"Would you like to\"",
+        "line \"trade?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "To make a trade,"
+        },
+        {
+          "command": "line",
+          "value": "we must hold your"
+        },
+        {
+          "command": "cont",
+          "value": "#MON."
+        },
+        {
+          "command": "para",
+          "value": "Would you like to"
+        },
+        {
+          "command": "line",
+          "value": "trade?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterWhatMonDoYouWantText": {
+      "raw_lines": [
+        "text \"What kind of\"",
+        "line \"#MON do you\"",
+        "cont \"want in return?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What kind of"
+        },
+        {
+          "command": "line",
+          "value": "#MON do you"
+        },
+        {
+          "command": "cont",
+          "value": "want in return?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterWeWillTradeYourMonForMonText": {
+      "raw_lines": [
+        "text \"Fine. We will try\"",
+        "line \"to trade your\"",
+        "para \"@\"",
+        "text_ram wStringBuffer3",
+        "text \" for\"",
+        "line \"@\"",
+        "text_ram wStringBuffer4",
+        "text \".\"",
+        "para \"We'll have to hold\"",
+        "line \"your #MON\"",
+        "cont \"during the trade.\"",
+        "para \"Please wait while\"",
+        "line \"we prepare the\"",
+        "cont \"room for it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Fine. We will try"
+        },
+        {
+          "command": "line",
+          "value": "to trade your"
+        },
+        {
+          "command": "para",
+          "value": "@"
+        },
+        {
+          "command": "text_ram",
+          "value": "wStringBuffer3"
+        },
+        {
+          "command": "text",
+          "value": " for"
+        },
+        {
+          "command": "line",
+          "value": "@"
+        },
+        {
+          "command": "text_ram",
+          "value": "wStringBuffer4"
+        },
+        {
+          "command": "text",
+          "value": "."
+        },
+        {
+          "command": "para",
+          "value": "We'll have to hold"
+        },
+        {
+          "command": "line",
+          "value": "your #MON"
+        },
+        {
+          "command": "cont",
+          "value": "during the trade."
+        },
+        {
+          "command": "para",
+          "value": "Please wait while"
+        },
+        {
+          "command": "line",
+          "value": "we prepare the"
+        },
+        {
+          "command": "cont",
+          "value": "room for it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterWeWillTradeYourMonForNewText": {
+      "raw_lines": [
+        "text \"Fine. We will try\"",
+        "line \"to trade your\"",
+        "para \"@\"",
+        "text_ram wStringBuffer3",
+        "text \" for a\"",
+        "line \"#MON that you\"",
+        "cont \"have never seen.\"",
+        "para \"We'll have to hold\"",
+        "line \"your #MON\"",
+        "cont \"during the trade.\"",
+        "para \"Please wait while\"",
+        "line \"we prepare the\"",
+        "cont \"room for it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Fine. We will try"
+        },
+        {
+          "command": "line",
+          "value": "to trade your"
+        },
+        {
+          "command": "para",
+          "value": "@"
+        },
+        {
+          "command": "text_ram",
+          "value": "wStringBuffer3"
+        },
+        {
+          "command": "text",
+          "value": " for a"
+        },
+        {
+          "command": "line",
+          "value": "#MON that you"
+        },
+        {
+          "command": "cont",
+          "value": "have never seen."
+        },
+        {
+          "command": "para",
+          "value": "We'll have to hold"
+        },
+        {
+          "command": "line",
+          "value": "your #MON"
+        },
+        {
+          "command": "cont",
+          "value": "during the trade."
+        },
+        {
+          "command": "para",
+          "value": "Please wait while"
+        },
+        {
+          "command": "line",
+          "value": "we prepare the"
+        },
+        {
+          "command": "cont",
+          "value": "room for it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterYourMonHasBeenReceivedText": {
+      "raw_lines": [
+        "text \"Your trade #MON\"",
+        "line \"has been received.\"",
+        "para \"It will take time\"",
+        "line \"to find a trade\"",
+        "para \"partner. Please\"",
+        "line \"come back later.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Your trade #MON"
+        },
+        {
+          "command": "line",
+          "value": "has been received."
+        },
+        {
+          "command": "para",
+          "value": "It will take time"
+        },
+        {
+          "command": "line",
+          "value": "to find a trade"
+        },
+        {
+          "command": "para",
+          "value": "partner. Please"
+        },
+        {
+          "command": "line",
+          "value": "come back later."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterYouHaveOnlyOneMonText": {
+      "raw_lines": [
+        "text \"Oh? You have only\"",
+        "line \"one #MON in\"",
+        "cont \"your party. \"",
+        "para \"Please come back\"",
+        "line \"once you've in-\"",
+        "cont \"creased the size\"",
+        "cont \"of your party.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh? You have only"
+        },
+        {
+          "command": "line",
+          "value": "one #MON in"
+        },
+        {
+          "command": "cont",
+          "value": "your party. "
+        },
+        {
+          "command": "para",
+          "value": "Please come back"
+        },
+        {
+          "command": "line",
+          "value": "once you've in-"
+        },
+        {
+          "command": "cont",
+          "value": "creased the size"
+        },
+        {
+          "command": "cont",
+          "value": "of your party."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterWeHopeToSeeYouAgainText": {
+      "raw_lines": [
+        "text \"We hope to see you\"",
+        "line \"again.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We hope to see you"
+        },
+        {
+          "command": "line",
+          "value": "again."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterCommunicationErrorText": {
+      "raw_lines": [
+        "text \"Communication\"",
+        "line \"error\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Communication"
+        },
+        {
+          "command": "line",
+          "value": "error\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterCantAcceptLastMonText": {
+      "raw_lines": [
+        "text \"If we accept that\"",
+        "line \"#MON, what will\"",
+        "cont \"you battle with?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If we accept that"
+        },
+        {
+          "command": "line",
+          "value": "#MON, what will"
+        },
+        {
+          "command": "cont",
+          "value": "you battle with?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterCantAcceptEggText": {
+      "raw_lines": [
+        "text \"Sorry. We can't\"",
+        "line \"accept an EGG.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Sorry. We can't"
+        },
+        {
+          "command": "line",
+          "value": "accept an EGG."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterCantAcceptAbnormalMonText": {
+      "raw_lines": [
+        "text \"Sorry, but your\"",
+        "line \"#MON appears to\"",
+        "para \"be abnormal. We\"",
+        "line \"can't accept it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Sorry, but your"
+        },
+        {
+          "command": "line",
+          "value": "#MON appears to"
+        },
+        {
+          "command": "para",
+          "value": "be abnormal. We"
+        },
+        {
+          "command": "line",
+          "value": "can't accept it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterAlreadyHoldingMonText": {
+      "raw_lines": [
+        "text \"Oh? Aren't we\"",
+        "line \"already holding a\"",
+        "cont \"#MON of yours?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh? Aren't we"
+        },
+        {
+          "command": "line",
+          "value": "already holding a"
+        },
+        {
+          "command": "cont",
+          "value": "#MON of yours?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterCheckingTheRoomsText": {
+      "raw_lines": [
+        "text \"We'll check the\"",
+        "line \"rooms.\"",
+        "para \"Please wait.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We'll check the"
+        },
+        {
+          "command": "line",
+          "value": "rooms."
+        },
+        {
+          "command": "para",
+          "value": "Please wait."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterTradePartnerHasBeenFoundText": {
+      "raw_lines": [
+        "text \"Thank you for your\"",
+        "line \"patience.\"",
+        "para \"A trade partner\"",
+        "line \"has been found.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Thank you for your"
+        },
+        {
+          "command": "line",
+          "value": "patience."
+        },
+        {
+          "command": "para",
+          "value": "A trade partner"
+        },
+        {
+          "command": "line",
+          "value": "has been found."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterItsYourNewPartnerText": {
+      "raw_lines": [
+        "text \"It's your new\"",
+        "line \"partner.\"",
+        "para \"Please take care\"",
+        "line \"of it with love.\"",
+        "para \"We hope to see you\"",
+        "line \"again.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's your new"
+        },
+        {
+          "command": "line",
+          "value": "partner."
+        },
+        {
+          "command": "para",
+          "value": "Please take care"
+        },
+        {
+          "command": "line",
+          "value": "of it with love."
+        },
+        {
+          "command": "para",
+          "value": "We hope to see you"
+        },
+        {
+          "command": "line",
+          "value": "again."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterYourPartyIsFullText": {
+      "raw_lines": [
+        "text \"Uh-oh. Your party\"",
+        "line \"is already full.\"",
+        "para \"Please come back\"",
+        "line \"when you have room\"",
+        "cont \"in your party.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Uh-oh. Your party"
+        },
+        {
+          "command": "line",
+          "value": "is already full."
+        },
+        {
+          "command": "para",
+          "value": "Please come back"
+        },
+        {
+          "command": "line",
+          "value": "when you have room"
+        },
+        {
+          "command": "cont",
+          "value": "in your party."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterNoTradePartnerFoundText": {
+      "raw_lines": [
+        "text \"It's unfortunate,\"",
+        "line \"but no one has\"",
+        "para \"come forward as a\"",
+        "line \"trade partner.\"",
+        "para \"Would you like\"",
+        "line \"your #MON back?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's unfortunate,"
+        },
+        {
+          "command": "line",
+          "value": "but no one has"
+        },
+        {
+          "command": "para",
+          "value": "come forward as a"
+        },
+        {
+          "command": "line",
+          "value": "trade partner."
+        },
+        {
+          "command": "para",
+          "value": "Would you like"
+        },
+        {
+          "command": "line",
+          "value": "your #MON back?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterReturnedYourMonText": {
+      "raw_lines": [
+        "text \"We have returned\"",
+        "line \"your #MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We have returned"
+        },
+        {
+          "command": "line",
+          "value": "your #MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterYourMonIsLonelyText": {
+      "raw_lines": [
+        "text \"It's unfortunate,\"",
+        "line \"but no one has\"",
+        "para \"come forward as a\"",
+        "line \"trade partner.\"",
+        "para \"We've held your\"",
+        "line \"#MON for a long\"",
+        "para \"time. As a result,\"",
+        "line \"it is very lonely.\"",
+        "para \"Sorry, but we must\"",
+        "line \"return it to you.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's unfortunate,"
+        },
+        {
+          "command": "line",
+          "value": "but no one has"
+        },
+        {
+          "command": "para",
+          "value": "come forward as a"
+        },
+        {
+          "command": "line",
+          "value": "trade partner."
+        },
+        {
+          "command": "para",
+          "value": "We've held your"
+        },
+        {
+          "command": "line",
+          "value": "#MON for a long"
+        },
+        {
+          "command": "para",
+          "value": "time. As a result,"
+        },
+        {
+          "command": "line",
+          "value": "it is very lonely."
+        },
+        {
+          "command": "para",
+          "value": "Sorry, but we must"
+        },
+        {
+          "command": "line",
+          "value": "return it to you."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecenter1FWeHopeToSeeYouAgainText_2": {
+      "raw_lines": [
+        "text \"We hope to see you\"",
+        "line \"again.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We hope to see you"
+        },
+        {
+          "command": "line",
+          "value": "again."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterContinueToHoldYourMonText": {
+      "raw_lines": [
+        "text \"Fine. We will\"",
+        "line \"continue to hold\"",
+        "cont \"your #MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Fine. We will"
+        },
+        {
+          "command": "line",
+          "value": "continue to hold"
+        },
+        {
+          "command": "cont",
+          "value": "your #MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterRecentlyLeftYourMonText": {
+      "raw_lines": [
+        "text \"Oh? You left your\"",
+        "line \"#MON with us\"",
+        "cont \"only recently.\"",
+        "para \"Please come back\"",
+        "line \"later.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh? You left your"
+        },
+        {
+          "command": "line",
+          "value": "#MON with us"
+        },
+        {
+          "command": "cont",
+          "value": "only recently."
+        },
+        {
+          "command": "para",
+          "value": "Please come back"
+        },
+        {
+          "command": "line",
+          "value": "later."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterSaveBeforeTradeCornerText": {
+      "raw_lines": [
+        "text \"We'll SAVE before\"",
+        "line \"connecting to the\"",
+        "cont \"CENTER.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We'll SAVE before"
+        },
+        {
+          "command": "line",
+          "value": "connecting to the"
+        },
+        {
+          "command": "cont",
+          "value": "CENTER."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterWhichMonToTradeText": {
+      "raw_lines": [
+        "text \"Which #MON do\"",
+        "line \"you want to trade?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Which #MON do"
+        },
+        {
+          "command": "line",
+          "value": "you want to trade?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterTradeCanceledText": {
+      "raw_lines": [
+        "text \"Sorry, but we must\"",
+        "line \"cancel the trade.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Sorry, but we must"
+        },
+        {
+          "command": "line",
+          "value": "cancel the trade."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterEggTicketText": {
+      "raw_lines": [
+        "text \"Oh!\"",
+        "para \"I see you have an\"",
+        "line \"EGG TICKET!\"",
+        "para \"It's a coupon that\"",
+        "line \"special people can\"",
+        "para \"redeem for a\"",
+        "line \"special #MON!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh!"
+        },
+        {
+          "command": "para",
+          "value": "I see you have an"
+        },
+        {
+          "command": "line",
+          "value": "EGG TICKET!"
+        },
+        {
+          "command": "para",
+          "value": "It's a coupon that"
+        },
+        {
+          "command": "line",
+          "value": "special people can"
+        },
+        {
+          "command": "para",
+          "value": "redeem for a"
+        },
+        {
+          "command": "line",
+          "value": "special #MON!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterOddEggBriefingText": {
+      "raw_lines": [
+        "text \"Let me give you a\"",
+        "line \"quick briefing.\"",
+        "para \"Trades held at the\"",
+        "line \"TRADE CORNER are\"",
+        "para \"between two\"",
+        "line \"trainers who don't\"",
+        "para \"know each other's\"",
+        "line \"identity.\"",
+        "para \"As a result, it\"",
+        "line \"may take time.\"",
+        "para \"However, an ODD\"",
+        "line \"EGG is available\"",
+        "cont \"just for you.\"",
+        "para \"It will be sent to\"",
+        "line \"you right away.\"",
+        "para \"Please choose one\"",
+        "line \"of the rooms in\"",
+        "para \"the CENTER.\"",
+        "line \"An ODD EGG will be\"",
+        "para \"sent from the\"",
+        "line \"chosen room.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Let me give you a"
+        },
+        {
+          "command": "line",
+          "value": "quick briefing."
+        },
+        {
+          "command": "para",
+          "value": "Trades held at the"
+        },
+        {
+          "command": "line",
+          "value": "TRADE CORNER are"
+        },
+        {
+          "command": "para",
+          "value": "between two"
+        },
+        {
+          "command": "line",
+          "value": "trainers who don't"
+        },
+        {
+          "command": "para",
+          "value": "know each other's"
+        },
+        {
+          "command": "line",
+          "value": "identity."
+        },
+        {
+          "command": "para",
+          "value": "As a result, it"
+        },
+        {
+          "command": "line",
+          "value": "may take time."
+        },
+        {
+          "command": "para",
+          "value": "However, an ODD"
+        },
+        {
+          "command": "line",
+          "value": "EGG is available"
+        },
+        {
+          "command": "cont",
+          "value": "just for you."
+        },
+        {
+          "command": "para",
+          "value": "It will be sent to"
+        },
+        {
+          "command": "line",
+          "value": "you right away."
+        },
+        {
+          "command": "para",
+          "value": "Please choose one"
+        },
+        {
+          "command": "line",
+          "value": "of the rooms in"
+        },
+        {
+          "command": "para",
+          "value": "the CENTER."
+        },
+        {
+          "command": "line",
+          "value": "An ODD EGG will be"
+        },
+        {
+          "command": "para",
+          "value": "sent from the"
+        },
+        {
+          "command": "line",
+          "value": "chosen room."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterPleaseWaitAMomentText": {
+      "raw_lines": [
+        "text \"Please wait a\"",
+        "line \"moment.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Please wait a"
+        },
+        {
+          "command": "line",
+          "value": "moment."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterHereIsYourOddEggText": {
+      "raw_lines": [
+        "text \"Thank you for\"",
+        "line \"waiting.\"",
+        "para \"We received your\"",
+        "line \"ODD EGG.\"",
+        "para \"Here it is!\"",
+        "para \"Please raise it\"",
+        "line \"with loving care.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Thank you for"
+        },
+        {
+          "command": "line",
+          "value": "waiting."
+        },
+        {
+          "command": "para",
+          "value": "We received your"
+        },
+        {
+          "command": "line",
+          "value": "ODD EGG."
+        },
+        {
+          "command": "para",
+          "value": "Here it is!"
+        },
+        {
+          "command": "para",
+          "value": "Please raise it"
+        },
+        {
+          "command": "line",
+          "value": "with loving care."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterNoEggTicketServiceText": {
+      "raw_lines": [
+        "text \"I'm awfully sorry.\"",
+        "para \"The EGG TICKET\"",
+        "line \"exchange service\"",
+        "cont \"isn't running now.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm awfully sorry."
+        },
+        {
+          "command": "para",
+          "value": "The EGG TICKET"
+        },
+        {
+          "command": "line",
+          "value": "exchange service"
+        },
+        {
+          "command": "cont",
+          "value": "isn't running now."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterNewsMachineText": {
+      "raw_lines": [
+        "text \"It's a #MON\"",
+        "line \"NEWS MACHINE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's a #MON"
+        },
+        {
+          "command": "line",
+          "value": "NEWS MACHINE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterWhatToDoText": {
+      "raw_lines": [
+        "text \"What would you\"",
+        "line \"like to do?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What would you"
+        },
+        {
+          "command": "line",
+          "value": "like to do?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterNewsMachineExplanationText": {
+      "raw_lines": [
+        "text \"#MON NEWS is\"",
+        "line \"news compiled from\"",
+        "para \"the SAVE files of\"",
+        "line \"#MON trainers.\"",
+        "para \"When reading the\"",
+        "line \"NEWS, your SAVE\"",
+        "para \"file may be sent\"",
+        "line \"out.\"",
+        "para \"The SAVE file data\"",
+        "line \"will contain your\"",
+        "para \"adventure log and\"",
+        "line \"mobile profile.\"",
+        "para \"Your phone number\"",
+        "line \"will not be sent.\"",
+        "para \"The contents of\"",
+        "line \"the NEWS will vary\"",
+        "para \"depending on the\"",
+        "line \"SAVE files sent by\"",
+        "para \"you and the other\"",
+        "line \"#MON trainers.\"",
+        "para \"You might even be\"",
+        "line \"in the NEWS!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#MON NEWS is"
+        },
+        {
+          "command": "line",
+          "value": "news compiled from"
+        },
+        {
+          "command": "para",
+          "value": "the SAVE files of"
+        },
+        {
+          "command": "line",
+          "value": "#MON trainers."
+        },
+        {
+          "command": "para",
+          "value": "When reading the"
+        },
+        {
+          "command": "line",
+          "value": "NEWS, your SAVE"
+        },
+        {
+          "command": "para",
+          "value": "file may be sent"
+        },
+        {
+          "command": "line",
+          "value": "out."
+        },
+        {
+          "command": "para",
+          "value": "The SAVE file data"
+        },
+        {
+          "command": "line",
+          "value": "will contain your"
+        },
+        {
+          "command": "para",
+          "value": "adventure log and"
+        },
+        {
+          "command": "line",
+          "value": "mobile profile."
+        },
+        {
+          "command": "para",
+          "value": "Your phone number"
+        },
+        {
+          "command": "line",
+          "value": "will not be sent."
+        },
+        {
+          "command": "para",
+          "value": "The contents of"
+        },
+        {
+          "command": "line",
+          "value": "the NEWS will vary"
+        },
+        {
+          "command": "para",
+          "value": "depending on the"
+        },
+        {
+          "command": "line",
+          "value": "SAVE files sent by"
+        },
+        {
+          "command": "para",
+          "value": "you and the other"
+        },
+        {
+          "command": "line",
+          "value": "#MON trainers."
+        },
+        {
+          "command": "para",
+          "value": "You might even be"
+        },
+        {
+          "command": "line",
+          "value": "in the NEWS!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterWouldYouLikeTheNewsText": {
+      "raw_lines": [
+        "text \"Would you like to\"",
+        "line \"get the NEWS?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Would you like to"
+        },
+        {
+          "command": "line",
+          "value": "get the NEWS?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterReadingTheLatestNewsText": {
+      "raw_lines": [
+        "text \"Reading the latest\"",
+        "line \"NEWS\u2026 Please wait.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Reading the latest"
+        },
+        {
+          "command": "line",
+          "value": "NEWS\u2026 Please wait."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterNoOldNewsText": {
+      "raw_lines": [
+        "text \"There is no old\"",
+        "line \"NEWS\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "There is no old"
+        },
+        {
+          "command": "line",
+          "value": "NEWS\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterCorruptedNewsDataText": {
+      "raw_lines": [
+        "text \"The NEWS data is\"",
+        "line \"corrupted.\"",
+        "para \"Please download\"",
+        "line \"the NEWS again.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The NEWS data is"
+        },
+        {
+          "command": "line",
+          "value": "corrupted."
+        },
+        {
+          "command": "para",
+          "value": "Please download"
+        },
+        {
+          "command": "line",
+          "value": "the NEWS again."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterMakingPreparationsText": {
+      "raw_lines": [
+        "text \"We're making\"",
+        "line \"preparations.\"",
+        "para \"Please come back\"",
+        "line \"later.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We're making"
+        },
+        {
+          "command": "line",
+          "value": "preparations."
+        },
+        {
+          "command": "para",
+          "value": "Please come back"
+        },
+        {
+          "command": "line",
+          "value": "later."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterSaveBeforeNewsMachineText": {
+      "raw_lines": [
+        "text \"We will SAVE your\"",
+        "line \"progress before\"",
+        "para \"starting the NEWS\"",
+        "line \"MACHINE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We will SAVE your"
+        },
+        {
+          "command": "line",
+          "value": "progress before"
+        },
+        {
+          "command": "para",
+          "value": "starting the NEWS"
+        },
+        {
+          "command": "line",
+          "value": "MACHINE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterPerson1Text": {
+      "raw_lines": [
+        "text \"Whoa, this #MON\"",
+        "line \"CENTER is huge.\"",
+        "para \"They just built\"",
+        "line \"this place. They\"",
+        "para \"installed lots of\"",
+        "line \"new machines too.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Whoa, this #MON"
+        },
+        {
+          "command": "line",
+          "value": "CENTER is huge."
+        },
+        {
+          "command": "para",
+          "value": "They just built"
+        },
+        {
+          "command": "line",
+          "value": "this place. They"
+        },
+        {
+          "command": "para",
+          "value": "installed lots of"
+        },
+        {
+          "command": "line",
+          "value": "new machines too."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterPerson2Text": {
+      "raw_lines": [
+        "text \"I thought up a fun\"",
+        "line \"new thing for the\"",
+        "cont \"TRADE CORNER!\"",
+        "para \"I make a PIDGEY\"",
+        "line \"hold MAIL, then\"",
+        "para \"put it up for\"",
+        "line \"trade for another\"",
+        "cont \"one!\"",
+        "para \"If everyone did\"",
+        "line \"that, MAIL could\"",
+        "para \"be traded with all\"",
+        "line \"sorts of people!\"",
+        "para \"I call it PIDGEY\"",
+        "line \"MAIL!\"",
+        "para \"If it becomes\"",
+        "line \"popular, I might\"",
+        "para \"make lots of new\"",
+        "line \"friends!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I thought up a fun"
+        },
+        {
+          "command": "line",
+          "value": "new thing for the"
+        },
+        {
+          "command": "cont",
+          "value": "TRADE CORNER!"
+        },
+        {
+          "command": "para",
+          "value": "I make a PIDGEY"
+        },
+        {
+          "command": "line",
+          "value": "hold MAIL, then"
+        },
+        {
+          "command": "para",
+          "value": "put it up for"
+        },
+        {
+          "command": "line",
+          "value": "trade for another"
+        },
+        {
+          "command": "cont",
+          "value": "one!"
+        },
+        {
+          "command": "para",
+          "value": "If everyone did"
+        },
+        {
+          "command": "line",
+          "value": "that, MAIL could"
+        },
+        {
+          "command": "para",
+          "value": "be traded with all"
+        },
+        {
+          "command": "line",
+          "value": "sorts of people!"
+        },
+        {
+          "command": "para",
+          "value": "I call it PIDGEY"
+        },
+        {
+          "command": "line",
+          "value": "MAIL!"
+        },
+        {
+          "command": "para",
+          "value": "If it becomes"
+        },
+        {
+          "command": "line",
+          "value": "popular, I might"
+        },
+        {
+          "command": "para",
+          "value": "make lots of new"
+        },
+        {
+          "command": "line",
+          "value": "friends!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterPerson3Text": {
+      "raw_lines": [
+        "text \"They said you can\"",
+        "line \"trade #MON with\"",
+        "para \"total strangers up\"",
+        "line \"here.\"",
+        "para \"But they're still\"",
+        "line \"adjusting things.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "They said you can"
+        },
+        {
+          "command": "line",
+          "value": "trade #MON with"
+        },
+        {
+          "command": "para",
+          "value": "total strangers up"
+        },
+        {
+          "command": "line",
+          "value": "here."
+        },
+        {
+          "command": "para",
+          "value": "But they're still"
+        },
+        {
+          "command": "line",
+          "value": "adjusting things."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterPerson4Text": {
+      "raw_lines": [
+        "text \"Some girl I don't\"",
+        "line \"know sent me her\"",
+        "para \"HOPPIP.\"",
+        "line \"You should trade\"",
+        "para \"for a #MON that\"",
+        "line \"you want.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Some girl I don't"
+        },
+        {
+          "command": "line",
+          "value": "know sent me her"
+        },
+        {
+          "command": "para",
+          "value": "HOPPIP."
+        },
+        {
+          "command": "line",
+          "value": "You should trade"
+        },
+        {
+          "command": "para",
+          "value": "for a #MON that"
+        },
+        {
+          "command": "line",
+          "value": "you want."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterPerson5Text": {
+      "raw_lines": [
+        "text \"I received a\"",
+        "line \"female HOPPIP, but\"",
+        "cont \"its named STANLEY!\"",
+        "para \"That's my dad's\"",
+        "line \"name!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I received a"
+        },
+        {
+          "command": "line",
+          "value": "female HOPPIP, but"
+        },
+        {
+          "command": "cont",
+          "value": "its named STANLEY!"
+        },
+        {
+          "command": "para",
+          "value": "That's my dad's"
+        },
+        {
+          "command": "line",
+          "value": "name!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterPerson6Text": {
+      "raw_lines": [
+        "text \"What is the NEWS\"",
+        "line \"MACHINE?\"",
+        "para \"Does it get news\"",
+        "line \"from a wider area\"",
+        "cont \"than the radio?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What is the NEWS"
+        },
+        {
+          "command": "line",
+          "value": "MACHINE?"
+        },
+        {
+          "command": "para",
+          "value": "Does it get news"
+        },
+        {
+          "command": "line",
+          "value": "from a wider area"
+        },
+        {
+          "command": "cont",
+          "value": "than the radio?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterPerson7Text": {
+      "raw_lines": [
+        "text \"The #COM CENTER\"",
+        "line \"will link with all\"",
+        "para \"#MON CENTERS in\"",
+        "line \"a wireless net.\"",
+        "para \"That must mean\"",
+        "line \"I'll be able to\"",
+        "para \"link with all\"",
+        "line \"sorts of people.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The #COM CENTER"
+        },
+        {
+          "command": "line",
+          "value": "will link with all"
+        },
+        {
+          "command": "para",
+          "value": "#MON CENTERS in"
+        },
+        {
+          "command": "line",
+          "value": "a wireless net."
+        },
+        {
+          "command": "para",
+          "value": "That must mean"
+        },
+        {
+          "command": "line",
+          "value": "I'll be able to"
+        },
+        {
+          "command": "para",
+          "value": "link with all"
+        },
+        {
+          "command": "line",
+          "value": "sorts of people."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterPerson8Text": {
+      "raw_lines": [
+        "text \"The machines here\"",
+        "line \"can't be used yet.\"",
+        "para \"Still, it's nice\"",
+        "line \"coming to a trendy\"",
+        "para \"place before other\"",
+        "line \"people.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The machines here"
+        },
+        {
+          "command": "line",
+          "value": "can't be used yet."
+        },
+        {
+          "command": "para",
+          "value": "Still, it's nice"
+        },
+        {
+          "command": "line",
+          "value": "coming to a trendy"
+        },
+        {
+          "command": "para",
+          "value": "place before other"
+        },
+        {
+          "command": "line",
+          "value": "people."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterPerson9Text": {
+      "raw_lines": [
+        "text \"My friend was in\"",
+        "line \"the NEWS a while\"",
+        "para \"back. I was really\"",
+        "line \"surprised!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My friend was in"
+        },
+        {
+          "command": "line",
+          "value": "the NEWS a while"
+        },
+        {
+          "command": "para",
+          "value": "back. I was really"
+        },
+        {
+          "command": "line",
+          "value": "surprised!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterPerson10Text": {
+      "raw_lines": [
+        "text \"I get anxious if I\"",
+        "line \"don't check out\"",
+        "cont \"the latest NEWS!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I get anxious if I"
+        },
+        {
+          "command": "line",
+          "value": "don't check out"
+        },
+        {
+          "command": "cont",
+          "value": "the latest NEWS!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterPerson11Text": {
+      "raw_lines": [
+        "text \"If I get in the\"",
+        "line \"NEWS and become\"",
+        "para \"famous, I bet I'll\"",
+        "line \"be adored.\"",
+        "para \"I wonder how I\"",
+        "line \"could get in the\"",
+        "cont \"NEWS?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If I get in the"
+        },
+        {
+          "command": "line",
+          "value": "NEWS and become"
+        },
+        {
+          "command": "para",
+          "value": "famous, I bet I'll"
+        },
+        {
+          "command": "line",
+          "value": "be adored."
+        },
+        {
+          "command": "para",
+          "value": "I wonder how I"
+        },
+        {
+          "command": "line",
+          "value": "could get in the"
+        },
+        {
+          "command": "cont",
+          "value": "NEWS?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecenter1FGameboyKidText": {
+      "raw_lines": [
+        "text \"The COLOSSEUM\"",
+        "line \"upstairs is for\"",
+        "cont \"link battles.\"",
+        "para \"Battle records are\"",
+        "line \"posted on the\"",
+        "para \"wall, so I can't\"",
+        "line \"afford to lose.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The COLOSSEUM"
+        },
+        {
+          "command": "line",
+          "value": "upstairs is for"
+        },
+        {
+          "command": "cont",
+          "value": "link battles."
+        },
+        {
+          "command": "para",
+          "value": "Battle records are"
+        },
+        {
+          "command": "line",
+          "value": "posted on the"
+        },
+        {
+          "command": "para",
+          "value": "wall, so I can't"
+        },
+        {
+          "command": "line",
+          "value": "afford to lose."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterPerson12Text": {
+      "raw_lines": [
+        "text \"I came over here\"",
+        "line \"when I got word\"",
+        "para \"that GOLDENROD's\"",
+        "line \"#MON CENTER has\"",
+        "para \"new machines that\"",
+        "line \"no one's ever seen\"",
+        "cont \"before.\"",
+        "para \"But it looks like\"",
+        "line \"they're still busy\"",
+        "para \"with all their\"",
+        "line \"preparations\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I came over here"
+        },
+        {
+          "command": "line",
+          "value": "when I got word"
+        },
+        {
+          "command": "para",
+          "value": "that GOLDENROD's"
+        },
+        {
+          "command": "line",
+          "value": "#MON CENTER has"
+        },
+        {
+          "command": "para",
+          "value": "new machines that"
+        },
+        {
+          "command": "line",
+          "value": "no one's ever seen"
+        },
+        {
+          "command": "cont",
+          "value": "before."
+        },
+        {
+          "command": "para",
+          "value": "But it looks like"
+        },
+        {
+          "command": "line",
+          "value": "they're still busy"
+        },
+        {
+          "command": "para",
+          "value": "with all their"
+        },
+        {
+          "command": "line",
+          "value": "preparations\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterPerson13Text": {
+      "raw_lines": [
+        "text \"Just seeing all\"",
+        "line \"these new things\"",
+        "para \"here makes me feel\"",
+        "line \"younger!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Just seeing all"
+        },
+        {
+          "command": "line",
+          "value": "these new things"
+        },
+        {
+          "command": "para",
+          "value": "here makes me feel"
+        },
+        {
+          "command": "line",
+          "value": "younger!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecenter1FLassText": {
+      "raw_lines": [
+        "text \"A higher level\"",
+        "line \"#MON doesn't\"",
+        "cont \"always win.\"",
+        "para \"After all, it may\"",
+        "line \"have a type dis-\"",
+        "cont \"advantage.\"",
+        "para \"I don't think\"",
+        "line \"there is a single\"",
+        "para \"#MON that is\"",
+        "line \"the toughest.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A higher level"
+        },
+        {
+          "command": "line",
+          "value": "#MON doesn't"
+        },
+        {
+          "command": "cont",
+          "value": "always win."
+        },
+        {
+          "command": "para",
+          "value": "After all, it may"
+        },
+        {
+          "command": "line",
+          "value": "have a type dis-"
+        },
+        {
+          "command": "cont",
+          "value": "advantage."
+        },
+        {
+          "command": "para",
+          "value": "I don't think"
+        },
+        {
+          "command": "line",
+          "value": "there is a single"
+        },
+        {
+          "command": "para",
+          "value": "#MON that is"
+        },
+        {
+          "command": "line",
+          "value": "the toughest."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokeCenter1FLinkReceptionistPleaseAcceptGSBallText": {
+      "raw_lines": [
+        "text \"<PLAYER>, isn't it?\"",
+        "para \"Congratulations!\"",
+        "para \"As a special deal,\"",
+        "line \"a GS BALL has been\"",
+        "cont \"sent just for you!\"",
+        "para \"Please accept it!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER>, isn't it?"
+        },
+        {
+          "command": "para",
+          "value": "Congratulations!"
+        },
+        {
+          "command": "para",
+          "value": "As a special deal,"
+        },
+        {
+          "command": "line",
+          "value": "a GS BALL has been"
+        },
+        {
+          "command": "cont",
+          "value": "sent just for you!"
+        },
+        {
+          "command": "para",
+          "value": "Please accept it!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokeCenter1FLinkReceptionistPleaseDoComeAgainText": {
+      "raw_lines": [
+        "text \"Please do come\"",
+        "line \"again!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Please do come"
+        },
+        {
+          "command": "line",
+          "value": "again!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterSignText": {
+      "raw_lines": [
+        "text \"#COM CENTER\"",
+        "line \"1F INFORMATION\"",
+        "para \"Left:\"",
+        "line \"ADMINISTRATION\"",
+        "para \"Center:\"",
+        "line \"TRADE CORNER\"",
+        "para \"Right:\"",
+        "line \"#MON NEWS\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#COM CENTER"
+        },
+        {
+          "command": "line",
+          "value": "1F INFORMATION"
+        },
+        {
+          "command": "para",
+          "value": "Left:"
+        },
+        {
+          "command": "line",
+          "value": "ADMINISTRATION"
+        },
+        {
+          "command": "para",
+          "value": "Center:"
+        },
+        {
+          "command": "line",
+          "value": "TRADE CORNER"
+        },
+        {
+          "command": "para",
+          "value": "Right:"
+        },
+        {
+          "command": "line",
+          "value": "#MON NEWS"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecomCenterNewsMachineNotYetText": {
+      "raw_lines": [
+        "text \"It's a #MON\"",
+        "line \"NEWS MACHINE!\"",
+        "para \"It's not in\"",
+        "line \"operation yet\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's a #MON"
+        },
+        {
+          "command": "line",
+          "value": "NEWS MACHINE!"
+        },
+        {
+          "command": "para",
+          "value": "It's not in"
+        },
+        {
+          "command": "line",
+          "value": "operation yet\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecenter1FPokefanFDoYouHaveEonMailText": {
+      "raw_lines": [
+        "text \"Oh my, your pack\"",
+        "line \"looks so heavy!\"",
+        "para \"Oh! Do you happen\"",
+        "line \"to have something\"",
+        "cont \"named EON MAIL?\"",
+        "para \"My daughter is\"",
+        "line \"after one.\"",
+        "para \"You can part with\"",
+        "line \"one, can't you?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh my, your pack"
+        },
+        {
+          "command": "line",
+          "value": "looks so heavy!"
+        },
+        {
+          "command": "para",
+          "value": "Oh! Do you happen"
+        },
+        {
+          "command": "line",
+          "value": "to have something"
+        },
+        {
+          "command": "cont",
+          "value": "named EON MAIL?"
+        },
+        {
+          "command": "para",
+          "value": "My daughter is"
+        },
+        {
+          "command": "line",
+          "value": "after one."
+        },
+        {
+          "command": "para",
+          "value": "You can part with"
+        },
+        {
+          "command": "line",
+          "value": "one, can't you?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecenter1FAskGiveAwayAnEonMailText": {
+      "raw_lines": [
+        "text \"Give away an EON\"",
+        "line \"MAIL?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Give away an EON"
+        },
+        {
+          "command": "line",
+          "value": "MAIL?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecenter1FPokefanFThisIsForYouText": {
+      "raw_lines": [
+        "text \"Oh, that's great!\"",
+        "line \"Thank you, honey!\"",
+        "para \"Here, this is for\"",
+        "line \"you in return!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, that's great!"
+        },
+        {
+          "command": "line",
+          "value": "Thank you, honey!"
+        },
+        {
+          "command": "para",
+          "value": "Here, this is for"
+        },
+        {
+          "command": "line",
+          "value": "you in return!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecenter1FPokefanFDaughterWillBeDelightedText": {
+      "raw_lines": [
+        "text \"My daughter will\"",
+        "line \"be delighted!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My daughter will"
+        },
+        {
+          "command": "line",
+          "value": "be delighted!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecenter1FPokefanFTooBadText": {
+      "raw_lines": [
+        "text \"Oh? You don't have\"",
+        "line \"one? Too bad.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh? You don't have"
+        },
+        {
+          "command": "line",
+          "value": "one? Too bad."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecenter1FPokefanFAnotherTimeThenText": {
+      "raw_lines": [
+        "text \"Oh\u2026 Well, another\"",
+        "line \"time, then.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh\u2026 Well, another"
+        },
+        {
+          "command": "line",
+          "value": "time, then."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodPokecenter1FPlayerGaveAwayTheEonMailText": {
+      "raw_lines": [
+        "text \"<PLAYER> gave away\"",
+        "line \"the EON MAIL.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> gave away"
+        },
+        {
+          "command": "line",
+          "value": "the EON MAIL."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "GoldenrodPokeCenter1FLinkReceptionistApproachPlayerAtLeftDoorwayTileMovement": {
+      "raw_lines": [
+        "step UP",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "GoldenrodPokeCenter1FLinkReceptionistWalkToStairsFromLeftDoorwayTileMovement": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "GoldenrodPokeCenter1FLinkReceptionistApproachPlayerAtRightDoorwayTileMovement": {
+      "raw_lines": [
+        "step UP",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "GoldenrodPokeCenter1FLinkReceptionistWalkToStairsFromRightDoorwayTileMovement": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "PokecenterNurseScript"
+  ],
+  "dependencies": {
+    "GoldenrodPokecenter1F_MapScripts": {
+      "label_refs": [
+        "GoldenrodPokecenter1FNurseScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1FNurseScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterNurseScript"
+      ]
+    },
+    "GoldenrodPokecenter1F_GSBallSceneLeft": {
+      "label_refs": [
+        "GoldenrodPokecenter1F_GSBallSceneLeft.gsball"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1F_GSBallSceneLeft.gsball": {
+      "label_refs": [
+        "GoldenrodPokecenter1F_GSBallSceneLeft.cancel"
+      ],
+      "text_refs": [
+        "GoldenrodPokeCenter1FLinkReceptionistPleaseAcceptGSBallText",
+        "GoldenrodPokeCenter1FLinkReceptionistPleaseDoComeAgainText"
+      ],
+      "movement_refs": [
+        "GoldenrodPokeCenter1FLinkReceptionistApproachPlayerAtLeftDoorwayTileMovement",
+        "GoldenrodPokeCenter1FLinkReceptionistWalkToStairsFromLeftDoorwayTileMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1F_GSBallSceneLeft.cancel": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1F_GSBallSceneRight": {
+      "label_refs": [
+        "GoldenrodPokecenter1F_GSBallSceneRight.gsball"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1F_GSBallSceneRight.gsball": {
+      "label_refs": [
+        "GoldenrodPokecenter1F_GSBallSceneRight.cancel"
+      ],
+      "text_refs": [
+        "GoldenrodPokeCenter1FLinkReceptionistPleaseAcceptGSBallText",
+        "GoldenrodPokeCenter1FLinkReceptionistPleaseDoComeAgainText"
+      ],
+      "movement_refs": [
+        "GoldenrodPokeCenter1FLinkReceptionistApproachPlayerAtRightDoorwayTileMovement",
+        "GoldenrodPokeCenter1FLinkReceptionistWalkToStairsFromRightDoorwayTileMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1F_GSBallSceneRight.cancel": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1FGameboyKidScript": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodPokecenter1FGameboyKidText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1FLassScript": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodPokecenter1FLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1FPokefanF": {
+      "label_refs": [
+        "GoldenrodPokecenter1FPokefanF.NoEonMail",
+        "GoldenrodPokecenter1FPokefanF.NoRoom"
+      ],
+      "text_refs": [
+        "GoldenrodPokecenter1FAskGiveAwayAnEonMailText",
+        "GoldenrodPokecenter1FPlayerGaveAwayTheEonMailText",
+        "GoldenrodPokecenter1FPokefanFDaughterWillBeDelightedText",
+        "GoldenrodPokecenter1FPokefanFDoYouHaveEonMailText",
+        "GoldenrodPokecenter1FPokefanFThisIsForYouText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1FPokefanF.NoEonMail": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodPokecenter1FPokefanFTooBadText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1FPokefanF.NoRoom": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodPokecenter1FPokefanFAnotherTimeThenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodPokecenter1F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 1,
+    "callbacks": 0,
+    "warp_events": 4,
+    "coord_events": 2,
+    "bg_events": 0,
+    "object_events": 5
+  }
+}

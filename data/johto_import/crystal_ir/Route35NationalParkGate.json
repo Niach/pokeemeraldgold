@@ -1,0 +1,3015 @@
+{
+  "crystal_map": "Route35NationalParkGate",
+  "map_id": "ROUTE_35_NATIONAL_PARK_GATE",
+  "group": "VIOLET",
+  "group_index": 10,
+  "map_index": 15,
+  "tileset": "TILESET_GATE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_ROUTE_35",
+  "music": "MUSIC_GOLDENROD_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/Route35NationalParkGate.blk",
+  "source_asm": "maps/Route35NationalParkGate.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "Route35NationalParkGateNoop1Scene",
+        "scene_id": "SCENE_ROUTE35NATIONALPARKGATE_NOOP"
+      },
+      {
+        "script": "Route35NationalParkGateNoop2Scene",
+        "scene_id": "SCENE_ROUTE35NATIONALPARKGATE_UNUSED"
+      },
+      {
+        "script": "Route35NationalParkGateLeaveContestEarlyScene",
+        "scene_id": "SCENE_ROUTE35NATIONALPARKGATE_LEAVE_CONTEST_EARLY"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "Route35NationalParkGateCheckIfContestRunningCallback"
+      },
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "Route35NationalParkGateCheckIfContestAvailableCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 0,
+        "dest_map": "NATIONAL_PARK",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 4,
+        "y": 0,
+        "dest_map": "NATIONAL_PARK",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "ROUTE_35",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "dest_map": "ROUTE_35",
+        "dest_warp_id": 3
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 5,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "BugCatchingContestExplanationSign"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 1,
+        "sprite": "SPRITE_OFFICER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route35OfficerScriptContest",
+        "flag": "EVENT_ROUTE_35_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY"
+      },
+      {
+        "x": 6,
+        "y": 5,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route35NationalParkGateYoungsterScript",
+        "flag": "EVENT_ROUTE_35_NATIONAL_PARK_GATE_YOUNGSTER"
+      },
+      {
+        "x": 0,
+        "y": 3,
+        "sprite": "SPRITE_OFFICER",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route35NationalParkGateOfficerScript",
+        "flag": "EVENT_ROUTE_35_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY"
+      }
+    ]
+  },
+  "object_consts": [
+    "ROUTE35NATIONALPARKGATE_OFFICER1",
+    "ROUTE35NATIONALPARKGATE_YOUNGSTER",
+    "ROUTE35NATIONALPARKGATE_OFFICER2"
+  ],
+  "scene_ids": [
+    "SCENE_ROUTE35NATIONALPARKGATE_LEAVE_CONTEST_EARLY",
+    "SCENE_ROUTE35NATIONALPARKGATE_NOOP",
+    "SCENE_ROUTE35NATIONALPARKGATE_UNUSED"
+  ],
+  "scripts": {
+    "Route35NationalParkGate_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script Route35NationalParkGateNoop1Scene,             SCENE_ROUTE35NATIONALPARKGATE_NOOP",
+        "scene_script Route35NationalParkGateNoop2Scene,             SCENE_ROUTE35NATIONALPARKGATE_UNUSED",
+        "scene_script Route35NationalParkGateLeaveContestEarlyScene, SCENE_ROUTE35NATIONALPARKGATE_LEAVE_CONTEST_EARLY",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, Route35NationalParkGateCheckIfContestRunningCallback",
+        "callback MAPCALLBACK_OBJECTS, Route35NationalParkGateCheckIfContestAvailableCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "Route35NationalParkGateNoop1Scene",
+            "SCENE_ROUTE35NATIONALPARKGATE_NOOP"
+          ],
+          "raw": "scene_script Route35NationalParkGateNoop1Scene,             SCENE_ROUTE35NATIONALPARKGATE_NOOP"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "Route35NationalParkGateNoop2Scene",
+            "SCENE_ROUTE35NATIONALPARKGATE_UNUSED"
+          ],
+          "raw": "scene_script Route35NationalParkGateNoop2Scene,             SCENE_ROUTE35NATIONALPARKGATE_UNUSED"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "Route35NationalParkGateLeaveContestEarlyScene",
+            "SCENE_ROUTE35NATIONALPARKGATE_LEAVE_CONTEST_EARLY"
+          ],
+          "raw": "scene_script Route35NationalParkGateLeaveContestEarlyScene, SCENE_ROUTE35NATIONALPARKGATE_LEAVE_CONTEST_EARLY"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "Route35NationalParkGateCheckIfContestRunningCallback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, Route35NationalParkGateCheckIfContestRunningCallback"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "Route35NationalParkGateCheckIfContestAvailableCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, Route35NationalParkGateCheckIfContestAvailableCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "Route35NationalParkGateNoop1Scene",
+      "label_refs": [
+        "Route35NationalParkGateNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGateNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGateNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGateLeaveContestEarlyScene": {
+      "raw_lines": [
+        "sdefer Route35NationalParkGateLeavingContestEarlyScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "sdefer",
+          "args": [
+            "Route35NationalParkGateLeavingContestEarlyScript"
+          ],
+          "raw": "sdefer Route35NationalParkGateLeavingContestEarlyScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "sdefer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGateCheckIfContestRunningCallback": {
+      "raw_lines": [
+        "checkflag ENGINE_BUG_CONTEST_TIMER",
+        "iftrue Route35NationalParkBugContestIsRunningScript",
+        "setscene SCENE_ROUTE35NATIONALPARKGATE_NOOP",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_BUG_CONTEST_TIMER"
+          ],
+          "raw": "checkflag ENGINE_BUG_CONTEST_TIMER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route35NationalParkBugContestIsRunningScript"
+          ],
+          "raw": "iftrue Route35NationalParkBugContestIsRunningScript"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_ROUTE35NATIONALPARKGATE_NOOP"
+          ],
+          "raw": "setscene SCENE_ROUTE35NATIONALPARKGATE_NOOP"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "Route35NationalParkBugContestIsRunningScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_ROUTE35NATIONALPARKGATE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "Route35NationalParkBugContestIsRunningScript": {
+      "raw_lines": [
+        "setscene SCENE_ROUTE35NATIONALPARKGATE_LEAVE_CONTEST_EARLY",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_ROUTE35NATIONALPARKGATE_LEAVE_CONTEST_EARLY"
+          ],
+          "raw": "setscene SCENE_ROUTE35NATIONALPARKGATE_LEAVE_CONTEST_EARLY"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "setscene",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_ROUTE35NATIONALPARKGATE_LEAVE_CONTEST_EARLY"
+      ],
+      "std_calls": []
+    },
+    "Route35NationalParkGateCheckIfContestAvailableCallback": {
+      "raw_lines": [
+        "readvar VAR_WEEKDAY",
+        "ifequal TUESDAY, .SetContestOfficer",
+        "ifequal THURSDAY, .SetContestOfficer",
+        "ifequal SATURDAY, .SetContestOfficer",
+        "checkflag ENGINE_BUG_CONTEST_TIMER",
+        "iftrue Route35NationalParkBugContestIsRunningScript",
+        "disappear ROUTE35NATIONALPARKGATE_OFFICER1",
+        "appear ROUTE35NATIONALPARKGATE_YOUNGSTER",
+        "appear ROUTE35NATIONALPARKGATE_OFFICER2",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "TUESDAY",
+            "Route35NationalParkGateCheckIfContestAvailableCallback.SetContestOfficer"
+          ],
+          "raw": "ifequal TUESDAY, .SetContestOfficer"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "THURSDAY",
+            "Route35NationalParkGateCheckIfContestAvailableCallback.SetContestOfficer"
+          ],
+          "raw": "ifequal THURSDAY, .SetContestOfficer"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SATURDAY",
+            "Route35NationalParkGateCheckIfContestAvailableCallback.SetContestOfficer"
+          ],
+          "raw": "ifequal SATURDAY, .SetContestOfficer"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_BUG_CONTEST_TIMER"
+          ],
+          "raw": "checkflag ENGINE_BUG_CONTEST_TIMER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route35NationalParkBugContestIsRunningScript"
+          ],
+          "raw": "iftrue Route35NationalParkBugContestIsRunningScript"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ROUTE35NATIONALPARKGATE_OFFICER1"
+          ],
+          "raw": "disappear ROUTE35NATIONALPARKGATE_OFFICER1"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE35NATIONALPARKGATE_YOUNGSTER"
+          ],
+          "raw": "appear ROUTE35NATIONALPARKGATE_YOUNGSTER"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE35NATIONALPARKGATE_OFFICER2"
+          ],
+          "raw": "appear ROUTE35NATIONALPARKGATE_OFFICER2"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "readvar",
+      "label_refs": [
+        "Route35NationalParkBugContestIsRunningScript",
+        "Route35NationalParkGateCheckIfContestAvailableCallback.SetContestOfficer"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGateCheckIfContestAvailableCallback.SetContestOfficer": {
+      "raw_lines": [
+        "appear ROUTE35NATIONALPARKGATE_OFFICER1",
+        "disappear ROUTE35NATIONALPARKGATE_YOUNGSTER",
+        "disappear ROUTE35NATIONALPARKGATE_OFFICER2",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE35NATIONALPARKGATE_OFFICER1"
+          ],
+          "raw": "appear ROUTE35NATIONALPARKGATE_OFFICER1"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ROUTE35NATIONALPARKGATE_YOUNGSTER"
+          ],
+          "raw": "disappear ROUTE35NATIONALPARKGATE_YOUNGSTER"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ROUTE35NATIONALPARKGATE_OFFICER2"
+          ],
+          "raw": "disappear ROUTE35NATIONALPARKGATE_OFFICER2"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "appear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGateLeavingContestEarlyScript": {
+      "raw_lines": [
+        "applymovement PLAYER, Route35NationalParkGatePlayerApproachOfficer1Movement",
+        "turnobject ROUTE35NATIONALPARKGATE_OFFICER1, RIGHT",
+        "opentext",
+        "readvar VAR_CONTESTMINUTES",
+        "addval 1",
+        "getnum STRING_BUFFER_3",
+        "writetext Route35NationalParkGateOfficer1WantToFinishText",
+        "yesorno",
+        "iffalse .GoBackToContest",
+        "writetext Route35NationalParkGateOfficer1WaitAtNorthGateText",
+        "waitbutton",
+        "closetext",
+        "jumpstd BugContestResultsWarpScript"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "Route35NationalParkGatePlayerApproachOfficer1Movement"
+          ],
+          "raw": "applymovement PLAYER, Route35NationalParkGatePlayerApproachOfficer1Movement"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "ROUTE35NATIONALPARKGATE_OFFICER1",
+            "RIGHT"
+          ],
+          "raw": "turnobject ROUTE35NATIONALPARKGATE_OFFICER1, RIGHT"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_CONTESTMINUTES"
+          ],
+          "raw": "readvar VAR_CONTESTMINUTES"
+        },
+        {
+          "command": "addval",
+          "args": [
+            "1"
+          ],
+          "raw": "addval 1"
+        },
+        {
+          "command": "getnum",
+          "args": [
+            "STRING_BUFFER_3"
+          ],
+          "raw": "getnum STRING_BUFFER_3"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route35NationalParkGateOfficer1WantToFinishText"
+          ],
+          "raw": "writetext Route35NationalParkGateOfficer1WantToFinishText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Route35NationalParkGateLeavingContestEarlyScript.GoBackToContest"
+          ],
+          "raw": "iffalse .GoBackToContest"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route35NationalParkGateOfficer1WaitAtNorthGateText"
+          ],
+          "raw": "writetext Route35NationalParkGateOfficer1WaitAtNorthGateText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "jumpstd",
+          "args": [
+            "BugContestResultsWarpScript"
+          ],
+          "raw": "jumpstd BugContestResultsWarpScript"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [
+        "Route35NationalParkGateLeavingContestEarlyScript.GoBackToContest"
+      ],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1WaitAtNorthGateText",
+        "Route35NationalParkGateOfficer1WantToFinishText"
+      ],
+      "movement_refs": [
+        "Route35NationalParkGatePlayerApproachOfficer1Movement"
+      ],
+      "scene_refs": [],
+      "std_calls": [
+        "BugContestResultsWarpScript"
+      ]
+    },
+    "Route35NationalParkGateLeavingContestEarlyScript.GoBackToContest": {
+      "raw_lines": [
+        "writetext Route35NationalParkGateOfficer1OkGoFinishText",
+        "waitbutton",
+        "closetext",
+        "scall Route35NationalParkGate_EnterContest",
+        "playsound SFX_ENTER_DOOR",
+        "special FadeOutToWhite",
+        "waitsfx",
+        "warpfacing UP, NATIONAL_PARK_BUG_CONTEST, 10, 47",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route35NationalParkGateOfficer1OkGoFinishText"
+          ],
+          "raw": "writetext Route35NationalParkGateOfficer1OkGoFinishText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "Route35NationalParkGate_EnterContest"
+          ],
+          "raw": "scall Route35NationalParkGate_EnterContest"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutToWhite"
+          ],
+          "raw": "special FadeOutToWhite"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "warpfacing",
+          "args": [
+            "UP",
+            "NATIONAL_PARK_BUG_CONTEST",
+            "10",
+            "47"
+          ],
+          "raw": "warpfacing UP, NATIONAL_PARK_BUG_CONTEST, 10, 47"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "Route35NationalParkGate_EnterContest"
+      ],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1OkGoFinishText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35OfficerScriptContest": {
+      "raw_lines": [
+        "readvar VAR_WEEKDAY",
+        "ifequal SUNDAY, Route35NationalParkGate_NoContestToday",
+        "ifequal MONDAY, Route35NationalParkGate_NoContestToday",
+        "ifequal WEDNESDAY, Route35NationalParkGate_NoContestToday",
+        "ifequal FRIDAY, Route35NationalParkGate_NoContestToday",
+        "faceplayer",
+        "opentext",
+        "checkflag ENGINE_DAILY_BUG_CONTEST",
+        "iftrue Route35NationalParkGate_ContestIsOver",
+        "scall Route35NationalParkGate_GetDayOfWeek",
+        "writetext Route35NationalParkGateOfficer1AskToParticipateText",
+        "yesorno",
+        "iffalse Route35NationalParkGate_DeclinedToParticipate",
+        "readvar VAR_PARTYCOUNT",
+        "ifgreater 1, Route35NationalParkGate_LeaveTheRestBehind",
+        "special ContestDropOffMons",
+        "clearevent EVENT_LEFT_MONS_WITH_CONTEST_OFFICER"
+      ],
+      "commands": [
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SUNDAY",
+            "Route35NationalParkGate_NoContestToday"
+          ],
+          "raw": "ifequal SUNDAY, Route35NationalParkGate_NoContestToday"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "MONDAY",
+            "Route35NationalParkGate_NoContestToday"
+          ],
+          "raw": "ifequal MONDAY, Route35NationalParkGate_NoContestToday"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "WEDNESDAY",
+            "Route35NationalParkGate_NoContestToday"
+          ],
+          "raw": "ifequal WEDNESDAY, Route35NationalParkGate_NoContestToday"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "FRIDAY",
+            "Route35NationalParkGate_NoContestToday"
+          ],
+          "raw": "ifequal FRIDAY, Route35NationalParkGate_NoContestToday"
+        },
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_DAILY_BUG_CONTEST"
+          ],
+          "raw": "checkflag ENGINE_DAILY_BUG_CONTEST"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route35NationalParkGate_ContestIsOver"
+          ],
+          "raw": "iftrue Route35NationalParkGate_ContestIsOver"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "Route35NationalParkGate_GetDayOfWeek"
+          ],
+          "raw": "scall Route35NationalParkGate_GetDayOfWeek"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route35NationalParkGateOfficer1AskToParticipateText"
+          ],
+          "raw": "writetext Route35NationalParkGateOfficer1AskToParticipateText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Route35NationalParkGate_DeclinedToParticipate"
+          ],
+          "raw": "iffalse Route35NationalParkGate_DeclinedToParticipate"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_PARTYCOUNT"
+          ],
+          "raw": "readvar VAR_PARTYCOUNT"
+        },
+        {
+          "command": "ifgreater",
+          "args": [
+            "1",
+            "Route35NationalParkGate_LeaveTheRestBehind"
+          ],
+          "raw": "ifgreater 1, Route35NationalParkGate_LeaveTheRestBehind"
+        },
+        {
+          "command": "special",
+          "args": [
+            "ContestDropOffMons"
+          ],
+          "raw": "special ContestDropOffMons"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_LEFT_MONS_WITH_CONTEST_OFFICER"
+          ],
+          "raw": "clearevent EVENT_LEFT_MONS_WITH_CONTEST_OFFICER"
+        }
+      ],
+      "first_command": "readvar",
+      "fallthrough_label": "Route35NationalParkGate_OkayToProceed",
+      "label_refs": [
+        "Route35NationalParkGate_ContestIsOver",
+        "Route35NationalParkGate_DeclinedToParticipate",
+        "Route35NationalParkGate_GetDayOfWeek",
+        "Route35NationalParkGate_LeaveTheRestBehind",
+        "Route35NationalParkGate_NoContestToday",
+        "Route35NationalParkGate_OkayToProceed"
+      ],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1AskToParticipateText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_OkayToProceed": {
+      "raw_lines": [
+        "setflag ENGINE_BUG_CONTEST_TIMER",
+        "special PlayMapMusic",
+        "writetext Route35NationalParkGateOfficer1GiveParkBallsText",
+        "promptbutton",
+        "writetext Route35NationalParkGatePlayerReceivedParkBallsText",
+        "playsound SFX_ITEM",
+        "waitsfx",
+        "writetext Route35NationalParkGateOfficer1ExplainsRulesText",
+        "waitbutton",
+        "closetext",
+        "special GiveParkBalls",
+        "scall Route35NationalParkGate_EnterContest",
+        "playsound SFX_ENTER_DOOR",
+        "special FadeOutToWhite",
+        "waitsfx",
+        "special SelectRandomBugContestContestants",
+        "warpfacing UP, NATIONAL_PARK_BUG_CONTEST, 10, 47",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_BUG_CONTEST_TIMER"
+          ],
+          "raw": "setflag ENGINE_BUG_CONTEST_TIMER"
+        },
+        {
+          "command": "special",
+          "args": [
+            "PlayMapMusic"
+          ],
+          "raw": "special PlayMapMusic"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route35NationalParkGateOfficer1GiveParkBallsText"
+          ],
+          "raw": "writetext Route35NationalParkGateOfficer1GiveParkBallsText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route35NationalParkGatePlayerReceivedParkBallsText"
+          ],
+          "raw": "writetext Route35NationalParkGatePlayerReceivedParkBallsText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ITEM"
+          ],
+          "raw": "playsound SFX_ITEM"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route35NationalParkGateOfficer1ExplainsRulesText"
+          ],
+          "raw": "writetext Route35NationalParkGateOfficer1ExplainsRulesText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "special",
+          "args": [
+            "GiveParkBalls"
+          ],
+          "raw": "special GiveParkBalls"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "Route35NationalParkGate_EnterContest"
+          ],
+          "raw": "scall Route35NationalParkGate_EnterContest"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutToWhite"
+          ],
+          "raw": "special FadeOutToWhite"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "special",
+          "args": [
+            "SelectRandomBugContestContestants"
+          ],
+          "raw": "special SelectRandomBugContestContestants"
+        },
+        {
+          "command": "warpfacing",
+          "args": [
+            "UP",
+            "NATIONAL_PARK_BUG_CONTEST",
+            "10",
+            "47"
+          ],
+          "raw": "warpfacing UP, NATIONAL_PARK_BUG_CONTEST, 10, 47"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "setflag",
+      "label_refs": [
+        "Route35NationalParkGate_EnterContest"
+      ],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1ExplainsRulesText",
+        "Route35NationalParkGateOfficer1GiveParkBallsText",
+        "Route35NationalParkGatePlayerReceivedParkBallsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_EnterContest": {
+      "raw_lines": [
+        "readvar VAR_FACING",
+        "ifequal LEFT, Route35NationalParkGate_FacingLeft",
+        "applymovement PLAYER, Route35NationalParkGatePlayerGoAroundOfficerAndEnterParkMovement",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_FACING"
+          ],
+          "raw": "readvar VAR_FACING"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "LEFT",
+            "Route35NationalParkGate_FacingLeft"
+          ],
+          "raw": "ifequal LEFT, Route35NationalParkGate_FacingLeft"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "Route35NationalParkGatePlayerGoAroundOfficerAndEnterParkMovement"
+          ],
+          "raw": "applymovement PLAYER, Route35NationalParkGatePlayerGoAroundOfficerAndEnterParkMovement"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "readvar",
+      "label_refs": [
+        "Route35NationalParkGate_FacingLeft"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "Route35NationalParkGatePlayerGoAroundOfficerAndEnterParkMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_FacingLeft": {
+      "raw_lines": [
+        "applymovement PLAYER, Route35NationalParkGatePlayerEnterParkMovement",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "Route35NationalParkGatePlayerEnterParkMovement"
+          ],
+          "raw": "applymovement PLAYER, Route35NationalParkGatePlayerEnterParkMovement"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "Route35NationalParkGatePlayerEnterParkMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_LeaveTheRestBehind": {
+      "raw_lines": [
+        "readvar VAR_PARTYCOUNT",
+        "ifless PARTY_LENGTH, Route35NationalParkGate_LessThanFullParty",
+        "readvar VAR_BOXSPACE",
+        "ifequal 0, Route35NationalParkGate_NoRoomInBox"
+      ],
+      "commands": [
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_PARTYCOUNT"
+          ],
+          "raw": "readvar VAR_PARTYCOUNT"
+        },
+        {
+          "command": "ifless",
+          "args": [
+            "PARTY_LENGTH",
+            "Route35NationalParkGate_LessThanFullParty"
+          ],
+          "raw": "ifless PARTY_LENGTH, Route35NationalParkGate_LessThanFullParty"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_BOXSPACE"
+          ],
+          "raw": "readvar VAR_BOXSPACE"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "0",
+            "Route35NationalParkGate_NoRoomInBox"
+          ],
+          "raw": "ifequal 0, Route35NationalParkGate_NoRoomInBox"
+        }
+      ],
+      "first_command": "readvar",
+      "fallthrough_label": "Route35NationalParkGate_LessThanFullParty",
+      "label_refs": [
+        "Route35NationalParkGate_LessThanFullParty",
+        "Route35NationalParkGate_NoRoomInBox"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_LessThanFullParty": {
+      "raw_lines": [
+        "special CheckFirstMonIsEgg",
+        "ifequal TRUE, Route35NationalParkGate_FirstMonIsEgg",
+        "writetext Route35NationalParkGateOfficer1AskToUseFirstMonText",
+        "yesorno",
+        "iffalse Route35NationalParkGate_DeclinedToLeaveMonsBehind",
+        "special ContestDropOffMons",
+        "iftrue Route35NationalParkGate_FirstMonIsFainted",
+        "setevent EVENT_LEFT_MONS_WITH_CONTEST_OFFICER",
+        "writetext Route35NationalParkGateOfficer1WellHoldYourMonText",
+        "promptbutton",
+        "writetext Route35NationalParkGatePlayersMonLeftWithHelperText",
+        "playsound SFX_GOT_SAFARI_BALLS",
+        "waitsfx",
+        "promptbutton",
+        "sjump Route35NationalParkGate_OkayToProceed"
+      ],
+      "commands": [
+        {
+          "command": "special",
+          "args": [
+            "CheckFirstMonIsEgg"
+          ],
+          "raw": "special CheckFirstMonIsEgg"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "TRUE",
+            "Route35NationalParkGate_FirstMonIsEgg"
+          ],
+          "raw": "ifequal TRUE, Route35NationalParkGate_FirstMonIsEgg"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route35NationalParkGateOfficer1AskToUseFirstMonText"
+          ],
+          "raw": "writetext Route35NationalParkGateOfficer1AskToUseFirstMonText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Route35NationalParkGate_DeclinedToLeaveMonsBehind"
+          ],
+          "raw": "iffalse Route35NationalParkGate_DeclinedToLeaveMonsBehind"
+        },
+        {
+          "command": "special",
+          "args": [
+            "ContestDropOffMons"
+          ],
+          "raw": "special ContestDropOffMons"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route35NationalParkGate_FirstMonIsFainted"
+          ],
+          "raw": "iftrue Route35NationalParkGate_FirstMonIsFainted"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_LEFT_MONS_WITH_CONTEST_OFFICER"
+          ],
+          "raw": "setevent EVENT_LEFT_MONS_WITH_CONTEST_OFFICER"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route35NationalParkGateOfficer1WellHoldYourMonText"
+          ],
+          "raw": "writetext Route35NationalParkGateOfficer1WellHoldYourMonText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route35NationalParkGatePlayersMonLeftWithHelperText"
+          ],
+          "raw": "writetext Route35NationalParkGatePlayersMonLeftWithHelperText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_GOT_SAFARI_BALLS"
+          ],
+          "raw": "playsound SFX_GOT_SAFARI_BALLS"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Route35NationalParkGate_OkayToProceed"
+          ],
+          "raw": "sjump Route35NationalParkGate_OkayToProceed"
+        }
+      ],
+      "first_command": "special",
+      "label_refs": [
+        "Route35NationalParkGate_DeclinedToLeaveMonsBehind",
+        "Route35NationalParkGate_FirstMonIsEgg",
+        "Route35NationalParkGate_FirstMonIsFainted",
+        "Route35NationalParkGate_OkayToProceed"
+      ],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1AskToUseFirstMonText",
+        "Route35NationalParkGateOfficer1WellHoldYourMonText",
+        "Route35NationalParkGatePlayersMonLeftWithHelperText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_DeclinedToParticipate": {
+      "raw_lines": [
+        "writetext Route35NationalParkGateOfficer1TakePartInFutureText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route35NationalParkGateOfficer1TakePartInFutureText"
+          ],
+          "raw": "writetext Route35NationalParkGateOfficer1TakePartInFutureText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1TakePartInFutureText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_DeclinedToLeaveMonsBehind": {
+      "raw_lines": [
+        "writetext Route35NationalParkGateOfficer1ChooseMonAndComeBackText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route35NationalParkGateOfficer1ChooseMonAndComeBackText"
+          ],
+          "raw": "writetext Route35NationalParkGateOfficer1ChooseMonAndComeBackText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1ChooseMonAndComeBackText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_FirstMonIsFainted": {
+      "raw_lines": [
+        "writetext Route35NationalParkGateOfficer1FirstMonCantBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route35NationalParkGateOfficer1FirstMonCantBattleText"
+          ],
+          "raw": "writetext Route35NationalParkGateOfficer1FirstMonCantBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1FirstMonCantBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_NoRoomInBox": {
+      "raw_lines": [
+        "writetext Route35NationalParkGateOfficer1MakeRoomText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route35NationalParkGateOfficer1MakeRoomText"
+          ],
+          "raw": "writetext Route35NationalParkGateOfficer1MakeRoomText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1MakeRoomText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_FirstMonIsEgg": {
+      "raw_lines": [
+        "writetext Route35NationalParkGateOfficer1EggAsFirstMonText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route35NationalParkGateOfficer1EggAsFirstMonText"
+          ],
+          "raw": "writetext Route35NationalParkGateOfficer1EggAsFirstMonText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1EggAsFirstMonText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_ContestIsOver": {
+      "raw_lines": [
+        "writetext Route35NationalParkGateOfficer1ContestIsOverText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route35NationalParkGateOfficer1ContestIsOverText"
+          ],
+          "raw": "writetext Route35NationalParkGateOfficer1ContestIsOverText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1ContestIsOverText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_NoContestToday": {
+      "raw_lines": [
+        "jumptextfaceplayer Route35NationalParkGateOfficer1WeHoldContestsText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Route35NationalParkGateOfficer1WeHoldContestsText"
+          ],
+          "raw": "jumptextfaceplayer Route35NationalParkGateOfficer1WeHoldContestsText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1WeHoldContestsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGateOfficerScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkflag ENGINE_DAILY_BUG_CONTEST",
+        "iftrue Route35NationalParkGate_ContestIsOver",
+        "writetext Route35NationalParkGateOfficer1WeHoldContestsText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_DAILY_BUG_CONTEST"
+          ],
+          "raw": "checkflag ENGINE_DAILY_BUG_CONTEST"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route35NationalParkGate_ContestIsOver"
+          ],
+          "raw": "iftrue Route35NationalParkGate_ContestIsOver"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route35NationalParkGateOfficer1WeHoldContestsText"
+          ],
+          "raw": "writetext Route35NationalParkGateOfficer1WeHoldContestsText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "Route35NationalParkGate_ContestIsOver"
+      ],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1WeHoldContestsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGateYoungsterScript": {
+      "raw_lines": [
+        "jumptextfaceplayer Route35NationalParkGateYoungsterText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Route35NationalParkGateYoungsterText"
+          ],
+          "raw": "jumptextfaceplayer Route35NationalParkGateYoungsterText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Route35NationalParkGateYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestExplanationSign": {
+      "raw_lines": [
+        "jumptext BugCatchingContestExplanationText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "BugCatchingContestExplanationText"
+          ],
+          "raw": "jumptext BugCatchingContestExplanationText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestExplanationText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_GetDayOfWeek": {
+      "raw_lines": [
+        "jumpstd DayToTextScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "DayToTextScript"
+          ],
+          "raw": "jumpstd DayToTextScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "DayToTextScript"
+      ]
+    },
+    "Route35NationalParkGate_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  0, NATIONAL_PARK, 3",
+        "warp_event  4,  0, NATIONAL_PARK, 4",
+        "warp_event  3,  7, ROUTE_35, 3",
+        "warp_event  4,  7, ROUTE_35, 3",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  5,  0, BGEVENT_READ, BugCatchingContestExplanationSign",
+        "def_object_events",
+        "object_event  2,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route35OfficerScriptContest, EVENT_ROUTE_35_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY",
+        "object_event  6,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route35NationalParkGateYoungsterScript, EVENT_ROUTE_35_NATIONAL_PARK_GATE_YOUNGSTER",
+        "object_event  0,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route35NationalParkGateOfficerScript, EVENT_ROUTE_35_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "0",
+            "NATIONAL_PARK",
+            "3"
+          ],
+          "raw": "warp_event  3,  0, NATIONAL_PARK, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "0",
+            "NATIONAL_PARK",
+            "4"
+          ],
+          "raw": "warp_event  4,  0, NATIONAL_PARK, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "ROUTE_35",
+            "3"
+          ],
+          "raw": "warp_event  3,  7, ROUTE_35, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "ROUTE_35",
+            "3"
+          ],
+          "raw": "warp_event  4,  7, ROUTE_35, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "5",
+            "0",
+            "BGEVENT_READ",
+            "BugCatchingContestExplanationSign"
+          ],
+          "raw": "bg_event  5,  0, BGEVENT_READ, BugCatchingContestExplanationSign"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "1",
+            "SPRITE_OFFICER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route35OfficerScriptContest",
+            "EVENT_ROUTE_35_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY"
+          ],
+          "raw": "object_event  2,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route35OfficerScriptContest, EVENT_ROUTE_35_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "5",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route35NationalParkGateYoungsterScript",
+            "EVENT_ROUTE_35_NATIONAL_PARK_GATE_YOUNGSTER"
+          ],
+          "raw": "object_event  6,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route35NationalParkGateYoungsterScript, EVENT_ROUTE_35_NATIONAL_PARK_GATE_YOUNGSTER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "0",
+            "3",
+            "SPRITE_OFFICER",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route35NationalParkGateOfficerScript",
+            "EVENT_ROUTE_35_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY"
+          ],
+          "raw": "object_event  0,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route35NationalParkGateOfficerScript, EVENT_ROUTE_35_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "Route35NationalParkGateOfficer1AskToParticipateText": {
+      "raw_lines": [
+        "text \"Today's @\"",
+        "text_ram wStringBuffer3",
+        "text \".\"",
+        "line \"That means the\"",
+        "para \"Bug-Catching Con-\"",
+        "line \"test is on today.\"",
+        "para \"The rules are sim-\"",
+        "line \"ple.\"",
+        "para \"Using one of your\"",
+        "line \"#MON, catch a\"",
+        "para \"bug #MON to be\"",
+        "line \"judged.\"",
+        "para \"Would you like to\"",
+        "line \"give it a try?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Today's @"
+        },
+        {
+          "command": "text_ram",
+          "value": "wStringBuffer3"
+        },
+        {
+          "command": "text",
+          "value": "."
+        },
+        {
+          "command": "line",
+          "value": "That means the"
+        },
+        {
+          "command": "para",
+          "value": "Bug-Catching Con-"
+        },
+        {
+          "command": "line",
+          "value": "test is on today."
+        },
+        {
+          "command": "para",
+          "value": "The rules are sim-"
+        },
+        {
+          "command": "line",
+          "value": "ple."
+        },
+        {
+          "command": "para",
+          "value": "Using one of your"
+        },
+        {
+          "command": "line",
+          "value": "#MON, catch a"
+        },
+        {
+          "command": "para",
+          "value": "bug #MON to be"
+        },
+        {
+          "command": "line",
+          "value": "judged."
+        },
+        {
+          "command": "para",
+          "value": "Would you like to"
+        },
+        {
+          "command": "line",
+          "value": "give it a try?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35NationalParkGateOfficer1GiveParkBallsText": {
+      "raw_lines": [
+        "text \"Here are the PARK\"",
+        "line \"BALLS for the\"",
+        "cont \"Contest.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Here are the PARK"
+        },
+        {
+          "command": "line",
+          "value": "BALLS for the"
+        },
+        {
+          "command": "cont",
+          "value": "Contest."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35NationalParkGatePlayerReceivedParkBallsText": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"{d:BUG_CONTEST_BALLS} PARK BALLS.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "{d:BUG_CONTEST_BALLS} PARK BALLS."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35NationalParkGateOfficer1ExplainsRulesText": {
+      "raw_lines": [
+        "text \"The person who\"",
+        "line \"gets the strong-\"",
+        "cont \"est bug #MON\"",
+        "cont \"is the winner.\"",
+        "para \"You have {d:BUG_CONTEST_MINUTES}\"",
+        "line \"minutes.\"",
+        "para \"If you run out of\"",
+        "line \"PARK BALLS, you're\"",
+        "cont \"done.\"",
+        "para \"You can keep the\"",
+        "line \"last #MON you\"",
+        "cont \"catch as your own.\"",
+        "para \"Go out and catch\"",
+        "line \"the strongest bug\"",
+        "para \"#MON you can\"",
+        "line \"find!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The person who"
+        },
+        {
+          "command": "line",
+          "value": "gets the strong-"
+        },
+        {
+          "command": "cont",
+          "value": "est bug #MON"
+        },
+        {
+          "command": "cont",
+          "value": "is the winner."
+        },
+        {
+          "command": "para",
+          "value": "You have {d:BUG_CONTEST_MINUTES}"
+        },
+        {
+          "command": "line",
+          "value": "minutes."
+        },
+        {
+          "command": "para",
+          "value": "If you run out of"
+        },
+        {
+          "command": "line",
+          "value": "PARK BALLS, you're"
+        },
+        {
+          "command": "cont",
+          "value": "done."
+        },
+        {
+          "command": "para",
+          "value": "You can keep the"
+        },
+        {
+          "command": "line",
+          "value": "last #MON you"
+        },
+        {
+          "command": "cont",
+          "value": "catch as your own."
+        },
+        {
+          "command": "para",
+          "value": "Go out and catch"
+        },
+        {
+          "command": "line",
+          "value": "the strongest bug"
+        },
+        {
+          "command": "para",
+          "value": "#MON you can"
+        },
+        {
+          "command": "line",
+          "value": "find!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35NationalParkGateOfficer1AskToUseFirstMonText": {
+      "raw_lines": [
+        "text \"Uh-oh\u2026\"",
+        "para \"You have more than\"",
+        "line \"one #MON.\"",
+        "para \"You'll have to use\"",
+        "line \"@\"",
+        "text_ram wStringBuffer3",
+        "text \", the\"",
+        "para \"first #MON in\"",
+        "line \"your party.\"",
+        "para \"Is that OK with\"",
+        "line \"you?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Uh-oh\u2026"
+        },
+        {
+          "command": "para",
+          "value": "You have more than"
+        },
+        {
+          "command": "line",
+          "value": "one #MON."
+        },
+        {
+          "command": "para",
+          "value": "You'll have to use"
+        },
+        {
+          "command": "line",
+          "value": "@"
+        },
+        {
+          "command": "text_ram",
+          "value": "wStringBuffer3"
+        },
+        {
+          "command": "text",
+          "value": ", the"
+        },
+        {
+          "command": "para",
+          "value": "first #MON in"
+        },
+        {
+          "command": "line",
+          "value": "your party."
+        },
+        {
+          "command": "para",
+          "value": "Is that OK with"
+        },
+        {
+          "command": "line",
+          "value": "you?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35NationalParkGateOfficer1WellHoldYourMonText": {
+      "raw_lines": [
+        "text \"Fine, we'll hold\"",
+        "line \"your other #MON\"",
+        "cont \"while you compete.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Fine, we'll hold"
+        },
+        {
+          "command": "line",
+          "value": "your other #MON"
+        },
+        {
+          "command": "cont",
+          "value": "while you compete."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35NationalParkGatePlayersMonLeftWithHelperText": {
+      "raw_lines": [
+        "text \"<PLAYER>'s #MON\"",
+        "line \"were left with the\"",
+        "cont \"CONTEST HELPER.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER>'s #MON"
+        },
+        {
+          "command": "line",
+          "value": "were left with the"
+        },
+        {
+          "command": "cont",
+          "value": "CONTEST HELPER."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35NationalParkGateOfficer1ChooseMonAndComeBackText": {
+      "raw_lines": [
+        "text \"Please choose the\"",
+        "line \"#MON to be used\"",
+        "para \"in the Contest,\"",
+        "line \"then come see me.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Please choose the"
+        },
+        {
+          "command": "line",
+          "value": "#MON to be used"
+        },
+        {
+          "command": "para",
+          "value": "in the Contest,"
+        },
+        {
+          "command": "line",
+          "value": "then come see me."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35NationalParkGateOfficer1TakePartInFutureText": {
+      "raw_lines": [
+        "text \"OK. We hope you'll\"",
+        "line \"take part in the\"",
+        "cont \"future.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OK. We hope you'll"
+        },
+        {
+          "command": "line",
+          "value": "take part in the"
+        },
+        {
+          "command": "cont",
+          "value": "future."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35NationalParkGateOfficer1FirstMonCantBattleText": {
+      "raw_lines": [
+        "text \"Uh-oh\u2026\"",
+        "line \"The first #MON\"",
+        "para \"in your party\"",
+        "line \"can't battle.\"",
+        "para \"Please switch it\"",
+        "line \"with the #MON\"",
+        "para \"you want to use,\"",
+        "line \"then come see me.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Uh-oh\u2026"
+        },
+        {
+          "command": "line",
+          "value": "The first #MON"
+        },
+        {
+          "command": "para",
+          "value": "in your party"
+        },
+        {
+          "command": "line",
+          "value": "can't battle."
+        },
+        {
+          "command": "para",
+          "value": "Please switch it"
+        },
+        {
+          "command": "line",
+          "value": "with the #MON"
+        },
+        {
+          "command": "para",
+          "value": "you want to use,"
+        },
+        {
+          "command": "line",
+          "value": "then come see me."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35NationalParkGateOfficer1MakeRoomText": {
+      "raw_lines": [
+        "text \"Uh-oh\u2026\"",
+        "line \"Both your party\"",
+        "para \"and your PC BOX\"",
+        "line \"are full.\"",
+        "para \"You have no room\"",
+        "line \"to put the bug\"",
+        "cont \"#MON you catch.\"",
+        "para \"Please make room\"",
+        "line \"in your party or\"",
+        "para \"your PC BOX, then\"",
+        "line \"come see me.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Uh-oh\u2026"
+        },
+        {
+          "command": "line",
+          "value": "Both your party"
+        },
+        {
+          "command": "para",
+          "value": "and your PC BOX"
+        },
+        {
+          "command": "line",
+          "value": "are full."
+        },
+        {
+          "command": "para",
+          "value": "You have no room"
+        },
+        {
+          "command": "line",
+          "value": "to put the bug"
+        },
+        {
+          "command": "cont",
+          "value": "#MON you catch."
+        },
+        {
+          "command": "para",
+          "value": "Please make room"
+        },
+        {
+          "command": "line",
+          "value": "in your party or"
+        },
+        {
+          "command": "para",
+          "value": "your PC BOX, then"
+        },
+        {
+          "command": "line",
+          "value": "come see me."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35NationalParkGateOfficer1EggAsFirstMonText": {
+      "raw_lines": [
+        "text \"Uh-oh\u2026\"",
+        "line \"You have an EGG as\"",
+        "para \"the first #MON\"",
+        "line \"in your party.\"",
+        "para \"Please switch it\"",
+        "line \"with the #MON\"",
+        "para \"you want to use,\"",
+        "line \"then come see me.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Uh-oh\u2026"
+        },
+        {
+          "command": "line",
+          "value": "You have an EGG as"
+        },
+        {
+          "command": "para",
+          "value": "the first #MON"
+        },
+        {
+          "command": "line",
+          "value": "in your party."
+        },
+        {
+          "command": "para",
+          "value": "Please switch it"
+        },
+        {
+          "command": "line",
+          "value": "with the #MON"
+        },
+        {
+          "command": "para",
+          "value": "you want to use,"
+        },
+        {
+          "command": "line",
+          "value": "then come see me."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35NationalParkGateOfficer1WantToFinishText": {
+      "raw_lines": [
+        "text \"You still have @\"",
+        "text_ram wStringBuffer3",
+        "text_start",
+        "line \"minute(s) left.\"",
+        "para \"Do you want to\"",
+        "line \"finish now?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You still have @"
+        },
+        {
+          "command": "text_ram",
+          "value": "wStringBuffer3"
+        },
+        {
+          "command": "text_start",
+          "value": ""
+        },
+        {
+          "command": "line",
+          "value": "minute(s) left."
+        },
+        {
+          "command": "para",
+          "value": "Do you want to"
+        },
+        {
+          "command": "line",
+          "value": "finish now?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35NationalParkGateOfficer1WaitAtNorthGateText": {
+      "raw_lines": [
+        "text \"OK. Please wait at\"",
+        "line \"the North Gate for\"",
+        "para \"the announcement\"",
+        "line \"of the winners.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OK. Please wait at"
+        },
+        {
+          "command": "line",
+          "value": "the North Gate for"
+        },
+        {
+          "command": "para",
+          "value": "the announcement"
+        },
+        {
+          "command": "line",
+          "value": "of the winners."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35NationalParkGateOfficer1OkGoFinishText": {
+      "raw_lines": [
+        "text \"OK. Please get\"",
+        "line \"back outside and\"",
+        "cont \"finish up.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OK. Please get"
+        },
+        {
+          "command": "line",
+          "value": "back outside and"
+        },
+        {
+          "command": "cont",
+          "value": "finish up."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35NationalParkGateOfficer1ContestIsOverText": {
+      "raw_lines": [
+        "text \"Today's Contest is\"",
+        "line \"over. We hope you\"",
+        "para \"will participate\"",
+        "line \"in the future.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Today's Contest is"
+        },
+        {
+          "command": "line",
+          "value": "over. We hope you"
+        },
+        {
+          "command": "para",
+          "value": "will participate"
+        },
+        {
+          "command": "line",
+          "value": "in the future."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35NationalParkGateOfficer1WeHoldContestsText": {
+      "raw_lines": [
+        "text \"We hold Contests\"",
+        "line \"regularly in the\"",
+        "para \"PARK. You should\"",
+        "line \"give it a shot.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We hold Contests"
+        },
+        {
+          "command": "line",
+          "value": "regularly in the"
+        },
+        {
+          "command": "para",
+          "value": "PARK. You should"
+        },
+        {
+          "command": "line",
+          "value": "give it a shot."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35NationalParkGateYoungsterText": {
+      "raw_lines": [
+        "text \"When is the next\"",
+        "line \"Bug-Catching Con-\"",
+        "cont \"test going to be?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "When is the next"
+        },
+        {
+          "command": "line",
+          "value": "Bug-Catching Con-"
+        },
+        {
+          "command": "cont",
+          "value": "test going to be?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestExplanationText": {
+      "raw_lines": [
+        "text \"The Bug-Catching\"",
+        "line \"Contest is held on\"",
+        "para \"Tuesday, Thursday\"",
+        "line \"and Saturday.\"",
+        "para \"Not only do you\"",
+        "line \"earn a prize just\"",
+        "para \"for participating,\"",
+        "line \"you also get to\"",
+        "para \"keep the bug\"",
+        "line \"#MON you may\"",
+        "para \"have at the end of\"",
+        "line \"the contest.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The Bug-Catching"
+        },
+        {
+          "command": "line",
+          "value": "Contest is held on"
+        },
+        {
+          "command": "para",
+          "value": "Tuesday, Thursday"
+        },
+        {
+          "command": "line",
+          "value": "and Saturday."
+        },
+        {
+          "command": "para",
+          "value": "Not only do you"
+        },
+        {
+          "command": "line",
+          "value": "earn a prize just"
+        },
+        {
+          "command": "para",
+          "value": "for participating,"
+        },
+        {
+          "command": "line",
+          "value": "you also get to"
+        },
+        {
+          "command": "para",
+          "value": "keep the bug"
+        },
+        {
+          "command": "line",
+          "value": "#MON you may"
+        },
+        {
+          "command": "para",
+          "value": "have at the end of"
+        },
+        {
+          "command": "line",
+          "value": "the contest."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "Route35NationalParkGatePlayerApproachOfficer1Movement": {
+      "raw_lines": [
+        "step DOWN",
+        "turn_head LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "Route35NationalParkGatePlayerGoAroundOfficerAndEnterParkMovement": {
+      "raw_lines": [
+        "step RIGHT",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "Route35NationalParkGatePlayerEnterParkMovement": {
+      "raw_lines": [
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "BugContestResultsWarpScript",
+    "DayToTextScript"
+  ],
+  "dependencies": {
+    "Route35NationalParkGate_MapScripts": {
+      "label_refs": [
+        "Route35NationalParkGateNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGateNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGateNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGateLeaveContestEarlyScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGateCheckIfContestRunningCallback": {
+      "label_refs": [
+        "Route35NationalParkBugContestIsRunningScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_ROUTE35NATIONALPARKGATE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "Route35NationalParkBugContestIsRunningScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_ROUTE35NATIONALPARKGATE_LEAVE_CONTEST_EARLY"
+      ],
+      "std_calls": []
+    },
+    "Route35NationalParkGateCheckIfContestAvailableCallback": {
+      "label_refs": [
+        "Route35NationalParkBugContestIsRunningScript",
+        "Route35NationalParkGateCheckIfContestAvailableCallback.SetContestOfficer"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGateCheckIfContestAvailableCallback.SetContestOfficer": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGateLeavingContestEarlyScript": {
+      "label_refs": [
+        "Route35NationalParkGateLeavingContestEarlyScript.GoBackToContest"
+      ],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1WaitAtNorthGateText",
+        "Route35NationalParkGateOfficer1WantToFinishText"
+      ],
+      "movement_refs": [
+        "Route35NationalParkGatePlayerApproachOfficer1Movement"
+      ],
+      "scene_refs": [],
+      "std_calls": [
+        "BugContestResultsWarpScript"
+      ]
+    },
+    "Route35NationalParkGateLeavingContestEarlyScript.GoBackToContest": {
+      "label_refs": [
+        "Route35NationalParkGate_EnterContest"
+      ],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1OkGoFinishText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35OfficerScriptContest": {
+      "label_refs": [
+        "Route35NationalParkGate_ContestIsOver",
+        "Route35NationalParkGate_DeclinedToParticipate",
+        "Route35NationalParkGate_GetDayOfWeek",
+        "Route35NationalParkGate_LeaveTheRestBehind",
+        "Route35NationalParkGate_NoContestToday",
+        "Route35NationalParkGate_OkayToProceed"
+      ],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1AskToParticipateText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_OkayToProceed": {
+      "label_refs": [
+        "Route35NationalParkGate_EnterContest"
+      ],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1ExplainsRulesText",
+        "Route35NationalParkGateOfficer1GiveParkBallsText",
+        "Route35NationalParkGatePlayerReceivedParkBallsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_EnterContest": {
+      "label_refs": [
+        "Route35NationalParkGate_FacingLeft"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "Route35NationalParkGatePlayerGoAroundOfficerAndEnterParkMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_FacingLeft": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "Route35NationalParkGatePlayerEnterParkMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_LeaveTheRestBehind": {
+      "label_refs": [
+        "Route35NationalParkGate_LessThanFullParty",
+        "Route35NationalParkGate_NoRoomInBox"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_LessThanFullParty": {
+      "label_refs": [
+        "Route35NationalParkGate_DeclinedToLeaveMonsBehind",
+        "Route35NationalParkGate_FirstMonIsEgg",
+        "Route35NationalParkGate_FirstMonIsFainted",
+        "Route35NationalParkGate_OkayToProceed"
+      ],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1AskToUseFirstMonText",
+        "Route35NationalParkGateOfficer1WellHoldYourMonText",
+        "Route35NationalParkGatePlayersMonLeftWithHelperText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_DeclinedToParticipate": {
+      "label_refs": [],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1TakePartInFutureText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_DeclinedToLeaveMonsBehind": {
+      "label_refs": [],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1ChooseMonAndComeBackText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_FirstMonIsFainted": {
+      "label_refs": [],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1FirstMonCantBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_NoRoomInBox": {
+      "label_refs": [],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1MakeRoomText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_FirstMonIsEgg": {
+      "label_refs": [],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1EggAsFirstMonText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_ContestIsOver": {
+      "label_refs": [],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1ContestIsOverText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_NoContestToday": {
+      "label_refs": [],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1WeHoldContestsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGateOfficerScript": {
+      "label_refs": [
+        "Route35NationalParkGate_ContestIsOver"
+      ],
+      "text_refs": [
+        "Route35NationalParkGateOfficer1WeHoldContestsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGateYoungsterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "Route35NationalParkGateYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestExplanationSign": {
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestExplanationText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35NationalParkGate_GetDayOfWeek": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "DayToTextScript"
+      ]
+    },
+    "Route35NationalParkGate_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "day_time"
+  ],
+  "event_counts": {
+    "scene_scripts": 3,
+    "callbacks": 2,
+    "warp_events": 4,
+    "coord_events": 0,
+    "bg_events": 1,
+    "object_events": 3
+  }
+}

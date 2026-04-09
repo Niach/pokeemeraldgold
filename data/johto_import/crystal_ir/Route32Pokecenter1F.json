@@ -1,0 +1,789 @@
+{
+  "crystal_map": "Route32Pokecenter1F",
+  "map_id": "ROUTE_32_POKECENTER_1F",
+  "group": "VIOLET",
+  "group_index": 10,
+  "map_index": 13,
+  "tileset": "TILESET_POKECENTER",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_ROUTE_32",
+  "music": "MUSIC_POKEMON_CENTER",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/Pokecenter1F.blk",
+  "source_asm": "maps/Route32Pokecenter1F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "ROUTE_32",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "dest_map": "ROUTE_32",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 0,
+        "y": 7,
+        "dest_map": "POKECENTER_2F",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 3,
+        "y": 1,
+        "sprite": "SPRITE_NURSE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route32Pokecenter1FNurseScript",
+        "flag": -1
+      },
+      {
+        "x": 1,
+        "y": 4,
+        "sprite": "SPRITE_FISHING_GURU",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route32Pokecenter1FFishingGuruScript",
+        "flag": -1
+      },
+      {
+        "x": 6,
+        "y": 2,
+        "sprite": "SPRITE_COOLTRAINER_F",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route32Pokecenter1FCooltrainerFScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "ROUTE32POKECENTER1F_NURSE",
+    "ROUTE32POKECENTER1F_FISHING_GURU",
+    "ROUTE32POKECENTER1F_COOLTRAINER_F"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "Route32Pokecenter1F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "Route32Pokecenter1FNurseScript",
+      "label_refs": [
+        "Route32Pokecenter1FNurseScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route32Pokecenter1FNurseScript": {
+      "raw_lines": [
+        "jumpstd PokecenterNurseScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PokecenterNurseScript"
+          ],
+          "raw": "jumpstd PokecenterNurseScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterNurseScript"
+      ]
+    },
+    "Route32Pokecenter1FFishingGuruScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_OLD_ROD",
+        "iftrue .GotOldRod",
+        "writetext Route32Pokecenter1FFishingGuruText_Question",
+        "yesorno",
+        "iffalse .Refused",
+        "writetext Route32Pokecenter1FFishingGuruText_Yes",
+        "promptbutton",
+        "verbosegiveitem OLD_ROD",
+        "writetext Route32Pokecenter1FFishingGuruText_GiveOldRod",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_GOT_OLD_ROD",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_OLD_ROD"
+          ],
+          "raw": "checkevent EVENT_GOT_OLD_ROD"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route32Pokecenter1FFishingGuruScript.GotOldRod"
+          ],
+          "raw": "iftrue .GotOldRod"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route32Pokecenter1FFishingGuruText_Question"
+          ],
+          "raw": "writetext Route32Pokecenter1FFishingGuruText_Question"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Route32Pokecenter1FFishingGuruScript.Refused"
+          ],
+          "raw": "iffalse .Refused"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route32Pokecenter1FFishingGuruText_Yes"
+          ],
+          "raw": "writetext Route32Pokecenter1FFishingGuruText_Yes"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "OLD_ROD"
+          ],
+          "raw": "verbosegiveitem OLD_ROD"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route32Pokecenter1FFishingGuruText_GiveOldRod"
+          ],
+          "raw": "writetext Route32Pokecenter1FFishingGuruText_GiveOldRod"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_OLD_ROD"
+          ],
+          "raw": "setevent EVENT_GOT_OLD_ROD"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "Route32Pokecenter1FFishingGuruScript.GotOldRod",
+        "Route32Pokecenter1FFishingGuruScript.Refused"
+      ],
+      "text_refs": [
+        "Route32Pokecenter1FFishingGuruText_GiveOldRod",
+        "Route32Pokecenter1FFishingGuruText_Question",
+        "Route32Pokecenter1FFishingGuruText_Yes"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route32Pokecenter1FFishingGuruScript.Refused": {
+      "raw_lines": [
+        "writetext Route32Pokecenter1FFishingGuruText_No",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route32Pokecenter1FFishingGuruText_No"
+          ],
+          "raw": "writetext Route32Pokecenter1FFishingGuruText_No"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route32Pokecenter1FFishingGuruText_No"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route32Pokecenter1FFishingGuruScript.GotOldRod": {
+      "raw_lines": [
+        "writetext Route32Pokecenter1FFishingGuruText_After",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route32Pokecenter1FFishingGuruText_After"
+          ],
+          "raw": "writetext Route32Pokecenter1FFishingGuruText_After"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route32Pokecenter1FFishingGuruText_After"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route32Pokecenter1FCooltrainerFScript": {
+      "raw_lines": [
+        "jumptextfaceplayer Route32Pokecenter1FCooltrainerFText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Route32Pokecenter1FCooltrainerFText"
+          ],
+          "raw": "jumptextfaceplayer Route32Pokecenter1FCooltrainerFText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Route32Pokecenter1FCooltrainerFText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route32Pokecenter1F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  7, ROUTE_32, 1",
+        "warp_event  4,  7, ROUTE_32, 1",
+        "warp_event  0,  7, POKECENTER_2F, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FNurseScript, -1",
+        "object_event  1,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FFishingGuruScript, -1",
+        "object_event  6,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FCooltrainerFScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "ROUTE_32",
+            "1"
+          ],
+          "raw": "warp_event  3,  7, ROUTE_32, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "ROUTE_32",
+            "1"
+          ],
+          "raw": "warp_event  4,  7, ROUTE_32, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "7",
+            "POKECENTER_2F",
+            "1"
+          ],
+          "raw": "warp_event  0,  7, POKECENTER_2F, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "1",
+            "SPRITE_NURSE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route32Pokecenter1FNurseScript",
+            "-1"
+          ],
+          "raw": "object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FNurseScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "4",
+            "SPRITE_FISHING_GURU",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route32Pokecenter1FFishingGuruScript",
+            "-1"
+          ],
+          "raw": "object_event  1,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FFishingGuruScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "2",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route32Pokecenter1FCooltrainerFScript",
+            "-1"
+          ],
+          "raw": "object_event  6,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FCooltrainerFScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "Route32Pokecenter1FFishingGuruText_Question": {
+      "raw_lines": [
+        "text \"This is a great\"",
+        "line \"fishing spot.\"",
+        "para \"You saw people\"",
+        "line \"fishing? How\"",
+        "cont \"about you?\"",
+        "para \"Would you like one\"",
+        "line \"of my RODS?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This is a great"
+        },
+        {
+          "command": "line",
+          "value": "fishing spot."
+        },
+        {
+          "command": "para",
+          "value": "You saw people"
+        },
+        {
+          "command": "line",
+          "value": "fishing? How"
+        },
+        {
+          "command": "cont",
+          "value": "about you?"
+        },
+        {
+          "command": "para",
+          "value": "Would you like one"
+        },
+        {
+          "command": "line",
+          "value": "of my RODS?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route32Pokecenter1FFishingGuruText_Yes": {
+      "raw_lines": [
+        "text \"Heh, that's good\"",
+        "line \"to hear.\"",
+        "para \"Now you're an\"",
+        "line \"angler too!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Heh, that's good"
+        },
+        {
+          "command": "line",
+          "value": "to hear."
+        },
+        {
+          "command": "para",
+          "value": "Now you're an"
+        },
+        {
+          "command": "line",
+          "value": "angler too!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route32Pokecenter1FFishingGuruText_GiveOldRod": {
+      "raw_lines": [
+        "text \"Fishing is great!\"",
+        "para \"If there's water,\"",
+        "line \"be it the sea or a\"",
+        "para \"stream, try out\"",
+        "line \"your ROD.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Fishing is great!"
+        },
+        {
+          "command": "para",
+          "value": "If there's water,"
+        },
+        {
+          "command": "line",
+          "value": "be it the sea or a"
+        },
+        {
+          "command": "para",
+          "value": "stream, try out"
+        },
+        {
+          "command": "line",
+          "value": "your ROD."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route32Pokecenter1FFishingGuruText_No": {
+      "raw_lines": [
+        "text \"Oh. That's rather\"",
+        "line \"disappointing\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh. That's rather"
+        },
+        {
+          "command": "line",
+          "value": "disappointing\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route32Pokecenter1FFishingGuruText_After": {
+      "raw_lines": [
+        "text \"Yo, kid. How are\"",
+        "line \"they biting?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Yo, kid. How are"
+        },
+        {
+          "command": "line",
+          "value": "they biting?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route32Pokecenter1FCooltrainerFText": {
+      "raw_lines": [
+        "text \"What should I make\"",
+        "line \"my #MON hold?\"",
+        "para \"Maybe an item that\"",
+        "line \"increases ATTACK\"",
+        "cont \"power\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What should I make"
+        },
+        {
+          "command": "line",
+          "value": "my #MON hold?"
+        },
+        {
+          "command": "para",
+          "value": "Maybe an item that"
+        },
+        {
+          "command": "line",
+          "value": "increases ATTACK"
+        },
+        {
+          "command": "cont",
+          "value": "power\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "PokecenterNurseScript"
+  ],
+  "dependencies": {
+    "Route32Pokecenter1F_MapScripts": {
+      "label_refs": [
+        "Route32Pokecenter1FNurseScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route32Pokecenter1FNurseScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterNurseScript"
+      ]
+    },
+    "Route32Pokecenter1FFishingGuruScript": {
+      "label_refs": [
+        "Route32Pokecenter1FFishingGuruScript.GotOldRod",
+        "Route32Pokecenter1FFishingGuruScript.Refused"
+      ],
+      "text_refs": [
+        "Route32Pokecenter1FFishingGuruText_GiveOldRod",
+        "Route32Pokecenter1FFishingGuruText_Question",
+        "Route32Pokecenter1FFishingGuruText_Yes"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route32Pokecenter1FFishingGuruScript.Refused": {
+      "label_refs": [],
+      "text_refs": [
+        "Route32Pokecenter1FFishingGuruText_No"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route32Pokecenter1FFishingGuruScript.GotOldRod": {
+      "label_refs": [],
+      "text_refs": [
+        "Route32Pokecenter1FFishingGuruText_After"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route32Pokecenter1FCooltrainerFScript": {
+      "label_refs": [],
+      "text_refs": [
+        "Route32Pokecenter1FCooltrainerFText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route32Pokecenter1F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 3,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 3
+  }
+}

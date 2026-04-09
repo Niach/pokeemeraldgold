@@ -1,0 +1,557 @@
+{
+  "crystal_map": "BlackthornPokecenter1F",
+  "map_id": "BLACKTHORN_POKECENTER_1F",
+  "group": "BLACKTHORN",
+  "group_index": 5,
+  "map_index": 6,
+  "tileset": "TILESET_POKECENTER",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_BLACKTHORN_CITY",
+  "music": "MUSIC_POKEMON_CENTER",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/Pokecenter1F.blk",
+  "source_asm": "maps/BlackthornPokecenter1F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "BLACKTHORN_CITY",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "dest_map": "BLACKTHORN_CITY",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 0,
+        "y": 7,
+        "dest_map": "POKECENTER_2F",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 3,
+        "y": 1,
+        "sprite": "SPRITE_NURSE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornPokecenter1FNurseScript",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 3,
+        "sprite": "SPRITE_GENTLEMAN",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornPokecenter1FGentlemanScript",
+        "flag": -1
+      },
+      {
+        "x": 1,
+        "y": 4,
+        "sprite": "SPRITE_TWIN",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornPokecenter1FTwinScript",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 6,
+        "sprite": "SPRITE_COOLTRAINER_M",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornPokecenter1FCooltrainerMScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "BLACKTHORNPOKECENTER1F_NURSE",
+    "BLACKTHORNPOKECENTER1F_GENTLEMAN",
+    "BLACKTHORNPOKECENTER1F_TWIN",
+    "BLACKTHORNPOKECENTER1F_COOLTRAINER_M"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "BlackthornPokecenter1F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "BlackthornPokecenter1FNurseScript",
+      "label_refs": [
+        "BlackthornPokecenter1FNurseScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornPokecenter1FNurseScript": {
+      "raw_lines": [
+        "jumpstd PokecenterNurseScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PokecenterNurseScript"
+          ],
+          "raw": "jumpstd PokecenterNurseScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterNurseScript"
+      ]
+    },
+    "BlackthornPokecenter1FGentlemanScript": {
+      "raw_lines": [
+        "jumptextfaceplayer BlackthornPokecenter1FGentlemanText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "BlackthornPokecenter1FGentlemanText"
+          ],
+          "raw": "jumptextfaceplayer BlackthornPokecenter1FGentlemanText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornPokecenter1FGentlemanText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornPokecenter1FTwinScript": {
+      "raw_lines": [
+        "jumptextfaceplayer BlackthornPokecenter1FTwinText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "BlackthornPokecenter1FTwinText"
+          ],
+          "raw": "jumptextfaceplayer BlackthornPokecenter1FTwinText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornPokecenter1FTwinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornPokecenter1FCooltrainerMScript": {
+      "raw_lines": [
+        "jumpstd HappinessCheckScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "HappinessCheckScript"
+          ],
+          "raw": "jumpstd HappinessCheckScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "HappinessCheckScript"
+      ]
+    },
+    "BlackthornPokecenter1F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  7, BLACKTHORN_CITY, 5",
+        "warp_event  4,  7, BLACKTHORN_CITY, 5",
+        "warp_event  0,  7, POKECENTER_2F, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FNurseScript, -1",
+        "object_event  5,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FGentlemanScript, -1",
+        "object_event  1,  4, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FTwinScript, -1",
+        "object_event  7,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FCooltrainerMScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "BLACKTHORN_CITY",
+            "5"
+          ],
+          "raw": "warp_event  3,  7, BLACKTHORN_CITY, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "BLACKTHORN_CITY",
+            "5"
+          ],
+          "raw": "warp_event  4,  7, BLACKTHORN_CITY, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "7",
+            "POKECENTER_2F",
+            "1"
+          ],
+          "raw": "warp_event  0,  7, POKECENTER_2F, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "1",
+            "SPRITE_NURSE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornPokecenter1FNurseScript",
+            "-1"
+          ],
+          "raw": "object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FNurseScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "3",
+            "SPRITE_GENTLEMAN",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornPokecenter1FGentlemanScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FGentlemanScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "4",
+            "SPRITE_TWIN",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornPokecenter1FTwinScript",
+            "-1"
+          ],
+          "raw": "object_event  1,  4, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FTwinScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "6",
+            "SPRITE_COOLTRAINER_M",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornPokecenter1FCooltrainerMScript",
+            "-1"
+          ],
+          "raw": "object_event  7,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FCooltrainerMScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "BlackthornPokecenter1FGentlemanText": {
+      "raw_lines": [
+        "text \"Deep inside far-\"",
+        "line \"off INDIGO PLATEAU\"",
+        "para \"is the #MON\"",
+        "line \"LEAGUE.\"",
+        "para \"I hear the best\"",
+        "line \"trainers gather\"",
+        "para \"there from around\"",
+        "line \"the country.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Deep inside far-"
+        },
+        {
+          "command": "line",
+          "value": "off INDIGO PLATEAU"
+        },
+        {
+          "command": "para",
+          "value": "is the #MON"
+        },
+        {
+          "command": "line",
+          "value": "LEAGUE."
+        },
+        {
+          "command": "para",
+          "value": "I hear the best"
+        },
+        {
+          "command": "line",
+          "value": "trainers gather"
+        },
+        {
+          "command": "para",
+          "value": "there from around"
+        },
+        {
+          "command": "line",
+          "value": "the country."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackthornPokecenter1FTwinText": {
+      "raw_lines": [
+        "text \"There was this\"",
+        "line \"move I just had\"",
+        "para \"to teach my #-\"",
+        "line \"MON.\"",
+        "para \"So I got the MOVE\"",
+        "line \"DELETER to make it\"",
+        "cont \"forget an HM move.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "There was this"
+        },
+        {
+          "command": "line",
+          "value": "move I just had"
+        },
+        {
+          "command": "para",
+          "value": "to teach my #-"
+        },
+        {
+          "command": "line",
+          "value": "MON."
+        },
+        {
+          "command": "para",
+          "value": "So I got the MOVE"
+        },
+        {
+          "command": "line",
+          "value": "DELETER to make it"
+        },
+        {
+          "command": "cont",
+          "value": "forget an HM move."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "HappinessCheckScript",
+    "PokecenterNurseScript"
+  ],
+  "dependencies": {
+    "BlackthornPokecenter1F_MapScripts": {
+      "label_refs": [
+        "BlackthornPokecenter1FNurseScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornPokecenter1FNurseScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterNurseScript"
+      ]
+    },
+    "BlackthornPokecenter1FGentlemanScript": {
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornPokecenter1FGentlemanText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornPokecenter1FTwinScript": {
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornPokecenter1FTwinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornPokecenter1FCooltrainerMScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "HappinessCheckScript"
+      ]
+    },
+    "BlackthornPokecenter1F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 3,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 4
+  }
+}

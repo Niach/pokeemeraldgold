@@ -1,0 +1,517 @@
+{
+  "crystal_map": "Route30BerryHouse",
+  "map_id": "ROUTE_30_BERRY_HOUSE",
+  "group": "CHERRYGROVE",
+  "group_index": 26,
+  "map_index": 9,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_ROUTE_30",
+  "music": "MUSIC_CHERRYGROVE_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/House1.blk",
+  "source_asm": "maps/Route30BerryHouse.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "ROUTE_30",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "ROUTE_30",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 0,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "Route30BerryHouseBookshelf"
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "Route30BerryHouseBookshelf"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 3,
+        "sprite": "SPRITE_POKEFAN_M",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route30BerryHousePokefanMScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "ROUTE30BERRYHOUSE_POKEFAN_M"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "Route30BerryHouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "Route30BerryHousePokefanMScript",
+      "label_refs": [
+        "Route30BerryHousePokefanMScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route30BerryHousePokefanMScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE",
+        "iftrue .GotBerry",
+        "writetext Route30BerrySpeechHouseMonEatBerriesText",
+        "promptbutton",
+        "verbosegiveitem BERRY",
+        "iffalse .NoRoom",
+        "setevent EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE"
+          ],
+          "raw": "checkevent EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route30BerryHousePokefanMScript.GotBerry"
+          ],
+          "raw": "iftrue .GotBerry"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route30BerrySpeechHouseMonEatBerriesText"
+          ],
+          "raw": "writetext Route30BerrySpeechHouseMonEatBerriesText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "BERRY"
+          ],
+          "raw": "verbosegiveitem BERRY"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Route30BerryHousePokefanMScript.NoRoom"
+          ],
+          "raw": "iffalse .NoRoom"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE"
+          ],
+          "raw": "setevent EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "Route30BerryHousePokefanMScript.GotBerry",
+      "label_refs": [
+        "Route30BerryHousePokefanMScript.GotBerry",
+        "Route30BerryHousePokefanMScript.NoRoom"
+      ],
+      "text_refs": [
+        "Route30BerrySpeechHouseMonEatBerriesText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route30BerryHousePokefanMScript.GotBerry": {
+      "raw_lines": [
+        "writetext Route30BerrySpeechHouseCheckTreesText",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route30BerrySpeechHouseCheckTreesText"
+          ],
+          "raw": "writetext Route30BerrySpeechHouseCheckTreesText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "Route30BerryHousePokefanMScript.NoRoom",
+      "label_refs": [
+        "Route30BerryHousePokefanMScript.NoRoom"
+      ],
+      "text_refs": [
+        "Route30BerrySpeechHouseCheckTreesText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route30BerryHousePokefanMScript.NoRoom": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route30BerryHouseBookshelf": {
+      "raw_lines": [
+        "jumpstd MagazineBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "MagazineBookshelfScript"
+          ],
+          "raw": "jumpstd MagazineBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "Route30BerryHouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, ROUTE_30, 1",
+        "warp_event  3,  7, ROUTE_30, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, Route30BerryHouseBookshelf",
+        "bg_event  1,  1, BGEVENT_READ, Route30BerryHouseBookshelf",
+        "def_object_events",
+        "object_event  2,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route30BerryHousePokefanMScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "ROUTE_30",
+            "1"
+          ],
+          "raw": "warp_event  2,  7, ROUTE_30, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "ROUTE_30",
+            "1"
+          ],
+          "raw": "warp_event  3,  7, ROUTE_30, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "Route30BerryHouseBookshelf"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, Route30BerryHouseBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "Route30BerryHouseBookshelf"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, Route30BerryHouseBookshelf"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_POKEFAN_M",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route30BerryHousePokefanMScript",
+            "-1"
+          ],
+          "raw": "object_event  2,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route30BerryHousePokefanMScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "Route30BerrySpeechHouseMonEatBerriesText": {
+      "raw_lines": [
+        "text \"You know, #MON\"",
+        "line \"eat BERRIES.\"",
+        "para \"Well, my #MON\"",
+        "line \"got healthier by\"",
+        "cont \"eating a BERRY.\"",
+        "para \"Here. I'll share\"",
+        "line \"one with you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You know, #MON"
+        },
+        {
+          "command": "line",
+          "value": "eat BERRIES."
+        },
+        {
+          "command": "para",
+          "value": "Well, my #MON"
+        },
+        {
+          "command": "line",
+          "value": "got healthier by"
+        },
+        {
+          "command": "cont",
+          "value": "eating a BERRY."
+        },
+        {
+          "command": "para",
+          "value": "Here. I'll share"
+        },
+        {
+          "command": "line",
+          "value": "one with you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route30BerrySpeechHouseCheckTreesText": {
+      "raw_lines": [
+        "text \"Check trees for\"",
+        "line \"BERRIES. They just\"",
+        "cont \"drop right off.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Check trees for"
+        },
+        {
+          "command": "line",
+          "value": "BERRIES. They just"
+        },
+        {
+          "command": "cont",
+          "value": "drop right off."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "MagazineBookshelfScript"
+  ],
+  "dependencies": {
+    "Route30BerryHouse_MapScripts": {
+      "label_refs": [
+        "Route30BerryHousePokefanMScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route30BerryHousePokefanMScript": {
+      "label_refs": [
+        "Route30BerryHousePokefanMScript.GotBerry",
+        "Route30BerryHousePokefanMScript.NoRoom"
+      ],
+      "text_refs": [
+        "Route30BerrySpeechHouseMonEatBerriesText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route30BerryHousePokefanMScript.GotBerry": {
+      "label_refs": [
+        "Route30BerryHousePokefanMScript.NoRoom"
+      ],
+      "text_refs": [
+        "Route30BerrySpeechHouseCheckTreesText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route30BerryHousePokefanMScript.NoRoom": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route30BerryHouseBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "Route30BerryHouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 1
+  }
+}

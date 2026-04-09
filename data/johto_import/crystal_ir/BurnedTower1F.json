@@ -1,0 +1,2316 @@
+{
+  "crystal_map": "BurnedTower1F",
+  "map_id": "BURNED_TOWER_1F",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 13,
+  "tileset": "TILESET_TOWER",
+  "environment": "DUNGEON",
+  "landmark": "LANDMARK_BURNED_TOWER",
+  "music": "MUSIC_BURNED_TOWER",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_NITE",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 10,
+  "height_blocks": 9,
+  "border_block": "00",
+  "blk_path": "maps/BurnedTower1F.blk",
+  "source_asm": "maps/BurnedTower1F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "BurnedTower1FMeetEusineScene",
+        "scene_id": "SCENE_BURNEDTOWER1F_MEET_EUSINE"
+      },
+      {
+        "script": "BurnedTower1FNoop1Scene",
+        "scene_id": "SCENE_BURNEDTOWER1F_RIVAL_BATTLE"
+      },
+      {
+        "script": "BurnedTower1FNoop2Scene",
+        "scene_id": "SCENE_BURNEDTOWER1F_NOOP"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_TILES",
+        "script": "BurnedTower1FHoleAndLadderCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 9,
+        "y": 15,
+        "dest_map": "ECRUTEAK_CITY",
+        "dest_warp_id": 13
+      },
+      {
+        "x": 10,
+        "y": 15,
+        "dest_map": "ECRUTEAK_CITY",
+        "dest_warp_id": 13
+      },
+      {
+        "x": 10,
+        "y": 9,
+        "dest_map": "BURNED_TOWER_B1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 5,
+        "y": 5,
+        "dest_map": "BURNED_TOWER_B1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 5,
+        "y": 6,
+        "dest_map": "BURNED_TOWER_B1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 4,
+        "y": 6,
+        "dest_map": "BURNED_TOWER_B1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 15,
+        "y": 4,
+        "dest_map": "BURNED_TOWER_B1F",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 15,
+        "y": 5,
+        "dest_map": "BURNED_TOWER_B1F",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 10,
+        "y": 7,
+        "dest_map": "BURNED_TOWER_B1F",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 5,
+        "y": 14,
+        "dest_map": "BURNED_TOWER_B1F",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 4,
+        "y": 14,
+        "dest_map": "BURNED_TOWER_B1F",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 14,
+        "y": 14,
+        "dest_map": "BURNED_TOWER_B1F",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 15,
+        "y": 14,
+        "dest_map": "BURNED_TOWER_B1F",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 7,
+        "y": 15,
+        "dest_map": "BURNED_TOWER_B1F",
+        "dest_warp_id": 6
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 11,
+        "y": 9,
+        "scene": "SCENE_BURNEDTOWER1F_RIVAL_BATTLE",
+        "script": "BurnedTowerRivalBattleScript"
+      }
+    ],
+    "bg_events": [
+      {
+        "x": 8,
+        "y": 7,
+        "kind": "BGEVENT_ITEM",
+        "script": "BurnedTower1FHiddenEther"
+      },
+      {
+        "x": 13,
+        "y": 11,
+        "kind": "BGEVENT_ITEM",
+        "script": "BurnedTower1FHiddenUltraBall"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 15,
+        "y": 4,
+        "sprite": "SPRITE_ROCK",
+        "movement": "SPRITEMOVEDATA_SMASHABLE_ROCK",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BurnedTower1FRock",
+        "flag": -1
+      },
+      {
+        "x": 12,
+        "y": 12,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BurnedTower1FEusineScript",
+        "flag": "EVENT_BURNED_TOWER_1F_EUSINE"
+      },
+      {
+        "x": 8,
+        "y": 9,
+        "sprite": "SPRITE_RIVAL",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "ObjectEvent",
+        "flag": "EVENT_RIVAL_BURNED_TOWER"
+      },
+      {
+        "x": 14,
+        "y": 14,
+        "sprite": "SPRITE_MORTY",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BurnedTower1FMortyScript",
+        "flag": "EVENT_BURNED_TOWER_MORTY"
+      },
+      {
+        "x": 14,
+        "y": 2,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "BurnedTower1FHPUp",
+        "flag": "EVENT_BURNED_TOWER_1F_HP_UP"
+      }
+    ]
+  },
+  "object_consts": [
+    "BURNEDTOWER1F_ROCK",
+    "BURNEDTOWER1F_EUSINE",
+    "BURNEDTOWER1F_RIVAL",
+    "BURNEDTOWER1F_MORTY",
+    "BURNEDTOWER1F_POKE_BALL"
+  ],
+  "scene_ids": [
+    "SCENE_BURNEDTOWER1F_MEET_EUSINE",
+    "SCENE_BURNEDTOWER1F_NOOP",
+    "SCENE_BURNEDTOWER1F_RIVAL_BATTLE"
+  ],
+  "scripts": {
+    "BurnedTower1F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script BurnedTower1FMeetEusineScene, SCENE_BURNEDTOWER1F_MEET_EUSINE",
+        "scene_script BurnedTower1FNoop1Scene,      SCENE_BURNEDTOWER1F_RIVAL_BATTLE",
+        "scene_script BurnedTower1FNoop2Scene,      SCENE_BURNEDTOWER1F_NOOP",
+        "def_callbacks",
+        "callback MAPCALLBACK_TILES, BurnedTower1FHoleAndLadderCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "BurnedTower1FMeetEusineScene",
+            "SCENE_BURNEDTOWER1F_MEET_EUSINE"
+          ],
+          "raw": "scene_script BurnedTower1FMeetEusineScene, SCENE_BURNEDTOWER1F_MEET_EUSINE"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "BurnedTower1FNoop1Scene",
+            "SCENE_BURNEDTOWER1F_RIVAL_BATTLE"
+          ],
+          "raw": "scene_script BurnedTower1FNoop1Scene,      SCENE_BURNEDTOWER1F_RIVAL_BATTLE"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "BurnedTower1FNoop2Scene",
+            "SCENE_BURNEDTOWER1F_NOOP"
+          ],
+          "raw": "scene_script BurnedTower1FNoop2Scene,      SCENE_BURNEDTOWER1F_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_TILES",
+            "BurnedTower1FHoleAndLadderCallback"
+          ],
+          "raw": "callback MAPCALLBACK_TILES, BurnedTower1FHoleAndLadderCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "BurnedTower1FMeetEusineScene",
+      "label_refs": [
+        "BurnedTower1FMeetEusineScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FMeetEusineScene": {
+      "raw_lines": [
+        "sdefer BurnedTower1FMeetEusineScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "sdefer",
+          "args": [
+            "BurnedTower1FMeetEusineScript"
+          ],
+          "raw": "sdefer BurnedTower1FMeetEusineScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "sdefer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FHoleAndLadderCallback": {
+      "raw_lines": [
+        "checkevent EVENT_HOLE_IN_BURNED_TOWER",
+        "iftrue .KeepHoleOpen",
+        "changeblock 10, 8, $32"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_HOLE_IN_BURNED_TOWER"
+          ],
+          "raw": "checkevent EVENT_HOLE_IN_BURNED_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "BurnedTower1FHoleAndLadderCallback.KeepHoleOpen"
+          ],
+          "raw": "iftrue .KeepHoleOpen"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "10",
+            "8",
+            "$32"
+          ],
+          "raw": "changeblock 10, 8, $32"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "BurnedTower1FHoleAndLadderCallback.KeepHoleOpen",
+      "label_refs": [
+        "BurnedTower1FHoleAndLadderCallback.KeepHoleOpen"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FHoleAndLadderCallback.KeepHoleOpen": {
+      "raw_lines": [
+        "checkevent EVENT_RELEASED_THE_BEASTS",
+        "iftrue .HideBasement",
+        "changeblock 6, 14, $09"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_RELEASED_THE_BEASTS"
+          ],
+          "raw": "checkevent EVENT_RELEASED_THE_BEASTS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "BurnedTower1FHoleAndLadderCallback.HideBasement"
+          ],
+          "raw": "iftrue .HideBasement"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "6",
+            "14",
+            "$09"
+          ],
+          "raw": "changeblock 6, 14, $09"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "BurnedTower1FHoleAndLadderCallback.HideBasement",
+      "label_refs": [
+        "BurnedTower1FHoleAndLadderCallback.HideBasement"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FHoleAndLadderCallback.HideBasement": {
+      "raw_lines": [
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "endcallback",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FMeetEusineScript": {
+      "raw_lines": [
+        "turnobject BURNEDTOWER1F_EUSINE, DOWN",
+        "showemote EMOTE_SHOCK, BURNEDTOWER1F_EUSINE, 15",
+        "applymovement BURNEDTOWER1F_EUSINE, BurnedTower1FEusineMovement",
+        "opentext",
+        "writetext BurnedTower1FEusineIntroText",
+        "waitbutton",
+        "closetext",
+        "moveobject BURNEDTOWER1F_EUSINE, 9, 14",
+        "setscene SCENE_BURNEDTOWER1F_RIVAL_BATTLE",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "BURNEDTOWER1F_EUSINE",
+            "DOWN"
+          ],
+          "raw": "turnobject BURNEDTOWER1F_EUSINE, DOWN"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "BURNEDTOWER1F_EUSINE",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, BURNEDTOWER1F_EUSINE, 15"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "BURNEDTOWER1F_EUSINE",
+            "BurnedTower1FEusineMovement"
+          ],
+          "raw": "applymovement BURNEDTOWER1F_EUSINE, BurnedTower1FEusineMovement"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BurnedTower1FEusineIntroText"
+          ],
+          "raw": "writetext BurnedTower1FEusineIntroText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "BURNEDTOWER1F_EUSINE",
+            "9",
+            "14"
+          ],
+          "raw": "moveobject BURNEDTOWER1F_EUSINE, 9, 14"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_BURNEDTOWER1F_RIVAL_BATTLE"
+          ],
+          "raw": "setscene SCENE_BURNEDTOWER1F_RIVAL_BATTLE"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [],
+      "text_refs": [
+        "BurnedTower1FEusineIntroText"
+      ],
+      "movement_refs": [
+        "BurnedTower1FEusineMovement"
+      ],
+      "scene_refs": [
+        "SCENE_BURNEDTOWER1F_RIVAL_BATTLE"
+      ],
+      "std_calls": []
+    },
+    "BurnedTowerRivalBattleScript": {
+      "raw_lines": [
+        "showemote EMOTE_SHOCK, BURNEDTOWER1F_RIVAL, 15",
+        "special FadeOutMusic",
+        "pause 15",
+        "turnobject BURNEDTOWER1F_RIVAL, RIGHT",
+        "pause 15",
+        "applymovement PLAYER, BurnedTowerMovement_PlayerWalksToRival",
+        "applymovement BURNEDTOWER1F_RIVAL, BurnedTowerMovement_RivalWalksToPlayer",
+        "playmusic MUSIC_RIVAL_ENCOUNTER",
+        "opentext",
+        "writetext BurnedTowerRival_BeforeText",
+        "waitbutton",
+        "closetext",
+        "checkevent EVENT_GOT_TOTODILE_FROM_ELM",
+        "iftrue .totodile",
+        "checkevent EVENT_GOT_CHIKORITA_FROM_ELM",
+        "iftrue .chikorita",
+        "winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText",
+        "setlasttalked BURNEDTOWER1F_RIVAL",
+        "loadtrainer RIVAL1, RIVAL1_3_TOTODILE",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmapafterbattle",
+        "sjump .returnfrombattle"
+      ],
+      "commands": [
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "BURNEDTOWER1F_RIVAL",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, BURNEDTOWER1F_RIVAL, 15"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "BURNEDTOWER1F_RIVAL",
+            "RIGHT"
+          ],
+          "raw": "turnobject BURNEDTOWER1F_RIVAL, RIGHT"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "BurnedTowerMovement_PlayerWalksToRival"
+          ],
+          "raw": "applymovement PLAYER, BurnedTowerMovement_PlayerWalksToRival"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "BURNEDTOWER1F_RIVAL",
+            "BurnedTowerMovement_RivalWalksToPlayer"
+          ],
+          "raw": "applymovement BURNEDTOWER1F_RIVAL, BurnedTowerMovement_RivalWalksToPlayer"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_ENCOUNTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_ENCOUNTER"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BurnedTowerRival_BeforeText"
+          ],
+          "raw": "writetext BurnedTowerRival_BeforeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TOTODILE_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_TOTODILE_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "BurnedTowerRivalBattleScript.totodile"
+          ],
+          "raw": "iftrue .totodile"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_CHIKORITA_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_CHIKORITA_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "BurnedTowerRivalBattleScript.chikorita"
+          ],
+          "raw": "iftrue .chikorita"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "BurnedTowerRival_WinText",
+            "BurnedTowerRival_LossText"
+          ],
+          "raw": "winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "BURNEDTOWER1F_RIVAL"
+          ],
+          "raw": "setlasttalked BURNEDTOWER1F_RIVAL"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "RIVAL1",
+            "RIVAL1_3_TOTODILE"
+          ],
+          "raw": "loadtrainer RIVAL1, RIVAL1_3_TOTODILE"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "BurnedTowerRivalBattleScript.returnfrombattle"
+          ],
+          "raw": "sjump .returnfrombattle"
+        }
+      ],
+      "first_command": "showemote",
+      "label_refs": [
+        "BurnedTowerRivalBattleScript.chikorita",
+        "BurnedTowerRivalBattleScript.returnfrombattle",
+        "BurnedTowerRivalBattleScript.totodile"
+      ],
+      "text_refs": [
+        "BurnedTowerRival_BeforeText"
+      ],
+      "movement_refs": [
+        "BurnedTowerMovement_PlayerWalksToRival",
+        "BurnedTowerMovement_RivalWalksToPlayer"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTowerRivalBattleScript.totodile": {
+      "raw_lines": [
+        "winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText",
+        "setlasttalked BURNEDTOWER1F_RIVAL",
+        "loadtrainer RIVAL1, RIVAL1_3_CHIKORITA",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmapafterbattle",
+        "sjump .returnfrombattle"
+      ],
+      "commands": [
+        {
+          "command": "winlosstext",
+          "args": [
+            "BurnedTowerRival_WinText",
+            "BurnedTowerRival_LossText"
+          ],
+          "raw": "winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "BURNEDTOWER1F_RIVAL"
+          ],
+          "raw": "setlasttalked BURNEDTOWER1F_RIVAL"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "RIVAL1",
+            "RIVAL1_3_CHIKORITA"
+          ],
+          "raw": "loadtrainer RIVAL1, RIVAL1_3_CHIKORITA"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "BurnedTowerRivalBattleScript.returnfrombattle"
+          ],
+          "raw": "sjump .returnfrombattle"
+        }
+      ],
+      "first_command": "winlosstext",
+      "label_refs": [
+        "BurnedTowerRivalBattleScript.returnfrombattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTowerRivalBattleScript.chikorita": {
+      "raw_lines": [
+        "winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText",
+        "setlasttalked BURNEDTOWER1F_RIVAL",
+        "loadtrainer RIVAL1, RIVAL1_3_CYNDAQUIL",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmapafterbattle",
+        "sjump .returnfrombattle"
+      ],
+      "commands": [
+        {
+          "command": "winlosstext",
+          "args": [
+            "BurnedTowerRival_WinText",
+            "BurnedTowerRival_LossText"
+          ],
+          "raw": "winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "BURNEDTOWER1F_RIVAL"
+          ],
+          "raw": "setlasttalked BURNEDTOWER1F_RIVAL"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "RIVAL1",
+            "RIVAL1_3_CYNDAQUIL"
+          ],
+          "raw": "loadtrainer RIVAL1, RIVAL1_3_CYNDAQUIL"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "BurnedTowerRivalBattleScript.returnfrombattle"
+          ],
+          "raw": "sjump .returnfrombattle"
+        }
+      ],
+      "first_command": "winlosstext",
+      "label_refs": [
+        "BurnedTowerRivalBattleScript.returnfrombattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTowerRivalBattleScript.returnfrombattle": {
+      "raw_lines": [
+        "playmusic MUSIC_RIVAL_AFTER",
+        "opentext",
+        "writetext BurnedTowerRival_AfterText1",
+        "waitbutton",
+        "closetext",
+        "setscene SCENE_BURNEDTOWER1F_NOOP",
+        "setevent EVENT_RIVAL_BURNED_TOWER",
+        "special FadeOutMusic",
+        "pause 15",
+        "earthquake 50",
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "playsound SFX_ENTER_DOOR",
+        "waitsfx",
+        "changeblock 10, 8, $25",
+        "refreshmap",
+        "pause 15",
+        "applymovement PLAYER, BurnedTower1FMovement_PlayerStartsToFall",
+        "playsound SFX_KINESIS",
+        "showemote EMOTE_SHOCK, BURNEDTOWER1F_RIVAL, 20",
+        "opentext",
+        "writetext BurnedTowerRival_AfterText2",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_HOLE_IN_BURNED_TOWER",
+        "pause 15",
+        "warpcheck",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_AFTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_AFTER"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BurnedTowerRival_AfterText1"
+          ],
+          "raw": "writetext BurnedTowerRival_AfterText1"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_BURNEDTOWER1F_NOOP"
+          ],
+          "raw": "setscene SCENE_BURNEDTOWER1F_NOOP"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_RIVAL_BURNED_TOWER"
+          ],
+          "raw": "setevent EVENT_RIVAL_BURNED_TOWER"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "earthquake",
+          "args": [
+            "50"
+          ],
+          "raw": "earthquake 50"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "10",
+            "8",
+            "$25"
+          ],
+          "raw": "changeblock 10, 8, $25"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "BurnedTower1FMovement_PlayerStartsToFall"
+          ],
+          "raw": "applymovement PLAYER, BurnedTower1FMovement_PlayerStartsToFall"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_KINESIS"
+          ],
+          "raw": "playsound SFX_KINESIS"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "BURNEDTOWER1F_RIVAL",
+            "20"
+          ],
+          "raw": "showemote EMOTE_SHOCK, BURNEDTOWER1F_RIVAL, 20"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BurnedTowerRival_AfterText2"
+          ],
+          "raw": "writetext BurnedTowerRival_AfterText2"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_HOLE_IN_BURNED_TOWER"
+          ],
+          "raw": "setevent EVENT_HOLE_IN_BURNED_TOWER"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "warpcheck",
+          "args": [],
+          "raw": "warpcheck"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playmusic",
+      "label_refs": [],
+      "text_refs": [
+        "BurnedTowerRival_AfterText1",
+        "BurnedTowerRival_AfterText2"
+      ],
+      "movement_refs": [
+        "BurnedTower1FMovement_PlayerStartsToFall"
+      ],
+      "scene_refs": [
+        "SCENE_BURNEDTOWER1F_NOOP"
+      ],
+      "std_calls": []
+    },
+    "BurnedTower1FEusineScript": {
+      "raw_lines": [
+        "jumptextfaceplayer BurnedTower1FEusineText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "BurnedTower1FEusineText"
+          ],
+          "raw": "jumptextfaceplayer BurnedTower1FEusineText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "BurnedTower1FEusineText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FMortyScript": {
+      "raw_lines": [
+        "jumptextfaceplayer BurnedTower1FMortyText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "BurnedTower1FMortyText"
+          ],
+          "raw": "jumptextfaceplayer BurnedTower1FMortyText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "BurnedTower1FMortyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FRock": {
+      "raw_lines": [
+        "jumpstd SmashRockScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "SmashRockScript"
+          ],
+          "raw": "jumpstd SmashRockScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "SmashRockScript"
+      ]
+    },
+    "BurnedTower1FHiddenEther": {
+      "raw_lines": [
+        "hiddenitem ETHER, EVENT_BURNED_TOWER_1F_HIDDEN_ETHER"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "ETHER",
+            "EVENT_BURNED_TOWER_1F_HIDDEN_ETHER"
+          ],
+          "raw": "hiddenitem ETHER, EVENT_BURNED_TOWER_1F_HIDDEN_ETHER"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "BurnedTower1FHiddenUltraBall",
+      "label_refs": [
+        "BurnedTower1FHiddenUltraBall"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FHiddenUltraBall": {
+      "raw_lines": [
+        "hiddenitem ULTRA_BALL, EVENT_BURNED_TOWER_1F_HIDDEN_ULTRA_BALL"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "ULTRA_BALL",
+            "EVENT_BURNED_TOWER_1F_HIDDEN_ULTRA_BALL"
+          ],
+          "raw": "hiddenitem ULTRA_BALL, EVENT_BURNED_TOWER_1F_HIDDEN_ULTRA_BALL"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "BurnedTower1FHPUp",
+      "label_refs": [
+        "BurnedTower1FHPUp"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FHPUp": {
+      "raw_lines": [
+        "itemball HP_UP"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "HP_UP"
+          ],
+          "raw": "itemball HP_UP"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "BurnedTower1FMovement_PlayerStartsToFall",
+      "label_refs": [
+        "BurnedTower1FMovement_PlayerStartsToFall"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FMovement_PlayerStartsToFall": {
+      "raw_lines": [
+        "skyfall_top",
+        "step_end"
+      ],
+      "commands": [
+        {
+          "command": "skyfall_top",
+          "args": [],
+          "raw": "skyfall_top"
+        },
+        {
+          "command": "step_end",
+          "args": [],
+          "raw": "step_end"
+        }
+      ],
+      "first_command": "skyfall_top",
+      "fallthrough_label": "BurnedTower1F_MapEvents",
+      "label_refs": [
+        "BurnedTower1F_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  9, 15, ECRUTEAK_CITY, 13",
+        "warp_event 10, 15, ECRUTEAK_CITY, 13",
+        "warp_event 10,  9, BURNED_TOWER_B1F, 1",
+        "warp_event  5,  5, BURNED_TOWER_B1F, 1",
+        "warp_event  5,  6, BURNED_TOWER_B1F, 1",
+        "warp_event  4,  6, BURNED_TOWER_B1F, 1",
+        "warp_event 15,  4, BURNED_TOWER_B1F, 2",
+        "warp_event 15,  5, BURNED_TOWER_B1F, 2",
+        "warp_event 10,  7, BURNED_TOWER_B1F, 3",
+        "warp_event  5, 14, BURNED_TOWER_B1F, 4",
+        "warp_event  4, 14, BURNED_TOWER_B1F, 4",
+        "warp_event 14, 14, BURNED_TOWER_B1F, 5",
+        "warp_event 15, 14, BURNED_TOWER_B1F, 5",
+        "warp_event  7, 15, BURNED_TOWER_B1F, 6",
+        "def_coord_events",
+        "coord_event 11,  9, SCENE_BURNEDTOWER1F_RIVAL_BATTLE, BurnedTowerRivalBattleScript",
+        "def_bg_events",
+        "bg_event  8,  7, BGEVENT_ITEM, BurnedTower1FHiddenEther",
+        "bg_event 13, 11, BGEVENT_ITEM, BurnedTower1FHiddenUltraBall",
+        "def_object_events",
+        "object_event 15,  4, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurnedTower1FRock, -1",
+        "object_event 12, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BurnedTower1FEusineScript, EVENT_BURNED_TOWER_1F_EUSINE",
+        "object_event  8,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, ObjectEvent, EVENT_RIVAL_BURNED_TOWER",
+        "object_event 14, 14, SPRITE_MORTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BurnedTower1FMortyScript, EVENT_BURNED_TOWER_MORTY",
+        "object_event 14,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurnedTower1FHPUp, EVENT_BURNED_TOWER_1F_HP_UP"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "15",
+            "ECRUTEAK_CITY",
+            "13"
+          ],
+          "raw": "warp_event  9, 15, ECRUTEAK_CITY, 13"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "10",
+            "15",
+            "ECRUTEAK_CITY",
+            "13"
+          ],
+          "raw": "warp_event 10, 15, ECRUTEAK_CITY, 13"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "10",
+            "9",
+            "BURNED_TOWER_B1F",
+            "1"
+          ],
+          "raw": "warp_event 10,  9, BURNED_TOWER_B1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "5",
+            "BURNED_TOWER_B1F",
+            "1"
+          ],
+          "raw": "warp_event  5,  5, BURNED_TOWER_B1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "6",
+            "BURNED_TOWER_B1F",
+            "1"
+          ],
+          "raw": "warp_event  5,  6, BURNED_TOWER_B1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "6",
+            "BURNED_TOWER_B1F",
+            "1"
+          ],
+          "raw": "warp_event  4,  6, BURNED_TOWER_B1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "15",
+            "4",
+            "BURNED_TOWER_B1F",
+            "2"
+          ],
+          "raw": "warp_event 15,  4, BURNED_TOWER_B1F, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "15",
+            "5",
+            "BURNED_TOWER_B1F",
+            "2"
+          ],
+          "raw": "warp_event 15,  5, BURNED_TOWER_B1F, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "10",
+            "7",
+            "BURNED_TOWER_B1F",
+            "3"
+          ],
+          "raw": "warp_event 10,  7, BURNED_TOWER_B1F, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "14",
+            "BURNED_TOWER_B1F",
+            "4"
+          ],
+          "raw": "warp_event  5, 14, BURNED_TOWER_B1F, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "14",
+            "BURNED_TOWER_B1F",
+            "4"
+          ],
+          "raw": "warp_event  4, 14, BURNED_TOWER_B1F, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "14",
+            "14",
+            "BURNED_TOWER_B1F",
+            "5"
+          ],
+          "raw": "warp_event 14, 14, BURNED_TOWER_B1F, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "15",
+            "14",
+            "BURNED_TOWER_B1F",
+            "5"
+          ],
+          "raw": "warp_event 15, 14, BURNED_TOWER_B1F, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "7",
+            "15",
+            "BURNED_TOWER_B1F",
+            "6"
+          ],
+          "raw": "warp_event  7, 15, BURNED_TOWER_B1F, 6"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "11",
+            "9",
+            "SCENE_BURNEDTOWER1F_RIVAL_BATTLE",
+            "BurnedTowerRivalBattleScript"
+          ],
+          "raw": "coord_event 11,  9, SCENE_BURNEDTOWER1F_RIVAL_BATTLE, BurnedTowerRivalBattleScript"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "8",
+            "7",
+            "BGEVENT_ITEM",
+            "BurnedTower1FHiddenEther"
+          ],
+          "raw": "bg_event  8,  7, BGEVENT_ITEM, BurnedTower1FHiddenEther"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "13",
+            "11",
+            "BGEVENT_ITEM",
+            "BurnedTower1FHiddenUltraBall"
+          ],
+          "raw": "bg_event 13, 11, BGEVENT_ITEM, BurnedTower1FHiddenUltraBall"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "15",
+            "4",
+            "SPRITE_ROCK",
+            "SPRITEMOVEDATA_SMASHABLE_ROCK",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BurnedTower1FRock",
+            "-1"
+          ],
+          "raw": "object_event 15,  4, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurnedTower1FRock, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "12",
+            "12",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BurnedTower1FEusineScript",
+            "EVENT_BURNED_TOWER_1F_EUSINE"
+          ],
+          "raw": "object_event 12, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BurnedTower1FEusineScript, EVENT_BURNED_TOWER_1F_EUSINE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "9",
+            "SPRITE_RIVAL",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "ObjectEvent",
+            "EVENT_RIVAL_BURNED_TOWER"
+          ],
+          "raw": "object_event  8,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, ObjectEvent, EVENT_RIVAL_BURNED_TOWER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "14",
+            "14",
+            "SPRITE_MORTY",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BurnedTower1FMortyScript",
+            "EVENT_BURNED_TOWER_MORTY"
+          ],
+          "raw": "object_event 14, 14, SPRITE_MORTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BurnedTower1FMortyScript, EVENT_BURNED_TOWER_MORTY"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "14",
+            "2",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "BurnedTower1FHPUp",
+            "EVENT_BURNED_TOWER_1F_HP_UP"
+          ],
+          "raw": "object_event 14,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurnedTower1FHPUp, EVENT_BURNED_TOWER_1F_HP_UP"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "BurnedTowerRival_BeforeText": {
+      "raw_lines": [
+        "text \"<\u2026\u2026> <\u2026\u2026> <\u2026\u2026>\"",
+        "para \"\u2026Oh, it's you.\"",
+        "para \"I came looking for\"",
+        "line \"some legendary\"",
+        "para \"#MON that they\"",
+        "line \"say roosts here.\"",
+        "para \"But there's\"",
+        "line \"nothing here!\"",
+        "para \"Nothing after all\"",
+        "line \"the trouble of\"",
+        "para \"coming to this\"",
+        "line \"dump? No way!\"",
+        "para \"It's all your\"",
+        "line \"fault!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<\u2026\u2026> <\u2026\u2026> <\u2026\u2026>"
+        },
+        {
+          "command": "para",
+          "value": "\u2026Oh, it's you."
+        },
+        {
+          "command": "para",
+          "value": "I came looking for"
+        },
+        {
+          "command": "line",
+          "value": "some legendary"
+        },
+        {
+          "command": "para",
+          "value": "#MON that they"
+        },
+        {
+          "command": "line",
+          "value": "say roosts here."
+        },
+        {
+          "command": "para",
+          "value": "But there's"
+        },
+        {
+          "command": "line",
+          "value": "nothing here!"
+        },
+        {
+          "command": "para",
+          "value": "Nothing after all"
+        },
+        {
+          "command": "line",
+          "value": "the trouble of"
+        },
+        {
+          "command": "para",
+          "value": "coming to this"
+        },
+        {
+          "command": "line",
+          "value": "dump? No way!"
+        },
+        {
+          "command": "para",
+          "value": "It's all your"
+        },
+        {
+          "command": "line",
+          "value": "fault!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BurnedTowerRival_WinText": {
+      "raw_lines": [
+        "text \"\u2026Humph!\"",
+        "para \"This is why I hate\"",
+        "line \"battling wimps.\"",
+        "para \"There's no\"",
+        "line \"challenge in it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026Humph!"
+        },
+        {
+          "command": "para",
+          "value": "This is why I hate"
+        },
+        {
+          "command": "line",
+          "value": "battling wimps."
+        },
+        {
+          "command": "para",
+          "value": "There's no"
+        },
+        {
+          "command": "line",
+          "value": "challenge in it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BurnedTowerRival_AfterText1": {
+      "raw_lines": [
+        "text \"\u2026Aw, whatever.\"",
+        "para \"You would never be\"",
+        "line \"able to catch a\"",
+        "para \"legendary #MON\"",
+        "line \"anyway.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026Aw, whatever."
+        },
+        {
+          "command": "para",
+          "value": "You would never be"
+        },
+        {
+          "command": "line",
+          "value": "able to catch a"
+        },
+        {
+          "command": "para",
+          "value": "legendary #MON"
+        },
+        {
+          "command": "line",
+          "value": "anyway."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BurnedTowerRival_LossText": {
+      "raw_lines": [
+        "text \"\u2026Humph!\"",
+        "para \"This is why I hate\"",
+        "line \"battling wimps.\"",
+        "para \"It's just a waste\"",
+        "line \"of my time.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026Humph!"
+        },
+        {
+          "command": "para",
+          "value": "This is why I hate"
+        },
+        {
+          "command": "line",
+          "value": "battling wimps."
+        },
+        {
+          "command": "para",
+          "value": "It's just a waste"
+        },
+        {
+          "command": "line",
+          "value": "of my time."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BurnedTowerRival_AfterText2": {
+      "raw_lines": [
+        "text \"Humph!\"",
+        "para \"What are you doing\"",
+        "line \"falling into a\"",
+        "para \"hole? Some genius\"",
+        "line \"you are!\"",
+        "para \"Serves you right!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Humph!"
+        },
+        {
+          "command": "para",
+          "value": "What are you doing"
+        },
+        {
+          "command": "line",
+          "value": "falling into a"
+        },
+        {
+          "command": "para",
+          "value": "hole? Some genius"
+        },
+        {
+          "command": "line",
+          "value": "you are!"
+        },
+        {
+          "command": "para",
+          "value": "Serves you right!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BurnedTower1FEusineIntroText": {
+      "raw_lines": [
+        "text \"EUSINE: My name's\"",
+        "line \"EUSINE.\"",
+        "para \"I'm on the trail\"",
+        "line \"of a #MON named\"",
+        "cont \"SUICUNE.\"",
+        "para \"And you are\u2026?\"",
+        "para \"<PLAYER>? Glad to\"",
+        "line \"meet you!\"",
+        "para \"I heard rumors\"",
+        "line \"that SUICUNE is in\"",
+        "para \"this BURNED TOWER,\"",
+        "line \"so I came to look.\"",
+        "para \"But where exactly\"",
+        "line \"could it be?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "EUSINE: My name's"
+        },
+        {
+          "command": "line",
+          "value": "EUSINE."
+        },
+        {
+          "command": "para",
+          "value": "I'm on the trail"
+        },
+        {
+          "command": "line",
+          "value": "of a #MON named"
+        },
+        {
+          "command": "cont",
+          "value": "SUICUNE."
+        },
+        {
+          "command": "para",
+          "value": "And you are\u2026?"
+        },
+        {
+          "command": "para",
+          "value": "<PLAYER>? Glad to"
+        },
+        {
+          "command": "line",
+          "value": "meet you!"
+        },
+        {
+          "command": "para",
+          "value": "I heard rumors"
+        },
+        {
+          "command": "line",
+          "value": "that SUICUNE is in"
+        },
+        {
+          "command": "para",
+          "value": "this BURNED TOWER,"
+        },
+        {
+          "command": "line",
+          "value": "so I came to look."
+        },
+        {
+          "command": "para",
+          "value": "But where exactly"
+        },
+        {
+          "command": "line",
+          "value": "could it be?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BurnedTower1FEusineText": {
+      "raw_lines": [
+        "text \"EUSINE: I heard\"",
+        "line \"that SUICUNE is in\"",
+        "para \"this BURNED TOWER,\"",
+        "line \"so I came to look.\"",
+        "para \"But where exactly\"",
+        "line \"could it be?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "EUSINE: I heard"
+        },
+        {
+          "command": "line",
+          "value": "that SUICUNE is in"
+        },
+        {
+          "command": "para",
+          "value": "this BURNED TOWER,"
+        },
+        {
+          "command": "line",
+          "value": "so I came to look."
+        },
+        {
+          "command": "para",
+          "value": "But where exactly"
+        },
+        {
+          "command": "line",
+          "value": "could it be?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BurnedTower1FMortyText": {
+      "raw_lines": [
+        "text \"MORTY: ECRUTEAK's\"",
+        "line \"GYM LEADER has to\"",
+        "para \"study what are\"",
+        "line \"said to be the\"",
+        "para \"legendary #MON\"",
+        "line \"--SUICUNE, ENTEI\"",
+        "cont \"and RAIKOU.\"",
+        "para \"EUSINE is here, so\"",
+        "line \"I've decided to\"",
+        "para \"investigate the\"",
+        "line \"TOWER with him.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MORTY: ECRUTEAK's"
+        },
+        {
+          "command": "line",
+          "value": "GYM LEADER has to"
+        },
+        {
+          "command": "para",
+          "value": "study what are"
+        },
+        {
+          "command": "line",
+          "value": "said to be the"
+        },
+        {
+          "command": "para",
+          "value": "legendary #MON"
+        },
+        {
+          "command": "line",
+          "value": "--SUICUNE, ENTEI"
+        },
+        {
+          "command": "cont",
+          "value": "and RAIKOU."
+        },
+        {
+          "command": "para",
+          "value": "EUSINE is here, so"
+        },
+        {
+          "command": "line",
+          "value": "I've decided to"
+        },
+        {
+          "command": "para",
+          "value": "investigate the"
+        },
+        {
+          "command": "line",
+          "value": "TOWER with him."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "BurnedTowerMovement_PlayerWalksToRival": {
+      "raw_lines": [
+        "step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "BurnedTowerMovement_RivalWalksToPlayer": {
+      "raw_lines": [
+        "step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "BurnedTower1FEusineMovement": {
+      "raw_lines": [
+        "step DOWN",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "SmashRockScript"
+  ],
+  "dependencies": {
+    "BurnedTower1F_MapScripts": {
+      "label_refs": [
+        "BurnedTower1FMeetEusineScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FMeetEusineScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FHoleAndLadderCallback": {
+      "label_refs": [
+        "BurnedTower1FHoleAndLadderCallback.KeepHoleOpen"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FHoleAndLadderCallback.KeepHoleOpen": {
+      "label_refs": [
+        "BurnedTower1FHoleAndLadderCallback.HideBasement"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FHoleAndLadderCallback.HideBasement": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FMeetEusineScript": {
+      "label_refs": [],
+      "text_refs": [
+        "BurnedTower1FEusineIntroText"
+      ],
+      "movement_refs": [
+        "BurnedTower1FEusineMovement"
+      ],
+      "scene_refs": [
+        "SCENE_BURNEDTOWER1F_RIVAL_BATTLE"
+      ],
+      "std_calls": []
+    },
+    "BurnedTowerRivalBattleScript": {
+      "label_refs": [
+        "BurnedTowerRivalBattleScript.chikorita",
+        "BurnedTowerRivalBattleScript.returnfrombattle",
+        "BurnedTowerRivalBattleScript.totodile"
+      ],
+      "text_refs": [
+        "BurnedTowerRival_BeforeText"
+      ],
+      "movement_refs": [
+        "BurnedTowerMovement_PlayerWalksToRival",
+        "BurnedTowerMovement_RivalWalksToPlayer"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTowerRivalBattleScript.totodile": {
+      "label_refs": [
+        "BurnedTowerRivalBattleScript.returnfrombattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTowerRivalBattleScript.chikorita": {
+      "label_refs": [
+        "BurnedTowerRivalBattleScript.returnfrombattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTowerRivalBattleScript.returnfrombattle": {
+      "label_refs": [],
+      "text_refs": [
+        "BurnedTowerRival_AfterText1",
+        "BurnedTowerRival_AfterText2"
+      ],
+      "movement_refs": [
+        "BurnedTower1FMovement_PlayerStartsToFall"
+      ],
+      "scene_refs": [
+        "SCENE_BURNEDTOWER1F_NOOP"
+      ],
+      "std_calls": []
+    },
+    "BurnedTower1FEusineScript": {
+      "label_refs": [],
+      "text_refs": [
+        "BurnedTower1FEusineText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FMortyScript": {
+      "label_refs": [],
+      "text_refs": [
+        "BurnedTower1FMortyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FRock": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "SmashRockScript"
+      ]
+    },
+    "BurnedTower1FHiddenEther": {
+      "label_refs": [
+        "BurnedTower1FHiddenUltraBall"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FHiddenUltraBall": {
+      "label_refs": [
+        "BurnedTower1FHPUp"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FHPUp": {
+      "label_refs": [
+        "BurnedTower1FMovement_PlayerStartsToFall"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1FMovement_PlayerStartsToFall": {
+      "label_refs": [
+        "BurnedTower1F_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTower1F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 3,
+    "callbacks": 1,
+    "warp_events": 14,
+    "coord_events": 1,
+    "bg_events": 2,
+    "object_events": 5
+  }
+}

@@ -2128,6 +2128,17 @@ static const struct NamingScreenTemplate sWaldaWordsScreenTemplate =
     .title = gText_TellHimTheWords,
 };
 
+static const struct NamingScreenTemplate sRivalNamingScreenTemplate =
+{
+    .copyExistingString = TRUE,
+    .maxChars = PLAYER_NAME_LENGTH,
+    .iconFunction = 1,
+    .addGenderIcon = FALSE,
+    .initialPage = KBPAGE_LETTERS_UPPER,
+    .unused = 35,
+    .title = gText_RivalsName,
+};
+
 static const struct NamingScreenTemplate *const sNamingScreenTemplates[] =
 {
     [NAMING_SCREEN_PLAYER]     = &sPlayerNamingScreenTemplate,
@@ -2135,6 +2146,7 @@ static const struct NamingScreenTemplate *const sNamingScreenTemplates[] =
     [NAMING_SCREEN_CAUGHT_MON] = &sMonNamingScreenTemplate,
     [NAMING_SCREEN_NICKNAME]   = &sMonNamingScreenTemplate,
     [NAMING_SCREEN_WALDA]      = &sWaldaWordsScreenTemplate,
+    [NAMING_SCREEN_RIVAL]      = &sRivalNamingScreenTemplate,
 };
 
 static const struct OamData sOam_8x8 =
@@ -2584,5 +2596,4 @@ static const struct SpritePalette sSpritePalettes[] =
     {gNamingScreenMenu_Pal[4], PALTAG_OK_BUTTON},
     {}
 };
-
 

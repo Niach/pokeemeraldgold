@@ -1,0 +1,137 @@
+{
+  "id": "MAP_WISE_TRIOS_ROOM",
+  "name": "WiseTriosRoom",
+  "layout": "LAYOUT_WISE_TRIOS_ROOM",
+  "music": "MUS_LITTLEROOT",
+  "region_map_section": "MAPSEC_ECRUTEAK_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_WISETRIOSROOM_SAGE1",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 6,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JohtoScript_WiseTriosRoom_WiseTriosRoomSage1Script",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_WISETRIOSROOM_SAGE2",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 6,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 1,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JohtoScript_WiseTriosRoom_WiseTriosRoomSage2Script",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_WISETRIOSROOM_SAGE3",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 7,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JohtoScript_WiseTriosRoom_WiseTriosRoomSage3Script",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_WISETRIOSROOM_SAGE4",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 4,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "JohtoScript_WiseTriosRoom_TrainerSageGaku",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_WISETRIOSROOM_SAGE5",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 4,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "JohtoScript_WiseTriosRoom_TrainerSageMasa",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_WISETRIOSROOM_SAGE6",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 6,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "JohtoScript_WiseTriosRoom_TrainerSageKoji",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 7,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_ECRUTEAK_CITY",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 7,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_ECRUTEAK_CITY",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_ECRUTEAK_TIN_TOWER_ENTRANCE",
+      "dest_warp_id": "4"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_TEMP_0",
+      "var_value": "255",
+      "script": "JohtoScript_WiseTriosRoom_WiseTriosRoom_CannotEnterTinTowerScript"
+    }
+  ],
+  "bg_events": []
+}

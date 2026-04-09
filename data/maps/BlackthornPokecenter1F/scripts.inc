@@ -1,0 +1,29 @@
+@ Manually maintained after Johto import. Imported scaffold replaced.
+
+BlackthornPokecenter1F_MapScripts::
+	.byte 0
+
+JohtoScript_BlackthornPokecenter1F_BlackthornPokecenter1FCooltrainerMScript::
+	goto JohtoCommon_EventScript_HappinessCheck
+
+JohtoScript_BlackthornPokecenter1F_BlackthornPokecenter1FGentlemanScript::
+	lock
+	faceplayer
+	msgbox Crystal_BlackthornPokecenter1F_BlackthornPokecenter1FGentlemanText, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_BlackthornPokecenter1F_BlackthornPokecenter1FNurseScript::
+	setorcopyvar VAR_0x800B, LOCALID_BLACKTHORNPOKECENTER1F_NURSE
+	call Common_EventScript_PkmnCenterNurse
+	waitmessage
+	waitbuttonpress
+	release
+	end
+
+JohtoScript_BlackthornPokecenter1F_BlackthornPokecenter1FTwinScript::
+	lock
+	faceplayer
+	msgbox Crystal_BlackthornPokecenter1F_BlackthornPokecenter1FTwinText, MSGBOX_DEFAULT
+	release
+	end

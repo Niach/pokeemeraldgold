@@ -1,0 +1,1249 @@
+{
+  "crystal_map": "GoldenrodMagnetTrainStation",
+  "map_id": "GOLDENROD_MAGNET_TRAIN_STATION",
+  "group": "GOLDENROD",
+  "group_index": 11,
+  "map_index": 7,
+  "tileset": "TILESET_TRAIN_STATION",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_GOLDENROD_CITY",
+  "music": "MUSIC_GOLDENROD_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 10,
+  "height_blocks": 9,
+  "border_block": "00",
+  "blk_path": "maps/GoldenrodMagnetTrainStation.blk",
+  "source_asm": "maps/GoldenrodMagnetTrainStation.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "GoldenrodMagnetTrainStationNoopScene",
+        "scene_id": "SCENE_GOLDENRODMAGNETTRAINSTATION_ARRIVE_FROM_SAFFRON"
+      }
+    ],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 8,
+        "y": 17,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 9,
+        "y": 17,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 6,
+        "y": 5,
+        "dest_map": "SAFFRON_MAGNET_TRAIN_STATION",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 11,
+        "y": 5,
+        "dest_map": "SAFFRON_MAGNET_TRAIN_STATION",
+        "dest_warp_id": 3
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 11,
+        "y": 6,
+        "scene": "SCENE_GOLDENRODMAGNETTRAINSTATION_ARRIVE_FROM_SAFFRON",
+        "script": "Script_ArriveFromSaffron"
+      }
+    ],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 9,
+        "y": 9,
+        "sprite": "SPRITE_OFFICER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodMagnetTrainStationOfficerScript",
+        "flag": -1
+      },
+      {
+        "x": 11,
+        "y": 14,
+        "sprite": "SPRITE_GENTLEMAN",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 2,
+        "movement_range_y": 2,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodMagnetTrainStationGentlemanScript",
+        "flag": "EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN"
+      }
+    ]
+  },
+  "object_consts": [
+    "GOLDENRODMAGNETTRAINSTATION_OFFICER",
+    "GOLDENRODMAGNETTRAINSTATION_GENTLEMAN"
+  ],
+  "scene_ids": [
+    "SCENE_GOLDENRODMAGNETTRAINSTATION_ARRIVE_FROM_SAFFRON"
+  ],
+  "scripts": {
+    "GoldenrodMagnetTrainStation_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script GoldenrodMagnetTrainStationNoopScene, SCENE_GOLDENRODMAGNETTRAINSTATION_ARRIVE_FROM_SAFFRON",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "GoldenrodMagnetTrainStationNoopScene",
+            "SCENE_GOLDENRODMAGNETTRAINSTATION_ARRIVE_FROM_SAFFRON"
+          ],
+          "raw": "scene_script GoldenrodMagnetTrainStationNoopScene, SCENE_GOLDENRODMAGNETTRAINSTATION_ARRIVE_FROM_SAFFRON"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "GoldenrodMagnetTrainStationNoopScene",
+      "label_refs": [
+        "GoldenrodMagnetTrainStationNoopScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodMagnetTrainStationNoopScene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodMagnetTrainStationOfficerScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_RESTORED_POWER_TO_KANTO",
+        "iftrue .MagnetTrainToSaffron",
+        "writetext GoldenrodMagnetTrainStationOfficerTheTrainHasntComeInText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_RESTORED_POWER_TO_KANTO"
+          ],
+          "raw": "checkevent EVENT_RESTORED_POWER_TO_KANTO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoldenrodMagnetTrainStationOfficerScript.MagnetTrainToSaffron"
+          ],
+          "raw": "iftrue .MagnetTrainToSaffron"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodMagnetTrainStationOfficerTheTrainHasntComeInText"
+          ],
+          "raw": "writetext GoldenrodMagnetTrainStationOfficerTheTrainHasntComeInText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "GoldenrodMagnetTrainStationOfficerScript.MagnetTrainToSaffron"
+      ],
+      "text_refs": [
+        "GoldenrodMagnetTrainStationOfficerTheTrainHasntComeInText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodMagnetTrainStationOfficerScript.MagnetTrainToSaffron": {
+      "raw_lines": [
+        "writetext GoldenrodMagnetTrainStationOfficerAreYouComingAboardText",
+        "yesorno",
+        "iffalse .DecidedNotToRide",
+        "checkitem PASS",
+        "iffalse .PassNotInBag",
+        "writetext GoldenrodMagnetTrainStationOfficerRightThisWayText",
+        "waitbutton",
+        "closetext",
+        "applymovement GOLDENRODMAGNETTRAINSTATION_OFFICER, GoldenrodMagnetTrainStationOfficerApproachTrainDoorMovement",
+        "applymovement PLAYER, GoldenrodMagnetTrainStationPlayerApproachAndEnterTrainMovement",
+        "setval FALSE",
+        "special MagnetTrain",
+        "warpcheck",
+        "newloadmap MAPSETUP_TRAIN",
+        "applymovement PLAYER, .MovementBoardTheTrain",
+        "wait 20",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodMagnetTrainStationOfficerAreYouComingAboardText"
+          ],
+          "raw": "writetext GoldenrodMagnetTrainStationOfficerAreYouComingAboardText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodMagnetTrainStationOfficerScript.DecidedNotToRide"
+          ],
+          "raw": "iffalse .DecidedNotToRide"
+        },
+        {
+          "command": "checkitem",
+          "args": [
+            "PASS"
+          ],
+          "raw": "checkitem PASS"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodMagnetTrainStationOfficerScript.PassNotInBag"
+          ],
+          "raw": "iffalse .PassNotInBag"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodMagnetTrainStationOfficerRightThisWayText"
+          ],
+          "raw": "writetext GoldenrodMagnetTrainStationOfficerRightThisWayText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "GOLDENRODMAGNETTRAINSTATION_OFFICER",
+            "GoldenrodMagnetTrainStationOfficerApproachTrainDoorMovement"
+          ],
+          "raw": "applymovement GOLDENRODMAGNETTRAINSTATION_OFFICER, GoldenrodMagnetTrainStationOfficerApproachTrainDoorMovement"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "GoldenrodMagnetTrainStationPlayerApproachAndEnterTrainMovement"
+          ],
+          "raw": "applymovement PLAYER, GoldenrodMagnetTrainStationPlayerApproachAndEnterTrainMovement"
+        },
+        {
+          "command": "setval",
+          "args": [
+            "FALSE"
+          ],
+          "raw": "setval FALSE"
+        },
+        {
+          "command": "special",
+          "args": [
+            "MagnetTrain"
+          ],
+          "raw": "special MagnetTrain"
+        },
+        {
+          "command": "warpcheck",
+          "args": [],
+          "raw": "warpcheck"
+        },
+        {
+          "command": "newloadmap",
+          "args": [
+            "MAPSETUP_TRAIN"
+          ],
+          "raw": "newloadmap MAPSETUP_TRAIN"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "GoldenrodMagnetTrainStationOfficerScript.MovementBoardTheTrain"
+          ],
+          "raw": "applymovement PLAYER, .MovementBoardTheTrain"
+        },
+        {
+          "command": "wait",
+          "args": [
+            "20"
+          ],
+          "raw": "wait 20"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "GoldenrodMagnetTrainStationOfficerScript.DecidedNotToRide",
+        "GoldenrodMagnetTrainStationOfficerScript.PassNotInBag"
+      ],
+      "text_refs": [
+        "GoldenrodMagnetTrainStationOfficerAreYouComingAboardText",
+        "GoldenrodMagnetTrainStationOfficerRightThisWayText"
+      ],
+      "movement_refs": [
+        "GoldenrodMagnetTrainStationOfficerApproachTrainDoorMovement",
+        "GoldenrodMagnetTrainStationOfficerScript.MovementBoardTheTrain",
+        "GoldenrodMagnetTrainStationPlayerApproachAndEnterTrainMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodMagnetTrainStationOfficerScript.PassNotInBag": {
+      "raw_lines": [
+        "writetext GoldenrodMagnetTrainStationOfficerYouDontHaveARailPassText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodMagnetTrainStationOfficerYouDontHaveARailPassText"
+          ],
+          "raw": "writetext GoldenrodMagnetTrainStationOfficerYouDontHaveARailPassText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodMagnetTrainStationOfficerYouDontHaveARailPassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodMagnetTrainStationOfficerScript.DecidedNotToRide": {
+      "raw_lines": [
+        "writetext GoldenrodMagnetTrainStationOfficerHopeToSeeYouAgainText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodMagnetTrainStationOfficerHopeToSeeYouAgainText"
+          ],
+          "raw": "writetext GoldenrodMagnetTrainStationOfficerHopeToSeeYouAgainText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodMagnetTrainStationOfficerHopeToSeeYouAgainText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Script_ArriveFromSaffron": {
+      "raw_lines": [
+        "applymovement GOLDENRODMAGNETTRAINSTATION_OFFICER, GoldenrodMagnetTrainStationOfficerApproachTrainDoorMovement",
+        "applymovement PLAYER, GoldenrodMagnetTrainStationPlayerLeaveTrainAndEnterStationMovement",
+        "applymovement GOLDENRODMAGNETTRAINSTATION_OFFICER, GoldenrodMagnetTrainStationOfficerReturnToBoardingGateMovement",
+        "opentext",
+        "writetext GoldenrodMagnetTrainStationOfficerArrivedInGoldenrodText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "GOLDENRODMAGNETTRAINSTATION_OFFICER",
+            "GoldenrodMagnetTrainStationOfficerApproachTrainDoorMovement"
+          ],
+          "raw": "applymovement GOLDENRODMAGNETTRAINSTATION_OFFICER, GoldenrodMagnetTrainStationOfficerApproachTrainDoorMovement"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "GoldenrodMagnetTrainStationPlayerLeaveTrainAndEnterStationMovement"
+          ],
+          "raw": "applymovement PLAYER, GoldenrodMagnetTrainStationPlayerLeaveTrainAndEnterStationMovement"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "GOLDENRODMAGNETTRAINSTATION_OFFICER",
+            "GoldenrodMagnetTrainStationOfficerReturnToBoardingGateMovement"
+          ],
+          "raw": "applymovement GOLDENRODMAGNETTRAINSTATION_OFFICER, GoldenrodMagnetTrainStationOfficerReturnToBoardingGateMovement"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodMagnetTrainStationOfficerArrivedInGoldenrodText"
+          ],
+          "raw": "writetext GoldenrodMagnetTrainStationOfficerArrivedInGoldenrodText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodMagnetTrainStationOfficerArrivedInGoldenrodText"
+      ],
+      "movement_refs": [
+        "GoldenrodMagnetTrainStationOfficerApproachTrainDoorMovement",
+        "GoldenrodMagnetTrainStationOfficerReturnToBoardingGateMovement",
+        "GoldenrodMagnetTrainStationPlayerLeaveTrainAndEnterStationMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodMagnetTrainStationGentlemanScript": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodMagnetTrainStationGentlemanText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodMagnetTrainStationGentlemanText"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodMagnetTrainStationGentlemanText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodMagnetTrainStationGentlemanText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodMagnetTrainStation_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  8, 17, GOLDENROD_CITY, 5",
+        "warp_event  9, 17, GOLDENROD_CITY, 5",
+        "warp_event  6,  5, SAFFRON_MAGNET_TRAIN_STATION, 4",
+        "warp_event 11,  5, SAFFRON_MAGNET_TRAIN_STATION, 3",
+        "def_coord_events",
+        "coord_event 11,  6, SCENE_GOLDENRODMAGNETTRAINSTATION_ARRIVE_FROM_SAFFRON, Script_ArriveFromSaffron",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  9,  9, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationOfficerScript, -1",
+        "object_event 11, 14, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationGentlemanScript, EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "8",
+            "17",
+            "GOLDENROD_CITY",
+            "5"
+          ],
+          "raw": "warp_event  8, 17, GOLDENROD_CITY, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "17",
+            "GOLDENROD_CITY",
+            "5"
+          ],
+          "raw": "warp_event  9, 17, GOLDENROD_CITY, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "6",
+            "5",
+            "SAFFRON_MAGNET_TRAIN_STATION",
+            "4"
+          ],
+          "raw": "warp_event  6,  5, SAFFRON_MAGNET_TRAIN_STATION, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "11",
+            "5",
+            "SAFFRON_MAGNET_TRAIN_STATION",
+            "3"
+          ],
+          "raw": "warp_event 11,  5, SAFFRON_MAGNET_TRAIN_STATION, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "11",
+            "6",
+            "SCENE_GOLDENRODMAGNETTRAINSTATION_ARRIVE_FROM_SAFFRON",
+            "Script_ArriveFromSaffron"
+          ],
+          "raw": "coord_event 11,  6, SCENE_GOLDENRODMAGNETTRAINSTATION_ARRIVE_FROM_SAFFRON, Script_ArriveFromSaffron"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "9",
+            "SPRITE_OFFICER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodMagnetTrainStationOfficerScript",
+            "-1"
+          ],
+          "raw": "object_event  9,  9, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationOfficerScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "11",
+            "14",
+            "SPRITE_GENTLEMAN",
+            "SPRITEMOVEDATA_WANDER",
+            "2",
+            "2",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodMagnetTrainStationGentlemanScript",
+            "EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN"
+          ],
+          "raw": "object_event 11, 14, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationGentlemanScript, EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "GoldenrodMagnetTrainStationOfficerTheTrainHasntComeInText": {
+      "raw_lines": [
+        "text \"The train hasn't\"",
+        "line \"come in\u2026\"",
+        "para \"I know! I'll carry\"",
+        "line \"the passengers on\"",
+        "cont \"my back!\"",
+        "para \"That won't work.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The train hasn't"
+        },
+        {
+          "command": "line",
+          "value": "come in\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I know! I'll carry"
+        },
+        {
+          "command": "line",
+          "value": "the passengers on"
+        },
+        {
+          "command": "cont",
+          "value": "my back!"
+        },
+        {
+          "command": "para",
+          "value": "That won't work."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodMagnetTrainStationOfficerAreYouComingAboardText": {
+      "raw_lines": [
+        "text \"We'll soon depart\"",
+        "line \"for SAFFRON.\"",
+        "para \"Are you coming\"",
+        "line \"aboard?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We'll soon depart"
+        },
+        {
+          "command": "line",
+          "value": "for SAFFRON."
+        },
+        {
+          "command": "para",
+          "value": "Are you coming"
+        },
+        {
+          "command": "line",
+          "value": "aboard?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodMagnetTrainStationOfficerRightThisWayText": {
+      "raw_lines": [
+        "text \"May I see your\"",
+        "line \"rail PASS, please?\"",
+        "para \"OK. Right this\"",
+        "line \"way, please.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "May I see your"
+        },
+        {
+          "command": "line",
+          "value": "rail PASS, please?"
+        },
+        {
+          "command": "para",
+          "value": "OK. Right this"
+        },
+        {
+          "command": "line",
+          "value": "way, please."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodMagnetTrainStationOfficerYouDontHaveARailPassText": {
+      "raw_lines": [
+        "text \"Sorry. You don't\"",
+        "line \"have a rail PASS.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Sorry. You don't"
+        },
+        {
+          "command": "line",
+          "value": "have a rail PASS."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodMagnetTrainStationOfficerHopeToSeeYouAgainText": {
+      "raw_lines": [
+        "text \"We hope to see you\"",
+        "line \"again!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We hope to see you"
+        },
+        {
+          "command": "line",
+          "value": "again!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodMagnetTrainStationOfficerArrivedInGoldenrodText": {
+      "raw_lines": [
+        "text \"We have arrived in\"",
+        "line \"GOLDENROD.\"",
+        "para \"We hope to see you\"",
+        "line \"again.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We have arrived in"
+        },
+        {
+          "command": "line",
+          "value": "GOLDENROD."
+        },
+        {
+          "command": "para",
+          "value": "We hope to see you"
+        },
+        {
+          "command": "line",
+          "value": "again."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodMagnetTrainStationGentlemanText": {
+      "raw_lines": [
+        "text \"I'm the PRESIDENT.\"",
+        "para \"My dream was to\"",
+        "line \"build a train that\"",
+        "para \"is faster than any\"",
+        "line \"#MON.\"",
+        "para \"It really brings\"",
+        "line \"JOHTO much closer\"",
+        "cont \"to KANTO.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm the PRESIDENT."
+        },
+        {
+          "command": "para",
+          "value": "My dream was to"
+        },
+        {
+          "command": "line",
+          "value": "build a train that"
+        },
+        {
+          "command": "para",
+          "value": "is faster than any"
+        },
+        {
+          "command": "line",
+          "value": "#MON."
+        },
+        {
+          "command": "para",
+          "value": "It really brings"
+        },
+        {
+          "command": "line",
+          "value": "JOHTO much closer"
+        },
+        {
+          "command": "cont",
+          "value": "to KANTO."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "GoldenrodMagnetTrainStationOfficerScript.MovementBoardTheTrain": {
+      "raw_lines": [
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "GoldenrodMagnetTrainStationOfficerApproachTrainDoorMovement": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step RIGHT",
+        "turn_head LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "GoldenrodMagnetTrainStationOfficerReturnToBoardingGateMovement": {
+      "raw_lines": [
+        "step LEFT",
+        "step DOWN",
+        "step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "GoldenrodMagnetTrainStationPlayerApproachAndEnterTrainMovement": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step UP",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "GoldenrodMagnetTrainStationPlayerLeaveTrainAndEnterStationMovement": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "GoldenrodMagnetTrainStation_MapScripts": {
+      "label_refs": [
+        "GoldenrodMagnetTrainStationNoopScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodMagnetTrainStationNoopScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodMagnetTrainStationOfficerScript": {
+      "label_refs": [
+        "GoldenrodMagnetTrainStationOfficerScript.MagnetTrainToSaffron"
+      ],
+      "text_refs": [
+        "GoldenrodMagnetTrainStationOfficerTheTrainHasntComeInText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodMagnetTrainStationOfficerScript.MagnetTrainToSaffron": {
+      "label_refs": [
+        "GoldenrodMagnetTrainStationOfficerScript.DecidedNotToRide",
+        "GoldenrodMagnetTrainStationOfficerScript.PassNotInBag"
+      ],
+      "text_refs": [
+        "GoldenrodMagnetTrainStationOfficerAreYouComingAboardText",
+        "GoldenrodMagnetTrainStationOfficerRightThisWayText"
+      ],
+      "movement_refs": [
+        "GoldenrodMagnetTrainStationOfficerApproachTrainDoorMovement",
+        "GoldenrodMagnetTrainStationOfficerScript.MovementBoardTheTrain",
+        "GoldenrodMagnetTrainStationPlayerApproachAndEnterTrainMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodMagnetTrainStationOfficerScript.PassNotInBag": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodMagnetTrainStationOfficerYouDontHaveARailPassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodMagnetTrainStationOfficerScript.DecidedNotToRide": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodMagnetTrainStationOfficerHopeToSeeYouAgainText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Script_ArriveFromSaffron": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodMagnetTrainStationOfficerArrivedInGoldenrodText"
+      ],
+      "movement_refs": [
+        "GoldenrodMagnetTrainStationOfficerApproachTrainDoorMovement",
+        "GoldenrodMagnetTrainStationOfficerReturnToBoardingGateMovement",
+        "GoldenrodMagnetTrainStationPlayerLeaveTrainAndEnterStationMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodMagnetTrainStationGentlemanScript": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodMagnetTrainStationGentlemanText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodMagnetTrainStation_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 1,
+    "callbacks": 0,
+    "warp_events": 4,
+    "coord_events": 1,
+    "bg_events": 0,
+    "object_events": 2
+  }
+}

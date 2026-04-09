@@ -18,6 +18,8 @@
   "source_asm": "maps/CherrygrovePokecenter1F.asm",
   "connections": [],
   "events": {
+    "scene_scripts": [],
+    "callbacks": [],
     "warp_events": [
       {
         "x": 3,
@@ -48,6 +50,11 @@
         "movement": "SPRITEMOVEDATA_STANDING_DOWN",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "CherrygrovePokecenter1FNurseScript",
         "flag": -1
       },
@@ -58,6 +65,11 @@
         "movement": "SPRITEMOVEDATA_STANDING_UP",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "CherrygrovePokecenter1FFisherScript",
         "flag": -1
       },
@@ -68,6 +80,11 @@
         "movement": "SPRITEMOVEDATA_STANDING_UP",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "CherrygrovePokecenter1FGentlemanScript",
         "flag": -1
       },
@@ -78,12 +95,590 @@
         "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "CherrygrovePokecenter1FTeacherScript",
         "flag": -1
       }
     ]
   },
+  "object_consts": [
+    "CHERRYGROVEPOKECENTER1F_NURSE",
+    "CHERRYGROVEPOKECENTER1F_FISHER",
+    "CHERRYGROVEPOKECENTER1F_GENTLEMAN",
+    "CHERRYGROVEPOKECENTER1F_TEACHER"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "CherrygrovePokecenter1F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "CherrygrovePokecenter1FNurseScript",
+      "label_refs": [
+        "CherrygrovePokecenter1FNurseScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygrovePokecenter1FNurseScript": {
+      "raw_lines": [
+        "jumpstd PokecenterNurseScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PokecenterNurseScript"
+          ],
+          "raw": "jumpstd PokecenterNurseScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterNurseScript"
+      ]
+    },
+    "CherrygrovePokecenter1FFisherScript": {
+      "raw_lines": [
+        "jumptextfaceplayer CherrygrovePokecenter1FFisherText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "CherrygrovePokecenter1FFisherText"
+          ],
+          "raw": "jumptextfaceplayer CherrygrovePokecenter1FFisherText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "CherrygrovePokecenter1FFisherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygrovePokecenter1FGentlemanScript": {
+      "raw_lines": [
+        "jumptextfaceplayer CherrygrovePokecenter1FGentlemanText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "CherrygrovePokecenter1FGentlemanText"
+          ],
+          "raw": "jumptextfaceplayer CherrygrovePokecenter1FGentlemanText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "CherrygrovePokecenter1FGentlemanText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygrovePokecenter1FTeacherScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM",
+        "iftrue .CommCenterOpen",
+        "writetext CherrygrovePokecenter1FTeacherText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GAVE_MYSTERY_EGG_TO_ELM"
+          ],
+          "raw": "checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CherrygrovePokecenter1FTeacherScript.CommCenterOpen"
+          ],
+          "raw": "iftrue .CommCenterOpen"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CherrygrovePokecenter1FTeacherText"
+          ],
+          "raw": "writetext CherrygrovePokecenter1FTeacherText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "CherrygrovePokecenter1FTeacherScript.CommCenterOpen"
+      ],
+      "text_refs": [
+        "CherrygrovePokecenter1FTeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygrovePokecenter1FTeacherScript.CommCenterOpen": {
+      "raw_lines": [
+        "writetext CherrygrovePokecenter1FTeacherText_CommCenterOpen",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "CherrygrovePokecenter1FTeacherText_CommCenterOpen"
+          ],
+          "raw": "writetext CherrygrovePokecenter1FTeacherText_CommCenterOpen"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "CherrygrovePokecenter1FTeacherText_CommCenterOpen"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygrovePokecenter1F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  7, CHERRYGROVE_CITY, 2",
+        "warp_event  4,  7, CHERRYGROVE_CITY, 2",
+        "warp_event  0,  7, POKECENTER_2F, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FNurseScript, -1",
+        "object_event  2,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FFisherScript, -1",
+        "object_event  8,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FGentlemanScript, -1",
+        "object_event  1,  6, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FTeacherScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "CHERRYGROVE_CITY",
+            "2"
+          ],
+          "raw": "warp_event  3,  7, CHERRYGROVE_CITY, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "CHERRYGROVE_CITY",
+            "2"
+          ],
+          "raw": "warp_event  4,  7, CHERRYGROVE_CITY, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "7",
+            "POKECENTER_2F",
+            "1"
+          ],
+          "raw": "warp_event  0,  7, POKECENTER_2F, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "1",
+            "SPRITE_NURSE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CherrygrovePokecenter1FNurseScript",
+            "-1"
+          ],
+          "raw": "object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FNurseScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CherrygrovePokecenter1FFisherScript",
+            "-1"
+          ],
+          "raw": "object_event  2,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FFisherScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "6",
+            "SPRITE_GENTLEMAN",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CherrygrovePokecenter1FGentlemanScript",
+            "-1"
+          ],
+          "raw": "object_event  8,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FGentlemanScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "6",
+            "SPRITE_TEACHER",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CherrygrovePokecenter1FTeacherScript",
+            "-1"
+          ],
+          "raw": "object_event  1,  6, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FTeacherScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "CherrygrovePokecenter1FFisherText": {
+      "raw_lines": [
+        "text \"It's great. I can\"",
+        "line \"store any number\"",
+        "para \"of #MON, and\"",
+        "line \"it's all free.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's great. I can"
+        },
+        {
+          "command": "line",
+          "value": "store any number"
+        },
+        {
+          "command": "para",
+          "value": "of #MON, and"
+        },
+        {
+          "command": "line",
+          "value": "it's all free."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CherrygrovePokecenter1FGentlemanText": {
+      "raw_lines": [
+        "text \"That PC is free\"",
+        "line \"for any trainer\"",
+        "cont \"to use.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "That PC is free"
+        },
+        {
+          "command": "line",
+          "value": "for any trainer"
+        },
+        {
+          "command": "cont",
+          "value": "to use."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CherrygrovePokecenter1FTeacherText": {
+      "raw_lines": [
+        "text \"The COMMUNICATION\"",
+        "line \"CENTER upstairs\"",
+        "cont \"was just built.\"",
+        "para \"But they're still\"",
+        "line \"finishing it up.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The COMMUNICATION"
+        },
+        {
+          "command": "line",
+          "value": "CENTER upstairs"
+        },
+        {
+          "command": "cont",
+          "value": "was just built."
+        },
+        {
+          "command": "para",
+          "value": "But they're still"
+        },
+        {
+          "command": "line",
+          "value": "finishing it up."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CherrygrovePokecenter1FTeacherText_CommCenterOpen": {
+      "raw_lines": [
+        "text \"The COMMUNICATION\"",
+        "line \"CENTER upstairs\"",
+        "cont \"was just built.\"",
+        "para \"I traded #MON\"",
+        "line \"there already!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The COMMUNICATION"
+        },
+        {
+          "command": "line",
+          "value": "CENTER upstairs"
+        },
+        {
+          "command": "cont",
+          "value": "was just built."
+        },
+        {
+          "command": "para",
+          "value": "I traded #MON"
+        },
+        {
+          "command": "line",
+          "value": "there already!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "PokecenterNurseScript"
+  ],
+  "dependencies": {
+    "CherrygrovePokecenter1F_MapScripts": {
+      "label_refs": [
+        "CherrygrovePokecenter1FNurseScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygrovePokecenter1FNurseScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterNurseScript"
+      ]
+    },
+    "CherrygrovePokecenter1FFisherScript": {
+      "label_refs": [],
+      "text_refs": [
+        "CherrygrovePokecenter1FFisherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygrovePokecenter1FGentlemanScript": {
+      "label_refs": [],
+      "text_refs": [
+        "CherrygrovePokecenter1FGentlemanText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygrovePokecenter1FTeacherScript": {
+      "label_refs": [
+        "CherrygrovePokecenter1FTeacherScript.CommCenterOpen"
+      ],
+      "text_refs": [
+        "CherrygrovePokecenter1FTeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygrovePokecenter1FTeacherScript.CommCenterOpen": {
+      "label_refs": [],
+      "text_refs": [
+        "CherrygrovePokecenter1FTeacherText_CommCenterOpen"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygrovePokecenter1F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
   "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
     "warp_events": 3,
     "coord_events": 0,
     "bg_events": 0,

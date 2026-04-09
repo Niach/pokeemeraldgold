@@ -322,6 +322,8 @@ CableClub_EventScript_MultiBattleMode::
 	end
 
 CableClub_EventScript_TryEnterColosseum::
+	specialvar VAR_RESULT, CheckOfficialLinkCompatibility
+	goto_if_eq VAR_RESULT, FALSE, CableClub_EventScript_AbortLinkOfficialCompatibility
 	call Common_EventScript_SaveGame
 	goto_if_eq VAR_RESULT, 0, CableClub_EventScript_AbortLink
 	message gText_PleaseWaitForLink
@@ -329,6 +331,7 @@ CableClub_EventScript_TryEnterColosseum::
 	special TryBattleLinkup
 	waitstate
 	goto_if_eq VAR_RESULT, LINKUP_SUCCESS, CableClub_EventScript_EnterColosseum
+	goto_if_eq VAR_RESULT, LINKUP_OFFICIAL_COMPAT_BLOCKED, CableClub_EventScript_AbortLinkOfficialCompatibility
 	goto_if_eq VAR_RESULT, LINKUP_SOMEONE_NOT_READY, CableClub_EventScript_AbortLinkSomeoneNotReady
 	goto_if_eq VAR_RESULT, LINKUP_DIFF_SELECTIONS, CableClub_EventScript_AbortLinkDifferentSelections
 	goto_if_eq VAR_RESULT, LINKUP_WRONG_NUM_PLAYERS, CableClub_EventScript_AbortLinkIncorrectNumberOfBattlers
@@ -423,6 +426,7 @@ CableClub_EventScript_TradeCenter::
 	special TryTradeLinkup
 	waitstate
 	goto_if_eq VAR_RESULT, LINKUP_SUCCESS, CableClub_EventScript_EnterTradeCenter
+	goto_if_eq VAR_RESULT, LINKUP_OFFICIAL_COMPAT_BLOCKED, CableClub_EventScript_AbortLinkOfficialCompatibility
 	goto_if_eq VAR_RESULT, LINKUP_SOMEONE_NOT_READY, CableClub_EventScript_AbortLinkSomeoneNotReady
 	goto_if_eq VAR_RESULT, LINKUP_DIFF_SELECTIONS, CableClub_EventScript_AbortLinkDifferentSelections
 	goto_if_eq VAR_RESULT, LINKUP_WRONG_NUM_PLAYERS, CableClub_EventScript_AbortLinkIncorrectNumberOfParticipants
@@ -465,6 +469,8 @@ CableClub_EventScript_CheckPartyTradeRequirements::
 	goto_if_lt VAR_RESULT, 2, CableClub_EventScript_NeedTwoMonsToTrade
 	specialvar VAR_RESULT, DoesPartyHaveEnigmaBerry
 	goto_if_eq VAR_RESULT, TRUE, CableClub_EventScript_CantTradeEnigmaBerry
+	specialvar VAR_RESULT, CheckOfficialLinkCompatibility
+	goto_if_eq VAR_RESULT, FALSE, CableClub_EventScript_AbortLinkOfficialCompatibility
 	setvar VAR_RESULT, 1
 	return
 
@@ -918,6 +924,8 @@ CableClub_EventScript_CheckPartyUnionRoomRequirements::
 	goto_if_lt VAR_RESULT, 2, CableClub_EventScript_NeedTwoMonsForUnionRoom
 	specialvar VAR_RESULT, DoesPartyHaveEnigmaBerry
 	goto_if_eq VAR_RESULT, TRUE, CableClub_EventScript_NoEnigmaBerryInUnionRoom
+	specialvar VAR_RESULT, CheckOfficialLinkCompatibility
+	goto_if_eq VAR_RESULT, FALSE, CableClub_EventScript_AbortLinkOfficialCompatibility
 	setvar VAR_RESULT, 1
 	return
 
@@ -1081,6 +1089,8 @@ CableClub_EventScript_NeedBerryForBerryCrush::
 	end
 
 CableClub_EventScript_SaveAndChooseLinkLeader::
+	call CableClub_EventScript_CheckOfficialLinkCompatibilityForWirelessService
+	goto_if_eq VAR_RESULT, FALSE, CableClub_EventScript_AbortLinkOfficialCompatibility
 	call Common_EventScript_SaveGame
 	goto_if_eq VAR_RESULT, 0, CableClub_EventScript_AbortLink
 	switch VAR_0x8004
@@ -1106,6 +1116,7 @@ CableClub_EventScript_ChooseLinkLeaderFrom2::
 CableClub_EventScript_TryLeadGroup2Players::
 	call CableClub_EventScript_TryBecomeLinkLeader
 	goto_if_eq VAR_RESULT, LINKUP_SUCCESS, CableClub_EventScript_EnterWirelessLinkRoom
+	goto_if_eq VAR_RESULT, LINKUP_OFFICIAL_COMPAT_BLOCKED, CableClub_EventScript_AbortLinkOfficialCompatibility
 	goto_if_eq VAR_RESULT, LINKUP_FAILED, CableClub_EventScript_ChooseLinkLeaderFrom2
 	goto_if_eq VAR_RESULT, LINKUP_RETRY_ROLE_ASSIGN, CableClub_EventScript_TryLeadGroup2Players
 	release
@@ -1114,6 +1125,7 @@ CableClub_EventScript_TryLeadGroup2Players::
 CableClub_EventScript_TryJoinGroup2Players::
 	call CableClub_EventScript_TryJoinLinkGroup
 	goto_if_eq VAR_RESULT, LINKUP_SUCCESS, CableClub_EventScript_EnterWirelessLinkRoom
+	goto_if_eq VAR_RESULT, LINKUP_OFFICIAL_COMPAT_BLOCKED, CableClub_EventScript_AbortLinkOfficialCompatibility
 	goto_if_eq VAR_RESULT, LINKUP_FAILED, CableClub_EventScript_ChooseLinkLeaderFrom2
 	goto_if_eq VAR_RESULT, LINKUP_RETRY_ROLE_ASSIGN, CableClub_EventScript_TryJoinGroup2Players
 	release
@@ -1133,6 +1145,7 @@ CableClub_EventScript_ChooseLinkLeaderFrom4::
 CableClub_EventScript_TryLeadGroup4Players::
 	call CableClub_EventScript_TryBecomeLinkLeader
 	goto_if_eq VAR_RESULT, LINKUP_SUCCESS, CableClub_EventScript_EnterWirelessLinkRoom
+	goto_if_eq VAR_RESULT, LINKUP_OFFICIAL_COMPAT_BLOCKED, CableClub_EventScript_AbortLinkOfficialCompatibility
 	goto_if_eq VAR_RESULT, LINKUP_FAILED, CableClub_EventScript_ChooseLinkLeaderFrom4
 	goto_if_eq VAR_RESULT, LINKUP_RETRY_ROLE_ASSIGN, CableClub_EventScript_TryLeadGroup4Players
 	release
@@ -1141,6 +1154,7 @@ CableClub_EventScript_TryLeadGroup4Players::
 CableClub_EventScript_TryJoinGroup4Players::
 	call CableClub_EventScript_TryJoinLinkGroup
 	goto_if_eq VAR_RESULT, LINKUP_SUCCESS, CableClub_EventScript_EnterWirelessLinkRoom
+	goto_if_eq VAR_RESULT, LINKUP_OFFICIAL_COMPAT_BLOCKED, CableClub_EventScript_AbortLinkOfficialCompatibility
 	goto_if_eq VAR_RESULT, LINKUP_FAILED, CableClub_EventScript_ChooseLinkLeaderFrom4
 	goto_if_eq VAR_RESULT, LINKUP_RETRY_ROLE_ASSIGN, CableClub_EventScript_TryJoinGroup4Players
 	release
@@ -1160,6 +1174,7 @@ CableClub_EventScript_ChooseLinkLeader::
 CableClub_EventScript_TryLeadGroupXPlayers::
 	call CableClub_EventScript_TryBecomeLinkLeader
 	goto_if_eq VAR_RESULT, LINKUP_SUCCESS, CableClub_EventScript_EnterWirelessLinkRoom
+	goto_if_eq VAR_RESULT, LINKUP_OFFICIAL_COMPAT_BLOCKED, CableClub_EventScript_AbortLinkOfficialCompatibility
 	goto_if_eq VAR_RESULT, LINKUP_FAILED, CableClub_EventScript_ChooseLinkLeader
 	goto_if_eq VAR_RESULT, LINKUP_RETRY_ROLE_ASSIGN, CableClub_EventScript_TryLeadGroupXPlayers
 	release
@@ -1168,10 +1183,31 @@ CableClub_EventScript_TryLeadGroupXPlayers::
 CableClub_EventScript_TryJoinGroupXPlayers::
 	call CableClub_EventScript_TryJoinLinkGroup
 	goto_if_eq VAR_RESULT, LINKUP_SUCCESS, CableClub_EventScript_EnterWirelessLinkRoom
+	goto_if_eq VAR_RESULT, LINKUP_OFFICIAL_COMPAT_BLOCKED, CableClub_EventScript_AbortLinkOfficialCompatibility
 	goto_if_eq VAR_RESULT, LINKUP_FAILED, CableClub_EventScript_ChooseLinkLeader
 	goto_if_eq VAR_RESULT, LINKUP_RETRY_ROLE_ASSIGN, CableClub_EventScript_TryJoinGroupXPlayers
 	release
 	return
+
+CableClub_EventScript_CheckOfficialLinkCompatibilityForWirelessService::
+	goto_if_eq VAR_0x8004, LINK_GROUP_TRADE, CableClub_EventScript_CheckOfficialLinkCompatibility
+	goto_if_eq VAR_0x8004, LINK_GROUP_SINGLE_BATTLE, CableClub_EventScript_CheckOfficialLinkCompatibility
+	goto_if_eq VAR_0x8004, LINK_GROUP_DOUBLE_BATTLE, CableClub_EventScript_CheckOfficialLinkCompatibility
+	goto_if_eq VAR_0x8004, LINK_GROUP_MULTI_BATTLE, CableClub_EventScript_CheckOfficialLinkCompatibility
+	setvar VAR_RESULT, TRUE
+	return
+
+CableClub_EventScript_CheckOfficialLinkCompatibility::
+	specialvar VAR_RESULT, CheckOfficialLinkCompatibility
+	return
+
+CableClub_EventScript_AbortLinkOfficialCompatibility::
+	special BufferOfficialLinkCompatibilityMessage
+	special ShowFieldMessageStringVar4
+	waitmessage
+	waitbuttonpress
+	release
+	end
 
 CableClub_EventScript_TryBecomeLinkLeader::
 	special TryBecomeLinkLeader

@@ -1,0 +1,2045 @@
+{
+  "crystal_map": "EcruteakTinTowerEntrance",
+  "map_id": "ECRUTEAK_TIN_TOWER_ENTRANCE",
+  "group": "ECRUTEAK",
+  "group_index": 4,
+  "map_index": 1,
+  "tileset": "TILESET_TOWER",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_ECRUTEAK_CITY",
+  "music": "MUSIC_ECRUTEAK_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 10,
+  "height_blocks": 9,
+  "border_block": "00",
+  "blk_path": "maps/EcruteakTinTowerEntrance.blk",
+  "source_asm": "maps/EcruteakTinTowerEntrance.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "EcruteakTinTowerEntranceNoop1Scene",
+        "scene_id": "SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS"
+      },
+      {
+        "script": "EcruteakTinTowerEntranceNoop2Scene",
+        "scene_id": "SCENE_ECRUTEAKTINTOWERENTRANCE_NOOP"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "EcruteakTinTowerEntranceInitializeSagesCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 4,
+        "y": 17,
+        "dest_map": "ECRUTEAK_CITY",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 5,
+        "y": 17,
+        "dest_map": "ECRUTEAK_CITY",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 5,
+        "y": 3,
+        "dest_map": "ECRUTEAK_TIN_TOWER_ENTRANCE",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 17,
+        "y": 15,
+        "dest_map": "ECRUTEAK_TIN_TOWER_ENTRANCE",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 17,
+        "y": 3,
+        "dest_map": "WISE_TRIOS_ROOM",
+        "dest_warp_id": 3
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 4,
+        "y": 7,
+        "scene": "SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS",
+        "script": "EcruteakTinTowerEntranceSageBlocksLeft"
+      },
+      {
+        "x": 5,
+        "y": 7,
+        "scene": "SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS",
+        "script": "EcruteakTinTowerEntranceSageBlocksRight"
+      }
+    ],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 4,
+        "y": 6,
+        "sprite": "SPRITE_SAGE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakTinTowerEntranceSageScript",
+        "flag": "EVENT_RANG_CLEAR_BELL_1"
+      },
+      {
+        "x": 5,
+        "y": 6,
+        "sprite": "SPRITE_SAGE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakTinTowerEntranceSageScript",
+        "flag": "EVENT_RANG_CLEAR_BELL_2"
+      },
+      {
+        "x": 6,
+        "y": 9,
+        "sprite": "SPRITE_SAGE",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakTinTowerEntranceWanderingSageScript",
+        "flag": "EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE"
+      },
+      {
+        "x": 3,
+        "y": 11,
+        "sprite": "SPRITE_GRAMPS",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakTinTowerEntranceGrampsScript",
+        "flag": "EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE"
+      }
+    ]
+  },
+  "object_consts": [
+    "ECRUTEAKTINTOWERENTRANCE_SAGE1",
+    "ECRUTEAKTINTOWERENTRANCE_SAGE2",
+    "ECRUTEAKTINTOWERENTRANCE_SAGE3",
+    "ECRUTEAKTINTOWERENTRANCE_GRAMPS"
+  ],
+  "scene_ids": [
+    "SCENE_ECRUTEAKTINTOWERENTRANCE_NOOP",
+    "SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS"
+  ],
+  "scripts": {
+    "EcruteakTinTowerEntrance_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script EcruteakTinTowerEntranceNoop1Scene, SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS",
+        "scene_script EcruteakTinTowerEntranceNoop2Scene, SCENE_ECRUTEAKTINTOWERENTRANCE_NOOP",
+        "def_callbacks",
+        "callback MAPCALLBACK_OBJECTS, EcruteakTinTowerEntranceInitializeSagesCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "EcruteakTinTowerEntranceNoop1Scene",
+            "SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS"
+          ],
+          "raw": "scene_script EcruteakTinTowerEntranceNoop1Scene, SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "EcruteakTinTowerEntranceNoop2Scene",
+            "SCENE_ECRUTEAKTINTOWERENTRANCE_NOOP"
+          ],
+          "raw": "scene_script EcruteakTinTowerEntranceNoop2Scene, SCENE_ECRUTEAKTINTOWERENTRANCE_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "EcruteakTinTowerEntranceInitializeSagesCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, EcruteakTinTowerEntranceInitializeSagesCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "EcruteakTinTowerEntranceNoop1Scene",
+      "label_refs": [
+        "EcruteakTinTowerEntranceNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceInitializeSagesCallback": {
+      "raw_lines": [
+        "checkevent EVENT_FOUGHT_SUICUNE",
+        "iftrue .DontBlockTower",
+        "checkevent EVENT_KOJI_ALLOWS_YOU_PASSAGE_TO_TIN_TOWER",
+        "iftrue .DontBlockTower",
+        "checkevent EVENT_CLEARED_RADIO_TOWER",
+        "iftrue .BlockTower",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_FOUGHT_SUICUNE"
+          ],
+          "raw": "checkevent EVENT_FOUGHT_SUICUNE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EcruteakTinTowerEntranceInitializeSagesCallback.DontBlockTower"
+          ],
+          "raw": "iftrue .DontBlockTower"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_KOJI_ALLOWS_YOU_PASSAGE_TO_TIN_TOWER"
+          ],
+          "raw": "checkevent EVENT_KOJI_ALLOWS_YOU_PASSAGE_TO_TIN_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EcruteakTinTowerEntranceInitializeSagesCallback.DontBlockTower"
+          ],
+          "raw": "iftrue .DontBlockTower"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_RADIO_TOWER"
+          ],
+          "raw": "checkevent EVENT_CLEARED_RADIO_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EcruteakTinTowerEntranceInitializeSagesCallback.BlockTower"
+          ],
+          "raw": "iftrue .BlockTower"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "EcruteakTinTowerEntranceInitializeSagesCallback.BlockTower",
+        "EcruteakTinTowerEntranceInitializeSagesCallback.DontBlockTower"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceInitializeSagesCallback.BlockTower": {
+      "raw_lines": [
+        "clearevent EVENT_RANG_CLEAR_BELL_1",
+        "setevent EVENT_RANG_CLEAR_BELL_2",
+        "setevent EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE",
+        "checkitem CLEAR_BELL",
+        "iftrue .NoClearBell",
+        "setscene SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS"
+      ],
+      "commands": [
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_RANG_CLEAR_BELL_1"
+          ],
+          "raw": "clearevent EVENT_RANG_CLEAR_BELL_1"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_RANG_CLEAR_BELL_2"
+          ],
+          "raw": "setevent EVENT_RANG_CLEAR_BELL_2"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE"
+          ],
+          "raw": "setevent EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE"
+        },
+        {
+          "command": "checkitem",
+          "args": [
+            "CLEAR_BELL"
+          ],
+          "raw": "checkitem CLEAR_BELL"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EcruteakTinTowerEntranceInitializeSagesCallback.NoClearBell"
+          ],
+          "raw": "iftrue .NoClearBell"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS"
+          ],
+          "raw": "setscene SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS"
+        }
+      ],
+      "first_command": "clearevent",
+      "fallthrough_label": "EcruteakTinTowerEntranceInitializeSagesCallback.NoClearBell",
+      "label_refs": [
+        "EcruteakTinTowerEntranceInitializeSagesCallback.NoClearBell"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS"
+      ],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceInitializeSagesCallback.NoClearBell": {
+      "raw_lines": [
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "endcallback",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceInitializeSagesCallback.DontBlockTower": {
+      "raw_lines": [
+        "clearevent EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE"
+          ],
+          "raw": "clearevent EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "clearevent",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceSageBlocksLeft": {
+      "raw_lines": [
+        "checkevent EVENT_RANG_CLEAR_BELL_2",
+        "iftrue EcruteakTinTowerEntranceAlreadyBlocked",
+        "applymovement ECRUTEAKTINTOWERENTRANCE_SAGE2, EcruteakTinTowerEntranceSageBlocksLeftMovement",
+        "moveobject ECRUTEAKTINTOWERENTRANCE_SAGE1, 4, 6",
+        "appear ECRUTEAKTINTOWERENTRANCE_SAGE1",
+        "pause 5",
+        "disappear ECRUTEAKTINTOWERENTRANCE_SAGE2",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_RANG_CLEAR_BELL_2"
+          ],
+          "raw": "checkevent EVENT_RANG_CLEAR_BELL_2"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EcruteakTinTowerEntranceAlreadyBlocked"
+          ],
+          "raw": "iftrue EcruteakTinTowerEntranceAlreadyBlocked"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ECRUTEAKTINTOWERENTRANCE_SAGE2",
+            "EcruteakTinTowerEntranceSageBlocksLeftMovement"
+          ],
+          "raw": "applymovement ECRUTEAKTINTOWERENTRANCE_SAGE2, EcruteakTinTowerEntranceSageBlocksLeftMovement"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ECRUTEAKTINTOWERENTRANCE_SAGE1",
+            "4",
+            "6"
+          ],
+          "raw": "moveobject ECRUTEAKTINTOWERENTRANCE_SAGE1, 4, 6"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ECRUTEAKTINTOWERENTRANCE_SAGE1"
+          ],
+          "raw": "appear ECRUTEAKTINTOWERENTRANCE_SAGE1"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "5"
+          ],
+          "raw": "pause 5"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ECRUTEAKTINTOWERENTRANCE_SAGE2"
+          ],
+          "raw": "disappear ECRUTEAKTINTOWERENTRANCE_SAGE2"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "EcruteakTinTowerEntranceAlreadyBlocked"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "EcruteakTinTowerEntranceSageBlocksLeftMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceSageBlocksRight": {
+      "raw_lines": [
+        "checkevent EVENT_RANG_CLEAR_BELL_1",
+        "iftrue EcruteakTinTowerEntranceAlreadyBlocked",
+        "applymovement ECRUTEAKTINTOWERENTRANCE_SAGE1, EcruteakTinTowerEntranceSageBlocksRightMovement",
+        "moveobject ECRUTEAKTINTOWERENTRANCE_SAGE2, 5, 6",
+        "appear ECRUTEAKTINTOWERENTRANCE_SAGE2",
+        "pause 5",
+        "disappear ECRUTEAKTINTOWERENTRANCE_SAGE1",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_RANG_CLEAR_BELL_1"
+          ],
+          "raw": "checkevent EVENT_RANG_CLEAR_BELL_1"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EcruteakTinTowerEntranceAlreadyBlocked"
+          ],
+          "raw": "iftrue EcruteakTinTowerEntranceAlreadyBlocked"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ECRUTEAKTINTOWERENTRANCE_SAGE1",
+            "EcruteakTinTowerEntranceSageBlocksRightMovement"
+          ],
+          "raw": "applymovement ECRUTEAKTINTOWERENTRANCE_SAGE1, EcruteakTinTowerEntranceSageBlocksRightMovement"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ECRUTEAKTINTOWERENTRANCE_SAGE2",
+            "5",
+            "6"
+          ],
+          "raw": "moveobject ECRUTEAKTINTOWERENTRANCE_SAGE2, 5, 6"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ECRUTEAKTINTOWERENTRANCE_SAGE2"
+          ],
+          "raw": "appear ECRUTEAKTINTOWERENTRANCE_SAGE2"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "5"
+          ],
+          "raw": "pause 5"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ECRUTEAKTINTOWERENTRANCE_SAGE1"
+          ],
+          "raw": "disappear ECRUTEAKTINTOWERENTRANCE_SAGE1"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "EcruteakTinTowerEntranceAlreadyBlocked"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "EcruteakTinTowerEntranceSageBlocksRightMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceAlreadyBlocked": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceSageScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_CLEARED_RADIO_TOWER",
+        "iftrue .CheckForClearBell",
+        "checkflag ENGINE_FOGBADGE",
+        "iftrue .BlockPassage_GotFogBadge",
+        "writetext EcruteakTinTowerEntranceSageText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_RADIO_TOWER"
+          ],
+          "raw": "checkevent EVENT_CLEARED_RADIO_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EcruteakTinTowerEntranceSageScript.CheckForClearBell"
+          ],
+          "raw": "iftrue .CheckForClearBell"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_FOGBADGE"
+          ],
+          "raw": "checkflag ENGINE_FOGBADGE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EcruteakTinTowerEntranceSageScript.BlockPassage_GotFogBadge"
+          ],
+          "raw": "iftrue .BlockPassage_GotFogBadge"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakTinTowerEntranceSageText"
+          ],
+          "raw": "writetext EcruteakTinTowerEntranceSageText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "EcruteakTinTowerEntranceSageScript.BlockPassage_GotFogBadge",
+        "EcruteakTinTowerEntranceSageScript.CheckForClearBell"
+      ],
+      "text_refs": [
+        "EcruteakTinTowerEntranceSageText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceSageScript.BlockPassage_GotFogBadge": {
+      "raw_lines": [
+        "writetext EcruteakTinTowerEntranceSageText_GotFogBadge",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakTinTowerEntranceSageText_GotFogBadge"
+          ],
+          "raw": "writetext EcruteakTinTowerEntranceSageText_GotFogBadge"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakTinTowerEntranceSageText_GotFogBadge"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceSageScript.CheckForClearBell": {
+      "raw_lines": [
+        "checkevent EVENT_KOJI_ALLOWS_YOU_PASSAGE_TO_TIN_TOWER",
+        "iftrue .AllowedThrough",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iftrue .RangClearBell",
+        "checkitem CLEAR_BELL",
+        "iftrue .GotClearBell",
+        "writetext EcruteakTinTowerEntranceSageText_NoClearBell",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_KOJI_ALLOWS_YOU_PASSAGE_TO_TIN_TOWER"
+          ],
+          "raw": "checkevent EVENT_KOJI_ALLOWS_YOU_PASSAGE_TO_TIN_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EcruteakTinTowerEntranceSageScript.AllowedThrough"
+          ],
+          "raw": "iftrue .AllowedThrough"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EcruteakTinTowerEntranceSageScript.RangClearBell"
+          ],
+          "raw": "iftrue .RangClearBell"
+        },
+        {
+          "command": "checkitem",
+          "args": [
+            "CLEAR_BELL"
+          ],
+          "raw": "checkitem CLEAR_BELL"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EcruteakTinTowerEntranceSageScript.GotClearBell"
+          ],
+          "raw": "iftrue .GotClearBell"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakTinTowerEntranceSageText_NoClearBell"
+          ],
+          "raw": "writetext EcruteakTinTowerEntranceSageText_NoClearBell"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "EcruteakTinTowerEntranceSageScript.AllowedThrough",
+        "EcruteakTinTowerEntranceSageScript.GotClearBell",
+        "EcruteakTinTowerEntranceSageScript.RangClearBell"
+      ],
+      "text_refs": [
+        "EcruteakTinTowerEntranceSageText_NoClearBell"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceSageScript.GotClearBell": {
+      "raw_lines": [
+        "writetext EcruteakTinTowerEntranceSageText_HearsClearBell",
+        "waitbutton",
+        "closetext",
+        "setscene SCENE_ECRUTEAKTINTOWERENTRANCE_NOOP",
+        "setevent EVENT_RANG_CLEAR_BELL_2",
+        "clearevent EVENT_RANG_CLEAR_BELL_1",
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakTinTowerEntranceSageText_HearsClearBell"
+          ],
+          "raw": "writetext EcruteakTinTowerEntranceSageText_HearsClearBell"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_ECRUTEAKTINTOWERENTRANCE_NOOP"
+          ],
+          "raw": "setscene SCENE_ECRUTEAKTINTOWERENTRANCE_NOOP"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_RANG_CLEAR_BELL_2"
+          ],
+          "raw": "setevent EVENT_RANG_CLEAR_BELL_2"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_RANG_CLEAR_BELL_1"
+          ],
+          "raw": "clearevent EVENT_RANG_CLEAR_BELL_1"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakTinTowerEntranceSageText_HearsClearBell"
+      ],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_ECRUTEAKTINTOWERENTRANCE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceSageScript.AllowedThrough": {
+      "raw_lines": [
+        "writetext EcruteakTinTowerEntranceSageText_PleaseDoGoOn",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakTinTowerEntranceSageText_PleaseDoGoOn"
+          ],
+          "raw": "writetext EcruteakTinTowerEntranceSageText_PleaseDoGoOn"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakTinTowerEntranceSageText_PleaseDoGoOn"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceSageScript.RangClearBell": {
+      "raw_lines": [
+        "writetext EcruteakTinTowerEntranceSageText_HeardClearBell",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakTinTowerEntranceSageText_HeardClearBell"
+          ],
+          "raw": "writetext EcruteakTinTowerEntranceSageText_HeardClearBell"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakTinTowerEntranceSageText_HeardClearBell"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceWanderingSageScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_CLEAR_BELL",
+        "iftrue .GotClearBell",
+        "writetext EcruteakTinTowerEntranceWanderingSageText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_CLEAR_BELL"
+          ],
+          "raw": "checkevent EVENT_GOT_CLEAR_BELL"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EcruteakTinTowerEntranceWanderingSageScript.GotClearBell"
+          ],
+          "raw": "iftrue .GotClearBell"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakTinTowerEntranceWanderingSageText"
+          ],
+          "raw": "writetext EcruteakTinTowerEntranceWanderingSageText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "EcruteakTinTowerEntranceWanderingSageScript.GotClearBell"
+      ],
+      "text_refs": [
+        "EcruteakTinTowerEntranceWanderingSageText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceWanderingSageScript.GotClearBell": {
+      "raw_lines": [
+        "writetext EcruteakTinTowerEntranceWanderingSageText_GotClearBell",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakTinTowerEntranceWanderingSageText_GotClearBell"
+          ],
+          "raw": "writetext EcruteakTinTowerEntranceWanderingSageText_GotClearBell"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakTinTowerEntranceWanderingSageText_GotClearBell"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceGrampsScript": {
+      "raw_lines": [
+        "jumptextfaceplayer EcruteakTinTowerEntranceGrampsText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "EcruteakTinTowerEntranceGrampsText"
+          ],
+          "raw": "jumptextfaceplayer EcruteakTinTowerEntranceGrampsText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakTinTowerEntranceGrampsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntrance_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  4, 17, ECRUTEAK_CITY, 3",
+        "warp_event  5, 17, ECRUTEAK_CITY, 3",
+        "warp_event  5,  3, ECRUTEAK_TIN_TOWER_ENTRANCE, 4",
+        "warp_event 17, 15, ECRUTEAK_TIN_TOWER_ENTRANCE, 3",
+        "warp_event 17,  3, WISE_TRIOS_ROOM, 3",
+        "def_coord_events",
+        "coord_event  4,  7, SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS, EcruteakTinTowerEntranceSageBlocksLeft",
+        "coord_event  5,  7, SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS, EcruteakTinTowerEntranceSageBlocksRight",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  4,  6, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakTinTowerEntranceSageScript, EVENT_RANG_CLEAR_BELL_1",
+        "object_event  5,  6, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakTinTowerEntranceSageScript, EVENT_RANG_CLEAR_BELL_2",
+        "object_event  6,  9, SPRITE_SAGE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakTinTowerEntranceWanderingSageScript, EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE",
+        "object_event  3, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakTinTowerEntranceGrampsScript, EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "17",
+            "ECRUTEAK_CITY",
+            "3"
+          ],
+          "raw": "warp_event  4, 17, ECRUTEAK_CITY, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "17",
+            "ECRUTEAK_CITY",
+            "3"
+          ],
+          "raw": "warp_event  5, 17, ECRUTEAK_CITY, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "3",
+            "ECRUTEAK_TIN_TOWER_ENTRANCE",
+            "4"
+          ],
+          "raw": "warp_event  5,  3, ECRUTEAK_TIN_TOWER_ENTRANCE, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "15",
+            "ECRUTEAK_TIN_TOWER_ENTRANCE",
+            "3"
+          ],
+          "raw": "warp_event 17, 15, ECRUTEAK_TIN_TOWER_ENTRANCE, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "3",
+            "WISE_TRIOS_ROOM",
+            "3"
+          ],
+          "raw": "warp_event 17,  3, WISE_TRIOS_ROOM, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "4",
+            "7",
+            "SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS",
+            "EcruteakTinTowerEntranceSageBlocksLeft"
+          ],
+          "raw": "coord_event  4,  7, SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS, EcruteakTinTowerEntranceSageBlocksLeft"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "5",
+            "7",
+            "SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS",
+            "EcruteakTinTowerEntranceSageBlocksRight"
+          ],
+          "raw": "coord_event  5,  7, SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS, EcruteakTinTowerEntranceSageBlocksRight"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "6",
+            "SPRITE_SAGE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakTinTowerEntranceSageScript",
+            "EVENT_RANG_CLEAR_BELL_1"
+          ],
+          "raw": "object_event  4,  6, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakTinTowerEntranceSageScript, EVENT_RANG_CLEAR_BELL_1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "6",
+            "SPRITE_SAGE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakTinTowerEntranceSageScript",
+            "EVENT_RANG_CLEAR_BELL_2"
+          ],
+          "raw": "object_event  5,  6, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakTinTowerEntranceSageScript, EVENT_RANG_CLEAR_BELL_2"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "9",
+            "SPRITE_SAGE",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakTinTowerEntranceWanderingSageScript",
+            "EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE"
+          ],
+          "raw": "object_event  6,  9, SPRITE_SAGE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakTinTowerEntranceWanderingSageScript, EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "11",
+            "SPRITE_GRAMPS",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakTinTowerEntranceGrampsScript",
+            "EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE"
+          ],
+          "raw": "object_event  3, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakTinTowerEntranceGrampsScript, EVENT_ECRUTEAK_TIN_TOWER_ENTRANCE_WANDERING_SAGE"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "EcruteakTinTowerEntranceSageText": {
+      "raw_lines": [
+        "text \"TIN TOWER is off\"",
+        "line \"limits to anyone\"",
+        "para \"without ECRUTEAK\"",
+        "line \"GYM's BADGE.\"",
+        "para \"Sorry, but you'll\"",
+        "line \"have to leave.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "TIN TOWER is off"
+        },
+        {
+          "command": "line",
+          "value": "limits to anyone"
+        },
+        {
+          "command": "para",
+          "value": "without ECRUTEAK"
+        },
+        {
+          "command": "line",
+          "value": "GYM's BADGE."
+        },
+        {
+          "command": "para",
+          "value": "Sorry, but you'll"
+        },
+        {
+          "command": "line",
+          "value": "have to leave."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakTinTowerEntranceSageText_GotFogBadge": {
+      "raw_lines": [
+        "text \"TIN TOWER is off\"",
+        "line \"limits to anyone\"",
+        "para \"without ECRUTEAK\"",
+        "line \"GYM's BADGE.\"",
+        "para \"Ah!\"",
+        "para \"ECRUTEAK's GYM\"",
+        "line \"BADGE! Please, go\"",
+        "cont \"right through.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "TIN TOWER is off"
+        },
+        {
+          "command": "line",
+          "value": "limits to anyone"
+        },
+        {
+          "command": "para",
+          "value": "without ECRUTEAK"
+        },
+        {
+          "command": "line",
+          "value": "GYM's BADGE."
+        },
+        {
+          "command": "para",
+          "value": "Ah!"
+        },
+        {
+          "command": "para",
+          "value": "ECRUTEAK's GYM"
+        },
+        {
+          "command": "line",
+          "value": "BADGE! Please, go"
+        },
+        {
+          "command": "cont",
+          "value": "right through."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakTinTowerEntranceSageText_NoClearBell": {
+      "raw_lines": [
+        "text \"A momentous event\"",
+        "line \"has occurred.\"",
+        "para \"I beg your pardon,\"",
+        "line \"but I must ask you\"",
+        "cont \"to leave.\"",
+        "para \"\u2026What soothes the\"",
+        "line \"soul\u2026\"",
+        "para \"The WISE TRIO say\"",
+        "line \"things that are so\"",
+        "para \"very difficult to\"",
+        "line \"understand\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A momentous event"
+        },
+        {
+          "command": "line",
+          "value": "has occurred."
+        },
+        {
+          "command": "para",
+          "value": "I beg your pardon,"
+        },
+        {
+          "command": "line",
+          "value": "but I must ask you"
+        },
+        {
+          "command": "cont",
+          "value": "to leave."
+        },
+        {
+          "command": "para",
+          "value": "\u2026What soothes the"
+        },
+        {
+          "command": "line",
+          "value": "soul\u2026"
+        },
+        {
+          "command": "para",
+          "value": "The WISE TRIO say"
+        },
+        {
+          "command": "line",
+          "value": "things that are so"
+        },
+        {
+          "command": "para",
+          "value": "very difficult to"
+        },
+        {
+          "command": "line",
+          "value": "understand\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakTinTowerEntranceSageText_HearsClearBell": {
+      "raw_lines": [
+        "text \"A momentous event\"",
+        "line \"has occurred.\"",
+        "para \"I beg your pardon,\"",
+        "line \"but I must ask you\"",
+        "cont \"to leave.\"",
+        "para \"<\u2026\u2026><\u2026\u2026><\u2026\u2026>\"",
+        "para \"Ah!\"",
+        "para \"The sound of that\"",
+        "line \"CLEAR BELL!\"",
+        "para \"It\u2026 It's sublime!\"",
+        "para \"I've never heard\"",
+        "line \"so beautiful a\"",
+        "cont \"sound before!\"",
+        "para \"That bell's chime\"",
+        "line \"is indicative of\"",
+        "cont \"the bearer's soul.\"",
+        "para \"You\u2026\"",
+        "para \"You may be able to\"",
+        "line \"make it through\"",
+        "cont \"TIN TOWER.\"",
+        "para \"Please, do go on.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A momentous event"
+        },
+        {
+          "command": "line",
+          "value": "has occurred."
+        },
+        {
+          "command": "para",
+          "value": "I beg your pardon,"
+        },
+        {
+          "command": "line",
+          "value": "but I must ask you"
+        },
+        {
+          "command": "cont",
+          "value": "to leave."
+        },
+        {
+          "command": "para",
+          "value": "<\u2026\u2026><\u2026\u2026><\u2026\u2026>"
+        },
+        {
+          "command": "para",
+          "value": "Ah!"
+        },
+        {
+          "command": "para",
+          "value": "The sound of that"
+        },
+        {
+          "command": "line",
+          "value": "CLEAR BELL!"
+        },
+        {
+          "command": "para",
+          "value": "It\u2026 It's sublime!"
+        },
+        {
+          "command": "para",
+          "value": "I've never heard"
+        },
+        {
+          "command": "line",
+          "value": "so beautiful a"
+        },
+        {
+          "command": "cont",
+          "value": "sound before!"
+        },
+        {
+          "command": "para",
+          "value": "That bell's chime"
+        },
+        {
+          "command": "line",
+          "value": "is indicative of"
+        },
+        {
+          "command": "cont",
+          "value": "the bearer's soul."
+        },
+        {
+          "command": "para",
+          "value": "You\u2026"
+        },
+        {
+          "command": "para",
+          "value": "You may be able to"
+        },
+        {
+          "command": "line",
+          "value": "make it through"
+        },
+        {
+          "command": "cont",
+          "value": "TIN TOWER."
+        },
+        {
+          "command": "para",
+          "value": "Please, do go on."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakTinTowerEntranceSageText_PleaseDoGoOn": {
+      "raw_lines": [
+        "text \"Please, do go on.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Please, do go on."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakTinTowerEntranceSageText_HeardClearBell": {
+      "raw_lines": [
+        "text \"That bell's chime\"",
+        "line \"is indicative of\"",
+        "cont \"the bearer's soul.\"",
+        "para \"You\u2026\"",
+        "para \"You may be able to\"",
+        "line \"make it through\"",
+        "cont \"TIN TOWER.\"",
+        "para \"Please, do go on.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "That bell's chime"
+        },
+        {
+          "command": "line",
+          "value": "is indicative of"
+        },
+        {
+          "command": "cont",
+          "value": "the bearer's soul."
+        },
+        {
+          "command": "para",
+          "value": "You\u2026"
+        },
+        {
+          "command": "para",
+          "value": "You may be able to"
+        },
+        {
+          "command": "line",
+          "value": "make it through"
+        },
+        {
+          "command": "cont",
+          "value": "TIN TOWER."
+        },
+        {
+          "command": "para",
+          "value": "Please, do go on."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakTinTowerEntranceWanderingSageText": {
+      "raw_lines": [
+        "text \"The TIN TOWER\"",
+        "line \"ahead is a nine-\"",
+        "para \"tier tower of\"",
+        "line \"divine beauty.\"",
+        "para \"It soothes the\"",
+        "line \"soul of all who\"",
+        "cont \"see it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The TIN TOWER"
+        },
+        {
+          "command": "line",
+          "value": "ahead is a nine-"
+        },
+        {
+          "command": "para",
+          "value": "tier tower of"
+        },
+        {
+          "command": "line",
+          "value": "divine beauty."
+        },
+        {
+          "command": "para",
+          "value": "It soothes the"
+        },
+        {
+          "command": "line",
+          "value": "soul of all who"
+        },
+        {
+          "command": "cont",
+          "value": "see it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakTinTowerEntranceWanderingSageText_GotClearBell": {
+      "raw_lines": [
+        "text \"The TIN TOWER\"",
+        "line \"shook! A #MON\"",
+        "para \"must have returned\"",
+        "line \"to the top!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The TIN TOWER"
+        },
+        {
+          "command": "line",
+          "value": "shook! A #MON"
+        },
+        {
+          "command": "para",
+          "value": "must have returned"
+        },
+        {
+          "command": "line",
+          "value": "to the top!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakTinTowerEntranceGrampsText": {
+      "raw_lines": [
+        "text \"Two towers\u2026\"",
+        "line \"Two #MON\u2026\"",
+        "para \"But when one\"",
+        "line \"burned down, both\"",
+        "para \"#MON flew away,\"",
+        "line \"never to return.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Two towers\u2026"
+        },
+        {
+          "command": "line",
+          "value": "Two #MON\u2026"
+        },
+        {
+          "command": "para",
+          "value": "But when one"
+        },
+        {
+          "command": "line",
+          "value": "burned down, both"
+        },
+        {
+          "command": "para",
+          "value": "#MON flew away,"
+        },
+        {
+          "command": "line",
+          "value": "never to return."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "EcruteakTinTowerEntranceSageBlocksLeftMovement": {
+      "raw_lines": [
+        "fix_facing",
+        "big_step LEFT",
+        "remove_fixed_facing",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "fix_facing",
+          "args": []
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "remove_fixed_facing",
+          "args": []
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "EcruteakTinTowerEntranceSageBlocksRightMovement": {
+      "raw_lines": [
+        "fix_facing",
+        "big_step RIGHT",
+        "remove_fixed_facing",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "fix_facing",
+          "args": []
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "remove_fixed_facing",
+          "args": []
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "EcruteakTinTowerEntrance_MapScripts": {
+      "label_refs": [
+        "EcruteakTinTowerEntranceNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceInitializeSagesCallback": {
+      "label_refs": [
+        "EcruteakTinTowerEntranceInitializeSagesCallback.BlockTower",
+        "EcruteakTinTowerEntranceInitializeSagesCallback.DontBlockTower"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceInitializeSagesCallback.BlockTower": {
+      "label_refs": [
+        "EcruteakTinTowerEntranceInitializeSagesCallback.NoClearBell"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS"
+      ],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceInitializeSagesCallback.NoClearBell": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceInitializeSagesCallback.DontBlockTower": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceSageBlocksLeft": {
+      "label_refs": [
+        "EcruteakTinTowerEntranceAlreadyBlocked"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "EcruteakTinTowerEntranceSageBlocksLeftMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceSageBlocksRight": {
+      "label_refs": [
+        "EcruteakTinTowerEntranceAlreadyBlocked"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "EcruteakTinTowerEntranceSageBlocksRightMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceAlreadyBlocked": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceSageScript": {
+      "label_refs": [
+        "EcruteakTinTowerEntranceSageScript.BlockPassage_GotFogBadge",
+        "EcruteakTinTowerEntranceSageScript.CheckForClearBell"
+      ],
+      "text_refs": [
+        "EcruteakTinTowerEntranceSageText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceSageScript.BlockPassage_GotFogBadge": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakTinTowerEntranceSageText_GotFogBadge"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceSageScript.CheckForClearBell": {
+      "label_refs": [
+        "EcruteakTinTowerEntranceSageScript.AllowedThrough",
+        "EcruteakTinTowerEntranceSageScript.GotClearBell",
+        "EcruteakTinTowerEntranceSageScript.RangClearBell"
+      ],
+      "text_refs": [
+        "EcruteakTinTowerEntranceSageText_NoClearBell"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceSageScript.GotClearBell": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakTinTowerEntranceSageText_HearsClearBell"
+      ],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_ECRUTEAKTINTOWERENTRANCE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceSageScript.AllowedThrough": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakTinTowerEntranceSageText_PleaseDoGoOn"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceSageScript.RangClearBell": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakTinTowerEntranceSageText_HeardClearBell"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceWanderingSageScript": {
+      "label_refs": [
+        "EcruteakTinTowerEntranceWanderingSageScript.GotClearBell"
+      ],
+      "text_refs": [
+        "EcruteakTinTowerEntranceWanderingSageText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceWanderingSageScript.GotClearBell": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakTinTowerEntranceWanderingSageText_GotClearBell"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntranceGrampsScript": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakTinTowerEntranceGrampsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakTinTowerEntrance_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
+    "warp_events": 5,
+    "coord_events": 2,
+    "bg_events": 0,
+    "object_events": 4
+  }
+}

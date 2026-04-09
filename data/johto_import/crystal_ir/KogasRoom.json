@@ -1,0 +1,1042 @@
+{
+  "crystal_map": "KogasRoom",
+  "map_id": "KOGAS_ROOM",
+  "group": "INDIGO",
+  "group_index": 16,
+  "map_index": 4,
+  "tileset": "TILESET_ELITE_FOUR_ROOM",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_INDIGO_PLATEAU",
+  "music": "MUSIC_INDIGO_PLATEAU",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 9,
+  "border_block": "00",
+  "blk_path": "maps/KogasRoom.blk",
+  "source_asm": "maps/KogasRoom.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "KogasRoomLockDoorScene",
+        "scene_id": "SCENE_KOGASROOM_LOCK_DOOR"
+      },
+      {
+        "script": "KogasRoomNoopScene",
+        "scene_id": "SCENE_KOGASROOM_NOOP"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_TILES",
+        "script": "KogasRoomDoorsCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 4,
+        "y": 17,
+        "dest_map": "WILLS_ROOM",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 5,
+        "y": 17,
+        "dest_map": "WILLS_ROOM",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 4,
+        "y": 2,
+        "dest_map": "BRUNOS_ROOM",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 5,
+        "y": 2,
+        "dest_map": "BRUNOS_ROOM",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 5,
+        "y": 7,
+        "sprite": "SPRITE_KOGA",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "KogaScript_Battle",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "KOGASROOM_KOGA"
+  ],
+  "scene_ids": [
+    "SCENE_KOGASROOM_LOCK_DOOR",
+    "SCENE_KOGASROOM_NOOP"
+  ],
+  "scripts": {
+    "KogasRoom_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script KogasRoomLockDoorScene, SCENE_KOGASROOM_LOCK_DOOR",
+        "scene_script KogasRoomNoopScene,     SCENE_KOGASROOM_NOOP",
+        "def_callbacks",
+        "callback MAPCALLBACK_TILES, KogasRoomDoorsCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "KogasRoomLockDoorScene",
+            "SCENE_KOGASROOM_LOCK_DOOR"
+          ],
+          "raw": "scene_script KogasRoomLockDoorScene, SCENE_KOGASROOM_LOCK_DOOR"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "KogasRoomNoopScene",
+            "SCENE_KOGASROOM_NOOP"
+          ],
+          "raw": "scene_script KogasRoomNoopScene,     SCENE_KOGASROOM_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_TILES",
+            "KogasRoomDoorsCallback"
+          ],
+          "raw": "callback MAPCALLBACK_TILES, KogasRoomDoorsCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "KogasRoomLockDoorScene",
+      "label_refs": [
+        "KogasRoomLockDoorScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KogasRoomLockDoorScene": {
+      "raw_lines": [
+        "sdefer KogasRoomDoorLocksBehindYouScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "sdefer",
+          "args": [
+            "KogasRoomDoorLocksBehindYouScript"
+          ],
+          "raw": "sdefer KogasRoomDoorLocksBehindYouScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "sdefer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KogasRoomNoopScene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KogasRoomDoorsCallback": {
+      "raw_lines": [
+        "checkevent EVENT_KOGAS_ROOM_ENTRANCE_CLOSED",
+        "iffalse .KeepEntranceOpen",
+        "changeblock 4, 14, $2a"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_KOGAS_ROOM_ENTRANCE_CLOSED"
+          ],
+          "raw": "checkevent EVENT_KOGAS_ROOM_ENTRANCE_CLOSED"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "KogasRoomDoorsCallback.KeepEntranceOpen"
+          ],
+          "raw": "iffalse .KeepEntranceOpen"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "14",
+            "$2a"
+          ],
+          "raw": "changeblock 4, 14, $2a"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "KogasRoomDoorsCallback.KeepEntranceOpen",
+      "label_refs": [
+        "KogasRoomDoorsCallback.KeepEntranceOpen"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KogasRoomDoorsCallback.KeepEntranceOpen": {
+      "raw_lines": [
+        "checkevent EVENT_KOGAS_ROOM_EXIT_OPEN",
+        "iffalse .KeepExitClosed",
+        "changeblock 4, 2, $16"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_KOGAS_ROOM_EXIT_OPEN"
+          ],
+          "raw": "checkevent EVENT_KOGAS_ROOM_EXIT_OPEN"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "KogasRoomDoorsCallback.KeepExitClosed"
+          ],
+          "raw": "iffalse .KeepExitClosed"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "2",
+            "$16"
+          ],
+          "raw": "changeblock 4, 2, $16"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "KogasRoomDoorsCallback.KeepExitClosed",
+      "label_refs": [
+        "KogasRoomDoorsCallback.KeepExitClosed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KogasRoomDoorsCallback.KeepExitClosed": {
+      "raw_lines": [
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "endcallback",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KogasRoomDoorLocksBehindYouScript": {
+      "raw_lines": [
+        "applymovement PLAYER, KogasRoom_EnterMovement",
+        "reanchormap $86",
+        "playsound SFX_STRENGTH",
+        "earthquake 80",
+        "changeblock 4, 14, $2a",
+        "refreshmap",
+        "closetext",
+        "setscene SCENE_KOGASROOM_NOOP",
+        "setevent EVENT_KOGAS_ROOM_ENTRANCE_CLOSED",
+        "waitsfx",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "KogasRoom_EnterMovement"
+          ],
+          "raw": "applymovement PLAYER, KogasRoom_EnterMovement"
+        },
+        {
+          "command": "reanchormap",
+          "args": [
+            "$86"
+          ],
+          "raw": "reanchormap $86"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_STRENGTH"
+          ],
+          "raw": "playsound SFX_STRENGTH"
+        },
+        {
+          "command": "earthquake",
+          "args": [
+            "80"
+          ],
+          "raw": "earthquake 80"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "14",
+            "$2a"
+          ],
+          "raw": "changeblock 4, 14, $2a"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_KOGASROOM_NOOP"
+          ],
+          "raw": "setscene SCENE_KOGASROOM_NOOP"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_KOGAS_ROOM_ENTRANCE_CLOSED"
+          ],
+          "raw": "setevent EVENT_KOGAS_ROOM_ENTRANCE_CLOSED"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "KogasRoom_EnterMovement"
+      ],
+      "scene_refs": [
+        "SCENE_KOGASROOM_NOOP"
+      ],
+      "std_calls": []
+    },
+    "KogaScript_Battle": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_BEAT_ELITE_4_KOGA",
+        "iftrue KogaScript_AfterBattle",
+        "writetext KogaScript_KogaBeforeText",
+        "waitbutton",
+        "closetext",
+        "winlosstext KogaScript_KogaBeatenText, 0",
+        "loadtrainer KOGA, KOGA1",
+        "startbattle",
+        "reloadmapafterbattle",
+        "setevent EVENT_BEAT_ELITE_4_KOGA",
+        "opentext",
+        "writetext KogaScript_KogaDefeatText",
+        "waitbutton",
+        "closetext",
+        "playsound SFX_ENTER_DOOR",
+        "changeblock 4, 2, $16",
+        "refreshmap",
+        "closetext",
+        "setevent EVENT_KOGAS_ROOM_EXIT_OPEN",
+        "waitsfx",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_ELITE_4_KOGA"
+          ],
+          "raw": "checkevent EVENT_BEAT_ELITE_4_KOGA"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KogaScript_AfterBattle"
+          ],
+          "raw": "iftrue KogaScript_AfterBattle"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KogaScript_KogaBeforeText"
+          ],
+          "raw": "writetext KogaScript_KogaBeforeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "KogaScript_KogaBeatenText",
+            "0"
+          ],
+          "raw": "winlosstext KogaScript_KogaBeatenText, 0"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "KOGA",
+            "KOGA1"
+          ],
+          "raw": "loadtrainer KOGA, KOGA1"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_ELITE_4_KOGA"
+          ],
+          "raw": "setevent EVENT_BEAT_ELITE_4_KOGA"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KogaScript_KogaDefeatText"
+          ],
+          "raw": "writetext KogaScript_KogaDefeatText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "2",
+            "$16"
+          ],
+          "raw": "changeblock 4, 2, $16"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_KOGAS_ROOM_EXIT_OPEN"
+          ],
+          "raw": "setevent EVENT_KOGAS_ROOM_EXIT_OPEN"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "KogaScript_AfterBattle"
+      ],
+      "text_refs": [
+        "KogaScript_KogaBeforeText",
+        "KogaScript_KogaDefeatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KogaScript_AfterBattle": {
+      "raw_lines": [
+        "writetext KogaScript_KogaDefeatText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "KogaScript_KogaDefeatText"
+          ],
+          "raw": "writetext KogaScript_KogaDefeatText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "KogaScript_KogaDefeatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KogasRoom_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  4, 17, WILLS_ROOM, 2",
+        "warp_event  5, 17, WILLS_ROOM, 3",
+        "warp_event  4,  2, BRUNOS_ROOM, 1",
+        "warp_event  5,  2, BRUNOS_ROOM, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  5,  7, SPRITE_KOGA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, KogaScript_Battle, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "17",
+            "WILLS_ROOM",
+            "2"
+          ],
+          "raw": "warp_event  4, 17, WILLS_ROOM, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "17",
+            "WILLS_ROOM",
+            "3"
+          ],
+          "raw": "warp_event  5, 17, WILLS_ROOM, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "2",
+            "BRUNOS_ROOM",
+            "1"
+          ],
+          "raw": "warp_event  4,  2, BRUNOS_ROOM, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "2",
+            "BRUNOS_ROOM",
+            "2"
+          ],
+          "raw": "warp_event  5,  2, BRUNOS_ROOM, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "7",
+            "SPRITE_KOGA",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "KogaScript_Battle",
+            "-1"
+          ],
+          "raw": "object_event  5,  7, SPRITE_KOGA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, KogaScript_Battle, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "KogaScript_KogaBeforeText": {
+      "raw_lines": [
+        "text \"Fwahahahaha!\"",
+        "para \"I am KOGA of the\"",
+        "line \"ELITE FOUR.\"",
+        "para \"I live in shadows,\"",
+        "line \"a ninja!\"",
+        "para \"My intricate style\"",
+        "line \"will confound and\"",
+        "cont \"destroy you!\"",
+        "para \"Confusion, sleep,\"",
+        "line \"poison\u2026\"",
+        "para \"Prepare to be the\"",
+        "line \"victim of my sin-\"",
+        "cont \"ister technique!\"",
+        "para \"Fwahahahaha!\"",
+        "para \"#MON is not\"",
+        "line \"merely about brute\"",
+        "para \"force--you shall\"",
+        "line \"see soon enough!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Fwahahahaha!"
+        },
+        {
+          "command": "para",
+          "value": "I am KOGA of the"
+        },
+        {
+          "command": "line",
+          "value": "ELITE FOUR."
+        },
+        {
+          "command": "para",
+          "value": "I live in shadows,"
+        },
+        {
+          "command": "line",
+          "value": "a ninja!"
+        },
+        {
+          "command": "para",
+          "value": "My intricate style"
+        },
+        {
+          "command": "line",
+          "value": "will confound and"
+        },
+        {
+          "command": "cont",
+          "value": "destroy you!"
+        },
+        {
+          "command": "para",
+          "value": "Confusion, sleep,"
+        },
+        {
+          "command": "line",
+          "value": "poison\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Prepare to be the"
+        },
+        {
+          "command": "line",
+          "value": "victim of my sin-"
+        },
+        {
+          "command": "cont",
+          "value": "ister technique!"
+        },
+        {
+          "command": "para",
+          "value": "Fwahahahaha!"
+        },
+        {
+          "command": "para",
+          "value": "#MON is not"
+        },
+        {
+          "command": "line",
+          "value": "merely about brute"
+        },
+        {
+          "command": "para",
+          "value": "force--you shall"
+        },
+        {
+          "command": "line",
+          "value": "see soon enough!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KogaScript_KogaBeatenText": {
+      "raw_lines": [
+        "text \"Ah!\"",
+        "line \"You have proven\"",
+        "cont \"your worth!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ah!"
+        },
+        {
+          "command": "line",
+          "value": "You have proven"
+        },
+        {
+          "command": "cont",
+          "value": "your worth!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KogaScript_KogaDefeatText": {
+      "raw_lines": [
+        "text \"I subjected you to\"",
+        "line \"everything I could\"",
+        "cont \"muster.\"",
+        "para \"But my efforts\"",
+        "line \"failed. I must\"",
+        "cont \"hone my skills.\"",
+        "para \"Go on to the next\"",
+        "line \"room, and put your\"",
+        "cont \"abilities to test!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I subjected you to"
+        },
+        {
+          "command": "line",
+          "value": "everything I could"
+        },
+        {
+          "command": "cont",
+          "value": "muster."
+        },
+        {
+          "command": "para",
+          "value": "But my efforts"
+        },
+        {
+          "command": "line",
+          "value": "failed. I must"
+        },
+        {
+          "command": "cont",
+          "value": "hone my skills."
+        },
+        {
+          "command": "para",
+          "value": "Go on to the next"
+        },
+        {
+          "command": "line",
+          "value": "room, and put your"
+        },
+        {
+          "command": "cont",
+          "value": "abilities to test!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "KogasRoom_EnterMovement": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "KogasRoom_MapScripts": {
+      "label_refs": [
+        "KogasRoomLockDoorScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KogasRoomLockDoorScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KogasRoomNoopScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KogasRoomDoorsCallback": {
+      "label_refs": [
+        "KogasRoomDoorsCallback.KeepEntranceOpen"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KogasRoomDoorsCallback.KeepEntranceOpen": {
+      "label_refs": [
+        "KogasRoomDoorsCallback.KeepExitClosed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KogasRoomDoorsCallback.KeepExitClosed": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KogasRoomDoorLocksBehindYouScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "KogasRoom_EnterMovement"
+      ],
+      "scene_refs": [
+        "SCENE_KOGASROOM_NOOP"
+      ],
+      "std_calls": []
+    },
+    "KogaScript_Battle": {
+      "label_refs": [
+        "KogaScript_AfterBattle"
+      ],
+      "text_refs": [
+        "KogaScript_KogaBeforeText",
+        "KogaScript_KogaDefeatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KogaScript_AfterBattle": {
+      "label_refs": [],
+      "text_refs": [
+        "KogaScript_KogaDefeatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KogasRoom_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
+    "warp_events": 4,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 1
+  }
+}

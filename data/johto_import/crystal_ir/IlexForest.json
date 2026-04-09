@@ -1,0 +1,7226 @@
+{
+  "crystal_map": "IlexForest",
+  "map_id": "ILEX_FOREST",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 52,
+  "tileset": "TILESET_FOREST",
+  "environment": "CAVE",
+  "landmark": "LANDMARK_ILEX_FOREST",
+  "music": "MUSIC_UNION_CAVE",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_NITE",
+  "fishgroup": "FISHGROUP_POND",
+  "width_blocks": 15,
+  "height_blocks": 27,
+  "border_block": "05",
+  "blk_path": "maps/IlexForest.blk",
+  "source_asm": "maps/IlexForest.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "IlexForestFarfetchdCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 1,
+        "y": 5,
+        "dest_map": "ROUTE_34_ILEX_FOREST_GATE",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 3,
+        "y": 42,
+        "dest_map": "ILEX_FOREST_AZALEA_GATE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 3,
+        "y": 43,
+        "dest_map": "ILEX_FOREST_AZALEA_GATE",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 3,
+        "y": 17,
+        "kind": "BGEVENT_READ",
+        "script": "IlexForestSignpost"
+      },
+      {
+        "x": 11,
+        "y": 7,
+        "kind": "BGEVENT_ITEM",
+        "script": "IlexForestHiddenEther"
+      },
+      {
+        "x": 22,
+        "y": 14,
+        "kind": "BGEVENT_ITEM",
+        "script": "IlexForestHiddenSuperPotion"
+      },
+      {
+        "x": 1,
+        "y": 17,
+        "kind": "BGEVENT_ITEM",
+        "script": "IlexForestHiddenFullHeal"
+      },
+      {
+        "x": 8,
+        "y": 22,
+        "kind": "BGEVENT_UP",
+        "script": "IlexForestShrineScript"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 14,
+        "y": 31,
+        "sprite": "SPRITE_BIRD",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "IlexForestFarfetchdScript",
+        "flag": "EVENT_ILEX_FOREST_FARFETCHD"
+      },
+      {
+        "x": 7,
+        "y": 28,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "IlexForestCharcoalApprenticeScript",
+        "flag": "EVENT_ILEX_FOREST_APPRENTICE"
+      },
+      {
+        "x": 5,
+        "y": 28,
+        "sprite": "SPRITE_BLACK_BELT",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "IlexForestCharcoalMasterScript",
+        "flag": "EVENT_ILEX_FOREST_CHARCOAL_MASTER"
+      },
+      {
+        "x": 15,
+        "y": 14,
+        "sprite": "SPRITE_ROCKER",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "IlexForestHeadbuttGuyScript",
+        "flag": -1
+      },
+      {
+        "x": 20,
+        "y": 32,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "IlexForestRevive",
+        "flag": "EVENT_ILEX_FOREST_REVIVE"
+      },
+      {
+        "x": 8,
+        "y": 29,
+        "sprite": "SPRITE_KURT",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_ILEX_FOREST_KURT"
+      },
+      {
+        "x": 3,
+        "y": 24,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "IlexForestLassScript",
+        "flag": "EVENT_ILEX_FOREST_LASS"
+      },
+      {
+        "x": 12,
+        "y": 1,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 0,
+        "script": "TrainerBugCatcherWayne",
+        "flag": -1
+      },
+      {
+        "x": 9,
+        "y": 17,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "IlexForestXAttack",
+        "flag": "EVENT_ILEX_FOREST_X_ATTACK"
+      },
+      {
+        "x": 17,
+        "y": 7,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "IlexForestAntidote",
+        "flag": "EVENT_ILEX_FOREST_ANTIDOTE"
+      },
+      {
+        "x": 27,
+        "y": 1,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "IlexForestEther",
+        "flag": "EVENT_ILEX_FOREST_ETHER"
+      }
+    ]
+  },
+  "object_consts": [
+    "ILEXFOREST_FARFETCHD",
+    "ILEXFOREST_YOUNGSTER1",
+    "ILEXFOREST_BLACK_BELT",
+    "ILEXFOREST_ROCKER",
+    "ILEXFOREST_POKE_BALL1",
+    "ILEXFOREST_KURT",
+    "ILEXFOREST_LASS",
+    "ILEXFOREST_YOUNGSTER2",
+    "ILEXFOREST_POKE_BALL2",
+    "ILEXFOREST_POKE_BALL3",
+    "ILEXFOREST_POKE_BALL4"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "IlexForest_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks",
+        "callback MAPCALLBACK_OBJECTS, IlexForestFarfetchdCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "IlexForestFarfetchdCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, IlexForestFarfetchdCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "IlexForestFarfetchdCallback",
+      "label_refs": [
+        "IlexForestFarfetchdCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback": {
+      "raw_lines": [
+        "checkevent EVENT_GOT_HM01_CUT",
+        "iftrue .Static",
+        "readmem wFarfetchdPosition",
+        "ifequal  1, .PositionOne",
+        "ifequal  2, .PositionTwo",
+        "ifequal  3, .PositionThree",
+        "ifequal  4, .PositionFour",
+        "ifequal  5, .PositionFive",
+        "ifequal  6, .PositionSix",
+        "ifequal  7, .PositionSeven",
+        "ifequal  8, .PositionEight",
+        "ifequal  9, .PositionNine",
+        "ifequal 10, .PositionTen"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_HM01_CUT"
+          ],
+          "raw": "checkevent EVENT_GOT_HM01_CUT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "IlexForestFarfetchdCallback.Static"
+          ],
+          "raw": "iftrue .Static"
+        },
+        {
+          "command": "readmem",
+          "args": [
+            "wFarfetchdPosition"
+          ],
+          "raw": "readmem wFarfetchdPosition"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "IlexForestFarfetchdCallback.PositionOne"
+          ],
+          "raw": "ifequal  1, .PositionOne"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "IlexForestFarfetchdCallback.PositionTwo"
+          ],
+          "raw": "ifequal  2, .PositionTwo"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "3",
+            "IlexForestFarfetchdCallback.PositionThree"
+          ],
+          "raw": "ifequal  3, .PositionThree"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "4",
+            "IlexForestFarfetchdCallback.PositionFour"
+          ],
+          "raw": "ifequal  4, .PositionFour"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "5",
+            "IlexForestFarfetchdCallback.PositionFive"
+          ],
+          "raw": "ifequal  5, .PositionFive"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "6",
+            "IlexForestFarfetchdCallback.PositionSix"
+          ],
+          "raw": "ifequal  6, .PositionSix"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "7",
+            "IlexForestFarfetchdCallback.PositionSeven"
+          ],
+          "raw": "ifequal  7, .PositionSeven"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "8",
+            "IlexForestFarfetchdCallback.PositionEight"
+          ],
+          "raw": "ifequal  8, .PositionEight"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "9",
+            "IlexForestFarfetchdCallback.PositionNine"
+          ],
+          "raw": "ifequal  9, .PositionNine"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "10",
+            "IlexForestFarfetchdCallback.PositionTen"
+          ],
+          "raw": "ifequal 10, .PositionTen"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "IlexForestFarfetchdCallback.Static",
+      "label_refs": [
+        "IlexForestFarfetchdCallback.PositionEight",
+        "IlexForestFarfetchdCallback.PositionFive",
+        "IlexForestFarfetchdCallback.PositionFour",
+        "IlexForestFarfetchdCallback.PositionNine",
+        "IlexForestFarfetchdCallback.PositionOne",
+        "IlexForestFarfetchdCallback.PositionSeven",
+        "IlexForestFarfetchdCallback.PositionSix",
+        "IlexForestFarfetchdCallback.PositionTen",
+        "IlexForestFarfetchdCallback.PositionThree",
+        "IlexForestFarfetchdCallback.PositionTwo",
+        "IlexForestFarfetchdCallback.Static"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.Static": {
+      "raw_lines": [
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "endcallback",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionOne": {
+      "raw_lines": [
+        "moveobject ILEXFOREST_FARFETCHD, 14, 31",
+        "appear ILEXFOREST_FARFETCHD",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "14",
+            "31"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 14, 31"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "moveobject",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionTwo": {
+      "raw_lines": [
+        "moveobject ILEXFOREST_FARFETCHD, 15, 25",
+        "appear ILEXFOREST_FARFETCHD",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "15",
+            "25"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 15, 25"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "moveobject",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionThree": {
+      "raw_lines": [
+        "moveobject ILEXFOREST_FARFETCHD, 20, 24",
+        "appear ILEXFOREST_FARFETCHD",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "20",
+            "24"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 20, 24"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "moveobject",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionFour": {
+      "raw_lines": [
+        "moveobject ILEXFOREST_FARFETCHD, 29, 22",
+        "appear ILEXFOREST_FARFETCHD",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "29",
+            "22"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 29, 22"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "moveobject",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionFive": {
+      "raw_lines": [
+        "moveobject ILEXFOREST_FARFETCHD, 28, 31",
+        "appear ILEXFOREST_FARFETCHD",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "28",
+            "31"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 28, 31"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "moveobject",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionSix": {
+      "raw_lines": [
+        "moveobject ILEXFOREST_FARFETCHD, 24, 35",
+        "appear ILEXFOREST_FARFETCHD",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "24",
+            "35"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 24, 35"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "moveobject",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionSeven": {
+      "raw_lines": [
+        "moveobject ILEXFOREST_FARFETCHD, 22, 31",
+        "appear ILEXFOREST_FARFETCHD",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "22",
+            "31"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 22, 31"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "moveobject",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionEight": {
+      "raw_lines": [
+        "moveobject ILEXFOREST_FARFETCHD, 15, 29",
+        "appear ILEXFOREST_FARFETCHD",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "15",
+            "29"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 15, 29"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "moveobject",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionNine": {
+      "raw_lines": [
+        "moveobject ILEXFOREST_FARFETCHD, 10, 35",
+        "appear ILEXFOREST_FARFETCHD",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "10",
+            "35"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 10, 35"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "moveobject",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionTen": {
+      "raw_lines": [
+        "moveobject ILEXFOREST_FARFETCHD, 6, 28",
+        "appear ILEXFOREST_FARFETCHD",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "6",
+            "28"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 6, 28"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "moveobject",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestCharcoalApprenticeScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_HERDED_FARFETCHD",
+        "iftrue .DoneFarfetchd",
+        "writetext IlexForestApprenticeIntroText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_HERDED_FARFETCHD"
+          ],
+          "raw": "checkevent EVENT_HERDED_FARFETCHD"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "IlexForestCharcoalApprenticeScript.DoneFarfetchd"
+          ],
+          "raw": "iftrue .DoneFarfetchd"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "IlexForestApprenticeIntroText"
+          ],
+          "raw": "writetext IlexForestApprenticeIntroText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "IlexForestCharcoalApprenticeScript.DoneFarfetchd"
+      ],
+      "text_refs": [
+        "IlexForestApprenticeIntroText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestCharcoalApprenticeScript.DoneFarfetchd": {
+      "raw_lines": [
+        "writetext IlexForestApprenticeAfterText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "IlexForestApprenticeAfterText"
+          ],
+          "raw": "writetext IlexForestApprenticeAfterText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "IlexForestApprenticeAfterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript": {
+      "raw_lines": [
+        "readmem wFarfetchdPosition",
+        "ifequal  1, .Position1",
+        "ifequal  2, .Position2",
+        "ifequal  3, .Position3",
+        "ifequal  4, .Position4",
+        "ifequal  5, .Position5",
+        "ifequal  6, .Position6",
+        "ifequal  7, .Position7",
+        "ifequal  8, .Position8",
+        "ifequal  9, .Position9",
+        "ifequal 10, .Position10"
+      ],
+      "commands": [
+        {
+          "command": "readmem",
+          "args": [
+            "wFarfetchdPosition"
+          ],
+          "raw": "readmem wFarfetchdPosition"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "IlexForestFarfetchdScript.Position1"
+          ],
+          "raw": "ifequal  1, .Position1"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "IlexForestFarfetchdScript.Position2"
+          ],
+          "raw": "ifequal  2, .Position2"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "3",
+            "IlexForestFarfetchdScript.Position3"
+          ],
+          "raw": "ifequal  3, .Position3"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "4",
+            "IlexForestFarfetchdScript.Position4"
+          ],
+          "raw": "ifequal  4, .Position4"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "5",
+            "IlexForestFarfetchdScript.Position5"
+          ],
+          "raw": "ifequal  5, .Position5"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "6",
+            "IlexForestFarfetchdScript.Position6"
+          ],
+          "raw": "ifequal  6, .Position6"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "7",
+            "IlexForestFarfetchdScript.Position7"
+          ],
+          "raw": "ifequal  7, .Position7"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "8",
+            "IlexForestFarfetchdScript.Position8"
+          ],
+          "raw": "ifequal  8, .Position8"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "9",
+            "IlexForestFarfetchdScript.Position9"
+          ],
+          "raw": "ifequal  9, .Position9"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "10",
+            "IlexForestFarfetchdScript.Position10"
+          ],
+          "raw": "ifequal 10, .Position10"
+        }
+      ],
+      "first_command": "readmem",
+      "fallthrough_label": "IlexForestFarfetchdScript.Position1",
+      "label_refs": [
+        "IlexForestFarfetchdScript.Position1",
+        "IlexForestFarfetchdScript.Position10",
+        "IlexForestFarfetchdScript.Position2",
+        "IlexForestFarfetchdScript.Position3",
+        "IlexForestFarfetchdScript.Position4",
+        "IlexForestFarfetchdScript.Position5",
+        "IlexForestFarfetchdScript.Position6",
+        "IlexForestFarfetchdScript.Position7",
+        "IlexForestFarfetchdScript.Position8",
+        "IlexForestFarfetchdScript.Position9"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position1": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext Text_ItsTheMissingPokemon",
+        "promptbutton",
+        "writetext Text_Kwaaaa",
+        "cry FARFETCH_D",
+        "waitbutton",
+        "closetext",
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos1_Pos2",
+        "moveobject ILEXFOREST_FARFETCHD, 15, 25",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 2",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_ItsTheMissingPokemon"
+          ],
+          "raw": "writetext Text_ItsTheMissingPokemon"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_Kwaaaa"
+          ],
+          "raw": "writetext Text_Kwaaaa"
+        },
+        {
+          "command": "cry",
+          "args": [
+            "FARFETCH_D"
+          ],
+          "raw": "cry FARFETCH_D"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetchd_Pos1_Pos2"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos1_Pos2"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "15",
+            "25"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 15, 25"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "2"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 2"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Text_ItsTheMissingPokemon",
+        "Text_Kwaaaa"
+      ],
+      "movement_refs": [
+        "MovementData_Farfetchd_Pos1_Pos2"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position2": {
+      "raw_lines": [
+        "scall .CryAndCheckFacing",
+        "ifequal DOWN, .Position2_Down",
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos2_Pos3",
+        "moveobject ILEXFOREST_FARFETCHD, 20, 24",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 3",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "IlexForestFarfetchdScript.CryAndCheckFacing"
+          ],
+          "raw": "scall .CryAndCheckFacing"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "DOWN",
+            "IlexForestFarfetchdScript.Position2_Down"
+          ],
+          "raw": "ifequal DOWN, .Position2_Down"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetchd_Pos2_Pos3"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos2_Pos3"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "20",
+            "24"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 20, 24"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "3"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 3"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "scall",
+      "label_refs": [
+        "IlexForestFarfetchdScript.CryAndCheckFacing",
+        "IlexForestFarfetchdScript.Position2_Down"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetchd_Pos2_Pos3"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position2_Down": {
+      "raw_lines": [
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos2_Pos8",
+        "moveobject ILEXFOREST_FARFETCHD, 15, 29",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 8",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetchd_Pos2_Pos8"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos2_Pos8"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "15",
+            "29"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 15, 29"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "8"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 8"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetchd_Pos2_Pos8"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position3": {
+      "raw_lines": [
+        "scall .CryAndCheckFacing",
+        "ifequal LEFT, .Position3_Left",
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos3_Pos4",
+        "moveobject ILEXFOREST_FARFETCHD, 29, 22",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 4",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "IlexForestFarfetchdScript.CryAndCheckFacing"
+          ],
+          "raw": "scall .CryAndCheckFacing"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "LEFT",
+            "IlexForestFarfetchdScript.Position3_Left"
+          ],
+          "raw": "ifequal LEFT, .Position3_Left"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetchd_Pos3_Pos4"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos3_Pos4"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "29",
+            "22"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 29, 22"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "4"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 4"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "scall",
+      "label_refs": [
+        "IlexForestFarfetchdScript.CryAndCheckFacing",
+        "IlexForestFarfetchdScript.Position3_Left"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetchd_Pos3_Pos4"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position3_Left": {
+      "raw_lines": [
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos3_Pos2",
+        "moveobject ILEXFOREST_FARFETCHD, 15, 25",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 2",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetchd_Pos3_Pos2"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos3_Pos2"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "15",
+            "25"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 15, 25"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "2"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 2"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetchd_Pos3_Pos2"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position4": {
+      "raw_lines": [
+        "scall .CryAndCheckFacing",
+        "ifequal UP, .Position4_Up",
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos4_Pos5",
+        "moveobject ILEXFOREST_FARFETCHD, 28, 31",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 5",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "IlexForestFarfetchdScript.CryAndCheckFacing"
+          ],
+          "raw": "scall .CryAndCheckFacing"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "UP",
+            "IlexForestFarfetchdScript.Position4_Up"
+          ],
+          "raw": "ifequal UP, .Position4_Up"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetchd_Pos4_Pos5"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos4_Pos5"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "28",
+            "31"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 28, 31"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "5"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 5"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "scall",
+      "label_refs": [
+        "IlexForestFarfetchdScript.CryAndCheckFacing",
+        "IlexForestFarfetchdScript.Position4_Up"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetchd_Pos4_Pos5"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position4_Up": {
+      "raw_lines": [
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos4_Pos3",
+        "moveobject ILEXFOREST_FARFETCHD, 20, 24",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 3",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetchd_Pos4_Pos3"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos4_Pos3"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "20",
+            "24"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 20, 24"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "3"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 3"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetchd_Pos4_Pos3"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position5": {
+      "raw_lines": [
+        "scall .CryAndCheckFacing",
+        "ifequal UP, .Position5_Up",
+        "ifequal LEFT, .Position5_Left",
+        "ifequal RIGHT, .Position5_Right",
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos5_Pos6",
+        "moveobject ILEXFOREST_FARFETCHD, 24, 35",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 6",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "IlexForestFarfetchdScript.CryAndCheckFacing"
+          ],
+          "raw": "scall .CryAndCheckFacing"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "UP",
+            "IlexForestFarfetchdScript.Position5_Up"
+          ],
+          "raw": "ifequal UP, .Position5_Up"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "LEFT",
+            "IlexForestFarfetchdScript.Position5_Left"
+          ],
+          "raw": "ifequal LEFT, .Position5_Left"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "RIGHT",
+            "IlexForestFarfetchdScript.Position5_Right"
+          ],
+          "raw": "ifequal RIGHT, .Position5_Right"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetchd_Pos5_Pos6"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos5_Pos6"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "24",
+            "35"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 24, 35"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "6"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 6"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "scall",
+      "label_refs": [
+        "IlexForestFarfetchdScript.CryAndCheckFacing",
+        "IlexForestFarfetchdScript.Position5_Left",
+        "IlexForestFarfetchdScript.Position5_Right",
+        "IlexForestFarfetchdScript.Position5_Up"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetchd_Pos5_Pos6"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position5_Left": {
+      "raw_lines": [
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos5_Pos7",
+        "moveobject ILEXFOREST_FARFETCHD, 22, 31",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 7",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetchd_Pos5_Pos7"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetchd_Pos5_Pos7"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "22",
+            "31"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 22, 31"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "7"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 7"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetchd_Pos5_Pos7"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position5_Up": {
+      "raw_lines": [
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos5_Pos4_Up",
+        "moveobject ILEXFOREST_FARFETCHD, 29, 22",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 4",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetched_Pos5_Pos4_Up"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos5_Pos4_Up"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "29",
+            "22"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 29, 22"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "4"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 4"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos5_Pos4_Up"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position5_Right": {
+      "raw_lines": [
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos5_Pos4_Right",
+        "moveobject ILEXFOREST_FARFETCHD, 29, 22",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 4",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetched_Pos5_Pos4_Right"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos5_Pos4_Right"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "29",
+            "22"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 29, 22"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "4"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 4"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos5_Pos4_Right"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position6": {
+      "raw_lines": [
+        "scall .CryAndCheckFacing",
+        "ifequal RIGHT, .Position6_Right",
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos6_Pos7",
+        "moveobject ILEXFOREST_FARFETCHD, 22, 31",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 7",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "IlexForestFarfetchdScript.CryAndCheckFacing"
+          ],
+          "raw": "scall .CryAndCheckFacing"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "RIGHT",
+            "IlexForestFarfetchdScript.Position6_Right"
+          ],
+          "raw": "ifequal RIGHT, .Position6_Right"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetched_Pos6_Pos7"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos6_Pos7"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "22",
+            "31"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 22, 31"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "7"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 7"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "scall",
+      "label_refs": [
+        "IlexForestFarfetchdScript.CryAndCheckFacing",
+        "IlexForestFarfetchdScript.Position6_Right"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos6_Pos7"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position6_Right": {
+      "raw_lines": [
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos6_Pos5",
+        "moveobject ILEXFOREST_FARFETCHD, 28, 31",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 5",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetched_Pos6_Pos5"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos6_Pos5"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "28",
+            "31"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 28, 31"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "5"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 5"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos6_Pos5"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position7": {
+      "raw_lines": [
+        "scall .CryAndCheckFacing",
+        "ifequal DOWN, .Position7_Down",
+        "ifequal LEFT, .Position7_Left",
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos7_Pos8",
+        "moveobject ILEXFOREST_FARFETCHD, 15, 29",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 8",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "IlexForestFarfetchdScript.CryAndCheckFacing"
+          ],
+          "raw": "scall .CryAndCheckFacing"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "DOWN",
+            "IlexForestFarfetchdScript.Position7_Down"
+          ],
+          "raw": "ifequal DOWN, .Position7_Down"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "LEFT",
+            "IlexForestFarfetchdScript.Position7_Left"
+          ],
+          "raw": "ifequal LEFT, .Position7_Left"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetched_Pos7_Pos8"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos7_Pos8"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "15",
+            "29"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 15, 29"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "8"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 8"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "scall",
+      "label_refs": [
+        "IlexForestFarfetchdScript.CryAndCheckFacing",
+        "IlexForestFarfetchdScript.Position7_Down",
+        "IlexForestFarfetchdScript.Position7_Left"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos7_Pos8"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position7_Left": {
+      "raw_lines": [
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos7_Pos6",
+        "moveobject ILEXFOREST_FARFETCHD, 24, 35",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 6",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetched_Pos7_Pos6"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos7_Pos6"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "24",
+            "35"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 24, 35"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "6"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 6"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos7_Pos6"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position7_Down": {
+      "raw_lines": [
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos7_Pos5",
+        "moveobject ILEXFOREST_FARFETCHD, 28, 31",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 5",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetched_Pos7_Pos5"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos7_Pos5"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "28",
+            "31"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 28, 31"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "5"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 5"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos7_Pos5"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position8": {
+      "raw_lines": [
+        "scall .CryAndCheckFacing",
+        "ifequal UP, .Position8_Up",
+        "ifequal LEFT, .Position8_Left",
+        "ifequal RIGHT, .Position8_Right",
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos8_Pos9",
+        "moveobject ILEXFOREST_FARFETCHD, 10, 35",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 9",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "IlexForestFarfetchdScript.CryAndCheckFacing"
+          ],
+          "raw": "scall .CryAndCheckFacing"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "UP",
+            "IlexForestFarfetchdScript.Position8_Up"
+          ],
+          "raw": "ifequal UP, .Position8_Up"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "LEFT",
+            "IlexForestFarfetchdScript.Position8_Left"
+          ],
+          "raw": "ifequal LEFT, .Position8_Left"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "RIGHT",
+            "IlexForestFarfetchdScript.Position8_Right"
+          ],
+          "raw": "ifequal RIGHT, .Position8_Right"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetched_Pos8_Pos9"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos8_Pos9"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "10",
+            "35"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 10, 35"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "9"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 9"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "scall",
+      "label_refs": [
+        "IlexForestFarfetchdScript.CryAndCheckFacing",
+        "IlexForestFarfetchdScript.Position8_Left",
+        "IlexForestFarfetchdScript.Position8_Right",
+        "IlexForestFarfetchdScript.Position8_Up"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos8_Pos9"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position8_Right": {
+      "raw_lines": [
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos8_Pos7",
+        "moveobject ILEXFOREST_FARFETCHD, 22, 31",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 7",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetched_Pos8_Pos7"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos8_Pos7"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "22",
+            "31"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 22, 31"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "7"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 7"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos8_Pos7"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position8_Left": {
+      "raw_lines": [
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos8_Pos2",
+        "moveobject ILEXFOREST_FARFETCHD, 15, 25",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 2",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetched_Pos8_Pos2"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos8_Pos2"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "15",
+            "25"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 15, 25"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "2"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 2"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos8_Pos2"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position9": {
+      "raw_lines": [
+        "scall .CryAndCheckFacing",
+        "ifequal DOWN, .Position9_Down",
+        "ifequal RIGHT, .Position9_Right",
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos9_Pos10",
+        "moveobject ILEXFOREST_FARFETCHD, 6, 28",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 10",
+        "appear ILEXFOREST_BLACK_BELT",
+        "setevent EVENT_CHARCOAL_KILN_BOSS",
+        "setevent EVENT_HERDED_FARFETCHD",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "IlexForestFarfetchdScript.CryAndCheckFacing"
+          ],
+          "raw": "scall .CryAndCheckFacing"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "DOWN",
+            "IlexForestFarfetchdScript.Position9_Down"
+          ],
+          "raw": "ifequal DOWN, .Position9_Down"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "RIGHT",
+            "IlexForestFarfetchdScript.Position9_Right"
+          ],
+          "raw": "ifequal RIGHT, .Position9_Right"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetched_Pos9_Pos10"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos9_Pos10"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "6",
+            "28"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 6, 28"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "10"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 10"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_BLACK_BELT"
+          ],
+          "raw": "appear ILEXFOREST_BLACK_BELT"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_CHARCOAL_KILN_BOSS"
+          ],
+          "raw": "setevent EVENT_CHARCOAL_KILN_BOSS"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_HERDED_FARFETCHD"
+          ],
+          "raw": "setevent EVENT_HERDED_FARFETCHD"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "scall",
+      "label_refs": [
+        "IlexForestFarfetchdScript.CryAndCheckFacing",
+        "IlexForestFarfetchdScript.Position9_Down",
+        "IlexForestFarfetchdScript.Position9_Right"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos9_Pos10"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position9_Right": {
+      "raw_lines": [
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos9_Pos8_Right",
+        "moveobject ILEXFOREST_FARFETCHD, 15, 29",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 8",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetched_Pos9_Pos8_Right"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos9_Pos8_Right"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "15",
+            "29"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 15, 29"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "8"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 8"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos9_Pos8_Right"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position9_Down": {
+      "raw_lines": [
+        "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos9_Pos8_Down",
+        "moveobject ILEXFOREST_FARFETCHD, 15, 29",
+        "disappear ILEXFOREST_FARFETCHD",
+        "appear ILEXFOREST_FARFETCHD",
+        "loadmem wFarfetchdPosition, 8",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "MovementData_Farfetched_Pos9_Pos8_Down"
+          ],
+          "raw": "applymovement ILEXFOREST_FARFETCHD, MovementData_Farfetched_Pos9_Pos8_Down"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "ILEXFOREST_FARFETCHD",
+            "15",
+            "29"
+          ],
+          "raw": "moveobject ILEXFOREST_FARFETCHD, 15, 29"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "disappear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_FARFETCHD"
+          ],
+          "raw": "appear ILEXFOREST_FARFETCHD"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wFarfetchdPosition",
+            "8"
+          ],
+          "raw": "loadmem wFarfetchdPosition, 8"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos9_Pos8_Down"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position10": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext Text_Kwaaaa",
+        "cry FARFETCH_D",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_Kwaaaa"
+          ],
+          "raw": "writetext Text_Kwaaaa"
+        },
+        {
+          "command": "cry",
+          "args": [
+            "FARFETCH_D"
+          ],
+          "raw": "cry FARFETCH_D"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Text_Kwaaaa"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.CryAndCheckFacing": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext Text_Kwaaaa",
+        "cry FARFETCH_D",
+        "waitbutton",
+        "closetext",
+        "readvar VAR_FACING",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_Kwaaaa"
+          ],
+          "raw": "writetext Text_Kwaaaa"
+        },
+        {
+          "command": "cry",
+          "args": [
+            "FARFETCH_D"
+          ],
+          "raw": "cry FARFETCH_D"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_FACING"
+          ],
+          "raw": "readvar VAR_FACING"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Text_Kwaaaa"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestCharcoalMasterScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_HM01_CUT",
+        "iftrue .AlreadyGotCut",
+        "writetext Text_CharcoalMasterIntro",
+        "promptbutton",
+        "verbosegiveitem HM_CUT",
+        "setevent EVENT_GOT_HM01_CUT",
+        "writetext Text_CharcoalMasterOutro",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_ILEX_FOREST_FARFETCHD",
+        "setevent EVENT_ILEX_FOREST_APPRENTICE",
+        "setevent EVENT_ILEX_FOREST_CHARCOAL_MASTER",
+        "clearevent EVENT_CHARCOAL_KILN_FARFETCH_D",
+        "clearevent EVENT_CHARCOAL_KILN_APPRENTICE",
+        "clearevent EVENT_CHARCOAL_KILN_BOSS",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_HM01_CUT"
+          ],
+          "raw": "checkevent EVENT_GOT_HM01_CUT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "IlexForestCharcoalMasterScript.AlreadyGotCut"
+          ],
+          "raw": "iftrue .AlreadyGotCut"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_CharcoalMasterIntro"
+          ],
+          "raw": "writetext Text_CharcoalMasterIntro"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "HM_CUT"
+          ],
+          "raw": "verbosegiveitem HM_CUT"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_HM01_CUT"
+          ],
+          "raw": "setevent EVENT_GOT_HM01_CUT"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_CharcoalMasterOutro"
+          ],
+          "raw": "writetext Text_CharcoalMasterOutro"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_ILEX_FOREST_FARFETCHD"
+          ],
+          "raw": "setevent EVENT_ILEX_FOREST_FARFETCHD"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_ILEX_FOREST_APPRENTICE"
+          ],
+          "raw": "setevent EVENT_ILEX_FOREST_APPRENTICE"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_ILEX_FOREST_CHARCOAL_MASTER"
+          ],
+          "raw": "setevent EVENT_ILEX_FOREST_CHARCOAL_MASTER"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_CHARCOAL_KILN_FARFETCH_D"
+          ],
+          "raw": "clearevent EVENT_CHARCOAL_KILN_FARFETCH_D"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_CHARCOAL_KILN_APPRENTICE"
+          ],
+          "raw": "clearevent EVENT_CHARCOAL_KILN_APPRENTICE"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_CHARCOAL_KILN_BOSS"
+          ],
+          "raw": "clearevent EVENT_CHARCOAL_KILN_BOSS"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "IlexForestCharcoalMasterScript.AlreadyGotCut"
+      ],
+      "text_refs": [
+        "Text_CharcoalMasterIntro",
+        "Text_CharcoalMasterOutro"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestCharcoalMasterScript.AlreadyGotCut": {
+      "raw_lines": [
+        "writetext Text_CharcoalMasterTalkAfter",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Text_CharcoalMasterTalkAfter"
+          ],
+          "raw": "writetext Text_CharcoalMasterTalkAfter"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Text_CharcoalMasterTalkAfter"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestHeadbuttGuyScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_TM02_HEADBUTT",
+        "iftrue .AlreadyGotHeadbutt",
+        "writetext Text_HeadbuttIntro",
+        "promptbutton",
+        "verbosegiveitem TM_HEADBUTT",
+        "iffalse .BagFull",
+        "setevent EVENT_GOT_TM02_HEADBUTT"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TM02_HEADBUTT"
+          ],
+          "raw": "checkevent EVENT_GOT_TM02_HEADBUTT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "IlexForestHeadbuttGuyScript.AlreadyGotHeadbutt"
+          ],
+          "raw": "iftrue .AlreadyGotHeadbutt"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_HeadbuttIntro"
+          ],
+          "raw": "writetext Text_HeadbuttIntro"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "TM_HEADBUTT"
+          ],
+          "raw": "verbosegiveitem TM_HEADBUTT"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "IlexForestHeadbuttGuyScript.BagFull"
+          ],
+          "raw": "iffalse .BagFull"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_TM02_HEADBUTT"
+          ],
+          "raw": "setevent EVENT_GOT_TM02_HEADBUTT"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "IlexForestHeadbuttGuyScript.AlreadyGotHeadbutt",
+      "label_refs": [
+        "IlexForestHeadbuttGuyScript.AlreadyGotHeadbutt",
+        "IlexForestHeadbuttGuyScript.BagFull"
+      ],
+      "text_refs": [
+        "Text_HeadbuttIntro"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestHeadbuttGuyScript.AlreadyGotHeadbutt": {
+      "raw_lines": [
+        "writetext Text_HeadbuttOutro",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Text_HeadbuttOutro"
+          ],
+          "raw": "writetext Text_HeadbuttOutro"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "IlexForestHeadbuttGuyScript.BagFull",
+      "label_refs": [
+        "IlexForestHeadbuttGuyScript.BagFull"
+      ],
+      "text_refs": [
+        "Text_HeadbuttOutro"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestHeadbuttGuyScript.BagFull": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWayne": {
+      "raw_lines": [
+        "trainer BUG_CATCHER, WAYNE, EVENT_BEAT_BUG_CATCHER_WAYNE, BugCatcherWayneSeenText, BugCatcherWayneBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "BUG_CATCHER",
+            "WAYNE",
+            "EVENT_BEAT_BUG_CATCHER_WAYNE",
+            "BugCatcherWayneSeenText",
+            "BugCatcherWayneBeatenText",
+            "0",
+            "TrainerBugCatcherWayne.Script"
+          ],
+          "raw": "trainer BUG_CATCHER, WAYNE, EVENT_BEAT_BUG_CATCHER_WAYNE, BugCatcherWayneSeenText, BugCatcherWayneBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerBugCatcherWayne.Script",
+      "label_refs": [
+        "TrainerBugCatcherWayne.Script"
+      ],
+      "text_refs": [
+        "BugCatcherWayneBeatenText",
+        "BugCatcherWayneSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWayne.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext BugCatcherWayneAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatcherWayneAfterBattleText"
+          ],
+          "raw": "writetext BugCatcherWayneAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "BugCatcherWayneAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestLassScript": {
+      "raw_lines": [
+        "jumptextfaceplayer Text_IlexForestLass"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Text_IlexForestLass"
+          ],
+          "raw": "jumptextfaceplayer Text_IlexForestLass"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Text_IlexForestLass"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestRevive": {
+      "raw_lines": [
+        "itemball REVIVE"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "REVIVE"
+          ],
+          "raw": "itemball REVIVE"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "IlexForestXAttack",
+      "label_refs": [
+        "IlexForestXAttack"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestXAttack": {
+      "raw_lines": [
+        "itemball X_ATTACK"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "X_ATTACK"
+          ],
+          "raw": "itemball X_ATTACK"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "IlexForestAntidote",
+      "label_refs": [
+        "IlexForestAntidote"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestAntidote": {
+      "raw_lines": [
+        "itemball ANTIDOTE"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "ANTIDOTE"
+          ],
+          "raw": "itemball ANTIDOTE"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "IlexForestEther",
+      "label_refs": [
+        "IlexForestEther"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestEther": {
+      "raw_lines": [
+        "itemball ETHER"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "ETHER"
+          ],
+          "raw": "itemball ETHER"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "IlexForestHiddenEther",
+      "label_refs": [
+        "IlexForestHiddenEther"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestHiddenEther": {
+      "raw_lines": [
+        "hiddenitem ETHER, EVENT_ILEX_FOREST_HIDDEN_ETHER"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "ETHER",
+            "EVENT_ILEX_FOREST_HIDDEN_ETHER"
+          ],
+          "raw": "hiddenitem ETHER, EVENT_ILEX_FOREST_HIDDEN_ETHER"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "IlexForestHiddenSuperPotion",
+      "label_refs": [
+        "IlexForestHiddenSuperPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestHiddenSuperPotion": {
+      "raw_lines": [
+        "hiddenitem SUPER_POTION, EVENT_ILEX_FOREST_HIDDEN_SUPER_POTION"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "SUPER_POTION",
+            "EVENT_ILEX_FOREST_HIDDEN_SUPER_POTION"
+          ],
+          "raw": "hiddenitem SUPER_POTION, EVENT_ILEX_FOREST_HIDDEN_SUPER_POTION"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "IlexForestHiddenFullHeal",
+      "label_refs": [
+        "IlexForestHiddenFullHeal"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestHiddenFullHeal": {
+      "raw_lines": [
+        "hiddenitem FULL_HEAL, EVENT_ILEX_FOREST_HIDDEN_FULL_HEAL"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "FULL_HEAL",
+            "EVENT_ILEX_FOREST_HIDDEN_FULL_HEAL"
+          ],
+          "raw": "hiddenitem FULL_HEAL, EVENT_ILEX_FOREST_HIDDEN_FULL_HEAL"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "IlexForestBoulder",
+      "label_refs": [
+        "IlexForestBoulder"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestBoulder": {
+      "raw_lines": [
+        "jumpstd StrengthBoulderScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "StrengthBoulderScript"
+          ],
+          "raw": "jumpstd StrengthBoulderScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "StrengthBoulderScript"
+      ]
+    },
+    "IlexForestSignpost": {
+      "raw_lines": [
+        "jumptext IlexForestSignpostText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "IlexForestSignpostText"
+          ],
+          "raw": "jumptext IlexForestSignpostText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "IlexForestSignpostText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestShrineScript": {
+      "raw_lines": [
+        "checkevent EVENT_FOREST_IS_RESTLESS",
+        "iftrue .ForestIsRestless",
+        "sjump .DontDoCelebiEvent"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_FOREST_IS_RESTLESS"
+          ],
+          "raw": "checkevent EVENT_FOREST_IS_RESTLESS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "IlexForestShrineScript.ForestIsRestless"
+          ],
+          "raw": "iftrue .ForestIsRestless"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "IlexForestShrineScript.DontDoCelebiEvent"
+          ],
+          "raw": "sjump .DontDoCelebiEvent"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "IlexForestShrineScript.DontDoCelebiEvent",
+        "IlexForestShrineScript.ForestIsRestless"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestShrineScript.ForestIsRestless": {
+      "raw_lines": [
+        "checkitem GS_BALL",
+        "iftrue .AskCelebiEvent"
+      ],
+      "commands": [
+        {
+          "command": "checkitem",
+          "args": [
+            "GS_BALL"
+          ],
+          "raw": "checkitem GS_BALL"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "IlexForestShrineScript.AskCelebiEvent"
+          ],
+          "raw": "iftrue .AskCelebiEvent"
+        }
+      ],
+      "first_command": "checkitem",
+      "fallthrough_label": "IlexForestShrineScript.DontDoCelebiEvent",
+      "label_refs": [
+        "IlexForestShrineScript.AskCelebiEvent",
+        "IlexForestShrineScript.DontDoCelebiEvent"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestShrineScript.DontDoCelebiEvent": {
+      "raw_lines": [
+        "jumptext Text_IlexForestShrine"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "Text_IlexForestShrine"
+          ],
+          "raw": "jumptext Text_IlexForestShrine"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "Text_IlexForestShrine"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestShrineScript.AskCelebiEvent": {
+      "raw_lines": [
+        "opentext",
+        "writetext Text_ShrineCelebiEvent",
+        "yesorno",
+        "iftrue .CelebiEvent",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_ShrineCelebiEvent"
+          ],
+          "raw": "writetext Text_ShrineCelebiEvent"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "IlexForestShrineScript.CelebiEvent"
+          ],
+          "raw": "iftrue .CelebiEvent"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "IlexForestShrineScript.CelebiEvent"
+      ],
+      "text_refs": [
+        "Text_ShrineCelebiEvent"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestShrineScript.CelebiEvent": {
+      "raw_lines": [
+        "takeitem GS_BALL",
+        "clearevent EVENT_FOREST_IS_RESTLESS",
+        "setevent EVENT_AZALEA_TOWN_KURT",
+        "disappear ILEXFOREST_LASS",
+        "clearevent EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS",
+        "writetext Text_InsertGSBall",
+        "waitbutton",
+        "closetext",
+        "pause 20",
+        "showemote EMOTE_SHOCK, PLAYER, 20",
+        "special FadeOutMusic",
+        "applymovement PLAYER, IlexForestPlayerStepsDownMovement",
+        "pause 30",
+        "turnobject PLAYER, DOWN",
+        "pause 20",
+        "clearflag ENGINE_FOREST_IS_RESTLESS",
+        "special CelebiShrineEvent",
+        "loadwildmon CELEBI, 30",
+        "startbattle",
+        "reloadmapafterbattle",
+        "pause 20",
+        "special CheckCaughtCelebi",
+        "iffalse .DidntCatchCelebi",
+        "appear ILEXFOREST_KURT",
+        "applymovement ILEXFOREST_KURT, IlexForestKurtStepsUpMovement",
+        "opentext",
+        "writetext Text_KurtCaughtCelebi",
+        "waitbutton",
+        "closetext",
+        "applymovement ILEXFOREST_KURT, IlexForestKurtStepsDownMovement",
+        "disappear ILEXFOREST_KURT"
+      ],
+      "commands": [
+        {
+          "command": "takeitem",
+          "args": [
+            "GS_BALL"
+          ],
+          "raw": "takeitem GS_BALL"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_FOREST_IS_RESTLESS"
+          ],
+          "raw": "clearevent EVENT_FOREST_IS_RESTLESS"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_AZALEA_TOWN_KURT"
+          ],
+          "raw": "setevent EVENT_AZALEA_TOWN_KURT"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_LASS"
+          ],
+          "raw": "disappear ILEXFOREST_LASS"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS"
+          ],
+          "raw": "clearevent EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_InsertGSBall"
+          ],
+          "raw": "writetext Text_InsertGSBall"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "20"
+          ],
+          "raw": "pause 20"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "20"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 20"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "IlexForestPlayerStepsDownMovement"
+          ],
+          "raw": "applymovement PLAYER, IlexForestPlayerStepsDownMovement"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "30"
+          ],
+          "raw": "pause 30"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "20"
+          ],
+          "raw": "pause 20"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_FOREST_IS_RESTLESS"
+          ],
+          "raw": "clearflag ENGINE_FOREST_IS_RESTLESS"
+        },
+        {
+          "command": "special",
+          "args": [
+            "CelebiShrineEvent"
+          ],
+          "raw": "special CelebiShrineEvent"
+        },
+        {
+          "command": "loadwildmon",
+          "args": [
+            "CELEBI",
+            "30"
+          ],
+          "raw": "loadwildmon CELEBI, 30"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "20"
+          ],
+          "raw": "pause 20"
+        },
+        {
+          "command": "special",
+          "args": [
+            "CheckCaughtCelebi"
+          ],
+          "raw": "special CheckCaughtCelebi"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "IlexForestShrineScript.DidntCatchCelebi"
+          ],
+          "raw": "iffalse .DidntCatchCelebi"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ILEXFOREST_KURT"
+          ],
+          "raw": "appear ILEXFOREST_KURT"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_KURT",
+            "IlexForestKurtStepsUpMovement"
+          ],
+          "raw": "applymovement ILEXFOREST_KURT, IlexForestKurtStepsUpMovement"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_KurtCaughtCelebi"
+          ],
+          "raw": "writetext Text_KurtCaughtCelebi"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ILEXFOREST_KURT",
+            "IlexForestKurtStepsDownMovement"
+          ],
+          "raw": "applymovement ILEXFOREST_KURT, IlexForestKurtStepsDownMovement"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ILEXFOREST_KURT"
+          ],
+          "raw": "disappear ILEXFOREST_KURT"
+        }
+      ],
+      "first_command": "takeitem",
+      "fallthrough_label": "IlexForestShrineScript.DidntCatchCelebi",
+      "label_refs": [
+        "IlexForestShrineScript.DidntCatchCelebi"
+      ],
+      "text_refs": [
+        "Text_InsertGSBall",
+        "Text_KurtCaughtCelebi"
+      ],
+      "movement_refs": [
+        "IlexForestKurtStepsDownMovement",
+        "IlexForestKurtStepsUpMovement",
+        "IlexForestPlayerStepsDownMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestShrineScript.DidntCatchCelebi": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForest_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  1,  5, ROUTE_34_ILEX_FOREST_GATE, 3",
+        "warp_event  3, 42, ILEX_FOREST_AZALEA_GATE, 1",
+        "warp_event  3, 43, ILEX_FOREST_AZALEA_GATE, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  3, 17, BGEVENT_READ, IlexForestSignpost",
+        "bg_event 11,  7, BGEVENT_ITEM, IlexForestHiddenEther",
+        "bg_event 22, 14, BGEVENT_ITEM, IlexForestHiddenSuperPotion",
+        "bg_event  1, 17, BGEVENT_ITEM, IlexForestHiddenFullHeal",
+        "bg_event  8, 22, BGEVENT_UP, IlexForestShrineScript",
+        "def_object_events",
+        "object_event 14, 31, SPRITE_BIRD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IlexForestFarfetchdScript, EVENT_ILEX_FOREST_FARFETCHD",
+        "object_event  7, 28, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestCharcoalApprenticeScript, EVENT_ILEX_FOREST_APPRENTICE",
+        "object_event  5, 28, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestCharcoalMasterScript, EVENT_ILEX_FOREST_CHARCOAL_MASTER",
+        "object_event 15, 14, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestHeadbuttGuyScript, -1",
+        "object_event 20, 32, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestRevive, EVENT_ILEX_FOREST_REVIVE",
+        "object_event  8, 29, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ILEX_FOREST_KURT",
+        "object_event  3, 24, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestLassScript, EVENT_ILEX_FOREST_LASS",
+        "object_event 12,  1, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerBugCatcherWayne, -1",
+        "object_event  9, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestXAttack, EVENT_ILEX_FOREST_X_ATTACK",
+        "object_event 17,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestAntidote, EVENT_ILEX_FOREST_ANTIDOTE",
+        "object_event 27,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "1",
+            "5",
+            "ROUTE_34_ILEX_FOREST_GATE",
+            "3"
+          ],
+          "raw": "warp_event  1,  5, ROUTE_34_ILEX_FOREST_GATE, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "42",
+            "ILEX_FOREST_AZALEA_GATE",
+            "1"
+          ],
+          "raw": "warp_event  3, 42, ILEX_FOREST_AZALEA_GATE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "43",
+            "ILEX_FOREST_AZALEA_GATE",
+            "2"
+          ],
+          "raw": "warp_event  3, 43, ILEX_FOREST_AZALEA_GATE, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "17",
+            "BGEVENT_READ",
+            "IlexForestSignpost"
+          ],
+          "raw": "bg_event  3, 17, BGEVENT_READ, IlexForestSignpost"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "11",
+            "7",
+            "BGEVENT_ITEM",
+            "IlexForestHiddenEther"
+          ],
+          "raw": "bg_event 11,  7, BGEVENT_ITEM, IlexForestHiddenEther"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "22",
+            "14",
+            "BGEVENT_ITEM",
+            "IlexForestHiddenSuperPotion"
+          ],
+          "raw": "bg_event 22, 14, BGEVENT_ITEM, IlexForestHiddenSuperPotion"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "17",
+            "BGEVENT_ITEM",
+            "IlexForestHiddenFullHeal"
+          ],
+          "raw": "bg_event  1, 17, BGEVENT_ITEM, IlexForestHiddenFullHeal"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "8",
+            "22",
+            "BGEVENT_UP",
+            "IlexForestShrineScript"
+          ],
+          "raw": "bg_event  8, 22, BGEVENT_UP, IlexForestShrineScript"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "14",
+            "31",
+            "SPRITE_BIRD",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "IlexForestFarfetchdScript",
+            "EVENT_ILEX_FOREST_FARFETCHD"
+          ],
+          "raw": "object_event 14, 31, SPRITE_BIRD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IlexForestFarfetchdScript, EVENT_ILEX_FOREST_FARFETCHD"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "28",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "IlexForestCharcoalApprenticeScript",
+            "EVENT_ILEX_FOREST_APPRENTICE"
+          ],
+          "raw": "object_event  7, 28, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestCharcoalApprenticeScript, EVENT_ILEX_FOREST_APPRENTICE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "28",
+            "SPRITE_BLACK_BELT",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "IlexForestCharcoalMasterScript",
+            "EVENT_ILEX_FOREST_CHARCOAL_MASTER"
+          ],
+          "raw": "object_event  5, 28, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestCharcoalMasterScript, EVENT_ILEX_FOREST_CHARCOAL_MASTER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "15",
+            "14",
+            "SPRITE_ROCKER",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "IlexForestHeadbuttGuyScript",
+            "-1"
+          ],
+          "raw": "object_event 15, 14, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestHeadbuttGuyScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "20",
+            "32",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "IlexForestRevive",
+            "EVENT_ILEX_FOREST_REVIVE"
+          ],
+          "raw": "object_event 20, 32, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestRevive, EVENT_ILEX_FOREST_REVIVE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "29",
+            "SPRITE_KURT",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_ILEX_FOREST_KURT"
+          ],
+          "raw": "object_event  8, 29, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ILEX_FOREST_KURT"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "24",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "IlexForestLassScript",
+            "EVENT_ILEX_FOREST_LASS"
+          ],
+          "raw": "object_event  3, 24, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestLassScript, EVENT_ILEX_FOREST_LASS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "12",
+            "1",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_TRAINER",
+            "0",
+            "TrainerBugCatcherWayne",
+            "-1"
+          ],
+          "raw": "object_event 12,  1, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerBugCatcherWayne, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "17",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "IlexForestXAttack",
+            "EVENT_ILEX_FOREST_X_ATTACK"
+          ],
+          "raw": "object_event  9, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestXAttack, EVENT_ILEX_FOREST_X_ATTACK"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "17",
+            "7",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "IlexForestAntidote",
+            "EVENT_ILEX_FOREST_ANTIDOTE"
+          ],
+          "raw": "object_event 17,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestAntidote, EVENT_ILEX_FOREST_ANTIDOTE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "27",
+            "1",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "IlexForestEther",
+            "EVENT_ILEX_FOREST_ETHER"
+          ],
+          "raw": "object_event 27,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "IlexForestApprenticeIntroText": {
+      "raw_lines": [
+        "text \"Oh, man\u2026 My boss\"",
+        "line \"is going to be\"",
+        "cont \"steaming\u2026\"",
+        "para \"The FARFETCH'D\"",
+        "line \"that CUTS trees\"",
+        "para \"for charcoal took\"",
+        "line \"off on me.\"",
+        "para \"I can't go looking\"",
+        "line \"for it here in the\"",
+        "cont \"ILEX FOREST.\"",
+        "para \"It's too big, dark\"",
+        "line \"and scary for me\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, man\u2026 My boss"
+        },
+        {
+          "command": "line",
+          "value": "is going to be"
+        },
+        {
+          "command": "cont",
+          "value": "steaming\u2026"
+        },
+        {
+          "command": "para",
+          "value": "The FARFETCH'D"
+        },
+        {
+          "command": "line",
+          "value": "that CUTS trees"
+        },
+        {
+          "command": "para",
+          "value": "for charcoal took"
+        },
+        {
+          "command": "line",
+          "value": "off on me."
+        },
+        {
+          "command": "para",
+          "value": "I can't go looking"
+        },
+        {
+          "command": "line",
+          "value": "for it here in the"
+        },
+        {
+          "command": "cont",
+          "value": "ILEX FOREST."
+        },
+        {
+          "command": "para",
+          "value": "It's too big, dark"
+        },
+        {
+          "command": "line",
+          "value": "and scary for me\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "IlexForestApprenticeAfterText": {
+      "raw_lines": [
+        "text \"Wow! Thanks a\"",
+        "line \"whole bunch!\"",
+        "para \"My boss's #MON\"",
+        "line \"won't obey me be-\"",
+        "cont \"cause I don't have\"",
+        "cont \"a BADGE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Wow! Thanks a"
+        },
+        {
+          "command": "line",
+          "value": "whole bunch!"
+        },
+        {
+          "command": "para",
+          "value": "My boss's #MON"
+        },
+        {
+          "command": "line",
+          "value": "won't obey me be-"
+        },
+        {
+          "command": "cont",
+          "value": "cause I don't have"
+        },
+        {
+          "command": "cont",
+          "value": "a BADGE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_ItsTheMissingPokemon": {
+      "raw_lines": [
+        "text \"It's the missing\"",
+        "line \"#MON!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's the missing"
+        },
+        {
+          "command": "line",
+          "value": "#MON!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_Kwaaaa": {
+      "raw_lines": [
+        "text \"FARFETCH'D: Kwaa!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "FARFETCH'D: Kwaa!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_CharcoalMasterIntro": {
+      "raw_lines": [
+        "text \"Ah! My FARFETCH'D!\"",
+        "para \"You found it for\"",
+        "line \"us, kid?\"",
+        "para \"Without it, we\"",
+        "line \"wouldn't be able\"",
+        "para \"to CUT trees for\"",
+        "line \"charcoal.\"",
+        "para \"Thanks, kid!\"",
+        "para \"Now, how can I\"",
+        "line \"thank you\u2026\"",
+        "para \"I know! Here, take\"",
+        "line \"this.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ah! My FARFETCH'D!"
+        },
+        {
+          "command": "para",
+          "value": "You found it for"
+        },
+        {
+          "command": "line",
+          "value": "us, kid?"
+        },
+        {
+          "command": "para",
+          "value": "Without it, we"
+        },
+        {
+          "command": "line",
+          "value": "wouldn't be able"
+        },
+        {
+          "command": "para",
+          "value": "to CUT trees for"
+        },
+        {
+          "command": "line",
+          "value": "charcoal."
+        },
+        {
+          "command": "para",
+          "value": "Thanks, kid!"
+        },
+        {
+          "command": "para",
+          "value": "Now, how can I"
+        },
+        {
+          "command": "line",
+          "value": "thank you\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I know! Here, take"
+        },
+        {
+          "command": "line",
+          "value": "this."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_CharcoalMasterOutro": {
+      "raw_lines": [
+        "text \"That's the CUT HM.\"",
+        "line \"Teach that to a\"",
+        "para \"#MON to clear\"",
+        "line \"small trees.\"",
+        "para \"Of course, you\"",
+        "line \"have to have the\"",
+        "para \"GYM BADGE from\"",
+        "line \"AZALEA to use it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "That's the CUT HM."
+        },
+        {
+          "command": "line",
+          "value": "Teach that to a"
+        },
+        {
+          "command": "para",
+          "value": "#MON to clear"
+        },
+        {
+          "command": "line",
+          "value": "small trees."
+        },
+        {
+          "command": "para",
+          "value": "Of course, you"
+        },
+        {
+          "command": "line",
+          "value": "have to have the"
+        },
+        {
+          "command": "para",
+          "value": "GYM BADGE from"
+        },
+        {
+          "command": "line",
+          "value": "AZALEA to use it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_CharcoalMasterTalkAfter": {
+      "raw_lines": [
+        "text \"Do you want to\"",
+        "line \"apprentice as a\"",
+        "para \"charcoal maker\"",
+        "line \"with me?\"",
+        "para \"You'll be first-\"",
+        "line \"rate in ten years!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Do you want to"
+        },
+        {
+          "command": "line",
+          "value": "apprentice as a"
+        },
+        {
+          "command": "para",
+          "value": "charcoal maker"
+        },
+        {
+          "command": "line",
+          "value": "with me?"
+        },
+        {
+          "command": "para",
+          "value": "You'll be first-"
+        },
+        {
+          "command": "line",
+          "value": "rate in ten years!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_HeadbuttIntro": {
+      "raw_lines": [
+        "text \"What am I doing?\"",
+        "para \"I'm shaking trees\"",
+        "line \"using HEADBUTT.\"",
+        "para \"It's fun. Here,\"",
+        "line \"you try it too!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What am I doing?"
+        },
+        {
+          "command": "para",
+          "value": "I'm shaking trees"
+        },
+        {
+          "command": "line",
+          "value": "using HEADBUTT."
+        },
+        {
+          "command": "para",
+          "value": "It's fun. Here,"
+        },
+        {
+          "command": "line",
+          "value": "you try it too!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_HeadbuttOutro": {
+      "raw_lines": [
+        "text \"Rattle trees with\"",
+        "line \"HEADBUTT. Some-\"",
+        "cont \"times, sleeping\"",
+        "cont \"#MON fall out.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Rattle trees with"
+        },
+        {
+          "command": "line",
+          "value": "HEADBUTT. Some-"
+        },
+        {
+          "command": "cont",
+          "value": "times, sleeping"
+        },
+        {
+          "command": "cont",
+          "value": "#MON fall out."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_IlexForestLass": {
+      "raw_lines": [
+        "text \"Did something\"",
+        "line \"happen to the\"",
+        "cont \"forest's guardian?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Did something"
+        },
+        {
+          "command": "line",
+          "value": "happen to the"
+        },
+        {
+          "command": "cont",
+          "value": "forest's guardian?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "IlexForestSignpostText": {
+      "raw_lines": [
+        "text \"ILEX FOREST is\"",
+        "line \"so overgrown with\"",
+        "para \"trees that you\"",
+        "line \"can't see the sky.\"",
+        "para \"Please watch out\"",
+        "line \"for items that may\"",
+        "cont \"have been dropped.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ILEX FOREST is"
+        },
+        {
+          "command": "line",
+          "value": "so overgrown with"
+        },
+        {
+          "command": "para",
+          "value": "trees that you"
+        },
+        {
+          "command": "line",
+          "value": "can't see the sky."
+        },
+        {
+          "command": "para",
+          "value": "Please watch out"
+        },
+        {
+          "command": "line",
+          "value": "for items that may"
+        },
+        {
+          "command": "cont",
+          "value": "have been dropped."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_IlexForestShrine": {
+      "raw_lines": [
+        "text \"ILEX FOREST\"",
+        "line \"SHRINE\u2026\"",
+        "para \"It's in honor of\"",
+        "line \"the forest's\"",
+        "cont \"protector\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ILEX FOREST"
+        },
+        {
+          "command": "line",
+          "value": "SHRINE\u2026"
+        },
+        {
+          "command": "para",
+          "value": "It's in honor of"
+        },
+        {
+          "command": "line",
+          "value": "the forest's"
+        },
+        {
+          "command": "cont",
+          "value": "protector\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_ShrineCelebiEvent": {
+      "raw_lines": [
+        "text \"ILEX FOREST\"",
+        "line \"SHRINE\u2026\"",
+        "para \"It's in honor of\"",
+        "line \"the forest's\"",
+        "cont \"protector\u2026\"",
+        "para \"Oh? What is this?\"",
+        "para \"It's a hole.\"",
+        "line \"It looks like the\"",
+        "para \"GS BALL would fit\"",
+        "line \"inside it.\"",
+        "para \"Want to put the GS\"",
+        "line \"BALL here?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ILEX FOREST"
+        },
+        {
+          "command": "line",
+          "value": "SHRINE\u2026"
+        },
+        {
+          "command": "para",
+          "value": "It's in honor of"
+        },
+        {
+          "command": "line",
+          "value": "the forest's"
+        },
+        {
+          "command": "cont",
+          "value": "protector\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Oh? What is this?"
+        },
+        {
+          "command": "para",
+          "value": "It's a hole."
+        },
+        {
+          "command": "line",
+          "value": "It looks like the"
+        },
+        {
+          "command": "para",
+          "value": "GS BALL would fit"
+        },
+        {
+          "command": "line",
+          "value": "inside it."
+        },
+        {
+          "command": "para",
+          "value": "Want to put the GS"
+        },
+        {
+          "command": "line",
+          "value": "BALL here?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_InsertGSBall": {
+      "raw_lines": [
+        "text \"<PLAYER> put in the\"",
+        "line \"GS BALL.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> put in the"
+        },
+        {
+          "command": "line",
+          "value": "GS BALL."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_KurtCaughtCelebi": {
+      "raw_lines": [
+        "text \"Whew, wasn't that\"",
+        "line \"something!\"",
+        "para \"<PLAYER>, that was\"",
+        "line \"fantastic. Thanks!\"",
+        "para \"The legends about\"",
+        "line \"that SHRINE were\"",
+        "cont \"real after all.\"",
+        "para \"I feel inspired by\"",
+        "line \"what I just saw.\"",
+        "para \"It motivates me to\"",
+        "line \"make better BALLS!\"",
+        "para \"I'm going!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Whew, wasn't that"
+        },
+        {
+          "command": "line",
+          "value": "something!"
+        },
+        {
+          "command": "para",
+          "value": "<PLAYER>, that was"
+        },
+        {
+          "command": "line",
+          "value": "fantastic. Thanks!"
+        },
+        {
+          "command": "para",
+          "value": "The legends about"
+        },
+        {
+          "command": "line",
+          "value": "that SHRINE were"
+        },
+        {
+          "command": "cont",
+          "value": "real after all."
+        },
+        {
+          "command": "para",
+          "value": "I feel inspired by"
+        },
+        {
+          "command": "line",
+          "value": "what I just saw."
+        },
+        {
+          "command": "para",
+          "value": "It motivates me to"
+        },
+        {
+          "command": "line",
+          "value": "make better BALLS!"
+        },
+        {
+          "command": "para",
+          "value": "I'm going!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatcherWayneSeenText": {
+      "raw_lines": [
+        "text \"Don't sneak up on\"",
+        "line \"me like that!\"",
+        "para \"You frightened a\"",
+        "line \"#MON away!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Don't sneak up on"
+        },
+        {
+          "command": "line",
+          "value": "me like that!"
+        },
+        {
+          "command": "para",
+          "value": "You frightened a"
+        },
+        {
+          "command": "line",
+          "value": "#MON away!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatcherWayneBeatenText": {
+      "raw_lines": [
+        "text \"I hadn't seen that\"",
+        "line \"#MON before\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I hadn't seen that"
+        },
+        {
+          "command": "line",
+          "value": "#MON before\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatcherWayneAfterBattleText": {
+      "raw_lines": [
+        "text \"A #MON I've\"",
+        "line \"never seen before\"",
+        "para \"fell out of the\"",
+        "line \"tree when I used\"",
+        "cont \"HEADBUTT.\"",
+        "para \"I ought to use\"",
+        "line \"HEADBUTT in other\"",
+        "cont \"places too.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A #MON I've"
+        },
+        {
+          "command": "line",
+          "value": "never seen before"
+        },
+        {
+          "command": "para",
+          "value": "fell out of the"
+        },
+        {
+          "command": "line",
+          "value": "tree when I used"
+        },
+        {
+          "command": "cont",
+          "value": "HEADBUTT."
+        },
+        {
+          "command": "para",
+          "value": "I ought to use"
+        },
+        {
+          "command": "line",
+          "value": "HEADBUTT in other"
+        },
+        {
+          "command": "cont",
+          "value": "places too."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "MovementData_Farfetchd_Pos1_Pos2": {
+      "raw_lines": [
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetchd_Pos2_Pos3": {
+      "raw_lines": [
+        "big_step UP",
+        "big_step UP",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetchd_Pos2_Pos8": {
+      "raw_lines": [
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetchd_Pos3_Pos4": {
+      "raw_lines": [
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetchd_Pos3_Pos2": {
+      "raw_lines": [
+        "big_step UP",
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetchd_Pos4_Pos5": {
+      "raw_lines": [
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetchd_Pos4_Pos3": {
+      "raw_lines": [
+        "big_step LEFT",
+        "jump_step LEFT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "jump_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetchd_Pos5_Pos6": {
+      "raw_lines": [
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetchd_Pos5_Pos7": {
+      "raw_lines": [
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetched_Pos5_Pos4_Up": {
+      "raw_lines": [
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step RIGHT",
+        "big_step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetched_Pos5_Pos4_Right": {
+      "raw_lines": [
+        "big_step RIGHT",
+        "turn_head UP",
+        "step_sleep 1",
+        "turn_head DOWN",
+        "step_sleep 1",
+        "turn_head UP",
+        "step_sleep 1",
+        "big_step DOWN",
+        "big_step DOWN",
+        "fix_facing",
+        "jump_step UP",
+        "step_sleep 8",
+        "step_sleep 8",
+        "remove_fixed_facing",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_sleep",
+          "args": [
+            "1"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_sleep",
+          "args": [
+            "1"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_sleep",
+          "args": [
+            "1"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "fix_facing",
+          "args": []
+        },
+        {
+          "command": "jump_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_sleep",
+          "args": [
+            "8"
+          ]
+        },
+        {
+          "command": "step_sleep",
+          "args": [
+            "8"
+          ]
+        },
+        {
+          "command": "remove_fixed_facing",
+          "args": []
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetched_Pos6_Pos7": {
+      "raw_lines": [
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step UP",
+        "big_step UP",
+        "big_step RIGHT",
+        "big_step UP",
+        "big_step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetched_Pos6_Pos5": {
+      "raw_lines": [
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetched_Pos7_Pos8": {
+      "raw_lines": [
+        "big_step UP",
+        "big_step UP",
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetched_Pos7_Pos6": {
+      "raw_lines": [
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step LEFT",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetched_Pos7_Pos5": {
+      "raw_lines": [
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetched_Pos8_Pos9": {
+      "raw_lines": [
+        "big_step DOWN",
+        "big_step LEFT",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetched_Pos8_Pos7": {
+      "raw_lines": [
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetched_Pos8_Pos2": {
+      "raw_lines": [
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetched_Pos9_Pos10": {
+      "raw_lines": [
+        "big_step LEFT",
+        "big_step LEFT",
+        "fix_facing",
+        "jump_step RIGHT",
+        "step_sleep 8",
+        "step_sleep 8",
+        "remove_fixed_facing",
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "fix_facing",
+          "args": []
+        },
+        {
+          "command": "jump_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_sleep",
+          "args": [
+            "8"
+          ]
+        },
+        {
+          "command": "step_sleep",
+          "args": [
+            "8"
+          ]
+        },
+        {
+          "command": "remove_fixed_facing",
+          "args": []
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetched_Pos9_Pos8_Right": {
+      "raw_lines": [
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_Farfetched_Pos9_Pos8_Down": {
+      "raw_lines": [
+        "big_step LEFT",
+        "big_step LEFT",
+        "fix_facing",
+        "jump_step RIGHT",
+        "step_sleep 8",
+        "step_sleep 8",
+        "remove_fixed_facing",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "fix_facing",
+          "args": []
+        },
+        {
+          "command": "jump_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_sleep",
+          "args": [
+            "8"
+          ]
+        },
+        {
+          "command": "step_sleep",
+          "args": [
+            "8"
+          ]
+        },
+        {
+          "command": "remove_fixed_facing",
+          "args": []
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "IlexForestKurtStepsUpMovement": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "IlexForestKurtStepsDownMovement": {
+      "raw_lines": [
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "IlexForestPlayerStepsDownMovement": {
+      "raw_lines": [
+        "fix_facing",
+        "slow_step DOWN",
+        "remove_fixed_facing",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "fix_facing",
+          "args": []
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "remove_fixed_facing",
+          "args": []
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "StrengthBoulderScript"
+  ],
+  "dependencies": {
+    "IlexForest_MapScripts": {
+      "label_refs": [
+        "IlexForestFarfetchdCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback": {
+      "label_refs": [
+        "IlexForestFarfetchdCallback.PositionEight",
+        "IlexForestFarfetchdCallback.PositionFive",
+        "IlexForestFarfetchdCallback.PositionFour",
+        "IlexForestFarfetchdCallback.PositionNine",
+        "IlexForestFarfetchdCallback.PositionOne",
+        "IlexForestFarfetchdCallback.PositionSeven",
+        "IlexForestFarfetchdCallback.PositionSix",
+        "IlexForestFarfetchdCallback.PositionTen",
+        "IlexForestFarfetchdCallback.PositionThree",
+        "IlexForestFarfetchdCallback.PositionTwo",
+        "IlexForestFarfetchdCallback.Static"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.Static": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionOne": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionTwo": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionThree": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionFour": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionFive": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionSix": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionSeven": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionEight": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionNine": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdCallback.PositionTen": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestCharcoalApprenticeScript": {
+      "label_refs": [
+        "IlexForestCharcoalApprenticeScript.DoneFarfetchd"
+      ],
+      "text_refs": [
+        "IlexForestApprenticeIntroText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestCharcoalApprenticeScript.DoneFarfetchd": {
+      "label_refs": [],
+      "text_refs": [
+        "IlexForestApprenticeAfterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript": {
+      "label_refs": [
+        "IlexForestFarfetchdScript.Position1",
+        "IlexForestFarfetchdScript.Position10",
+        "IlexForestFarfetchdScript.Position2",
+        "IlexForestFarfetchdScript.Position3",
+        "IlexForestFarfetchdScript.Position4",
+        "IlexForestFarfetchdScript.Position5",
+        "IlexForestFarfetchdScript.Position6",
+        "IlexForestFarfetchdScript.Position7",
+        "IlexForestFarfetchdScript.Position8",
+        "IlexForestFarfetchdScript.Position9"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position1": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_ItsTheMissingPokemon",
+        "Text_Kwaaaa"
+      ],
+      "movement_refs": [
+        "MovementData_Farfetchd_Pos1_Pos2"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position2": {
+      "label_refs": [
+        "IlexForestFarfetchdScript.CryAndCheckFacing",
+        "IlexForestFarfetchdScript.Position2_Down"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetchd_Pos2_Pos3"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position2_Down": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetchd_Pos2_Pos8"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position3": {
+      "label_refs": [
+        "IlexForestFarfetchdScript.CryAndCheckFacing",
+        "IlexForestFarfetchdScript.Position3_Left"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetchd_Pos3_Pos4"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position3_Left": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetchd_Pos3_Pos2"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position4": {
+      "label_refs": [
+        "IlexForestFarfetchdScript.CryAndCheckFacing",
+        "IlexForestFarfetchdScript.Position4_Up"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetchd_Pos4_Pos5"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position4_Up": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetchd_Pos4_Pos3"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position5": {
+      "label_refs": [
+        "IlexForestFarfetchdScript.CryAndCheckFacing",
+        "IlexForestFarfetchdScript.Position5_Left",
+        "IlexForestFarfetchdScript.Position5_Right",
+        "IlexForestFarfetchdScript.Position5_Up"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetchd_Pos5_Pos6"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position5_Left": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetchd_Pos5_Pos7"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position5_Up": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos5_Pos4_Up"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position5_Right": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos5_Pos4_Right"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position6": {
+      "label_refs": [
+        "IlexForestFarfetchdScript.CryAndCheckFacing",
+        "IlexForestFarfetchdScript.Position6_Right"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos6_Pos7"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position6_Right": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos6_Pos5"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position7": {
+      "label_refs": [
+        "IlexForestFarfetchdScript.CryAndCheckFacing",
+        "IlexForestFarfetchdScript.Position7_Down",
+        "IlexForestFarfetchdScript.Position7_Left"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos7_Pos8"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position7_Left": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos7_Pos6"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position7_Down": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos7_Pos5"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position8": {
+      "label_refs": [
+        "IlexForestFarfetchdScript.CryAndCheckFacing",
+        "IlexForestFarfetchdScript.Position8_Left",
+        "IlexForestFarfetchdScript.Position8_Right",
+        "IlexForestFarfetchdScript.Position8_Up"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos8_Pos9"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position8_Right": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos8_Pos7"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position8_Left": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos8_Pos2"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position9": {
+      "label_refs": [
+        "IlexForestFarfetchdScript.CryAndCheckFacing",
+        "IlexForestFarfetchdScript.Position9_Down",
+        "IlexForestFarfetchdScript.Position9_Right"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos9_Pos10"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position9_Right": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos9_Pos8_Right"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position9_Down": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_Farfetched_Pos9_Pos8_Down"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.Position10": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_Kwaaaa"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestFarfetchdScript.CryAndCheckFacing": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_Kwaaaa"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestCharcoalMasterScript": {
+      "label_refs": [
+        "IlexForestCharcoalMasterScript.AlreadyGotCut"
+      ],
+      "text_refs": [
+        "Text_CharcoalMasterIntro",
+        "Text_CharcoalMasterOutro"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestCharcoalMasterScript.AlreadyGotCut": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_CharcoalMasterTalkAfter"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestHeadbuttGuyScript": {
+      "label_refs": [
+        "IlexForestHeadbuttGuyScript.AlreadyGotHeadbutt",
+        "IlexForestHeadbuttGuyScript.BagFull"
+      ],
+      "text_refs": [
+        "Text_HeadbuttIntro"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestHeadbuttGuyScript.AlreadyGotHeadbutt": {
+      "label_refs": [
+        "IlexForestHeadbuttGuyScript.BagFull"
+      ],
+      "text_refs": [
+        "Text_HeadbuttOutro"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestHeadbuttGuyScript.BagFull": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWayne": {
+      "label_refs": [
+        "TrainerBugCatcherWayne.Script"
+      ],
+      "text_refs": [
+        "BugCatcherWayneBeatenText",
+        "BugCatcherWayneSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWayne.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "BugCatcherWayneAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestLassScript": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_IlexForestLass"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestRevive": {
+      "label_refs": [
+        "IlexForestXAttack"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestXAttack": {
+      "label_refs": [
+        "IlexForestAntidote"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestAntidote": {
+      "label_refs": [
+        "IlexForestEther"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestEther": {
+      "label_refs": [
+        "IlexForestHiddenEther"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestHiddenEther": {
+      "label_refs": [
+        "IlexForestHiddenSuperPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestHiddenSuperPotion": {
+      "label_refs": [
+        "IlexForestHiddenFullHeal"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestHiddenFullHeal": {
+      "label_refs": [
+        "IlexForestBoulder"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestBoulder": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "StrengthBoulderScript"
+      ]
+    },
+    "IlexForestSignpost": {
+      "label_refs": [],
+      "text_refs": [
+        "IlexForestSignpostText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestShrineScript": {
+      "label_refs": [
+        "IlexForestShrineScript.DontDoCelebiEvent",
+        "IlexForestShrineScript.ForestIsRestless"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestShrineScript.ForestIsRestless": {
+      "label_refs": [
+        "IlexForestShrineScript.AskCelebiEvent",
+        "IlexForestShrineScript.DontDoCelebiEvent"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestShrineScript.DontDoCelebiEvent": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_IlexForestShrine"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestShrineScript.AskCelebiEvent": {
+      "label_refs": [
+        "IlexForestShrineScript.CelebiEvent"
+      ],
+      "text_refs": [
+        "Text_ShrineCelebiEvent"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestShrineScript.CelebiEvent": {
+      "label_refs": [
+        "IlexForestShrineScript.DidntCatchCelebi"
+      ],
+      "text_refs": [
+        "Text_InsertGSBall",
+        "Text_KurtCaughtCelebi"
+      ],
+      "movement_refs": [
+        "IlexForestKurtStepsDownMovement",
+        "IlexForestKurtStepsUpMovement",
+        "IlexForestPlayerStepsDownMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestShrineScript.DidntCatchCelebi": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForest_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 1,
+    "warp_events": 3,
+    "coord_events": 0,
+    "bg_events": 5,
+    "object_events": 11
+  }
+}

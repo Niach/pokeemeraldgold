@@ -18,6 +18,8 @@
   "source_asm": "maps/PlayersNeighborsHouse.asm",
   "connections": [],
   "events": {
+    "scene_scripts": [],
+    "callbacks": [],
     "warp_events": [
       {
         "x": 2,
@@ -61,6 +63,11 @@
         "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "PlayersNeighborsDaughterScript",
         "flag": -1
       },
@@ -71,12 +78,777 @@
         "movement": "SPRITEMOVEDATA_STANDING_LEFT",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_SCRIPT",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "PlayersNeighborScript",
+        "flag": "EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR"
       }
     ]
   },
+  "object_consts": [
+    "PLAYERSNEIGHBORSHOUSE_COOLTRAINER_F",
+    "PLAYERSNEIGHBORSHOUSE_POKEFAN_F"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "PlayersNeighborsHouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "PlayersNeighborsDaughterScript",
+      "label_refs": [
+        "PlayersNeighborsDaughterScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersNeighborsDaughterScript": {
+      "raw_lines": [
+        "jumptextfaceplayer PlayersNeighborsDaughterText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "PlayersNeighborsDaughterText"
+          ],
+          "raw": "jumptextfaceplayer PlayersNeighborsDaughterText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "PlayersNeighborsDaughterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersNeighborScript": {
+      "raw_lines": [
+        "jumptextfaceplayer PlayersNeighborText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "PlayersNeighborText"
+          ],
+          "raw": "jumptextfaceplayer PlayersNeighborText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "PlayersNeighborText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersNeighborsHouseBookshelfScript": {
+      "raw_lines": [
+        "jumpstd MagazineBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "MagazineBookshelfScript"
+          ],
+          "raw": "jumpstd MagazineBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "PlayersNeighborsHouseRadioScript": {
+      "raw_lines": [
+        "checkevent EVENT_GOT_A_POKEMON_FROM_ELM",
+        "iftrue .NormalRadio",
+        "checkevent EVENT_LISTENED_TO_INITIAL_RADIO",
+        "iftrue .AbbreviatedRadio",
+        "playmusic MUSIC_POKEMON_TALK",
+        "opentext",
+        "writetext PlayerNeighborRadioText1",
+        "pause 45",
+        "writetext PlayerNeighborRadioText2",
+        "pause 45",
+        "writetext PlayerNeighborRadioText3",
+        "pause 45",
+        "musicfadeout MUSIC_NEW_BARK_TOWN, 16",
+        "writetext PlayerNeighborRadioText4",
+        "pause 45",
+        "closetext",
+        "setevent EVENT_LISTENED_TO_INITIAL_RADIO",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_A_POKEMON_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_A_POKEMON_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "PlayersNeighborsHouseRadioScript.NormalRadio"
+          ],
+          "raw": "iftrue .NormalRadio"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_LISTENED_TO_INITIAL_RADIO"
+          ],
+          "raw": "checkevent EVENT_LISTENED_TO_INITIAL_RADIO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "PlayersNeighborsHouseRadioScript.AbbreviatedRadio"
+          ],
+          "raw": "iftrue .AbbreviatedRadio"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_POKEMON_TALK"
+          ],
+          "raw": "playmusic MUSIC_POKEMON_TALK"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PlayerNeighborRadioText1"
+          ],
+          "raw": "writetext PlayerNeighborRadioText1"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "45"
+          ],
+          "raw": "pause 45"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PlayerNeighborRadioText2"
+          ],
+          "raw": "writetext PlayerNeighborRadioText2"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "45"
+          ],
+          "raw": "pause 45"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PlayerNeighborRadioText3"
+          ],
+          "raw": "writetext PlayerNeighborRadioText3"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "45"
+          ],
+          "raw": "pause 45"
+        },
+        {
+          "command": "musicfadeout",
+          "args": [
+            "MUSIC_NEW_BARK_TOWN",
+            "16"
+          ],
+          "raw": "musicfadeout MUSIC_NEW_BARK_TOWN, 16"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PlayerNeighborRadioText4"
+          ],
+          "raw": "writetext PlayerNeighborRadioText4"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "45"
+          ],
+          "raw": "pause 45"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_LISTENED_TO_INITIAL_RADIO"
+          ],
+          "raw": "setevent EVENT_LISTENED_TO_INITIAL_RADIO"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "PlayersNeighborsHouseRadioScript.AbbreviatedRadio",
+        "PlayersNeighborsHouseRadioScript.NormalRadio"
+      ],
+      "text_refs": [
+        "PlayerNeighborRadioText1",
+        "PlayerNeighborRadioText2",
+        "PlayerNeighborRadioText3",
+        "PlayerNeighborRadioText4"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersNeighborsHouseRadioScript.NormalRadio": {
+      "raw_lines": [
+        "jumpstd Radio1Script"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "Radio1Script"
+          ],
+          "raw": "jumpstd Radio1Script"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "Radio1Script"
+      ]
+    },
+    "PlayersNeighborsHouseRadioScript.AbbreviatedRadio": {
+      "raw_lines": [
+        "opentext",
+        "writetext PlayerNeighborRadioText4",
+        "pause 45",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PlayerNeighborRadioText4"
+          ],
+          "raw": "writetext PlayerNeighborRadioText4"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "45"
+          ],
+          "raw": "pause 45"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "PlayerNeighborRadioText4"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersNeighborsHouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, NEW_BARK_TOWN, 3",
+        "warp_event  3,  7, NEW_BARK_TOWN, 3",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, PlayersNeighborsHouseBookshelfScript",
+        "bg_event  1,  1, BGEVENT_READ, PlayersNeighborsHouseBookshelfScript",
+        "bg_event  7,  1, BGEVENT_READ, PlayersNeighborsHouseRadioScript",
+        "def_object_events",
+        "object_event  2,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PlayersNeighborsDaughterScript, -1",
+        "object_event  5,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PlayersNeighborScript, EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "NEW_BARK_TOWN",
+            "3"
+          ],
+          "raw": "warp_event  2,  7, NEW_BARK_TOWN, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "NEW_BARK_TOWN",
+            "3"
+          ],
+          "raw": "warp_event  3,  7, NEW_BARK_TOWN, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "PlayersNeighborsHouseBookshelfScript"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, PlayersNeighborsHouseBookshelfScript"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "PlayersNeighborsHouseBookshelfScript"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, PlayersNeighborsHouseBookshelfScript"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "7",
+            "1",
+            "BGEVENT_READ",
+            "PlayersNeighborsHouseRadioScript"
+          ],
+          "raw": "bg_event  7,  1, BGEVENT_READ, PlayersNeighborsHouseRadioScript"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "PlayersNeighborsDaughterScript",
+            "-1"
+          ],
+          "raw": "object_event  2,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PlayersNeighborsDaughterScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "3",
+            "SPRITE_POKEFAN_F",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "PlayersNeighborScript",
+            "EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR"
+          ],
+          "raw": "object_event  5,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PlayersNeighborScript, EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "PlayersNeighborsDaughterText": {
+      "raw_lines": [
+        "text \"PIKACHU is an\"",
+        "line \"evolved #MON.\"",
+        "para \"I was amazed by\"",
+        "line \"PROF.ELM's find-\"",
+        "cont \"ings.\"",
+        "para \"He's so famous for\"",
+        "line \"his research on\"",
+        "cont \"#MON evolution.\"",
+        "para \"\u2026sigh\u2026\"",
+        "para \"I wish I could be\"",
+        "line \"a researcher like\"",
+        "cont \"him\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "PIKACHU is an"
+        },
+        {
+          "command": "line",
+          "value": "evolved #MON."
+        },
+        {
+          "command": "para",
+          "value": "I was amazed by"
+        },
+        {
+          "command": "line",
+          "value": "PROF.ELM's find-"
+        },
+        {
+          "command": "cont",
+          "value": "ings."
+        },
+        {
+          "command": "para",
+          "value": "He's so famous for"
+        },
+        {
+          "command": "line",
+          "value": "his research on"
+        },
+        {
+          "command": "cont",
+          "value": "#MON evolution."
+        },
+        {
+          "command": "para",
+          "value": "\u2026sigh\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I wish I could be"
+        },
+        {
+          "command": "line",
+          "value": "a researcher like"
+        },
+        {
+          "command": "cont",
+          "value": "him\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PlayersNeighborText": {
+      "raw_lines": [
+        "text \"My daughter is\"",
+        "line \"adamant about\"",
+        "para \"becoming PROF.\"",
+        "line \"ELM's assistant.\"",
+        "para \"She really loves\"",
+        "line \"#MON!\"",
+        "para \"But then, so do I!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My daughter is"
+        },
+        {
+          "command": "line",
+          "value": "adamant about"
+        },
+        {
+          "command": "para",
+          "value": "becoming PROF."
+        },
+        {
+          "command": "line",
+          "value": "ELM's assistant."
+        },
+        {
+          "command": "para",
+          "value": "She really loves"
+        },
+        {
+          "command": "line",
+          "value": "#MON!"
+        },
+        {
+          "command": "para",
+          "value": "But then, so do I!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PlayerNeighborRadioText1": {
+      "raw_lines": [
+        "text \"PROF.OAK'S #MON\"",
+        "line \"TALK! Please tune\"",
+        "cont \"in next time!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "PROF.OAK'S #MON"
+        },
+        {
+          "command": "line",
+          "value": "TALK! Please tune"
+        },
+        {
+          "command": "cont",
+          "value": "in next time!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PlayerNeighborRadioText2": {
+      "raw_lines": [
+        "text \"#MON CHANNEL!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#MON CHANNEL!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PlayerNeighborRadioText3": {
+      "raw_lines": [
+        "text \"This is DJ MARY,\"",
+        "line \"your co-host!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This is DJ MARY,"
+        },
+        {
+          "command": "line",
+          "value": "your co-host!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PlayerNeighborRadioText4": {
+      "raw_lines": [
+        "text \"#MON!\"",
+        "line \"#MON CHANNEL\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#MON!"
+        },
+        {
+          "command": "line",
+          "value": "#MON CHANNEL\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "MagazineBookshelfScript",
+    "Radio1Script"
+  ],
+  "dependencies": {
+    "PlayersNeighborsHouse_MapScripts": {
+      "label_refs": [
+        "PlayersNeighborsDaughterScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersNeighborsDaughterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "PlayersNeighborsDaughterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersNeighborScript": {
+      "label_refs": [],
+      "text_refs": [
+        "PlayersNeighborText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersNeighborsHouseBookshelfScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "PlayersNeighborsHouseRadioScript": {
+      "label_refs": [
+        "PlayersNeighborsHouseRadioScript.AbbreviatedRadio",
+        "PlayersNeighborsHouseRadioScript.NormalRadio"
+      ],
+      "text_refs": [
+        "PlayerNeighborRadioText1",
+        "PlayerNeighborRadioText2",
+        "PlayerNeighborRadioText3",
+        "PlayerNeighborRadioText4"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersNeighborsHouseRadioScript.NormalRadio": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "Radio1Script"
+      ]
+    },
+    "PlayersNeighborsHouseRadioScript.AbbreviatedRadio": {
+      "label_refs": [],
+      "text_refs": [
+        "PlayerNeighborRadioText4"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersNeighborsHouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio"
+  ],
   "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
     "warp_events": 2,
     "coord_events": 0,
     "bg_events": 3,

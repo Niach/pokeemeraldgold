@@ -1,0 +1,3744 @@
+{
+  "crystal_map": "LakeOfRage",
+  "map_id": "LAKE_OF_RAGE",
+  "group": "LAKE_OF_RAGE",
+  "group_index": 9,
+  "map_index": 6,
+  "tileset": "TILESET_JOHTO",
+  "environment": "TOWN",
+  "landmark": "LANDMARK_LAKE_OF_RAGE",
+  "music": "MUSIC_LAKE_OF_RAGE",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_AUTO",
+  "fishgroup": "FISHGROUP_GYARADOS",
+  "width_blocks": 20,
+  "height_blocks": 18,
+  "border_block": "05",
+  "blk_path": "maps/LakeOfRage.blk",
+  "source_asm": "maps/LakeOfRage.asm",
+  "connections": [
+    {
+      "direction": "south",
+      "map": "Route43",
+      "target_map_id": "ROUTE_43",
+      "offset": 5
+    }
+  ],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "LakeOfRageNoop1Scene",
+        "scene_id": null
+      },
+      {
+        "script": "LakeOfRageNoop2Scene",
+        "scene_id": null
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "LakeOfRageFlypointCallback"
+      },
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "LakeOfRageWesleyCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 7,
+        "y": 3,
+        "dest_map": "LAKE_OF_RAGE_HIDDEN_POWER_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 27,
+        "y": 31,
+        "dest_map": "LAKE_OF_RAGE_MAGIKARP_HOUSE",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 21,
+        "y": 27,
+        "kind": "BGEVENT_READ",
+        "script": "LakeOfRageSign"
+      },
+      {
+        "x": 25,
+        "y": 31,
+        "kind": "BGEVENT_READ",
+        "script": "MagikarpHouseSignScript"
+      },
+      {
+        "x": 11,
+        "y": 28,
+        "kind": "BGEVENT_ITEM",
+        "script": "LakeOfRageHiddenFullRestore"
+      },
+      {
+        "x": 4,
+        "y": 4,
+        "kind": "BGEVENT_ITEM",
+        "script": "LakeOfRageHiddenRareCandy"
+      },
+      {
+        "x": 35,
+        "y": 5,
+        "kind": "BGEVENT_ITEM",
+        "script": "LakeOfRageHiddenMaxPotion"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 21,
+        "y": 28,
+        "sprite": "SPRITE_LANCE",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "LakeOfRageLanceScript",
+        "flag": "EVENT_LAKE_OF_RAGE_LANCE"
+      },
+      {
+        "x": 20,
+        "y": 26,
+        "sprite": "SPRITE_GRAMPS",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "LakeOfRageGrampsScript",
+        "flag": -1
+      },
+      {
+        "x": 36,
+        "y": 13,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "LakeOfRageSuperNerdScript",
+        "flag": -1
+      },
+      {
+        "x": 25,
+        "y": 29,
+        "sprite": "SPRITE_COOLTRAINER_F",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "LakeOfRageCooltrainerFScript",
+        "flag": -1
+      },
+      {
+        "x": 30,
+        "y": 23,
+        "sprite": "SPRITE_FISHER",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerFisherAndre",
+        "flag": "EVENT_LAKE_OF_RAGE_CIVILIANS"
+      },
+      {
+        "x": 24,
+        "y": 26,
+        "sprite": "SPRITE_FISHER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerFisherRaymond",
+        "flag": "EVENT_LAKE_OF_RAGE_CIVILIANS"
+      },
+      {
+        "x": 4,
+        "y": 15,
+        "sprite": "SPRITE_COOLTRAINER_M",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerCooltrainermAaron",
+        "flag": "EVENT_LAKE_OF_RAGE_CIVILIANS"
+      },
+      {
+        "x": 36,
+        "y": 7,
+        "sprite": "SPRITE_COOLTRAINER_F",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 0,
+        "script": "TrainerCooltrainerfLois",
+        "flag": "EVENT_LAKE_OF_RAGE_CIVILIANS"
+      },
+      {
+        "x": 18,
+        "y": 22,
+        "sprite": "SPRITE_GYARADOS",
+        "movement": "SPRITEMOVEDATA_POKEMON",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RedGyarados",
+        "flag": "EVENT_LAKE_OF_RAGE_RED_GYARADOS"
+      },
+      {
+        "x": 4,
+        "y": 4,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "WesleyScript",
+        "flag": "EVENT_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY"
+      },
+      {
+        "x": 7,
+        "y": 10,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "LakeOfRageElixer",
+        "flag": "EVENT_LAKE_OF_RAGE_ELIXER"
+      },
+      {
+        "x": 35,
+        "y": 2,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "LakeOfRageTMDetect",
+        "flag": "EVENT_LAKE_OF_RAGE_TM_DETECT"
+      }
+    ]
+  },
+  "object_consts": [
+    "LAKEOFRAGE_LANCE",
+    "LAKEOFRAGE_GRAMPS",
+    "LAKEOFRAGE_SUPER_NERD1",
+    "LAKEOFRAGE_COOLTRAINER_F1",
+    "LAKEOFRAGE_FISHER1",
+    "LAKEOFRAGE_FISHER2",
+    "LAKEOFRAGE_COOLTRAINER_M",
+    "LAKEOFRAGE_COOLTRAINER_F2",
+    "LAKEOFRAGE_GYARADOS",
+    "LAKEOFRAGE_WESLEY",
+    "LAKEOFRAGE_POKE_BALL1",
+    "LAKEOFRAGE_POKE_BALL2"
+  ],
+  "scene_ids": [
+    "0",
+    "SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS"
+  ],
+  "scripts": {
+    "LakeOfRage_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script LakeOfRageNoop1Scene",
+        "scene_script LakeOfRageNoop2Scene",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, LakeOfRageFlypointCallback",
+        "callback MAPCALLBACK_OBJECTS, LakeOfRageWesleyCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "LakeOfRageNoop1Scene"
+          ],
+          "raw": "scene_script LakeOfRageNoop1Scene"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "LakeOfRageNoop2Scene"
+          ],
+          "raw": "scene_script LakeOfRageNoop2Scene"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "LakeOfRageFlypointCallback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, LakeOfRageFlypointCallback"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "LakeOfRageWesleyCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, LakeOfRageWesleyCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "LakeOfRageNoop1Scene",
+      "label_refs": [
+        "LakeOfRageNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageFlypointCallback": {
+      "raw_lines": [
+        "setflag ENGINE_FLYPOINT_LAKE_OF_RAGE",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_FLYPOINT_LAKE_OF_RAGE"
+          ],
+          "raw": "setflag ENGINE_FLYPOINT_LAKE_OF_RAGE"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "setflag",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageWesleyCallback": {
+      "raw_lines": [
+        "readvar VAR_WEEKDAY",
+        "ifequal WEDNESDAY, .WesleyAppears",
+        "disappear LAKEOFRAGE_WESLEY",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "WEDNESDAY",
+            "LakeOfRageWesleyCallback.WesleyAppears"
+          ],
+          "raw": "ifequal WEDNESDAY, .WesleyAppears"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "LAKEOFRAGE_WESLEY"
+          ],
+          "raw": "disappear LAKEOFRAGE_WESLEY"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "readvar",
+      "label_refs": [
+        "LakeOfRageWesleyCallback.WesleyAppears"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageWesleyCallback.WesleyAppears": {
+      "raw_lines": [
+        "appear LAKEOFRAGE_WESLEY",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "appear",
+          "args": [
+            "LAKEOFRAGE_WESLEY"
+          ],
+          "raw": "appear LAKEOFRAGE_WESLEY"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "appear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageLanceScript": {
+      "raw_lines": [
+        "checkevent EVENT_REFUSED_TO_HELP_LANCE_AT_LAKE_OF_RAGE",
+        "iftrue .AskAgainForHelp",
+        "opentext",
+        "writetext LakeOfRageLanceForcedToEvolveText",
+        "promptbutton",
+        "faceplayer",
+        "writetext LakeOfRageLanceIntroText",
+        "yesorno",
+        "iffalse .RefusedToHelp"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_REFUSED_TO_HELP_LANCE_AT_LAKE_OF_RAGE"
+          ],
+          "raw": "checkevent EVENT_REFUSED_TO_HELP_LANCE_AT_LAKE_OF_RAGE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "LakeOfRageLanceScript.AskAgainForHelp"
+          ],
+          "raw": "iftrue .AskAgainForHelp"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "LakeOfRageLanceForcedToEvolveText"
+          ],
+          "raw": "writetext LakeOfRageLanceForcedToEvolveText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "LakeOfRageLanceIntroText"
+          ],
+          "raw": "writetext LakeOfRageLanceIntroText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "LakeOfRageLanceScript.RefusedToHelp"
+          ],
+          "raw": "iffalse .RefusedToHelp"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "LakeOfRageLanceScript.AgreedToHelp",
+      "label_refs": [
+        "LakeOfRageLanceScript.AgreedToHelp",
+        "LakeOfRageLanceScript.AskAgainForHelp",
+        "LakeOfRageLanceScript.RefusedToHelp"
+      ],
+      "text_refs": [
+        "LakeOfRageLanceForcedToEvolveText",
+        "LakeOfRageLanceIntroText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageLanceScript.AgreedToHelp": {
+      "raw_lines": [
+        "writetext LakeOfRageLanceRadioSignalText",
+        "waitbutton",
+        "closetext",
+        "playsound SFX_WARP_TO",
+        "applymovement LAKEOFRAGE_LANCE, LakeOfRageLanceTeleportIntoSkyMovement",
+        "disappear LAKEOFRAGE_LANCE",
+        "clearevent EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE",
+        "setevent EVENT_DECIDED_TO_HELP_LANCE",
+        "setmapscene MAHOGANY_MART_1F, SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "LakeOfRageLanceRadioSignalText"
+          ],
+          "raw": "writetext LakeOfRageLanceRadioSignalText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_WARP_TO"
+          ],
+          "raw": "playsound SFX_WARP_TO"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "LAKEOFRAGE_LANCE",
+            "LakeOfRageLanceTeleportIntoSkyMovement"
+          ],
+          "raw": "applymovement LAKEOFRAGE_LANCE, LakeOfRageLanceTeleportIntoSkyMovement"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "LAKEOFRAGE_LANCE"
+          ],
+          "raw": "disappear LAKEOFRAGE_LANCE"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE"
+          ],
+          "raw": "clearevent EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_DECIDED_TO_HELP_LANCE"
+          ],
+          "raw": "setevent EVENT_DECIDED_TO_HELP_LANCE"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "MAHOGANY_MART_1F",
+            "SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS"
+          ],
+          "raw": "setmapscene MAHOGANY_MART_1F, SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "LakeOfRageLanceRadioSignalText"
+      ],
+      "movement_refs": [
+        "LakeOfRageLanceTeleportIntoSkyMovement"
+      ],
+      "scene_refs": [
+        "SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS"
+      ],
+      "std_calls": []
+    },
+    "LakeOfRageLanceScript.RefusedToHelp": {
+      "raw_lines": [
+        "writetext LakeOfRageLanceRefusedText",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_REFUSED_TO_HELP_LANCE_AT_LAKE_OF_RAGE",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "LakeOfRageLanceRefusedText"
+          ],
+          "raw": "writetext LakeOfRageLanceRefusedText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_REFUSED_TO_HELP_LANCE_AT_LAKE_OF_RAGE"
+          ],
+          "raw": "setevent EVENT_REFUSED_TO_HELP_LANCE_AT_LAKE_OF_RAGE"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "LakeOfRageLanceRefusedText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageLanceScript.AskAgainForHelp": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext LakeOfRageLanceAskHelpText",
+        "yesorno",
+        "iffalse .RefusedToHelp",
+        "sjump .AgreedToHelp"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "LakeOfRageLanceAskHelpText"
+          ],
+          "raw": "writetext LakeOfRageLanceAskHelpText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "LakeOfRageLanceScript.RefusedToHelp"
+          ],
+          "raw": "iffalse .RefusedToHelp"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "LakeOfRageLanceScript.AgreedToHelp"
+          ],
+          "raw": "sjump .AgreedToHelp"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "LakeOfRageLanceScript.AgreedToHelp",
+        "LakeOfRageLanceScript.RefusedToHelp"
+      ],
+      "text_refs": [
+        "LakeOfRageLanceAskHelpText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RedGyarados": {
+      "raw_lines": [
+        "opentext",
+        "writetext LakeOfRageGyaradosCryText",
+        "pause 15",
+        "cry GYARADOS",
+        "closetext",
+        "loadwildmon GYARADOS, 30",
+        "loadvar VAR_BATTLETYPE, BATTLETYPE_FORCESHINY",
+        "startbattle",
+        "ifequal LOSE, .NotBeaten",
+        "disappear LAKEOFRAGE_GYARADOS"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "LakeOfRageGyaradosCryText"
+          ],
+          "raw": "writetext LakeOfRageGyaradosCryText"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "cry",
+          "args": [
+            "GYARADOS"
+          ],
+          "raw": "cry GYARADOS"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "loadwildmon",
+          "args": [
+            "GYARADOS",
+            "30"
+          ],
+          "raw": "loadwildmon GYARADOS, 30"
+        },
+        {
+          "command": "loadvar",
+          "args": [
+            "VAR_BATTLETYPE",
+            "BATTLETYPE_FORCESHINY"
+          ],
+          "raw": "loadvar VAR_BATTLETYPE, BATTLETYPE_FORCESHINY"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "LOSE",
+            "RedGyarados.NotBeaten"
+          ],
+          "raw": "ifequal LOSE, .NotBeaten"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "LAKEOFRAGE_GYARADOS"
+          ],
+          "raw": "disappear LAKEOFRAGE_GYARADOS"
+        }
+      ],
+      "first_command": "opentext",
+      "fallthrough_label": "RedGyarados.NotBeaten",
+      "label_refs": [
+        "RedGyarados.NotBeaten"
+      ],
+      "text_refs": [
+        "LakeOfRageGyaradosCryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RedGyarados.NotBeaten": {
+      "raw_lines": [
+        "reloadmapafterbattle",
+        "opentext",
+        "giveitem RED_SCALE",
+        "waitsfx",
+        "writetext LakeOfRageGotRedScaleText",
+        "playsound SFX_ITEM",
+        "waitsfx",
+        "itemnotify",
+        "closetext",
+        "setscene 0",
+        "appear LAKEOFRAGE_LANCE",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "giveitem",
+          "args": [
+            "RED_SCALE"
+          ],
+          "raw": "giveitem RED_SCALE"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "LakeOfRageGotRedScaleText"
+          ],
+          "raw": "writetext LakeOfRageGotRedScaleText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ITEM"
+          ],
+          "raw": "playsound SFX_ITEM"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "itemnotify",
+          "args": [],
+          "raw": "itemnotify"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "0"
+          ],
+          "raw": "setscene 0"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "LAKEOFRAGE_LANCE"
+          ],
+          "raw": "appear LAKEOFRAGE_LANCE"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "reloadmapafterbattle",
+      "label_refs": [],
+      "text_refs": [
+        "LakeOfRageGotRedScaleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [
+        "0"
+      ],
+      "std_calls": []
+    },
+    "LakeOfRageGrampsScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_CLEARED_ROCKET_HIDEOUT",
+        "iftrue .ClearedRocketHideout",
+        "writetext LakeOfRageGrampsText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_ROCKET_HIDEOUT"
+          ],
+          "raw": "checkevent EVENT_CLEARED_ROCKET_HIDEOUT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "LakeOfRageGrampsScript.ClearedRocketHideout"
+          ],
+          "raw": "iftrue .ClearedRocketHideout"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "LakeOfRageGrampsText"
+          ],
+          "raw": "writetext LakeOfRageGrampsText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "LakeOfRageGrampsScript.ClearedRocketHideout"
+      ],
+      "text_refs": [
+        "LakeOfRageGrampsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageGrampsScript.ClearedRocketHideout": {
+      "raw_lines": [
+        "writetext LakeOfRageGrampsText_ClearedRocketHideout",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "LakeOfRageGrampsText_ClearedRocketHideout"
+          ],
+          "raw": "writetext LakeOfRageGrampsText_ClearedRocketHideout"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "LakeOfRageGrampsText_ClearedRocketHideout"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageSuperNerdScript": {
+      "raw_lines": [
+        "jumptextfaceplayer LakeOfRageSuperNerdText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "LakeOfRageSuperNerdText"
+          ],
+          "raw": "jumptextfaceplayer LakeOfRageSuperNerdText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "LakeOfRageSuperNerdText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageCooltrainerFScript": {
+      "raw_lines": [
+        "jumptextfaceplayer LakeOfRageCooltrainerFText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "LakeOfRageCooltrainerFText"
+          ],
+          "raw": "jumptextfaceplayer LakeOfRageCooltrainerFText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "LakeOfRageCooltrainerFText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageSign": {
+      "raw_lines": [
+        "jumptext LakeOfRageSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "LakeOfRageSignText"
+          ],
+          "raw": "jumptext LakeOfRageSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "LakeOfRageSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpHouseSignScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext FishingGurusHouseSignText",
+        "checkevent EVENT_CLEARED_ROCKET_HIDEOUT",
+        "iftrue .MagikarpLengthRecord",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "FishingGurusHouseSignText"
+          ],
+          "raw": "writetext FishingGurusHouseSignText"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_ROCKET_HIDEOUT"
+          ],
+          "raw": "checkevent EVENT_CLEARED_ROCKET_HIDEOUT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MagikarpHouseSignScript.MagikarpLengthRecord"
+          ],
+          "raw": "iftrue .MagikarpLengthRecord"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "MagikarpHouseSignScript.MagikarpLengthRecord"
+      ],
+      "text_refs": [
+        "FishingGurusHouseSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpHouseSignScript.MagikarpLengthRecord": {
+      "raw_lines": [
+        "promptbutton",
+        "special MagikarpHouseSign",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "special",
+          "args": [
+            "MagikarpHouseSign"
+          ],
+          "raw": "special MagikarpHouseSign"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "promptbutton",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherAndre": {
+      "raw_lines": [
+        "trainer FISHER, ANDRE, EVENT_BEAT_FISHER_ANDRE, FisherAndreSeenText, FisherAndreBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "FISHER",
+            "ANDRE",
+            "EVENT_BEAT_FISHER_ANDRE",
+            "FisherAndreSeenText",
+            "FisherAndreBeatenText",
+            "0",
+            "TrainerFisherAndre.Script"
+          ],
+          "raw": "trainer FISHER, ANDRE, EVENT_BEAT_FISHER_ANDRE, FisherAndreSeenText, FisherAndreBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerFisherAndre.Script",
+      "label_refs": [
+        "TrainerFisherAndre.Script"
+      ],
+      "text_refs": [
+        "FisherAndreBeatenText",
+        "FisherAndreSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherAndre.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext FisherAndreAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "FisherAndreAfterBattleText"
+          ],
+          "raw": "writetext FisherAndreAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "FisherAndreAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherRaymond": {
+      "raw_lines": [
+        "trainer FISHER, RAYMOND, EVENT_BEAT_FISHER_RAYMOND, FisherRaymondSeenText, FisherRaymondBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "FISHER",
+            "RAYMOND",
+            "EVENT_BEAT_FISHER_RAYMOND",
+            "FisherRaymondSeenText",
+            "FisherRaymondBeatenText",
+            "0",
+            "TrainerFisherRaymond.Script"
+          ],
+          "raw": "trainer FISHER, RAYMOND, EVENT_BEAT_FISHER_RAYMOND, FisherRaymondSeenText, FisherRaymondBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerFisherRaymond.Script",
+      "label_refs": [
+        "TrainerFisherRaymond.Script"
+      ],
+      "text_refs": [
+        "FisherRaymondBeatenText",
+        "FisherRaymondSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherRaymond.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext FisherRaymondAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "FisherRaymondAfterBattleText"
+          ],
+          "raw": "writetext FisherRaymondAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "FisherRaymondAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermAaron": {
+      "raw_lines": [
+        "trainer COOLTRAINERM, AARON, EVENT_BEAT_COOLTRAINERM_AARON, CooltrainermAaronSeenText, CooltrainermAaronBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "COOLTRAINERM",
+            "AARON",
+            "EVENT_BEAT_COOLTRAINERM_AARON",
+            "CooltrainermAaronSeenText",
+            "CooltrainermAaronBeatenText",
+            "0",
+            "TrainerCooltrainermAaron.Script"
+          ],
+          "raw": "trainer COOLTRAINERM, AARON, EVENT_BEAT_COOLTRAINERM_AARON, CooltrainermAaronSeenText, CooltrainermAaronBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerCooltrainermAaron.Script",
+      "label_refs": [
+        "TrainerCooltrainermAaron.Script"
+      ],
+      "text_refs": [
+        "CooltrainermAaronBeatenText",
+        "CooltrainermAaronSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermAaron.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext CooltrainermAaronAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CooltrainermAaronAfterBattleText"
+          ],
+          "raw": "writetext CooltrainermAaronAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainermAaronAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfLois": {
+      "raw_lines": [
+        "trainer COOLTRAINERF, LOIS, EVENT_BEAT_COOLTRAINERF_LOIS, CooltrainerfLoisSeenText, CooltrainerfLoisBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "COOLTRAINERF",
+            "LOIS",
+            "EVENT_BEAT_COOLTRAINERF_LOIS",
+            "CooltrainerfLoisSeenText",
+            "CooltrainerfLoisBeatenText",
+            "0",
+            "TrainerCooltrainerfLois.Script"
+          ],
+          "raw": "trainer COOLTRAINERF, LOIS, EVENT_BEAT_COOLTRAINERF_LOIS, CooltrainerfLoisSeenText, CooltrainerfLoisBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerCooltrainerfLois.Script",
+      "label_refs": [
+        "TrainerCooltrainerfLois.Script"
+      ],
+      "text_refs": [
+        "CooltrainerfLoisBeatenText",
+        "CooltrainerfLoisSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfLois.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext CooltrainerfLoisAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CooltrainerfLoisAfterBattleText"
+          ],
+          "raw": "writetext CooltrainerfLoisAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainerfLoisAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WesleyScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_BLACKBELT_FROM_WESLEY",
+        "iftrue WesleyWednesdayScript",
+        "readvar VAR_WEEKDAY",
+        "ifnotequal WEDNESDAY, WesleyNotWednesdayScript",
+        "checkevent EVENT_MET_WESLEY_OF_WEDNESDAY",
+        "iftrue .MetWesley",
+        "writetext MeetWesleyText",
+        "promptbutton",
+        "setevent EVENT_MET_WESLEY_OF_WEDNESDAY"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_BLACKBELT_FROM_WESLEY"
+          ],
+          "raw": "checkevent EVENT_GOT_BLACKBELT_FROM_WESLEY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "WesleyWednesdayScript"
+          ],
+          "raw": "iftrue WesleyWednesdayScript"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifnotequal",
+          "args": [
+            "WEDNESDAY",
+            "WesleyNotWednesdayScript"
+          ],
+          "raw": "ifnotequal WEDNESDAY, WesleyNotWednesdayScript"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_MET_WESLEY_OF_WEDNESDAY"
+          ],
+          "raw": "checkevent EVENT_MET_WESLEY_OF_WEDNESDAY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "WesleyScript.MetWesley"
+          ],
+          "raw": "iftrue .MetWesley"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MeetWesleyText"
+          ],
+          "raw": "writetext MeetWesleyText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_MET_WESLEY_OF_WEDNESDAY"
+          ],
+          "raw": "setevent EVENT_MET_WESLEY_OF_WEDNESDAY"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "WesleyScript.MetWesley",
+      "label_refs": [
+        "WesleyNotWednesdayScript",
+        "WesleyScript.MetWesley",
+        "WesleyWednesdayScript"
+      ],
+      "text_refs": [
+        "MeetWesleyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WesleyScript.MetWesley": {
+      "raw_lines": [
+        "writetext WesleyGivesGiftText",
+        "promptbutton",
+        "verbosegiveitem BLACKBELT_I",
+        "iffalse WesleyDoneScript",
+        "setevent EVENT_GOT_BLACKBELT_FROM_WESLEY",
+        "writetext WesleyGaveGiftText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "WesleyGivesGiftText"
+          ],
+          "raw": "writetext WesleyGivesGiftText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "BLACKBELT_I"
+          ],
+          "raw": "verbosegiveitem BLACKBELT_I"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "WesleyDoneScript"
+          ],
+          "raw": "iffalse WesleyDoneScript"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_BLACKBELT_FROM_WESLEY"
+          ],
+          "raw": "setevent EVENT_GOT_BLACKBELT_FROM_WESLEY"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "WesleyGaveGiftText"
+          ],
+          "raw": "writetext WesleyGaveGiftText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "WesleyDoneScript"
+      ],
+      "text_refs": [
+        "WesleyGaveGiftText",
+        "WesleyGivesGiftText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WesleyWednesdayScript": {
+      "raw_lines": [
+        "writetext WesleyWednesdayText",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "WesleyWednesdayText"
+          ],
+          "raw": "writetext WesleyWednesdayText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "WesleyDoneScript",
+      "label_refs": [
+        "WesleyDoneScript"
+      ],
+      "text_refs": [
+        "WesleyWednesdayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WesleyDoneScript": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WesleyNotWednesdayScript": {
+      "raw_lines": [
+        "writetext WesleyNotWednesdayText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "WesleyNotWednesdayText"
+          ],
+          "raw": "writetext WesleyNotWednesdayText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "WesleyNotWednesdayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageElixer": {
+      "raw_lines": [
+        "itemball ELIXER"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "ELIXER"
+          ],
+          "raw": "itemball ELIXER"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "LakeOfRageTMDetect",
+      "label_refs": [
+        "LakeOfRageTMDetect"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageTMDetect": {
+      "raw_lines": [
+        "itemball TM_DETECT"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "TM_DETECT"
+          ],
+          "raw": "itemball TM_DETECT"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "LakeOfRageHiddenFullRestore",
+      "label_refs": [
+        "LakeOfRageHiddenFullRestore"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageHiddenFullRestore": {
+      "raw_lines": [
+        "hiddenitem FULL_RESTORE, EVENT_LAKE_OF_RAGE_HIDDEN_FULL_RESTORE"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "FULL_RESTORE",
+            "EVENT_LAKE_OF_RAGE_HIDDEN_FULL_RESTORE"
+          ],
+          "raw": "hiddenitem FULL_RESTORE, EVENT_LAKE_OF_RAGE_HIDDEN_FULL_RESTORE"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "LakeOfRageHiddenRareCandy",
+      "label_refs": [
+        "LakeOfRageHiddenRareCandy"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageHiddenRareCandy": {
+      "raw_lines": [
+        "hiddenitem RARE_CANDY, EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "RARE_CANDY",
+            "EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY"
+          ],
+          "raw": "hiddenitem RARE_CANDY, EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "LakeOfRageHiddenMaxPotion",
+      "label_refs": [
+        "LakeOfRageHiddenMaxPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageHiddenMaxPotion": {
+      "raw_lines": [
+        "hiddenitem MAX_POTION, EVENT_LAKE_OF_RAGE_HIDDEN_MAX_POTION"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "MAX_POTION",
+            "EVENT_LAKE_OF_RAGE_HIDDEN_MAX_POTION"
+          ],
+          "raw": "hiddenitem MAX_POTION, EVENT_LAKE_OF_RAGE_HIDDEN_MAX_POTION"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "LakeOfRageLanceTeleportIntoSkyMovement",
+      "label_refs": [
+        "LakeOfRageLanceTeleportIntoSkyMovement"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageLanceTeleportIntoSkyMovement": {
+      "raw_lines": [
+        "teleport_from",
+        "step_end"
+      ],
+      "commands": [
+        {
+          "command": "teleport_from",
+          "args": [],
+          "raw": "teleport_from"
+        },
+        {
+          "command": "step_end",
+          "args": [],
+          "raw": "step_end"
+        }
+      ],
+      "first_command": "teleport_from",
+      "fallthrough_label": "LakeOfRage_MapEvents",
+      "label_refs": [
+        "LakeOfRage_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRage_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  7,  3, LAKE_OF_RAGE_HIDDEN_POWER_HOUSE, 1",
+        "warp_event 27, 31, LAKE_OF_RAGE_MAGIKARP_HOUSE, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event 21, 27, BGEVENT_READ, LakeOfRageSign",
+        "bg_event 25, 31, BGEVENT_READ, MagikarpHouseSignScript",
+        "bg_event 11, 28, BGEVENT_ITEM, LakeOfRageHiddenFullRestore",
+        "bg_event  4,  4, BGEVENT_ITEM, LakeOfRageHiddenRareCandy",
+        "bg_event 35,  5, BGEVENT_ITEM, LakeOfRageHiddenMaxPotion",
+        "def_object_events",
+        "object_event 21, 28, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageLanceScript, EVENT_LAKE_OF_RAGE_LANCE",
+        "object_event 20, 26, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageGrampsScript, -1",
+        "object_event 36, 13, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageSuperNerdScript, -1",
+        "object_event 25, 29, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageCooltrainerFScript, -1",
+        "object_event 30, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherAndre, EVENT_LAKE_OF_RAGE_CIVILIANS",
+        "object_event 24, 26, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherRaymond, EVENT_LAKE_OF_RAGE_CIVILIANS",
+        "object_event  4, 15, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainermAaron, EVENT_LAKE_OF_RAGE_CIVILIANS",
+        "object_event 36,  7, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerCooltrainerfLois, EVENT_LAKE_OF_RAGE_CIVILIANS",
+        "object_event 18, 22, SPRITE_GYARADOS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RedGyarados, EVENT_LAKE_OF_RAGE_RED_GYARADOS",
+        "object_event  4,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WesleyScript, EVENT_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY",
+        "object_event  7, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageElixer, EVENT_LAKE_OF_RAGE_ELIXER",
+        "object_event 35,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageTMDetect, EVENT_LAKE_OF_RAGE_TM_DETECT"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "7",
+            "3",
+            "LAKE_OF_RAGE_HIDDEN_POWER_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event  7,  3, LAKE_OF_RAGE_HIDDEN_POWER_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "27",
+            "31",
+            "LAKE_OF_RAGE_MAGIKARP_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event 27, 31, LAKE_OF_RAGE_MAGIKARP_HOUSE, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "21",
+            "27",
+            "BGEVENT_READ",
+            "LakeOfRageSign"
+          ],
+          "raw": "bg_event 21, 27, BGEVENT_READ, LakeOfRageSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "25",
+            "31",
+            "BGEVENT_READ",
+            "MagikarpHouseSignScript"
+          ],
+          "raw": "bg_event 25, 31, BGEVENT_READ, MagikarpHouseSignScript"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "11",
+            "28",
+            "BGEVENT_ITEM",
+            "LakeOfRageHiddenFullRestore"
+          ],
+          "raw": "bg_event 11, 28, BGEVENT_ITEM, LakeOfRageHiddenFullRestore"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "4",
+            "4",
+            "BGEVENT_ITEM",
+            "LakeOfRageHiddenRareCandy"
+          ],
+          "raw": "bg_event  4,  4, BGEVENT_ITEM, LakeOfRageHiddenRareCandy"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "35",
+            "5",
+            "BGEVENT_ITEM",
+            "LakeOfRageHiddenMaxPotion"
+          ],
+          "raw": "bg_event 35,  5, BGEVENT_ITEM, LakeOfRageHiddenMaxPotion"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "21",
+            "28",
+            "SPRITE_LANCE",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "LakeOfRageLanceScript",
+            "EVENT_LAKE_OF_RAGE_LANCE"
+          ],
+          "raw": "object_event 21, 28, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageLanceScript, EVENT_LAKE_OF_RAGE_LANCE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "20",
+            "26",
+            "SPRITE_GRAMPS",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "LakeOfRageGrampsScript",
+            "-1"
+          ],
+          "raw": "object_event 20, 26, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageGrampsScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "36",
+            "13",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "LakeOfRageSuperNerdScript",
+            "-1"
+          ],
+          "raw": "object_event 36, 13, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageSuperNerdScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "25",
+            "29",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "LakeOfRageCooltrainerFScript",
+            "-1"
+          ],
+          "raw": "object_event 25, 29, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageCooltrainerFScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "30",
+            "23",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerFisherAndre",
+            "EVENT_LAKE_OF_RAGE_CIVILIANS"
+          ],
+          "raw": "object_event 30, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherAndre, EVENT_LAKE_OF_RAGE_CIVILIANS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "24",
+            "26",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerFisherRaymond",
+            "EVENT_LAKE_OF_RAGE_CIVILIANS"
+          ],
+          "raw": "object_event 24, 26, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherRaymond, EVENT_LAKE_OF_RAGE_CIVILIANS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "15",
+            "SPRITE_COOLTRAINER_M",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerCooltrainermAaron",
+            "EVENT_LAKE_OF_RAGE_CIVILIANS"
+          ],
+          "raw": "object_event  4, 15, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainermAaron, EVENT_LAKE_OF_RAGE_CIVILIANS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "36",
+            "7",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "0",
+            "TrainerCooltrainerfLois",
+            "EVENT_LAKE_OF_RAGE_CIVILIANS"
+          ],
+          "raw": "object_event 36,  7, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerCooltrainerfLois, EVENT_LAKE_OF_RAGE_CIVILIANS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "18",
+            "22",
+            "SPRITE_GYARADOS",
+            "SPRITEMOVEDATA_POKEMON",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RedGyarados",
+            "EVENT_LAKE_OF_RAGE_RED_GYARADOS"
+          ],
+          "raw": "object_event 18, 22, SPRITE_GYARADOS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RedGyarados, EVENT_LAKE_OF_RAGE_RED_GYARADOS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "4",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "WesleyScript",
+            "EVENT_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY"
+          ],
+          "raw": "object_event  4,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WesleyScript, EVENT_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "10",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "LakeOfRageElixer",
+            "EVENT_LAKE_OF_RAGE_ELIXER"
+          ],
+          "raw": "object_event  7, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageElixer, EVENT_LAKE_OF_RAGE_ELIXER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "35",
+            "2",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "LakeOfRageTMDetect",
+            "EVENT_LAKE_OF_RAGE_TM_DETECT"
+          ],
+          "raw": "object_event 35,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageTMDetect, EVENT_LAKE_OF_RAGE_TM_DETECT"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "LakeOfRageLanceForcedToEvolveText": {
+      "raw_lines": [
+        "text \"This lake is full\"",
+        "line \"of GYARADOS but\"",
+        "cont \"nothing else\u2026\"",
+        "para \"So the MAGIKARP\"",
+        "line \"are being forced\"",
+        "cont \"to evolve\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This lake is full"
+        },
+        {
+          "command": "line",
+          "value": "of GYARADOS but"
+        },
+        {
+          "command": "cont",
+          "value": "nothing else\u2026"
+        },
+        {
+          "command": "para",
+          "value": "So the MAGIKARP"
+        },
+        {
+          "command": "line",
+          "value": "are being forced"
+        },
+        {
+          "command": "cont",
+          "value": "to evolve\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LakeOfRageLanceIntroText": {
+      "raw_lines": [
+        "text \"Did you come here\"",
+        "line \"because of the\"",
+        "cont \"rumors?\"",
+        "para \"You're <PLAYER>?\"",
+        "line \"I'm LANCE, a\"",
+        "cont \"trainer like you.\"",
+        "para \"I heard some ru-\"",
+        "line \"mors, so I came to\"",
+        "cont \"investigate\u2026\"",
+        "para \"I saw the way you\"",
+        "line \"battled earlier,\"",
+        "cont \"<PLAY_G>.\"",
+        "para \"I can tell that\"",
+        "line \"you're a trainer\"",
+        "para \"with considerable\"",
+        "line \"skill.\"",
+        "para \"If you don't mind,\"",
+        "line \"could you help me\"",
+        "cont \"investigate?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Did you come here"
+        },
+        {
+          "command": "line",
+          "value": "because of the"
+        },
+        {
+          "command": "cont",
+          "value": "rumors?"
+        },
+        {
+          "command": "para",
+          "value": "You're <PLAYER>?"
+        },
+        {
+          "command": "line",
+          "value": "I'm LANCE, a"
+        },
+        {
+          "command": "cont",
+          "value": "trainer like you."
+        },
+        {
+          "command": "para",
+          "value": "I heard some ru-"
+        },
+        {
+          "command": "line",
+          "value": "mors, so I came to"
+        },
+        {
+          "command": "cont",
+          "value": "investigate\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I saw the way you"
+        },
+        {
+          "command": "line",
+          "value": "battled earlier,"
+        },
+        {
+          "command": "cont",
+          "value": "<PLAY_G>."
+        },
+        {
+          "command": "para",
+          "value": "I can tell that"
+        },
+        {
+          "command": "line",
+          "value": "you're a trainer"
+        },
+        {
+          "command": "para",
+          "value": "with considerable"
+        },
+        {
+          "command": "line",
+          "value": "skill."
+        },
+        {
+          "command": "para",
+          "value": "If you don't mind,"
+        },
+        {
+          "command": "line",
+          "value": "could you help me"
+        },
+        {
+          "command": "cont",
+          "value": "investigate?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LakeOfRageLanceRadioSignalText": {
+      "raw_lines": [
+        "text \"LANCE: Excellent!\"",
+        "para \"It seems that the\"",
+        "line \"LAKE's MAGIKARP\"",
+        "para \"are being forced\"",
+        "line \"to evolve.\"",
+        "para \"A mysterious radio\"",
+        "line \"broadcast coming\"",
+        "para \"from MAHOGANY is\"",
+        "line \"the cause.\"",
+        "para \"I'll be waiting\"",
+        "line \"for you, <PLAY_G>.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "LANCE: Excellent!"
+        },
+        {
+          "command": "para",
+          "value": "It seems that the"
+        },
+        {
+          "command": "line",
+          "value": "LAKE's MAGIKARP"
+        },
+        {
+          "command": "para",
+          "value": "are being forced"
+        },
+        {
+          "command": "line",
+          "value": "to evolve."
+        },
+        {
+          "command": "para",
+          "value": "A mysterious radio"
+        },
+        {
+          "command": "line",
+          "value": "broadcast coming"
+        },
+        {
+          "command": "para",
+          "value": "from MAHOGANY is"
+        },
+        {
+          "command": "line",
+          "value": "the cause."
+        },
+        {
+          "command": "para",
+          "value": "I'll be waiting"
+        },
+        {
+          "command": "line",
+          "value": "for you, <PLAY_G>."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LakeOfRageLanceRefusedText": {
+      "raw_lines": [
+        "text \"Oh\u2026 Well, if you\"",
+        "line \"change your mind,\"",
+        "cont \"please help me.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh\u2026 Well, if you"
+        },
+        {
+          "command": "line",
+          "value": "change your mind,"
+        },
+        {
+          "command": "cont",
+          "value": "please help me."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LakeOfRageLanceAskHelpText": {
+      "raw_lines": [
+        "text \"LANCE: Hm? Are you\"",
+        "line \"going to help me?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "LANCE: Hm? Are you"
+        },
+        {
+          "command": "line",
+          "value": "going to help me?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LakeOfRageGyaradosCryText": {
+      "raw_lines": [
+        "text \"GYARADOS: Gyashaa!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "GYARADOS: Gyashaa!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LakeOfRageGotRedScaleText": {
+      "raw_lines": [
+        "text \"<PLAYER> obtained a\"",
+        "line \"RED SCALE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> obtained a"
+        },
+        {
+          "command": "line",
+          "value": "RED SCALE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LakeOfRageGrampsText": {
+      "raw_lines": [
+        "text \"The GYARADOS are\"",
+        "line \"angry!\"",
+        "para \"It's a bad omen!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The GYARADOS are"
+        },
+        {
+          "command": "line",
+          "value": "angry!"
+        },
+        {
+          "command": "para",
+          "value": "It's a bad omen!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LakeOfRageGrampsText_ClearedRocketHideout": {
+      "raw_lines": [
+        "text \"Hahah! The MAGI-\"",
+        "line \"KARP are biting!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hahah! The MAGI-"
+        },
+        {
+          "command": "line",
+          "value": "KARP are biting!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LakeOfRageSuperNerdText": {
+      "raw_lines": [
+        "text \"I heard this lake\"",
+        "line \"was made by ram-\"",
+        "cont \"paging GYARADOS.\"",
+        "para \"I wonder if there\"",
+        "line \"is any connection\"",
+        "para \"to their mass out-\"",
+        "line \"break now?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I heard this lake"
+        },
+        {
+          "command": "line",
+          "value": "was made by ram-"
+        },
+        {
+          "command": "cont",
+          "value": "paging GYARADOS."
+        },
+        {
+          "command": "para",
+          "value": "I wonder if there"
+        },
+        {
+          "command": "line",
+          "value": "is any connection"
+        },
+        {
+          "command": "para",
+          "value": "to their mass out-"
+        },
+        {
+          "command": "line",
+          "value": "break now?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LakeOfRageCooltrainerFText": {
+      "raw_lines": [
+        "text \"Did my eyes de-\"",
+        "line \"ceive me? I saw a\"",
+        "para \"red GYARADOS in\"",
+        "line \"the LAKE\u2026\"",
+        "para \"But I thought\"",
+        "line \"GYARADOS were\"",
+        "cont \"usually blue?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Did my eyes de-"
+        },
+        {
+          "command": "line",
+          "value": "ceive me? I saw a"
+        },
+        {
+          "command": "para",
+          "value": "red GYARADOS in"
+        },
+        {
+          "command": "line",
+          "value": "the LAKE\u2026"
+        },
+        {
+          "command": "para",
+          "value": "But I thought"
+        },
+        {
+          "command": "line",
+          "value": "GYARADOS were"
+        },
+        {
+          "command": "cont",
+          "value": "usually blue?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FisherAndreSeenText": {
+      "raw_lines": [
+        "text \"Let me battle with\"",
+        "line \"the #MON I just\"",
+        "cont \"caught!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Let me battle with"
+        },
+        {
+          "command": "line",
+          "value": "the #MON I just"
+        },
+        {
+          "command": "cont",
+          "value": "caught!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FisherAndreBeatenText": {
+      "raw_lines": [
+        "text \"I might be an ex-\"",
+        "line \"pert angler, but\"",
+        "para \"I stink as a #-\"",
+        "line \"MON trainer\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I might be an ex-"
+        },
+        {
+          "command": "line",
+          "value": "pert angler, but"
+        },
+        {
+          "command": "para",
+          "value": "I stink as a #-"
+        },
+        {
+          "command": "line",
+          "value": "MON trainer\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FisherAndreAfterBattleText": {
+      "raw_lines": [
+        "text \"I won't lose as an\"",
+        "line \"angler! I catch\"",
+        "cont \"#MON all day.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I won't lose as an"
+        },
+        {
+          "command": "line",
+          "value": "angler! I catch"
+        },
+        {
+          "command": "cont",
+          "value": "#MON all day."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FisherRaymondSeenText": {
+      "raw_lines": [
+        "text \"No matter what I\"",
+        "line \"do, all I catch\"",
+        "para \"are the same #-\"",
+        "line \"MON\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "No matter what I"
+        },
+        {
+          "command": "line",
+          "value": "do, all I catch"
+        },
+        {
+          "command": "para",
+          "value": "are the same #-"
+        },
+        {
+          "command": "line",
+          "value": "MON\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FisherRaymondBeatenText": {
+      "raw_lines": [
+        "text \"My line's all\"",
+        "line \"tangled up\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My line's all"
+        },
+        {
+          "command": "line",
+          "value": "tangled up\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FisherRaymondAfterBattleText": {
+      "raw_lines": [
+        "text \"Why can't I catch\"",
+        "line \"any good #MON?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Why can't I catch"
+        },
+        {
+          "command": "line",
+          "value": "any good #MON?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermAaronSeenText": {
+      "raw_lines": [
+        "text \"If a trainer spots\"",
+        "line \"another trainer,\"",
+        "para \"he has to make a\"",
+        "line \"challenge.\"",
+        "para \"That is our\"",
+        "line \"destiny.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If a trainer spots"
+        },
+        {
+          "command": "line",
+          "value": "another trainer,"
+        },
+        {
+          "command": "para",
+          "value": "he has to make a"
+        },
+        {
+          "command": "line",
+          "value": "challenge."
+        },
+        {
+          "command": "para",
+          "value": "That is our"
+        },
+        {
+          "command": "line",
+          "value": "destiny."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermAaronBeatenText": {
+      "raw_lines": [
+        "text \"Whew\u2026\"",
+        "line \"Good battle.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Whew\u2026"
+        },
+        {
+          "command": "line",
+          "value": "Good battle."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermAaronAfterBattleText": {
+      "raw_lines": [
+        "text \"#MON and their\"",
+        "line \"trainer become\"",
+        "para \"powerful through\"",
+        "line \"constant battling.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#MON and their"
+        },
+        {
+          "command": "line",
+          "value": "trainer become"
+        },
+        {
+          "command": "para",
+          "value": "powerful through"
+        },
+        {
+          "command": "line",
+          "value": "constant battling."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfLoisSeenText": {
+      "raw_lines": [
+        "text \"What happened to\"",
+        "line \"the red GYARADOS?\"",
+        "para \"It's gone?\"",
+        "para \"Oh, darn. I came\"",
+        "line \"here for nothing?\"",
+        "para \"I know--let's\"",
+        "line \"battle!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What happened to"
+        },
+        {
+          "command": "line",
+          "value": "the red GYARADOS?"
+        },
+        {
+          "command": "para",
+          "value": "It's gone?"
+        },
+        {
+          "command": "para",
+          "value": "Oh, darn. I came"
+        },
+        {
+          "command": "line",
+          "value": "here for nothing?"
+        },
+        {
+          "command": "para",
+          "value": "I know--let's"
+        },
+        {
+          "command": "line",
+          "value": "battle!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfLoisBeatenText": {
+      "raw_lines": [
+        "text \"Good going!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Good going!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfLoisAfterBattleText": {
+      "raw_lines": [
+        "text \"Come to think of\"",
+        "line \"it, I've seen a\"",
+        "cont \"pink BUTTERFREE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Come to think of"
+        },
+        {
+          "command": "line",
+          "value": "it, I've seen a"
+        },
+        {
+          "command": "cont",
+          "value": "pink BUTTERFREE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MeetWesleyText": {
+      "raw_lines": [
+        "text \"WESLEY: Well, how\"",
+        "line \"do you do?\"",
+        "para \"Seeing as how it's\"",
+        "line \"Wednesday today,\"",
+        "para \"I'm WESLEY of\"",
+        "line \"Wednesday.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "WESLEY: Well, how"
+        },
+        {
+          "command": "line",
+          "value": "do you do?"
+        },
+        {
+          "command": "para",
+          "value": "Seeing as how it's"
+        },
+        {
+          "command": "line",
+          "value": "Wednesday today,"
+        },
+        {
+          "command": "para",
+          "value": "I'm WESLEY of"
+        },
+        {
+          "command": "line",
+          "value": "Wednesday."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "WesleyGivesGiftText": {
+      "raw_lines": [
+        "text \"Pleased to meet\"",
+        "line \"you. Please take a\"",
+        "cont \"souvenir.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Pleased to meet"
+        },
+        {
+          "command": "line",
+          "value": "you. Please take a"
+        },
+        {
+          "command": "cont",
+          "value": "souvenir."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "WesleyGaveGiftText": {
+      "raw_lines": [
+        "text \"WESLEY: BLACKBELT\"",
+        "line \"beefs up the power\"",
+        "cont \"of fighting moves.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "WESLEY: BLACKBELT"
+        },
+        {
+          "command": "line",
+          "value": "beefs up the power"
+        },
+        {
+          "command": "cont",
+          "value": "of fighting moves."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "WesleyWednesdayText": {
+      "raw_lines": [
+        "text \"WESLEY: Since you\"",
+        "line \"found me, you must\"",
+        "para \"have met my broth-\"",
+        "line \"ers and sisters.\"",
+        "para \"Or did you just\"",
+        "line \"get lucky?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "WESLEY: Since you"
+        },
+        {
+          "command": "line",
+          "value": "found me, you must"
+        },
+        {
+          "command": "para",
+          "value": "have met my broth-"
+        },
+        {
+          "command": "line",
+          "value": "ers and sisters."
+        },
+        {
+          "command": "para",
+          "value": "Or did you just"
+        },
+        {
+          "command": "line",
+          "value": "get lucky?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "WesleyNotWednesdayText": {
+      "raw_lines": [
+        "text \"WESLEY: Today's\"",
+        "line \"not Wednesday.\"",
+        "cont \"That's too bad.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "WESLEY: Today's"
+        },
+        {
+          "command": "line",
+          "value": "not Wednesday."
+        },
+        {
+          "command": "cont",
+          "value": "That's too bad."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LakeOfRageSignText": {
+      "raw_lines": [
+        "text \"LAKE OF RAGE,\"",
+        "line \"also known as\"",
+        "cont \"GYARADOS LAKE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "LAKE OF RAGE,"
+        },
+        {
+          "command": "line",
+          "value": "also known as"
+        },
+        {
+          "command": "cont",
+          "value": "GYARADOS LAKE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FishingGurusHouseSignText": {
+      "raw_lines": [
+        "text \"FISHING GURU'S\"",
+        "line \"HOUSE\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "FISHING GURU'S"
+        },
+        {
+          "command": "line",
+          "value": "HOUSE"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "LakeOfRage_MapScripts": {
+      "label_refs": [
+        "LakeOfRageNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageFlypointCallback": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageWesleyCallback": {
+      "label_refs": [
+        "LakeOfRageWesleyCallback.WesleyAppears"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageWesleyCallback.WesleyAppears": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageLanceScript": {
+      "label_refs": [
+        "LakeOfRageLanceScript.AgreedToHelp",
+        "LakeOfRageLanceScript.AskAgainForHelp",
+        "LakeOfRageLanceScript.RefusedToHelp"
+      ],
+      "text_refs": [
+        "LakeOfRageLanceForcedToEvolveText",
+        "LakeOfRageLanceIntroText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageLanceScript.AgreedToHelp": {
+      "label_refs": [],
+      "text_refs": [
+        "LakeOfRageLanceRadioSignalText"
+      ],
+      "movement_refs": [
+        "LakeOfRageLanceTeleportIntoSkyMovement"
+      ],
+      "scene_refs": [
+        "SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS"
+      ],
+      "std_calls": []
+    },
+    "LakeOfRageLanceScript.RefusedToHelp": {
+      "label_refs": [],
+      "text_refs": [
+        "LakeOfRageLanceRefusedText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageLanceScript.AskAgainForHelp": {
+      "label_refs": [
+        "LakeOfRageLanceScript.AgreedToHelp",
+        "LakeOfRageLanceScript.RefusedToHelp"
+      ],
+      "text_refs": [
+        "LakeOfRageLanceAskHelpText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RedGyarados": {
+      "label_refs": [
+        "RedGyarados.NotBeaten"
+      ],
+      "text_refs": [
+        "LakeOfRageGyaradosCryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RedGyarados.NotBeaten": {
+      "label_refs": [],
+      "text_refs": [
+        "LakeOfRageGotRedScaleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [
+        "0"
+      ],
+      "std_calls": []
+    },
+    "LakeOfRageGrampsScript": {
+      "label_refs": [
+        "LakeOfRageGrampsScript.ClearedRocketHideout"
+      ],
+      "text_refs": [
+        "LakeOfRageGrampsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageGrampsScript.ClearedRocketHideout": {
+      "label_refs": [],
+      "text_refs": [
+        "LakeOfRageGrampsText_ClearedRocketHideout"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageSuperNerdScript": {
+      "label_refs": [],
+      "text_refs": [
+        "LakeOfRageSuperNerdText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageCooltrainerFScript": {
+      "label_refs": [],
+      "text_refs": [
+        "LakeOfRageCooltrainerFText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageSign": {
+      "label_refs": [],
+      "text_refs": [
+        "LakeOfRageSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpHouseSignScript": {
+      "label_refs": [
+        "MagikarpHouseSignScript.MagikarpLengthRecord"
+      ],
+      "text_refs": [
+        "FishingGurusHouseSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpHouseSignScript.MagikarpLengthRecord": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherAndre": {
+      "label_refs": [
+        "TrainerFisherAndre.Script"
+      ],
+      "text_refs": [
+        "FisherAndreBeatenText",
+        "FisherAndreSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherAndre.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "FisherAndreAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherRaymond": {
+      "label_refs": [
+        "TrainerFisherRaymond.Script"
+      ],
+      "text_refs": [
+        "FisherRaymondBeatenText",
+        "FisherRaymondSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerFisherRaymond.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "FisherRaymondAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermAaron": {
+      "label_refs": [
+        "TrainerCooltrainermAaron.Script"
+      ],
+      "text_refs": [
+        "CooltrainermAaronBeatenText",
+        "CooltrainermAaronSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermAaron.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainermAaronAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfLois": {
+      "label_refs": [
+        "TrainerCooltrainerfLois.Script"
+      ],
+      "text_refs": [
+        "CooltrainerfLoisBeatenText",
+        "CooltrainerfLoisSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfLois.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainerfLoisAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WesleyScript": {
+      "label_refs": [
+        "WesleyNotWednesdayScript",
+        "WesleyScript.MetWesley",
+        "WesleyWednesdayScript"
+      ],
+      "text_refs": [
+        "MeetWesleyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WesleyScript.MetWesley": {
+      "label_refs": [
+        "WesleyDoneScript"
+      ],
+      "text_refs": [
+        "WesleyGaveGiftText",
+        "WesleyGivesGiftText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WesleyWednesdayScript": {
+      "label_refs": [
+        "WesleyDoneScript"
+      ],
+      "text_refs": [
+        "WesleyWednesdayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WesleyDoneScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WesleyNotWednesdayScript": {
+      "label_refs": [],
+      "text_refs": [
+        "WesleyNotWednesdayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageElixer": {
+      "label_refs": [
+        "LakeOfRageTMDetect"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageTMDetect": {
+      "label_refs": [
+        "LakeOfRageHiddenFullRestore"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageHiddenFullRestore": {
+      "label_refs": [
+        "LakeOfRageHiddenRareCandy"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageHiddenRareCandy": {
+      "label_refs": [
+        "LakeOfRageHiddenMaxPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageHiddenMaxPotion": {
+      "label_refs": [
+        "LakeOfRageLanceTeleportIntoSkyMovement"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageLanceTeleportIntoSkyMovement": {
+      "label_refs": [
+        "LakeOfRage_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRage_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio",
+    "day_time"
+  ],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 2,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 5,
+    "object_events": 12
+  }
+}

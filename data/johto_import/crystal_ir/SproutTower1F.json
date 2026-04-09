@@ -1,0 +1,1004 @@
+{
+  "crystal_map": "SproutTower1F",
+  "map_id": "SPROUT_TOWER_1F",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 1,
+  "tileset": "TILESET_TOWER",
+  "environment": "DUNGEON",
+  "landmark": "LANDMARK_SPROUT_TOWER",
+  "music": "MUSIC_SPROUT_TOWER",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 10,
+  "height_blocks": 8,
+  "border_block": "00",
+  "blk_path": "maps/SproutTower1F.blk",
+  "source_asm": "maps/SproutTower1F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 9,
+        "y": 15,
+        "dest_map": "VIOLET_CITY",
+        "dest_warp_id": 7
+      },
+      {
+        "x": 10,
+        "y": 15,
+        "dest_map": "VIOLET_CITY",
+        "dest_warp_id": 7
+      },
+      {
+        "x": 6,
+        "y": 4,
+        "dest_map": "SPROUT_TOWER_2F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 2,
+        "y": 6,
+        "dest_map": "SPROUT_TOWER_2F",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 17,
+        "y": 3,
+        "dest_map": "SPROUT_TOWER_2F",
+        "dest_warp_id": 3
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 7,
+        "y": 15,
+        "kind": "BGEVENT_READ",
+        "script": "SproutTower1FStatue"
+      },
+      {
+        "x": 12,
+        "y": 15,
+        "kind": "BGEVENT_READ",
+        "script": "SproutTower1FStatue"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 7,
+        "y": 4,
+        "sprite": "SPRITE_SAGE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "SproutTower1FSage1Script",
+        "flag": -1
+      },
+      {
+        "x": 6,
+        "y": 7,
+        "sprite": "SPRITE_SAGE",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "SproutTower1FSage2Script",
+        "flag": -1
+      },
+      {
+        "x": 11,
+        "y": 12,
+        "sprite": "SPRITE_GRANNY",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "SproutTower1FGrannyScript",
+        "flag": -1
+      },
+      {
+        "x": 9,
+        "y": 9,
+        "sprite": "SPRITE_TEACHER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "SproutTower1FTeacherScript",
+        "flag": -1
+      },
+      {
+        "x": 3,
+        "y": 5,
+        "sprite": "SPRITE_SAGE",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 4,
+        "script": "TrainerSageChow",
+        "flag": -1
+      },
+      {
+        "x": 16,
+        "y": 7,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "SproutTower1FParlyzHeal",
+        "flag": "EVENT_SPROUT_TOWER_1F_PARLYZ_HEAL"
+      }
+    ]
+  },
+  "object_consts": [
+    "SPROUTTOWER1F_SAGE1",
+    "SPROUTTOWER1F_SAGE2",
+    "SPROUTTOWER1F_GRANNY",
+    "SPROUTTOWER1F_TEACHER",
+    "SPROUTTOWER1F_SAGE3",
+    "SPROUTTOWER1F_POKE_BALL"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "SproutTower1F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "SproutTower1FSage1Script",
+      "label_refs": [
+        "SproutTower1FSage1Script"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower1FSage1Script": {
+      "raw_lines": [
+        "jumptextfaceplayer SproutTower1FSage1Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "SproutTower1FSage1Text"
+          ],
+          "raw": "jumptextfaceplayer SproutTower1FSage1Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "SproutTower1FSage1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower1FSage2Script": {
+      "raw_lines": [
+        "jumptextfaceplayer SproutTower1FSage2Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "SproutTower1FSage2Text"
+          ],
+          "raw": "jumptextfaceplayer SproutTower1FSage2Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "SproutTower1FSage2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower1FGrannyScript": {
+      "raw_lines": [
+        "jumptextfaceplayer SproutTower1FGrannyText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "SproutTower1FGrannyText"
+          ],
+          "raw": "jumptextfaceplayer SproutTower1FGrannyText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "SproutTower1FGrannyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower1FTeacherScript": {
+      "raw_lines": [
+        "jumptextfaceplayer SproutTower1FTeacherText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "SproutTower1FTeacherText"
+          ],
+          "raw": "jumptextfaceplayer SproutTower1FTeacherText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "SproutTower1FTeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSageChow": {
+      "raw_lines": [
+        "trainer SAGE, CHOW, EVENT_BEAT_SAGE_CHOW, SageChowSeenText, SageChowBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "SAGE",
+            "CHOW",
+            "EVENT_BEAT_SAGE_CHOW",
+            "SageChowSeenText",
+            "SageChowBeatenText",
+            "0",
+            "TrainerSageChow.Script"
+          ],
+          "raw": "trainer SAGE, CHOW, EVENT_BEAT_SAGE_CHOW, SageChowSeenText, SageChowBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerSageChow.Script",
+      "label_refs": [
+        "TrainerSageChow.Script"
+      ],
+      "text_refs": [
+        "SageChowBeatenText",
+        "SageChowSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSageChow.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext SageChowAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SageChowAfterBattleText"
+          ],
+          "raw": "writetext SageChowAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "SageChowAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower1FParlyzHeal": {
+      "raw_lines": [
+        "itemball PARLYZ_HEAL"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "PARLYZ_HEAL"
+          ],
+          "raw": "itemball PARLYZ_HEAL"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "SproutTower1FStatue",
+      "label_refs": [
+        "SproutTower1FStatue"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower1FStatue": {
+      "raw_lines": [
+        "jumptext SproutTower1FStatueText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "SproutTower1FStatueText"
+          ],
+          "raw": "jumptext SproutTower1FStatueText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "SproutTower1FStatueText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower1F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  9, 15, VIOLET_CITY, 7",
+        "warp_event 10, 15, VIOLET_CITY, 7",
+        "warp_event  6,  4, SPROUT_TOWER_2F, 1",
+        "warp_event  2,  6, SPROUT_TOWER_2F, 2",
+        "warp_event 17,  3, SPROUT_TOWER_2F, 3",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  7, 15, BGEVENT_READ, SproutTower1FStatue",
+        "bg_event 12, 15, BGEVENT_READ, SproutTower1FStatue",
+        "def_object_events",
+        "object_event  7,  4, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SproutTower1FSage1Script, -1",
+        "object_event  6,  7, SPRITE_SAGE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SproutTower1FSage2Script, -1",
+        "object_event 11, 12, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SproutTower1FGrannyScript, -1",
+        "object_event  9,  9, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SproutTower1FTeacherScript, -1",
+        "object_event  3,  5, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerSageChow, -1",
+        "object_event 16,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SproutTower1FParlyzHeal, EVENT_SPROUT_TOWER_1F_PARLYZ_HEAL"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "15",
+            "VIOLET_CITY",
+            "7"
+          ],
+          "raw": "warp_event  9, 15, VIOLET_CITY, 7"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "10",
+            "15",
+            "VIOLET_CITY",
+            "7"
+          ],
+          "raw": "warp_event 10, 15, VIOLET_CITY, 7"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "6",
+            "4",
+            "SPROUT_TOWER_2F",
+            "1"
+          ],
+          "raw": "warp_event  6,  4, SPROUT_TOWER_2F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "6",
+            "SPROUT_TOWER_2F",
+            "2"
+          ],
+          "raw": "warp_event  2,  6, SPROUT_TOWER_2F, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "3",
+            "SPROUT_TOWER_2F",
+            "3"
+          ],
+          "raw": "warp_event 17,  3, SPROUT_TOWER_2F, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "7",
+            "15",
+            "BGEVENT_READ",
+            "SproutTower1FStatue"
+          ],
+          "raw": "bg_event  7, 15, BGEVENT_READ, SproutTower1FStatue"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "12",
+            "15",
+            "BGEVENT_READ",
+            "SproutTower1FStatue"
+          ],
+          "raw": "bg_event 12, 15, BGEVENT_READ, SproutTower1FStatue"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "4",
+            "SPRITE_SAGE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "SproutTower1FSage1Script",
+            "-1"
+          ],
+          "raw": "object_event  7,  4, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SproutTower1FSage1Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "7",
+            "SPRITE_SAGE",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "SproutTower1FSage2Script",
+            "-1"
+          ],
+          "raw": "object_event  6,  7, SPRITE_SAGE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SproutTower1FSage2Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "11",
+            "12",
+            "SPRITE_GRANNY",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "SproutTower1FGrannyScript",
+            "-1"
+          ],
+          "raw": "object_event 11, 12, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SproutTower1FGrannyScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "9",
+            "SPRITE_TEACHER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "SproutTower1FTeacherScript",
+            "-1"
+          ],
+          "raw": "object_event  9,  9, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SproutTower1FTeacherScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "5",
+            "SPRITE_SAGE",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "4",
+            "TrainerSageChow",
+            "-1"
+          ],
+          "raw": "object_event  3,  5, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerSageChow, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "16",
+            "7",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "SproutTower1FParlyzHeal",
+            "EVENT_SPROUT_TOWER_1F_PARLYZ_HEAL"
+          ],
+          "raw": "object_event 16,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SproutTower1FParlyzHeal, EVENT_SPROUT_TOWER_1F_PARLYZ_HEAL"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "SageChowSeenText": {
+      "raw_lines": [
+        "text \"We stand guard in\"",
+        "line \"this tower.\"",
+        "para \"Here, we express\"",
+        "line \"our gratitude to\"",
+        "cont \"honor all #MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We stand guard in"
+        },
+        {
+          "command": "line",
+          "value": "this tower."
+        },
+        {
+          "command": "para",
+          "value": "Here, we express"
+        },
+        {
+          "command": "line",
+          "value": "our gratitude to"
+        },
+        {
+          "command": "cont",
+          "value": "honor all #MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SageChowBeatenText": {
+      "raw_lines": [
+        "text \"Th-Thank you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Th-Thank you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SageChowAfterBattleText": {
+      "raw_lines": [
+        "text \"All living beings\"",
+        "line \"coexist through\"",
+        "cont \"cooperation.\"",
+        "para \"We must always be\"",
+        "line \"thankful for this.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "All living beings"
+        },
+        {
+          "command": "line",
+          "value": "coexist through"
+        },
+        {
+          "command": "cont",
+          "value": "cooperation."
+        },
+        {
+          "command": "para",
+          "value": "We must always be"
+        },
+        {
+          "command": "line",
+          "value": "thankful for this."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SproutTower1FSage1Text": {
+      "raw_lines": [
+        "text \"Only if you reach\"",
+        "line \"the top will you\"",
+        "cont \"obtain an HM.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Only if you reach"
+        },
+        {
+          "command": "line",
+          "value": "the top will you"
+        },
+        {
+          "command": "cont",
+          "value": "obtain an HM."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SproutTower1FSage2Text": {
+      "raw_lines": [
+        "text \"SPROUT TOWER was\"",
+        "line \"built long ago\"",
+        "para \"as a place for\"",
+        "line \"#MON training.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "SPROUT TOWER was"
+        },
+        {
+          "command": "line",
+          "value": "built long ago"
+        },
+        {
+          "command": "para",
+          "value": "as a place for"
+        },
+        {
+          "command": "line",
+          "value": "#MON training."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SproutTower1FGrannyText": {
+      "raw_lines": [
+        "text \"A BELLSPROUT over\"",
+        "line \"100 feet tall\u2026\"",
+        "para \"People say that it\"",
+        "line \"became the center\"",
+        "cont \"pillar here.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A BELLSPROUT over"
+        },
+        {
+          "command": "line",
+          "value": "100 feet tall\u2026"
+        },
+        {
+          "command": "para",
+          "value": "People say that it"
+        },
+        {
+          "command": "line",
+          "value": "became the center"
+        },
+        {
+          "command": "cont",
+          "value": "pillar here."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SproutTower1FTeacherText": {
+      "raw_lines": [
+        "text \"See the pillar\"",
+        "line \"shaking?\"",
+        "para \"People are train-\"",
+        "line \"ing upstairs.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "See the pillar"
+        },
+        {
+          "command": "line",
+          "value": "shaking?"
+        },
+        {
+          "command": "para",
+          "value": "People are train-"
+        },
+        {
+          "command": "line",
+          "value": "ing upstairs."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SproutTower1FStatueText": {
+      "raw_lines": [
+        "text \"A #MON statue\u2026\"",
+        "para \"It looks very\"",
+        "line \"distinguished.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A #MON statue\u2026"
+        },
+        {
+          "command": "para",
+          "value": "It looks very"
+        },
+        {
+          "command": "line",
+          "value": "distinguished."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "SproutTower1F_MapScripts": {
+      "label_refs": [
+        "SproutTower1FSage1Script"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower1FSage1Script": {
+      "label_refs": [],
+      "text_refs": [
+        "SproutTower1FSage1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower1FSage2Script": {
+      "label_refs": [],
+      "text_refs": [
+        "SproutTower1FSage2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower1FGrannyScript": {
+      "label_refs": [],
+      "text_refs": [
+        "SproutTower1FGrannyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower1FTeacherScript": {
+      "label_refs": [],
+      "text_refs": [
+        "SproutTower1FTeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSageChow": {
+      "label_refs": [
+        "TrainerSageChow.Script"
+      ],
+      "text_refs": [
+        "SageChowBeatenText",
+        "SageChowSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSageChow.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "SageChowAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower1FParlyzHeal": {
+      "label_refs": [
+        "SproutTower1FStatue"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower1FStatue": {
+      "label_refs": [],
+      "text_refs": [
+        "SproutTower1FStatueText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower1F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 5,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 6
+  }
+}

@@ -1,0 +1,1148 @@
+{
+  "crystal_map": "GoldenrodHappinessRater",
+  "map_id": "GOLDENROD_HAPPINESS_RATER",
+  "group": "GOLDENROD",
+  "group_index": 11,
+  "map_index": 5,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_GOLDENROD_CITY",
+  "music": "MUSIC_GOLDENROD_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/House1.blk",
+  "source_asm": "maps/GoldenrodHappinessRater.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 3
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 0,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "HappinessRatersHouseBookshelf"
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "HappinessRatersHouseBookshelf"
+      },
+      {
+        "x": 7,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "HappinessRatersHouseRadio"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 4,
+        "sprite": "SPRITE_TEACHER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodHappinessRaterTeacherScript",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 3,
+        "sprite": "SPRITE_POKEFAN_M",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodHappinessRaterPokefanMScript",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 6,
+        "sprite": "SPRITE_TWIN",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodHappinessRaterTwinScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "GOLDENRODHAPPINESSRATER_TEACHER",
+    "GOLDENRODHAPPINESSRATER_POKEFAN_M",
+    "GOLDENRODHAPPINESSRATER_TWIN"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "GoldenrodHappinessRater_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "GoldenrodHappinessRaterTeacherScript",
+      "label_refs": [
+        "GoldenrodHappinessRaterTeacherScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodHappinessRaterTeacherScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "special GetFirstPokemonHappiness",
+        "writetext GoldenrodHappinessRaterTeacherText",
+        "promptbutton",
+        "ifgreater 250 - 1, .LovesYouALot",
+        "ifgreater 200 - 1, .ReallyTrustsYou",
+        "ifgreater 150 - 1, .SortOfHappy",
+        "ifgreater 100 - 1, .QuiteCute",
+        "ifgreater  50 - 1, .NotUsedToYou",
+        "sjump .LooksMean"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "special",
+          "args": [
+            "GetFirstPokemonHappiness"
+          ],
+          "raw": "special GetFirstPokemonHappiness"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodHappinessRaterTeacherText"
+          ],
+          "raw": "writetext GoldenrodHappinessRaterTeacherText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "ifgreater",
+          "args": [
+            "250 - 1",
+            "GoldenrodHappinessRaterTeacherScript.LovesYouALot"
+          ],
+          "raw": "ifgreater 250 - 1, .LovesYouALot"
+        },
+        {
+          "command": "ifgreater",
+          "args": [
+            "200 - 1",
+            "GoldenrodHappinessRaterTeacherScript.ReallyTrustsYou"
+          ],
+          "raw": "ifgreater 200 - 1, .ReallyTrustsYou"
+        },
+        {
+          "command": "ifgreater",
+          "args": [
+            "150 - 1",
+            "GoldenrodHappinessRaterTeacherScript.SortOfHappy"
+          ],
+          "raw": "ifgreater 150 - 1, .SortOfHappy"
+        },
+        {
+          "command": "ifgreater",
+          "args": [
+            "100 - 1",
+            "GoldenrodHappinessRaterTeacherScript.QuiteCute"
+          ],
+          "raw": "ifgreater 100 - 1, .QuiteCute"
+        },
+        {
+          "command": "ifgreater",
+          "args": [
+            "50 - 1",
+            "GoldenrodHappinessRaterTeacherScript.NotUsedToYou"
+          ],
+          "raw": "ifgreater  50 - 1, .NotUsedToYou"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodHappinessRaterTeacherScript.LooksMean"
+          ],
+          "raw": "sjump .LooksMean"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "GoldenrodHappinessRaterTeacherScript.LooksMean",
+        "GoldenrodHappinessRaterTeacherScript.LovesYouALot",
+        "GoldenrodHappinessRaterTeacherScript.NotUsedToYou",
+        "GoldenrodHappinessRaterTeacherScript.QuiteCute",
+        "GoldenrodHappinessRaterTeacherScript.ReallyTrustsYou",
+        "GoldenrodHappinessRaterTeacherScript.SortOfHappy"
+      ],
+      "text_refs": [
+        "GoldenrodHappinessRaterTeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodHappinessRaterTeacherScript.LovesYouALot": {
+      "raw_lines": [
+        "writetext GoldenrodHappinessRatingText_LovesYouALot",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodHappinessRatingText_LovesYouALot"
+          ],
+          "raw": "writetext GoldenrodHappinessRatingText_LovesYouALot"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodHappinessRatingText_LovesYouALot"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodHappinessRaterTeacherScript.ReallyTrustsYou": {
+      "raw_lines": [
+        "writetext GoldenrodHappinessRatingText_ReallyTrustsYou",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodHappinessRatingText_ReallyTrustsYou"
+          ],
+          "raw": "writetext GoldenrodHappinessRatingText_ReallyTrustsYou"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodHappinessRatingText_ReallyTrustsYou"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodHappinessRaterTeacherScript.SortOfHappy": {
+      "raw_lines": [
+        "writetext GoldenrodHappinessRatingText_SortOfHappy",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodHappinessRatingText_SortOfHappy"
+          ],
+          "raw": "writetext GoldenrodHappinessRatingText_SortOfHappy"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodHappinessRatingText_SortOfHappy"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodHappinessRaterTeacherScript.QuiteCute": {
+      "raw_lines": [
+        "writetext GoldenrodHappinessRatingText_QuiteCute",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodHappinessRatingText_QuiteCute"
+          ],
+          "raw": "writetext GoldenrodHappinessRatingText_QuiteCute"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodHappinessRatingText_QuiteCute"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodHappinessRaterTeacherScript.NotUsedToYou": {
+      "raw_lines": [
+        "writetext GoldenrodHappinessRatingText_NotUsedToYou",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodHappinessRatingText_NotUsedToYou"
+          ],
+          "raw": "writetext GoldenrodHappinessRatingText_NotUsedToYou"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodHappinessRatingText_NotUsedToYou"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodHappinessRaterTeacherScript.LooksMean": {
+      "raw_lines": [
+        "writetext GoldenrodHappinessRatingText_LooksMean",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodHappinessRatingText_LooksMean"
+          ],
+          "raw": "writetext GoldenrodHappinessRatingText_LooksMean"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodHappinessRatingText_LooksMean"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodHappinessRaterPokefanMScript": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodHappinessRaterPokefanMText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodHappinessRaterPokefanMText"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodHappinessRaterPokefanMText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodHappinessRaterPokefanMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodHappinessRaterTwinScript": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodHappinessRaterTwinText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodHappinessRaterTwinText"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodHappinessRaterTwinText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodHappinessRaterTwinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "HappinessRatersHouseBookshelf": {
+      "raw_lines": [
+        "jumpstd DifficultBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "DifficultBookshelfScript"
+          ],
+          "raw": "jumpstd DifficultBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "DifficultBookshelfScript"
+      ]
+    },
+    "HappinessRatersHouseRadio": {
+      "raw_lines": [
+        "jumpstd Radio2Script"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "Radio2Script"
+          ],
+          "raw": "jumpstd Radio2Script"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "Radio2Script"
+      ]
+    },
+    "GoldenrodHappinessRater_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, GOLDENROD_CITY, 3",
+        "warp_event  3,  7, GOLDENROD_CITY, 3",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, HappinessRatersHouseBookshelf",
+        "bg_event  1,  1, BGEVENT_READ, HappinessRatersHouseBookshelf",
+        "bg_event  7,  1, BGEVENT_READ, HappinessRatersHouseRadio",
+        "def_object_events",
+        "object_event  2,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterTeacherScript, -1",
+        "object_event  5,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterPokefanMScript, -1",
+        "object_event  5,  6, SPRITE_TWIN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterTwinScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "GOLDENROD_CITY",
+            "3"
+          ],
+          "raw": "warp_event  2,  7, GOLDENROD_CITY, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "GOLDENROD_CITY",
+            "3"
+          ],
+          "raw": "warp_event  3,  7, GOLDENROD_CITY, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "HappinessRatersHouseBookshelf"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, HappinessRatersHouseBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "HappinessRatersHouseBookshelf"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, HappinessRatersHouseBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "7",
+            "1",
+            "BGEVENT_READ",
+            "HappinessRatersHouseRadio"
+          ],
+          "raw": "bg_event  7,  1, BGEVENT_READ, HappinessRatersHouseRadio"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "4",
+            "SPRITE_TEACHER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodHappinessRaterTeacherScript",
+            "-1"
+          ],
+          "raw": "object_event  2,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterTeacherScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "3",
+            "SPRITE_POKEFAN_M",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodHappinessRaterPokefanMScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterPokefanMScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "6",
+            "SPRITE_TWIN",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodHappinessRaterTwinScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  6, SPRITE_TWIN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterTwinScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "GoldenrodHappinessRaterTeacherText": {
+      "raw_lines": [
+        "text \"If you treat your\"",
+        "line \"#MON nicely,\"",
+        "para \"they will love you\"",
+        "line \"in return.\"",
+        "para \"Oh? Let me see\"",
+        "line \"your @\"",
+        "text_ram wStringBuffer3",
+        "text \"\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If you treat your"
+        },
+        {
+          "command": "line",
+          "value": "#MON nicely,"
+        },
+        {
+          "command": "para",
+          "value": "they will love you"
+        },
+        {
+          "command": "line",
+          "value": "in return."
+        },
+        {
+          "command": "para",
+          "value": "Oh? Let me see"
+        },
+        {
+          "command": "line",
+          "value": "your @"
+        },
+        {
+          "command": "text_ram",
+          "value": "wStringBuffer3"
+        },
+        {
+          "command": "text",
+          "value": "\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodHappinessRatingText_LovesYouALot": {
+      "raw_lines": [
+        "text \"It looks really\"",
+        "line \"happy! It must\"",
+        "cont \"love you a lot.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It looks really"
+        },
+        {
+          "command": "line",
+          "value": "happy! It must"
+        },
+        {
+          "command": "cont",
+          "value": "love you a lot."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodHappinessRatingText_ReallyTrustsYou": {
+      "raw_lines": [
+        "text \"I get the feeling\"",
+        "line \"that it really\"",
+        "cont \"trusts you.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I get the feeling"
+        },
+        {
+          "command": "line",
+          "value": "that it really"
+        },
+        {
+          "command": "cont",
+          "value": "trusts you."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodHappinessRatingText_SortOfHappy": {
+      "raw_lines": [
+        "text \"It's friendly to-\"",
+        "line \"ward you. It looks\"",
+        "cont \"sort of happy.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's friendly to-"
+        },
+        {
+          "command": "line",
+          "value": "ward you. It looks"
+        },
+        {
+          "command": "cont",
+          "value": "sort of happy."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodHappinessRatingText_QuiteCute": {
+      "raw_lines": [
+        "text \"It's quite cute.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's quite cute."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodHappinessRatingText_NotUsedToYou": {
+      "raw_lines": [
+        "text \"You should treat\"",
+        "line \"it better. It's\"",
+        "cont \"not used to you.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You should treat"
+        },
+        {
+          "command": "line",
+          "value": "it better. It's"
+        },
+        {
+          "command": "cont",
+          "value": "not used to you."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodHappinessRatingText_LooksMean": {
+      "raw_lines": [
+        "text \"It doesn't seem to\"",
+        "line \"like you at all.\"",
+        "cont \"It looks mean.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It doesn't seem to"
+        },
+        {
+          "command": "line",
+          "value": "like you at all."
+        },
+        {
+          "command": "cont",
+          "value": "It looks mean."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodHappinessRaterPokefanMText": {
+      "raw_lines": [
+        "text \"I keep losing in\"",
+        "line \"battles, and my\"",
+        "para \"#MON end up\"",
+        "line \"fainting\u2026\"",
+        "para \"Maybe that's why\"",
+        "line \"my #MON don't\"",
+        "cont \"like me much\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I keep losing in"
+        },
+        {
+          "command": "line",
+          "value": "battles, and my"
+        },
+        {
+          "command": "para",
+          "value": "#MON end up"
+        },
+        {
+          "command": "line",
+          "value": "fainting\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Maybe that's why"
+        },
+        {
+          "command": "line",
+          "value": "my #MON don't"
+        },
+        {
+          "command": "cont",
+          "value": "like me much\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodHappinessRaterTwinText": {
+      "raw_lines": [
+        "text \"When I use an item\"",
+        "line \"on my #MON, it\"",
+        "cont \"acts really glad!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "When I use an item"
+        },
+        {
+          "command": "line",
+          "value": "on my #MON, it"
+        },
+        {
+          "command": "cont",
+          "value": "acts really glad!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "DifficultBookshelfScript",
+    "Radio2Script"
+  ],
+  "dependencies": {
+    "GoldenrodHappinessRater_MapScripts": {
+      "label_refs": [
+        "GoldenrodHappinessRaterTeacherScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodHappinessRaterTeacherScript": {
+      "label_refs": [
+        "GoldenrodHappinessRaterTeacherScript.LooksMean",
+        "GoldenrodHappinessRaterTeacherScript.LovesYouALot",
+        "GoldenrodHappinessRaterTeacherScript.NotUsedToYou",
+        "GoldenrodHappinessRaterTeacherScript.QuiteCute",
+        "GoldenrodHappinessRaterTeacherScript.ReallyTrustsYou",
+        "GoldenrodHappinessRaterTeacherScript.SortOfHappy"
+      ],
+      "text_refs": [
+        "GoldenrodHappinessRaterTeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodHappinessRaterTeacherScript.LovesYouALot": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodHappinessRatingText_LovesYouALot"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodHappinessRaterTeacherScript.ReallyTrustsYou": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodHappinessRatingText_ReallyTrustsYou"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodHappinessRaterTeacherScript.SortOfHappy": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodHappinessRatingText_SortOfHappy"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodHappinessRaterTeacherScript.QuiteCute": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodHappinessRatingText_QuiteCute"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodHappinessRaterTeacherScript.NotUsedToYou": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodHappinessRatingText_NotUsedToYou"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodHappinessRaterTeacherScript.LooksMean": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodHappinessRatingText_LooksMean"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodHappinessRaterPokefanMScript": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodHappinessRaterPokefanMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodHappinessRaterTwinScript": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodHappinessRaterTwinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "HappinessRatersHouseBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "DifficultBookshelfScript"
+      ]
+    },
+    "HappinessRatersHouseRadio": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "Radio2Script"
+      ]
+    },
+    "GoldenrodHappinessRater_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 3,
+    "object_events": 3
+  }
+}

@@ -1,0 +1,1794 @@
+{
+  "crystal_map": "Route33",
+  "map_id": "ROUTE_33",
+  "group": "AZALEA",
+  "group_index": 8,
+  "map_index": 6,
+  "tileset": "TILESET_JOHTO_MODERN",
+  "environment": "ROUTE",
+  "landmark": "LANDMARK_ROUTE_33",
+  "music": "MUSIC_ROUTE_30",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_AUTO",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 10,
+  "height_blocks": 9,
+  "border_block": "05",
+  "blk_path": "maps/Route33.blk",
+  "source_asm": "maps/Route33.asm",
+  "connections": [
+    {
+      "direction": "north",
+      "map": "Route32",
+      "target_map_id": "ROUTE_32",
+      "offset": 0
+    },
+    {
+      "direction": "west",
+      "map": "AzaleaTown",
+      "target_map_id": "AZALEA_TOWN",
+      "offset": 0
+    }
+  ],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 11,
+        "y": 9,
+        "dest_map": "UNION_CAVE_1F",
+        "dest_warp_id": 3
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 11,
+        "y": 11,
+        "kind": "BGEVENT_READ",
+        "script": "Route33Sign"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 6,
+        "y": 13,
+        "sprite": "SPRITE_POKEFAN_M",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_FAST",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 2,
+        "script": "TrainerHikerAnthony",
+        "flag": -1
+      },
+      {
+        "x": 13,
+        "y": 16,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route33LassScript",
+        "flag": -1
+      },
+      {
+        "x": 14,
+        "y": 16,
+        "sprite": "SPRITE_FRUIT_TREE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route33FruitTree",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "ROUTE33_POKEFAN_M",
+    "ROUTE33_LASS",
+    "ROUTE33_FRUIT_TREE"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "Route33_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "Route33LassScript",
+      "label_refs": [
+        "Route33LassScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route33LassScript": {
+      "raw_lines": [
+        "jumptextfaceplayer Route33LassText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Route33LassText"
+          ],
+          "raw": "jumptextfaceplayer Route33LassText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Route33LassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony": {
+      "raw_lines": [
+        "trainer HIKER, ANTHONY2, EVENT_BEAT_HIKER_ANTHONY, HikerAnthony2SeenText, HikerAnthony2BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "HIKER",
+            "ANTHONY2",
+            "EVENT_BEAT_HIKER_ANTHONY",
+            "HikerAnthony2SeenText",
+            "HikerAnthony2BeatenText",
+            "0",
+            "TrainerHikerAnthony.Script"
+          ],
+          "raw": "trainer HIKER, ANTHONY2, EVENT_BEAT_HIKER_ANTHONY, HikerAnthony2SeenText, HikerAnthony2BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerHikerAnthony.Script",
+      "label_refs": [
+        "TrainerHikerAnthony.Script"
+      ],
+      "text_refs": [
+        "HikerAnthony2BeatenText",
+        "HikerAnthony2SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.Script": {
+      "raw_lines": [
+        "loadvar VAR_CALLERID, PHONE_HIKER_ANTHONY",
+        "endifjustbattled",
+        "opentext",
+        "checkflag ENGINE_ANTHONY_READY_FOR_REMATCH",
+        "iftrue .Rematch",
+        "checkflag ENGINE_DUNSPARCE_SWARM",
+        "iftrue .Swarm",
+        "checkcellnum PHONE_HIKER_ANTHONY",
+        "iftrue .NumberAccepted",
+        "checkevent EVENT_ANTHONY_ASKED_FOR_PHONE_NUMBER",
+        "iftrue .AskAgain",
+        "writetext HikerAnthony2AfterText",
+        "promptbutton",
+        "setevent EVENT_ANTHONY_ASKED_FOR_PHONE_NUMBER",
+        "scall .AskNumber1",
+        "sjump .AskForPhoneNumber"
+      ],
+      "commands": [
+        {
+          "command": "loadvar",
+          "args": [
+            "VAR_CALLERID",
+            "PHONE_HIKER_ANTHONY"
+          ],
+          "raw": "loadvar VAR_CALLERID, PHONE_HIKER_ANTHONY"
+        },
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_ANTHONY_READY_FOR_REMATCH"
+          ],
+          "raw": "checkflag ENGINE_ANTHONY_READY_FOR_REMATCH"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerHikerAnthony.Rematch"
+          ],
+          "raw": "iftrue .Rematch"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_DUNSPARCE_SWARM"
+          ],
+          "raw": "checkflag ENGINE_DUNSPARCE_SWARM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerHikerAnthony.Swarm"
+          ],
+          "raw": "iftrue .Swarm"
+        },
+        {
+          "command": "checkcellnum",
+          "args": [
+            "PHONE_HIKER_ANTHONY"
+          ],
+          "raw": "checkcellnum PHONE_HIKER_ANTHONY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerHikerAnthony.NumberAccepted"
+          ],
+          "raw": "iftrue .NumberAccepted"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_ANTHONY_ASKED_FOR_PHONE_NUMBER"
+          ],
+          "raw": "checkevent EVENT_ANTHONY_ASKED_FOR_PHONE_NUMBER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerHikerAnthony.AskAgain"
+          ],
+          "raw": "iftrue .AskAgain"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "HikerAnthony2AfterText"
+          ],
+          "raw": "writetext HikerAnthony2AfterText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_ANTHONY_ASKED_FOR_PHONE_NUMBER"
+          ],
+          "raw": "setevent EVENT_ANTHONY_ASKED_FOR_PHONE_NUMBER"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "TrainerHikerAnthony.AskNumber1"
+          ],
+          "raw": "scall .AskNumber1"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerHikerAnthony.AskForPhoneNumber"
+          ],
+          "raw": "sjump .AskForPhoneNumber"
+        }
+      ],
+      "first_command": "loadvar",
+      "label_refs": [
+        "TrainerHikerAnthony.AskAgain",
+        "TrainerHikerAnthony.AskForPhoneNumber",
+        "TrainerHikerAnthony.AskNumber1",
+        "TrainerHikerAnthony.NumberAccepted",
+        "TrainerHikerAnthony.Rematch",
+        "TrainerHikerAnthony.Swarm"
+      ],
+      "text_refs": [
+        "HikerAnthony2AfterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.AskAgain": {
+      "raw_lines": [
+        "scall .AskNumber2"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "TrainerHikerAnthony.AskNumber2"
+          ],
+          "raw": "scall .AskNumber2"
+        }
+      ],
+      "first_command": "scall",
+      "fallthrough_label": "TrainerHikerAnthony.AskForPhoneNumber",
+      "label_refs": [
+        "TrainerHikerAnthony.AskForPhoneNumber",
+        "TrainerHikerAnthony.AskNumber2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.AskForPhoneNumber": {
+      "raw_lines": [
+        "askforphonenumber PHONE_HIKER_ANTHONY",
+        "ifequal PHONE_CONTACTS_FULL, .PhoneFull",
+        "ifequal PHONE_CONTACT_REFUSED, .NumberDeclined",
+        "gettrainername STRING_BUFFER_3, HIKER, ANTHONY2",
+        "scall .RegisteredNumber",
+        "sjump .NumberAccepted"
+      ],
+      "commands": [
+        {
+          "command": "askforphonenumber",
+          "args": [
+            "PHONE_HIKER_ANTHONY"
+          ],
+          "raw": "askforphonenumber PHONE_HIKER_ANTHONY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PHONE_CONTACTS_FULL",
+            "TrainerHikerAnthony.PhoneFull"
+          ],
+          "raw": "ifequal PHONE_CONTACTS_FULL, .PhoneFull"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PHONE_CONTACT_REFUSED",
+            "TrainerHikerAnthony.NumberDeclined"
+          ],
+          "raw": "ifequal PHONE_CONTACT_REFUSED, .NumberDeclined"
+        },
+        {
+          "command": "gettrainername",
+          "args": [
+            "STRING_BUFFER_3",
+            "HIKER",
+            "ANTHONY2"
+          ],
+          "raw": "gettrainername STRING_BUFFER_3, HIKER, ANTHONY2"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "TrainerHikerAnthony.RegisteredNumber"
+          ],
+          "raw": "scall .RegisteredNumber"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerHikerAnthony.NumberAccepted"
+          ],
+          "raw": "sjump .NumberAccepted"
+        }
+      ],
+      "first_command": "askforphonenumber",
+      "label_refs": [
+        "TrainerHikerAnthony.NumberAccepted",
+        "TrainerHikerAnthony.NumberDeclined",
+        "TrainerHikerAnthony.PhoneFull",
+        "TrainerHikerAnthony.RegisteredNumber"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.Rematch": {
+      "raw_lines": [
+        "scall .RematchStd",
+        "winlosstext HikerAnthony2BeatenText, 0",
+        "readmem wAnthonyFightCount",
+        "ifequal 4, .Fight4",
+        "ifequal 3, .Fight3",
+        "ifequal 2, .Fight2",
+        "ifequal 1, .Fight1",
+        "ifequal 0, .LoadFight0"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "TrainerHikerAnthony.RematchStd"
+          ],
+          "raw": "scall .RematchStd"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "HikerAnthony2BeatenText",
+            "0"
+          ],
+          "raw": "winlosstext HikerAnthony2BeatenText, 0"
+        },
+        {
+          "command": "readmem",
+          "args": [
+            "wAnthonyFightCount"
+          ],
+          "raw": "readmem wAnthonyFightCount"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "4",
+            "TrainerHikerAnthony.Fight4"
+          ],
+          "raw": "ifequal 4, .Fight4"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "3",
+            "TrainerHikerAnthony.Fight3"
+          ],
+          "raw": "ifequal 3, .Fight3"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "TrainerHikerAnthony.Fight2"
+          ],
+          "raw": "ifequal 2, .Fight2"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "TrainerHikerAnthony.Fight1"
+          ],
+          "raw": "ifequal 1, .Fight1"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "0",
+            "TrainerHikerAnthony.LoadFight0"
+          ],
+          "raw": "ifequal 0, .LoadFight0"
+        }
+      ],
+      "first_command": "scall",
+      "fallthrough_label": "TrainerHikerAnthony.Fight4",
+      "label_refs": [
+        "TrainerHikerAnthony.Fight1",
+        "TrainerHikerAnthony.Fight2",
+        "TrainerHikerAnthony.Fight3",
+        "TrainerHikerAnthony.Fight4",
+        "TrainerHikerAnthony.LoadFight0",
+        "TrainerHikerAnthony.RematchStd"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.Fight4": {
+      "raw_lines": [
+        "checkevent EVENT_RESTORED_POWER_TO_KANTO",
+        "iftrue .LoadFight4"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_RESTORED_POWER_TO_KANTO"
+          ],
+          "raw": "checkevent EVENT_RESTORED_POWER_TO_KANTO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerHikerAnthony.LoadFight4"
+          ],
+          "raw": "iftrue .LoadFight4"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerHikerAnthony.Fight3",
+      "label_refs": [
+        "TrainerHikerAnthony.Fight3",
+        "TrainerHikerAnthony.LoadFight4"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.Fight3": {
+      "raw_lines": [
+        "checkevent EVENT_BEAT_ELITE_FOUR",
+        "iftrue .LoadFight3"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_ELITE_FOUR"
+          ],
+          "raw": "checkevent EVENT_BEAT_ELITE_FOUR"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerHikerAnthony.LoadFight3"
+          ],
+          "raw": "iftrue .LoadFight3"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerHikerAnthony.Fight2",
+      "label_refs": [
+        "TrainerHikerAnthony.Fight2",
+        "TrainerHikerAnthony.LoadFight3"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.Fight2": {
+      "raw_lines": [
+        "checkevent EVENT_CLEARED_RADIO_TOWER",
+        "iftrue .LoadFight2"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_RADIO_TOWER"
+          ],
+          "raw": "checkevent EVENT_CLEARED_RADIO_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerHikerAnthony.LoadFight2"
+          ],
+          "raw": "iftrue .LoadFight2"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerHikerAnthony.Fight1",
+      "label_refs": [
+        "TrainerHikerAnthony.Fight1",
+        "TrainerHikerAnthony.LoadFight2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.Fight1": {
+      "raw_lines": [
+        "checkflag ENGINE_FLYPOINT_OLIVINE",
+        "iftrue .LoadFight1"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_FLYPOINT_OLIVINE"
+          ],
+          "raw": "checkflag ENGINE_FLYPOINT_OLIVINE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerHikerAnthony.LoadFight1"
+          ],
+          "raw": "iftrue .LoadFight1"
+        }
+      ],
+      "first_command": "checkflag",
+      "fallthrough_label": "TrainerHikerAnthony.LoadFight0",
+      "label_refs": [
+        "TrainerHikerAnthony.LoadFight0",
+        "TrainerHikerAnthony.LoadFight1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.LoadFight0": {
+      "raw_lines": [
+        "loadtrainer HIKER, ANTHONY2",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wAnthonyFightCount, 1",
+        "clearflag ENGINE_ANTHONY_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "HIKER",
+            "ANTHONY2"
+          ],
+          "raw": "loadtrainer HIKER, ANTHONY2"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wAnthonyFightCount",
+            "1"
+          ],
+          "raw": "loadmem wAnthonyFightCount, 1"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_ANTHONY_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_ANTHONY_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.LoadFight1": {
+      "raw_lines": [
+        "loadtrainer HIKER, ANTHONY1",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wAnthonyFightCount, 2",
+        "clearflag ENGINE_ANTHONY_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "HIKER",
+            "ANTHONY1"
+          ],
+          "raw": "loadtrainer HIKER, ANTHONY1"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wAnthonyFightCount",
+            "2"
+          ],
+          "raw": "loadmem wAnthonyFightCount, 2"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_ANTHONY_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_ANTHONY_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.LoadFight2": {
+      "raw_lines": [
+        "loadtrainer HIKER, ANTHONY3",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wAnthonyFightCount, 3",
+        "clearflag ENGINE_ANTHONY_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "HIKER",
+            "ANTHONY3"
+          ],
+          "raw": "loadtrainer HIKER, ANTHONY3"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wAnthonyFightCount",
+            "3"
+          ],
+          "raw": "loadmem wAnthonyFightCount, 3"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_ANTHONY_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_ANTHONY_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.LoadFight3": {
+      "raw_lines": [
+        "loadtrainer HIKER, ANTHONY4",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wAnthonyFightCount, 4",
+        "clearflag ENGINE_ANTHONY_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "HIKER",
+            "ANTHONY4"
+          ],
+          "raw": "loadtrainer HIKER, ANTHONY4"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wAnthonyFightCount",
+            "4"
+          ],
+          "raw": "loadmem wAnthonyFightCount, 4"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_ANTHONY_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_ANTHONY_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.LoadFight4": {
+      "raw_lines": [
+        "loadtrainer HIKER, ANTHONY5",
+        "startbattle",
+        "reloadmapafterbattle",
+        "clearflag ENGINE_ANTHONY_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "HIKER",
+            "ANTHONY5"
+          ],
+          "raw": "loadtrainer HIKER, ANTHONY5"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_ANTHONY_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_ANTHONY_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.Swarm": {
+      "raw_lines": [
+        "writetext HikerAnthonyDunsparceText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "HikerAnthonyDunsparceText"
+          ],
+          "raw": "writetext HikerAnthonyDunsparceText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "HikerAnthonyDunsparceText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.AskNumber1": {
+      "raw_lines": [
+        "jumpstd AskNumber1MScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "AskNumber1MScript"
+          ],
+          "raw": "jumpstd AskNumber1MScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber1MScript"
+      ]
+    },
+    "TrainerHikerAnthony.AskNumber2": {
+      "raw_lines": [
+        "jumpstd AskNumber2MScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "AskNumber2MScript"
+          ],
+          "raw": "jumpstd AskNumber2MScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber2MScript"
+      ]
+    },
+    "TrainerHikerAnthony.RegisteredNumber": {
+      "raw_lines": [
+        "jumpstd RegisteredNumberMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RegisteredNumberMScript"
+          ],
+          "raw": "jumpstd RegisteredNumberMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RegisteredNumberMScript"
+      ]
+    },
+    "TrainerHikerAnthony.NumberAccepted": {
+      "raw_lines": [
+        "jumpstd NumberAcceptedMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "NumberAcceptedMScript"
+          ],
+          "raw": "jumpstd NumberAcceptedMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberAcceptedMScript"
+      ]
+    },
+    "TrainerHikerAnthony.NumberDeclined": {
+      "raw_lines": [
+        "jumpstd NumberDeclinedMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "NumberDeclinedMScript"
+          ],
+          "raw": "jumpstd NumberDeclinedMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberDeclinedMScript"
+      ]
+    },
+    "TrainerHikerAnthony.PhoneFull": {
+      "raw_lines": [
+        "jumpstd PhoneFullMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PhoneFullMScript"
+          ],
+          "raw": "jumpstd PhoneFullMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PhoneFullMScript"
+      ]
+    },
+    "TrainerHikerAnthony.RematchStd": {
+      "raw_lines": [
+        "jumpstd RematchMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RematchMScript"
+          ],
+          "raw": "jumpstd RematchMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchMScript"
+      ]
+    },
+    "Route33Sign": {
+      "raw_lines": [
+        "jumptext Route33SignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "Route33SignText"
+          ],
+          "raw": "jumptext Route33SignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "Route33SignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route33FruitTree": {
+      "raw_lines": [
+        "fruittree FRUITTREE_ROUTE_33"
+      ],
+      "commands": [
+        {
+          "command": "fruittree",
+          "args": [
+            "FRUITTREE_ROUTE_33"
+          ],
+          "raw": "fruittree FRUITTREE_ROUTE_33"
+        }
+      ],
+      "first_command": "fruittree",
+      "fallthrough_label": "Route33_MapEvents",
+      "label_refs": [
+        "Route33_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route33_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 11,  9, UNION_CAVE_1F, 3",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event 11, 11, BGEVENT_READ, Route33Sign",
+        "def_object_events",
+        "object_event  6, 13, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerAnthony, -1",
+        "object_event 13, 16, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route33LassScript, -1",
+        "object_event 14, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route33FruitTree, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "11",
+            "9",
+            "UNION_CAVE_1F",
+            "3"
+          ],
+          "raw": "warp_event 11,  9, UNION_CAVE_1F, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "11",
+            "11",
+            "BGEVENT_READ",
+            "Route33Sign"
+          ],
+          "raw": "bg_event 11, 11, BGEVENT_READ, Route33Sign"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "13",
+            "SPRITE_POKEFAN_M",
+            "SPRITEMOVEDATA_SPINRANDOM_FAST",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_TRAINER",
+            "2",
+            "TrainerHikerAnthony",
+            "-1"
+          ],
+          "raw": "object_event  6, 13, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerAnthony, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "13",
+            "16",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route33LassScript",
+            "-1"
+          ],
+          "raw": "object_event 13, 16, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route33LassScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "14",
+            "16",
+            "SPRITE_FRUIT_TREE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route33FruitTree",
+            "-1"
+          ],
+          "raw": "object_event 14, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route33FruitTree, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "HikerAnthony2SeenText": {
+      "raw_lines": [
+        "text \"I came through the\"",
+        "line \"tunnel, but I\"",
+        "para \"still have plenty\"",
+        "line \"of energy left.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I came through the"
+        },
+        {
+          "command": "line",
+          "value": "tunnel, but I"
+        },
+        {
+          "command": "para",
+          "value": "still have plenty"
+        },
+        {
+          "command": "line",
+          "value": "of energy left."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "HikerAnthony2BeatenText": {
+      "raw_lines": [
+        "text \"Whoa! You've got\"",
+        "line \"more zip than me!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Whoa! You've got"
+        },
+        {
+          "command": "line",
+          "value": "more zip than me!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "HikerAnthony2AfterText": {
+      "raw_lines": [
+        "text \"We HIKERS are at\"",
+        "line \"our best in the\"",
+        "cont \"mountains.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We HIKERS are at"
+        },
+        {
+          "command": "line",
+          "value": "our best in the"
+        },
+        {
+          "command": "cont",
+          "value": "mountains."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "HikerAnthonyDunsparceText": {
+      "raw_lines": [
+        "text \"Hey, did you get a\"",
+        "line \"DUNSPARCE?\"",
+        "para \"I caught one too.\"",
+        "para \"Take a look at it\"",
+        "line \"in the light. It's\"",
+        "cont \"got a funny face!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hey, did you get a"
+        },
+        {
+          "command": "line",
+          "value": "DUNSPARCE?"
+        },
+        {
+          "command": "para",
+          "value": "I caught one too."
+        },
+        {
+          "command": "para",
+          "value": "Take a look at it"
+        },
+        {
+          "command": "line",
+          "value": "in the light. It's"
+        },
+        {
+          "command": "cont",
+          "value": "got a funny face!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route33LassText": {
+      "raw_lines": [
+        "text \"Pant, pant\u2026\"",
+        "para \"I finally got\"",
+        "line \"through that cave.\"",
+        "para \"It was much bigger\"",
+        "line \"than I'd expected.\"",
+        "para \"I got too tired to\"",
+        "line \"explore the whole\"",
+        "para \"thing, so I came\"",
+        "line \"outside.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Pant, pant\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I finally got"
+        },
+        {
+          "command": "line",
+          "value": "through that cave."
+        },
+        {
+          "command": "para",
+          "value": "It was much bigger"
+        },
+        {
+          "command": "line",
+          "value": "than I'd expected."
+        },
+        {
+          "command": "para",
+          "value": "I got too tired to"
+        },
+        {
+          "command": "line",
+          "value": "explore the whole"
+        },
+        {
+          "command": "para",
+          "value": "thing, so I came"
+        },
+        {
+          "command": "line",
+          "value": "outside."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route33SignText": {
+      "raw_lines": [
+        "text \"ROUTE 33\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ROUTE 33"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "AskNumber1MScript",
+    "AskNumber2MScript",
+    "NumberAcceptedMScript",
+    "NumberDeclinedMScript",
+    "PhoneFullMScript",
+    "RegisteredNumberMScript",
+    "RematchMScript"
+  ],
+  "dependencies": {
+    "Route33_MapScripts": {
+      "label_refs": [
+        "Route33LassScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route33LassScript": {
+      "label_refs": [],
+      "text_refs": [
+        "Route33LassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony": {
+      "label_refs": [
+        "TrainerHikerAnthony.Script"
+      ],
+      "text_refs": [
+        "HikerAnthony2BeatenText",
+        "HikerAnthony2SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.Script": {
+      "label_refs": [
+        "TrainerHikerAnthony.AskAgain",
+        "TrainerHikerAnthony.AskForPhoneNumber",
+        "TrainerHikerAnthony.AskNumber1",
+        "TrainerHikerAnthony.NumberAccepted",
+        "TrainerHikerAnthony.Rematch",
+        "TrainerHikerAnthony.Swarm"
+      ],
+      "text_refs": [
+        "HikerAnthony2AfterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.AskAgain": {
+      "label_refs": [
+        "TrainerHikerAnthony.AskForPhoneNumber",
+        "TrainerHikerAnthony.AskNumber2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.AskForPhoneNumber": {
+      "label_refs": [
+        "TrainerHikerAnthony.NumberAccepted",
+        "TrainerHikerAnthony.NumberDeclined",
+        "TrainerHikerAnthony.PhoneFull",
+        "TrainerHikerAnthony.RegisteredNumber"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.Rematch": {
+      "label_refs": [
+        "TrainerHikerAnthony.Fight1",
+        "TrainerHikerAnthony.Fight2",
+        "TrainerHikerAnthony.Fight3",
+        "TrainerHikerAnthony.Fight4",
+        "TrainerHikerAnthony.LoadFight0",
+        "TrainerHikerAnthony.RematchStd"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.Fight4": {
+      "label_refs": [
+        "TrainerHikerAnthony.Fight3",
+        "TrainerHikerAnthony.LoadFight4"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.Fight3": {
+      "label_refs": [
+        "TrainerHikerAnthony.Fight2",
+        "TrainerHikerAnthony.LoadFight3"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.Fight2": {
+      "label_refs": [
+        "TrainerHikerAnthony.Fight1",
+        "TrainerHikerAnthony.LoadFight2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.Fight1": {
+      "label_refs": [
+        "TrainerHikerAnthony.LoadFight0",
+        "TrainerHikerAnthony.LoadFight1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.LoadFight0": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.LoadFight1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.LoadFight2": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.LoadFight3": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.LoadFight4": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.Swarm": {
+      "label_refs": [],
+      "text_refs": [
+        "HikerAnthonyDunsparceText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerAnthony.AskNumber1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber1MScript"
+      ]
+    },
+    "TrainerHikerAnthony.AskNumber2": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber2MScript"
+      ]
+    },
+    "TrainerHikerAnthony.RegisteredNumber": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RegisteredNumberMScript"
+      ]
+    },
+    "TrainerHikerAnthony.NumberAccepted": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberAcceptedMScript"
+      ]
+    },
+    "TrainerHikerAnthony.NumberDeclined": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberDeclinedMScript"
+      ]
+    },
+    "TrainerHikerAnthony.PhoneFull": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PhoneFullMScript"
+      ]
+    },
+    "TrainerHikerAnthony.RematchStd": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchMScript"
+      ]
+    },
+    "Route33Sign": {
+      "label_refs": [],
+      "text_refs": [
+        "Route33SignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route33FruitTree": {
+      "label_refs": [
+        "Route33_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route33_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 1,
+    "coord_events": 0,
+    "bg_events": 1,
+    "object_events": 3
+  }
+}

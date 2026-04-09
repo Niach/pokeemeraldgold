@@ -1,0 +1,2358 @@
+{
+  "crystal_map": "OlivineCity",
+  "map_id": "OLIVINE_CITY",
+  "group": "OLIVINE",
+  "group_index": 1,
+  "map_index": 14,
+  "tileset": "TILESET_JOHTO",
+  "environment": "TOWN",
+  "landmark": "LANDMARK_OLIVINE_CITY",
+  "music": "MUSIC_VIOLET_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_AUTO",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 20,
+  "height_blocks": 18,
+  "border_block": "35",
+  "blk_path": "maps/OlivineCity.blk",
+  "source_asm": "maps/OlivineCity.asm",
+  "connections": [
+    {
+      "direction": "north",
+      "map": "Route39",
+      "target_map_id": "ROUTE_39",
+      "offset": 5
+    },
+    {
+      "direction": "west",
+      "map": "Route40",
+      "target_map_id": "ROUTE_40",
+      "offset": 9
+    }
+  ],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "OlivineCityNoop1Scene",
+        "scene_id": "SCENE_OLIVINECITY_RIVAL_ENCOUNTER"
+      },
+      {
+        "script": "OlivineCityNoop2Scene",
+        "scene_id": "SCENE_OLIVINECITY_NOOP"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "OlivineCityFlypointCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 13,
+        "y": 21,
+        "dest_map": "OLIVINE_POKECENTER_1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 10,
+        "y": 11,
+        "dest_map": "OLIVINE_GYM",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 25,
+        "y": 11,
+        "dest_map": "OLIVINE_TIMS_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "dest_map": "OLIVINE_HOUSE_BETA",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 29,
+        "y": 11,
+        "dest_map": "OLIVINE_PUNISHMENT_SPEECH_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 13,
+        "y": 15,
+        "dest_map": "OLIVINE_GOOD_ROD_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 7,
+        "y": 21,
+        "dest_map": "OLIVINE_CAFE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 19,
+        "y": 17,
+        "dest_map": "OLIVINE_MART",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 29,
+        "y": 27,
+        "dest_map": "OLIVINE_LIGHTHOUSE_1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 19,
+        "y": 27,
+        "dest_map": "OLIVINE_PORT_PASSAGE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 20,
+        "y": 27,
+        "dest_map": "OLIVINE_PORT_PASSAGE",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 13,
+        "y": 12,
+        "scene": "SCENE_OLIVINECITY_RIVAL_ENCOUNTER",
+        "script": "OlivineCityRivalSceneTop"
+      },
+      {
+        "x": 13,
+        "y": 13,
+        "scene": "SCENE_OLIVINECITY_RIVAL_ENCOUNTER",
+        "script": "OlivineCityRivalSceneBottom"
+      }
+    ],
+    "bg_events": [
+      {
+        "x": 17,
+        "y": 11,
+        "kind": "BGEVENT_READ",
+        "script": "OlivineCitySign"
+      },
+      {
+        "x": 20,
+        "y": 24,
+        "kind": "BGEVENT_READ",
+        "script": "OlivineCityPortSign"
+      },
+      {
+        "x": 7,
+        "y": 11,
+        "kind": "BGEVENT_READ",
+        "script": "OlivineGymSign"
+      },
+      {
+        "x": 30,
+        "y": 28,
+        "kind": "BGEVENT_READ",
+        "script": "OlivineLighthouseSign"
+      },
+      {
+        "x": 3,
+        "y": 23,
+        "kind": "BGEVENT_READ",
+        "script": "OlivineCityBattleTowerSign"
+      },
+      {
+        "x": 14,
+        "y": 21,
+        "kind": "BGEVENT_READ",
+        "script": "OlivineCityPokecenterSign"
+      },
+      {
+        "x": 20,
+        "y": 17,
+        "kind": "BGEVENT_READ",
+        "script": "OlivineCityMartSign"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 26,
+        "y": 27,
+        "sprite": "SPRITE_SAILOR",
+        "movement": "SPRITEMOVEDATA_WALK_UP_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "OlivineCitySailor1Script",
+        "flag": -1
+      },
+      {
+        "x": 20,
+        "y": 13,
+        "sprite": "SPRITE_STANDING_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "OlivineCityStandingYoungsterScript",
+        "flag": -1
+      },
+      {
+        "x": 17,
+        "y": 21,
+        "sprite": "SPRITE_SAILOR",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "OlivineCitySailor2Script",
+        "flag": -1
+      },
+      {
+        "x": 10,
+        "y": 11,
+        "sprite": "SPRITE_OLIVINE_RIVAL",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_RIVAL_OLIVINE_CITY"
+      }
+    ]
+  },
+  "object_consts": [
+    "OLIVINECITY_SAILOR1",
+    "OLIVINECITY_STANDING_YOUNGSTER",
+    "OLIVINECITY_SAILOR2",
+    "OLIVINECITY_OLIVINE_RIVAL"
+  ],
+  "scene_ids": [
+    "SCENE_OLIVINECITY_NOOP",
+    "SCENE_OLIVINECITY_RIVAL_ENCOUNTER"
+  ],
+  "scripts": {
+    "OlivineCity_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script OlivineCityNoop1Scene, SCENE_OLIVINECITY_RIVAL_ENCOUNTER",
+        "scene_script OlivineCityNoop2Scene, SCENE_OLIVINECITY_NOOP",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, OlivineCityFlypointCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "OlivineCityNoop1Scene",
+            "SCENE_OLIVINECITY_RIVAL_ENCOUNTER"
+          ],
+          "raw": "scene_script OlivineCityNoop1Scene, SCENE_OLIVINECITY_RIVAL_ENCOUNTER"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "OlivineCityNoop2Scene",
+            "SCENE_OLIVINECITY_NOOP"
+          ],
+          "raw": "scene_script OlivineCityNoop2Scene, SCENE_OLIVINECITY_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "OlivineCityFlypointCallback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, OlivineCityFlypointCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "OlivineCityNoop1Scene",
+      "label_refs": [
+        "OlivineCityNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCityNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCityNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCityFlypointCallback": {
+      "raw_lines": [
+        "setflag ENGINE_FLYPOINT_OLIVINE",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_FLYPOINT_OLIVINE"
+          ],
+          "raw": "setflag ENGINE_FLYPOINT_OLIVINE"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "setflag",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCityRivalSceneTop": {
+      "raw_lines": [
+        "turnobject PLAYER, LEFT",
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "special FadeOutMusic",
+        "pause 15",
+        "playsound SFX_ENTER_DOOR",
+        "appear OLIVINECITY_OLIVINE_RIVAL",
+        "waitsfx",
+        "applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalApproachesTopMovement",
+        "playmusic MUSIC_RIVAL_ENCOUNTER",
+        "opentext",
+        "writetext OlivineCityRivalText",
+        "waitbutton",
+        "closetext",
+        "applymovement PLAYER, OlivineCityPlayerStepsAsideTopMovement",
+        "turnobject PLAYER, RIGHT",
+        "applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalLeavesTopMovement",
+        "setscene SCENE_OLIVINECITY_NOOP",
+        "disappear OLIVINECITY_OLIVINE_RIVAL",
+        "special RestartMapMusic",
+        "variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GUY",
+        "special LoadUsedSpritesGFX",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYER, LEFT"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "OLIVINECITY_OLIVINE_RIVAL"
+          ],
+          "raw": "appear OLIVINECITY_OLIVINE_RIVAL"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "OLIVINECITY_OLIVINE_RIVAL",
+            "OlivineCityRivalApproachesTopMovement"
+          ],
+          "raw": "applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalApproachesTopMovement"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_ENCOUNTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_ENCOUNTER"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "OlivineCityRivalText"
+          ],
+          "raw": "writetext OlivineCityRivalText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "OlivineCityPlayerStepsAsideTopMovement"
+          ],
+          "raw": "applymovement PLAYER, OlivineCityPlayerStepsAsideTopMovement"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "OLIVINECITY_OLIVINE_RIVAL",
+            "OlivineCityRivalLeavesTopMovement"
+          ],
+          "raw": "applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalLeavesTopMovement"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_OLIVINECITY_NOOP"
+          ],
+          "raw": "setscene SCENE_OLIVINECITY_NOOP"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "OLIVINECITY_OLIVINE_RIVAL"
+          ],
+          "raw": "disappear OLIVINECITY_OLIVINE_RIVAL"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "variablesprite",
+          "args": [
+            "SPRITE_OLIVINE_RIVAL",
+            "SPRITE_SWIMMER_GUY"
+          ],
+          "raw": "variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GUY"
+        },
+        {
+          "command": "special",
+          "args": [
+            "LoadUsedSpritesGFX"
+          ],
+          "raw": "special LoadUsedSpritesGFX"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCityRivalText"
+      ],
+      "movement_refs": [
+        "OlivineCityPlayerStepsAsideTopMovement",
+        "OlivineCityRivalApproachesTopMovement",
+        "OlivineCityRivalLeavesTopMovement"
+      ],
+      "scene_refs": [
+        "SCENE_OLIVINECITY_NOOP"
+      ],
+      "std_calls": []
+    },
+    "OlivineCityRivalSceneBottom": {
+      "raw_lines": [
+        "turnobject PLAYER, LEFT",
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "special FadeOutMusic",
+        "pause 15",
+        "playsound SFX_ENTER_DOOR",
+        "appear OLIVINECITY_OLIVINE_RIVAL",
+        "waitsfx",
+        "applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalApproachesBottomMovement",
+        "playmusic MUSIC_RIVAL_ENCOUNTER",
+        "opentext",
+        "writetext OlivineCityRivalText",
+        "waitbutton",
+        "closetext",
+        "applymovement PLAYER, OlivineCityPlayerStepsAsideBottomMovement",
+        "turnobject PLAYER, RIGHT",
+        "applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalLeavesBottomMovement",
+        "disappear OLIVINECITY_OLIVINE_RIVAL",
+        "setscene SCENE_OLIVINECITY_NOOP",
+        "special RestartMapMusic",
+        "variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GUY",
+        "special LoadUsedSpritesGFX",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYER, LEFT"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "OLIVINECITY_OLIVINE_RIVAL"
+          ],
+          "raw": "appear OLIVINECITY_OLIVINE_RIVAL"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "OLIVINECITY_OLIVINE_RIVAL",
+            "OlivineCityRivalApproachesBottomMovement"
+          ],
+          "raw": "applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalApproachesBottomMovement"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_ENCOUNTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_ENCOUNTER"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "OlivineCityRivalText"
+          ],
+          "raw": "writetext OlivineCityRivalText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "OlivineCityPlayerStepsAsideBottomMovement"
+          ],
+          "raw": "applymovement PLAYER, OlivineCityPlayerStepsAsideBottomMovement"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "OLIVINECITY_OLIVINE_RIVAL",
+            "OlivineCityRivalLeavesBottomMovement"
+          ],
+          "raw": "applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalLeavesBottomMovement"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "OLIVINECITY_OLIVINE_RIVAL"
+          ],
+          "raw": "disappear OLIVINECITY_OLIVINE_RIVAL"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_OLIVINECITY_NOOP"
+          ],
+          "raw": "setscene SCENE_OLIVINECITY_NOOP"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "variablesprite",
+          "args": [
+            "SPRITE_OLIVINE_RIVAL",
+            "SPRITE_SWIMMER_GUY"
+          ],
+          "raw": "variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GUY"
+        },
+        {
+          "command": "special",
+          "args": [
+            "LoadUsedSpritesGFX"
+          ],
+          "raw": "special LoadUsedSpritesGFX"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCityRivalText"
+      ],
+      "movement_refs": [
+        "OlivineCityPlayerStepsAsideBottomMovement",
+        "OlivineCityRivalApproachesBottomMovement",
+        "OlivineCityRivalLeavesBottomMovement"
+      ],
+      "scene_refs": [
+        "SCENE_OLIVINECITY_NOOP"
+      ],
+      "std_calls": []
+    },
+    "OlivineCitySailor1Script": {
+      "raw_lines": [
+        "jumptextfaceplayer OlivineCitySailor1Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "OlivineCitySailor1Text"
+          ],
+          "raw": "jumptextfaceplayer OlivineCitySailor1Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCitySailor1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCityStandingYoungsterScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "random 2",
+        "ifequal 0, .FiftyFifty",
+        "writetext OlivineCityStandingYoungsterPokegearText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "random",
+          "args": [
+            "2"
+          ],
+          "raw": "random 2"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "0",
+            "OlivineCityStandingYoungsterScript.FiftyFifty"
+          ],
+          "raw": "ifequal 0, .FiftyFifty"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "OlivineCityStandingYoungsterPokegearText"
+          ],
+          "raw": "writetext OlivineCityStandingYoungsterPokegearText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "OlivineCityStandingYoungsterScript.FiftyFifty"
+      ],
+      "text_refs": [
+        "OlivineCityStandingYoungsterPokegearText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCityStandingYoungsterScript.FiftyFifty": {
+      "raw_lines": [
+        "writetext OlivineCityStandingYoungsterPokedexText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "OlivineCityStandingYoungsterPokedexText"
+          ],
+          "raw": "writetext OlivineCityStandingYoungsterPokedexText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCityStandingYoungsterPokedexText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCitySailor2Script": {
+      "raw_lines": [
+        "jumptextfaceplayer OlivineCitySailor2Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "OlivineCitySailor2Text"
+          ],
+          "raw": "jumptextfaceplayer OlivineCitySailor2Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCitySailor2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCitySign": {
+      "raw_lines": [
+        "jumptext OlivineCitySignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "OlivineCitySignText"
+          ],
+          "raw": "jumptext OlivineCitySignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCitySignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCityPortSign": {
+      "raw_lines": [
+        "jumptext OlivineCityPortSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "OlivineCityPortSignText"
+          ],
+          "raw": "jumptext OlivineCityPortSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCityPortSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineGymSign": {
+      "raw_lines": [
+        "jumptext OlivineGymSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "OlivineGymSignText"
+          ],
+          "raw": "jumptext OlivineGymSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "OlivineGymSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineLighthouseSign": {
+      "raw_lines": [
+        "jumptext OlivineLighthouseSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "OlivineLighthouseSignText"
+          ],
+          "raw": "jumptext OlivineLighthouseSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "OlivineLighthouseSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCityBattleTowerSign": {
+      "raw_lines": [
+        "jumptext OlivineCityBattleTowerSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "OlivineCityBattleTowerSignText"
+          ],
+          "raw": "jumptext OlivineCityBattleTowerSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCityBattleTowerSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCityPokecenterSign": {
+      "raw_lines": [
+        "jumpstd PokecenterSignScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PokecenterSignScript"
+          ],
+          "raw": "jumpstd PokecenterSignScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterSignScript"
+      ]
+    },
+    "OlivineCityMartSign": {
+      "raw_lines": [
+        "jumpstd MartSignScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "MartSignScript"
+          ],
+          "raw": "jumpstd MartSignScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MartSignScript"
+      ]
+    },
+    "OlivineCity_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 13, 21, OLIVINE_POKECENTER_1F, 1",
+        "warp_event 10, 11, OLIVINE_GYM, 1",
+        "warp_event 25, 11, OLIVINE_TIMS_HOUSE, 1",
+        "warp_event  0,  0, OLIVINE_HOUSE_BETA, 1",
+        "warp_event 29, 11, OLIVINE_PUNISHMENT_SPEECH_HOUSE, 1",
+        "warp_event 13, 15, OLIVINE_GOOD_ROD_HOUSE, 1",
+        "warp_event  7, 21, OLIVINE_CAFE, 1",
+        "warp_event 19, 17, OLIVINE_MART, 2",
+        "warp_event 29, 27, OLIVINE_LIGHTHOUSE_1F, 1",
+        "warp_event 19, 27, OLIVINE_PORT_PASSAGE, 1",
+        "warp_event 20, 27, OLIVINE_PORT_PASSAGE, 2",
+        "def_coord_events",
+        "coord_event 13, 12, SCENE_OLIVINECITY_RIVAL_ENCOUNTER, OlivineCityRivalSceneTop",
+        "coord_event 13, 13, SCENE_OLIVINECITY_RIVAL_ENCOUNTER, OlivineCityRivalSceneBottom",
+        "def_bg_events",
+        "bg_event 17, 11, BGEVENT_READ, OlivineCitySign",
+        "bg_event 20, 24, BGEVENT_READ, OlivineCityPortSign",
+        "bg_event  7, 11, BGEVENT_READ, OlivineGymSign",
+        "bg_event 30, 28, BGEVENT_READ, OlivineLighthouseSign",
+        "bg_event  3, 23, BGEVENT_READ, OlivineCityBattleTowerSign",
+        "bg_event 14, 21, BGEVENT_READ, OlivineCityPokecenterSign",
+        "bg_event 20, 17, BGEVENT_READ, OlivineCityMartSign",
+        "def_object_events",
+        "object_event 26, 27, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1",
+        "object_event 20, 13, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1",
+        "object_event 17, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1",
+        "object_event 10, 11, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "13",
+            "21",
+            "OLIVINE_POKECENTER_1F",
+            "1"
+          ],
+          "raw": "warp_event 13, 21, OLIVINE_POKECENTER_1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "10",
+            "11",
+            "OLIVINE_GYM",
+            "1"
+          ],
+          "raw": "warp_event 10, 11, OLIVINE_GYM, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "25",
+            "11",
+            "OLIVINE_TIMS_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event 25, 11, OLIVINE_TIMS_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "0",
+            "OLIVINE_HOUSE_BETA",
+            "1"
+          ],
+          "raw": "warp_event  0,  0, OLIVINE_HOUSE_BETA, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "29",
+            "11",
+            "OLIVINE_PUNISHMENT_SPEECH_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event 29, 11, OLIVINE_PUNISHMENT_SPEECH_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "13",
+            "15",
+            "OLIVINE_GOOD_ROD_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event 13, 15, OLIVINE_GOOD_ROD_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "7",
+            "21",
+            "OLIVINE_CAFE",
+            "1"
+          ],
+          "raw": "warp_event  7, 21, OLIVINE_CAFE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "19",
+            "17",
+            "OLIVINE_MART",
+            "2"
+          ],
+          "raw": "warp_event 19, 17, OLIVINE_MART, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "29",
+            "27",
+            "OLIVINE_LIGHTHOUSE_1F",
+            "1"
+          ],
+          "raw": "warp_event 29, 27, OLIVINE_LIGHTHOUSE_1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "19",
+            "27",
+            "OLIVINE_PORT_PASSAGE",
+            "1"
+          ],
+          "raw": "warp_event 19, 27, OLIVINE_PORT_PASSAGE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "20",
+            "27",
+            "OLIVINE_PORT_PASSAGE",
+            "2"
+          ],
+          "raw": "warp_event 20, 27, OLIVINE_PORT_PASSAGE, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "13",
+            "12",
+            "SCENE_OLIVINECITY_RIVAL_ENCOUNTER",
+            "OlivineCityRivalSceneTop"
+          ],
+          "raw": "coord_event 13, 12, SCENE_OLIVINECITY_RIVAL_ENCOUNTER, OlivineCityRivalSceneTop"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "13",
+            "13",
+            "SCENE_OLIVINECITY_RIVAL_ENCOUNTER",
+            "OlivineCityRivalSceneBottom"
+          ],
+          "raw": "coord_event 13, 13, SCENE_OLIVINECITY_RIVAL_ENCOUNTER, OlivineCityRivalSceneBottom"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "17",
+            "11",
+            "BGEVENT_READ",
+            "OlivineCitySign"
+          ],
+          "raw": "bg_event 17, 11, BGEVENT_READ, OlivineCitySign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "20",
+            "24",
+            "BGEVENT_READ",
+            "OlivineCityPortSign"
+          ],
+          "raw": "bg_event 20, 24, BGEVENT_READ, OlivineCityPortSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "7",
+            "11",
+            "BGEVENT_READ",
+            "OlivineGymSign"
+          ],
+          "raw": "bg_event  7, 11, BGEVENT_READ, OlivineGymSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "30",
+            "28",
+            "BGEVENT_READ",
+            "OlivineLighthouseSign"
+          ],
+          "raw": "bg_event 30, 28, BGEVENT_READ, OlivineLighthouseSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "23",
+            "BGEVENT_READ",
+            "OlivineCityBattleTowerSign"
+          ],
+          "raw": "bg_event  3, 23, BGEVENT_READ, OlivineCityBattleTowerSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "14",
+            "21",
+            "BGEVENT_READ",
+            "OlivineCityPokecenterSign"
+          ],
+          "raw": "bg_event 14, 21, BGEVENT_READ, OlivineCityPokecenterSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "20",
+            "17",
+            "BGEVENT_READ",
+            "OlivineCityMartSign"
+          ],
+          "raw": "bg_event 20, 17, BGEVENT_READ, OlivineCityMartSign"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "26",
+            "27",
+            "SPRITE_SAILOR",
+            "SPRITEMOVEDATA_WALK_UP_DOWN",
+            "0",
+            "1",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "OlivineCitySailor1Script",
+            "-1"
+          ],
+          "raw": "object_event 26, 27, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "20",
+            "13",
+            "SPRITE_STANDING_YOUNGSTER",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "OlivineCityStandingYoungsterScript",
+            "-1"
+          ],
+          "raw": "object_event 20, 13, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "17",
+            "21",
+            "SPRITE_SAILOR",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "OlivineCitySailor2Script",
+            "-1"
+          ],
+          "raw": "object_event 17, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "10",
+            "11",
+            "SPRITE_OLIVINE_RIVAL",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_RIVAL_OLIVINE_CITY"
+          ],
+          "raw": "object_event 10, 11, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "OlivineCityRivalText": {
+      "raw_lines": [
+        "text \"\u2026\"",
+        "para \"You again?\"",
+        "para \"There's no need to\"",
+        "line \"panic. I don't\"",
+        "para \"bother with wimps\"",
+        "line \"like you.\"",
+        "para \"Speaking of weak-\"",
+        "line \"lings, the city's\"",
+        "para \"GYM LEADER isn't\"",
+        "line \"here.\"",
+        "para \"Supposedly taking\"",
+        "line \"care of a sick\"",
+        "para \"#MON at the\"",
+        "line \"LIGHTHOUSE.\"",
+        "para \"Humph! Boo-hoo!\"",
+        "line \"Just let sick\"",
+        "cont \"#MON go!\"",
+        "para \"A #MON that\"",
+        "line \"can't battle is\"",
+        "cont \"worthless!\"",
+        "para \"Why don't you go\"",
+        "line \"train at the\"",
+        "cont \"LIGHTHOUSE?\"",
+        "para \"Who knows. It may\"",
+        "line \"make you a bit\"",
+        "cont \"less weak!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026"
+        },
+        {
+          "command": "para",
+          "value": "You again?"
+        },
+        {
+          "command": "para",
+          "value": "There's no need to"
+        },
+        {
+          "command": "line",
+          "value": "panic. I don't"
+        },
+        {
+          "command": "para",
+          "value": "bother with wimps"
+        },
+        {
+          "command": "line",
+          "value": "like you."
+        },
+        {
+          "command": "para",
+          "value": "Speaking of weak-"
+        },
+        {
+          "command": "line",
+          "value": "lings, the city's"
+        },
+        {
+          "command": "para",
+          "value": "GYM LEADER isn't"
+        },
+        {
+          "command": "line",
+          "value": "here."
+        },
+        {
+          "command": "para",
+          "value": "Supposedly taking"
+        },
+        {
+          "command": "line",
+          "value": "care of a sick"
+        },
+        {
+          "command": "para",
+          "value": "#MON at the"
+        },
+        {
+          "command": "line",
+          "value": "LIGHTHOUSE."
+        },
+        {
+          "command": "para",
+          "value": "Humph! Boo-hoo!"
+        },
+        {
+          "command": "line",
+          "value": "Just let sick"
+        },
+        {
+          "command": "cont",
+          "value": "#MON go!"
+        },
+        {
+          "command": "para",
+          "value": "A #MON that"
+        },
+        {
+          "command": "line",
+          "value": "can't battle is"
+        },
+        {
+          "command": "cont",
+          "value": "worthless!"
+        },
+        {
+          "command": "para",
+          "value": "Why don't you go"
+        },
+        {
+          "command": "line",
+          "value": "train at the"
+        },
+        {
+          "command": "cont",
+          "value": "LIGHTHOUSE?"
+        },
+        {
+          "command": "para",
+          "value": "Who knows. It may"
+        },
+        {
+          "command": "line",
+          "value": "make you a bit"
+        },
+        {
+          "command": "cont",
+          "value": "less weak!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "OlivineCitySailor1Text": {
+      "raw_lines": [
+        "text \"Dark roads are\"",
+        "line \"dangerous at\"",
+        "cont \"night.\"",
+        "para \"But in the pitch-\"",
+        "line \"black of night,\"",
+        "para \"the sea is even\"",
+        "line \"more treacherous!\"",
+        "para \"Without the beacon\"",
+        "line \"of the LIGHTHOUSE\"",
+        "para \"to guide it, no\"",
+        "line \"ship can sail.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Dark roads are"
+        },
+        {
+          "command": "line",
+          "value": "dangerous at"
+        },
+        {
+          "command": "cont",
+          "value": "night."
+        },
+        {
+          "command": "para",
+          "value": "But in the pitch-"
+        },
+        {
+          "command": "line",
+          "value": "black of night,"
+        },
+        {
+          "command": "para",
+          "value": "the sea is even"
+        },
+        {
+          "command": "line",
+          "value": "more treacherous!"
+        },
+        {
+          "command": "para",
+          "value": "Without the beacon"
+        },
+        {
+          "command": "line",
+          "value": "of the LIGHTHOUSE"
+        },
+        {
+          "command": "para",
+          "value": "to guide it, no"
+        },
+        {
+          "command": "line",
+          "value": "ship can sail."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "OlivineCityStandingYoungsterPokegearText": {
+      "raw_lines": [
+        "text \"That thing you\"",
+        "line \"have--it's a #-\"",
+        "cont \"GEAR, right? Wow,\"",
+        "cont \"that's cool.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "That thing you"
+        },
+        {
+          "command": "line",
+          "value": "have--it's a #-"
+        },
+        {
+          "command": "cont",
+          "value": "GEAR, right? Wow,"
+        },
+        {
+          "command": "cont",
+          "value": "that's cool."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "OlivineCityStandingYoungsterPokedexText": {
+      "raw_lines": [
+        "text \"Wow, you have a\"",
+        "line \"#DEX!\"",
+        "para \"That is just so\"",
+        "line \"awesome.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Wow, you have a"
+        },
+        {
+          "command": "line",
+          "value": "#DEX!"
+        },
+        {
+          "command": "para",
+          "value": "That is just so"
+        },
+        {
+          "command": "line",
+          "value": "awesome."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "OlivineCitySailor2Text": {
+      "raw_lines": [
+        "text \"The sea is sweet!\"",
+        "para \"Sunsets on the sea\"",
+        "line \"are marvelous!\"",
+        "para \"Sing with me! \"",
+        "line \"Yo-ho! Blow the\"",
+        "cont \"man down!\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The sea is sweet!"
+        },
+        {
+          "command": "para",
+          "value": "Sunsets on the sea"
+        },
+        {
+          "command": "line",
+          "value": "are marvelous!"
+        },
+        {
+          "command": "para",
+          "value": "Sing with me! "
+        },
+        {
+          "command": "line",
+          "value": "Yo-ho! Blow the"
+        },
+        {
+          "command": "cont",
+          "value": "man down!\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "OlivineCitySignText": {
+      "raw_lines": [
+        "text \"OLIVINE CITY\"",
+        "para \"The Port Closest\"",
+        "line \"to Foreign Lands\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OLIVINE CITY"
+        },
+        {
+          "command": "para",
+          "value": "The Port Closest"
+        },
+        {
+          "command": "line",
+          "value": "to Foreign Lands"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "OlivineCityPortSignText": {
+      "raw_lines": [
+        "text \"OLIVINE PORT\"",
+        "line \"FAST SHIP PIER\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OLIVINE PORT"
+        },
+        {
+          "command": "line",
+          "value": "FAST SHIP PIER"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "OlivineGymSignText": {
+      "raw_lines": [
+        "text \"OLIVINE CITY\"",
+        "line \"#MON GYM\"",
+        "cont \"LEADER: JASMINE\"",
+        "para \"The Steel-Clad\"",
+        "line \"Defense Girl\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OLIVINE CITY"
+        },
+        {
+          "command": "line",
+          "value": "#MON GYM"
+        },
+        {
+          "command": "cont",
+          "value": "LEADER: JASMINE"
+        },
+        {
+          "command": "para",
+          "value": "The Steel-Clad"
+        },
+        {
+          "command": "line",
+          "value": "Defense Girl"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "OlivineLighthouseSignText": {
+      "raw_lines": [
+        "text \"OLIVINE LIGHTHOUSE\"",
+        "line \"Also known as the\"",
+        "cont \"GLITTER LIGHTHOUSE\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OLIVINE LIGHTHOUSE"
+        },
+        {
+          "command": "line",
+          "value": "Also known as the"
+        },
+        {
+          "command": "cont",
+          "value": "GLITTER LIGHTHOUSE"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "OlivineCityBattleTowerSignText": {
+      "raw_lines": [
+        "text \"BATTLE TOWER AHEAD\"",
+        "line \"Opening Now!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "BATTLE TOWER AHEAD"
+        },
+        {
+          "command": "line",
+          "value": "Opening Now!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "OlivineCityBattleTowerSignText_NotYetOpen": {
+      "raw_lines": [
+        "text \"BATTLE TOWER AHEAD\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "BATTLE TOWER AHEAD"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "OlivineCityRivalApproachesTopMovement": {
+      "raw_lines": [
+        "step DOWN",
+        "step RIGHT",
+        "step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "OlivineCityRivalApproachesBottomMovement": {
+      "raw_lines": [
+        "step DOWN",
+        "step DOWN",
+        "step RIGHT",
+        "step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "OlivineCityRivalLeavesTopMovement": {
+      "raw_lines": [
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "OlivineCityRivalLeavesBottomMovement": {
+      "raw_lines": [
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "OlivineCityPlayerStepsAsideTopMovement": {
+      "raw_lines": [
+        "step DOWN",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "OlivineCityPlayerStepsAsideBottomMovement": {
+      "raw_lines": [
+        "step UP",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "MartSignScript",
+    "PokecenterSignScript"
+  ],
+  "dependencies": {
+    "OlivineCity_MapScripts": {
+      "label_refs": [
+        "OlivineCityNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCityNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCityNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCityFlypointCallback": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCityRivalSceneTop": {
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCityRivalText"
+      ],
+      "movement_refs": [
+        "OlivineCityPlayerStepsAsideTopMovement",
+        "OlivineCityRivalApproachesTopMovement",
+        "OlivineCityRivalLeavesTopMovement"
+      ],
+      "scene_refs": [
+        "SCENE_OLIVINECITY_NOOP"
+      ],
+      "std_calls": []
+    },
+    "OlivineCityRivalSceneBottom": {
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCityRivalText"
+      ],
+      "movement_refs": [
+        "OlivineCityPlayerStepsAsideBottomMovement",
+        "OlivineCityRivalApproachesBottomMovement",
+        "OlivineCityRivalLeavesBottomMovement"
+      ],
+      "scene_refs": [
+        "SCENE_OLIVINECITY_NOOP"
+      ],
+      "std_calls": []
+    },
+    "OlivineCitySailor1Script": {
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCitySailor1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCityStandingYoungsterScript": {
+      "label_refs": [
+        "OlivineCityStandingYoungsterScript.FiftyFifty"
+      ],
+      "text_refs": [
+        "OlivineCityStandingYoungsterPokegearText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCityStandingYoungsterScript.FiftyFifty": {
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCityStandingYoungsterPokedexText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCitySailor2Script": {
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCitySailor2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCitySign": {
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCitySignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCityPortSign": {
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCityPortSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineGymSign": {
+      "label_refs": [],
+      "text_refs": [
+        "OlivineGymSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineLighthouseSign": {
+      "label_refs": [],
+      "text_refs": [
+        "OlivineLighthouseSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCityBattleTowerSign": {
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCityBattleTowerSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCityPokecenterSign": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterSignScript"
+      ]
+    },
+    "OlivineCityMartSign": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MartSignScript"
+      ]
+    },
+    "OlivineCity_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear"
+  ],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
+    "warp_events": 11,
+    "coord_events": 2,
+    "bg_events": 7,
+    "object_events": 4
+  }
+}

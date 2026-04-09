@@ -1,0 +1,1153 @@
+{
+  "crystal_map": "DayCare",
+  "map_id": "DAY_CARE",
+  "group": "GOLDENROD",
+  "group_index": 11,
+  "map_index": 24,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_ROUTE_34",
+  "music": "MUSIC_AZALEA_TOWN",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/DayCare.blk",
+  "source_asm": "maps/DayCare.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "DayCareEggCheckCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 0,
+        "y": 5,
+        "dest_map": "ROUTE_34",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 0,
+        "y": 6,
+        "dest_map": "ROUTE_34",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "ROUTE_34",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "ROUTE_34",
+        "dest_warp_id": 5
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 0,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "DayCareBookshelf"
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "DayCareBookshelf"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 3,
+        "sprite": "SPRITE_GRAMPS",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "DayCareManScript_Inside",
+        "flag": "EVENT_DAY_CARE_MAN_IN_DAY_CARE"
+      },
+      {
+        "x": 5,
+        "y": 3,
+        "sprite": "SPRITE_GRANNY",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "DayCareLadyScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "DAYCARE_GRAMPS",
+    "DAYCARE_GRANNY"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "DayCare_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks",
+        "callback MAPCALLBACK_OBJECTS, DayCareEggCheckCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "DayCareEggCheckCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, DayCareEggCheckCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "DayCareEggCheckCallback",
+      "label_refs": [
+        "DayCareEggCheckCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayCareEggCheckCallback": {
+      "raw_lines": [
+        "checkflag ENGINE_DAY_CARE_MAN_HAS_EGG",
+        "iftrue .PutDayCareManOutside",
+        "clearevent EVENT_DAY_CARE_MAN_IN_DAY_CARE",
+        "setevent EVENT_DAY_CARE_MAN_ON_ROUTE_34",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_DAY_CARE_MAN_HAS_EGG"
+          ],
+          "raw": "checkflag ENGINE_DAY_CARE_MAN_HAS_EGG"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DayCareEggCheckCallback.PutDayCareManOutside"
+          ],
+          "raw": "iftrue .PutDayCareManOutside"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_DAY_CARE_MAN_IN_DAY_CARE"
+          ],
+          "raw": "clearevent EVENT_DAY_CARE_MAN_IN_DAY_CARE"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_DAY_CARE_MAN_ON_ROUTE_34"
+          ],
+          "raw": "setevent EVENT_DAY_CARE_MAN_ON_ROUTE_34"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "DayCareEggCheckCallback.PutDayCareManOutside"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayCareEggCheckCallback.PutDayCareManOutside": {
+      "raw_lines": [
+        "setevent EVENT_DAY_CARE_MAN_IN_DAY_CARE",
+        "clearevent EVENT_DAY_CARE_MAN_ON_ROUTE_34",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_DAY_CARE_MAN_IN_DAY_CARE"
+          ],
+          "raw": "setevent EVENT_DAY_CARE_MAN_IN_DAY_CARE"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_DAY_CARE_MAN_ON_ROUTE_34"
+          ],
+          "raw": "clearevent EVENT_DAY_CARE_MAN_ON_ROUTE_34"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "setevent",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayCareManScript_Inside": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_ODD_EGG",
+        "iftrue .AlreadyHaveOddEgg",
+        "writetext DayCareManText_GiveOddEgg",
+        "promptbutton",
+        "closetext",
+        "readvar VAR_PARTYCOUNT",
+        "ifequal PARTY_LENGTH, .PartyFull",
+        "special GiveOddEgg",
+        "opentext",
+        "writetext DayCareText_GotOddEgg",
+        "playsound SFX_KEY_ITEM",
+        "waitsfx",
+        "writetext DayCareText_DescribeOddEgg",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_GOT_ODD_EGG",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_ODD_EGG"
+          ],
+          "raw": "checkevent EVENT_GOT_ODD_EGG"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DayCareManScript_Inside.AlreadyHaveOddEgg"
+          ],
+          "raw": "iftrue .AlreadyHaveOddEgg"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DayCareManText_GiveOddEgg"
+          ],
+          "raw": "writetext DayCareManText_GiveOddEgg"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_PARTYCOUNT"
+          ],
+          "raw": "readvar VAR_PARTYCOUNT"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PARTY_LENGTH",
+            "DayCareManScript_Inside.PartyFull"
+          ],
+          "raw": "ifequal PARTY_LENGTH, .PartyFull"
+        },
+        {
+          "command": "special",
+          "args": [
+            "GiveOddEgg"
+          ],
+          "raw": "special GiveOddEgg"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DayCareText_GotOddEgg"
+          ],
+          "raw": "writetext DayCareText_GotOddEgg"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_KEY_ITEM"
+          ],
+          "raw": "playsound SFX_KEY_ITEM"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DayCareText_DescribeOddEgg"
+          ],
+          "raw": "writetext DayCareText_DescribeOddEgg"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_ODD_EGG"
+          ],
+          "raw": "setevent EVENT_GOT_ODD_EGG"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "DayCareManScript_Inside.AlreadyHaveOddEgg",
+        "DayCareManScript_Inside.PartyFull"
+      ],
+      "text_refs": [
+        "DayCareManText_GiveOddEgg",
+        "DayCareText_DescribeOddEgg",
+        "DayCareText_GotOddEgg"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayCareManScript_Inside.PartyFull": {
+      "raw_lines": [
+        "opentext",
+        "writetext DayCareText_PartyFull",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DayCareText_PartyFull"
+          ],
+          "raw": "writetext DayCareText_PartyFull"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "DayCareText_PartyFull"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayCareManScript_Inside.AlreadyHaveOddEgg": {
+      "raw_lines": [
+        "special DayCareMan",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "special",
+          "args": [
+            "DayCareMan"
+          ],
+          "raw": "special DayCareMan"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "special",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayCareLadyScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkflag ENGINE_DAY_CARE_MAN_HAS_EGG",
+        "iftrue .HusbandWasLookingForYou",
+        "special DayCareLady",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_DAY_CARE_MAN_HAS_EGG"
+          ],
+          "raw": "checkflag ENGINE_DAY_CARE_MAN_HAS_EGG"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DayCareLadyScript.HusbandWasLookingForYou"
+          ],
+          "raw": "iftrue .HusbandWasLookingForYou"
+        },
+        {
+          "command": "special",
+          "args": [
+            "DayCareLady"
+          ],
+          "raw": "special DayCareLady"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "DayCareLadyScript.HusbandWasLookingForYou"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayCareLadyScript.HusbandWasLookingForYou": {
+      "raw_lines": [
+        "writetext Text_GrampsLookingForYou",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Text_GrampsLookingForYou"
+          ],
+          "raw": "writetext Text_GrampsLookingForYou"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Text_GrampsLookingForYou"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayCareBookshelf": {
+      "raw_lines": [
+        "jumpstd DifficultBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "DifficultBookshelfScript"
+          ],
+          "raw": "jumpstd DifficultBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "DifficultBookshelfScript"
+      ]
+    },
+    "DayCare_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  0,  5, ROUTE_34, 3",
+        "warp_event  0,  6, ROUTE_34, 4",
+        "warp_event  2,  7, ROUTE_34, 5",
+        "warp_event  3,  7, ROUTE_34, 5",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, DayCareBookshelf",
+        "bg_event  1,  1, BGEVENT_READ, DayCareBookshelf",
+        "def_object_events",
+        "object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Inside, EVENT_DAY_CARE_MAN_IN_DAY_CARE",
+        "object_event  5,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DayCareLadyScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "5",
+            "ROUTE_34",
+            "3"
+          ],
+          "raw": "warp_event  0,  5, ROUTE_34, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "6",
+            "ROUTE_34",
+            "4"
+          ],
+          "raw": "warp_event  0,  6, ROUTE_34, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "ROUTE_34",
+            "5"
+          ],
+          "raw": "warp_event  2,  7, ROUTE_34, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "ROUTE_34",
+            "5"
+          ],
+          "raw": "warp_event  3,  7, ROUTE_34, 5"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "DayCareBookshelf"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, DayCareBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "DayCareBookshelf"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, DayCareBookshelf"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_GRAMPS",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "DayCareManScript_Inside",
+            "EVENT_DAY_CARE_MAN_IN_DAY_CARE"
+          ],
+          "raw": "object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Inside, EVENT_DAY_CARE_MAN_IN_DAY_CARE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "3",
+            "SPRITE_GRANNY",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "DayCareLadyScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DayCareLadyScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "Text_GrampsLookingForYou": {
+      "raw_lines": [
+        "text \"Gramps was looking\"",
+        "line \"for you.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Gramps was looking"
+        },
+        {
+          "command": "line",
+          "value": "for you."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_DayCareManTalksAboutEggTicket": {
+      "raw_lines": [
+        "text \"I'm the DAY-CARE\"",
+        "line \"MAN.\"",
+        "para \"There's something\"",
+        "line \"new in GOLDENROD\"",
+        "para \"called the TRADE\"",
+        "line \"CORNER.\"",
+        "para \"I was given an EGG\"",
+        "line \"TICKET that can be\"",
+        "para \"traded in for a\"",
+        "line \"ODD EGG.\"",
+        "para \"But since we run a\"",
+        "line \"DAY-CARE, we don't\"",
+        "para \"need it. You may\"",
+        "line \"as well have it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm the DAY-CARE"
+        },
+        {
+          "command": "line",
+          "value": "MAN."
+        },
+        {
+          "command": "para",
+          "value": "There's something"
+        },
+        {
+          "command": "line",
+          "value": "new in GOLDENROD"
+        },
+        {
+          "command": "para",
+          "value": "called the TRADE"
+        },
+        {
+          "command": "line",
+          "value": "CORNER."
+        },
+        {
+          "command": "para",
+          "value": "I was given an EGG"
+        },
+        {
+          "command": "line",
+          "value": "TICKET that can be"
+        },
+        {
+          "command": "para",
+          "value": "traded in for a"
+        },
+        {
+          "command": "line",
+          "value": "ODD EGG."
+        },
+        {
+          "command": "para",
+          "value": "But since we run a"
+        },
+        {
+          "command": "line",
+          "value": "DAY-CARE, we don't"
+        },
+        {
+          "command": "para",
+          "value": "need it. You may"
+        },
+        {
+          "command": "line",
+          "value": "as well have it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DayCareManText_GiveOddEgg": {
+      "raw_lines": [
+        "text \"I'm the DAY-CARE\"",
+        "line \"MAN.\"",
+        "para \"Do you know about\"",
+        "line \"EGGS?\"",
+        "para \"I was raising\"",
+        "line \"#MON with my\"",
+        "cont \"wife, you see.\"",
+        "para \"We were shocked to\"",
+        "line \"find an EGG!\"",
+        "para \"How incredible is\"",
+        "line \"that?\"",
+        "para \"Well, wouldn't you\"",
+        "line \"like this EGG?\"",
+        "para \"Then fine, this is\"",
+        "line \"yours to keep!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm the DAY-CARE"
+        },
+        {
+          "command": "line",
+          "value": "MAN."
+        },
+        {
+          "command": "para",
+          "value": "Do you know about"
+        },
+        {
+          "command": "line",
+          "value": "EGGS?"
+        },
+        {
+          "command": "para",
+          "value": "I was raising"
+        },
+        {
+          "command": "line",
+          "value": "#MON with my"
+        },
+        {
+          "command": "cont",
+          "value": "wife, you see."
+        },
+        {
+          "command": "para",
+          "value": "We were shocked to"
+        },
+        {
+          "command": "line",
+          "value": "find an EGG!"
+        },
+        {
+          "command": "para",
+          "value": "How incredible is"
+        },
+        {
+          "command": "line",
+          "value": "that?"
+        },
+        {
+          "command": "para",
+          "value": "Well, wouldn't you"
+        },
+        {
+          "command": "line",
+          "value": "like this EGG?"
+        },
+        {
+          "command": "para",
+          "value": "Then fine, this is"
+        },
+        {
+          "command": "line",
+          "value": "yours to keep!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DayCareText_ComeAgain": {
+      "raw_lines": [
+        "text \"Come again.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Come again."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DayCareText_GotOddEgg": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"ODD EGG!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "ODD EGG!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DayCareText_DescribeOddEgg": {
+      "raw_lines": [
+        "text \"I found that when\"",
+        "line \"I was caring for\"",
+        "para \"someone's #MON\"",
+        "line \"before.\"",
+        "para \"But the trainer\"",
+        "line \"didn't want the\"",
+        "para \"EGG, so I'd kept\"",
+        "line \"it around.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I found that when"
+        },
+        {
+          "command": "line",
+          "value": "I was caring for"
+        },
+        {
+          "command": "para",
+          "value": "someone's #MON"
+        },
+        {
+          "command": "line",
+          "value": "before."
+        },
+        {
+          "command": "para",
+          "value": "But the trainer"
+        },
+        {
+          "command": "line",
+          "value": "didn't want the"
+        },
+        {
+          "command": "para",
+          "value": "EGG, so I'd kept"
+        },
+        {
+          "command": "line",
+          "value": "it around."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DayCareText_PartyFull": {
+      "raw_lines": [
+        "text \"You've no room for\"",
+        "line \"this.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You've no room for"
+        },
+        {
+          "command": "line",
+          "value": "this."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "DifficultBookshelfScript"
+  ],
+  "dependencies": {
+    "DayCare_MapScripts": {
+      "label_refs": [
+        "DayCareEggCheckCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayCareEggCheckCallback": {
+      "label_refs": [
+        "DayCareEggCheckCallback.PutDayCareManOutside"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayCareEggCheckCallback.PutDayCareManOutside": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayCareManScript_Inside": {
+      "label_refs": [
+        "DayCareManScript_Inside.AlreadyHaveOddEgg",
+        "DayCareManScript_Inside.PartyFull"
+      ],
+      "text_refs": [
+        "DayCareManText_GiveOddEgg",
+        "DayCareText_DescribeOddEgg",
+        "DayCareText_GotOddEgg"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayCareManScript_Inside.PartyFull": {
+      "label_refs": [],
+      "text_refs": [
+        "DayCareText_PartyFull"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayCareManScript_Inside.AlreadyHaveOddEgg": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayCareLadyScript": {
+      "label_refs": [
+        "DayCareLadyScript.HusbandWasLookingForYou"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayCareLadyScript.HusbandWasLookingForYou": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_GrampsLookingForYou"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayCareBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "DifficultBookshelfScript"
+      ]
+    },
+    "DayCare_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 1,
+    "warp_events": 4,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 2
+  }
+}

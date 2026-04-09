@@ -1,0 +1,36 @@
+@ Manually maintained after Johto import. Imported scaffold replaced.
+
+VioletPokecenter1F_MapScripts::
+	.byte 0
+
+JohtoScript_VioletPokecenter1F_VioletPokecenter1FGameboyKidScript::
+	lock
+	faceplayer
+	msgbox Crystal_VioletPokecenter1F_VioletPokecenter1FGameboyKidText, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_VioletPokecenter1F_VioletPokecenter1FGentlemanScript::
+	lock
+	faceplayer
+	msgbox Crystal_VioletPokecenter1F_VioletPokecenter1FGentlemanText, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_VioletPokecenter1F_VioletPokecenter1FYoungsterScript::
+	lock
+	faceplayer
+	msgbox Crystal_VioletPokecenter1F_VioletPokecenter1FYoungsterText, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_VioletPokecenter1F_VioletPokecenter1F_ElmsAideScript::
+	goto JohtoCommon_EventScript_ElmsAideTogepiEgg
+
+JohtoScript_VioletPokecenter1F_VioletPokecenterNurse::
+	setorcopyvar VAR_0x800B, LOCALID_VIOLETPOKECENTER1F_NURSE
+	call Common_EventScript_PkmnCenterNurse
+	waitmessage
+	waitbuttonpress
+	release
+	end

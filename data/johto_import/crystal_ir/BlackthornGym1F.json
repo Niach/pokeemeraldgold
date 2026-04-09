@@ -1,0 +1,2613 @@
+{
+  "crystal_map": "BlackthornGym1F",
+  "map_id": "BLACKTHORN_GYM_1F",
+  "group": "BLACKTHORN",
+  "group_index": 5,
+  "map_index": 1,
+  "tileset": "TILESET_ELITE_FOUR_ROOM",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_BLACKTHORN_CITY",
+  "music": "MUSIC_GYM",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 9,
+  "border_block": "00",
+  "blk_path": "maps/BlackthornGym1F.blk",
+  "source_asm": "maps/BlackthornGym1F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_TILES",
+        "script": "BlackthornGym1FBouldersCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 4,
+        "y": 17,
+        "dest_map": "BLACKTHORN_CITY",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 5,
+        "y": 17,
+        "dest_map": "BLACKTHORN_CITY",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 1,
+        "y": 7,
+        "dest_map": "BLACKTHORN_GYM_2F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 7,
+        "y": 9,
+        "dest_map": "BLACKTHORN_GYM_2F",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 2,
+        "y": 6,
+        "dest_map": "BLACKTHORN_GYM_2F",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 7,
+        "y": 7,
+        "dest_map": "BLACKTHORN_GYM_2F",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 7,
+        "y": 6,
+        "dest_map": "BLACKTHORN_GYM_2F",
+        "dest_warp_id": 5
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 3,
+        "y": 15,
+        "kind": "BGEVENT_READ",
+        "script": "BlackthornGymStatue"
+      },
+      {
+        "x": 6,
+        "y": 15,
+        "kind": "BGEVENT_READ",
+        "script": "BlackthornGymStatue"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 5,
+        "y": 3,
+        "sprite": "SPRITE_CLAIR",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornGymClairScript",
+        "flag": -1
+      },
+      {
+        "x": 6,
+        "y": 6,
+        "sprite": "SPRITE_COOLTRAINER_M",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerCooltrainermMike",
+        "flag": -1
+      },
+      {
+        "x": 1,
+        "y": 14,
+        "sprite": "SPRITE_COOLTRAINER_M",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerCooltrainermPaul",
+        "flag": -1
+      },
+      {
+        "x": 9,
+        "y": 2,
+        "sprite": "SPRITE_COOLTRAINER_F",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerCooltrainerfLola",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 15,
+        "sprite": "SPRITE_GYM_GUIDE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornGymGuideScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "BLACKTHORNGYM1F_CLAIR",
+    "BLACKTHORNGYM1F_COOLTRAINER_M1",
+    "BLACKTHORNGYM1F_COOLTRAINER_M2",
+    "BLACKTHORNGYM1F_COOLTRAINER_F",
+    "BLACKTHORNGYM1F_GYM_GUIDE"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "BlackthornGym1F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks",
+        "callback MAPCALLBACK_TILES, BlackthornGym1FBouldersCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_TILES",
+            "BlackthornGym1FBouldersCallback"
+          ],
+          "raw": "callback MAPCALLBACK_TILES, BlackthornGym1FBouldersCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "BlackthornGym1FBouldersCallback",
+      "label_refs": [
+        "BlackthornGym1FBouldersCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGym1FBouldersCallback": {
+      "raw_lines": [
+        "checkevent EVENT_BOULDER_IN_BLACKTHORN_GYM_1",
+        "iffalse .skip1",
+        "changeblock 8, 2, $3b"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BOULDER_IN_BLACKTHORN_GYM_1"
+          ],
+          "raw": "checkevent EVENT_BOULDER_IN_BLACKTHORN_GYM_1"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "BlackthornGym1FBouldersCallback.skip1"
+          ],
+          "raw": "iffalse .skip1"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "8",
+            "2",
+            "$3b"
+          ],
+          "raw": "changeblock 8, 2, $3b"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "BlackthornGym1FBouldersCallback.skip1",
+      "label_refs": [
+        "BlackthornGym1FBouldersCallback.skip1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGym1FBouldersCallback.skip1": {
+      "raw_lines": [
+        "checkevent EVENT_BOULDER_IN_BLACKTHORN_GYM_2",
+        "iffalse .skip2",
+        "changeblock 2, 4, $3a"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BOULDER_IN_BLACKTHORN_GYM_2"
+          ],
+          "raw": "checkevent EVENT_BOULDER_IN_BLACKTHORN_GYM_2"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "BlackthornGym1FBouldersCallback.skip2"
+          ],
+          "raw": "iffalse .skip2"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "2",
+            "4",
+            "$3a"
+          ],
+          "raw": "changeblock 2, 4, $3a"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "BlackthornGym1FBouldersCallback.skip2",
+      "label_refs": [
+        "BlackthornGym1FBouldersCallback.skip2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGym1FBouldersCallback.skip2": {
+      "raw_lines": [
+        "checkevent EVENT_BOULDER_IN_BLACKTHORN_GYM_3",
+        "iffalse .skip3",
+        "changeblock 8, 6, $3b"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BOULDER_IN_BLACKTHORN_GYM_3"
+          ],
+          "raw": "checkevent EVENT_BOULDER_IN_BLACKTHORN_GYM_3"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "BlackthornGym1FBouldersCallback.skip3"
+          ],
+          "raw": "iffalse .skip3"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "8",
+            "6",
+            "$3b"
+          ],
+          "raw": "changeblock 8, 6, $3b"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "BlackthornGym1FBouldersCallback.skip3",
+      "label_refs": [
+        "BlackthornGym1FBouldersCallback.skip3"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGym1FBouldersCallback.skip3": {
+      "raw_lines": [
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "endcallback",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGymClairScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkflag ENGINE_RISINGBADGE",
+        "iftrue .AlreadyGotBadge",
+        "checkevent EVENT_BEAT_CLAIR",
+        "iftrue .FightDone",
+        "writetext ClairIntroText",
+        "waitbutton",
+        "closetext",
+        "winlosstext ClairWinText, 0",
+        "loadtrainer CLAIR, CLAIR1",
+        "startbattle",
+        "reloadmapafterbattle",
+        "setevent EVENT_BEAT_CLAIR",
+        "opentext",
+        "writetext ClairText_GoToDragonsDen",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_BEAT_COOLTRAINERM_PAUL",
+        "setevent EVENT_BEAT_COOLTRAINERM_CODY",
+        "setevent EVENT_BEAT_COOLTRAINERM_MIKE",
+        "setevent EVENT_BEAT_COOLTRAINERF_FRAN",
+        "setevent EVENT_BEAT_COOLTRAINERF_LOLA",
+        "clearevent EVENT_MAHOGANY_MART_OWNERS",
+        "setevent EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN",
+        "clearevent EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_RISINGBADGE"
+          ],
+          "raw": "checkflag ENGINE_RISINGBADGE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "BlackthornGymClairScript.AlreadyGotBadge"
+          ],
+          "raw": "iftrue .AlreadyGotBadge"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_CLAIR"
+          ],
+          "raw": "checkevent EVENT_BEAT_CLAIR"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "BlackthornGymClairScript.FightDone"
+          ],
+          "raw": "iftrue .FightDone"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ClairIntroText"
+          ],
+          "raw": "writetext ClairIntroText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "ClairWinText",
+            "0"
+          ],
+          "raw": "winlosstext ClairWinText, 0"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "CLAIR",
+            "CLAIR1"
+          ],
+          "raw": "loadtrainer CLAIR, CLAIR1"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_CLAIR"
+          ],
+          "raw": "setevent EVENT_BEAT_CLAIR"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ClairText_GoToDragonsDen"
+          ],
+          "raw": "writetext ClairText_GoToDragonsDen"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_COOLTRAINERM_PAUL"
+          ],
+          "raw": "setevent EVENT_BEAT_COOLTRAINERM_PAUL"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_COOLTRAINERM_CODY"
+          ],
+          "raw": "setevent EVENT_BEAT_COOLTRAINERM_CODY"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_COOLTRAINERM_MIKE"
+          ],
+          "raw": "setevent EVENT_BEAT_COOLTRAINERM_MIKE"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_COOLTRAINERF_FRAN"
+          ],
+          "raw": "setevent EVENT_BEAT_COOLTRAINERF_FRAN"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_COOLTRAINERF_LOLA"
+          ],
+          "raw": "setevent EVENT_BEAT_COOLTRAINERF_LOLA"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_MAHOGANY_MART_OWNERS"
+          ],
+          "raw": "clearevent EVENT_MAHOGANY_MART_OWNERS"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN"
+          ],
+          "raw": "setevent EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN"
+          ],
+          "raw": "clearevent EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "BlackthornGymClairScript.AlreadyGotBadge",
+        "BlackthornGymClairScript.FightDone"
+      ],
+      "text_refs": [
+        "ClairIntroText",
+        "ClairText_GoToDragonsDen"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGymClairScript.FightDone": {
+      "raw_lines": [
+        "writetext ClairText_TooMuchToExpect",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "ClairText_TooMuchToExpect"
+          ],
+          "raw": "writetext ClairText_TooMuchToExpect"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "ClairText_TooMuchToExpect"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGymClairScript.AlreadyGotBadge": {
+      "raw_lines": [
+        "checkevent EVENT_GOT_TM24_DRAGONBREATH",
+        "iftrue .GotTM24",
+        "writetext BlackthornGymClairText_YouKeptMeWaiting",
+        "promptbutton",
+        "giveitem TM_DRAGONBREATH",
+        "iffalse .BagFull",
+        "getitemname STRING_BUFFER_3, TM_DRAGONBREATH",
+        "writetext BlackthornGymText_ReceivedTM24",
+        "playsound SFX_ITEM",
+        "waitsfx",
+        "itemnotify",
+        "setevent EVENT_GOT_TM24_DRAGONBREATH",
+        "writetext BlackthornGymClairText_DescribeTM24",
+        "promptbutton",
+        "sjump .GotTM24"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TM24_DRAGONBREATH"
+          ],
+          "raw": "checkevent EVENT_GOT_TM24_DRAGONBREATH"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "BlackthornGymClairScript.GotTM24"
+          ],
+          "raw": "iftrue .GotTM24"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BlackthornGymClairText_YouKeptMeWaiting"
+          ],
+          "raw": "writetext BlackthornGymClairText_YouKeptMeWaiting"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "giveitem",
+          "args": [
+            "TM_DRAGONBREATH"
+          ],
+          "raw": "giveitem TM_DRAGONBREATH"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "BlackthornGymClairScript.BagFull"
+          ],
+          "raw": "iffalse .BagFull"
+        },
+        {
+          "command": "getitemname",
+          "args": [
+            "STRING_BUFFER_3",
+            "TM_DRAGONBREATH"
+          ],
+          "raw": "getitemname STRING_BUFFER_3, TM_DRAGONBREATH"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BlackthornGymText_ReceivedTM24"
+          ],
+          "raw": "writetext BlackthornGymText_ReceivedTM24"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ITEM"
+          ],
+          "raw": "playsound SFX_ITEM"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "itemnotify",
+          "args": [],
+          "raw": "itemnotify"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_TM24_DRAGONBREATH"
+          ],
+          "raw": "setevent EVENT_GOT_TM24_DRAGONBREATH"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BlackthornGymClairText_DescribeTM24"
+          ],
+          "raw": "writetext BlackthornGymClairText_DescribeTM24"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "BlackthornGymClairScript.GotTM24"
+          ],
+          "raw": "sjump .GotTM24"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "BlackthornGymClairScript.BagFull",
+        "BlackthornGymClairScript.GotTM24"
+      ],
+      "text_refs": [
+        "BlackthornGymClairText_DescribeTM24",
+        "BlackthornGymClairText_YouKeptMeWaiting",
+        "BlackthornGymText_ReceivedTM24"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGymClairScript.BagFull": {
+      "raw_lines": [
+        "writetext BlackthornGymClairText_BagFull",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BlackthornGymClairText_BagFull"
+          ],
+          "raw": "writetext BlackthornGymClairText_BagFull"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornGymClairText_BagFull"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGymClairScript.GotTM24": {
+      "raw_lines": [
+        "writetext BlackthornGymClairText_League",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BlackthornGymClairText_League"
+          ],
+          "raw": "writetext BlackthornGymClairText_League"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornGymClairText_League"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermPaul": {
+      "raw_lines": [
+        "trainer COOLTRAINERM, PAUL, EVENT_BEAT_COOLTRAINERM_PAUL, CooltrainermPaulSeenText, CooltrainermPaulBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "COOLTRAINERM",
+            "PAUL",
+            "EVENT_BEAT_COOLTRAINERM_PAUL",
+            "CooltrainermPaulSeenText",
+            "CooltrainermPaulBeatenText",
+            "0",
+            "TrainerCooltrainermPaul.Script"
+          ],
+          "raw": "trainer COOLTRAINERM, PAUL, EVENT_BEAT_COOLTRAINERM_PAUL, CooltrainermPaulSeenText, CooltrainermPaulBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerCooltrainermPaul.Script",
+      "label_refs": [
+        "TrainerCooltrainermPaul.Script"
+      ],
+      "text_refs": [
+        "CooltrainermPaulBeatenText",
+        "CooltrainermPaulSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermPaul.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext CooltrainermPaulAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CooltrainermPaulAfterBattleText"
+          ],
+          "raw": "writetext CooltrainermPaulAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainermPaulAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermMike": {
+      "raw_lines": [
+        "trainer COOLTRAINERM, MIKE, EVENT_BEAT_COOLTRAINERM_MIKE, CooltrainermMikeSeenText, CooltrainermMikeBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "COOLTRAINERM",
+            "MIKE",
+            "EVENT_BEAT_COOLTRAINERM_MIKE",
+            "CooltrainermMikeSeenText",
+            "CooltrainermMikeBeatenText",
+            "0",
+            "TrainerCooltrainermMike.Script"
+          ],
+          "raw": "trainer COOLTRAINERM, MIKE, EVENT_BEAT_COOLTRAINERM_MIKE, CooltrainermMikeSeenText, CooltrainermMikeBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerCooltrainermMike.Script",
+      "label_refs": [
+        "TrainerCooltrainermMike.Script"
+      ],
+      "text_refs": [
+        "CooltrainermMikeBeatenText",
+        "CooltrainermMikeSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermMike.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext CooltrainermMikeAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CooltrainermMikeAfterBattleText"
+          ],
+          "raw": "writetext CooltrainermMikeAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainermMikeAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfLola": {
+      "raw_lines": [
+        "trainer COOLTRAINERF, LOLA, EVENT_BEAT_COOLTRAINERF_LOLA, CooltrainerfLolaSeenText, CooltrainerfLolaBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "COOLTRAINERF",
+            "LOLA",
+            "EVENT_BEAT_COOLTRAINERF_LOLA",
+            "CooltrainerfLolaSeenText",
+            "CooltrainerfLolaBeatenText",
+            "0",
+            "TrainerCooltrainerfLola.Script"
+          ],
+          "raw": "trainer COOLTRAINERF, LOLA, EVENT_BEAT_COOLTRAINERF_LOLA, CooltrainerfLolaSeenText, CooltrainerfLolaBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerCooltrainerfLola.Script",
+      "label_refs": [
+        "TrainerCooltrainerfLola.Script"
+      ],
+      "text_refs": [
+        "CooltrainerfLolaBeatenText",
+        "CooltrainerfLolaSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfLola.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext CooltrainerfLolaAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CooltrainerfLolaAfterBattleText"
+          ],
+          "raw": "writetext CooltrainerfLolaAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainerfLolaAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGymGuideScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_BEAT_CLAIR",
+        "iftrue .BlackthornGymGuideWinScript",
+        "writetext BlackthornGymGuideText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_CLAIR"
+          ],
+          "raw": "checkevent EVENT_BEAT_CLAIR"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "BlackthornGymGuideScript.BlackthornGymGuideWinScript"
+          ],
+          "raw": "iftrue .BlackthornGymGuideWinScript"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BlackthornGymGuideText"
+          ],
+          "raw": "writetext BlackthornGymGuideText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "BlackthornGymGuideScript.BlackthornGymGuideWinScript"
+      ],
+      "text_refs": [
+        "BlackthornGymGuideText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGymGuideScript.BlackthornGymGuideWinScript": {
+      "raw_lines": [
+        "writetext BlackthornGymGuideWinText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BlackthornGymGuideWinText"
+          ],
+          "raw": "writetext BlackthornGymGuideWinText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornGymGuideWinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGymStatue": {
+      "raw_lines": [
+        "checkflag ENGINE_RISINGBADGE",
+        "iftrue .Beaten",
+        "jumpstd GymStatue1Script"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_RISINGBADGE"
+          ],
+          "raw": "checkflag ENGINE_RISINGBADGE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "BlackthornGymStatue.Beaten"
+          ],
+          "raw": "iftrue .Beaten"
+        },
+        {
+          "command": "jumpstd",
+          "args": [
+            "GymStatue1Script"
+          ],
+          "raw": "jumpstd GymStatue1Script"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "BlackthornGymStatue.Beaten"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue1Script"
+      ]
+    },
+    "BlackthornGymStatue.Beaten": {
+      "raw_lines": [
+        "gettrainername STRING_BUFFER_4, CLAIR, CLAIR1",
+        "jumpstd GymStatue2Script"
+      ],
+      "commands": [
+        {
+          "command": "gettrainername",
+          "args": [
+            "STRING_BUFFER_4",
+            "CLAIR",
+            "CLAIR1"
+          ],
+          "raw": "gettrainername STRING_BUFFER_4, CLAIR, CLAIR1"
+        },
+        {
+          "command": "jumpstd",
+          "args": [
+            "GymStatue2Script"
+          ],
+          "raw": "jumpstd GymStatue2Script"
+        }
+      ],
+      "first_command": "gettrainername",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue2Script"
+      ]
+    },
+    "BlackthornGym1F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  4, 17, BLACKTHORN_CITY, 1",
+        "warp_event  5, 17, BLACKTHORN_CITY, 1",
+        "warp_event  1,  7, BLACKTHORN_GYM_2F, 1",
+        "warp_event  7,  9, BLACKTHORN_GYM_2F, 2",
+        "warp_event  2,  6, BLACKTHORN_GYM_2F, 3",
+        "warp_event  7,  7, BLACKTHORN_GYM_2F, 4",
+        "warp_event  7,  6, BLACKTHORN_GYM_2F, 5",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  3, 15, BGEVENT_READ, BlackthornGymStatue",
+        "bg_event  6, 15, BGEVENT_READ, BlackthornGymStatue",
+        "def_object_events",
+        "object_event  5,  3, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornGymClairScript, -1",
+        "object_event  6,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermMike, -1",
+        "object_event  1, 14, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermPaul, -1",
+        "object_event  9,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfLola, -1",
+        "object_event  7, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornGymGuideScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "17",
+            "BLACKTHORN_CITY",
+            "1"
+          ],
+          "raw": "warp_event  4, 17, BLACKTHORN_CITY, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "17",
+            "BLACKTHORN_CITY",
+            "1"
+          ],
+          "raw": "warp_event  5, 17, BLACKTHORN_CITY, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "1",
+            "7",
+            "BLACKTHORN_GYM_2F",
+            "1"
+          ],
+          "raw": "warp_event  1,  7, BLACKTHORN_GYM_2F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "7",
+            "9",
+            "BLACKTHORN_GYM_2F",
+            "2"
+          ],
+          "raw": "warp_event  7,  9, BLACKTHORN_GYM_2F, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "6",
+            "BLACKTHORN_GYM_2F",
+            "3"
+          ],
+          "raw": "warp_event  2,  6, BLACKTHORN_GYM_2F, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "7",
+            "7",
+            "BLACKTHORN_GYM_2F",
+            "4"
+          ],
+          "raw": "warp_event  7,  7, BLACKTHORN_GYM_2F, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "7",
+            "6",
+            "BLACKTHORN_GYM_2F",
+            "5"
+          ],
+          "raw": "warp_event  7,  6, BLACKTHORN_GYM_2F, 5"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "15",
+            "BGEVENT_READ",
+            "BlackthornGymStatue"
+          ],
+          "raw": "bg_event  3, 15, BGEVENT_READ, BlackthornGymStatue"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "6",
+            "15",
+            "BGEVENT_READ",
+            "BlackthornGymStatue"
+          ],
+          "raw": "bg_event  6, 15, BGEVENT_READ, BlackthornGymStatue"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "3",
+            "SPRITE_CLAIR",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornGymClairScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  3, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornGymClairScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "6",
+            "SPRITE_COOLTRAINER_M",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerCooltrainermMike",
+            "-1"
+          ],
+          "raw": "object_event  6,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermMike, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "14",
+            "SPRITE_COOLTRAINER_M",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerCooltrainermPaul",
+            "-1"
+          ],
+          "raw": "object_event  1, 14, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermPaul, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "2",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerCooltrainerfLola",
+            "-1"
+          ],
+          "raw": "object_event  9,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfLola, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "15",
+            "SPRITE_GYM_GUIDE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornGymGuideScript",
+            "-1"
+          ],
+          "raw": "object_event  7, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornGymGuideScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "ClairIntroText": {
+      "raw_lines": [
+        "text \"I am CLAIR.\"",
+        "para \"The world's best\"",
+        "line \"dragon master.\"",
+        "para \"I can hold my own\"",
+        "line \"against even the\"",
+        "para \"#MON LEAGUE's\"",
+        "line \"ELITE FOUR.\"",
+        "para \"Do you still want\"",
+        "line \"to take me on?\"",
+        "para \"\u2026Fine.\"",
+        "line \"Let's do it!\"",
+        "para \"As a GYM LEADER,\"",
+        "line \"I will use my full\"",
+        "para \"power against any\"",
+        "line \"opponent!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I am CLAIR."
+        },
+        {
+          "command": "para",
+          "value": "The world's best"
+        },
+        {
+          "command": "line",
+          "value": "dragon master."
+        },
+        {
+          "command": "para",
+          "value": "I can hold my own"
+        },
+        {
+          "command": "line",
+          "value": "against even the"
+        },
+        {
+          "command": "para",
+          "value": "#MON LEAGUE's"
+        },
+        {
+          "command": "line",
+          "value": "ELITE FOUR."
+        },
+        {
+          "command": "para",
+          "value": "Do you still want"
+        },
+        {
+          "command": "line",
+          "value": "to take me on?"
+        },
+        {
+          "command": "para",
+          "value": "\u2026Fine."
+        },
+        {
+          "command": "line",
+          "value": "Let's do it!"
+        },
+        {
+          "command": "para",
+          "value": "As a GYM LEADER,"
+        },
+        {
+          "command": "line",
+          "value": "I will use my full"
+        },
+        {
+          "command": "para",
+          "value": "power against any"
+        },
+        {
+          "command": "line",
+          "value": "opponent!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ClairWinText": {
+      "raw_lines": [
+        "text \"I lost?\"",
+        "para \"I don't believe\"",
+        "line \"it. There must be\"",
+        "cont \"some mistake\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I lost?"
+        },
+        {
+          "command": "para",
+          "value": "I don't believe"
+        },
+        {
+          "command": "line",
+          "value": "it. There must be"
+        },
+        {
+          "command": "cont",
+          "value": "some mistake\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ClairText_GoToDragonsDen": {
+      "raw_lines": [
+        "text \"I won't admit\"",
+        "line \"this.\"",
+        "para \"I may have lost,\"",
+        "line \"but you're still\"",
+        "para \"not ready for the\"",
+        "line \"#MON LEAGUE.\"",
+        "para \"I know. You should\"",
+        "line \"take the dragon\"",
+        "cont \"user challenge.\"",
+        "para \"Behind this GYM is\"",
+        "line \"a place called\"",
+        "cont \"DRAGON'S DEN.\"",
+        "para \"There is a small\"",
+        "line \"shrine at its\"",
+        "para \"center.\"",
+        "line \"Go there.\"",
+        "para \"If you can prove\"",
+        "line \"that you've lost\"",
+        "para \"your lazy ideals,\"",
+        "line \"I will recognize\"",
+        "para \"you as a trainer\"",
+        "line \"worthy of a GYM\"",
+        "cont \"BADGE!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I won't admit"
+        },
+        {
+          "command": "line",
+          "value": "this."
+        },
+        {
+          "command": "para",
+          "value": "I may have lost,"
+        },
+        {
+          "command": "line",
+          "value": "but you're still"
+        },
+        {
+          "command": "para",
+          "value": "not ready for the"
+        },
+        {
+          "command": "line",
+          "value": "#MON LEAGUE."
+        },
+        {
+          "command": "para",
+          "value": "I know. You should"
+        },
+        {
+          "command": "line",
+          "value": "take the dragon"
+        },
+        {
+          "command": "cont",
+          "value": "user challenge."
+        },
+        {
+          "command": "para",
+          "value": "Behind this GYM is"
+        },
+        {
+          "command": "line",
+          "value": "a place called"
+        },
+        {
+          "command": "cont",
+          "value": "DRAGON'S DEN."
+        },
+        {
+          "command": "para",
+          "value": "There is a small"
+        },
+        {
+          "command": "line",
+          "value": "shrine at its"
+        },
+        {
+          "command": "para",
+          "value": "center."
+        },
+        {
+          "command": "line",
+          "value": "Go there."
+        },
+        {
+          "command": "para",
+          "value": "If you can prove"
+        },
+        {
+          "command": "line",
+          "value": "that you've lost"
+        },
+        {
+          "command": "para",
+          "value": "your lazy ideals,"
+        },
+        {
+          "command": "line",
+          "value": "I will recognize"
+        },
+        {
+          "command": "para",
+          "value": "you as a trainer"
+        },
+        {
+          "command": "line",
+          "value": "worthy of a GYM"
+        },
+        {
+          "command": "cont",
+          "value": "BADGE!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ClairText_TooMuchToExpect": {
+      "raw_lines": [
+        "text \"What's the matter?\"",
+        "para \"Is it too much to\"",
+        "line \"expect of you?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What's the matter?"
+        },
+        {
+          "command": "para",
+          "value": "Is it too much to"
+        },
+        {
+          "command": "line",
+          "value": "expect of you?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackthornGymClairText_YouKeptMeWaiting": {
+      "raw_lines": [
+        "text \"You've kept me\"",
+        "line \"waiting!\"",
+        "para \"Here! Take this!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You've kept me"
+        },
+        {
+          "command": "line",
+          "value": "waiting!"
+        },
+        {
+          "command": "para",
+          "value": "Here! Take this!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackthornGymText_ReceivedTM24": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"TM24.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "TM24."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackthornGymClairText_DescribeTM24": {
+      "raw_lines": [
+        "text \"That contains\"",
+        "line \"DRAGONBREATH.\"",
+        "para \"No, it doesn't\"",
+        "line \"have anything to\"",
+        "cont \"do with my breath.\"",
+        "para \"If you don't want\"",
+        "line \"it, you don't have\"",
+        "cont \"to take it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "That contains"
+        },
+        {
+          "command": "line",
+          "value": "DRAGONBREATH."
+        },
+        {
+          "command": "para",
+          "value": "No, it doesn't"
+        },
+        {
+          "command": "line",
+          "value": "have anything to"
+        },
+        {
+          "command": "cont",
+          "value": "do with my breath."
+        },
+        {
+          "command": "para",
+          "value": "If you don't want"
+        },
+        {
+          "command": "line",
+          "value": "it, you don't have"
+        },
+        {
+          "command": "cont",
+          "value": "to take it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackthornGymClairText_BagFull": {
+      "raw_lines": [
+        "text \"What is this? You\"",
+        "line \"don't have room?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What is this? You"
+        },
+        {
+          "command": "line",
+          "value": "don't have room?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackthornGymClairText_League": {
+      "raw_lines": [
+        "text \"What's the matter?\"",
+        "para \"Aren't you headed\"",
+        "line \"to the #MON\"",
+        "cont \"LEAGUE?\"",
+        "para \"Don't you know\"",
+        "line \"where it is?\"",
+        "para \"From here, go to\"",
+        "line \"NEW BARK TOWN.\"",
+        "para \"Then SURF east.\"",
+        "line \"The route there is\"",
+        "cont \"very tough.\"",
+        "para \"Don't you dare\"",
+        "line \"lose at the #-\"",
+        "cont \"MON LEAGUE!\"",
+        "para \"If you do, I'll\"",
+        "line \"feel even worse\"",
+        "para \"about having lost\"",
+        "line \"to you!\"",
+        "para \"Give it every-\"",
+        "line \"thing you've got.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What's the matter?"
+        },
+        {
+          "command": "para",
+          "value": "Aren't you headed"
+        },
+        {
+          "command": "line",
+          "value": "to the #MON"
+        },
+        {
+          "command": "cont",
+          "value": "LEAGUE?"
+        },
+        {
+          "command": "para",
+          "value": "Don't you know"
+        },
+        {
+          "command": "line",
+          "value": "where it is?"
+        },
+        {
+          "command": "para",
+          "value": "From here, go to"
+        },
+        {
+          "command": "line",
+          "value": "NEW BARK TOWN."
+        },
+        {
+          "command": "para",
+          "value": "Then SURF east."
+        },
+        {
+          "command": "line",
+          "value": "The route there is"
+        },
+        {
+          "command": "cont",
+          "value": "very tough."
+        },
+        {
+          "command": "para",
+          "value": "Don't you dare"
+        },
+        {
+          "command": "line",
+          "value": "lose at the #-"
+        },
+        {
+          "command": "cont",
+          "value": "MON LEAGUE!"
+        },
+        {
+          "command": "para",
+          "value": "If you do, I'll"
+        },
+        {
+          "command": "line",
+          "value": "feel even worse"
+        },
+        {
+          "command": "para",
+          "value": "about having lost"
+        },
+        {
+          "command": "line",
+          "value": "to you!"
+        },
+        {
+          "command": "para",
+          "value": "Give it every-"
+        },
+        {
+          "command": "line",
+          "value": "thing you've got."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermPaulSeenText": {
+      "raw_lines": [
+        "text \"Your first battle\"",
+        "line \"against dragons?\"",
+        "para \"I'll show you how\"",
+        "line \"tough they are!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Your first battle"
+        },
+        {
+          "command": "line",
+          "value": "against dragons?"
+        },
+        {
+          "command": "para",
+          "value": "I'll show you how"
+        },
+        {
+          "command": "line",
+          "value": "tough they are!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermPaulBeatenText": {
+      "raw_lines": [
+        "text \"My dragon #MON\"",
+        "line \"lost?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My dragon #MON"
+        },
+        {
+          "command": "line",
+          "value": "lost?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermPaulAfterBattleText": {
+      "raw_lines": [
+        "text \"LANCE told you\"",
+        "line \"that he'd like to\"",
+        "para \"see you again?\"",
+        "line \"Not a chance!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "LANCE told you"
+        },
+        {
+          "command": "line",
+          "value": "that he'd like to"
+        },
+        {
+          "command": "para",
+          "value": "see you again?"
+        },
+        {
+          "command": "line",
+          "value": "Not a chance!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermMikeSeenText": {
+      "raw_lines": [
+        "text \"My chance of\"",
+        "line \"losing? Not even\"",
+        "cont \"one percent!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My chance of"
+        },
+        {
+          "command": "line",
+          "value": "losing? Not even"
+        },
+        {
+          "command": "cont",
+          "value": "one percent!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermMikeBeatenText": {
+      "raw_lines": [
+        "text \"That's odd.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "That's odd."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermMikeAfterBattleText": {
+      "raw_lines": [
+        "text \"I know my short-\"",
+        "line \"comings now.\"",
+        "para \"Thanks for showing\"",
+        "line \"me!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I know my short-"
+        },
+        {
+          "command": "line",
+          "value": "comings now."
+        },
+        {
+          "command": "para",
+          "value": "Thanks for showing"
+        },
+        {
+          "command": "line",
+          "value": "me!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfLolaSeenText": {
+      "raw_lines": [
+        "text \"Dragons are sacred\"",
+        "line \"#MON.\"",
+        "para \"They are full of\"",
+        "line \"life energy.\"",
+        "para \"If you're not\"",
+        "line \"serious, you won't\"",
+        "para \"be able to beat\"",
+        "line \"them.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Dragons are sacred"
+        },
+        {
+          "command": "line",
+          "value": "#MON."
+        },
+        {
+          "command": "para",
+          "value": "They are full of"
+        },
+        {
+          "command": "line",
+          "value": "life energy."
+        },
+        {
+          "command": "para",
+          "value": "If you're not"
+        },
+        {
+          "command": "line",
+          "value": "serious, you won't"
+        },
+        {
+          "command": "para",
+          "value": "be able to beat"
+        },
+        {
+          "command": "line",
+          "value": "them."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfLolaBeatenText": {
+      "raw_lines": [
+        "text \"Way to go!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Way to go!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfLolaAfterBattleText": {
+      "raw_lines": [
+        "text \"Dragons are weak\"",
+        "line \"against dragon-\"",
+        "cont \"type moves.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Dragons are weak"
+        },
+        {
+          "command": "line",
+          "value": "against dragon-"
+        },
+        {
+          "command": "cont",
+          "value": "type moves."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackthornGymGuideText": {
+      "raw_lines": [
+        "text \"Yo! CHAMP in\"",
+        "line \"making!\"",
+        "para \"It's been a long\"",
+        "line \"journey, but we\"",
+        "para \"are almost done!\"",
+        "line \"Count on me!\"",
+        "para \"CLAIR uses the\"",
+        "line \"mythical and sac-\"",
+        "cont \"red dragon-type\"",
+        "cont \"#MON.\"",
+        "para \"You can't damage\"",
+        "line \"them very easily.\"",
+        "para \"But you know,\"",
+        "line \"they're supposed\"",
+        "para \"to be weak against\"",
+        "line \"ice-type moves.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Yo! CHAMP in"
+        },
+        {
+          "command": "line",
+          "value": "making!"
+        },
+        {
+          "command": "para",
+          "value": "It's been a long"
+        },
+        {
+          "command": "line",
+          "value": "journey, but we"
+        },
+        {
+          "command": "para",
+          "value": "are almost done!"
+        },
+        {
+          "command": "line",
+          "value": "Count on me!"
+        },
+        {
+          "command": "para",
+          "value": "CLAIR uses the"
+        },
+        {
+          "command": "line",
+          "value": "mythical and sac-"
+        },
+        {
+          "command": "cont",
+          "value": "red dragon-type"
+        },
+        {
+          "command": "cont",
+          "value": "#MON."
+        },
+        {
+          "command": "para",
+          "value": "You can't damage"
+        },
+        {
+          "command": "line",
+          "value": "them very easily."
+        },
+        {
+          "command": "para",
+          "value": "But you know,"
+        },
+        {
+          "command": "line",
+          "value": "they're supposed"
+        },
+        {
+          "command": "para",
+          "value": "to be weak against"
+        },
+        {
+          "command": "line",
+          "value": "ice-type moves."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackthornGymGuideWinText": {
+      "raw_lines": [
+        "text \"You were great to\"",
+        "line \"beat CLAIR!\"",
+        "para \"All that's left is\"",
+        "line \"the #MON LEAGUE\"",
+        "cont \"challenge.\"",
+        "para \"You're on the way\"",
+        "line \"to becoming the\"",
+        "cont \"#MON CHAMPION!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You were great to"
+        },
+        {
+          "command": "line",
+          "value": "beat CLAIR!"
+        },
+        {
+          "command": "para",
+          "value": "All that's left is"
+        },
+        {
+          "command": "line",
+          "value": "the #MON LEAGUE"
+        },
+        {
+          "command": "cont",
+          "value": "challenge."
+        },
+        {
+          "command": "para",
+          "value": "You're on the way"
+        },
+        {
+          "command": "line",
+          "value": "to becoming the"
+        },
+        {
+          "command": "cont",
+          "value": "#MON CHAMPION!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "GymStatue1Script",
+    "GymStatue2Script"
+  ],
+  "dependencies": {
+    "BlackthornGym1F_MapScripts": {
+      "label_refs": [
+        "BlackthornGym1FBouldersCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGym1FBouldersCallback": {
+      "label_refs": [
+        "BlackthornGym1FBouldersCallback.skip1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGym1FBouldersCallback.skip1": {
+      "label_refs": [
+        "BlackthornGym1FBouldersCallback.skip2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGym1FBouldersCallback.skip2": {
+      "label_refs": [
+        "BlackthornGym1FBouldersCallback.skip3"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGym1FBouldersCallback.skip3": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGymClairScript": {
+      "label_refs": [
+        "BlackthornGymClairScript.AlreadyGotBadge",
+        "BlackthornGymClairScript.FightDone"
+      ],
+      "text_refs": [
+        "ClairIntroText",
+        "ClairText_GoToDragonsDen"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGymClairScript.FightDone": {
+      "label_refs": [],
+      "text_refs": [
+        "ClairText_TooMuchToExpect"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGymClairScript.AlreadyGotBadge": {
+      "label_refs": [
+        "BlackthornGymClairScript.BagFull",
+        "BlackthornGymClairScript.GotTM24"
+      ],
+      "text_refs": [
+        "BlackthornGymClairText_DescribeTM24",
+        "BlackthornGymClairText_YouKeptMeWaiting",
+        "BlackthornGymText_ReceivedTM24"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGymClairScript.BagFull": {
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornGymClairText_BagFull"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGymClairScript.GotTM24": {
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornGymClairText_League"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermPaul": {
+      "label_refs": [
+        "TrainerCooltrainermPaul.Script"
+      ],
+      "text_refs": [
+        "CooltrainermPaulBeatenText",
+        "CooltrainermPaulSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermPaul.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainermPaulAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermMike": {
+      "label_refs": [
+        "TrainerCooltrainermMike.Script"
+      ],
+      "text_refs": [
+        "CooltrainermMikeBeatenText",
+        "CooltrainermMikeSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermMike.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainermMikeAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfLola": {
+      "label_refs": [
+        "TrainerCooltrainerfLola.Script"
+      ],
+      "text_refs": [
+        "CooltrainerfLolaBeatenText",
+        "CooltrainerfLolaSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfLola.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainerfLolaAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGymGuideScript": {
+      "label_refs": [
+        "BlackthornGymGuideScript.BlackthornGymGuideWinScript"
+      ],
+      "text_refs": [
+        "BlackthornGymGuideText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGymGuideScript.BlackthornGymGuideWinScript": {
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornGymGuideWinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGymStatue": {
+      "label_refs": [
+        "BlackthornGymStatue.Beaten"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue1Script"
+      ]
+    },
+    "BlackthornGymStatue.Beaten": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue2Script"
+      ]
+    },
+    "BlackthornGym1F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 1,
+    "warp_events": 7,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 5
+  }
+}

@@ -1,0 +1,2998 @@
+{
+  "crystal_map": "DragonsDenB1F",
+  "map_id": "DRAGONS_DEN_B1F",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 81,
+  "tileset": "TILESET_JOHTO",
+  "environment": "CAVE",
+  "landmark": "LANDMARK_DRAGONS_DEN",
+  "music": "MUSIC_DRAGONS_DEN",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_NITE",
+  "fishgroup": "FISHGROUP_DRATINI",
+  "width_blocks": 20,
+  "height_blocks": 18,
+  "border_block": "71",
+  "blk_path": "maps/DragonsDenB1F.blk",
+  "source_asm": "maps/DragonsDenB1F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "DragonsDenB1FNoop1Scene",
+        "scene_id": "SCENE_DRAGONSDENB1F_NOOP"
+      },
+      {
+        "script": "DragonsDenB1FNoop2Scene",
+        "scene_id": "SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "DragonsDenB1FCheckRivalCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 20,
+        "y": 3,
+        "dest_map": "DRAGONS_DEN_1F",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 19,
+        "y": 29,
+        "dest_map": "DRAGON_SHRINE",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 19,
+        "y": 30,
+        "scene": "SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM",
+        "script": "DragonsDenB1F_ClairScene"
+      }
+    ],
+    "bg_events": [
+      {
+        "x": 18,
+        "y": 24,
+        "kind": "BGEVENT_READ",
+        "script": "DragonShrineSignpost"
+      },
+      {
+        "x": 33,
+        "y": 29,
+        "kind": "BGEVENT_ITEM",
+        "script": "DragonsDenB1FHiddenRevive"
+      },
+      {
+        "x": 21,
+        "y": 17,
+        "kind": "BGEVENT_ITEM",
+        "script": "DragonsDenB1FHiddenMaxPotion"
+      },
+      {
+        "x": 31,
+        "y": 15,
+        "kind": "BGEVENT_ITEM",
+        "script": "DragonsDenB1FHiddenMaxElixer"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 35,
+        "y": 16,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "DragonsDenB1FDragonFangScript",
+        "flag": "EVENT_DRAGONS_DEN_B1F_DRAGON_FANG"
+      },
+      {
+        "x": 14,
+        "y": 30,
+        "sprite": "SPRITE_CLAIR",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_DRAGONS_DEN_CLAIR"
+      },
+      {
+        "x": 20,
+        "y": 23,
+        "sprite": "SPRITE_RIVAL",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 2,
+        "movement_range_y": 2,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "DragonsDenB1FRivalScript",
+        "flag": "EVENT_RIVAL_DRAGONS_DEN"
+      },
+      {
+        "x": 20,
+        "y": 8,
+        "sprite": "SPRITE_COOLTRAINER_M",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 4,
+        "script": "TrainerCooltrainermDarin",
+        "flag": -1
+      },
+      {
+        "x": 8,
+        "y": 8,
+        "sprite": "SPRITE_COOLTRAINER_F",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerCooltrainerfCara",
+        "flag": -1
+      },
+      {
+        "x": 4,
+        "y": 17,
+        "sprite": "SPRITE_TWIN",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerTwinsLeaandpia1",
+        "flag": -1
+      },
+      {
+        "x": 4,
+        "y": 18,
+        "sprite": "SPRITE_TWIN",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerTwinsLeaandpia2",
+        "flag": -1
+      },
+      {
+        "x": 30,
+        "y": 4,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "DragonsDenB1FCalcium",
+        "flag": "EVENT_DRAGONS_DEN_B1F_CALCIUM"
+      },
+      {
+        "x": 5,
+        "y": 20,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "DragonsDenB1FMaxElixer",
+        "flag": "EVENT_DRAGONS_DEN_B1F_MAX_ELIXER"
+      }
+    ]
+  },
+  "object_consts": [
+    "DRAGONSDENB1F_POKE_BALL1",
+    "DRAGONSDENB1F_CLAIR",
+    "DRAGONSDENB1F_RIVAL",
+    "DRAGONSDENB1F_COOLTRAINER_M",
+    "DRAGONSDENB1F_COOLTRAINER_F",
+    "DRAGONSDENB1F_TWIN1",
+    "DRAGONSDENB1F_TWIN2",
+    "DRAGONSDENB1F_POKE_BALL2",
+    "DRAGONSDENB1F_POKE_BALL3"
+  ],
+  "scene_ids": [
+    "SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM",
+    "SCENE_DRAGONSDENB1F_NOOP"
+  ],
+  "scripts": {
+    "DragonsDenB1F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script DragonsDenB1FNoop1Scene, SCENE_DRAGONSDENB1F_NOOP",
+        "scene_script DragonsDenB1FNoop2Scene, SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, DragonsDenB1FCheckRivalCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "DragonsDenB1FNoop1Scene",
+            "SCENE_DRAGONSDENB1F_NOOP"
+          ],
+          "raw": "scene_script DragonsDenB1FNoop1Scene, SCENE_DRAGONSDENB1F_NOOP"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "DragonsDenB1FNoop2Scene",
+            "SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM"
+          ],
+          "raw": "scene_script DragonsDenB1FNoop2Scene, SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "DragonsDenB1FCheckRivalCallback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, DragonsDenB1FCheckRivalCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "DragonsDenB1FNoop1Scene",
+      "label_refs": [
+        "DragonsDenB1FNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FCheckRivalCallback": {
+      "raw_lines": [
+        "checkevent EVENT_BEAT_RIVAL_IN_MT_MOON",
+        "iftrue .CheckDay",
+        "disappear DRAGONSDENB1F_RIVAL",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_RIVAL_IN_MT_MOON"
+          ],
+          "raw": "checkevent EVENT_BEAT_RIVAL_IN_MT_MOON"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DragonsDenB1FCheckRivalCallback.CheckDay"
+          ],
+          "raw": "iftrue .CheckDay"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "DRAGONSDENB1F_RIVAL"
+          ],
+          "raw": "disappear DRAGONSDENB1F_RIVAL"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "DragonsDenB1FCheckRivalCallback.CheckDay"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FCheckRivalCallback.CheckDay": {
+      "raw_lines": [
+        "readvar VAR_WEEKDAY",
+        "ifequal TUESDAY, .AppearRival",
+        "ifequal THURSDAY, .AppearRival",
+        "disappear DRAGONSDENB1F_RIVAL",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "TUESDAY",
+            "DragonsDenB1FCheckRivalCallback.AppearRival"
+          ],
+          "raw": "ifequal TUESDAY, .AppearRival"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "THURSDAY",
+            "DragonsDenB1FCheckRivalCallback.AppearRival"
+          ],
+          "raw": "ifequal THURSDAY, .AppearRival"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "DRAGONSDENB1F_RIVAL"
+          ],
+          "raw": "disappear DRAGONSDENB1F_RIVAL"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "readvar",
+      "label_refs": [
+        "DragonsDenB1FCheckRivalCallback.AppearRival"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FCheckRivalCallback.AppearRival": {
+      "raw_lines": [
+        "appear DRAGONSDENB1F_RIVAL",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "appear",
+          "args": [
+            "DRAGONSDENB1F_RIVAL"
+          ],
+          "raw": "appear DRAGONSDENB1F_RIVAL"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "appear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1F_ClairScene": {
+      "raw_lines": [
+        "appear DRAGONSDENB1F_CLAIR",
+        "opentext",
+        "writetext ClairText_Wait",
+        "pause 30",
+        "closetext",
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "turnobject PLAYER, LEFT",
+        "playmusic MUSIC_CLAIR",
+        "applymovement DRAGONSDENB1F_CLAIR, MovementDragonsDen_ClairWalksToYou",
+        "opentext",
+        "writetext ClairText_GiveDragonbreathDragonDen",
+        "promptbutton",
+        "giveitem TM_DRAGONBREATH",
+        "iffalse .BagFull",
+        "getitemname STRING_BUFFER_3, TM_DRAGONBREATH",
+        "writetext Text_ReceivedTM24",
+        "playsound SFX_ITEM",
+        "waitsfx",
+        "itemnotify",
+        "setevent EVENT_GOT_TM24_DRAGONBREATH",
+        "writetext ClairText_DescribeDragonbreathDragonDen",
+        "promptbutton",
+        "writetext ClairText_WhatsTheMatterDragonDen",
+        "waitbutton",
+        "closetext",
+        "sjump .FinishClair"
+      ],
+      "commands": [
+        {
+          "command": "appear",
+          "args": [
+            "DRAGONSDENB1F_CLAIR"
+          ],
+          "raw": "appear DRAGONSDENB1F_CLAIR"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ClairText_Wait"
+          ],
+          "raw": "writetext ClairText_Wait"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "30"
+          ],
+          "raw": "pause 30"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYER, LEFT"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_CLAIR"
+          ],
+          "raw": "playmusic MUSIC_CLAIR"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "DRAGONSDENB1F_CLAIR",
+            "MovementDragonsDen_ClairWalksToYou"
+          ],
+          "raw": "applymovement DRAGONSDENB1F_CLAIR, MovementDragonsDen_ClairWalksToYou"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ClairText_GiveDragonbreathDragonDen"
+          ],
+          "raw": "writetext ClairText_GiveDragonbreathDragonDen"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "giveitem",
+          "args": [
+            "TM_DRAGONBREATH"
+          ],
+          "raw": "giveitem TM_DRAGONBREATH"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "DragonsDenB1F_ClairScene.BagFull"
+          ],
+          "raw": "iffalse .BagFull"
+        },
+        {
+          "command": "getitemname",
+          "args": [
+            "STRING_BUFFER_3",
+            "TM_DRAGONBREATH"
+          ],
+          "raw": "getitemname STRING_BUFFER_3, TM_DRAGONBREATH"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_ReceivedTM24"
+          ],
+          "raw": "writetext Text_ReceivedTM24"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ITEM"
+          ],
+          "raw": "playsound SFX_ITEM"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "itemnotify",
+          "args": [],
+          "raw": "itemnotify"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_TM24_DRAGONBREATH"
+          ],
+          "raw": "setevent EVENT_GOT_TM24_DRAGONBREATH"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ClairText_DescribeDragonbreathDragonDen"
+          ],
+          "raw": "writetext ClairText_DescribeDragonbreathDragonDen"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ClairText_WhatsTheMatterDragonDen"
+          ],
+          "raw": "writetext ClairText_WhatsTheMatterDragonDen"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "DragonsDenB1F_ClairScene.FinishClair"
+          ],
+          "raw": "sjump .FinishClair"
+        }
+      ],
+      "first_command": "appear",
+      "label_refs": [
+        "DragonsDenB1F_ClairScene.BagFull",
+        "DragonsDenB1F_ClairScene.FinishClair"
+      ],
+      "text_refs": [
+        "ClairText_DescribeDragonbreathDragonDen",
+        "ClairText_GiveDragonbreathDragonDen",
+        "ClairText_Wait",
+        "ClairText_WhatsTheMatterDragonDen",
+        "Text_ReceivedTM24"
+      ],
+      "movement_refs": [
+        "MovementDragonsDen_ClairWalksToYou"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1F_ClairScene.BagFull": {
+      "raw_lines": [
+        "writetext ClairText_NoRoom",
+        "waitbutton",
+        "closetext"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "ClairText_NoRoom"
+          ],
+          "raw": "writetext ClairText_NoRoom"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "DragonsDenB1F_ClairScene.FinishClair",
+      "label_refs": [
+        "DragonsDenB1F_ClairScene.FinishClair"
+      ],
+      "text_refs": [
+        "ClairText_NoRoom"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1F_ClairScene.FinishClair": {
+      "raw_lines": [
+        "applymovement DRAGONSDENB1F_CLAIR, MovementDragonsDen_ClairWalksAway",
+        "special FadeOutMusic",
+        "pause 30",
+        "special RestartMapMusic",
+        "disappear DRAGONSDENB1F_CLAIR",
+        "setscene SCENE_DRAGONSDENB1F_NOOP",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "DRAGONSDENB1F_CLAIR",
+            "MovementDragonsDen_ClairWalksAway"
+          ],
+          "raw": "applymovement DRAGONSDENB1F_CLAIR, MovementDragonsDen_ClairWalksAway"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "30"
+          ],
+          "raw": "pause 30"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "DRAGONSDENB1F_CLAIR"
+          ],
+          "raw": "disappear DRAGONSDENB1F_CLAIR"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_DRAGONSDENB1F_NOOP"
+          ],
+          "raw": "setscene SCENE_DRAGONSDENB1F_NOOP"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementDragonsDen_ClairWalksAway"
+      ],
+      "scene_refs": [
+        "SCENE_DRAGONSDENB1F_NOOP"
+      ],
+      "std_calls": []
+    },
+    "TrainerCooltrainermDarin": {
+      "raw_lines": [
+        "trainer COOLTRAINERM, DARIN, EVENT_BEAT_COOLTRAINERM_DARIN, CooltrainermDarinSeenText, CooltrainermDarinBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "COOLTRAINERM",
+            "DARIN",
+            "EVENT_BEAT_COOLTRAINERM_DARIN",
+            "CooltrainermDarinSeenText",
+            "CooltrainermDarinBeatenText",
+            "0",
+            "TrainerCooltrainermDarin.Script"
+          ],
+          "raw": "trainer COOLTRAINERM, DARIN, EVENT_BEAT_COOLTRAINERM_DARIN, CooltrainermDarinSeenText, CooltrainermDarinBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerCooltrainermDarin.Script",
+      "label_refs": [
+        "TrainerCooltrainermDarin.Script"
+      ],
+      "text_refs": [
+        "CooltrainermDarinBeatenText",
+        "CooltrainermDarinSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermDarin.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext CooltrainermDarinAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CooltrainermDarinAfterBattleText"
+          ],
+          "raw": "writetext CooltrainermDarinAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainermDarinAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfCara": {
+      "raw_lines": [
+        "trainer COOLTRAINERF, CARA, EVENT_BEAT_COOLTRAINERF_CARA, CooltrainerfCaraSeenText, CooltrainerfCaraBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "COOLTRAINERF",
+            "CARA",
+            "EVENT_BEAT_COOLTRAINERF_CARA",
+            "CooltrainerfCaraSeenText",
+            "CooltrainerfCaraBeatenText",
+            "0",
+            "TrainerCooltrainerfCara.Script"
+          ],
+          "raw": "trainer COOLTRAINERF, CARA, EVENT_BEAT_COOLTRAINERF_CARA, CooltrainerfCaraSeenText, CooltrainerfCaraBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerCooltrainerfCara.Script",
+      "label_refs": [
+        "TrainerCooltrainerfCara.Script"
+      ],
+      "text_refs": [
+        "CooltrainerfCaraBeatenText",
+        "CooltrainerfCaraSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfCara.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext CooltrainerfCaraAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CooltrainerfCaraAfterBattleText"
+          ],
+          "raw": "writetext CooltrainerfCaraAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainerfCaraAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsLeaandpia1": {
+      "raw_lines": [
+        "trainer TWINS, LEAANDPIA1, EVENT_BEAT_TWINS_LEA_AND_PIA, TwinsLeaandpia1SeenText, TwinsLeaandpia1BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "TWINS",
+            "LEAANDPIA1",
+            "EVENT_BEAT_TWINS_LEA_AND_PIA",
+            "TwinsLeaandpia1SeenText",
+            "TwinsLeaandpia1BeatenText",
+            "0",
+            "TrainerTwinsLeaandpia1.Script"
+          ],
+          "raw": "trainer TWINS, LEAANDPIA1, EVENT_BEAT_TWINS_LEA_AND_PIA, TwinsLeaandpia1SeenText, TwinsLeaandpia1BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerTwinsLeaandpia1.Script",
+      "label_refs": [
+        "TrainerTwinsLeaandpia1.Script"
+      ],
+      "text_refs": [
+        "TwinsLeaandpia1BeatenText",
+        "TwinsLeaandpia1SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsLeaandpia1.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext TwinsLeaandpia1AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "TwinsLeaandpia1AfterBattleText"
+          ],
+          "raw": "writetext TwinsLeaandpia1AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "TwinsLeaandpia1AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsLeaandpia2": {
+      "raw_lines": [
+        "trainer TWINS, LEAANDPIA1, EVENT_BEAT_TWINS_LEA_AND_PIA, TwinsLeaandpia2SeenText, TwinsLeaandpia2BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "TWINS",
+            "LEAANDPIA1",
+            "EVENT_BEAT_TWINS_LEA_AND_PIA",
+            "TwinsLeaandpia2SeenText",
+            "TwinsLeaandpia2BeatenText",
+            "0",
+            "TrainerTwinsLeaandpia2.Script"
+          ],
+          "raw": "trainer TWINS, LEAANDPIA1, EVENT_BEAT_TWINS_LEA_AND_PIA, TwinsLeaandpia2SeenText, TwinsLeaandpia2BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerTwinsLeaandpia2.Script",
+      "label_refs": [
+        "TrainerTwinsLeaandpia2.Script"
+      ],
+      "text_refs": [
+        "TwinsLeaandpia2BeatenText",
+        "TwinsLeaandpia2SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsLeaandpia2.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext TwinsLeaandpia2AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "TwinsLeaandpia2AfterBattleText"
+          ],
+          "raw": "writetext TwinsLeaandpia2AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "TwinsLeaandpia2AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FDragonFangScript": {
+      "raw_lines": [
+        "giveitem DRAGON_FANG",
+        "iffalse .BagFull",
+        "disappear DRAGONSDENB1F_POKE_BALL1",
+        "opentext",
+        "getitemname STRING_BUFFER_3, DRAGON_FANG",
+        "writetext Text_FoundDragonFang",
+        "playsound SFX_ITEM",
+        "waitsfx",
+        "itemnotify",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "giveitem",
+          "args": [
+            "DRAGON_FANG"
+          ],
+          "raw": "giveitem DRAGON_FANG"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "DragonsDenB1FDragonFangScript.BagFull"
+          ],
+          "raw": "iffalse .BagFull"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "DRAGONSDENB1F_POKE_BALL1"
+          ],
+          "raw": "disappear DRAGONSDENB1F_POKE_BALL1"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "getitemname",
+          "args": [
+            "STRING_BUFFER_3",
+            "DRAGON_FANG"
+          ],
+          "raw": "getitemname STRING_BUFFER_3, DRAGON_FANG"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_FoundDragonFang"
+          ],
+          "raw": "writetext Text_FoundDragonFang"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ITEM"
+          ],
+          "raw": "playsound SFX_ITEM"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "itemnotify",
+          "args": [],
+          "raw": "itemnotify"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "giveitem",
+      "label_refs": [
+        "DragonsDenB1FDragonFangScript.BagFull"
+      ],
+      "text_refs": [
+        "Text_FoundDragonFang"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FDragonFangScript.BagFull": {
+      "raw_lines": [
+        "opentext",
+        "getitemname STRING_BUFFER_3, DRAGON_FANG",
+        "writetext Text_FoundDragonFang",
+        "promptbutton",
+        "writetext Text_NoRoomForDragonFang",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "getitemname",
+          "args": [
+            "STRING_BUFFER_3",
+            "DRAGON_FANG"
+          ],
+          "raw": "getitemname STRING_BUFFER_3, DRAGON_FANG"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_FoundDragonFang"
+          ],
+          "raw": "writetext Text_FoundDragonFang"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_NoRoomForDragonFang"
+          ],
+          "raw": "writetext Text_NoRoomForDragonFang"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "Text_FoundDragonFang",
+        "Text_NoRoomForDragonFang"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FRivalScript": {
+      "raw_lines": [
+        "playmusic MUSIC_RIVAL_ENCOUNTER",
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iftrue .RivalTalkAgain",
+        "writetext RivalText_Training1",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "special RestartMapMusic",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_ENCOUNTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_ENCOUNTER"
+        },
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DragonsDenB1FRivalScript.RivalTalkAgain"
+          ],
+          "raw": "iftrue .RivalTalkAgain"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RivalText_Training1"
+          ],
+          "raw": "writetext RivalText_Training1"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playmusic",
+      "label_refs": [
+        "DragonsDenB1FRivalScript.RivalTalkAgain"
+      ],
+      "text_refs": [
+        "RivalText_Training1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FRivalScript.RivalTalkAgain": {
+      "raw_lines": [
+        "writetext RivalText_Training2",
+        "waitbutton",
+        "closetext",
+        "special RestartMapMusic",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RivalText_Training2"
+          ],
+          "raw": "writetext RivalText_Training2"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RivalText_Training2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineSignpost": {
+      "raw_lines": [
+        "jumptext DragonShrineSignpostText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "DragonShrineSignpostText"
+          ],
+          "raw": "jumptext DragonShrineSignpostText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "DragonShrineSignpostText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FCalcium": {
+      "raw_lines": [
+        "itemball CALCIUM"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "CALCIUM"
+          ],
+          "raw": "itemball CALCIUM"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "DragonsDenB1FMaxElixer",
+      "label_refs": [
+        "DragonsDenB1FMaxElixer"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FMaxElixer": {
+      "raw_lines": [
+        "itemball MAX_ELIXER"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "MAX_ELIXER"
+          ],
+          "raw": "itemball MAX_ELIXER"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "DragonsDenB1FHiddenRevive",
+      "label_refs": [
+        "DragonsDenB1FHiddenRevive"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FHiddenRevive": {
+      "raw_lines": [
+        "hiddenitem REVIVE, EVENT_DRAGONS_DEN_B1F_HIDDEN_REVIVE"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "REVIVE",
+            "EVENT_DRAGONS_DEN_B1F_HIDDEN_REVIVE"
+          ],
+          "raw": "hiddenitem REVIVE, EVENT_DRAGONS_DEN_B1F_HIDDEN_REVIVE"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "DragonsDenB1FHiddenMaxPotion",
+      "label_refs": [
+        "DragonsDenB1FHiddenMaxPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FHiddenMaxPotion": {
+      "raw_lines": [
+        "hiddenitem MAX_POTION, EVENT_DRAGONS_DEN_B1F_HIDDEN_MAX_POTION"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "MAX_POTION",
+            "EVENT_DRAGONS_DEN_B1F_HIDDEN_MAX_POTION"
+          ],
+          "raw": "hiddenitem MAX_POTION, EVENT_DRAGONS_DEN_B1F_HIDDEN_MAX_POTION"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "DragonsDenB1FHiddenMaxElixer",
+      "label_refs": [
+        "DragonsDenB1FHiddenMaxElixer"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FHiddenMaxElixer": {
+      "raw_lines": [
+        "hiddenitem MAX_ELIXER, EVENT_DRAGONS_DEN_B1F_HIDDEN_MAX_ELIXER"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "MAX_ELIXER",
+            "EVENT_DRAGONS_DEN_B1F_HIDDEN_MAX_ELIXER"
+          ],
+          "raw": "hiddenitem MAX_ELIXER, EVENT_DRAGONS_DEN_B1F_HIDDEN_MAX_ELIXER"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "DragonsDenB1F_MapEvents",
+      "label_refs": [
+        "DragonsDenB1F_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 20,  3, DRAGONS_DEN_1F, 3",
+        "warp_event 19, 29, DRAGON_SHRINE, 1",
+        "def_coord_events",
+        "coord_event 19, 30, SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM, DragonsDenB1F_ClairScene",
+        "def_bg_events",
+        "bg_event 18, 24, BGEVENT_READ, DragonShrineSignpost",
+        "bg_event 33, 29, BGEVENT_ITEM, DragonsDenB1FHiddenRevive",
+        "bg_event 21, 17, BGEVENT_ITEM, DragonsDenB1FHiddenMaxPotion",
+        "bg_event 31, 15, BGEVENT_ITEM, DragonsDenB1FHiddenMaxElixer",
+        "def_object_events",
+        "object_event 35, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FDragonFangScript, EVENT_DRAGONS_DEN_B1F_DRAGON_FANG",
+        "object_event 14, 30, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRAGONS_DEN_CLAIR",
+        "object_event 20, 23, SPRITE_RIVAL, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FRivalScript, EVENT_RIVAL_DRAGONS_DEN",
+        "object_event 20,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainermDarin, -1",
+        "object_event  8,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfCara, -1",
+        "object_event  4, 17, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsLeaandpia1, -1",
+        "object_event  4, 18, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsLeaandpia2, -1",
+        "object_event 30,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DragonsDenB1FCalcium, EVENT_DRAGONS_DEN_B1F_CALCIUM",
+        "object_event  5, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DragonsDenB1FMaxElixer, EVENT_DRAGONS_DEN_B1F_MAX_ELIXER"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "20",
+            "3",
+            "DRAGONS_DEN_1F",
+            "3"
+          ],
+          "raw": "warp_event 20,  3, DRAGONS_DEN_1F, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "19",
+            "29",
+            "DRAGON_SHRINE",
+            "1"
+          ],
+          "raw": "warp_event 19, 29, DRAGON_SHRINE, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "19",
+            "30",
+            "SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM",
+            "DragonsDenB1F_ClairScene"
+          ],
+          "raw": "coord_event 19, 30, SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM, DragonsDenB1F_ClairScene"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "18",
+            "24",
+            "BGEVENT_READ",
+            "DragonShrineSignpost"
+          ],
+          "raw": "bg_event 18, 24, BGEVENT_READ, DragonShrineSignpost"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "33",
+            "29",
+            "BGEVENT_ITEM",
+            "DragonsDenB1FHiddenRevive"
+          ],
+          "raw": "bg_event 33, 29, BGEVENT_ITEM, DragonsDenB1FHiddenRevive"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "21",
+            "17",
+            "BGEVENT_ITEM",
+            "DragonsDenB1FHiddenMaxPotion"
+          ],
+          "raw": "bg_event 21, 17, BGEVENT_ITEM, DragonsDenB1FHiddenMaxPotion"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "31",
+            "15",
+            "BGEVENT_ITEM",
+            "DragonsDenB1FHiddenMaxElixer"
+          ],
+          "raw": "bg_event 31, 15, BGEVENT_ITEM, DragonsDenB1FHiddenMaxElixer"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "35",
+            "16",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "DragonsDenB1FDragonFangScript",
+            "EVENT_DRAGONS_DEN_B1F_DRAGON_FANG"
+          ],
+          "raw": "object_event 35, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FDragonFangScript, EVENT_DRAGONS_DEN_B1F_DRAGON_FANG"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "14",
+            "30",
+            "SPRITE_CLAIR",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_DRAGONS_DEN_CLAIR"
+          ],
+          "raw": "object_event 14, 30, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRAGONS_DEN_CLAIR"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "20",
+            "23",
+            "SPRITE_RIVAL",
+            "SPRITEMOVEDATA_WANDER",
+            "2",
+            "2",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "DragonsDenB1FRivalScript",
+            "EVENT_RIVAL_DRAGONS_DEN"
+          ],
+          "raw": "object_event 20, 23, SPRITE_RIVAL, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FRivalScript, EVENT_RIVAL_DRAGONS_DEN"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "20",
+            "8",
+            "SPRITE_COOLTRAINER_M",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "4",
+            "TrainerCooltrainermDarin",
+            "-1"
+          ],
+          "raw": "object_event 20,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainermDarin, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "8",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerCooltrainerfCara",
+            "-1"
+          ],
+          "raw": "object_event  8,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfCara, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "17",
+            "SPRITE_TWIN",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerTwinsLeaandpia1",
+            "-1"
+          ],
+          "raw": "object_event  4, 17, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsLeaandpia1, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "18",
+            "SPRITE_TWIN",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerTwinsLeaandpia2",
+            "-1"
+          ],
+          "raw": "object_event  4, 18, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsLeaandpia2, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "30",
+            "4",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "DragonsDenB1FCalcium",
+            "EVENT_DRAGONS_DEN_B1F_CALCIUM"
+          ],
+          "raw": "object_event 30,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DragonsDenB1FCalcium, EVENT_DRAGONS_DEN_B1F_CALCIUM"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "20",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "DragonsDenB1FMaxElixer",
+            "EVENT_DRAGONS_DEN_B1F_MAX_ELIXER"
+          ],
+          "raw": "object_event  5, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DragonsDenB1FMaxElixer, EVENT_DRAGONS_DEN_B1F_MAX_ELIXER"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "ClairText_Wait": {
+      "raw_lines": [
+        "text \"Wait!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Wait!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ClairText_GiveDragonbreathDragonDen": {
+      "raw_lines": [
+        "text \"CLAIR: I'm sorry\"",
+        "line \"about this.\"",
+        "para \"Here, take this as\"",
+        "line \"my apology.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "CLAIR: I'm sorry"
+        },
+        {
+          "command": "line",
+          "value": "about this."
+        },
+        {
+          "command": "para",
+          "value": "Here, take this as"
+        },
+        {
+          "command": "line",
+          "value": "my apology."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_ReceivedTM24": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"TM24.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "TM24."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ClairText_DescribeDragonbreathDragonDen": {
+      "raw_lines": [
+        "text \"That contains\"",
+        "line \"DRAGONBREATH.\"",
+        "para \"No, it doesn't\"",
+        "line \"have anything to\"",
+        "cont \"do with my breath.\"",
+        "para \"If you don't want\"",
+        "line \"it, you don't have\"",
+        "cont \"to take it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "That contains"
+        },
+        {
+          "command": "line",
+          "value": "DRAGONBREATH."
+        },
+        {
+          "command": "para",
+          "value": "No, it doesn't"
+        },
+        {
+          "command": "line",
+          "value": "have anything to"
+        },
+        {
+          "command": "cont",
+          "value": "do with my breath."
+        },
+        {
+          "command": "para",
+          "value": "If you don't want"
+        },
+        {
+          "command": "line",
+          "value": "it, you don't have"
+        },
+        {
+          "command": "cont",
+          "value": "to take it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ClairText_NoRoom": {
+      "raw_lines": [
+        "text \"Oh? You don't have\"",
+        "line \"any room for this.\"",
+        "para \"I'm going back to\"",
+        "line \"the GYM, so make\"",
+        "para \"room, then come\"",
+        "line \"see me there.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh? You don't have"
+        },
+        {
+          "command": "line",
+          "value": "any room for this."
+        },
+        {
+          "command": "para",
+          "value": "I'm going back to"
+        },
+        {
+          "command": "line",
+          "value": "the GYM, so make"
+        },
+        {
+          "command": "para",
+          "value": "room, then come"
+        },
+        {
+          "command": "line",
+          "value": "see me there."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ClairText_WhatsTheMatterDragonDen": {
+      "raw_lines": [
+        "text \"CLAIR: What's the\"",
+        "line \"matter? Aren't you\"",
+        "para \"going on to the\"",
+        "line \"#MON LEAGUE?\"",
+        "para \"Do you know how to\"",
+        "line \"get there?\"",
+        "para \"From here, go to\"",
+        "line \"NEW BARK TOWN.\"",
+        "para \"Then SURF east to\"",
+        "line \"#MON LEAGUE.\"",
+        "para \"The route there is\"",
+        "line \"very tough.\"",
+        "para \"Don't you dare\"",
+        "line \"lose at the #-\"",
+        "cont \"MON LEAGUE!\"",
+        "para \"If you do, I'll\"",
+        "line \"feel even worse\"",
+        "para \"about having lost\"",
+        "line \"to you!\"",
+        "para \"Give it everything\"",
+        "line \"you've got.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "CLAIR: What's the"
+        },
+        {
+          "command": "line",
+          "value": "matter? Aren't you"
+        },
+        {
+          "command": "para",
+          "value": "going on to the"
+        },
+        {
+          "command": "line",
+          "value": "#MON LEAGUE?"
+        },
+        {
+          "command": "para",
+          "value": "Do you know how to"
+        },
+        {
+          "command": "line",
+          "value": "get there?"
+        },
+        {
+          "command": "para",
+          "value": "From here, go to"
+        },
+        {
+          "command": "line",
+          "value": "NEW BARK TOWN."
+        },
+        {
+          "command": "para",
+          "value": "Then SURF east to"
+        },
+        {
+          "command": "line",
+          "value": "#MON LEAGUE."
+        },
+        {
+          "command": "para",
+          "value": "The route there is"
+        },
+        {
+          "command": "line",
+          "value": "very tough."
+        },
+        {
+          "command": "para",
+          "value": "Don't you dare"
+        },
+        {
+          "command": "line",
+          "value": "lose at the #-"
+        },
+        {
+          "command": "cont",
+          "value": "MON LEAGUE!"
+        },
+        {
+          "command": "para",
+          "value": "If you do, I'll"
+        },
+        {
+          "command": "line",
+          "value": "feel even worse"
+        },
+        {
+          "command": "para",
+          "value": "about having lost"
+        },
+        {
+          "command": "line",
+          "value": "to you!"
+        },
+        {
+          "command": "para",
+          "value": "Give it everything"
+        },
+        {
+          "command": "line",
+          "value": "you've got."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineSignpostText": {
+      "raw_lines": [
+        "text \"DRAGON SHRINE\"",
+        "para \"A shrine honoring\"",
+        "line \"the dragon #MON\"",
+        "para \"said to have lived\"",
+        "line \"in DRAGON'S DEN.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "DRAGON SHRINE"
+        },
+        {
+          "command": "para",
+          "value": "A shrine honoring"
+        },
+        {
+          "command": "line",
+          "value": "the dragon #MON"
+        },
+        {
+          "command": "para",
+          "value": "said to have lived"
+        },
+        {
+          "command": "line",
+          "value": "in DRAGON'S DEN."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RivalText_Training1": {
+      "raw_lines": [
+        "text \"\u2026\"",
+        "line \"What? <PLAYER>?\"",
+        "para \"\u2026No, I won't\"",
+        "line \"battle you now\u2026\"",
+        "para \"My #MON aren't\"",
+        "line \"ready to beat you.\"",
+        "para \"I can't push them\"",
+        "line \"too hard now.\"",
+        "para \"I have to be dis-\"",
+        "line \"ciplined to become\"",
+        "para \"the greatest #-\"",
+        "line \"MON trainer\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026"
+        },
+        {
+          "command": "line",
+          "value": "What? <PLAYER>?"
+        },
+        {
+          "command": "para",
+          "value": "\u2026No, I won't"
+        },
+        {
+          "command": "line",
+          "value": "battle you now\u2026"
+        },
+        {
+          "command": "para",
+          "value": "My #MON aren't"
+        },
+        {
+          "command": "line",
+          "value": "ready to beat you."
+        },
+        {
+          "command": "para",
+          "value": "I can't push them"
+        },
+        {
+          "command": "line",
+          "value": "too hard now."
+        },
+        {
+          "command": "para",
+          "value": "I have to be dis-"
+        },
+        {
+          "command": "line",
+          "value": "ciplined to become"
+        },
+        {
+          "command": "para",
+          "value": "the greatest #-"
+        },
+        {
+          "command": "line",
+          "value": "MON trainer\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RivalText_Training2": {
+      "raw_lines": [
+        "text \"\u2026\"",
+        "para \"Whew\u2026\"",
+        "para \"Learn to stay out\"",
+        "line \"of my way\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Whew\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Learn to stay out"
+        },
+        {
+          "command": "line",
+          "value": "of my way\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermDarinSeenText": {
+      "raw_lines": [
+        "text \"You! How dare you\"",
+        "line \"enter uninvited!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You! How dare you"
+        },
+        {
+          "command": "line",
+          "value": "enter uninvited!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermDarinBeatenText": {
+      "raw_lines": [
+        "text \"S-strong!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "S-strong!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermDarinAfterBattleText": {
+      "raw_lines": [
+        "text \"The SHRINE ahead\"",
+        "line \"is home to the\"",
+        "para \"MASTER of our\"",
+        "line \"dragon-user clan.\"",
+        "para \"You're not allowed\"",
+        "line \"to just go in!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The SHRINE ahead"
+        },
+        {
+          "command": "line",
+          "value": "is home to the"
+        },
+        {
+          "command": "para",
+          "value": "MASTER of our"
+        },
+        {
+          "command": "line",
+          "value": "dragon-user clan."
+        },
+        {
+          "command": "para",
+          "value": "You're not allowed"
+        },
+        {
+          "command": "line",
+          "value": "to just go in!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfCaraSeenText": {
+      "raw_lines": [
+        "text \"You shouldn't be\"",
+        "line \"in here!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You shouldn't be"
+        },
+        {
+          "command": "line",
+          "value": "in here!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfCaraBeatenText": {
+      "raw_lines": [
+        "text \"Oh yikes, I lost!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh yikes, I lost!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfCaraAfterBattleText": {
+      "raw_lines": [
+        "text \"Soon I'm going to\"",
+        "line \"get permission\"",
+        "para \"from our MASTER to\"",
+        "line \"use dragons.\"",
+        "para \"When I do, I'm\"",
+        "line \"going to become an\"",
+        "para \"admirable dragon\"",
+        "line \"trainer and gain\"",
+        "para \"our MASTER's\"",
+        "line \"approval.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Soon I'm going to"
+        },
+        {
+          "command": "line",
+          "value": "get permission"
+        },
+        {
+          "command": "para",
+          "value": "from our MASTER to"
+        },
+        {
+          "command": "line",
+          "value": "use dragons."
+        },
+        {
+          "command": "para",
+          "value": "When I do, I'm"
+        },
+        {
+          "command": "line",
+          "value": "going to become an"
+        },
+        {
+          "command": "para",
+          "value": "admirable dragon"
+        },
+        {
+          "command": "line",
+          "value": "trainer and gain"
+        },
+        {
+          "command": "para",
+          "value": "our MASTER's"
+        },
+        {
+          "command": "line",
+          "value": "approval."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TwinsLeaandpia1SeenText": {
+      "raw_lines": [
+        "text \"It's a stranger we\"",
+        "line \"don't know.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's a stranger we"
+        },
+        {
+          "command": "line",
+          "value": "don't know."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TwinsLeaandpia1BeatenText": {
+      "raw_lines": [
+        "text \"Ouchies.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ouchies."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TwinsLeaandpia1AfterBattleText": {
+      "raw_lines": [
+        "text \"It was like having\"",
+        "line \"to battle LANCE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It was like having"
+        },
+        {
+          "command": "line",
+          "value": "to battle LANCE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TwinsLeaandpia2SeenText": {
+      "raw_lines": [
+        "text \"Who are you?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Who are you?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TwinsLeaandpia2BeatenText": {
+      "raw_lines": [
+        "text \"Meanie.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Meanie."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TwinsLeaandpia2AfterBattleText": {
+      "raw_lines": [
+        "text \"We'll tell on you.\"",
+        "para \"MASTER will be\"",
+        "line \"angry with you.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We'll tell on you."
+        },
+        {
+          "command": "para",
+          "value": "MASTER will be"
+        },
+        {
+          "command": "line",
+          "value": "angry with you."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_FoundDragonFang": {
+      "raw_lines": [
+        "text \"<PLAYER> found\"",
+        "line \"@\"",
+        "text_ram wStringBuffer3",
+        "text \"!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> found"
+        },
+        {
+          "command": "line",
+          "value": "@"
+        },
+        {
+          "command": "text_ram",
+          "value": "wStringBuffer3"
+        },
+        {
+          "command": "text",
+          "value": "!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_NoRoomForDragonFang": {
+      "raw_lines": [
+        "text \"But <PLAYER> can't\"",
+        "line \"carry any more\"",
+        "cont \"items.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "But <PLAYER> can't"
+        },
+        {
+          "command": "line",
+          "value": "carry any more"
+        },
+        {
+          "command": "cont",
+          "value": "items."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "MovementDragonsDen_ClairWalksToYou": {
+      "raw_lines": [
+        "slow_step RIGHT",
+        "slow_step RIGHT",
+        "slow_step RIGHT",
+        "slow_step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "slow_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementDragonsDen_ClairWalksAway": {
+      "raw_lines": [
+        "slow_step LEFT",
+        "slow_step LEFT",
+        "slow_step LEFT",
+        "slow_step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "slow_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "DragonsDenB1F_MapScripts": {
+      "label_refs": [
+        "DragonsDenB1FNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FCheckRivalCallback": {
+      "label_refs": [
+        "DragonsDenB1FCheckRivalCallback.CheckDay"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FCheckRivalCallback.CheckDay": {
+      "label_refs": [
+        "DragonsDenB1FCheckRivalCallback.AppearRival"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FCheckRivalCallback.AppearRival": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1F_ClairScene": {
+      "label_refs": [
+        "DragonsDenB1F_ClairScene.BagFull",
+        "DragonsDenB1F_ClairScene.FinishClair"
+      ],
+      "text_refs": [
+        "ClairText_DescribeDragonbreathDragonDen",
+        "ClairText_GiveDragonbreathDragonDen",
+        "ClairText_Wait",
+        "ClairText_WhatsTheMatterDragonDen",
+        "Text_ReceivedTM24"
+      ],
+      "movement_refs": [
+        "MovementDragonsDen_ClairWalksToYou"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1F_ClairScene.BagFull": {
+      "label_refs": [
+        "DragonsDenB1F_ClairScene.FinishClair"
+      ],
+      "text_refs": [
+        "ClairText_NoRoom"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1F_ClairScene.FinishClair": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementDragonsDen_ClairWalksAway"
+      ],
+      "scene_refs": [
+        "SCENE_DRAGONSDENB1F_NOOP"
+      ],
+      "std_calls": []
+    },
+    "TrainerCooltrainermDarin": {
+      "label_refs": [
+        "TrainerCooltrainermDarin.Script"
+      ],
+      "text_refs": [
+        "CooltrainermDarinBeatenText",
+        "CooltrainermDarinSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermDarin.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainermDarinAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfCara": {
+      "label_refs": [
+        "TrainerCooltrainerfCara.Script"
+      ],
+      "text_refs": [
+        "CooltrainerfCaraBeatenText",
+        "CooltrainerfCaraSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfCara.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainerfCaraAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsLeaandpia1": {
+      "label_refs": [
+        "TrainerTwinsLeaandpia1.Script"
+      ],
+      "text_refs": [
+        "TwinsLeaandpia1BeatenText",
+        "TwinsLeaandpia1SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsLeaandpia1.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "TwinsLeaandpia1AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsLeaandpia2": {
+      "label_refs": [
+        "TrainerTwinsLeaandpia2.Script"
+      ],
+      "text_refs": [
+        "TwinsLeaandpia2BeatenText",
+        "TwinsLeaandpia2SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsLeaandpia2.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "TwinsLeaandpia2AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FDragonFangScript": {
+      "label_refs": [
+        "DragonsDenB1FDragonFangScript.BagFull"
+      ],
+      "text_refs": [
+        "Text_FoundDragonFang"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FDragonFangScript.BagFull": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_FoundDragonFang",
+        "Text_NoRoomForDragonFang"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FRivalScript": {
+      "label_refs": [
+        "DragonsDenB1FRivalScript.RivalTalkAgain"
+      ],
+      "text_refs": [
+        "RivalText_Training1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FRivalScript.RivalTalkAgain": {
+      "label_refs": [],
+      "text_refs": [
+        "RivalText_Training2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineSignpost": {
+      "label_refs": [],
+      "text_refs": [
+        "DragonShrineSignpostText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FCalcium": {
+      "label_refs": [
+        "DragonsDenB1FMaxElixer"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FMaxElixer": {
+      "label_refs": [
+        "DragonsDenB1FHiddenRevive"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FHiddenRevive": {
+      "label_refs": [
+        "DragonsDenB1FHiddenMaxPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FHiddenMaxPotion": {
+      "label_refs": [
+        "DragonsDenB1FHiddenMaxElixer"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1FHiddenMaxElixer": {
+      "label_refs": [
+        "DragonsDenB1F_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonsDenB1F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "day_time"
+  ],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
+    "warp_events": 2,
+    "coord_events": 1,
+    "bg_events": 4,
+    "object_events": 9
+  }
+}

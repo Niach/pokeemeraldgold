@@ -1,0 +1,1231 @@
+{
+  "crystal_map": "Route34IlexForestGate",
+  "map_id": "ROUTE_34_ILEX_FOREST_GATE",
+  "group": "GOLDENROD",
+  "group_index": 11,
+  "map_index": 23,
+  "tileset": "TILESET_GATE",
+  "environment": "GATE",
+  "landmark": "LANDMARK_ROUTE_34",
+  "music": "MUSIC_ROUTE_36",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/NorthSouthGate.blk",
+  "source_asm": "maps/Route34IlexForestGate.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": null,
+        "scene_id": "SCENE_ROUTE34ILEXFORESTGATE_TEACHER_BLOCKS_IF_FOREST_IS_RESTLESS"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "Route34IsForestRestlessCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 4,
+        "y": 0,
+        "dest_map": "ROUTE_34",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 5,
+        "y": 0,
+        "dest_map": "ROUTE_34",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "dest_map": "ILEX_FOREST",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 5,
+        "y": 7,
+        "dest_map": "ILEX_FOREST",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 4,
+        "y": 7,
+        "scene": "SCENE_ROUTE34ILEXFORESTGATE_TEACHER_BLOCKS_IF_FOREST_IS_RESTLESS",
+        "script": "Route34IlexForestGateCelebiEvent"
+      }
+    ],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 9,
+        "y": 3,
+        "sprite": "SPRITE_TEACHER",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route34IlexForestGateTeacherScript",
+        "flag": "EVENT_ROUTE_34_ILEX_FOREST_GATE_TEACHER_BEHIND_COUNTER"
+      },
+      {
+        "x": 9,
+        "y": 4,
+        "sprite": "SPRITE_BUTTERFREE",
+        "movement": "SPRITEMOVEDATA_POKEMON",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route34IlexForestGateButterfreeScript",
+        "flag": -1
+      },
+      {
+        "x": 3,
+        "y": 4,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_WALK_UP_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route34IlexForestGateLassScript",
+        "flag": "EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS"
+      },
+      {
+        "x": 5,
+        "y": 7,
+        "sprite": "SPRITE_TEACHER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route34IlexForestGateTeacherScript",
+        "flag": "EVENT_ROUTE_34_ILEX_FOREST_GATE_TEACHER_IN_WALKWAY"
+      }
+    ]
+  },
+  "object_consts": [
+    "ROUTE34ILEXFORESTGATE_TEACHER1",
+    "ROUTE34ILEXFORESTGATE_BUTTERFREE",
+    "ROUTE34ILEXFORESTGATE_LASS",
+    "ROUTE34ILEXFORESTGATE_TEACHER2"
+  ],
+  "scene_ids": [
+    "SCENE_ROUTE34ILEXFORESTGATE_TEACHER_BLOCKS_IF_FOREST_IS_RESTLESS"
+  ],
+  "scripts": {
+    "Route34IlexForestGate_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_const SCENE_ROUTE34ILEXFORESTGATE_TEACHER_BLOCKS_IF_FOREST_IS_RESTLESS",
+        "def_callbacks",
+        "callback MAPCALLBACK_OBJECTS, Route34IsForestRestlessCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_const",
+          "args": [
+            "SCENE_ROUTE34ILEXFORESTGATE_TEACHER_BLOCKS_IF_FOREST_IS_RESTLESS"
+          ],
+          "raw": "scene_const SCENE_ROUTE34ILEXFORESTGATE_TEACHER_BLOCKS_IF_FOREST_IS_RESTLESS"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "Route34IsForestRestlessCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, Route34IsForestRestlessCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "Route34IsForestRestlessCallback",
+      "label_refs": [
+        "Route34IsForestRestlessCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IsForestRestlessCallback": {
+      "raw_lines": [
+        "checkevent EVENT_FOREST_IS_RESTLESS",
+        "iffalse .Normal",
+        "disappear ROUTE34ILEXFORESTGATE_TEACHER1",
+        "appear ROUTE34ILEXFORESTGATE_TEACHER2",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_FOREST_IS_RESTLESS"
+          ],
+          "raw": "checkevent EVENT_FOREST_IS_RESTLESS"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Route34IsForestRestlessCallback.Normal"
+          ],
+          "raw": "iffalse .Normal"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ROUTE34ILEXFORESTGATE_TEACHER1"
+          ],
+          "raw": "disappear ROUTE34ILEXFORESTGATE_TEACHER1"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE34ILEXFORESTGATE_TEACHER2"
+          ],
+          "raw": "appear ROUTE34ILEXFORESTGATE_TEACHER2"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "Route34IsForestRestlessCallback.Normal"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IsForestRestlessCallback.Normal": {
+      "raw_lines": [
+        "disappear ROUTE34ILEXFORESTGATE_TEACHER2",
+        "appear ROUTE34ILEXFORESTGATE_TEACHER1",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "disappear",
+          "args": [
+            "ROUTE34ILEXFORESTGATE_TEACHER2"
+          ],
+          "raw": "disappear ROUTE34ILEXFORESTGATE_TEACHER2"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE34ILEXFORESTGATE_TEACHER1"
+          ],
+          "raw": "appear ROUTE34ILEXFORESTGATE_TEACHER1"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "disappear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IlexForestGateCelebiEvent": {
+      "raw_lines": [
+        "checkevent EVENT_FOREST_IS_RESTLESS",
+        "iffalse .skip",
+        "showemote EMOTE_SHOCK, ROUTE34ILEXFORESTGATE_TEACHER2, 20",
+        "turnobject ROUTE34ILEXFORESTGATE_TEACHER2, LEFT",
+        "turnobject PLAYER, RIGHT",
+        "follow PLAYER, ROUTE34ILEXFORESTGATE_TEACHER2",
+        "applymovement PLAYER, Route34IlexForestGateTeacherBlocksPlayerMovement",
+        "stopfollow",
+        "turnobject PLAYER, DOWN",
+        "opentext",
+        "writetext Route34IlexForestGateTeacher_ForestIsRestless",
+        "waitbutton",
+        "closetext",
+        "applymovement ROUTE34ILEXFORESTGATE_TEACHER2, Route34IlexForestGateTeacherReturnsMovement"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_FOREST_IS_RESTLESS"
+          ],
+          "raw": "checkevent EVENT_FOREST_IS_RESTLESS"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Route34IlexForestGateCelebiEvent.skip"
+          ],
+          "raw": "iffalse .skip"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "ROUTE34ILEXFORESTGATE_TEACHER2",
+            "20"
+          ],
+          "raw": "showemote EMOTE_SHOCK, ROUTE34ILEXFORESTGATE_TEACHER2, 20"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "ROUTE34ILEXFORESTGATE_TEACHER2",
+            "LEFT"
+          ],
+          "raw": "turnobject ROUTE34ILEXFORESTGATE_TEACHER2, LEFT"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "follow",
+          "args": [
+            "PLAYER",
+            "ROUTE34ILEXFORESTGATE_TEACHER2"
+          ],
+          "raw": "follow PLAYER, ROUTE34ILEXFORESTGATE_TEACHER2"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "Route34IlexForestGateTeacherBlocksPlayerMovement"
+          ],
+          "raw": "applymovement PLAYER, Route34IlexForestGateTeacherBlocksPlayerMovement"
+        },
+        {
+          "command": "stopfollow",
+          "args": [],
+          "raw": "stopfollow"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route34IlexForestGateTeacher_ForestIsRestless"
+          ],
+          "raw": "writetext Route34IlexForestGateTeacher_ForestIsRestless"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE34ILEXFORESTGATE_TEACHER2",
+            "Route34IlexForestGateTeacherReturnsMovement"
+          ],
+          "raw": "applymovement ROUTE34ILEXFORESTGATE_TEACHER2, Route34IlexForestGateTeacherReturnsMovement"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "Route34IlexForestGateCelebiEvent.skip",
+      "label_refs": [
+        "Route34IlexForestGateCelebiEvent.skip"
+      ],
+      "text_refs": [
+        "Route34IlexForestGateTeacher_ForestIsRestless"
+      ],
+      "movement_refs": [
+        "Route34IlexForestGateTeacherBlocksPlayerMovement",
+        "Route34IlexForestGateTeacherReturnsMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IlexForestGateCelebiEvent.skip": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IlexForestGateTeacherScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_FOREST_IS_RESTLESS",
+        "iftrue .ForestIsRestless",
+        "checkevent EVENT_GOT_TM12_SWEET_SCENT",
+        "iftrue .GotSweetScent",
+        "writetext Route34IlexForestGateTeacherText",
+        "promptbutton",
+        "verbosegiveitem TM_SWEET_SCENT",
+        "iffalse .NoRoom",
+        "setevent EVENT_GOT_TM12_SWEET_SCENT"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_FOREST_IS_RESTLESS"
+          ],
+          "raw": "checkevent EVENT_FOREST_IS_RESTLESS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route34IlexForestGateTeacherScript.ForestIsRestless"
+          ],
+          "raw": "iftrue .ForestIsRestless"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TM12_SWEET_SCENT"
+          ],
+          "raw": "checkevent EVENT_GOT_TM12_SWEET_SCENT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route34IlexForestGateTeacherScript.GotSweetScent"
+          ],
+          "raw": "iftrue .GotSweetScent"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route34IlexForestGateTeacherText"
+          ],
+          "raw": "writetext Route34IlexForestGateTeacherText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "TM_SWEET_SCENT"
+          ],
+          "raw": "verbosegiveitem TM_SWEET_SCENT"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Route34IlexForestGateTeacherScript.NoRoom"
+          ],
+          "raw": "iffalse .NoRoom"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_TM12_SWEET_SCENT"
+          ],
+          "raw": "setevent EVENT_GOT_TM12_SWEET_SCENT"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "Route34IlexForestGateTeacherScript.GotSweetScent",
+      "label_refs": [
+        "Route34IlexForestGateTeacherScript.ForestIsRestless",
+        "Route34IlexForestGateTeacherScript.GotSweetScent",
+        "Route34IlexForestGateTeacherScript.NoRoom"
+      ],
+      "text_refs": [
+        "Route34IlexForestGateTeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IlexForestGateTeacherScript.GotSweetScent": {
+      "raw_lines": [
+        "writetext Route34IlexForestGateTeacher_GotSweetScent",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route34IlexForestGateTeacher_GotSweetScent"
+          ],
+          "raw": "writetext Route34IlexForestGateTeacher_GotSweetScent"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "Route34IlexForestGateTeacherScript.NoRoom",
+      "label_refs": [
+        "Route34IlexForestGateTeacherScript.NoRoom"
+      ],
+      "text_refs": [
+        "Route34IlexForestGateTeacher_GotSweetScent"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IlexForestGateTeacherScript.NoRoom": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IlexForestGateTeacherScript.ForestIsRestless": {
+      "raw_lines": [
+        "writetext Route34IlexForestGateTeacher_ForestIsRestless",
+        "promptbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route34IlexForestGateTeacher_ForestIsRestless"
+          ],
+          "raw": "writetext Route34IlexForestGateTeacher_ForestIsRestless"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route34IlexForestGateTeacher_ForestIsRestless"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IlexForestGateButterfreeScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext Route34IlexForestGateButterfreeText",
+        "cry BUTTERFREE",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route34IlexForestGateButterfreeText"
+          ],
+          "raw": "writetext Route34IlexForestGateButterfreeText"
+        },
+        {
+          "command": "cry",
+          "args": [
+            "BUTTERFREE"
+          ],
+          "raw": "cry BUTTERFREE"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "Route34IlexForestGateButterfreeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IlexForestGateLassScript": {
+      "raw_lines": [
+        "jumptextfaceplayer Route34IlexForestGateLassText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Route34IlexForestGateLassText"
+          ],
+          "raw": "jumptextfaceplayer Route34IlexForestGateLassText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Route34IlexForestGateLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IlexForestGate_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  4,  0, ROUTE_34, 1",
+        "warp_event  5,  0, ROUTE_34, 2",
+        "warp_event  4,  7, ILEX_FOREST, 1",
+        "warp_event  5,  7, ILEX_FOREST, 1",
+        "def_coord_events",
+        "coord_event  4,  7, SCENE_ROUTE34ILEXFORESTGATE_TEACHER_BLOCKS_IF_FOREST_IS_RESTLESS, Route34IlexForestGateCelebiEvent",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  9,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateTeacherScript, EVENT_ROUTE_34_ILEX_FOREST_GATE_TEACHER_BEHIND_COUNTER",
+        "object_event  9,  4, SPRITE_BUTTERFREE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateButterfreeScript, -1",
+        "object_event  3,  4, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateLassScript, EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS",
+        "object_event  5,  7, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateTeacherScript, EVENT_ROUTE_34_ILEX_FOREST_GATE_TEACHER_IN_WALKWAY"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "0",
+            "ROUTE_34",
+            "1"
+          ],
+          "raw": "warp_event  4,  0, ROUTE_34, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "0",
+            "ROUTE_34",
+            "2"
+          ],
+          "raw": "warp_event  5,  0, ROUTE_34, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "ILEX_FOREST",
+            "1"
+          ],
+          "raw": "warp_event  4,  7, ILEX_FOREST, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "7",
+            "ILEX_FOREST",
+            "1"
+          ],
+          "raw": "warp_event  5,  7, ILEX_FOREST, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "4",
+            "7",
+            "SCENE_ROUTE34ILEXFORESTGATE_TEACHER_BLOCKS_IF_FOREST_IS_RESTLESS",
+            "Route34IlexForestGateCelebiEvent"
+          ],
+          "raw": "coord_event  4,  7, SCENE_ROUTE34ILEXFORESTGATE_TEACHER_BLOCKS_IF_FOREST_IS_RESTLESS, Route34IlexForestGateCelebiEvent"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "3",
+            "SPRITE_TEACHER",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route34IlexForestGateTeacherScript",
+            "EVENT_ROUTE_34_ILEX_FOREST_GATE_TEACHER_BEHIND_COUNTER"
+          ],
+          "raw": "object_event  9,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateTeacherScript, EVENT_ROUTE_34_ILEX_FOREST_GATE_TEACHER_BEHIND_COUNTER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "4",
+            "SPRITE_BUTTERFREE",
+            "SPRITEMOVEDATA_POKEMON",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route34IlexForestGateButterfreeScript",
+            "-1"
+          ],
+          "raw": "object_event  9,  4, SPRITE_BUTTERFREE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateButterfreeScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "4",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_WALK_UP_DOWN",
+            "0",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route34IlexForestGateLassScript",
+            "EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS"
+          ],
+          "raw": "object_event  3,  4, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateLassScript, EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "7",
+            "SPRITE_TEACHER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route34IlexForestGateTeacherScript",
+            "EVENT_ROUTE_34_ILEX_FOREST_GATE_TEACHER_IN_WALKWAY"
+          ],
+          "raw": "object_event  5,  7, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateTeacherScript, EVENT_ROUTE_34_ILEX_FOREST_GATE_TEACHER_IN_WALKWAY"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "Route34IlexForestGateTeacherText": {
+      "raw_lines": [
+        "text \"Oh, honey. You're\"",
+        "line \"making a #DEX?\"",
+        "para \"It must be hard if\"",
+        "line \"#MON won't\"",
+        "para \"appear. Try using\"",
+        "line \"this TM.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, honey. You're"
+        },
+        {
+          "command": "line",
+          "value": "making a #DEX?"
+        },
+        {
+          "command": "para",
+          "value": "It must be hard if"
+        },
+        {
+          "command": "line",
+          "value": "#MON won't"
+        },
+        {
+          "command": "para",
+          "value": "appear. Try using"
+        },
+        {
+          "command": "line",
+          "value": "this TM."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route34IlexForestGateTeacher_GotSweetScent": {
+      "raw_lines": [
+        "text \"It's SWEET SCENT.\"",
+        "para \"Use it wherever\"",
+        "line \"#MON appear.\"",
+        "para \"#MON will be\"",
+        "line \"enticed by it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's SWEET SCENT."
+        },
+        {
+          "command": "para",
+          "value": "Use it wherever"
+        },
+        {
+          "command": "line",
+          "value": "#MON appear."
+        },
+        {
+          "command": "para",
+          "value": "#MON will be"
+        },
+        {
+          "command": "line",
+          "value": "enticed by it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route34IlexForestGateTeacher_ForestIsRestless": {
+      "raw_lines": [
+        "text \"Something's wrong\"",
+        "line \"in ILEX FOREST\u2026\"",
+        "para \"You should stay\"",
+        "line \"away right now.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Something's wrong"
+        },
+        {
+          "command": "line",
+          "value": "in ILEX FOREST\u2026"
+        },
+        {
+          "command": "para",
+          "value": "You should stay"
+        },
+        {
+          "command": "line",
+          "value": "away right now."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route34IlexForestGateButterfreeText": {
+      "raw_lines": [
+        "text \"BUTTERFREE: Freeh!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "BUTTERFREE: Freeh!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route34IlexForestGateLassText": {
+      "raw_lines": [
+        "text \"Did you see the\"",
+        "line \"shrine honoring\"",
+        "cont \"the protector?\"",
+        "para \"It watches over\"",
+        "line \"the FOREST from\"",
+        "cont \"across time.\"",
+        "para \"I think that it\"",
+        "line \"must be a grass-\"",
+        "cont \"type #MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Did you see the"
+        },
+        {
+          "command": "line",
+          "value": "shrine honoring"
+        },
+        {
+          "command": "cont",
+          "value": "the protector?"
+        },
+        {
+          "command": "para",
+          "value": "It watches over"
+        },
+        {
+          "command": "line",
+          "value": "the FOREST from"
+        },
+        {
+          "command": "cont",
+          "value": "across time."
+        },
+        {
+          "command": "para",
+          "value": "I think that it"
+        },
+        {
+          "command": "line",
+          "value": "must be a grass-"
+        },
+        {
+          "command": "cont",
+          "value": "type #MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "Route34IlexForestGateTeacherBlocksPlayerMovement": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "Route34IlexForestGateTeacherReturnsMovement": {
+      "raw_lines": [
+        "step DOWN",
+        "step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "Route34IlexForestGate_MapScripts": {
+      "label_refs": [
+        "Route34IsForestRestlessCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IsForestRestlessCallback": {
+      "label_refs": [
+        "Route34IsForestRestlessCallback.Normal"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IsForestRestlessCallback.Normal": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IlexForestGateCelebiEvent": {
+      "label_refs": [
+        "Route34IlexForestGateCelebiEvent.skip"
+      ],
+      "text_refs": [
+        "Route34IlexForestGateTeacher_ForestIsRestless"
+      ],
+      "movement_refs": [
+        "Route34IlexForestGateTeacherBlocksPlayerMovement",
+        "Route34IlexForestGateTeacherReturnsMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IlexForestGateCelebiEvent.skip": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IlexForestGateTeacherScript": {
+      "label_refs": [
+        "Route34IlexForestGateTeacherScript.ForestIsRestless",
+        "Route34IlexForestGateTeacherScript.GotSweetScent",
+        "Route34IlexForestGateTeacherScript.NoRoom"
+      ],
+      "text_refs": [
+        "Route34IlexForestGateTeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IlexForestGateTeacherScript.GotSweetScent": {
+      "label_refs": [
+        "Route34IlexForestGateTeacherScript.NoRoom"
+      ],
+      "text_refs": [
+        "Route34IlexForestGateTeacher_GotSweetScent"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IlexForestGateTeacherScript.NoRoom": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IlexForestGateTeacherScript.ForestIsRestless": {
+      "label_refs": [],
+      "text_refs": [
+        "Route34IlexForestGateTeacher_ForestIsRestless"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IlexForestGateButterfreeScript": {
+      "label_refs": [],
+      "text_refs": [
+        "Route34IlexForestGateButterfreeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IlexForestGateLassScript": {
+      "label_refs": [],
+      "text_refs": [
+        "Route34IlexForestGateLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route34IlexForestGate_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 1,
+    "callbacks": 1,
+    "warp_events": 4,
+    "coord_events": 1,
+    "bg_events": 0,
+    "object_events": 4
+  }
+}

@@ -1,0 +1,1231 @@
+{
+  "crystal_map": "UnionCaveB2F",
+  "map_id": "UNION_CAVE_B2F",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 39,
+  "tileset": "TILESET_CAVE",
+  "environment": "CAVE",
+  "landmark": "LANDMARK_UNION_CAVE",
+  "music": "MUSIC_UNION_CAVE",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_NITE",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 10,
+  "height_blocks": 18,
+  "border_block": "09",
+  "blk_path": "maps/UnionCaveB2F.blk",
+  "source_asm": "maps/UnionCaveB2F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "UnionCaveB2FLaprasCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 5,
+        "y": 3,
+        "dest_map": "UNION_CAVE_B1F",
+        "dest_warp_id": 5
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 15,
+        "y": 19,
+        "sprite": "SPRITE_ROCKER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerCooltrainermNick",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 13,
+        "sprite": "SPRITE_COOLTRAINER_F",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_FAST",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerCooltrainerfGwen",
+        "flag": -1
+      },
+      {
+        "x": 3,
+        "y": 30,
+        "sprite": "SPRITE_COOLTRAINER_F",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerCooltrainerfEmma",
+        "flag": -1
+      },
+      {
+        "x": 16,
+        "y": 2,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "UnionCaveB2FElixer",
+        "flag": "EVENT_UNION_CAVE_B2F_ELIXER"
+      },
+      {
+        "x": 12,
+        "y": 19,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "UnionCaveB2FHyperPotion",
+        "flag": "EVENT_UNION_CAVE_B2F_HYPER_POTION"
+      },
+      {
+        "x": 11,
+        "y": 31,
+        "sprite": "SPRITE_SURF",
+        "movement": "SPRITEMOVEDATA_SWIM_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "UnionCaveLapras",
+        "flag": "EVENT_UNION_CAVE_B2F_LAPRAS"
+      }
+    ]
+  },
+  "object_consts": [
+    "UNIONCAVEB2F_ROCKER",
+    "UNIONCAVEB2F_COOLTRAINER_F1",
+    "UNIONCAVEB2F_COOLTRAINER_F2",
+    "UNIONCAVEB2F_POKE_BALL1",
+    "UNIONCAVEB2F_POKE_BALL2",
+    "UNIONCAVEB2F_LAPRAS"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "UnionCaveB2F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks",
+        "callback MAPCALLBACK_OBJECTS, UnionCaveB2FLaprasCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "UnionCaveB2FLaprasCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, UnionCaveB2FLaprasCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "UnionCaveB2FLaprasCallback",
+      "label_refs": [
+        "UnionCaveB2FLaprasCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UnionCaveB2FLaprasCallback": {
+      "raw_lines": [
+        "checkflag ENGINE_UNION_CAVE_LAPRAS",
+        "iftrue .NoAppear",
+        "readvar VAR_WEEKDAY",
+        "ifequal FRIDAY, .Appear"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_UNION_CAVE_LAPRAS"
+          ],
+          "raw": "checkflag ENGINE_UNION_CAVE_LAPRAS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "UnionCaveB2FLaprasCallback.NoAppear"
+          ],
+          "raw": "iftrue .NoAppear"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "FRIDAY",
+            "UnionCaveB2FLaprasCallback.Appear"
+          ],
+          "raw": "ifequal FRIDAY, .Appear"
+        }
+      ],
+      "first_command": "checkflag",
+      "fallthrough_label": "UnionCaveB2FLaprasCallback.NoAppear",
+      "label_refs": [
+        "UnionCaveB2FLaprasCallback.Appear",
+        "UnionCaveB2FLaprasCallback.NoAppear"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UnionCaveB2FLaprasCallback.NoAppear": {
+      "raw_lines": [
+        "disappear UNIONCAVEB2F_LAPRAS",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "disappear",
+          "args": [
+            "UNIONCAVEB2F_LAPRAS"
+          ],
+          "raw": "disappear UNIONCAVEB2F_LAPRAS"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "disappear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UnionCaveB2FLaprasCallback.Appear": {
+      "raw_lines": [
+        "appear UNIONCAVEB2F_LAPRAS",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "appear",
+          "args": [
+            "UNIONCAVEB2F_LAPRAS"
+          ],
+          "raw": "appear UNIONCAVEB2F_LAPRAS"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "appear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UnionCaveLapras": {
+      "raw_lines": [
+        "faceplayer",
+        "cry LAPRAS",
+        "loadwildmon LAPRAS, 20",
+        "startbattle",
+        "disappear UNIONCAVEB2F_LAPRAS",
+        "setflag ENGINE_UNION_CAVE_LAPRAS",
+        "reloadmapafterbattle",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "cry",
+          "args": [
+            "LAPRAS"
+          ],
+          "raw": "cry LAPRAS"
+        },
+        {
+          "command": "loadwildmon",
+          "args": [
+            "LAPRAS",
+            "20"
+          ],
+          "raw": "loadwildmon LAPRAS, 20"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "UNIONCAVEB2F_LAPRAS"
+          ],
+          "raw": "disappear UNIONCAVEB2F_LAPRAS"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_UNION_CAVE_LAPRAS"
+          ],
+          "raw": "setflag ENGINE_UNION_CAVE_LAPRAS"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermNick": {
+      "raw_lines": [
+        "trainer COOLTRAINERM, NICK, EVENT_BEAT_COOLTRAINERM_NICK, CooltrainermNickSeenText, CooltrainermNickBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "COOLTRAINERM",
+            "NICK",
+            "EVENT_BEAT_COOLTRAINERM_NICK",
+            "CooltrainermNickSeenText",
+            "CooltrainermNickBeatenText",
+            "0",
+            "TrainerCooltrainermNick.Script"
+          ],
+          "raw": "trainer COOLTRAINERM, NICK, EVENT_BEAT_COOLTRAINERM_NICK, CooltrainermNickSeenText, CooltrainermNickBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerCooltrainermNick.Script",
+      "label_refs": [
+        "TrainerCooltrainermNick.Script"
+      ],
+      "text_refs": [
+        "CooltrainermNickBeatenText",
+        "CooltrainermNickSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermNick.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext CooltrainermNickAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CooltrainermNickAfterBattleText"
+          ],
+          "raw": "writetext CooltrainermNickAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainermNickAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfGwen": {
+      "raw_lines": [
+        "trainer COOLTRAINERF, GWEN, EVENT_BEAT_COOLTRAINERF_GWEN, CooltrainerfGwenSeenText, CooltrainerfGwenBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "COOLTRAINERF",
+            "GWEN",
+            "EVENT_BEAT_COOLTRAINERF_GWEN",
+            "CooltrainerfGwenSeenText",
+            "CooltrainerfGwenBeatenText",
+            "0",
+            "TrainerCooltrainerfGwen.Script"
+          ],
+          "raw": "trainer COOLTRAINERF, GWEN, EVENT_BEAT_COOLTRAINERF_GWEN, CooltrainerfGwenSeenText, CooltrainerfGwenBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerCooltrainerfGwen.Script",
+      "label_refs": [
+        "TrainerCooltrainerfGwen.Script"
+      ],
+      "text_refs": [
+        "CooltrainerfGwenBeatenText",
+        "CooltrainerfGwenSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfGwen.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext CooltrainerfGwenAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CooltrainerfGwenAfterBattleText"
+          ],
+          "raw": "writetext CooltrainerfGwenAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainerfGwenAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfEmma": {
+      "raw_lines": [
+        "trainer COOLTRAINERF, EMMA, EVENT_BEAT_COOLTRAINERF_EMMA, CooltrainerfEmmaSeenText, CooltrainerfEmmaBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "COOLTRAINERF",
+            "EMMA",
+            "EVENT_BEAT_COOLTRAINERF_EMMA",
+            "CooltrainerfEmmaSeenText",
+            "CooltrainerfEmmaBeatenText",
+            "0",
+            "TrainerCooltrainerfEmma.Script"
+          ],
+          "raw": "trainer COOLTRAINERF, EMMA, EVENT_BEAT_COOLTRAINERF_EMMA, CooltrainerfEmmaSeenText, CooltrainerfEmmaBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerCooltrainerfEmma.Script",
+      "label_refs": [
+        "TrainerCooltrainerfEmma.Script"
+      ],
+      "text_refs": [
+        "CooltrainerfEmmaBeatenText",
+        "CooltrainerfEmmaSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfEmma.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext CooltrainerfEmmaAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CooltrainerfEmmaAfterBattleText"
+          ],
+          "raw": "writetext CooltrainerfEmmaAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainerfEmmaAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UnionCaveB2FElixer": {
+      "raw_lines": [
+        "itemball ELIXER"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "ELIXER"
+          ],
+          "raw": "itemball ELIXER"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "UnionCaveB2FHyperPotion",
+      "label_refs": [
+        "UnionCaveB2FHyperPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UnionCaveB2FHyperPotion": {
+      "raw_lines": [
+        "itemball HYPER_POTION"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "HYPER_POTION"
+          ],
+          "raw": "itemball HYPER_POTION"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "UnionCaveB2F_MapEvents",
+      "label_refs": [
+        "UnionCaveB2F_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UnionCaveB2F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  5,  3, UNION_CAVE_B1F, 5",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event 15, 19, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermNick, -1",
+        "object_event  5, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfGwen, -1",
+        "object_event  3, 30, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfEmma, -1",
+        "object_event 16,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB2FElixer, EVENT_UNION_CAVE_B2F_ELIXER",
+        "object_event 12, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB2FHyperPotion, EVENT_UNION_CAVE_B2F_HYPER_POTION",
+        "object_event 11, 31, SPRITE_SURF, SPRITEMOVEDATA_SWIM_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, UnionCaveLapras, EVENT_UNION_CAVE_B2F_LAPRAS"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "3",
+            "UNION_CAVE_B1F",
+            "5"
+          ],
+          "raw": "warp_event  5,  3, UNION_CAVE_B1F, 5"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "15",
+            "19",
+            "SPRITE_ROCKER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerCooltrainermNick",
+            "-1"
+          ],
+          "raw": "object_event 15, 19, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermNick, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "13",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_SPINRANDOM_FAST",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerCooltrainerfGwen",
+            "-1"
+          ],
+          "raw": "object_event  5, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfGwen, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "30",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerCooltrainerfEmma",
+            "-1"
+          ],
+          "raw": "object_event  3, 30, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfEmma, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "16",
+            "2",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "UnionCaveB2FElixer",
+            "EVENT_UNION_CAVE_B2F_ELIXER"
+          ],
+          "raw": "object_event 16,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB2FElixer, EVENT_UNION_CAVE_B2F_ELIXER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "12",
+            "19",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "UnionCaveB2FHyperPotion",
+            "EVENT_UNION_CAVE_B2F_HYPER_POTION"
+          ],
+          "raw": "object_event 12, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB2FHyperPotion, EVENT_UNION_CAVE_B2F_HYPER_POTION"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "11",
+            "31",
+            "SPRITE_SURF",
+            "SPRITEMOVEDATA_SWIM_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "UnionCaveLapras",
+            "EVENT_UNION_CAVE_B2F_LAPRAS"
+          ],
+          "raw": "object_event 11, 31, SPRITE_SURF, SPRITEMOVEDATA_SWIM_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, UnionCaveLapras, EVENT_UNION_CAVE_B2F_LAPRAS"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "CooltrainermNickSeenText": {
+      "raw_lines": [
+        "text \"There are two\"",
+        "line \"kinds of people.\"",
+        "para \"Those who have\"",
+        "line \"style, and those\"",
+        "cont \"who don't.\"",
+        "para \"What kind of\"",
+        "line \"person are you?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "There are two"
+        },
+        {
+          "command": "line",
+          "value": "kinds of people."
+        },
+        {
+          "command": "para",
+          "value": "Those who have"
+        },
+        {
+          "command": "line",
+          "value": "style, and those"
+        },
+        {
+          "command": "cont",
+          "value": "who don't."
+        },
+        {
+          "command": "para",
+          "value": "What kind of"
+        },
+        {
+          "command": "line",
+          "value": "person are you?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermNickBeatenText": {
+      "raw_lines": [
+        "text \"You've got\"",
+        "line \"dazzling style!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You've got"
+        },
+        {
+          "command": "line",
+          "value": "dazzling style!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermNickAfterBattleText": {
+      "raw_lines": [
+        "text \"Your #MON style\"",
+        "line \"is stunning and\"",
+        "cont \"colorful, I admit.\"",
+        "para \"You'll just keep\"",
+        "line \"getting better!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Your #MON style"
+        },
+        {
+          "command": "line",
+          "value": "is stunning and"
+        },
+        {
+          "command": "cont",
+          "value": "colorful, I admit."
+        },
+        {
+          "command": "para",
+          "value": "You'll just keep"
+        },
+        {
+          "command": "line",
+          "value": "getting better!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfGwenSeenText": {
+      "raw_lines": [
+        "text \"I'm in training.\"",
+        "line \"Care for a round?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm in training."
+        },
+        {
+          "command": "line",
+          "value": "Care for a round?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfGwenBeatenText": {
+      "raw_lines": [
+        "text \"Aww, no! You're\"",
+        "line \"too good for me.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Aww, no! You're"
+        },
+        {
+          "command": "line",
+          "value": "too good for me."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfGwenAfterBattleText": {
+      "raw_lines": [
+        "text \"I'm going to train\"",
+        "line \"by myself until I\"",
+        "cont \"improve.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm going to train"
+        },
+        {
+          "command": "line",
+          "value": "by myself until I"
+        },
+        {
+          "command": "cont",
+          "value": "improve."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfEmmaSeenText": {
+      "raw_lines": [
+        "text \"If the #MON I\"",
+        "line \"liked were there,\"",
+        "cont \"I'd go anywhere.\"",
+        "para \"That's what a real\"",
+        "line \"trainer does.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If the #MON I"
+        },
+        {
+          "command": "line",
+          "value": "liked were there,"
+        },
+        {
+          "command": "cont",
+          "value": "I'd go anywhere."
+        },
+        {
+          "command": "para",
+          "value": "That's what a real"
+        },
+        {
+          "command": "line",
+          "value": "trainer does."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfEmmaBeatenText": {
+      "raw_lines": [
+        "text \"I'd rather pet my\"",
+        "line \"babies than this!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'd rather pet my"
+        },
+        {
+          "command": "line",
+          "value": "babies than this!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfEmmaAfterBattleText": {
+      "raw_lines": [
+        "text \"Just once a week,\"",
+        "line \"a #MON comes to\"",
+        "cont \"the water's edge.\"",
+        "para \"I wanted to see\"",
+        "line \"that #MON\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Just once a week,"
+        },
+        {
+          "command": "line",
+          "value": "a #MON comes to"
+        },
+        {
+          "command": "cont",
+          "value": "the water's edge."
+        },
+        {
+          "command": "para",
+          "value": "I wanted to see"
+        },
+        {
+          "command": "line",
+          "value": "that #MON\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "UnionCaveB2F_MapScripts": {
+      "label_refs": [
+        "UnionCaveB2FLaprasCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UnionCaveB2FLaprasCallback": {
+      "label_refs": [
+        "UnionCaveB2FLaprasCallback.Appear",
+        "UnionCaveB2FLaprasCallback.NoAppear"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UnionCaveB2FLaprasCallback.NoAppear": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UnionCaveB2FLaprasCallback.Appear": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UnionCaveLapras": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermNick": {
+      "label_refs": [
+        "TrainerCooltrainermNick.Script"
+      ],
+      "text_refs": [
+        "CooltrainermNickBeatenText",
+        "CooltrainermNickSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermNick.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainermNickAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfGwen": {
+      "label_refs": [
+        "TrainerCooltrainerfGwen.Script"
+      ],
+      "text_refs": [
+        "CooltrainerfGwenBeatenText",
+        "CooltrainerfGwenSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfGwen.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainerfGwenAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfEmma": {
+      "label_refs": [
+        "TrainerCooltrainerfEmma.Script"
+      ],
+      "text_refs": [
+        "CooltrainerfEmmaBeatenText",
+        "CooltrainerfEmmaSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfEmma.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainerfEmmaAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UnionCaveB2FElixer": {
+      "label_refs": [
+        "UnionCaveB2FHyperPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UnionCaveB2FHyperPotion": {
+      "label_refs": [
+        "UnionCaveB2F_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UnionCaveB2F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "day_time"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 1,
+    "warp_events": 1,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 6
+  }
+}

@@ -67,6 +67,12 @@ struct MultiNameFlyDest
     u16 flag;
 };
 
+struct RegionMapTownMetadata
+{
+    mapsec_u16_t mapSecId;
+    u16 visitedFlag;
+};
+
 static EWRAM_DATA struct RegionMap *sRegionMap = NULL;
 
 static EWRAM_DATA struct {
@@ -91,6 +97,7 @@ static void RegionMap_SetBG2XAndBG2Y(s16 x, s16 y);
 static void InitMapBasedOnPlayerLocation(void);
 static void RegionMap_InitializeStateBasedOnSSTidalLocation(void);
 static u8 GetMapsecType(mapsec_u16_t mapSecId);
+static const struct RegionMapTownMetadata *GetRegionMapTownMetadata(mapsec_u16_t mapSecId);
 static mapsec_u16_t CorrectSpecialMapSecId_Internal(mapsec_u16_t mapSecId);
 static mapsec_u16_t GetTerraOrMarineCaveMapSecId(void);
 static void GetMarineCaveCoords(u16 *x, u16 *y);
@@ -339,6 +346,21 @@ static const u8 sMapHealLocations[][3] =
     [MAPSEC_ROUTE_132] = {MAP_GROUP(MAP_ROUTE132), MAP_NUM(MAP_ROUTE132), HEAL_LOCATION_NONE},
     [MAPSEC_ROUTE_133] = {MAP_GROUP(MAP_ROUTE133), MAP_NUM(MAP_ROUTE133), HEAL_LOCATION_NONE},
     [MAPSEC_ROUTE_134] = {MAP_GROUP(MAP_ROUTE134), MAP_NUM(MAP_ROUTE134), HEAL_LOCATION_NONE},
+};
+
+static const struct RegionMapTownMetadata sRegionMapTownMetadata[] =
+{
+    {MAPSEC_NEW_BARK_TOWN,    0},
+    {MAPSEC_CHERRYGROVE_CITY, 0},
+    {MAPSEC_VIOLET_CITY,      0},
+    {MAPSEC_AZALEA_TOWN,      0},
+    {MAPSEC_GOLDENROD_CITY,   0},
+    {MAPSEC_ECRUTEAK_CITY,    0},
+    {MAPSEC_OLIVINE_CITY,     0},
+    {MAPSEC_CIANWOOD_CITY,    0},
+    {MAPSEC_MAHOGANY_TOWN,    0},
+    {MAPSEC_BLACKTHORN_CITY,  0},
+    {MAPSEC_NONE,             0},
 };
 
 static const u8 *const sEverGrandeCityNames[] =
@@ -1175,44 +1197,19 @@ static void RegionMap_InitializeStateBasedOnSSTidalLocation(void)
 
 static u8 GetMapsecType(mapsec_u16_t mapSecId)
 {
+    const struct RegionMapTownMetadata *town = GetRegionMapTownMetadata(mapSecId);
+
+    if (town != NULL)
+    {
+        if (town->visitedFlag != 0 && FlagGet(town->visitedFlag))
+            return MAPSECTYPE_CITY_CANFLY;
+        return MAPSECTYPE_CITY_CANTFLY;
+    }
+
     switch (mapSecId)
     {
     case MAPSEC_NONE:
         return MAPSECTYPE_NONE;
-    case MAPSEC_LITTLEROOT_TOWN:
-        return FlagGet(FLAG_VISITED_LITTLEROOT_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_NEW_BARK_TOWN:
-        return MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_OLDALE_TOWN:
-        return FlagGet(FLAG_VISITED_OLDALE_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_DEWFORD_TOWN:
-        return FlagGet(FLAG_VISITED_DEWFORD_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_LAVARIDGE_TOWN:
-        return FlagGet(FLAG_VISITED_LAVARIDGE_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_FALLARBOR_TOWN:
-        return FlagGet(FLAG_VISITED_FALLARBOR_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_VERDANTURF_TOWN:
-        return FlagGet(FLAG_VISITED_VERDANTURF_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_PACIFIDLOG_TOWN:
-        return FlagGet(FLAG_VISITED_PACIFIDLOG_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_PETALBURG_CITY:
-        return FlagGet(FLAG_VISITED_PETALBURG_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_SLATEPORT_CITY:
-        return FlagGet(FLAG_VISITED_SLATEPORT_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_MAUVILLE_CITY:
-        return FlagGet(FLAG_VISITED_MAUVILLE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_RUSTBORO_CITY:
-        return FlagGet(FLAG_VISITED_RUSTBORO_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_FORTREE_CITY:
-        return FlagGet(FLAG_VISITED_FORTREE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_LILYCOVE_CITY:
-        return FlagGet(FLAG_VISITED_LILYCOVE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_MOSSDEEP_CITY:
-        return FlagGet(FLAG_VISITED_MOSSDEEP_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_SOOTOPOLIS_CITY:
-        return FlagGet(FLAG_VISITED_SOOTOPOLIS_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_EVER_GRANDE_CITY:
-        return FlagGet(FLAG_VISITED_EVER_GRANDE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
     case MAPSEC_BATTLE_FRONTIER:
         return FlagGet(FLAG_LANDMARK_BATTLE_FRONTIER) ? MAPSECTYPE_BATTLE_FRONTIER : MAPSECTYPE_NONE;
     case MAPSEC_SOUTHERN_ISLAND:
@@ -1220,6 +1217,19 @@ static u8 GetMapsecType(mapsec_u16_t mapSecId)
     default:
         return MAPSECTYPE_ROUTE;
     }
+}
+
+static const struct RegionMapTownMetadata *GetRegionMapTownMetadata(mapsec_u16_t mapSecId)
+{
+    u32 i;
+
+    for (i = 0; sRegionMapTownMetadata[i].mapSecId != MAPSEC_NONE; i++)
+    {
+        if (sRegionMapTownMetadata[i].mapSecId == mapSecId)
+            return &sRegionMapTownMetadata[i];
+    }
+
+    return NULL;
 }
 
 mapsec_u16_t GetRegionMapSecIdAt(u16 x, u16 y)
@@ -1841,7 +1851,6 @@ static void LoadFlyDestIcons(void)
 
 static void CreateFlyDestIcons(void)
 {
-    u16 canFlyFlag;
     mapsec_u16_t mapSecId;
     u16 x;
     u16 y;
@@ -1849,10 +1858,13 @@ static void CreateFlyDestIcons(void)
     u16 height;
     u16 shape;
     u8 spriteId;
+    u32 i;
 
-    canFlyFlag = FLAG_VISITED_LITTLEROOT_TOWN;
-    for (mapSecId = MAPSEC_LITTLEROOT_TOWN; mapSecId <= MAPSEC_EVER_GRANDE_CITY; mapSecId++)
+    for (i = 0; sRegionMapTownMetadata[i].mapSecId != MAPSEC_NONE; i++)
     {
+        bool32 canFly;
+
+        mapSecId = sRegionMapTownMetadata[i].mapSecId;
         GetMapSecDimensions(mapSecId, &x, &y, &width, &height);
         x = (x + MAPCURSOR_X_MIN) * 8 + 4;
         y = (y + MAPCURSOR_Y_MIN) * 8 + 4;
@@ -1869,7 +1881,8 @@ static void CreateFlyDestIcons(void)
         {
             gSprites[spriteId].oam.shape = shape;
 
-            if (FlagGet(canFlyFlag))
+            canFly = sRegionMapTownMetadata[i].visitedFlag != 0 && FlagGet(sRegionMapTownMetadata[i].visitedFlag);
+            if (canFly)
                 gSprites[spriteId].callback = SpriteCB_FlyDestIcon;
             else
                 shape += 3;
@@ -1877,7 +1890,6 @@ static void CreateFlyDestIcons(void)
             StartSpriteAnim(&gSprites[spriteId], shape);
             gSprites[spriteId].sIconMapSec = mapSecId;
         }
-        canFlyFlag++;
     }
 }
 

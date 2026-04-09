@@ -1,0 +1,2558 @@
+{
+  "crystal_map": "BlackthornCity",
+  "map_id": "BLACKTHORN_CITY",
+  "group": "BLACKTHORN",
+  "group_index": 5,
+  "map_index": 10,
+  "tileset": "TILESET_JOHTO",
+  "environment": "TOWN",
+  "landmark": "LANDMARK_BLACKTHORN_CITY",
+  "music": "MUSIC_AZALEA_TOWN",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_AUTO",
+  "fishgroup": "FISHGROUP_POND",
+  "width_blocks": 20,
+  "height_blocks": 18,
+  "border_block": "71",
+  "blk_path": "maps/BlackthornCity.blk",
+  "source_asm": "maps/BlackthornCity.asm",
+  "connections": [
+    {
+      "direction": "south",
+      "map": "Route45",
+      "target_map_id": "ROUTE_45",
+      "offset": 0
+    },
+    {
+      "direction": "west",
+      "map": "Route44",
+      "target_map_id": "ROUTE_44",
+      "offset": 9
+    }
+  ],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "BlackthornCityFlypointCallback"
+      },
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "BlackthornCitySantosCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 18,
+        "y": 11,
+        "dest_map": "BLACKTHORN_GYM_1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 13,
+        "y": 21,
+        "dest_map": "BLACKTHORN_DRAGON_SPEECH_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 29,
+        "y": 23,
+        "dest_map": "BLACKTHORN_EMYS_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 15,
+        "y": 29,
+        "dest_map": "BLACKTHORN_MART",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 21,
+        "y": 29,
+        "dest_map": "BLACKTHORN_POKECENTER_1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 9,
+        "y": 31,
+        "dest_map": "MOVE_DELETERS_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 36,
+        "y": 9,
+        "dest_map": "ICE_PATH_1F",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 20,
+        "y": 1,
+        "dest_map": "DRAGONS_DEN_1F",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 34,
+        "y": 24,
+        "kind": "BGEVENT_READ",
+        "script": "BlackthornCitySign"
+      },
+      {
+        "x": 17,
+        "y": 13,
+        "kind": "BGEVENT_READ",
+        "script": "BlackthornGymSign"
+      },
+      {
+        "x": 7,
+        "y": 31,
+        "kind": "BGEVENT_READ",
+        "script": "MoveDeletersHouseSign"
+      },
+      {
+        "x": 21,
+        "y": 3,
+        "kind": "BGEVENT_READ",
+        "script": "DragonDensSign"
+      },
+      {
+        "x": 5,
+        "y": 25,
+        "kind": "BGEVENT_READ",
+        "script": "BlackthornCityTrainerTips"
+      },
+      {
+        "x": 16,
+        "y": 29,
+        "kind": "BGEVENT_READ",
+        "script": "BlackthornCityMartSign"
+      },
+      {
+        "x": 22,
+        "y": 29,
+        "kind": "BGEVENT_READ",
+        "script": "BlackthornCityPokecenterSign"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 18,
+        "y": 12,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornSuperNerdScript",
+        "flag": "EVENT_BLACKTHORN_CITY_SUPER_NERD_BLOCKS_GYM"
+      },
+      {
+        "x": 19,
+        "y": 12,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornSuperNerdScript",
+        "flag": "EVENT_BLACKTHORN_CITY_SUPER_NERD_DOES_NOT_BLOCK_GYM"
+      },
+      {
+        "x": 20,
+        "y": 2,
+        "sprite": "SPRITE_GRAMPS",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornGramps1Script",
+        "flag": "EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN"
+      },
+      {
+        "x": 21,
+        "y": 2,
+        "sprite": "SPRITE_GRAMPS",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornGramps2Script",
+        "flag": "EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN"
+      },
+      {
+        "x": 24,
+        "y": 31,
+        "sprite": "SPRITE_BLACK_BELT",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornBlackBeltScript",
+        "flag": -1
+      },
+      {
+        "x": 9,
+        "y": 25,
+        "sprite": "SPRITE_COOLTRAINER_F",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 2,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornCooltrainerF1Script",
+        "flag": -1
+      },
+      {
+        "x": 13,
+        "y": 15,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornYoungsterScript",
+        "flag": -1
+      },
+      {
+        "x": 22,
+        "y": 20,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "SantosScript",
+        "flag": "EVENT_BLACKTHORN_CITY_SANTOS_OF_SATURDAY"
+      },
+      {
+        "x": 35,
+        "y": 19,
+        "sprite": "SPRITE_COOLTRAINER_F",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornCooltrainerF2Script",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "BLACKTHORNCITY_SUPER_NERD1",
+    "BLACKTHORNCITY_SUPER_NERD2",
+    "BLACKTHORNCITY_GRAMPS1",
+    "BLACKTHORNCITY_GRAMPS2",
+    "BLACKTHORNCITY_BLACK_BELT",
+    "BLACKTHORNCITY_COOLTRAINER_F1",
+    "BLACKTHORNCITY_YOUNGSTER1",
+    "BLACKTHORNCITY_SANTOS",
+    "BLACKTHORNCITY_COOLTRAINER_F2"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "BlackthornCity_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, BlackthornCityFlypointCallback",
+        "callback MAPCALLBACK_OBJECTS, BlackthornCitySantosCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "BlackthornCityFlypointCallback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, BlackthornCityFlypointCallback"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "BlackthornCitySantosCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, BlackthornCitySantosCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "BlackthornCityFlypointCallback",
+      "label_refs": [
+        "BlackthornCityFlypointCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornCityFlypointCallback": {
+      "raw_lines": [
+        "setflag ENGINE_FLYPOINT_BLACKTHORN",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_FLYPOINT_BLACKTHORN"
+          ],
+          "raw": "setflag ENGINE_FLYPOINT_BLACKTHORN"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "setflag",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornCitySantosCallback": {
+      "raw_lines": [
+        "readvar VAR_WEEKDAY",
+        "ifequal SATURDAY, .SantosAppears",
+        "disappear BLACKTHORNCITY_SANTOS",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SATURDAY",
+            "BlackthornCitySantosCallback.SantosAppears"
+          ],
+          "raw": "ifequal SATURDAY, .SantosAppears"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "BLACKTHORNCITY_SANTOS"
+          ],
+          "raw": "disappear BLACKTHORNCITY_SANTOS"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "readvar",
+      "label_refs": [
+        "BlackthornCitySantosCallback.SantosAppears"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornCitySantosCallback.SantosAppears": {
+      "raw_lines": [
+        "appear BLACKTHORNCITY_SANTOS",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "appear",
+          "args": [
+            "BLACKTHORNCITY_SANTOS"
+          ],
+          "raw": "appear BLACKTHORNCITY_SANTOS"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "appear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornSuperNerdScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_BEAT_CLAIR",
+        "iftrue .BeatClair",
+        "checkevent EVENT_CLEARED_RADIO_TOWER",
+        "iftrue .ClearedRadioTower",
+        "writetext Text_ClairIsOut",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_CLAIR"
+          ],
+          "raw": "checkevent EVENT_BEAT_CLAIR"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "BlackthornSuperNerdScript.BeatClair"
+          ],
+          "raw": "iftrue .BeatClair"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_RADIO_TOWER"
+          ],
+          "raw": "checkevent EVENT_CLEARED_RADIO_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "BlackthornSuperNerdScript.ClearedRadioTower"
+          ],
+          "raw": "iftrue .ClearedRadioTower"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_ClairIsOut"
+          ],
+          "raw": "writetext Text_ClairIsOut"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "BlackthornSuperNerdScript.BeatClair",
+        "BlackthornSuperNerdScript.ClearedRadioTower"
+      ],
+      "text_refs": [
+        "Text_ClairIsOut"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornSuperNerdScript.ClearedRadioTower": {
+      "raw_lines": [
+        "writetext Text_ClairIsIn",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Text_ClairIsIn"
+          ],
+          "raw": "writetext Text_ClairIsIn"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Text_ClairIsIn"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornSuperNerdScript.BeatClair": {
+      "raw_lines": [
+        "writetext Text_ClairIsBeaten",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Text_ClairIsBeaten"
+          ],
+          "raw": "writetext Text_ClairIsBeaten"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Text_ClairIsBeaten"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGramps1Script": {
+      "raw_lines": [
+        "jumptextfaceplayer BlackthornGrampsRefusesEntryText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "BlackthornGrampsRefusesEntryText"
+          ],
+          "raw": "jumptextfaceplayer BlackthornGrampsRefusesEntryText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornGrampsRefusesEntryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGramps2Script": {
+      "raw_lines": [
+        "jumptextfaceplayer BlackthornGrampsGrantsEntryText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "BlackthornGrampsGrantsEntryText"
+          ],
+          "raw": "jumptextfaceplayer BlackthornGrampsGrantsEntryText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornGrampsGrantsEntryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornBlackBeltScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_CLEARED_RADIO_TOWER",
+        "iftrue .ClearedRadioTower",
+        "writetext BlackBeltText_WeirdRadio",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_RADIO_TOWER"
+          ],
+          "raw": "checkevent EVENT_CLEARED_RADIO_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "BlackthornBlackBeltScript.ClearedRadioTower"
+          ],
+          "raw": "iftrue .ClearedRadioTower"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BlackBeltText_WeirdRadio"
+          ],
+          "raw": "writetext BlackBeltText_WeirdRadio"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "BlackthornBlackBeltScript.ClearedRadioTower"
+      ],
+      "text_refs": [
+        "BlackBeltText_WeirdRadio"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornBlackBeltScript.ClearedRadioTower": {
+      "raw_lines": [
+        "writetext BlackBeltText_VoicesInMyHead",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BlackBeltText_VoicesInMyHead"
+          ],
+          "raw": "writetext BlackBeltText_VoicesInMyHead"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BlackBeltText_VoicesInMyHead"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornCooltrainerF1Script": {
+      "raw_lines": [
+        "jumptextfaceplayer BlackthornCooltrainerF1Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "BlackthornCooltrainerF1Text"
+          ],
+          "raw": "jumptextfaceplayer BlackthornCooltrainerF1Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornCooltrainerF1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornYoungsterScript": {
+      "raw_lines": [
+        "jumptextfaceplayer BlackthornYoungsterText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "BlackthornYoungsterText"
+          ],
+          "raw": "jumptextfaceplayer BlackthornYoungsterText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornCooltrainerF2Script": {
+      "raw_lines": [
+        "jumptextfaceplayer BlackthornCooltrainerF2Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "BlackthornCooltrainerF2Text"
+          ],
+          "raw": "jumptextfaceplayer BlackthornCooltrainerF2Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornCooltrainerF2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SantosScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_SPELL_TAG_FROM_SANTOS",
+        "iftrue .Saturday",
+        "readvar VAR_WEEKDAY",
+        "ifnotequal SATURDAY, .NotSaturday",
+        "checkevent EVENT_MET_SANTOS_OF_SATURDAY",
+        "iftrue .MetSantos",
+        "writetext MeetSantosText",
+        "promptbutton",
+        "setevent EVENT_MET_SANTOS_OF_SATURDAY"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_SPELL_TAG_FROM_SANTOS"
+          ],
+          "raw": "checkevent EVENT_GOT_SPELL_TAG_FROM_SANTOS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "SantosScript.Saturday"
+          ],
+          "raw": "iftrue .Saturday"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifnotequal",
+          "args": [
+            "SATURDAY",
+            "SantosScript.NotSaturday"
+          ],
+          "raw": "ifnotequal SATURDAY, .NotSaturday"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_MET_SANTOS_OF_SATURDAY"
+          ],
+          "raw": "checkevent EVENT_MET_SANTOS_OF_SATURDAY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "SantosScript.MetSantos"
+          ],
+          "raw": "iftrue .MetSantos"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MeetSantosText"
+          ],
+          "raw": "writetext MeetSantosText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_MET_SANTOS_OF_SATURDAY"
+          ],
+          "raw": "setevent EVENT_MET_SANTOS_OF_SATURDAY"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "SantosScript.MetSantos",
+      "label_refs": [
+        "SantosScript.MetSantos",
+        "SantosScript.NotSaturday",
+        "SantosScript.Saturday"
+      ],
+      "text_refs": [
+        "MeetSantosText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SantosScript.MetSantos": {
+      "raw_lines": [
+        "writetext SantosGivesGiftText",
+        "promptbutton",
+        "verbosegiveitem SPELL_TAG",
+        "iffalse .Done",
+        "setevent EVENT_GOT_SPELL_TAG_FROM_SANTOS",
+        "writetext SantosGaveGiftText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "SantosGivesGiftText"
+          ],
+          "raw": "writetext SantosGivesGiftText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "SPELL_TAG"
+          ],
+          "raw": "verbosegiveitem SPELL_TAG"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "SantosScript.Done"
+          ],
+          "raw": "iffalse .Done"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_SPELL_TAG_FROM_SANTOS"
+          ],
+          "raw": "setevent EVENT_GOT_SPELL_TAG_FROM_SANTOS"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SantosGaveGiftText"
+          ],
+          "raw": "writetext SantosGaveGiftText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "SantosScript.Done"
+      ],
+      "text_refs": [
+        "SantosGaveGiftText",
+        "SantosGivesGiftText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SantosScript.Saturday": {
+      "raw_lines": [
+        "writetext SantosSaturdayText",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "SantosSaturdayText"
+          ],
+          "raw": "writetext SantosSaturdayText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "SantosScript.Done",
+      "label_refs": [
+        "SantosScript.Done"
+      ],
+      "text_refs": [
+        "SantosSaturdayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SantosScript.Done": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SantosScript.NotSaturday": {
+      "raw_lines": [
+        "writetext SantosNotSaturdayText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "SantosNotSaturdayText"
+          ],
+          "raw": "writetext SantosNotSaturdayText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "SantosNotSaturdayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornCitySign": {
+      "raw_lines": [
+        "jumptext BlackthornCitySignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "BlackthornCitySignText"
+          ],
+          "raw": "jumptext BlackthornCitySignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornCitySignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGymSign": {
+      "raw_lines": [
+        "jumptext BlackthornGymSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "BlackthornGymSignText"
+          ],
+          "raw": "jumptext BlackthornGymSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornGymSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveDeletersHouseSign": {
+      "raw_lines": [
+        "jumptext MoveDeletersHouseSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "MoveDeletersHouseSignText"
+          ],
+          "raw": "jumptext MoveDeletersHouseSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "MoveDeletersHouseSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonDensSign": {
+      "raw_lines": [
+        "jumptext DragonDensSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "DragonDensSignText"
+          ],
+          "raw": "jumptext DragonDensSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "DragonDensSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornCityTrainerTips": {
+      "raw_lines": [
+        "jumptext BlackthornCityTrainerTipsText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "BlackthornCityTrainerTipsText"
+          ],
+          "raw": "jumptext BlackthornCityTrainerTipsText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornCityTrainerTipsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornCityPokecenterSign": {
+      "raw_lines": [
+        "jumpstd PokecenterSignScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PokecenterSignScript"
+          ],
+          "raw": "jumpstd PokecenterSignScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterSignScript"
+      ]
+    },
+    "BlackthornCityMartSign": {
+      "raw_lines": [
+        "jumpstd MartSignScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "MartSignScript"
+          ],
+          "raw": "jumpstd MartSignScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MartSignScript"
+      ]
+    },
+    "BlackthornCity_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 18, 11, BLACKTHORN_GYM_1F, 1",
+        "warp_event 13, 21, BLACKTHORN_DRAGON_SPEECH_HOUSE, 1",
+        "warp_event 29, 23, BLACKTHORN_EMYS_HOUSE, 1",
+        "warp_event 15, 29, BLACKTHORN_MART, 2",
+        "warp_event 21, 29, BLACKTHORN_POKECENTER_1F, 1",
+        "warp_event  9, 31, MOVE_DELETERS_HOUSE, 1",
+        "warp_event 36,  9, ICE_PATH_1F, 2",
+        "warp_event 20,  1, DRAGONS_DEN_1F, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event 34, 24, BGEVENT_READ, BlackthornCitySign",
+        "bg_event 17, 13, BGEVENT_READ, BlackthornGymSign",
+        "bg_event  7, 31, BGEVENT_READ, MoveDeletersHouseSign",
+        "bg_event 21,  3, BGEVENT_READ, DragonDensSign",
+        "bg_event  5, 25, BGEVENT_READ, BlackthornCityTrainerTips",
+        "bg_event 16, 29, BGEVENT_READ, BlackthornCityMartSign",
+        "bg_event 22, 29, BGEVENT_READ, BlackthornCityPokecenterSign",
+        "def_object_events",
+        "object_event 18, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornSuperNerdScript, EVENT_BLACKTHORN_CITY_SUPER_NERD_BLOCKS_GYM",
+        "object_event 19, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornSuperNerdScript, EVENT_BLACKTHORN_CITY_SUPER_NERD_DOES_NOT_BLOCK_GYM",
+        "object_event 20,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGramps1Script, EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN",
+        "object_event 21,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGramps2Script, EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN",
+        "object_event 24, 31, SPRITE_BLACK_BELT, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornBlackBeltScript, -1",
+        "object_event  9, 25, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornCooltrainerF1Script, -1",
+        "object_event 13, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornYoungsterScript, -1",
+        "object_event 22, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SantosScript, EVENT_BLACKTHORN_CITY_SANTOS_OF_SATURDAY",
+        "object_event 35, 19, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornCooltrainerF2Script, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "18",
+            "11",
+            "BLACKTHORN_GYM_1F",
+            "1"
+          ],
+          "raw": "warp_event 18, 11, BLACKTHORN_GYM_1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "13",
+            "21",
+            "BLACKTHORN_DRAGON_SPEECH_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event 13, 21, BLACKTHORN_DRAGON_SPEECH_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "29",
+            "23",
+            "BLACKTHORN_EMYS_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event 29, 23, BLACKTHORN_EMYS_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "15",
+            "29",
+            "BLACKTHORN_MART",
+            "2"
+          ],
+          "raw": "warp_event 15, 29, BLACKTHORN_MART, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "21",
+            "29",
+            "BLACKTHORN_POKECENTER_1F",
+            "1"
+          ],
+          "raw": "warp_event 21, 29, BLACKTHORN_POKECENTER_1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "31",
+            "MOVE_DELETERS_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event  9, 31, MOVE_DELETERS_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "36",
+            "9",
+            "ICE_PATH_1F",
+            "2"
+          ],
+          "raw": "warp_event 36,  9, ICE_PATH_1F, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "20",
+            "1",
+            "DRAGONS_DEN_1F",
+            "1"
+          ],
+          "raw": "warp_event 20,  1, DRAGONS_DEN_1F, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "34",
+            "24",
+            "BGEVENT_READ",
+            "BlackthornCitySign"
+          ],
+          "raw": "bg_event 34, 24, BGEVENT_READ, BlackthornCitySign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "17",
+            "13",
+            "BGEVENT_READ",
+            "BlackthornGymSign"
+          ],
+          "raw": "bg_event 17, 13, BGEVENT_READ, BlackthornGymSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "7",
+            "31",
+            "BGEVENT_READ",
+            "MoveDeletersHouseSign"
+          ],
+          "raw": "bg_event  7, 31, BGEVENT_READ, MoveDeletersHouseSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "21",
+            "3",
+            "BGEVENT_READ",
+            "DragonDensSign"
+          ],
+          "raw": "bg_event 21,  3, BGEVENT_READ, DragonDensSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "5",
+            "25",
+            "BGEVENT_READ",
+            "BlackthornCityTrainerTips"
+          ],
+          "raw": "bg_event  5, 25, BGEVENT_READ, BlackthornCityTrainerTips"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "16",
+            "29",
+            "BGEVENT_READ",
+            "BlackthornCityMartSign"
+          ],
+          "raw": "bg_event 16, 29, BGEVENT_READ, BlackthornCityMartSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "22",
+            "29",
+            "BGEVENT_READ",
+            "BlackthornCityPokecenterSign"
+          ],
+          "raw": "bg_event 22, 29, BGEVENT_READ, BlackthornCityPokecenterSign"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "18",
+            "12",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornSuperNerdScript",
+            "EVENT_BLACKTHORN_CITY_SUPER_NERD_BLOCKS_GYM"
+          ],
+          "raw": "object_event 18, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornSuperNerdScript, EVENT_BLACKTHORN_CITY_SUPER_NERD_BLOCKS_GYM"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "19",
+            "12",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornSuperNerdScript",
+            "EVENT_BLACKTHORN_CITY_SUPER_NERD_DOES_NOT_BLOCK_GYM"
+          ],
+          "raw": "object_event 19, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornSuperNerdScript, EVENT_BLACKTHORN_CITY_SUPER_NERD_DOES_NOT_BLOCK_GYM"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "20",
+            "2",
+            "SPRITE_GRAMPS",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornGramps1Script",
+            "EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN"
+          ],
+          "raw": "object_event 20,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGramps1Script, EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "21",
+            "2",
+            "SPRITE_GRAMPS",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornGramps2Script",
+            "EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN"
+          ],
+          "raw": "object_event 21,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGramps2Script, EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "24",
+            "31",
+            "SPRITE_BLACK_BELT",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornBlackBeltScript",
+            "-1"
+          ],
+          "raw": "object_event 24, 31, SPRITE_BLACK_BELT, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornBlackBeltScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "25",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "2",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornCooltrainerF1Script",
+            "-1"
+          ],
+          "raw": "object_event  9, 25, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornCooltrainerF1Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "13",
+            "15",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornYoungsterScript",
+            "-1"
+          ],
+          "raw": "object_event 13, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornYoungsterScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "22",
+            "20",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "SantosScript",
+            "EVENT_BLACKTHORN_CITY_SANTOS_OF_SATURDAY"
+          ],
+          "raw": "object_event 22, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SantosScript, EVENT_BLACKTHORN_CITY_SANTOS_OF_SATURDAY"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "35",
+            "19",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornCooltrainerF2Script",
+            "-1"
+          ],
+          "raw": "object_event 35, 19, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornCooltrainerF2Script, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "Text_ClairIsOut": {
+      "raw_lines": [
+        "text \"I am sorry.\"",
+        "para \"CLAIR, our GYM\"",
+        "line \"LEADER, entered\"",
+        "para \"the DRAGON'S DEN\"",
+        "line \"behind the GYM.\"",
+        "para \"I have no idea\"",
+        "line \"when our LEADER\"",
+        "cont \"will return.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I am sorry."
+        },
+        {
+          "command": "para",
+          "value": "CLAIR, our GYM"
+        },
+        {
+          "command": "line",
+          "value": "LEADER, entered"
+        },
+        {
+          "command": "para",
+          "value": "the DRAGON'S DEN"
+        },
+        {
+          "command": "line",
+          "value": "behind the GYM."
+        },
+        {
+          "command": "para",
+          "value": "I have no idea"
+        },
+        {
+          "command": "line",
+          "value": "when our LEADER"
+        },
+        {
+          "command": "cont",
+          "value": "will return."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_ClairIsIn": {
+      "raw_lines": [
+        "text \"CLAIR, our GYM\"",
+        "line \"LEADER, is waiting\"",
+        "cont \"for you.\"",
+        "para \"However, it would\"",
+        "line \"be impossible for\"",
+        "para \"a run-of-the-mill\"",
+        "line \"trainer to win.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "CLAIR, our GYM"
+        },
+        {
+          "command": "line",
+          "value": "LEADER, is waiting"
+        },
+        {
+          "command": "cont",
+          "value": "for you."
+        },
+        {
+          "command": "para",
+          "value": "However, it would"
+        },
+        {
+          "command": "line",
+          "value": "be impossible for"
+        },
+        {
+          "command": "para",
+          "value": "a run-of-the-mill"
+        },
+        {
+          "command": "line",
+          "value": "trainer to win."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_ClairIsBeaten": {
+      "raw_lines": [
+        "text \"You defeated\"",
+        "line \"CLAIR?\"",
+        "para \"That's amazing!\"",
+        "para \"I've never heard\"",
+        "line \"of her losing to\"",
+        "para \"anyone other than\"",
+        "line \"LANCE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You defeated"
+        },
+        {
+          "command": "line",
+          "value": "CLAIR?"
+        },
+        {
+          "command": "para",
+          "value": "That's amazing!"
+        },
+        {
+          "command": "para",
+          "value": "I've never heard"
+        },
+        {
+          "command": "line",
+          "value": "of her losing to"
+        },
+        {
+          "command": "para",
+          "value": "anyone other than"
+        },
+        {
+          "command": "line",
+          "value": "LANCE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackthornGrampsRefusesEntryText": {
+      "raw_lines": [
+        "text \"No. Only chosen\"",
+        "line \"trainers may train\"",
+        "para \"here.\"",
+        "line \"Please leave.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "No. Only chosen"
+        },
+        {
+          "command": "line",
+          "value": "trainers may train"
+        },
+        {
+          "command": "para",
+          "value": "here."
+        },
+        {
+          "command": "line",
+          "value": "Please leave."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackthornGrampsGrantsEntryText": {
+      "raw_lines": [
+        "text \"If CLAIR allows\"",
+        "line \"it, her grand-\"",
+        "cont \"father--our MASTER\"",
+        "cont \"--will also.\"",
+        "para \"You may enter.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If CLAIR allows"
+        },
+        {
+          "command": "line",
+          "value": "it, her grand-"
+        },
+        {
+          "command": "cont",
+          "value": "father--our MASTER"
+        },
+        {
+          "command": "cont",
+          "value": "--will also."
+        },
+        {
+          "command": "para",
+          "value": "You may enter."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackBeltText_WeirdRadio": {
+      "raw_lines": [
+        "text \"My radio's busted?\"",
+        "line \"Lately, I only get\"",
+        "cont \"this weird signal.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My radio's busted?"
+        },
+        {
+          "command": "line",
+          "value": "Lately, I only get"
+        },
+        {
+          "command": "cont",
+          "value": "this weird signal."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackBeltText_VoicesInMyHead": {
+      "raw_lines": [
+        "text \"Arooo! Voices in\"",
+        "line \"my head!\"",
+        "para \"Huh? I'm listening\"",
+        "line \"to my radio!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Arooo! Voices in"
+        },
+        {
+          "command": "line",
+          "value": "my head!"
+        },
+        {
+          "command": "para",
+          "value": "Huh? I'm listening"
+        },
+        {
+          "command": "line",
+          "value": "to my radio!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackthornCooltrainerF1Text": {
+      "raw_lines": [
+        "text \"Are you going to\"",
+        "line \"make your #MON\"",
+        "cont \"forget some moves?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Are you going to"
+        },
+        {
+          "command": "line",
+          "value": "make your #MON"
+        },
+        {
+          "command": "cont",
+          "value": "forget some moves?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackthornYoungsterText": {
+      "raw_lines": [
+        "text \"Dragon masters all\"",
+        "line \"come from the city\"",
+        "cont \"of BLACKTHORN.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Dragon masters all"
+        },
+        {
+          "command": "line",
+          "value": "come from the city"
+        },
+        {
+          "command": "cont",
+          "value": "of BLACKTHORN."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MeetSantosText": {
+      "raw_lines": [
+        "text \"SANTOS: \u2026\"",
+        "para \"It's Saturday\u2026\"",
+        "para \"I'm SANTOS of\"",
+        "line \"Saturday\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "SANTOS: \u2026"
+        },
+        {
+          "command": "para",
+          "value": "It's Saturday\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I'm SANTOS of"
+        },
+        {
+          "command": "line",
+          "value": "Saturday\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SantosGivesGiftText": {
+      "raw_lines": [
+        "text \"You can have this\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You can have this\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SantosGaveGiftText": {
+      "raw_lines": [
+        "text \"SANTOS: \u2026\"",
+        "para \"SPELL TAG\u2026\"",
+        "para \"Ghost-type moves\"",
+        "line \"get stronger\u2026\"",
+        "para \"It will frighten\"",
+        "line \"you\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "SANTOS: \u2026"
+        },
+        {
+          "command": "para",
+          "value": "SPELL TAG\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Ghost-type moves"
+        },
+        {
+          "command": "line",
+          "value": "get stronger\u2026"
+        },
+        {
+          "command": "para",
+          "value": "It will frighten"
+        },
+        {
+          "command": "line",
+          "value": "you\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SantosSaturdayText": {
+      "raw_lines": [
+        "text \"SANTOS: \u2026\"",
+        "para \"See you again on\"",
+        "line \"another Saturday\u2026\"",
+        "para \"I won't have any\"",
+        "line \"more gifts\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "SANTOS: \u2026"
+        },
+        {
+          "command": "para",
+          "value": "See you again on"
+        },
+        {
+          "command": "line",
+          "value": "another Saturday\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I won't have any"
+        },
+        {
+          "command": "line",
+          "value": "more gifts\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SantosNotSaturdayText": {
+      "raw_lines": [
+        "text \"SANTOS: Today's\"",
+        "line \"not Saturday\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "SANTOS: Today's"
+        },
+        {
+          "command": "line",
+          "value": "not Saturday\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackthornCooltrainerF2Text": {
+      "raw_lines": [
+        "text \"Wow, you came\"",
+        "line \"through the ICE\"",
+        "cont \"PATH?\"",
+        "para \"You must be a real\"",
+        "line \"hotshot trainer!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Wow, you came"
+        },
+        {
+          "command": "line",
+          "value": "through the ICE"
+        },
+        {
+          "command": "cont",
+          "value": "PATH?"
+        },
+        {
+          "command": "para",
+          "value": "You must be a real"
+        },
+        {
+          "command": "line",
+          "value": "hotshot trainer!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackthornCitySignText": {
+      "raw_lines": [
+        "text \"BLACKTHORN CITY\"",
+        "para \"A Quiet Mountain\"",
+        "line \"Retreat\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "BLACKTHORN CITY"
+        },
+        {
+          "command": "para",
+          "value": "A Quiet Mountain"
+        },
+        {
+          "command": "line",
+          "value": "Retreat"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackthornGymSignText": {
+      "raw_lines": [
+        "text \"BLACKTHORN CITY\"",
+        "line \"#MON GYM\"",
+        "cont \"LEADER: CLAIR\"",
+        "para \"The Blessed User\"",
+        "line \"of Dragon #MON\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "BLACKTHORN CITY"
+        },
+        {
+          "command": "line",
+          "value": "#MON GYM"
+        },
+        {
+          "command": "cont",
+          "value": "LEADER: CLAIR"
+        },
+        {
+          "command": "para",
+          "value": "The Blessed User"
+        },
+        {
+          "command": "line",
+          "value": "of Dragon #MON"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MoveDeletersHouseSignText": {
+      "raw_lines": [
+        "text \"MOVE DELETER'S\"",
+        "line \"HOUSE\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MOVE DELETER'S"
+        },
+        {
+          "command": "line",
+          "value": "HOUSE"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonDensSignText": {
+      "raw_lines": [
+        "text \"DRAGON'S DEN\"",
+        "line \"AHEAD\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "DRAGON'S DEN"
+        },
+        {
+          "command": "line",
+          "value": "AHEAD"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackthornCityTrainerTipsText": {
+      "raw_lines": [
+        "text \"TRAINER TIPS\"",
+        "para \"A #MON holding\"",
+        "line \"a MIRACLEBERRY\"",
+        "para \"will cure itself\"",
+        "line \"of any status\"",
+        "cont \"problem.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "TRAINER TIPS"
+        },
+        {
+          "command": "para",
+          "value": "A #MON holding"
+        },
+        {
+          "command": "line",
+          "value": "a MIRACLEBERRY"
+        },
+        {
+          "command": "para",
+          "value": "will cure itself"
+        },
+        {
+          "command": "line",
+          "value": "of any status"
+        },
+        {
+          "command": "cont",
+          "value": "problem."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "MartSignScript",
+    "PokecenterSignScript"
+  ],
+  "dependencies": {
+    "BlackthornCity_MapScripts": {
+      "label_refs": [
+        "BlackthornCityFlypointCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornCityFlypointCallback": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornCitySantosCallback": {
+      "label_refs": [
+        "BlackthornCitySantosCallback.SantosAppears"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornCitySantosCallback.SantosAppears": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornSuperNerdScript": {
+      "label_refs": [
+        "BlackthornSuperNerdScript.BeatClair",
+        "BlackthornSuperNerdScript.ClearedRadioTower"
+      ],
+      "text_refs": [
+        "Text_ClairIsOut"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornSuperNerdScript.ClearedRadioTower": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_ClairIsIn"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornSuperNerdScript.BeatClair": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_ClairIsBeaten"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGramps1Script": {
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornGrampsRefusesEntryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGramps2Script": {
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornGrampsGrantsEntryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornBlackBeltScript": {
+      "label_refs": [
+        "BlackthornBlackBeltScript.ClearedRadioTower"
+      ],
+      "text_refs": [
+        "BlackBeltText_WeirdRadio"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornBlackBeltScript.ClearedRadioTower": {
+      "label_refs": [],
+      "text_refs": [
+        "BlackBeltText_VoicesInMyHead"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornCooltrainerF1Script": {
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornCooltrainerF1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornYoungsterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornCooltrainerF2Script": {
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornCooltrainerF2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SantosScript": {
+      "label_refs": [
+        "SantosScript.MetSantos",
+        "SantosScript.NotSaturday",
+        "SantosScript.Saturday"
+      ],
+      "text_refs": [
+        "MeetSantosText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SantosScript.MetSantos": {
+      "label_refs": [
+        "SantosScript.Done"
+      ],
+      "text_refs": [
+        "SantosGaveGiftText",
+        "SantosGivesGiftText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SantosScript.Saturday": {
+      "label_refs": [
+        "SantosScript.Done"
+      ],
+      "text_refs": [
+        "SantosSaturdayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SantosScript.Done": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SantosScript.NotSaturday": {
+      "label_refs": [],
+      "text_refs": [
+        "SantosNotSaturdayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornCitySign": {
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornCitySignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornGymSign": {
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornGymSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveDeletersHouseSign": {
+      "label_refs": [],
+      "text_refs": [
+        "MoveDeletersHouseSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonDensSign": {
+      "label_refs": [],
+      "text_refs": [
+        "DragonDensSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornCityTrainerTips": {
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornCityTrainerTipsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornCityPokecenterSign": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterSignScript"
+      ]
+    },
+    "BlackthornCityMartSign": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MartSignScript"
+      ]
+    },
+    "BlackthornCity_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio",
+    "day_time"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 2,
+    "warp_events": 8,
+    "coord_events": 0,
+    "bg_events": 7,
+    "object_events": 9
+  }
+}

@@ -1,0 +1,1022 @@
+{
+  "crystal_map": "BrunosRoom",
+  "map_id": "BRUNOS_ROOM",
+  "group": "INDIGO",
+  "group_index": 16,
+  "map_index": 5,
+  "tileset": "TILESET_ELITE_FOUR_ROOM",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_INDIGO_PLATEAU",
+  "music": "MUSIC_INDIGO_PLATEAU",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 9,
+  "border_block": "00",
+  "blk_path": "maps/BrunosRoom.blk",
+  "source_asm": "maps/BrunosRoom.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "BrunosRoomLockDoorScene",
+        "scene_id": "SCENE_BRUNOSROOM_LOCK_DOOR"
+      },
+      {
+        "script": "BrunosRoomNoopScene",
+        "scene_id": "SCENE_BRUNOSROOM_NOOP"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_TILES",
+        "script": "BrunosRoomDoorsCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 4,
+        "y": 17,
+        "dest_map": "KOGAS_ROOM",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 5,
+        "y": 17,
+        "dest_map": "KOGAS_ROOM",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 4,
+        "y": 2,
+        "dest_map": "KARENS_ROOM",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 5,
+        "y": 2,
+        "dest_map": "KARENS_ROOM",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 5,
+        "y": 7,
+        "sprite": "SPRITE_BRUNO",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BrunoScript_Battle",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "BRUNOSROOM_BRUNO"
+  ],
+  "scene_ids": [
+    "SCENE_BRUNOSROOM_LOCK_DOOR",
+    "SCENE_BRUNOSROOM_NOOP"
+  ],
+  "scripts": {
+    "BrunosRoom_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script BrunosRoomLockDoorScene, SCENE_BRUNOSROOM_LOCK_DOOR",
+        "scene_script BrunosRoomNoopScene,     SCENE_BRUNOSROOM_NOOP",
+        "def_callbacks",
+        "callback MAPCALLBACK_TILES, BrunosRoomDoorsCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "BrunosRoomLockDoorScene",
+            "SCENE_BRUNOSROOM_LOCK_DOOR"
+          ],
+          "raw": "scene_script BrunosRoomLockDoorScene, SCENE_BRUNOSROOM_LOCK_DOOR"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "BrunosRoomNoopScene",
+            "SCENE_BRUNOSROOM_NOOP"
+          ],
+          "raw": "scene_script BrunosRoomNoopScene,     SCENE_BRUNOSROOM_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_TILES",
+            "BrunosRoomDoorsCallback"
+          ],
+          "raw": "callback MAPCALLBACK_TILES, BrunosRoomDoorsCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "BrunosRoomLockDoorScene",
+      "label_refs": [
+        "BrunosRoomLockDoorScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BrunosRoomLockDoorScene": {
+      "raw_lines": [
+        "sdefer BrunosRoomDoorLocksBehindYouScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "sdefer",
+          "args": [
+            "BrunosRoomDoorLocksBehindYouScript"
+          ],
+          "raw": "sdefer BrunosRoomDoorLocksBehindYouScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "sdefer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BrunosRoomNoopScene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BrunosRoomDoorsCallback": {
+      "raw_lines": [
+        "checkevent EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED",
+        "iffalse .KeepEntranceOpen",
+        "changeblock 4, 14, $2a"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED"
+          ],
+          "raw": "checkevent EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "BrunosRoomDoorsCallback.KeepEntranceOpen"
+          ],
+          "raw": "iffalse .KeepEntranceOpen"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "14",
+            "$2a"
+          ],
+          "raw": "changeblock 4, 14, $2a"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "BrunosRoomDoorsCallback.KeepEntranceOpen",
+      "label_refs": [
+        "BrunosRoomDoorsCallback.KeepEntranceOpen"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BrunosRoomDoorsCallback.KeepEntranceOpen": {
+      "raw_lines": [
+        "checkevent EVENT_BRUNOS_ROOM_EXIT_OPEN",
+        "iffalse .KeepExitClosed",
+        "changeblock 4, 2, $16"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BRUNOS_ROOM_EXIT_OPEN"
+          ],
+          "raw": "checkevent EVENT_BRUNOS_ROOM_EXIT_OPEN"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "BrunosRoomDoorsCallback.KeepExitClosed"
+          ],
+          "raw": "iffalse .KeepExitClosed"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "2",
+            "$16"
+          ],
+          "raw": "changeblock 4, 2, $16"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "BrunosRoomDoorsCallback.KeepExitClosed",
+      "label_refs": [
+        "BrunosRoomDoorsCallback.KeepExitClosed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BrunosRoomDoorsCallback.KeepExitClosed": {
+      "raw_lines": [
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "endcallback",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BrunosRoomDoorLocksBehindYouScript": {
+      "raw_lines": [
+        "applymovement PLAYER, BrunosRoom_EnterMovement",
+        "reanchormap $86",
+        "playsound SFX_STRENGTH",
+        "earthquake 80",
+        "changeblock 4, 14, $2a",
+        "refreshmap",
+        "closetext",
+        "setscene SCENE_BRUNOSROOM_NOOP",
+        "setevent EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED",
+        "waitsfx",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "BrunosRoom_EnterMovement"
+          ],
+          "raw": "applymovement PLAYER, BrunosRoom_EnterMovement"
+        },
+        {
+          "command": "reanchormap",
+          "args": [
+            "$86"
+          ],
+          "raw": "reanchormap $86"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_STRENGTH"
+          ],
+          "raw": "playsound SFX_STRENGTH"
+        },
+        {
+          "command": "earthquake",
+          "args": [
+            "80"
+          ],
+          "raw": "earthquake 80"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "14",
+            "$2a"
+          ],
+          "raw": "changeblock 4, 14, $2a"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_BRUNOSROOM_NOOP"
+          ],
+          "raw": "setscene SCENE_BRUNOSROOM_NOOP"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED"
+          ],
+          "raw": "setevent EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "BrunosRoom_EnterMovement"
+      ],
+      "scene_refs": [
+        "SCENE_BRUNOSROOM_NOOP"
+      ],
+      "std_calls": []
+    },
+    "BrunoScript_Battle": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_BEAT_ELITE_4_BRUNO",
+        "iftrue BrunoScript_AfterBattle",
+        "writetext BrunoScript_BrunoBeforeText",
+        "waitbutton",
+        "closetext",
+        "winlosstext BrunoScript_BrunoBeatenText, 0",
+        "loadtrainer BRUNO, BRUNO1",
+        "startbattle",
+        "reloadmapafterbattle",
+        "setevent EVENT_BEAT_ELITE_4_BRUNO",
+        "opentext",
+        "writetext BrunoScript_BrunoDefeatText",
+        "waitbutton",
+        "closetext",
+        "playsound SFX_ENTER_DOOR",
+        "changeblock 4, 2, $16",
+        "refreshmap",
+        "closetext",
+        "setevent EVENT_BRUNOS_ROOM_EXIT_OPEN",
+        "waitsfx",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_ELITE_4_BRUNO"
+          ],
+          "raw": "checkevent EVENT_BEAT_ELITE_4_BRUNO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "BrunoScript_AfterBattle"
+          ],
+          "raw": "iftrue BrunoScript_AfterBattle"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BrunoScript_BrunoBeforeText"
+          ],
+          "raw": "writetext BrunoScript_BrunoBeforeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "BrunoScript_BrunoBeatenText",
+            "0"
+          ],
+          "raw": "winlosstext BrunoScript_BrunoBeatenText, 0"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "BRUNO",
+            "BRUNO1"
+          ],
+          "raw": "loadtrainer BRUNO, BRUNO1"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_ELITE_4_BRUNO"
+          ],
+          "raw": "setevent EVENT_BEAT_ELITE_4_BRUNO"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BrunoScript_BrunoDefeatText"
+          ],
+          "raw": "writetext BrunoScript_BrunoDefeatText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "2",
+            "$16"
+          ],
+          "raw": "changeblock 4, 2, $16"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BRUNOS_ROOM_EXIT_OPEN"
+          ],
+          "raw": "setevent EVENT_BRUNOS_ROOM_EXIT_OPEN"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "BrunoScript_AfterBattle"
+      ],
+      "text_refs": [
+        "BrunoScript_BrunoBeforeText",
+        "BrunoScript_BrunoDefeatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BrunoScript_AfterBattle": {
+      "raw_lines": [
+        "writetext BrunoScript_BrunoDefeatText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BrunoScript_BrunoDefeatText"
+          ],
+          "raw": "writetext BrunoScript_BrunoDefeatText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BrunoScript_BrunoDefeatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BrunosRoom_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  4, 17, KOGAS_ROOM, 3",
+        "warp_event  5, 17, KOGAS_ROOM, 4",
+        "warp_event  4,  2, KARENS_ROOM, 1",
+        "warp_event  5,  2, KARENS_ROOM, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  5,  7, SPRITE_BRUNO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BrunoScript_Battle, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "17",
+            "KOGAS_ROOM",
+            "3"
+          ],
+          "raw": "warp_event  4, 17, KOGAS_ROOM, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "17",
+            "KOGAS_ROOM",
+            "4"
+          ],
+          "raw": "warp_event  5, 17, KOGAS_ROOM, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "2",
+            "KARENS_ROOM",
+            "1"
+          ],
+          "raw": "warp_event  4,  2, KARENS_ROOM, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "2",
+            "KARENS_ROOM",
+            "2"
+          ],
+          "raw": "warp_event  5,  2, KARENS_ROOM, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "7",
+            "SPRITE_BRUNO",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BrunoScript_Battle",
+            "-1"
+          ],
+          "raw": "object_event  5,  7, SPRITE_BRUNO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BrunoScript_Battle, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "BrunoScript_BrunoBeforeText": {
+      "raw_lines": [
+        "text \"I am BRUNO of the\"",
+        "line \"ELITE FOUR.\"",
+        "para \"I always train to\"",
+        "line \"the extreme be-\"",
+        "cont \"cause I believe in\"",
+        "cont \"our potential.\"",
+        "para \"That is how we\"",
+        "line \"became strong.\"",
+        "para \"Can you withstand\"",
+        "line \"our power?\"",
+        "para \"Hm? I see no fear\"",
+        "line \"in you. You look\"",
+        "para \"determined. Per-\"",
+        "line \"fect for battle!\"",
+        "para \"Ready, <PLAYER>?\"",
+        "line \"You will bow down\"",
+        "para \"to our overwhelm-\"",
+        "line \"ing power!\"",
+        "para \"Hoo hah!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I am BRUNO of the"
+        },
+        {
+          "command": "line",
+          "value": "ELITE FOUR."
+        },
+        {
+          "command": "para",
+          "value": "I always train to"
+        },
+        {
+          "command": "line",
+          "value": "the extreme be-"
+        },
+        {
+          "command": "cont",
+          "value": "cause I believe in"
+        },
+        {
+          "command": "cont",
+          "value": "our potential."
+        },
+        {
+          "command": "para",
+          "value": "That is how we"
+        },
+        {
+          "command": "line",
+          "value": "became strong."
+        },
+        {
+          "command": "para",
+          "value": "Can you withstand"
+        },
+        {
+          "command": "line",
+          "value": "our power?"
+        },
+        {
+          "command": "para",
+          "value": "Hm? I see no fear"
+        },
+        {
+          "command": "line",
+          "value": "in you. You look"
+        },
+        {
+          "command": "para",
+          "value": "determined. Per-"
+        },
+        {
+          "command": "line",
+          "value": "fect for battle!"
+        },
+        {
+          "command": "para",
+          "value": "Ready, <PLAYER>?"
+        },
+        {
+          "command": "line",
+          "value": "You will bow down"
+        },
+        {
+          "command": "para",
+          "value": "to our overwhelm-"
+        },
+        {
+          "command": "line",
+          "value": "ing power!"
+        },
+        {
+          "command": "para",
+          "value": "Hoo hah!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BrunoScript_BrunoBeatenText": {
+      "raw_lines": [
+        "text \"Why? How could we\"",
+        "line \"lose?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Why? How could we"
+        },
+        {
+          "command": "line",
+          "value": "lose?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BrunoScript_BrunoDefeatText": {
+      "raw_lines": [
+        "text \"Having lost, I\"",
+        "line \"have no right to\"",
+        "cont \"say anything\u2026\"",
+        "para \"Go face your next\"",
+        "line \"challenge!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Having lost, I"
+        },
+        {
+          "command": "line",
+          "value": "have no right to"
+        },
+        {
+          "command": "cont",
+          "value": "say anything\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Go face your next"
+        },
+        {
+          "command": "line",
+          "value": "challenge!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "BrunosRoom_EnterMovement": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "BrunosRoom_MapScripts": {
+      "label_refs": [
+        "BrunosRoomLockDoorScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BrunosRoomLockDoorScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BrunosRoomNoopScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BrunosRoomDoorsCallback": {
+      "label_refs": [
+        "BrunosRoomDoorsCallback.KeepEntranceOpen"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BrunosRoomDoorsCallback.KeepEntranceOpen": {
+      "label_refs": [
+        "BrunosRoomDoorsCallback.KeepExitClosed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BrunosRoomDoorsCallback.KeepExitClosed": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BrunosRoomDoorLocksBehindYouScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "BrunosRoom_EnterMovement"
+      ],
+      "scene_refs": [
+        "SCENE_BRUNOSROOM_NOOP"
+      ],
+      "std_calls": []
+    },
+    "BrunoScript_Battle": {
+      "label_refs": [
+        "BrunoScript_AfterBattle"
+      ],
+      "text_refs": [
+        "BrunoScript_BrunoBeforeText",
+        "BrunoScript_BrunoDefeatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BrunoScript_AfterBattle": {
+      "label_refs": [],
+      "text_refs": [
+        "BrunoScript_BrunoDefeatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BrunosRoom_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
+    "warp_events": 4,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 1
+  }
+}

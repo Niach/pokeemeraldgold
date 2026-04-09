@@ -18,6 +18,8 @@
   "source_asm": "maps/CherrygroveGymSpeechHouse.asm",
   "connections": [],
   "events": {
+    "scene_scripts": [],
+    "callbacks": [],
     "warp_events": [
       {
         "x": 2,
@@ -55,6 +57,11 @@
         "movement": "SPRITEMOVEDATA_STANDING_DOWN",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "CherrygroveGymSpeechHousePokefanMScript",
         "flag": -1
       },
@@ -65,12 +72,397 @@
         "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
         "movement_range_x": 1,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "CherrygroveGymSpeechHouseBugCatcherScript",
         "flag": -1
       }
     ]
   },
+  "object_consts": [
+    "CHERRYGROVEGYMSPEECHHOUSE_POKEFAN_M",
+    "CHERRYGROVEGYMSPEECHHOUSE_BUG_CATCHER"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "CherrygroveGymSpeechHouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "CherrygroveGymSpeechHousePokefanMScript",
+      "label_refs": [
+        "CherrygroveGymSpeechHousePokefanMScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveGymSpeechHousePokefanMScript": {
+      "raw_lines": [
+        "jumptextfaceplayer CherrygroveGymSpeechHousePokefanMText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "CherrygroveGymSpeechHousePokefanMText"
+          ],
+          "raw": "jumptextfaceplayer CherrygroveGymSpeechHousePokefanMText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "CherrygroveGymSpeechHousePokefanMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveGymSpeechHouseBugCatcherScript": {
+      "raw_lines": [
+        "jumptextfaceplayer CherrygroveGymSpeechHouseBugCatcherText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "CherrygroveGymSpeechHouseBugCatcherText"
+          ],
+          "raw": "jumptextfaceplayer CherrygroveGymSpeechHouseBugCatcherText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "CherrygroveGymSpeechHouseBugCatcherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveGymSpeechHouseBookshelf": {
+      "raw_lines": [
+        "jumpstd PictureBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PictureBookshelfScript"
+          ],
+          "raw": "jumpstd PictureBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "CherrygroveGymSpeechHouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, CHERRYGROVE_CITY, 3",
+        "warp_event  3,  7, CHERRYGROVE_CITY, 3",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, CherrygroveGymSpeechHouseBookshelf",
+        "bg_event  1,  1, BGEVENT_READ, CherrygroveGymSpeechHouseBookshelf",
+        "def_object_events",
+        "object_event  2,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveGymSpeechHousePokefanMScript, -1",
+        "object_event  5,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveGymSpeechHouseBugCatcherScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "CHERRYGROVE_CITY",
+            "3"
+          ],
+          "raw": "warp_event  2,  7, CHERRYGROVE_CITY, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "CHERRYGROVE_CITY",
+            "3"
+          ],
+          "raw": "warp_event  3,  7, CHERRYGROVE_CITY, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "CherrygroveGymSpeechHouseBookshelf"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, CherrygroveGymSpeechHouseBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "CherrygroveGymSpeechHouseBookshelf"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, CherrygroveGymSpeechHouseBookshelf"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_POKEFAN_M",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CherrygroveGymSpeechHousePokefanMScript",
+            "-1"
+          ],
+          "raw": "object_event  2,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveGymSpeechHousePokefanMScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "5",
+            "SPRITE_BUG_CATCHER",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CherrygroveGymSpeechHouseBugCatcherScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveGymSpeechHouseBugCatcherScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "CherrygroveGymSpeechHousePokefanMText": {
+      "raw_lines": [
+        "text \"You're trying to\"",
+        "line \"see how good you\"",
+        "para \"are as a #MON\"",
+        "line \"trainer?\"",
+        "para \"You better visit\"",
+        "line \"the #MON GYMS\"",
+        "para \"all over JOHTO and\"",
+        "line \"collect BADGES.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You're trying to"
+        },
+        {
+          "command": "line",
+          "value": "see how good you"
+        },
+        {
+          "command": "para",
+          "value": "are as a #MON"
+        },
+        {
+          "command": "line",
+          "value": "trainer?"
+        },
+        {
+          "command": "para",
+          "value": "You better visit"
+        },
+        {
+          "command": "line",
+          "value": "the #MON GYMS"
+        },
+        {
+          "command": "para",
+          "value": "all over JOHTO and"
+        },
+        {
+          "command": "line",
+          "value": "collect BADGES."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CherrygroveGymSpeechHouseBugCatcherText": {
+      "raw_lines": [
+        "text \"When I get older,\"",
+        "line \"I'm going to be a\"",
+        "cont \"GYM LEADER!\"",
+        "para \"I make my #MON\"",
+        "line \"battle with my\"",
+        "para \"friend's to make\"",
+        "line \"them tougher!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "When I get older,"
+        },
+        {
+          "command": "line",
+          "value": "I'm going to be a"
+        },
+        {
+          "command": "cont",
+          "value": "GYM LEADER!"
+        },
+        {
+          "command": "para",
+          "value": "I make my #MON"
+        },
+        {
+          "command": "line",
+          "value": "battle with my"
+        },
+        {
+          "command": "para",
+          "value": "friend's to make"
+        },
+        {
+          "command": "line",
+          "value": "them tougher!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "PictureBookshelfScript"
+  ],
+  "dependencies": {
+    "CherrygroveGymSpeechHouse_MapScripts": {
+      "label_refs": [
+        "CherrygroveGymSpeechHousePokefanMScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveGymSpeechHousePokefanMScript": {
+      "label_refs": [],
+      "text_refs": [
+        "CherrygroveGymSpeechHousePokefanMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveGymSpeechHouseBugCatcherScript": {
+      "label_refs": [],
+      "text_refs": [
+        "CherrygroveGymSpeechHouseBugCatcherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveGymSpeechHouseBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "CherrygroveGymSpeechHouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
   "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
     "warp_events": 2,
     "coord_events": 0,
     "bg_events": 2,

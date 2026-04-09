@@ -32,6 +32,7 @@
 #include "palette.h"
 #include "party_menu.h"
 #include "pokeball.h"
+#include "johto_story.h"
 #include "pokedex.h"
 #include "pokemon.h"
 #include "random.h"
@@ -1997,8 +1998,11 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
             else
                 personalityValue = 0x88; // Use personality more likely to result in a male Pokémon
 
-            for (j = 0; gTrainers[trainerNum].trainerName[j] != EOS; j++)
-                nameHash += gTrainers[trainerNum].trainerName[j];
+            {
+                const u8 *trainerName = GetTrainerNameWithJohtoOverride(trainerNum);
+                for (j = 0; trainerName[j] != EOS; j++)
+                    nameHash += trainerName[j];
+            }
 
             switch (gTrainers[trainerNum].partyFlags)
             {

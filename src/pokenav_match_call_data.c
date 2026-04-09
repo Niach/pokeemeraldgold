@@ -5,6 +5,7 @@
 #include "string_util.h"
 #include "battle.h"
 #include "gym_leader_rematch.h"
+#include "johto_story.h"
 #include "match_call.h"
 #include "pokenav.h"
 #include "strings.h"
@@ -1091,9 +1092,10 @@ static void MatchCall_GetNameAndDesc_Birch(match_call_t matchCall, const u8 **de
 
 static void MatchCall_GetNameAndDescByRematchIdx(u32 idx, const u8 **desc, const u8 **name)
 {
-    const struct Trainer *trainer = gTrainers + GetTrainerIdxByRematchIdx(idx);
+    int trainerId = GetTrainerIdxByRematchIdx(idx);
+    const struct Trainer *trainer = gTrainers + trainerId;
     *desc = gTrainerClassNames[trainer->trainerClass];
-    *name = trainer->trainerName;
+    *name = GetTrainerNameWithJohtoOverride(trainerId);
 }
 
 const u8 *MatchCall_GetOverrideFlavorText(u32 idx, u32 offset)

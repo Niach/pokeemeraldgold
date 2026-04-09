@@ -1,0 +1,620 @@
+{
+  "crystal_map": "DarkCaveBlackthornEntrance",
+  "map_id": "DARK_CAVE_BLACKTHORN_ENTRANCE",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 79,
+  "tileset": "TILESET_DARK_CAVE",
+  "environment": "CAVE",
+  "landmark": "LANDMARK_DARK_CAVE",
+  "music": "MUSIC_DARK_CAVE",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DARK",
+  "fishgroup": "FISHGROUP_LAKE",
+  "width_blocks": 15,
+  "height_blocks": 18,
+  "border_block": "09",
+  "blk_path": "maps/DarkCaveBlackthornEntrance.blk",
+  "source_asm": "maps/DarkCaveBlackthornEntrance.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 23,
+        "y": 3,
+        "dest_map": "ROUTE_45",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 3,
+        "y": 25,
+        "dest_map": "DARK_CAVE_VIOLET_ENTRANCE",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 7,
+        "y": 3,
+        "sprite": "SPRITE_PHARMACIST",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "DarkCaveBlackthornEntrancePharmacistScript",
+        "flag": -1
+      },
+      {
+        "x": 21,
+        "y": 24,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "DarkCaveBlackthornEntranceRevive",
+        "flag": "EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_REVIVE"
+      },
+      {
+        "x": 7,
+        "y": 22,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "DarkCaveBlackthornEntranceTMSnore",
+        "flag": "EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_TM_SNORE"
+      }
+    ]
+  },
+  "object_consts": [
+    "DARKCAVEBLACKTHORNENTRANCE_PHARMACIST",
+    "DARKCAVEBLACKTHORNENTRANCE_POKE_BALL1",
+    "DARKCAVEBLACKTHORNENTRANCE_POKE_BALL2"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "DarkCaveBlackthornEntrance_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "DarkCaveBlackthornEntrancePharmacistScript",
+      "label_refs": [
+        "DarkCaveBlackthornEntrancePharmacistScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DarkCaveBlackthornEntrancePharmacistScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_BLACKGLASSES_IN_DARK_CAVE",
+        "iftrue .GotBlackglasses",
+        "writetext DarkCaveBlackthornEntrancePharmacistText1",
+        "promptbutton",
+        "verbosegiveitem BLACKGLASSES",
+        "iffalse .PackFull",
+        "setevent EVENT_GOT_BLACKGLASSES_IN_DARK_CAVE"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_BLACKGLASSES_IN_DARK_CAVE"
+          ],
+          "raw": "checkevent EVENT_GOT_BLACKGLASSES_IN_DARK_CAVE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DarkCaveBlackthornEntrancePharmacistScript.GotBlackglasses"
+          ],
+          "raw": "iftrue .GotBlackglasses"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DarkCaveBlackthornEntrancePharmacistText1"
+          ],
+          "raw": "writetext DarkCaveBlackthornEntrancePharmacistText1"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "BLACKGLASSES"
+          ],
+          "raw": "verbosegiveitem BLACKGLASSES"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "DarkCaveBlackthornEntrancePharmacistScript.PackFull"
+          ],
+          "raw": "iffalse .PackFull"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_BLACKGLASSES_IN_DARK_CAVE"
+          ],
+          "raw": "setevent EVENT_GOT_BLACKGLASSES_IN_DARK_CAVE"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "DarkCaveBlackthornEntrancePharmacistScript.GotBlackglasses",
+      "label_refs": [
+        "DarkCaveBlackthornEntrancePharmacistScript.GotBlackglasses",
+        "DarkCaveBlackthornEntrancePharmacistScript.PackFull"
+      ],
+      "text_refs": [
+        "DarkCaveBlackthornEntrancePharmacistText1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DarkCaveBlackthornEntrancePharmacistScript.GotBlackglasses": {
+      "raw_lines": [
+        "writetext DarkCaveBlackthornEntrancePharmacistText2",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "DarkCaveBlackthornEntrancePharmacistText2"
+          ],
+          "raw": "writetext DarkCaveBlackthornEntrancePharmacistText2"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "DarkCaveBlackthornEntrancePharmacistScript.PackFull",
+      "label_refs": [
+        "DarkCaveBlackthornEntrancePharmacistScript.PackFull"
+      ],
+      "text_refs": [
+        "DarkCaveBlackthornEntrancePharmacistText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DarkCaveBlackthornEntrancePharmacistScript.PackFull": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DarkCaveBlackthornEntranceRevive": {
+      "raw_lines": [
+        "itemball REVIVE"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "REVIVE"
+          ],
+          "raw": "itemball REVIVE"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "DarkCaveBlackthornEntranceTMSnore",
+      "label_refs": [
+        "DarkCaveBlackthornEntranceTMSnore"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DarkCaveBlackthornEntranceTMSnore": {
+      "raw_lines": [
+        "itemball TM_SNORE"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "TM_SNORE"
+          ],
+          "raw": "itemball TM_SNORE"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "DarkCaveBlackthornEntrance_MapEvents",
+      "label_refs": [
+        "DarkCaveBlackthornEntrance_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DarkCaveBlackthornEntrance_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 23,  3, ROUTE_45, 1",
+        "warp_event  3, 25, DARK_CAVE_VIOLET_ENTRANCE, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  7,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DarkCaveBlackthornEntrancePharmacistScript, -1",
+        "object_event 21, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceRevive, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_REVIVE",
+        "object_event  7, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceTMSnore, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_TM_SNORE"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "23",
+            "3",
+            "ROUTE_45",
+            "1"
+          ],
+          "raw": "warp_event 23,  3, ROUTE_45, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "25",
+            "DARK_CAVE_VIOLET_ENTRANCE",
+            "2"
+          ],
+          "raw": "warp_event  3, 25, DARK_CAVE_VIOLET_ENTRANCE, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "3",
+            "SPRITE_PHARMACIST",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "DarkCaveBlackthornEntrancePharmacistScript",
+            "-1"
+          ],
+          "raw": "object_event  7,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DarkCaveBlackthornEntrancePharmacistScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "21",
+            "24",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "DarkCaveBlackthornEntranceRevive",
+            "EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_REVIVE"
+          ],
+          "raw": "object_event 21, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceRevive, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_REVIVE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "22",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "DarkCaveBlackthornEntranceTMSnore",
+            "EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_TM_SNORE"
+          ],
+          "raw": "object_event  7, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceTMSnore, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_TM_SNORE"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "DarkCaveBlackthornEntrancePharmacistText1": {
+      "raw_lines": [
+        "text \"Whoa! You startled\"",
+        "line \"me there!\"",
+        "para \"I had my BLACK-\"",
+        "line \"GLASSES on, so I\"",
+        "para \"didn't notice you\"",
+        "line \"at all.\"",
+        "para \"What am I doing\"",
+        "line \"here?\"",
+        "para \"Hey, don't you\"",
+        "line \"worry about it.\"",
+        "para \"I'll give you a\"",
+        "line \"pair of BLACK-\"",
+        "cont \"GLASSES, so forget\"",
+        "cont \"you saw me, OK?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Whoa! You startled"
+        },
+        {
+          "command": "line",
+          "value": "me there!"
+        },
+        {
+          "command": "para",
+          "value": "I had my BLACK-"
+        },
+        {
+          "command": "line",
+          "value": "GLASSES on, so I"
+        },
+        {
+          "command": "para",
+          "value": "didn't notice you"
+        },
+        {
+          "command": "line",
+          "value": "at all."
+        },
+        {
+          "command": "para",
+          "value": "What am I doing"
+        },
+        {
+          "command": "line",
+          "value": "here?"
+        },
+        {
+          "command": "para",
+          "value": "Hey, don't you"
+        },
+        {
+          "command": "line",
+          "value": "worry about it."
+        },
+        {
+          "command": "para",
+          "value": "I'll give you a"
+        },
+        {
+          "command": "line",
+          "value": "pair of BLACK-"
+        },
+        {
+          "command": "cont",
+          "value": "GLASSES, so forget"
+        },
+        {
+          "command": "cont",
+          "value": "you saw me, OK?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DarkCaveBlackthornEntrancePharmacistText2": {
+      "raw_lines": [
+        "text \"BLACKGLASSES ups\"",
+        "line \"the power of dark-\"",
+        "cont \"type moves.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "BLACKGLASSES ups"
+        },
+        {
+          "command": "line",
+          "value": "the power of dark-"
+        },
+        {
+          "command": "cont",
+          "value": "type moves."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "DarkCaveBlackthornEntrance_MapScripts": {
+      "label_refs": [
+        "DarkCaveBlackthornEntrancePharmacistScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DarkCaveBlackthornEntrancePharmacistScript": {
+      "label_refs": [
+        "DarkCaveBlackthornEntrancePharmacistScript.GotBlackglasses",
+        "DarkCaveBlackthornEntrancePharmacistScript.PackFull"
+      ],
+      "text_refs": [
+        "DarkCaveBlackthornEntrancePharmacistText1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DarkCaveBlackthornEntrancePharmacistScript.GotBlackglasses": {
+      "label_refs": [
+        "DarkCaveBlackthornEntrancePharmacistScript.PackFull"
+      ],
+      "text_refs": [
+        "DarkCaveBlackthornEntrancePharmacistText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DarkCaveBlackthornEntrancePharmacistScript.PackFull": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DarkCaveBlackthornEntranceRevive": {
+      "label_refs": [
+        "DarkCaveBlackthornEntranceTMSnore"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DarkCaveBlackthornEntranceTMSnore": {
+      "label_refs": [
+        "DarkCaveBlackthornEntrance_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DarkCaveBlackthornEntrance_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 3
+  }
+}

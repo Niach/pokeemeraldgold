@@ -1,0 +1,1071 @@
+{
+  "crystal_map": "EcruteakItemfinderHouse",
+  "map_id": "ECRUTEAK_ITEMFINDER_HOUSE",
+  "group": "ECRUTEAK",
+  "group_index": 4,
+  "map_index": 8,
+  "tileset": "TILESET_TRADITIONAL_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_ECRUTEAK_CITY",
+  "music": "MUSIC_ECRUTEAK_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/House2.blk",
+  "source_asm": "maps/EcruteakItemfinderHouse.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "ECRUTEAK_CITY",
+        "dest_warp_id": 11
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "dest_map": "ECRUTEAK_CITY",
+        "dest_warp_id": 11
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 2,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "ItemFinderHouseRadio"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 3,
+        "sprite": "SPRITE_COOLTRAINER_M",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakItemfinderGuy",
+        "flag": -1
+      },
+      {
+        "x": 3,
+        "y": 3,
+        "sprite": "SPRITE_POKEDEX",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakHistoryBook",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "ECRUTEAKITEMFINDERHOUSE_COOLTRAINER_M",
+    "ECRUTEAKITEMFINDERHOUSE_POKEDEX"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "EcruteakItemfinderHouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "EcruteakItemfinderGuy",
+      "label_refs": [
+        "EcruteakItemfinderGuy"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakItemfinderGuy": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_ITEMFINDER",
+        "iftrue .itemfinder",
+        "writetext EcruteakItemfinderAdventureText",
+        "yesorno",
+        "iffalse .no",
+        "writetext EcruteakItemfinderTrueSpiritText",
+        "promptbutton",
+        "verbosegiveitem ITEMFINDER",
+        "setevent EVENT_GOT_ITEMFINDER"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_ITEMFINDER"
+          ],
+          "raw": "checkevent EVENT_GOT_ITEMFINDER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EcruteakItemfinderGuy.itemfinder"
+          ],
+          "raw": "iftrue .itemfinder"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakItemfinderAdventureText"
+          ],
+          "raw": "writetext EcruteakItemfinderAdventureText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "EcruteakItemfinderGuy.no"
+          ],
+          "raw": "iffalse .no"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakItemfinderTrueSpiritText"
+          ],
+          "raw": "writetext EcruteakItemfinderTrueSpiritText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "ITEMFINDER"
+          ],
+          "raw": "verbosegiveitem ITEMFINDER"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_ITEMFINDER"
+          ],
+          "raw": "setevent EVENT_GOT_ITEMFINDER"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "EcruteakItemfinderGuy.itemfinder",
+      "label_refs": [
+        "EcruteakItemfinderGuy.itemfinder",
+        "EcruteakItemfinderGuy.no"
+      ],
+      "text_refs": [
+        "EcruteakItemfinderAdventureText",
+        "EcruteakItemfinderTrueSpiritText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakItemfinderGuy.itemfinder": {
+      "raw_lines": [
+        "writetext ItemfinderExplanationText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "ItemfinderExplanationText"
+          ],
+          "raw": "writetext ItemfinderExplanationText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "ItemfinderExplanationText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakItemfinderGuy.no": {
+      "raw_lines": [
+        "writetext EcruteakItemfinderToEachHisOwnText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakItemfinderToEachHisOwnText"
+          ],
+          "raw": "writetext EcruteakItemfinderToEachHisOwnText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakItemfinderToEachHisOwnText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakHistoryBook": {
+      "raw_lines": [
+        "opentext",
+        "writetext EcruteakHistoryBookText",
+        "yesorno",
+        "iftrue .ReadBook",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakHistoryBookText"
+          ],
+          "raw": "writetext EcruteakHistoryBookText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EcruteakHistoryBook.ReadBook"
+          ],
+          "raw": "iftrue .ReadBook"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "EcruteakHistoryBook.ReadBook"
+      ],
+      "text_refs": [
+        "EcruteakHistoryBookText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakHistoryBook.ReadBook": {
+      "raw_lines": [
+        "writetext EcruteakTwoTowersText",
+        "yesorno",
+        "iftrue .KeepReading",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakTwoTowersText"
+          ],
+          "raw": "writetext EcruteakTwoTowersText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EcruteakHistoryBook.KeepReading"
+          ],
+          "raw": "iftrue .KeepReading"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "EcruteakHistoryBook.KeepReading"
+      ],
+      "text_refs": [
+        "EcruteakTwoTowersText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakHistoryBook.KeepReading": {
+      "raw_lines": [
+        "writetext EcruteakThreeMonText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakThreeMonText"
+          ],
+          "raw": "writetext EcruteakThreeMonText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakThreeMonText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ItemFinderHouseRadio": {
+      "raw_lines": [
+        "jumpstd Radio2Script"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "Radio2Script"
+          ],
+          "raw": "jumpstd Radio2Script"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "Radio2Script"
+      ]
+    },
+    "EcruteakItemfinderHouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  7, ECRUTEAK_CITY, 11",
+        "warp_event  4,  7, ECRUTEAK_CITY, 11",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  2,  1, BGEVENT_READ, ItemFinderHouseRadio",
+        "def_object_events",
+        "object_event  2,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakItemfinderGuy, -1",
+        "object_event  3,  3, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakHistoryBook, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "ECRUTEAK_CITY",
+            "11"
+          ],
+          "raw": "warp_event  3,  7, ECRUTEAK_CITY, 11"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "ECRUTEAK_CITY",
+            "11"
+          ],
+          "raw": "warp_event  4,  7, ECRUTEAK_CITY, 11"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "2",
+            "1",
+            "BGEVENT_READ",
+            "ItemFinderHouseRadio"
+          ],
+          "raw": "bg_event  2,  1, BGEVENT_READ, ItemFinderHouseRadio"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_COOLTRAINER_M",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakItemfinderGuy",
+            "-1"
+          ],
+          "raw": "object_event  2,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakItemfinderGuy, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "3",
+            "SPRITE_POKEDEX",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakHistoryBook",
+            "-1"
+          ],
+          "raw": "object_event  3,  3, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakHistoryBook, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "EcruteakItemfinderAdventureText": {
+      "raw_lines": [
+        "text \"Ah. You're on an\"",
+        "line \"adventure with\"",
+        "cont \"your #MON?\"",
+        "para \"Well, what's an\"",
+        "line \"adventure without\"",
+        "cont \"treasure hunting?\"",
+        "para \"Am I right, or am\"",
+        "line \"I right?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ah. You're on an"
+        },
+        {
+          "command": "line",
+          "value": "adventure with"
+        },
+        {
+          "command": "cont",
+          "value": "your #MON?"
+        },
+        {
+          "command": "para",
+          "value": "Well, what's an"
+        },
+        {
+          "command": "line",
+          "value": "adventure without"
+        },
+        {
+          "command": "cont",
+          "value": "treasure hunting?"
+        },
+        {
+          "command": "para",
+          "value": "Am I right, or am"
+        },
+        {
+          "command": "line",
+          "value": "I right?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakItemfinderTrueSpiritText": {
+      "raw_lines": [
+        "text \"Good! You under-\"",
+        "line \"stand the true\"",
+        "para \"spirit of adven-\"",
+        "line \"ture.\"",
+        "para \"I like that! Take\"",
+        "line \"this with you.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Good! You under-"
+        },
+        {
+          "command": "line",
+          "value": "stand the true"
+        },
+        {
+          "command": "para",
+          "value": "spirit of adven-"
+        },
+        {
+          "command": "line",
+          "value": "ture."
+        },
+        {
+          "command": "para",
+          "value": "I like that! Take"
+        },
+        {
+          "command": "line",
+          "value": "this with you."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ItemfinderExplanationText": {
+      "raw_lines": [
+        "text \"There are many\"",
+        "line \"items lying about\"",
+        "para \"that aren't ob-\"",
+        "line \"vious.\"",
+        "para \"Use ITEMFINDER to\"",
+        "line \"check if there is\"",
+        "para \"an item on the\"",
+        "line \"ground near you.\"",
+        "para \"It doesn't show\"",
+        "line \"the exact spot,\"",
+        "para \"so you'll have to\"",
+        "line \"look yourself.\"",
+        "para \"Oh yeah--I heard\"",
+        "line \"there are items\"",
+        "para \"in ECRUTEAK's\"",
+        "line \"BURNED TOWER.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "There are many"
+        },
+        {
+          "command": "line",
+          "value": "items lying about"
+        },
+        {
+          "command": "para",
+          "value": "that aren't ob-"
+        },
+        {
+          "command": "line",
+          "value": "vious."
+        },
+        {
+          "command": "para",
+          "value": "Use ITEMFINDER to"
+        },
+        {
+          "command": "line",
+          "value": "check if there is"
+        },
+        {
+          "command": "para",
+          "value": "an item on the"
+        },
+        {
+          "command": "line",
+          "value": "ground near you."
+        },
+        {
+          "command": "para",
+          "value": "It doesn't show"
+        },
+        {
+          "command": "line",
+          "value": "the exact spot,"
+        },
+        {
+          "command": "para",
+          "value": "so you'll have to"
+        },
+        {
+          "command": "line",
+          "value": "look yourself."
+        },
+        {
+          "command": "para",
+          "value": "Oh yeah--I heard"
+        },
+        {
+          "command": "line",
+          "value": "there are items"
+        },
+        {
+          "command": "para",
+          "value": "in ECRUTEAK's"
+        },
+        {
+          "command": "line",
+          "value": "BURNED TOWER."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakItemfinderToEachHisOwnText": {
+      "raw_lines": [
+        "text \"Oh\u2026 To each his\"",
+        "line \"own, I suppose\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh\u2026 To each his"
+        },
+        {
+          "command": "line",
+          "value": "own, I suppose\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakHistoryBookText": {
+      "raw_lines": [
+        "text \"HISTORY OF\"",
+        "line \"ECRUTEAK\"",
+        "para \"Want to read it?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "HISTORY OF"
+        },
+        {
+          "command": "line",
+          "value": "ECRUTEAK"
+        },
+        {
+          "command": "para",
+          "value": "Want to read it?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakTwoTowersText": {
+      "raw_lines": [
+        "text \"In ECRUTEAK, there\"",
+        "line \"were two towers.\"",
+        "para \"Each tower was the\"",
+        "line \"roost of powerful\"",
+        "cont \"flying #MON.\"",
+        "para \"But one of the\"",
+        "line \"towers burned to\"",
+        "cont \"the ground.\"",
+        "para \"The two #MON\"",
+        "line \"haven't been seen\"",
+        "cont \"since\u2026\"",
+        "para \"Keep reading?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "In ECRUTEAK, there"
+        },
+        {
+          "command": "line",
+          "value": "were two towers."
+        },
+        {
+          "command": "para",
+          "value": "Each tower was the"
+        },
+        {
+          "command": "line",
+          "value": "roost of powerful"
+        },
+        {
+          "command": "cont",
+          "value": "flying #MON."
+        },
+        {
+          "command": "para",
+          "value": "But one of the"
+        },
+        {
+          "command": "line",
+          "value": "towers burned to"
+        },
+        {
+          "command": "cont",
+          "value": "the ground."
+        },
+        {
+          "command": "para",
+          "value": "The two #MON"
+        },
+        {
+          "command": "line",
+          "value": "haven't been seen"
+        },
+        {
+          "command": "cont",
+          "value": "since\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Keep reading?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakThreeMonText": {
+      "raw_lines": [
+        "text \"ECRUTEAK was also\"",
+        "line \"home to three\"",
+        "para \"#MON that raced\"",
+        "line \"around the town.\"",
+        "para \"They were said to\"",
+        "line \"have been born of\"",
+        "para \"water, lightning\"",
+        "line \"and fire.\"",
+        "para \"But they could not\"",
+        "line \"contain their\"",
+        "cont \"excessive power.\"",
+        "para \"So they say the\"",
+        "line \"three ran like the\"",
+        "para \"wind off into the\"",
+        "line \"grassland.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ECRUTEAK was also"
+        },
+        {
+          "command": "line",
+          "value": "home to three"
+        },
+        {
+          "command": "para",
+          "value": "#MON that raced"
+        },
+        {
+          "command": "line",
+          "value": "around the town."
+        },
+        {
+          "command": "para",
+          "value": "They were said to"
+        },
+        {
+          "command": "line",
+          "value": "have been born of"
+        },
+        {
+          "command": "para",
+          "value": "water, lightning"
+        },
+        {
+          "command": "line",
+          "value": "and fire."
+        },
+        {
+          "command": "para",
+          "value": "But they could not"
+        },
+        {
+          "command": "line",
+          "value": "contain their"
+        },
+        {
+          "command": "cont",
+          "value": "excessive power."
+        },
+        {
+          "command": "para",
+          "value": "So they say the"
+        },
+        {
+          "command": "line",
+          "value": "three ran like the"
+        },
+        {
+          "command": "para",
+          "value": "wind off into the"
+        },
+        {
+          "command": "line",
+          "value": "grassland."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "Radio2Script"
+  ],
+  "dependencies": {
+    "EcruteakItemfinderHouse_MapScripts": {
+      "label_refs": [
+        "EcruteakItemfinderGuy"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakItemfinderGuy": {
+      "label_refs": [
+        "EcruteakItemfinderGuy.itemfinder",
+        "EcruteakItemfinderGuy.no"
+      ],
+      "text_refs": [
+        "EcruteakItemfinderAdventureText",
+        "EcruteakItemfinderTrueSpiritText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakItemfinderGuy.itemfinder": {
+      "label_refs": [],
+      "text_refs": [
+        "ItemfinderExplanationText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakItemfinderGuy.no": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakItemfinderToEachHisOwnText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakHistoryBook": {
+      "label_refs": [
+        "EcruteakHistoryBook.ReadBook"
+      ],
+      "text_refs": [
+        "EcruteakHistoryBookText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakHistoryBook.ReadBook": {
+      "label_refs": [
+        "EcruteakHistoryBook.KeepReading"
+      ],
+      "text_refs": [
+        "EcruteakTwoTowersText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakHistoryBook.KeepReading": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakThreeMonText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ItemFinderHouseRadio": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "Radio2Script"
+      ]
+    },
+    "EcruteakItemfinderHouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 1,
+    "object_events": 2
+  }
+}

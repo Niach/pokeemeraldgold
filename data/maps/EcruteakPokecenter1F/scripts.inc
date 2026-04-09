@@ -1,0 +1,87 @@
+@ Manually maintained after Johto import. Imported scaffold replaced.
+
+EcruteakPokecenter1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, EcruteakPokecenter1F_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, EcruteakPokecenter1F_OnFrame
+	.byte 0
+
+EcruteakPokecenter1F_OnTransition:
+	goto_if_ne VAR_JOHTO_ECRUTEAK_SCENE_STATE, 0, EcruteakPokecenter1F_OnTransition_HideBill
+	clearflag FLAG_HIDE_ECRUTEAK_POKECENTER_BILL
+	end
+
+EcruteakPokecenter1F_OnTransition_HideBill:
+	setflag FLAG_HIDE_ECRUTEAK_POKECENTER_BILL
+	end
+
+EcruteakPokecenter1F_OnFrame:
+	map_script_2 VAR_JOHTO_ECRUTEAK_SCENE_STATE, 0, JohtoScript_EcruteakPokecenter1F_MeetBillScene
+	.2byte 0
+
+JohtoScript_EcruteakPokecenter1F_EcruteakPokecenter1FCooltrainerFScript::
+	lock
+	faceplayer
+	msgbox Crystal_EcruteakPokecenter1F_EcruteakPokecenter1FCooltrainerFText, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_EcruteakPokecenter1F_EcruteakPokecenter1FGymGuideScript::
+	lock
+	faceplayer
+	msgbox Crystal_EcruteakPokecenter1F_EcruteakPokecenter1FGymGuideText, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_EcruteakPokecenter1F_EcruteakPokecenter1FNurseScript::
+	setorcopyvar VAR_0x800B, LOCALID_ECRUTEAKPOKECENTER1F_NURSE
+	call Common_EventScript_PkmnCenterNurse
+	waitmessage
+	waitbuttonpress
+	release
+	end
+
+JohtoScript_EcruteakPokecenter1F_EcruteakPokecenter1FPokefanMScript::
+	lock
+	faceplayer
+	msgbox Crystal_EcruteakPokecenter1F_EcruteakPokecenter1FPokefanMText, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_EcruteakPokecenter1F_ObjectEvent::
+	lock
+	faceplayer
+	msgbox Crystal_EcruteakPokecenter1F_EcruteakPokecenter1F_BillText1, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_EcruteakPokecenter1F_MeetBillScene:
+	lockall
+	pause 30
+	playsound SE_EXIT
+	clearflag FLAG_HIDE_ECRUTEAK_POKECENTER_BILL
+	waitsfx
+	applymovement LOCALID_ECRUTEAKPOKECENTER1F_BILL, Crystal_EcruteakPokecenter1F_EcruteakPokecenter1FBillMovement1
+	applymovement LOCALID_PLAYER, Crystal_EcruteakPokecenter1F_EcruteakPokecenter1FPlayerMovement1
+	waitmovement 0
+	turnobject LOCALID_ECRUTEAKPOKECENTER1F_NURSE, DIR_NORTH
+	pause 10
+	turnobject LOCALID_ECRUTEAKPOKECENTER1F_NURSE, DIR_SOUTH
+	pause 30
+	turnobject LOCALID_ECRUTEAKPOKECENTER1F_NURSE, DIR_NORTH
+	pause 10
+	turnobject LOCALID_ECRUTEAKPOKECENTER1F_NURSE, DIR_SOUTH
+	pause 20
+	turnobject LOCALID_ECRUTEAKPOKECENTER1F_BILL, DIR_SOUTH
+	pause 10
+	msgbox Crystal_EcruteakPokecenter1F_EcruteakPokecenter1F_BillText1, MSGBOX_DEFAULT
+	msgbox Crystal_EcruteakPokecenter1F_EcruteakPokecenter1F_BillText2, MSGBOX_DEFAULT
+	turnobject LOCALID_PLAYER, DIR_SOUTH
+	applymovement LOCALID_ECRUTEAKPOKECENTER1F_BILL, Crystal_EcruteakPokecenter1F_EcruteakPokecenter1FBillMovement2
+	waitmovement 0
+	playsound SE_EXIT
+	setflag FLAG_HIDE_ECRUTEAK_POKECENTER_BILL
+	removeobject LOCALID_ECRUTEAKPOKECENTER1F_BILL
+	setvar VAR_JOHTO_ECRUTEAK_SCENE_STATE, 1
+	waitsfx
+	releaseall
+	end

@@ -21,6 +21,7 @@
 #include "party_menu.h"
 #include "pokedex.h"
 #include "pokeblock.h"
+#include "johto_story.h"
 #include "pokemon.h"
 #include "pokemon_animation.h"
 #include "pokemon_summary_screen.h"
@@ -6966,9 +6967,7 @@ const u8 *GetTrainerClassNameFromId(u16 trainerId)
 
 const u8 *GetTrainerNameFromId(u16 trainerId)
 {
-    if (trainerId >= TRAINERS_COUNT)
-        trainerId = TRAINER_NONE;
-    return gTrainers[trainerId].trainerName;
+    return GetTrainerNameWithJohtoOverride(trainerId);
 }
 
 bool8 HasTwoFramesAnimation(u16 species)

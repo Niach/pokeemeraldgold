@@ -1,0 +1,4498 @@
+{
+  "crystal_map": "DragonShrine",
+  "map_id": "DRAGON_SHRINE",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 82,
+  "tileset": "TILESET_LAB",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_DRAGONS_DEN",
+  "music": "MUSIC_DRAGONS_DEN",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_NITE",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 5,
+  "border_block": "00",
+  "blk_path": "maps/DragonShrine.blk",
+  "source_asm": "maps/DragonShrine.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "DragonShrineTakeTestScene",
+        "scene_id": "SCENE_DRAGONSHRINE_TAKE_TEST"
+      },
+      {
+        "script": "DragonShrineNoopScene",
+        "scene_id": "SCENE_DRAGONSHRINE_NOOP"
+      }
+    ],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 4,
+        "y": 9,
+        "dest_map": "DRAGONS_DEN_B1F",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 5,
+        "y": 9,
+        "dest_map": "DRAGONS_DEN_B1F",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 5,
+        "y": 1,
+        "sprite": "SPRITE_ELDER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "DragonShrineElder1Script",
+        "flag": "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "sprite": "SPRITE_ELDER",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "DragonShrineElder2Script",
+        "flag": "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+      },
+      {
+        "x": 7,
+        "y": 4,
+        "sprite": "SPRITE_ELDER",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "DragonShrineElder3Script",
+        "flag": "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+      },
+      {
+        "x": 4,
+        "y": 8,
+        "sprite": "SPRITE_CLAIR",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_DRAGON_SHRINE_CLAIR"
+      }
+    ]
+  },
+  "object_consts": [
+    "DRAGONSHRINE_ELDER1",
+    "DRAGONSHRINE_ELDER2",
+    "DRAGONSHRINE_ELDER3",
+    "DRAGONSHRINE_CLAIR"
+  ],
+  "scene_ids": [
+    "SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM",
+    "SCENE_DRAGONSHRINE_NOOP",
+    "SCENE_DRAGONSHRINE_TAKE_TEST"
+  ],
+  "scripts": {
+    "DragonShrine_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script DragonShrineTakeTestScene, SCENE_DRAGONSHRINE_TAKE_TEST",
+        "scene_script DragonShrineNoopScene,     SCENE_DRAGONSHRINE_NOOP",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "DragonShrineTakeTestScene",
+            "SCENE_DRAGONSHRINE_TAKE_TEST"
+          ],
+          "raw": "scene_script DragonShrineTakeTestScene, SCENE_DRAGONSHRINE_TAKE_TEST"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "DragonShrineNoopScene",
+            "SCENE_DRAGONSHRINE_NOOP"
+          ],
+          "raw": "scene_script DragonShrineNoopScene,     SCENE_DRAGONSHRINE_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "DragonShrineTakeTestScene",
+      "label_refs": [
+        "DragonShrineTakeTestScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScene": {
+      "raw_lines": [
+        "sdefer DragonShrineTakeTestScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "sdefer",
+          "args": [
+            "DragonShrineTakeTestScript"
+          ],
+          "raw": "sdefer DragonShrineTakeTestScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "sdefer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineNoopScene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScript": {
+      "raw_lines": [
+        "applymovement PLAYER, DragonShrinePlayerWalkInMovement",
+        "applymovement DRAGONSHRINE_ELDER1, DragonShrineElderStepDownMovement",
+        "opentext",
+        "writetext DragonShrineElderGreetingText",
+        "promptbutton"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "DragonShrinePlayerWalkInMovement"
+          ],
+          "raw": "applymovement PLAYER, DragonShrinePlayerWalkInMovement"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "DRAGONSHRINE_ELDER1",
+            "DragonShrineElderStepDownMovement"
+          ],
+          "raw": "applymovement DRAGONSHRINE_ELDER1, DragonShrineElderStepDownMovement"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineElderGreetingText"
+          ],
+          "raw": "writetext DragonShrineElderGreetingText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        }
+      ],
+      "first_command": "applymovement",
+      "fallthrough_label": "DragonShrineTakeTestScript.Question1",
+      "label_refs": [
+        "DragonShrineTakeTestScript.Question1"
+      ],
+      "text_refs": [
+        "DragonShrineElderGreetingText"
+      ],
+      "movement_refs": [
+        "DragonShrineElderStepDownMovement",
+        "DragonShrinePlayerWalkInMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScript.Question1": {
+      "raw_lines": [
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2",
+        "writetext DragonShrineQuestion1Text",
+        "promptbutton",
+        "loadmenu DragonShrineQuestion1_MenuHeader",
+        "verticalmenu",
+        "closewindow",
+        "ifequal 1, .RightAnswer",
+        "ifequal 2, .WrongAnswer",
+        "ifequal 3, .RightAnswer",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineQuestion1Text"
+          ],
+          "raw": "writetext DragonShrineQuestion1Text"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "loadmenu",
+          "args": [
+            "DragonShrineQuestion1_MenuHeader"
+          ],
+          "raw": "loadmenu DragonShrineQuestion1_MenuHeader"
+        },
+        {
+          "command": "verticalmenu",
+          "args": [],
+          "raw": "verticalmenu"
+        },
+        {
+          "command": "closewindow",
+          "args": [],
+          "raw": "closewindow"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "DragonShrineTakeTestScript.RightAnswer"
+          ],
+          "raw": "ifequal 1, .RightAnswer"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "DragonShrineTakeTestScript.WrongAnswer"
+          ],
+          "raw": "ifequal 2, .WrongAnswer"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "3",
+            "DragonShrineTakeTestScript.RightAnswer"
+          ],
+          "raw": "ifequal 3, .RightAnswer"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "setevent",
+      "label_refs": [
+        "DragonShrineTakeTestScript.RightAnswer",
+        "DragonShrineTakeTestScript.WrongAnswer"
+      ],
+      "text_refs": [
+        "DragonShrineQuestion1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScript.Question2": {
+      "raw_lines": [
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3",
+        "writetext DragonShrineQuestion2Text",
+        "promptbutton",
+        "loadmenu DragonShrineQuestion2_MenuHeader",
+        "verticalmenu",
+        "closewindow",
+        "ifequal 1, .RightAnswer",
+        "ifequal 2, .RightAnswer",
+        "ifequal 3, .WrongAnswer"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineQuestion2Text"
+          ],
+          "raw": "writetext DragonShrineQuestion2Text"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "loadmenu",
+          "args": [
+            "DragonShrineQuestion2_MenuHeader"
+          ],
+          "raw": "loadmenu DragonShrineQuestion2_MenuHeader"
+        },
+        {
+          "command": "verticalmenu",
+          "args": [],
+          "raw": "verticalmenu"
+        },
+        {
+          "command": "closewindow",
+          "args": [],
+          "raw": "closewindow"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "DragonShrineTakeTestScript.RightAnswer"
+          ],
+          "raw": "ifequal 1, .RightAnswer"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "DragonShrineTakeTestScript.RightAnswer"
+          ],
+          "raw": "ifequal 2, .RightAnswer"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "3",
+            "DragonShrineTakeTestScript.WrongAnswer"
+          ],
+          "raw": "ifequal 3, .WrongAnswer"
+        }
+      ],
+      "first_command": "setevent",
+      "fallthrough_label": "DragonShrineTakeTestScript.Question3",
+      "label_refs": [
+        "DragonShrineTakeTestScript.Question3",
+        "DragonShrineTakeTestScript.RightAnswer",
+        "DragonShrineTakeTestScript.WrongAnswer"
+      ],
+      "text_refs": [
+        "DragonShrineQuestion2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScript.Question3": {
+      "raw_lines": [
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4",
+        "writetext DragonShrineQuestion3Text",
+        "promptbutton",
+        "loadmenu DragonShrineQuestion3_MenuHeader",
+        "verticalmenu",
+        "closewindow",
+        "ifequal 1, .WrongAnswer",
+        "ifequal 2, .RightAnswer",
+        "ifequal 3, .RightAnswer"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineQuestion3Text"
+          ],
+          "raw": "writetext DragonShrineQuestion3Text"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "loadmenu",
+          "args": [
+            "DragonShrineQuestion3_MenuHeader"
+          ],
+          "raw": "loadmenu DragonShrineQuestion3_MenuHeader"
+        },
+        {
+          "command": "verticalmenu",
+          "args": [],
+          "raw": "verticalmenu"
+        },
+        {
+          "command": "closewindow",
+          "args": [],
+          "raw": "closewindow"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "DragonShrineTakeTestScript.WrongAnswer"
+          ],
+          "raw": "ifequal 1, .WrongAnswer"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "DragonShrineTakeTestScript.RightAnswer"
+          ],
+          "raw": "ifequal 2, .RightAnswer"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "3",
+            "DragonShrineTakeTestScript.RightAnswer"
+          ],
+          "raw": "ifequal 3, .RightAnswer"
+        }
+      ],
+      "first_command": "setevent",
+      "fallthrough_label": "DragonShrineTakeTestScript.Question4",
+      "label_refs": [
+        "DragonShrineTakeTestScript.Question4",
+        "DragonShrineTakeTestScript.RightAnswer",
+        "DragonShrineTakeTestScript.WrongAnswer"
+      ],
+      "text_refs": [
+        "DragonShrineQuestion3Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScript.Question4": {
+      "raw_lines": [
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5",
+        "writetext DragonShrineQuestion4Text",
+        "promptbutton",
+        "loadmenu DragonShrineQuestion4_MenuHeader",
+        "verticalmenu",
+        "closewindow",
+        "ifequal 1, .RightAnswer",
+        "ifequal 2, .WrongAnswer",
+        "ifequal 3, .RightAnswer"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineQuestion4Text"
+          ],
+          "raw": "writetext DragonShrineQuestion4Text"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "loadmenu",
+          "args": [
+            "DragonShrineQuestion4_MenuHeader"
+          ],
+          "raw": "loadmenu DragonShrineQuestion4_MenuHeader"
+        },
+        {
+          "command": "verticalmenu",
+          "args": [],
+          "raw": "verticalmenu"
+        },
+        {
+          "command": "closewindow",
+          "args": [],
+          "raw": "closewindow"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "DragonShrineTakeTestScript.RightAnswer"
+          ],
+          "raw": "ifequal 1, .RightAnswer"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "DragonShrineTakeTestScript.WrongAnswer"
+          ],
+          "raw": "ifequal 2, .WrongAnswer"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "3",
+            "DragonShrineTakeTestScript.RightAnswer"
+          ],
+          "raw": "ifequal 3, .RightAnswer"
+        }
+      ],
+      "first_command": "setevent",
+      "fallthrough_label": "DragonShrineTakeTestScript.Question5",
+      "label_refs": [
+        "DragonShrineTakeTestScript.Question5",
+        "DragonShrineTakeTestScript.RightAnswer",
+        "DragonShrineTakeTestScript.WrongAnswer"
+      ],
+      "text_refs": [
+        "DragonShrineQuestion4Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScript.Question5": {
+      "raw_lines": [
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6",
+        "writetext DragonShrineQuestion5Text",
+        "promptbutton",
+        "loadmenu DragonShrineQuestion5_MenuHeader",
+        "verticalmenu",
+        "closewindow",
+        "ifequal 1, .WrongAnswer",
+        "ifequal 2, .RightAnswer",
+        "ifequal 3, .WrongAnswer"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineQuestion5Text"
+          ],
+          "raw": "writetext DragonShrineQuestion5Text"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "loadmenu",
+          "args": [
+            "DragonShrineQuestion5_MenuHeader"
+          ],
+          "raw": "loadmenu DragonShrineQuestion5_MenuHeader"
+        },
+        {
+          "command": "verticalmenu",
+          "args": [],
+          "raw": "verticalmenu"
+        },
+        {
+          "command": "closewindow",
+          "args": [],
+          "raw": "closewindow"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "DragonShrineTakeTestScript.WrongAnswer"
+          ],
+          "raw": "ifequal 1, .WrongAnswer"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "DragonShrineTakeTestScript.RightAnswer"
+          ],
+          "raw": "ifequal 2, .RightAnswer"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "3",
+            "DragonShrineTakeTestScript.WrongAnswer"
+          ],
+          "raw": "ifequal 3, .WrongAnswer"
+        }
+      ],
+      "first_command": "setevent",
+      "fallthrough_label": "DragonShrineTakeTestScript.RightAnswer",
+      "label_refs": [
+        "DragonShrineTakeTestScript.RightAnswer",
+        "DragonShrineTakeTestScript.WrongAnswer"
+      ],
+      "text_refs": [
+        "DragonShrineQuestion5Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScript.RightAnswer": {
+      "raw_lines": [
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6",
+        "iftrue .PassedTheTest",
+        "writetext DragonShrineRightAnswerText",
+        "promptbutton",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5",
+        "iftrue .Question5",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4",
+        "iftrue .Question4",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3",
+        "iftrue .Question3",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2",
+        "iftrue .Question2"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DragonShrineTakeTestScript.PassedTheTest"
+          ],
+          "raw": "iftrue .PassedTheTest"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineRightAnswerText"
+          ],
+          "raw": "writetext DragonShrineRightAnswerText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DragonShrineTakeTestScript.Question5"
+          ],
+          "raw": "iftrue .Question5"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DragonShrineTakeTestScript.Question4"
+          ],
+          "raw": "iftrue .Question4"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DragonShrineTakeTestScript.Question3"
+          ],
+          "raw": "iftrue .Question3"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DragonShrineTakeTestScript.Question2"
+          ],
+          "raw": "iftrue .Question2"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "DragonShrineTakeTestScript.WrongAnswer",
+      "label_refs": [
+        "DragonShrineTakeTestScript.PassedTheTest",
+        "DragonShrineTakeTestScript.Question2",
+        "DragonShrineTakeTestScript.Question3",
+        "DragonShrineTakeTestScript.Question4",
+        "DragonShrineTakeTestScript.Question5",
+        "DragonShrineTakeTestScript.WrongAnswer"
+      ],
+      "text_refs": [
+        "DragonShrineRightAnswerText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScript.WrongAnswer": {
+      "raw_lines": [
+        "closetext",
+        "turnobject DRAGONSHRINE_ELDER1, LEFT",
+        "opentext",
+        "writetext DragonShrineWrongAnswerText1",
+        "waitbutton",
+        "closetext",
+        "turnobject DRAGONSHRINE_ELDER1, DOWN",
+        "opentext",
+        "writetext DragonShrineWrongAnswerText2",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG",
+        "opentext",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6",
+        "iftrue .Question5",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5",
+        "iftrue .Question4",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4",
+        "iftrue .Question3",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3",
+        "iftrue .Question2",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2",
+        "iftrue .Question1"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "DRAGONSHRINE_ELDER1",
+            "LEFT"
+          ],
+          "raw": "turnobject DRAGONSHRINE_ELDER1, LEFT"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineWrongAnswerText1"
+          ],
+          "raw": "writetext DragonShrineWrongAnswerText1"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "DRAGONSHRINE_ELDER1",
+            "DOWN"
+          ],
+          "raw": "turnobject DRAGONSHRINE_ELDER1, DOWN"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineWrongAnswerText2"
+          ],
+          "raw": "writetext DragonShrineWrongAnswerText2"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG"
+          ],
+          "raw": "setevent EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DragonShrineTakeTestScript.Question5"
+          ],
+          "raw": "iftrue .Question5"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DragonShrineTakeTestScript.Question4"
+          ],
+          "raw": "iftrue .Question4"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DragonShrineTakeTestScript.Question3"
+          ],
+          "raw": "iftrue .Question3"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DragonShrineTakeTestScript.Question2"
+          ],
+          "raw": "iftrue .Question2"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DragonShrineTakeTestScript.Question1"
+          ],
+          "raw": "iftrue .Question1"
+        }
+      ],
+      "first_command": "closetext",
+      "fallthrough_label": "DragonShrineTakeTestScript.PassedTheTest",
+      "label_refs": [
+        "DragonShrineTakeTestScript.PassedTheTest",
+        "DragonShrineTakeTestScript.Question1",
+        "DragonShrineTakeTestScript.Question2",
+        "DragonShrineTakeTestScript.Question3",
+        "DragonShrineTakeTestScript.Question4",
+        "DragonShrineTakeTestScript.Question5"
+      ],
+      "text_refs": [
+        "DragonShrineWrongAnswerText1",
+        "DragonShrineWrongAnswerText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScript.PassedTheTest": {
+      "raw_lines": [
+        "writetext DragonShrinePassedTestText",
+        "waitbutton",
+        "closetext",
+        "playsound SFX_ENTER_DOOR",
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "playmusic MUSIC_CLAIR",
+        "appear DRAGONSHRINE_CLAIR",
+        "waitsfx",
+        "turnobject PLAYER, DOWN",
+        "pause 30",
+        "applymovement DRAGONSHRINE_CLAIR, DragonShrineClairWalkInMovement",
+        "turnobject DRAGONSHRINE_CLAIR, RIGHT",
+        "turnobject PLAYER, LEFT",
+        "turnobject DRAGONSHRINE_ELDER1, LEFT",
+        "opentext",
+        "writetext DragonShrineClairYouPassedText",
+        "waitbutton",
+        "closetext",
+        "special FadeOutMusic",
+        "applymovement DRAGONSHRINE_CLAIR, DragonShrineClairBigStepLeftMovement",
+        "opentext",
+        "writetext DragonShrineClairThatCantBeText",
+        "waitbutton",
+        "closetext",
+        "applymovement DRAGONSHRINE_CLAIR, DragonShrineClairSlowStepLeftMovement",
+        "opentext",
+        "writetext DragonShrineClairYoureLyingText",
+        "waitbutton",
+        "closetext",
+        "applymovement DRAGONSHRINE_ELDER1, DragonShrineElderWalkToClairMovement",
+        "turnobject DRAGONSHRINE_CLAIR, UP",
+        "opentext",
+        "writetext DragonShrineMustIInformLanceText",
+        "waitbutton",
+        "closetext",
+        "showemote EMOTE_SHOCK, DRAGONSHRINE_CLAIR, 15",
+        "opentext",
+        "writetext DragonShrineIUnderstandText",
+        "waitbutton",
+        "closetext",
+        "applymovement DRAGONSHRINE_CLAIR, DragonShrineClairTwoSlowStepsRightMovement",
+        "opentext",
+        "writetext DragonShrineHereRisingBadgeText",
+        "waitbutton",
+        "setflag ENGINE_RISINGBADGE",
+        "playsound SFX_GET_BADGE",
+        "waitsfx",
+        "special RestartMapMusic",
+        "specialphonecall SPECIALCALL_MASTERBALL",
+        "setscene SCENE_DRAGONSHRINE_NOOP",
+        "setmapscene DRAGONS_DEN_B1F, SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM",
+        "writetext DragonShrinePlayerReceivedRisingBadgeText",
+        "promptbutton",
+        "writetext DragonShrineRisingBadgeExplanationText",
+        "waitbutton",
+        "closetext",
+        "applymovement DRAGONSHRINE_ELDER1, DragonShrineElderWalkAway1Movement",
+        "turnobject DRAGONSHRINE_CLAIR, UP",
+        "applymovement DRAGONSHRINE_ELDER1, DragonShrineElderWalkAway2Movement",
+        "turnobject PLAYER, UP",
+        "opentext",
+        "writetext DragonShrineElderScoldsClairText",
+        "waitbutton",
+        "closetext",
+        "opentext",
+        "writetext DragonShrineSpeechlessText",
+        "waitbutton",
+        "closetext",
+        "applymovement DRAGONSHRINE_CLAIR, DragonShrineClairWalkOutMovement",
+        "playsound SFX_ENTER_DOOR",
+        "disappear DRAGONSHRINE_CLAIR",
+        "waitsfx",
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrinePassedTestText"
+          ],
+          "raw": "writetext DragonShrinePassedTestText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_CLAIR"
+          ],
+          "raw": "playmusic MUSIC_CLAIR"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "DRAGONSHRINE_CLAIR"
+          ],
+          "raw": "appear DRAGONSHRINE_CLAIR"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "30"
+          ],
+          "raw": "pause 30"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "DRAGONSHRINE_CLAIR",
+            "DragonShrineClairWalkInMovement"
+          ],
+          "raw": "applymovement DRAGONSHRINE_CLAIR, DragonShrineClairWalkInMovement"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "DRAGONSHRINE_CLAIR",
+            "RIGHT"
+          ],
+          "raw": "turnobject DRAGONSHRINE_CLAIR, RIGHT"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYER, LEFT"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "DRAGONSHRINE_ELDER1",
+            "LEFT"
+          ],
+          "raw": "turnobject DRAGONSHRINE_ELDER1, LEFT"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineClairYouPassedText"
+          ],
+          "raw": "writetext DragonShrineClairYouPassedText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "DRAGONSHRINE_CLAIR",
+            "DragonShrineClairBigStepLeftMovement"
+          ],
+          "raw": "applymovement DRAGONSHRINE_CLAIR, DragonShrineClairBigStepLeftMovement"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineClairThatCantBeText"
+          ],
+          "raw": "writetext DragonShrineClairThatCantBeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "DRAGONSHRINE_CLAIR",
+            "DragonShrineClairSlowStepLeftMovement"
+          ],
+          "raw": "applymovement DRAGONSHRINE_CLAIR, DragonShrineClairSlowStepLeftMovement"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineClairYoureLyingText"
+          ],
+          "raw": "writetext DragonShrineClairYoureLyingText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "DRAGONSHRINE_ELDER1",
+            "DragonShrineElderWalkToClairMovement"
+          ],
+          "raw": "applymovement DRAGONSHRINE_ELDER1, DragonShrineElderWalkToClairMovement"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "DRAGONSHRINE_CLAIR",
+            "UP"
+          ],
+          "raw": "turnobject DRAGONSHRINE_CLAIR, UP"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineMustIInformLanceText"
+          ],
+          "raw": "writetext DragonShrineMustIInformLanceText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "DRAGONSHRINE_CLAIR",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, DRAGONSHRINE_CLAIR, 15"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineIUnderstandText"
+          ],
+          "raw": "writetext DragonShrineIUnderstandText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "DRAGONSHRINE_CLAIR",
+            "DragonShrineClairTwoSlowStepsRightMovement"
+          ],
+          "raw": "applymovement DRAGONSHRINE_CLAIR, DragonShrineClairTwoSlowStepsRightMovement"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineHereRisingBadgeText"
+          ],
+          "raw": "writetext DragonShrineHereRisingBadgeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_RISINGBADGE"
+          ],
+          "raw": "setflag ENGINE_RISINGBADGE"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_GET_BADGE"
+          ],
+          "raw": "playsound SFX_GET_BADGE"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "specialphonecall",
+          "args": [
+            "SPECIALCALL_MASTERBALL"
+          ],
+          "raw": "specialphonecall SPECIALCALL_MASTERBALL"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_DRAGONSHRINE_NOOP"
+          ],
+          "raw": "setscene SCENE_DRAGONSHRINE_NOOP"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "DRAGONS_DEN_B1F",
+            "SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM"
+          ],
+          "raw": "setmapscene DRAGONS_DEN_B1F, SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrinePlayerReceivedRisingBadgeText"
+          ],
+          "raw": "writetext DragonShrinePlayerReceivedRisingBadgeText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineRisingBadgeExplanationText"
+          ],
+          "raw": "writetext DragonShrineRisingBadgeExplanationText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "DRAGONSHRINE_ELDER1",
+            "DragonShrineElderWalkAway1Movement"
+          ],
+          "raw": "applymovement DRAGONSHRINE_ELDER1, DragonShrineElderWalkAway1Movement"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "DRAGONSHRINE_CLAIR",
+            "UP"
+          ],
+          "raw": "turnobject DRAGONSHRINE_CLAIR, UP"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "DRAGONSHRINE_ELDER1",
+            "DragonShrineElderWalkAway2Movement"
+          ],
+          "raw": "applymovement DRAGONSHRINE_ELDER1, DragonShrineElderWalkAway2Movement"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "UP"
+          ],
+          "raw": "turnobject PLAYER, UP"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineElderScoldsClairText"
+          ],
+          "raw": "writetext DragonShrineElderScoldsClairText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineSpeechlessText"
+          ],
+          "raw": "writetext DragonShrineSpeechlessText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "DRAGONSHRINE_CLAIR",
+            "DragonShrineClairWalkOutMovement"
+          ],
+          "raw": "applymovement DRAGONSHRINE_CLAIR, DragonShrineClairWalkOutMovement"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "DRAGONSHRINE_CLAIR"
+          ],
+          "raw": "disappear DRAGONSHRINE_CLAIR"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "DragonShrineClairThatCantBeText",
+        "DragonShrineClairYouPassedText",
+        "DragonShrineClairYoureLyingText",
+        "DragonShrineElderScoldsClairText",
+        "DragonShrineHereRisingBadgeText",
+        "DragonShrineIUnderstandText",
+        "DragonShrineMustIInformLanceText",
+        "DragonShrinePassedTestText",
+        "DragonShrinePlayerReceivedRisingBadgeText",
+        "DragonShrineRisingBadgeExplanationText",
+        "DragonShrineSpeechlessText"
+      ],
+      "movement_refs": [
+        "DragonShrineClairBigStepLeftMovement",
+        "DragonShrineClairSlowStepLeftMovement",
+        "DragonShrineClairTwoSlowStepsRightMovement",
+        "DragonShrineClairWalkInMovement",
+        "DragonShrineClairWalkOutMovement",
+        "DragonShrineElderWalkAway1Movement",
+        "DragonShrineElderWalkAway2Movement",
+        "DragonShrineElderWalkToClairMovement"
+      ],
+      "scene_refs": [
+        "SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM",
+        "SCENE_DRAGONSHRINE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "DragonShrineElder1Script": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iftrue .DontGiveDratiniYet",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7",
+        "iftrue .ReceivedDratini",
+        "checkevent EVENT_GOT_DRATINI",
+        "iffalse .GiveDratini",
+        "checkevent EVENT_BEAT_RIVAL_IN_MT_MOON",
+        "iftrue .BeatRivalInMtMoon",
+        "writetext DragonShrineClairsGrandfatherText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DragonShrineElder1Script.DontGiveDratiniYet"
+          ],
+          "raw": "iftrue .DontGiveDratiniYet"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DragonShrineElder1Script.ReceivedDratini"
+          ],
+          "raw": "iftrue .ReceivedDratini"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_DRATINI"
+          ],
+          "raw": "checkevent EVENT_GOT_DRATINI"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "DragonShrineElder1Script.GiveDratini"
+          ],
+          "raw": "iffalse .GiveDratini"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_RIVAL_IN_MT_MOON"
+          ],
+          "raw": "checkevent EVENT_BEAT_RIVAL_IN_MT_MOON"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "DragonShrineElder1Script.BeatRivalInMtMoon"
+          ],
+          "raw": "iftrue .BeatRivalInMtMoon"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineClairsGrandfatherText"
+          ],
+          "raw": "writetext DragonShrineClairsGrandfatherText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "DragonShrineElder1Script.BeatRivalInMtMoon",
+        "DragonShrineElder1Script.DontGiveDratiniYet",
+        "DragonShrineElder1Script.GiveDratini",
+        "DragonShrineElder1Script.ReceivedDratini"
+      ],
+      "text_refs": [
+        "DragonShrineClairsGrandfatherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineElder1Script.GiveDratini": {
+      "raw_lines": [
+        "writetext DragonShrineTakeThisDratiniText",
+        "waitbutton",
+        "readvar VAR_PARTYCOUNT",
+        "ifequal PARTY_LENGTH, .PartyFull",
+        "writetext DragonShrinePlayerReceivedDratiniText",
+        "playsound SFX_CAUGHT_MON",
+        "waitsfx",
+        "givepoke DRATINI, 15",
+        "checkevent EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG",
+        "special GiveDratini",
+        "setevent EVENT_GOT_DRATINI",
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7",
+        "writetext DragonShrineSymbolicDragonText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineTakeThisDratiniText"
+          ],
+          "raw": "writetext DragonShrineTakeThisDratiniText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_PARTYCOUNT"
+          ],
+          "raw": "readvar VAR_PARTYCOUNT"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PARTY_LENGTH",
+            "DragonShrineElder1Script.PartyFull"
+          ],
+          "raw": "ifequal PARTY_LENGTH, .PartyFull"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrinePlayerReceivedDratiniText"
+          ],
+          "raw": "writetext DragonShrinePlayerReceivedDratiniText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_CAUGHT_MON"
+          ],
+          "raw": "playsound SFX_CAUGHT_MON"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "givepoke",
+          "args": [
+            "DRATINI",
+            "15"
+          ],
+          "raw": "givepoke DRATINI, 15"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG"
+          ],
+          "raw": "checkevent EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG"
+        },
+        {
+          "command": "special",
+          "args": [
+            "GiveDratini"
+          ],
+          "raw": "special GiveDratini"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_DRATINI"
+          ],
+          "raw": "setevent EVENT_GOT_DRATINI"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineSymbolicDragonText"
+          ],
+          "raw": "writetext DragonShrineSymbolicDragonText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "DragonShrineElder1Script.PartyFull"
+      ],
+      "text_refs": [
+        "DragonShrinePlayerReceivedDratiniText",
+        "DragonShrineSymbolicDragonText",
+        "DragonShrineTakeThisDratiniText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineElder1Script.PartyFull": {
+      "raw_lines": [
+        "writetext DragonShrinePartyFullText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrinePartyFullText"
+          ],
+          "raw": "writetext DragonShrinePartyFullText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "DragonShrinePartyFullText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineElder1Script.BeatRivalInMtMoon": {
+      "raw_lines": [
+        "writetext DragonShrineRivalIsInTrainingText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineRivalIsInTrainingText"
+          ],
+          "raw": "writetext DragonShrineRivalIsInTrainingText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "DragonShrineRivalIsInTrainingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineElder1Script.DontGiveDratiniYet": {
+      "raw_lines": [
+        "writetext DragonShrineComeAgainText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineComeAgainText"
+          ],
+          "raw": "writetext DragonShrineComeAgainText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "DragonShrineComeAgainText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineElder1Script.ReceivedDratini": {
+      "raw_lines": [
+        "writetext DragonShrineSymbolicDragonText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineSymbolicDragonText"
+          ],
+          "raw": "writetext DragonShrineSymbolicDragonText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "DragonShrineSymbolicDragonText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineElder2Script": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext DragonShrineElder2Text",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineElder2Text"
+          ],
+          "raw": "writetext DragonShrineElder2Text"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "DragonShrineElder2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineElder3Script": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext DragonShrineElder3Text",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DragonShrineElder3Text"
+          ],
+          "raw": "writetext DragonShrineElder3Text"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "DragonShrineElder3Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion1_MenuHeader": {
+      "raw_lines": [
+        "db MENU_BACKUP_TILES",
+        "menu_coords 8, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1",
+        "dw .MenuData",
+        "db 1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "MENU_BACKUP_TILES"
+          ],
+          "raw": "db MENU_BACKUP_TILES"
+        },
+        {
+          "command": "menu_coords",
+          "args": [
+            "8",
+            "4",
+            "SCREEN_WIDTH - 1",
+            "TEXTBOX_Y - 1"
+          ],
+          "raw": "menu_coords 8, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1"
+        },
+        {
+          "command": "dw",
+          "args": [
+            "DragonShrineQuestion1_MenuHeader.MenuData"
+          ],
+          "raw": "dw .MenuData"
+        },
+        {
+          "command": "db",
+          "args": [
+            "1"
+          ],
+          "raw": "db 1"
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "DragonShrineQuestion1_MenuHeader.MenuData",
+      "label_refs": [
+        "DragonShrineQuestion1_MenuHeader.MenuData"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion1_MenuHeader.MenuData": {
+      "raw_lines": [
+        "db STATICMENU_CURSOR | STATICMENU_DISABLE_B",
+        "db 3",
+        "db \"Pal@\"",
+        "db \"Underling@\"",
+        "db \"Friend@\""
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "STATICMENU_CURSOR | STATICMENU_DISABLE_B"
+          ],
+          "raw": "db STATICMENU_CURSOR | STATICMENU_DISABLE_B"
+        },
+        {
+          "command": "db",
+          "args": [
+            "3"
+          ],
+          "raw": "db 3"
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"Pal@\""
+          ],
+          "raw": "db \"Pal@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"Underling@\""
+          ],
+          "raw": "db \"Underling@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"Friend@\""
+          ],
+          "raw": "db \"Friend@\""
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "DragonShrineQuestion2_MenuHeader",
+      "label_refs": [
+        "DragonShrineQuestion2_MenuHeader"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion2_MenuHeader": {
+      "raw_lines": [
+        "db MENU_BACKUP_TILES",
+        "menu_coords 9, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1",
+        "dw .MenuData",
+        "db 1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "MENU_BACKUP_TILES"
+          ],
+          "raw": "db MENU_BACKUP_TILES"
+        },
+        {
+          "command": "menu_coords",
+          "args": [
+            "9",
+            "4",
+            "SCREEN_WIDTH - 1",
+            "TEXTBOX_Y - 1"
+          ],
+          "raw": "menu_coords 9, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1"
+        },
+        {
+          "command": "dw",
+          "args": [
+            "DragonShrineQuestion2_MenuHeader.MenuData"
+          ],
+          "raw": "dw .MenuData"
+        },
+        {
+          "command": "db",
+          "args": [
+            "1"
+          ],
+          "raw": "db 1"
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "DragonShrineQuestion2_MenuHeader.MenuData",
+      "label_refs": [
+        "DragonShrineQuestion2_MenuHeader.MenuData"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion2_MenuHeader.MenuData": {
+      "raw_lines": [
+        "db STATICMENU_CURSOR | STATICMENU_DISABLE_B",
+        "db 3",
+        "db \"Strategy@\"",
+        "db \"Raising@\"",
+        "db \"Cheating@\""
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "STATICMENU_CURSOR | STATICMENU_DISABLE_B"
+          ],
+          "raw": "db STATICMENU_CURSOR | STATICMENU_DISABLE_B"
+        },
+        {
+          "command": "db",
+          "args": [
+            "3"
+          ],
+          "raw": "db 3"
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"Strategy@\""
+          ],
+          "raw": "db \"Strategy@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"Raising@\""
+          ],
+          "raw": "db \"Raising@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"Cheating@\""
+          ],
+          "raw": "db \"Cheating@\""
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "DragonShrineQuestion3_MenuHeader",
+      "label_refs": [
+        "DragonShrineQuestion3_MenuHeader"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion3_MenuHeader": {
+      "raw_lines": [
+        "db MENU_BACKUP_TILES",
+        "menu_coords 5, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1",
+        "dw .MenuData",
+        "db 1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "MENU_BACKUP_TILES"
+          ],
+          "raw": "db MENU_BACKUP_TILES"
+        },
+        {
+          "command": "menu_coords",
+          "args": [
+            "5",
+            "4",
+            "SCREEN_WIDTH - 1",
+            "TEXTBOX_Y - 1"
+          ],
+          "raw": "menu_coords 5, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1"
+        },
+        {
+          "command": "dw",
+          "args": [
+            "DragonShrineQuestion3_MenuHeader.MenuData"
+          ],
+          "raw": "dw .MenuData"
+        },
+        {
+          "command": "db",
+          "args": [
+            "1"
+          ],
+          "raw": "db 1"
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "DragonShrineQuestion3_MenuHeader.MenuData",
+      "label_refs": [
+        "DragonShrineQuestion3_MenuHeader.MenuData"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion3_MenuHeader.MenuData": {
+      "raw_lines": [
+        "db STATICMENU_CURSOR | STATICMENU_DISABLE_B",
+        "db 3",
+        "db \"Weak person@\"",
+        "db \"Tough person@\"",
+        "db \"Anybody@\""
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "STATICMENU_CURSOR | STATICMENU_DISABLE_B"
+          ],
+          "raw": "db STATICMENU_CURSOR | STATICMENU_DISABLE_B"
+        },
+        {
+          "command": "db",
+          "args": [
+            "3"
+          ],
+          "raw": "db 3"
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"Weak person@\""
+          ],
+          "raw": "db \"Weak person@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"Tough person@\""
+          ],
+          "raw": "db \"Tough person@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"Anybody@\""
+          ],
+          "raw": "db \"Anybody@\""
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "DragonShrineQuestion4_MenuHeader",
+      "label_refs": [
+        "DragonShrineQuestion4_MenuHeader"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion4_MenuHeader": {
+      "raw_lines": [
+        "db MENU_BACKUP_TILES",
+        "menu_coords 8, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1",
+        "dw .MenuData",
+        "db 1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "MENU_BACKUP_TILES"
+          ],
+          "raw": "db MENU_BACKUP_TILES"
+        },
+        {
+          "command": "menu_coords",
+          "args": [
+            "8",
+            "4",
+            "SCREEN_WIDTH - 1",
+            "TEXTBOX_Y - 1"
+          ],
+          "raw": "menu_coords 8, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1"
+        },
+        {
+          "command": "dw",
+          "args": [
+            "DragonShrineQuestion4_MenuHeader.MenuData"
+          ],
+          "raw": "dw .MenuData"
+        },
+        {
+          "command": "db",
+          "args": [
+            "1"
+          ],
+          "raw": "db 1"
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "DragonShrineQuestion4_MenuHeader.MenuData",
+      "label_refs": [
+        "DragonShrineQuestion4_MenuHeader.MenuData"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion4_MenuHeader.MenuData": {
+      "raw_lines": [
+        "db STATICMENU_CURSOR | STATICMENU_DISABLE_B",
+        "db 3",
+        "db \"Love@\"",
+        "db \"Violence@\"",
+        "db \"Knowledge@\""
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "STATICMENU_CURSOR | STATICMENU_DISABLE_B"
+          ],
+          "raw": "db STATICMENU_CURSOR | STATICMENU_DISABLE_B"
+        },
+        {
+          "command": "db",
+          "args": [
+            "3"
+          ],
+          "raw": "db 3"
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"Love@\""
+          ],
+          "raw": "db \"Love@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"Violence@\""
+          ],
+          "raw": "db \"Violence@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"Knowledge@\""
+          ],
+          "raw": "db \"Knowledge@\""
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "DragonShrineQuestion5_MenuHeader",
+      "label_refs": [
+        "DragonShrineQuestion5_MenuHeader"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion5_MenuHeader": {
+      "raw_lines": [
+        "db MENU_BACKUP_TILES",
+        "menu_coords 12, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1",
+        "dw .MenuData",
+        "db 1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "MENU_BACKUP_TILES"
+          ],
+          "raw": "db MENU_BACKUP_TILES"
+        },
+        {
+          "command": "menu_coords",
+          "args": [
+            "12",
+            "4",
+            "SCREEN_WIDTH - 1",
+            "TEXTBOX_Y - 1"
+          ],
+          "raw": "menu_coords 12, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1"
+        },
+        {
+          "command": "dw",
+          "args": [
+            "DragonShrineQuestion5_MenuHeader.MenuData"
+          ],
+          "raw": "dw .MenuData"
+        },
+        {
+          "command": "db",
+          "args": [
+            "1"
+          ],
+          "raw": "db 1"
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "DragonShrineQuestion5_MenuHeader.MenuData",
+      "label_refs": [
+        "DragonShrineQuestion5_MenuHeader.MenuData"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion5_MenuHeader.MenuData": {
+      "raw_lines": [
+        "db STATICMENU_CURSOR | STATICMENU_DISABLE_B",
+        "db 3",
+        "db \"Tough@\"",
+        "db \"Both@\"",
+        "db \"Weak@\""
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "STATICMENU_CURSOR | STATICMENU_DISABLE_B"
+          ],
+          "raw": "db STATICMENU_CURSOR | STATICMENU_DISABLE_B"
+        },
+        {
+          "command": "db",
+          "args": [
+            "3"
+          ],
+          "raw": "db 3"
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"Tough@\""
+          ],
+          "raw": "db \"Tough@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"Both@\""
+          ],
+          "raw": "db \"Both@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"Weak@\""
+          ],
+          "raw": "db \"Weak@\""
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "DragonShrine_MapEvents",
+      "label_refs": [
+        "DragonShrine_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrine_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  4,  9, DRAGONS_DEN_B1F, 2",
+        "warp_event  5,  9, DRAGONS_DEN_B1F, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  5,  1, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonShrineElder1Script, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "object_event  2,  4, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonShrineElder2Script, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "object_event  7,  4, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonShrineElder3Script, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "object_event  4,  8, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRAGON_SHRINE_CLAIR"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "9",
+            "DRAGONS_DEN_B1F",
+            "2"
+          ],
+          "raw": "warp_event  4,  9, DRAGONS_DEN_B1F, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "9",
+            "DRAGONS_DEN_B1F",
+            "2"
+          ],
+          "raw": "warp_event  5,  9, DRAGONS_DEN_B1F, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "1",
+            "SPRITE_ELDER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "DragonShrineElder1Script",
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "object_event  5,  1, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonShrineElder1Script, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "4",
+            "SPRITE_ELDER",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "DragonShrineElder2Script",
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "object_event  2,  4, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonShrineElder2Script, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "4",
+            "SPRITE_ELDER",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "DragonShrineElder3Script",
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "object_event  7,  4, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonShrineElder3Script, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "8",
+            "SPRITE_CLAIR",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_DRAGON_SHRINE_CLAIR"
+          ],
+          "raw": "object_event  4,  8, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRAGON_SHRINE_CLAIR"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "DragonShrineElderGreetingText": {
+      "raw_lines": [
+        "text \"Hm\u2026 Good to see\"",
+        "line \"you here.\"",
+        "para \"No need to explain\"",
+        "line \"why you came.\"",
+        "para \"CLAIR sent you\"",
+        "line \"here, didn't she?\"",
+        "para \"That girl is a\"",
+        "line \"handful\u2026\"",
+        "para \"I am sorry, but I\"",
+        "line \"must test you.\"",
+        "para \"Not to worry, you\"",
+        "line \"are to answer only\"",
+        "cont \"a few questions.\"",
+        "para \"Ready?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hm\u2026 Good to see"
+        },
+        {
+          "command": "line",
+          "value": "you here."
+        },
+        {
+          "command": "para",
+          "value": "No need to explain"
+        },
+        {
+          "command": "line",
+          "value": "why you came."
+        },
+        {
+          "command": "para",
+          "value": "CLAIR sent you"
+        },
+        {
+          "command": "line",
+          "value": "here, didn't she?"
+        },
+        {
+          "command": "para",
+          "value": "That girl is a"
+        },
+        {
+          "command": "line",
+          "value": "handful\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I am sorry, but I"
+        },
+        {
+          "command": "line",
+          "value": "must test you."
+        },
+        {
+          "command": "para",
+          "value": "Not to worry, you"
+        },
+        {
+          "command": "line",
+          "value": "are to answer only"
+        },
+        {
+          "command": "cont",
+          "value": "a few questions."
+        },
+        {
+          "command": "para",
+          "value": "Ready?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineQuestion1Text": {
+      "raw_lines": [
+        "text \"What are #MON\"",
+        "line \"to you?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What are #MON"
+        },
+        {
+          "command": "line",
+          "value": "to you?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineQuestion2Text": {
+      "raw_lines": [
+        "text \"What helps you to\"",
+        "line \"win battles?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What helps you to"
+        },
+        {
+          "command": "line",
+          "value": "win battles?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineQuestion3Text": {
+      "raw_lines": [
+        "text \"What kind of\"",
+        "line \"trainer do you\"",
+        "cont \"wish to battle?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What kind of"
+        },
+        {
+          "command": "line",
+          "value": "trainer do you"
+        },
+        {
+          "command": "cont",
+          "value": "wish to battle?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineQuestion4Text": {
+      "raw_lines": [
+        "text \"What is most\"",
+        "line \"important for\"",
+        "cont \"raising #MON?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What is most"
+        },
+        {
+          "command": "line",
+          "value": "important for"
+        },
+        {
+          "command": "cont",
+          "value": "raising #MON?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineQuestion5Text": {
+      "raw_lines": [
+        "text \"Strong #MON.\"",
+        "line \"Weak #MON.\"",
+        "para \"Which is more\"",
+        "line \"important?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Strong #MON."
+        },
+        {
+          "command": "line",
+          "value": "Weak #MON."
+        },
+        {
+          "command": "para",
+          "value": "Which is more"
+        },
+        {
+          "command": "line",
+          "value": "important?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrinePassedTestText": {
+      "raw_lines": [
+        "text \"Hm\u2026 I see\u2026\"",
+        "para \"You care deeply\"",
+        "line \"for #MON.\"",
+        "para \"Very commendable.\"",
+        "para \"That conviction is\"",
+        "line \"what is important!\"",
+        "para \"<PLAYER>, don't\"",
+        "line \"lose that belief.\"",
+        "para \"It will see you\"",
+        "line \"through at the\"",
+        "cont \"#MON LEAGUE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hm\u2026 I see\u2026"
+        },
+        {
+          "command": "para",
+          "value": "You care deeply"
+        },
+        {
+          "command": "line",
+          "value": "for #MON."
+        },
+        {
+          "command": "para",
+          "value": "Very commendable."
+        },
+        {
+          "command": "para",
+          "value": "That conviction is"
+        },
+        {
+          "command": "line",
+          "value": "what is important!"
+        },
+        {
+          "command": "para",
+          "value": "<PLAYER>, don't"
+        },
+        {
+          "command": "line",
+          "value": "lose that belief."
+        },
+        {
+          "command": "para",
+          "value": "It will see you"
+        },
+        {
+          "command": "line",
+          "value": "through at the"
+        },
+        {
+          "command": "cont",
+          "value": "#MON LEAGUE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineMustIInformLanceText": {
+      "raw_lines": [
+        "text \"CLAIR!\"",
+        "para \"This child is\"",
+        "line \"impeccable, in\"",
+        "cont \"skill and spirit!\"",
+        "para \"Admit defeat and\"",
+        "line \"confer the RISING-\"",
+        "cont \"BADGE!\"",
+        "para \"\u2026Or must I inform\"",
+        "line \"LANCE of this?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "CLAIR!"
+        },
+        {
+          "command": "para",
+          "value": "This child is"
+        },
+        {
+          "command": "line",
+          "value": "impeccable, in"
+        },
+        {
+          "command": "cont",
+          "value": "skill and spirit!"
+        },
+        {
+          "command": "para",
+          "value": "Admit defeat and"
+        },
+        {
+          "command": "line",
+          "value": "confer the RISING-"
+        },
+        {
+          "command": "cont",
+          "value": "BADGE!"
+        },
+        {
+          "command": "para",
+          "value": "\u2026Or must I inform"
+        },
+        {
+          "command": "line",
+          "value": "LANCE of this?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineElderScoldsClairText": {
+      "raw_lines": [
+        "text \"CLAIR\u2026\"",
+        "para \"Reflect upon what\"",
+        "line \"it is that you\"",
+        "para \"lack and this\"",
+        "line \"child has.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "CLAIR\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Reflect upon what"
+        },
+        {
+          "command": "line",
+          "value": "it is that you"
+        },
+        {
+          "command": "para",
+          "value": "lack and this"
+        },
+        {
+          "command": "line",
+          "value": "child has."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineComeAgainText": {
+      "raw_lines": [
+        "text \"Come again, if you\"",
+        "line \"so desire.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Come again, if you"
+        },
+        {
+          "command": "line",
+          "value": "so desire."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineTakeThisDratiniText": {
+      "raw_lines": [
+        "text \"Hm\u2026 Good to see\"",
+        "line \"you here.\"",
+        "para \"Your arrival is\"",
+        "line \"most fortunate.\"",
+        "para \"I have something\"",
+        "line \"for you.\"",
+        "para \"Take this DRATINI\"",
+        "line \"as proof that I\"",
+        "para \"have recognized\"",
+        "line \"your worth.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hm\u2026 Good to see"
+        },
+        {
+          "command": "line",
+          "value": "you here."
+        },
+        {
+          "command": "para",
+          "value": "Your arrival is"
+        },
+        {
+          "command": "line",
+          "value": "most fortunate."
+        },
+        {
+          "command": "para",
+          "value": "I have something"
+        },
+        {
+          "command": "line",
+          "value": "for you."
+        },
+        {
+          "command": "para",
+          "value": "Take this DRATINI"
+        },
+        {
+          "command": "line",
+          "value": "as proof that I"
+        },
+        {
+          "command": "para",
+          "value": "have recognized"
+        },
+        {
+          "command": "line",
+          "value": "your worth."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrinePlayerReceivedDratiniText": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"DRATINI!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "DRATINI!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrinePartyFullText": {
+      "raw_lines": [
+        "text \"Hm? Your #MON\"",
+        "line \"party is full.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hm? Your #MON"
+        },
+        {
+          "command": "line",
+          "value": "party is full."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineSymbolicDragonText": {
+      "raw_lines": [
+        "text \"Dragon #MON are\"",
+        "line \"symbolic of our\"",
+        "cont \"clan.\"",
+        "para \"You have shown\"",
+        "line \"that you can be\"",
+        "para \"entrusted with\"",
+        "line \"one.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Dragon #MON are"
+        },
+        {
+          "command": "line",
+          "value": "symbolic of our"
+        },
+        {
+          "command": "cont",
+          "value": "clan."
+        },
+        {
+          "command": "para",
+          "value": "You have shown"
+        },
+        {
+          "command": "line",
+          "value": "that you can be"
+        },
+        {
+          "command": "para",
+          "value": "entrusted with"
+        },
+        {
+          "command": "line",
+          "value": "one."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineClairsGrandfatherText": {
+      "raw_lines": [
+        "text \"CLAIR appears to\"",
+        "line \"have learned an\"",
+        "para \"invaluable lesson\"",
+        "line \"from you.\"",
+        "para \"I thank you as her\"",
+        "line \"grandfather.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "CLAIR appears to"
+        },
+        {
+          "command": "line",
+          "value": "have learned an"
+        },
+        {
+          "command": "para",
+          "value": "invaluable lesson"
+        },
+        {
+          "command": "line",
+          "value": "from you."
+        },
+        {
+          "command": "para",
+          "value": "I thank you as her"
+        },
+        {
+          "command": "line",
+          "value": "grandfather."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineRivalIsInTrainingText": {
+      "raw_lines": [
+        "text \"A boy close to\"",
+        "line \"your age is in\"",
+        "cont \"training here.\"",
+        "para \"He is much like\"",
+        "line \"CLAIR when she was\"",
+        "para \"younger. It is a\"",
+        "line \"little worrisome\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A boy close to"
+        },
+        {
+          "command": "line",
+          "value": "your age is in"
+        },
+        {
+          "command": "cont",
+          "value": "training here."
+        },
+        {
+          "command": "para",
+          "value": "He is much like"
+        },
+        {
+          "command": "line",
+          "value": "CLAIR when she was"
+        },
+        {
+          "command": "para",
+          "value": "younger. It is a"
+        },
+        {
+          "command": "line",
+          "value": "little worrisome\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineWrongAnswerText1": {
+      "raw_lines": [
+        "text \"Hah? I didn't\"",
+        "line \"quite catch that\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hah? I didn't"
+        },
+        {
+          "command": "line",
+          "value": "quite catch that\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineWrongAnswerText2": {
+      "raw_lines": [
+        "text \"What was it you\"",
+        "line \"said?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What was it you"
+        },
+        {
+          "command": "line",
+          "value": "said?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineRightAnswerText": {
+      "raw_lines": [
+        "text \"Oh, I understand\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, I understand\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineElder2Text": {
+      "raw_lines": [
+        "text \"It's been quite\"",
+        "line \"some time since a\"",
+        "para \"trainer has gained\"",
+        "line \"our MASTER's rare\"",
+        "cont \"approval.\"",
+        "para \"In fact, not since\"",
+        "line \"Master LANCE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's been quite"
+        },
+        {
+          "command": "line",
+          "value": "some time since a"
+        },
+        {
+          "command": "para",
+          "value": "trainer has gained"
+        },
+        {
+          "command": "line",
+          "value": "our MASTER's rare"
+        },
+        {
+          "command": "cont",
+          "value": "approval."
+        },
+        {
+          "command": "para",
+          "value": "In fact, not since"
+        },
+        {
+          "command": "line",
+          "value": "Master LANCE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineElder3Text": {
+      "raw_lines": [
+        "text \"You know young\"",
+        "line \"Master LANCE?\"",
+        "para \"He looks so much\"",
+        "line \"like our MASTER\"",
+        "cont \"did in his youth.\"",
+        "para \"It's in their\"",
+        "line \"blood.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You know young"
+        },
+        {
+          "command": "line",
+          "value": "Master LANCE?"
+        },
+        {
+          "command": "para",
+          "value": "He looks so much"
+        },
+        {
+          "command": "line",
+          "value": "like our MASTER"
+        },
+        {
+          "command": "cont",
+          "value": "did in his youth."
+        },
+        {
+          "command": "para",
+          "value": "It's in their"
+        },
+        {
+          "command": "line",
+          "value": "blood."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineClairYouPassedText": {
+      "raw_lines": [
+        "text \"So how did it go?\"",
+        "para \"I guess there's no\"",
+        "line \"point in asking.\"",
+        "para \"You did fail?\"",
+        "para \"<\u2026\u2026><\u2026\u2026><\u2026\u2026><\u2026\u2026><\u2026\u2026><\u2026\u2026>\"",
+        "para \"\u2026What? You passed?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "So how did it go?"
+        },
+        {
+          "command": "para",
+          "value": "I guess there's no"
+        },
+        {
+          "command": "line",
+          "value": "point in asking."
+        },
+        {
+          "command": "para",
+          "value": "You did fail?"
+        },
+        {
+          "command": "para",
+          "value": "<\u2026\u2026><\u2026\u2026><\u2026\u2026><\u2026\u2026><\u2026\u2026><\u2026\u2026>"
+        },
+        {
+          "command": "para",
+          "value": "\u2026What? You passed?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineClairThatCantBeText": {
+      "raw_lines": [
+        "text \"That can't be!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "That can't be!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineClairYoureLyingText": {
+      "raw_lines": [
+        "text \"You're lying!\"",
+        "para \"Even I haven't\"",
+        "line \"been approved!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You're lying!"
+        },
+        {
+          "command": "para",
+          "value": "Even I haven't"
+        },
+        {
+          "command": "line",
+          "value": "been approved!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineIUnderstandText": {
+      "raw_lines": [
+        "text \"I-I understand\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I-I understand\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineHereRisingBadgeText": {
+      "raw_lines": [
+        "text \"Here, this is the\"",
+        "line \"RISINGBADGE\u2026\"",
+        "para \"Hurry up! Take it!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Here, this is the"
+        },
+        {
+          "command": "line",
+          "value": "RISINGBADGE\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Hurry up! Take it!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrinePlayerReceivedRisingBadgeText": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"RISINGBADGE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "RISINGBADGE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineRisingBadgeExplanationText": {
+      "raw_lines": [
+        "text \"RISINGBADGE will\"",
+        "line \"enable your\"",
+        "para \"#MON to use the\"",
+        "line \"move for climbing\"",
+        "cont \"waterfalls.\"",
+        "para \"Also, all #MON\"",
+        "line \"will recognize you\"",
+        "para \"as a trainer and\"",
+        "line \"obey your every\"",
+        "para \"command without\"",
+        "line \"question.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "RISINGBADGE will"
+        },
+        {
+          "command": "line",
+          "value": "enable your"
+        },
+        {
+          "command": "para",
+          "value": "#MON to use the"
+        },
+        {
+          "command": "line",
+          "value": "move for climbing"
+        },
+        {
+          "command": "cont",
+          "value": "waterfalls."
+        },
+        {
+          "command": "para",
+          "value": "Also, all #MON"
+        },
+        {
+          "command": "line",
+          "value": "will recognize you"
+        },
+        {
+          "command": "para",
+          "value": "as a trainer and"
+        },
+        {
+          "command": "line",
+          "value": "obey your every"
+        },
+        {
+          "command": "para",
+          "value": "command without"
+        },
+        {
+          "command": "line",
+          "value": "question."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DragonShrineSpeechlessText": {
+      "raw_lines": [
+        "text \"<\u2026\u2026><\u2026\u2026><\u2026\u2026><\u2026\u2026><\u2026\u2026><\u2026\u2026>\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<\u2026\u2026><\u2026\u2026><\u2026\u2026><\u2026\u2026><\u2026\u2026><\u2026\u2026>"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "DragonShrinePlayerWalkInMovement": {
+      "raw_lines": [
+        "slow_step UP",
+        "slow_step UP",
+        "slow_step UP",
+        "slow_step RIGHT",
+        "slow_step UP",
+        "slow_step UP",
+        "slow_step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "slow_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "DragonShrineElderStepDownMovement": {
+      "raw_lines": [
+        "slow_step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "slow_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "DragonShrineElderWalkToClairMovement": {
+      "raw_lines": [
+        "slow_step LEFT",
+        "slow_step LEFT",
+        "slow_step LEFT",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "slow_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "DragonShrineElderWalkAway1Movement": {
+      "raw_lines": [
+        "slow_step RIGHT",
+        "slow_step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "slow_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "DragonShrineElderWalkAway2Movement": {
+      "raw_lines": [
+        "slow_step RIGHT",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "slow_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "DragonShrineClairWalkInMovement": {
+      "raw_lines": [
+        "slow_step UP",
+        "slow_step UP",
+        "slow_step UP",
+        "slow_step UP",
+        "slow_step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "slow_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "DragonShrineClairBigStepLeftMovement": {
+      "raw_lines": [
+        "fix_facing",
+        "big_step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "fix_facing",
+          "args": []
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "DragonShrineClairSlowStepLeftMovement": {
+      "raw_lines": [
+        "slow_step LEFT",
+        "remove_fixed_facing",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "slow_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "remove_fixed_facing",
+          "args": []
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "DragonShrineClairTwoSlowStepsRightMovement": {
+      "raw_lines": [
+        "slow_step RIGHT",
+        "slow_step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "slow_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "DragonShrineClairWalkOutMovement": {
+      "raw_lines": [
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "DragonShrine_MapScripts": {
+      "label_refs": [
+        "DragonShrineTakeTestScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineNoopScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScript": {
+      "label_refs": [
+        "DragonShrineTakeTestScript.Question1"
+      ],
+      "text_refs": [
+        "DragonShrineElderGreetingText"
+      ],
+      "movement_refs": [
+        "DragonShrineElderStepDownMovement",
+        "DragonShrinePlayerWalkInMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScript.Question1": {
+      "label_refs": [
+        "DragonShrineTakeTestScript.RightAnswer",
+        "DragonShrineTakeTestScript.WrongAnswer"
+      ],
+      "text_refs": [
+        "DragonShrineQuestion1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScript.Question2": {
+      "label_refs": [
+        "DragonShrineTakeTestScript.Question3",
+        "DragonShrineTakeTestScript.RightAnswer",
+        "DragonShrineTakeTestScript.WrongAnswer"
+      ],
+      "text_refs": [
+        "DragonShrineQuestion2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScript.Question3": {
+      "label_refs": [
+        "DragonShrineTakeTestScript.Question4",
+        "DragonShrineTakeTestScript.RightAnswer",
+        "DragonShrineTakeTestScript.WrongAnswer"
+      ],
+      "text_refs": [
+        "DragonShrineQuestion3Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScript.Question4": {
+      "label_refs": [
+        "DragonShrineTakeTestScript.Question5",
+        "DragonShrineTakeTestScript.RightAnswer",
+        "DragonShrineTakeTestScript.WrongAnswer"
+      ],
+      "text_refs": [
+        "DragonShrineQuestion4Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScript.Question5": {
+      "label_refs": [
+        "DragonShrineTakeTestScript.RightAnswer",
+        "DragonShrineTakeTestScript.WrongAnswer"
+      ],
+      "text_refs": [
+        "DragonShrineQuestion5Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScript.RightAnswer": {
+      "label_refs": [
+        "DragonShrineTakeTestScript.PassedTheTest",
+        "DragonShrineTakeTestScript.Question2",
+        "DragonShrineTakeTestScript.Question3",
+        "DragonShrineTakeTestScript.Question4",
+        "DragonShrineTakeTestScript.Question5",
+        "DragonShrineTakeTestScript.WrongAnswer"
+      ],
+      "text_refs": [
+        "DragonShrineRightAnswerText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScript.WrongAnswer": {
+      "label_refs": [
+        "DragonShrineTakeTestScript.PassedTheTest",
+        "DragonShrineTakeTestScript.Question1",
+        "DragonShrineTakeTestScript.Question2",
+        "DragonShrineTakeTestScript.Question3",
+        "DragonShrineTakeTestScript.Question4",
+        "DragonShrineTakeTestScript.Question5"
+      ],
+      "text_refs": [
+        "DragonShrineWrongAnswerText1",
+        "DragonShrineWrongAnswerText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineTakeTestScript.PassedTheTest": {
+      "label_refs": [],
+      "text_refs": [
+        "DragonShrineClairThatCantBeText",
+        "DragonShrineClairYouPassedText",
+        "DragonShrineClairYoureLyingText",
+        "DragonShrineElderScoldsClairText",
+        "DragonShrineHereRisingBadgeText",
+        "DragonShrineIUnderstandText",
+        "DragonShrineMustIInformLanceText",
+        "DragonShrinePassedTestText",
+        "DragonShrinePlayerReceivedRisingBadgeText",
+        "DragonShrineRisingBadgeExplanationText",
+        "DragonShrineSpeechlessText"
+      ],
+      "movement_refs": [
+        "DragonShrineClairBigStepLeftMovement",
+        "DragonShrineClairSlowStepLeftMovement",
+        "DragonShrineClairTwoSlowStepsRightMovement",
+        "DragonShrineClairWalkInMovement",
+        "DragonShrineClairWalkOutMovement",
+        "DragonShrineElderWalkAway1Movement",
+        "DragonShrineElderWalkAway2Movement",
+        "DragonShrineElderWalkToClairMovement"
+      ],
+      "scene_refs": [
+        "SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM",
+        "SCENE_DRAGONSHRINE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "DragonShrineElder1Script": {
+      "label_refs": [
+        "DragonShrineElder1Script.BeatRivalInMtMoon",
+        "DragonShrineElder1Script.DontGiveDratiniYet",
+        "DragonShrineElder1Script.GiveDratini",
+        "DragonShrineElder1Script.ReceivedDratini"
+      ],
+      "text_refs": [
+        "DragonShrineClairsGrandfatherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineElder1Script.GiveDratini": {
+      "label_refs": [
+        "DragonShrineElder1Script.PartyFull"
+      ],
+      "text_refs": [
+        "DragonShrinePlayerReceivedDratiniText",
+        "DragonShrineSymbolicDragonText",
+        "DragonShrineTakeThisDratiniText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineElder1Script.PartyFull": {
+      "label_refs": [],
+      "text_refs": [
+        "DragonShrinePartyFullText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineElder1Script.BeatRivalInMtMoon": {
+      "label_refs": [],
+      "text_refs": [
+        "DragonShrineRivalIsInTrainingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineElder1Script.DontGiveDratiniYet": {
+      "label_refs": [],
+      "text_refs": [
+        "DragonShrineComeAgainText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineElder1Script.ReceivedDratini": {
+      "label_refs": [],
+      "text_refs": [
+        "DragonShrineSymbolicDragonText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineElder2Script": {
+      "label_refs": [],
+      "text_refs": [
+        "DragonShrineElder2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineElder3Script": {
+      "label_refs": [],
+      "text_refs": [
+        "DragonShrineElder3Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion1_MenuHeader": {
+      "label_refs": [
+        "DragonShrineQuestion1_MenuHeader.MenuData"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion1_MenuHeader.MenuData": {
+      "label_refs": [
+        "DragonShrineQuestion2_MenuHeader"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion2_MenuHeader": {
+      "label_refs": [
+        "DragonShrineQuestion2_MenuHeader.MenuData"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion2_MenuHeader.MenuData": {
+      "label_refs": [
+        "DragonShrineQuestion3_MenuHeader"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion3_MenuHeader": {
+      "label_refs": [
+        "DragonShrineQuestion3_MenuHeader.MenuData"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion3_MenuHeader.MenuData": {
+      "label_refs": [
+        "DragonShrineQuestion4_MenuHeader"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion4_MenuHeader": {
+      "label_refs": [
+        "DragonShrineQuestion4_MenuHeader.MenuData"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion4_MenuHeader.MenuData": {
+      "label_refs": [
+        "DragonShrineQuestion5_MenuHeader"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion5_MenuHeader": {
+      "label_refs": [
+        "DragonShrineQuestion5_MenuHeader.MenuData"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrineQuestion5_MenuHeader.MenuData": {
+      "label_refs": [
+        "DragonShrine_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DragonShrine_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear"
+  ],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 4
+  }
+}

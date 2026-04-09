@@ -15,6 +15,7 @@
 #include "menu.h"
 #include "palette.h"
 #include "recorded_battle.h"
+#include "johto_story.h"
 #include "string_util.h"
 #include "strings.h"
 #include "text.h"
@@ -2573,7 +2574,7 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst)
                 }
                 else
                 {
-                    toCpy = gTrainers[gTrainerBattleOpponent_A].trainerName;
+                    toCpy = GetTrainerNameWithJohtoOverride(gTrainerBattleOpponent_A);
                 }
                 break;
             case B_TXT_LINK_PLAYER_NAME: // link player name
@@ -2691,7 +2692,7 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst)
                 }
                 else
                 {
-                    toCpy = gTrainers[gTrainerBattleOpponent_B].trainerName;
+                    toCpy = GetTrainerNameWithJohtoOverride(gTrainerBattleOpponent_B);
                 }
                 break;
             case B_TXT_TRAINER2_LOSE_TEXT:

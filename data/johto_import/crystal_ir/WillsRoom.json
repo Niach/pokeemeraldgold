@@ -1,0 +1,1020 @@
+{
+  "crystal_map": "WillsRoom",
+  "map_id": "WILLS_ROOM",
+  "group": "INDIGO",
+  "group_index": 16,
+  "map_index": 3,
+  "tileset": "TILESET_ELITE_FOUR_ROOM",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_INDIGO_PLATEAU",
+  "music": "MUSIC_INDIGO_PLATEAU",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 9,
+  "border_block": "00",
+  "blk_path": "maps/WillsRoom.blk",
+  "source_asm": "maps/WillsRoom.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "WillsRoomLockDoorScene",
+        "scene_id": "SCENE_WILLSROOM_LOCK_DOOR"
+      },
+      {
+        "script": "WillsRoomNoopScene",
+        "scene_id": "SCENE_WILLSROOM_NOOP"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_TILES",
+        "script": "WillsRoomDoorsCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 5,
+        "y": 17,
+        "dest_map": "INDIGO_PLATEAU_POKECENTER_1F",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 4,
+        "y": 2,
+        "dest_map": "KOGAS_ROOM",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 5,
+        "y": 2,
+        "dest_map": "KOGAS_ROOM",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 5,
+        "y": 7,
+        "sprite": "SPRITE_WILL",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "WillScript_Battle",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "WILLSROOM_WILL"
+  ],
+  "scene_ids": [
+    "SCENE_WILLSROOM_LOCK_DOOR",
+    "SCENE_WILLSROOM_NOOP"
+  ],
+  "scripts": {
+    "WillsRoom_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script WillsRoomLockDoorScene, SCENE_WILLSROOM_LOCK_DOOR",
+        "scene_script WillsRoomNoopScene,     SCENE_WILLSROOM_NOOP",
+        "def_callbacks",
+        "callback MAPCALLBACK_TILES, WillsRoomDoorsCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "WillsRoomLockDoorScene",
+            "SCENE_WILLSROOM_LOCK_DOOR"
+          ],
+          "raw": "scene_script WillsRoomLockDoorScene, SCENE_WILLSROOM_LOCK_DOOR"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "WillsRoomNoopScene",
+            "SCENE_WILLSROOM_NOOP"
+          ],
+          "raw": "scene_script WillsRoomNoopScene,     SCENE_WILLSROOM_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_TILES",
+            "WillsRoomDoorsCallback"
+          ],
+          "raw": "callback MAPCALLBACK_TILES, WillsRoomDoorsCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "WillsRoomLockDoorScene",
+      "label_refs": [
+        "WillsRoomLockDoorScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WillsRoomLockDoorScene": {
+      "raw_lines": [
+        "sdefer WillsRoomDoorLocksBehindYouScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "sdefer",
+          "args": [
+            "WillsRoomDoorLocksBehindYouScript"
+          ],
+          "raw": "sdefer WillsRoomDoorLocksBehindYouScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "sdefer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WillsRoomNoopScene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WillsRoomDoorsCallback": {
+      "raw_lines": [
+        "checkevent EVENT_WILLS_ROOM_ENTRANCE_CLOSED",
+        "iffalse .KeepEntranceOpen",
+        "changeblock 4, 14, $2a"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_WILLS_ROOM_ENTRANCE_CLOSED"
+          ],
+          "raw": "checkevent EVENT_WILLS_ROOM_ENTRANCE_CLOSED"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "WillsRoomDoorsCallback.KeepEntranceOpen"
+          ],
+          "raw": "iffalse .KeepEntranceOpen"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "14",
+            "$2a"
+          ],
+          "raw": "changeblock 4, 14, $2a"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "WillsRoomDoorsCallback.KeepEntranceOpen",
+      "label_refs": [
+        "WillsRoomDoorsCallback.KeepEntranceOpen"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WillsRoomDoorsCallback.KeepEntranceOpen": {
+      "raw_lines": [
+        "checkevent EVENT_WILLS_ROOM_EXIT_OPEN",
+        "iffalse .KeepExitClosed",
+        "changeblock 4, 2, $16"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_WILLS_ROOM_EXIT_OPEN"
+          ],
+          "raw": "checkevent EVENT_WILLS_ROOM_EXIT_OPEN"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "WillsRoomDoorsCallback.KeepExitClosed"
+          ],
+          "raw": "iffalse .KeepExitClosed"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "2",
+            "$16"
+          ],
+          "raw": "changeblock 4, 2, $16"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "WillsRoomDoorsCallback.KeepExitClosed",
+      "label_refs": [
+        "WillsRoomDoorsCallback.KeepExitClosed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WillsRoomDoorsCallback.KeepExitClosed": {
+      "raw_lines": [
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "endcallback",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WillsRoomDoorLocksBehindYouScript": {
+      "raw_lines": [
+        "applymovement PLAYER, WillsRoom_EnterMovement",
+        "reanchormap $86",
+        "playsound SFX_STRENGTH",
+        "earthquake 80",
+        "changeblock 4, 14, $2a",
+        "refreshmap",
+        "closetext",
+        "setscene SCENE_WILLSROOM_NOOP",
+        "setevent EVENT_WILLS_ROOM_ENTRANCE_CLOSED",
+        "waitsfx",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "WillsRoom_EnterMovement"
+          ],
+          "raw": "applymovement PLAYER, WillsRoom_EnterMovement"
+        },
+        {
+          "command": "reanchormap",
+          "args": [
+            "$86"
+          ],
+          "raw": "reanchormap $86"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_STRENGTH"
+          ],
+          "raw": "playsound SFX_STRENGTH"
+        },
+        {
+          "command": "earthquake",
+          "args": [
+            "80"
+          ],
+          "raw": "earthquake 80"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "14",
+            "$2a"
+          ],
+          "raw": "changeblock 4, 14, $2a"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_WILLSROOM_NOOP"
+          ],
+          "raw": "setscene SCENE_WILLSROOM_NOOP"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_WILLS_ROOM_ENTRANCE_CLOSED"
+          ],
+          "raw": "setevent EVENT_WILLS_ROOM_ENTRANCE_CLOSED"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "WillsRoom_EnterMovement"
+      ],
+      "scene_refs": [
+        "SCENE_WILLSROOM_NOOP"
+      ],
+      "std_calls": []
+    },
+    "WillScript_Battle": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_BEAT_ELITE_4_WILL",
+        "iftrue WillScript_AfterBattle",
+        "writetext WillScript_WillBeforeText",
+        "waitbutton",
+        "closetext",
+        "winlosstext WillScript_WillBeatenText, 0",
+        "loadtrainer WILL, WILL1",
+        "startbattle",
+        "reloadmapafterbattle",
+        "setevent EVENT_BEAT_ELITE_4_WILL",
+        "opentext",
+        "writetext WillScript_WillDefeatText",
+        "waitbutton",
+        "closetext",
+        "playsound SFX_ENTER_DOOR",
+        "changeblock 4, 2, $16",
+        "refreshmap",
+        "closetext",
+        "setevent EVENT_WILLS_ROOM_EXIT_OPEN",
+        "waitsfx",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_ELITE_4_WILL"
+          ],
+          "raw": "checkevent EVENT_BEAT_ELITE_4_WILL"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "WillScript_AfterBattle"
+          ],
+          "raw": "iftrue WillScript_AfterBattle"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "WillScript_WillBeforeText"
+          ],
+          "raw": "writetext WillScript_WillBeforeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "WillScript_WillBeatenText",
+            "0"
+          ],
+          "raw": "winlosstext WillScript_WillBeatenText, 0"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "WILL",
+            "WILL1"
+          ],
+          "raw": "loadtrainer WILL, WILL1"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_ELITE_4_WILL"
+          ],
+          "raw": "setevent EVENT_BEAT_ELITE_4_WILL"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "WillScript_WillDefeatText"
+          ],
+          "raw": "writetext WillScript_WillDefeatText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "2",
+            "$16"
+          ],
+          "raw": "changeblock 4, 2, $16"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_WILLS_ROOM_EXIT_OPEN"
+          ],
+          "raw": "setevent EVENT_WILLS_ROOM_EXIT_OPEN"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "WillScript_AfterBattle"
+      ],
+      "text_refs": [
+        "WillScript_WillBeforeText",
+        "WillScript_WillDefeatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WillScript_AfterBattle": {
+      "raw_lines": [
+        "writetext WillScript_WillDefeatText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "WillScript_WillDefeatText"
+          ],
+          "raw": "writetext WillScript_WillDefeatText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "WillScript_WillDefeatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WillsRoom_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  5, 17, INDIGO_PLATEAU_POKECENTER_1F, 4",
+        "warp_event  4,  2, KOGAS_ROOM, 1",
+        "warp_event  5,  2, KOGAS_ROOM, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  5,  7, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, WillScript_Battle, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "17",
+            "INDIGO_PLATEAU_POKECENTER_1F",
+            "4"
+          ],
+          "raw": "warp_event  5, 17, INDIGO_PLATEAU_POKECENTER_1F, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "2",
+            "KOGAS_ROOM",
+            "1"
+          ],
+          "raw": "warp_event  4,  2, KOGAS_ROOM, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "2",
+            "KOGAS_ROOM",
+            "2"
+          ],
+          "raw": "warp_event  5,  2, KOGAS_ROOM, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "7",
+            "SPRITE_WILL",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "WillScript_Battle",
+            "-1"
+          ],
+          "raw": "object_event  5,  7, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, WillScript_Battle, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "WillScript_WillBeforeText": {
+      "raw_lines": [
+        "text \"Welcome to #MON\"",
+        "line \"LEAGUE, <PLAYER>.\"",
+        "para \"Allow me to intro-\"",
+        "line \"duce myself. I am\"",
+        "cont \"WILL.\"",
+        "para \"I have trained all\"",
+        "line \"around the world,\"",
+        "para \"making my psychic\"",
+        "line \"#MON powerful.\"",
+        "para \"And, at last, I've\"",
+        "line \"been accepted into\"",
+        "cont \"the ELITE FOUR.\"",
+        "para \"I can only keep\"",
+        "line \"getting better!\"",
+        "para \"Losing is not an\"",
+        "line \"option!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Welcome to #MON"
+        },
+        {
+          "command": "line",
+          "value": "LEAGUE, <PLAYER>."
+        },
+        {
+          "command": "para",
+          "value": "Allow me to intro-"
+        },
+        {
+          "command": "line",
+          "value": "duce myself. I am"
+        },
+        {
+          "command": "cont",
+          "value": "WILL."
+        },
+        {
+          "command": "para",
+          "value": "I have trained all"
+        },
+        {
+          "command": "line",
+          "value": "around the world,"
+        },
+        {
+          "command": "para",
+          "value": "making my psychic"
+        },
+        {
+          "command": "line",
+          "value": "#MON powerful."
+        },
+        {
+          "command": "para",
+          "value": "And, at last, I've"
+        },
+        {
+          "command": "line",
+          "value": "been accepted into"
+        },
+        {
+          "command": "cont",
+          "value": "the ELITE FOUR."
+        },
+        {
+          "command": "para",
+          "value": "I can only keep"
+        },
+        {
+          "command": "line",
+          "value": "getting better!"
+        },
+        {
+          "command": "para",
+          "value": "Losing is not an"
+        },
+        {
+          "command": "line",
+          "value": "option!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "WillScript_WillBeatenText": {
+      "raw_lines": [
+        "text \"I\u2026 I can't\u2026\"",
+        "line \"believe it\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I\u2026 I can't\u2026"
+        },
+        {
+          "command": "line",
+          "value": "believe it\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "WillScript_WillDefeatText": {
+      "raw_lines": [
+        "text \"Even though I was\"",
+        "line \"defeated, I won't\"",
+        "cont \"change my course.\"",
+        "para \"I will continue\"",
+        "line \"battling until I\"",
+        "para \"stand above all\"",
+        "line \"trainers!\"",
+        "para \"Now, <PLAYER>, move\"",
+        "line \"on and experience\"",
+        "para \"the true ferocity\"",
+        "line \"of the ELITE FOUR.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Even though I was"
+        },
+        {
+          "command": "line",
+          "value": "defeated, I won't"
+        },
+        {
+          "command": "cont",
+          "value": "change my course."
+        },
+        {
+          "command": "para",
+          "value": "I will continue"
+        },
+        {
+          "command": "line",
+          "value": "battling until I"
+        },
+        {
+          "command": "para",
+          "value": "stand above all"
+        },
+        {
+          "command": "line",
+          "value": "trainers!"
+        },
+        {
+          "command": "para",
+          "value": "Now, <PLAYER>, move"
+        },
+        {
+          "command": "line",
+          "value": "on and experience"
+        },
+        {
+          "command": "para",
+          "value": "the true ferocity"
+        },
+        {
+          "command": "line",
+          "value": "of the ELITE FOUR."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "WillsRoom_EnterMovement": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "WillsRoom_MapScripts": {
+      "label_refs": [
+        "WillsRoomLockDoorScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WillsRoomLockDoorScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WillsRoomNoopScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WillsRoomDoorsCallback": {
+      "label_refs": [
+        "WillsRoomDoorsCallback.KeepEntranceOpen"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WillsRoomDoorsCallback.KeepEntranceOpen": {
+      "label_refs": [
+        "WillsRoomDoorsCallback.KeepExitClosed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WillsRoomDoorsCallback.KeepExitClosed": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WillsRoomDoorLocksBehindYouScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "WillsRoom_EnterMovement"
+      ],
+      "scene_refs": [
+        "SCENE_WILLSROOM_NOOP"
+      ],
+      "std_calls": []
+    },
+    "WillScript_Battle": {
+      "label_refs": [
+        "WillScript_AfterBattle"
+      ],
+      "text_refs": [
+        "WillScript_WillBeforeText",
+        "WillScript_WillDefeatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WillScript_AfterBattle": {
+      "label_refs": [],
+      "text_refs": [
+        "WillScript_WillDefeatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WillsRoom_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
+    "warp_events": 3,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 1
+  }
+}

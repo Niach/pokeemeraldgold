@@ -1,0 +1,631 @@
+{
+  "crystal_map": "CianwoodPharmacy",
+  "map_id": "CIANWOOD_PHARMACY",
+  "group": "CIANWOOD",
+  "group_index": 22,
+  "map_index": 7,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_CIANWOOD_CITY",
+  "music": "MUSIC_ECRUTEAK_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/House1.blk",
+  "source_asm": "maps/CianwoodPharmacy.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "CianwoodPharmacyNoopScene",
+        "scene_id": null
+      }
+    ],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "CIANWOOD_CITY",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "CIANWOOD_CITY",
+        "dest_warp_id": 4
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 0,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "CianwoodPharmacyBookshelf"
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "CianwoodPharmacyBookshelf"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 3,
+        "sprite": "SPRITE_PHARMACIST",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodPharmacist",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "CIANWOODPHARMACY_PHARMACIST"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "CianwoodPharmacy_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script CianwoodPharmacyNoopScene",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "CianwoodPharmacyNoopScene"
+          ],
+          "raw": "scene_script CianwoodPharmacyNoopScene"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "CianwoodPharmacyNoopScene",
+      "label_refs": [
+        "CianwoodPharmacyNoopScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPharmacyNoopScene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPharmacist": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_SECRETPOTION_FROM_PHARMACY",
+        "iftrue .Mart",
+        "checkevent EVENT_JASMINE_EXPLAINED_AMPHYS_SICKNESS",
+        "iffalse .Mart",
+        "writetext PharmacistGiveSecretpotionText",
+        "promptbutton",
+        "giveitem SECRETPOTION",
+        "writetext ReceivedSecretpotionText",
+        "playsound SFX_KEY_ITEM",
+        "waitsfx",
+        "itemnotify",
+        "setevent EVENT_GOT_SECRETPOTION_FROM_PHARMACY",
+        "writetext PharmacistDescribeSecretpotionText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_SECRETPOTION_FROM_PHARMACY"
+          ],
+          "raw": "checkevent EVENT_GOT_SECRETPOTION_FROM_PHARMACY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CianwoodPharmacist.Mart"
+          ],
+          "raw": "iftrue .Mart"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_JASMINE_EXPLAINED_AMPHYS_SICKNESS"
+          ],
+          "raw": "checkevent EVENT_JASMINE_EXPLAINED_AMPHYS_SICKNESS"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "CianwoodPharmacist.Mart"
+          ],
+          "raw": "iffalse .Mart"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PharmacistGiveSecretpotionText"
+          ],
+          "raw": "writetext PharmacistGiveSecretpotionText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "giveitem",
+          "args": [
+            "SECRETPOTION"
+          ],
+          "raw": "giveitem SECRETPOTION"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ReceivedSecretpotionText"
+          ],
+          "raw": "writetext ReceivedSecretpotionText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_KEY_ITEM"
+          ],
+          "raw": "playsound SFX_KEY_ITEM"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "itemnotify",
+          "args": [],
+          "raw": "itemnotify"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_SECRETPOTION_FROM_PHARMACY"
+          ],
+          "raw": "setevent EVENT_GOT_SECRETPOTION_FROM_PHARMACY"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PharmacistDescribeSecretpotionText"
+          ],
+          "raw": "writetext PharmacistDescribeSecretpotionText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "CianwoodPharmacist.Mart"
+      ],
+      "text_refs": [
+        "PharmacistDescribeSecretpotionText",
+        "PharmacistGiveSecretpotionText",
+        "ReceivedSecretpotionText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPharmacist.Mart": {
+      "raw_lines": [
+        "pokemart MARTTYPE_PHARMACY, MART_CIANWOOD",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "pokemart",
+          "args": [
+            "MARTTYPE_PHARMACY",
+            "MART_CIANWOOD"
+          ],
+          "raw": "pokemart MARTTYPE_PHARMACY, MART_CIANWOOD"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "pokemart",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPharmacyBookshelf": {
+      "raw_lines": [
+        "jumpstd DifficultBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "DifficultBookshelfScript"
+          ],
+          "raw": "jumpstd DifficultBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "DifficultBookshelfScript"
+      ]
+    },
+    "CianwoodPharmacy_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, CIANWOOD_CITY, 4",
+        "warp_event  3,  7, CIANWOOD_CITY, 4",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, CianwoodPharmacyBookshelf",
+        "bg_event  1,  1, BGEVENT_READ, CianwoodPharmacyBookshelf",
+        "def_object_events",
+        "object_event  2,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodPharmacist, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "CIANWOOD_CITY",
+            "4"
+          ],
+          "raw": "warp_event  2,  7, CIANWOOD_CITY, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "CIANWOOD_CITY",
+            "4"
+          ],
+          "raw": "warp_event  3,  7, CIANWOOD_CITY, 4"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "CianwoodPharmacyBookshelf"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, CianwoodPharmacyBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "CianwoodPharmacyBookshelf"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, CianwoodPharmacyBookshelf"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_PHARMACIST",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodPharmacist",
+            "-1"
+          ],
+          "raw": "object_event  2,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodPharmacist, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "PharmacistGiveSecretpotionText": {
+      "raw_lines": [
+        "text \"Your #MON ap-\"",
+        "line \"pear to be fine.\"",
+        "para \"Is something wor- \"",
+        "line \"rying you?\"",
+        "para \"\u2026\"",
+        "para \"The LIGHTHOUSE\"",
+        "line \"#MON is in\"",
+        "cont \"trouble?\"",
+        "para \"I got it!\"",
+        "para \"This ought to do\"",
+        "line \"the trick.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Your #MON ap-"
+        },
+        {
+          "command": "line",
+          "value": "pear to be fine."
+        },
+        {
+          "command": "para",
+          "value": "Is something wor- "
+        },
+        {
+          "command": "line",
+          "value": "rying you?"
+        },
+        {
+          "command": "para",
+          "value": "\u2026"
+        },
+        {
+          "command": "para",
+          "value": "The LIGHTHOUSE"
+        },
+        {
+          "command": "line",
+          "value": "#MON is in"
+        },
+        {
+          "command": "cont",
+          "value": "trouble?"
+        },
+        {
+          "command": "para",
+          "value": "I got it!"
+        },
+        {
+          "command": "para",
+          "value": "This ought to do"
+        },
+        {
+          "command": "line",
+          "value": "the trick."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ReceivedSecretpotionText": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"SECRETPOTION.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "SECRETPOTION."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PharmacistDescribeSecretpotionText": {
+      "raw_lines": [
+        "text \"My SECRETPOTION is\"",
+        "line \"a tad too strong.\"",
+        "para \"I only offer it in\"",
+        "line \"an emergency.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My SECRETPOTION is"
+        },
+        {
+          "command": "line",
+          "value": "a tad too strong."
+        },
+        {
+          "command": "para",
+          "value": "I only offer it in"
+        },
+        {
+          "command": "line",
+          "value": "an emergency."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "DifficultBookshelfScript"
+  ],
+  "dependencies": {
+    "CianwoodPharmacy_MapScripts": {
+      "label_refs": [
+        "CianwoodPharmacyNoopScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPharmacyNoopScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPharmacist": {
+      "label_refs": [
+        "CianwoodPharmacist.Mart"
+      ],
+      "text_refs": [
+        "PharmacistDescribeSecretpotionText",
+        "PharmacistGiveSecretpotionText",
+        "ReceivedSecretpotionText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPharmacist.Mart": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPharmacyBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "DifficultBookshelfScript"
+      ]
+    },
+    "CianwoodPharmacy_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 1,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 1
+  }
+}

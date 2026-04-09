@@ -1,0 +1,5197 @@
+{
+  "crystal_map": "Route36",
+  "map_id": "ROUTE_36",
+  "group": "VIOLET",
+  "group_index": 10,
+  "map_index": 3,
+  "tileset": "TILESET_JOHTO",
+  "environment": "ROUTE",
+  "landmark": "LANDMARK_ROUTE_36",
+  "music": "MUSIC_ROUTE_36",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_AUTO",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 30,
+  "height_blocks": 9,
+  "border_block": "05",
+  "blk_path": "maps/Route36.blk",
+  "source_asm": "maps/Route36.asm",
+  "connections": [
+    {
+      "direction": "north",
+      "map": "Route37",
+      "target_map_id": "ROUTE_37",
+      "offset": 10
+    },
+    {
+      "direction": "south",
+      "map": "Route35",
+      "target_map_id": "ROUTE_35",
+      "offset": 0
+    },
+    {
+      "direction": "east",
+      "map": "VioletCity",
+      "target_map_id": "VIOLET_CITY",
+      "offset": 0
+    }
+  ],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "Route36Noop1Scene",
+        "scene_id": "SCENE_ROUTE36_NOOP"
+      },
+      {
+        "script": "Route36Noop2Scene",
+        "scene_id": "SCENE_ROUTE36_SUICUNE"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "Route36ArthurCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 18,
+        "y": 8,
+        "dest_map": "ROUTE_36_NATIONAL_PARK_GATE",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 18,
+        "y": 9,
+        "dest_map": "ROUTE_36_NATIONAL_PARK_GATE",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 47,
+        "y": 13,
+        "dest_map": "ROUTE_36_RUINS_OF_ALPH_GATE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 48,
+        "y": 13,
+        "dest_map": "ROUTE_36_RUINS_OF_ALPH_GATE",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 20,
+        "y": 7,
+        "scene": "SCENE_ROUTE36_SUICUNE",
+        "script": "Route36SuicuneScript"
+      },
+      {
+        "x": 22,
+        "y": 7,
+        "scene": "SCENE_ROUTE36_SUICUNE",
+        "script": "Route36SuicuneScript"
+      }
+    ],
+    "bg_events": [
+      {
+        "x": 29,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "Route36TrainerTips2"
+      },
+      {
+        "x": 45,
+        "y": 11,
+        "kind": "BGEVENT_READ",
+        "script": "RuinsOfAlphNorthSign"
+      },
+      {
+        "x": 55,
+        "y": 7,
+        "kind": "BGEVENT_READ",
+        "script": "Route36Sign"
+      },
+      {
+        "x": 21,
+        "y": 7,
+        "kind": "BGEVENT_READ",
+        "script": "Route36TrainerTips1"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 20,
+        "y": 13,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerPsychicMark",
+        "flag": -1
+      },
+      {
+        "x": 31,
+        "y": 14,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 5,
+        "script": "TrainerSchoolboyAlan1",
+        "flag": -1
+      },
+      {
+        "x": 35,
+        "y": 9,
+        "sprite": "SPRITE_WEIRD_TREE",
+        "movement": "SPRITEMOVEDATA_SUDOWOODO",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "SudowoodoScript",
+        "flag": "EVENT_ROUTE_36_SUDOWOODO"
+      },
+      {
+        "x": 51,
+        "y": 8,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 2,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route36LassScript",
+        "flag": -1
+      },
+      {
+        "x": 44,
+        "y": 9,
+        "sprite": "SPRITE_FISHER",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route36RockSmashGuyScript",
+        "flag": -1
+      },
+      {
+        "x": 21,
+        "y": 4,
+        "sprite": "SPRITE_FRUIT_TREE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route36FruitTree",
+        "flag": -1
+      },
+      {
+        "x": 46,
+        "y": 6,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ArthurScript",
+        "flag": "EVENT_ROUTE_36_ARTHUR_OF_THURSDAY"
+      },
+      {
+        "x": 33,
+        "y": 12,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route36FloriaScript",
+        "flag": "EVENT_FLORIA_AT_SUDOWOODO"
+      },
+      {
+        "x": 21,
+        "y": 6,
+        "sprite": "SPRITE_SUICUNE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_SAW_SUICUNE_ON_ROUTE_36"
+      }
+    ]
+  },
+  "object_consts": [
+    "ROUTE36_YOUNGSTER1",
+    "ROUTE36_YOUNGSTER2",
+    "ROUTE36_WEIRD_TREE",
+    "ROUTE36_LASS1",
+    "ROUTE36_FISHER",
+    "ROUTE36_FRUIT_TREE",
+    "ROUTE36_ARTHUR",
+    "ROUTE36_FLORIA",
+    "ROUTE36_SUICUNE"
+  ],
+  "scene_ids": [
+    "SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE",
+    "SCENE_ROUTE36_NOOP",
+    "SCENE_ROUTE36_SUICUNE"
+  ],
+  "scripts": {
+    "Route36_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script Route36Noop1Scene, SCENE_ROUTE36_NOOP",
+        "scene_script Route36Noop2Scene, SCENE_ROUTE36_SUICUNE",
+        "def_callbacks",
+        "callback MAPCALLBACK_OBJECTS, Route36ArthurCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "Route36Noop1Scene",
+            "SCENE_ROUTE36_NOOP"
+          ],
+          "raw": "scene_script Route36Noop1Scene, SCENE_ROUTE36_NOOP"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "Route36Noop2Scene",
+            "SCENE_ROUTE36_SUICUNE"
+          ],
+          "raw": "scene_script Route36Noop2Scene, SCENE_ROUTE36_SUICUNE"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "Route36ArthurCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, Route36ArthurCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "Route36Noop1Scene",
+      "label_refs": [
+        "Route36Noop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36Noop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36Noop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36ArthurCallback": {
+      "raw_lines": [
+        "readvar VAR_WEEKDAY",
+        "ifequal THURSDAY, .ArthurAppears",
+        "disappear ROUTE36_ARTHUR",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "THURSDAY",
+            "Route36ArthurCallback.ArthurAppears"
+          ],
+          "raw": "ifequal THURSDAY, .ArthurAppears"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ROUTE36_ARTHUR"
+          ],
+          "raw": "disappear ROUTE36_ARTHUR"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "readvar",
+      "label_refs": [
+        "Route36ArthurCallback.ArthurAppears"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36ArthurCallback.ArthurAppears": {
+      "raw_lines": [
+        "appear ROUTE36_ARTHUR",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE36_ARTHUR"
+          ],
+          "raw": "appear ROUTE36_ARTHUR"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "appear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36SuicuneScript": {
+      "raw_lines": [
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "pause 15",
+        "playsound SFX_WARP_FROM",
+        "turnobject PLAYER, UP",
+        "applymovement ROUTE36_SUICUNE, Route36SuicuneMovement",
+        "disappear ROUTE36_SUICUNE",
+        "turnobject PLAYER, DOWN",
+        "pause 10",
+        "setscene SCENE_ROUTE36_NOOP",
+        "clearevent EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY",
+        "setmapscene CIANWOOD_CITY, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_WARP_FROM"
+          ],
+          "raw": "playsound SFX_WARP_FROM"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "UP"
+          ],
+          "raw": "turnobject PLAYER, UP"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE36_SUICUNE",
+            "Route36SuicuneMovement"
+          ],
+          "raw": "applymovement ROUTE36_SUICUNE, Route36SuicuneMovement"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ROUTE36_SUICUNE"
+          ],
+          "raw": "disappear ROUTE36_SUICUNE"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "10"
+          ],
+          "raw": "pause 10"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_ROUTE36_NOOP"
+          ],
+          "raw": "setscene SCENE_ROUTE36_NOOP"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY"
+          ],
+          "raw": "clearevent EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "CIANWOOD_CITY",
+            "SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE"
+          ],
+          "raw": "setmapscene CIANWOOD_CITY, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "showemote",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "Route36SuicuneMovement"
+      ],
+      "scene_refs": [
+        "SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE",
+        "SCENE_ROUTE36_NOOP"
+      ],
+      "std_calls": []
+    },
+    "SudowoodoScript": {
+      "raw_lines": [
+        "checkitem SQUIRTBOTTLE",
+        "iftrue .Fight",
+        "waitsfx",
+        "playsound SFX_SANDSTORM",
+        "applymovement ROUTE36_WEIRD_TREE, SudowoodoShakeMovement",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkitem",
+          "args": [
+            "SQUIRTBOTTLE"
+          ],
+          "raw": "checkitem SQUIRTBOTTLE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "SudowoodoScript.Fight"
+          ],
+          "raw": "iftrue .Fight"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_SANDSTORM"
+          ],
+          "raw": "playsound SFX_SANDSTORM"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE36_WEIRD_TREE",
+            "SudowoodoShakeMovement"
+          ],
+          "raw": "applymovement ROUTE36_WEIRD_TREE, SudowoodoShakeMovement"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkitem",
+      "label_refs": [
+        "SudowoodoScript.Fight"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "SudowoodoShakeMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SudowoodoScript.Fight": {
+      "raw_lines": [
+        "opentext",
+        "writetext UseSquirtbottleText",
+        "yesorno",
+        "iffalse DidntUseSquirtbottleScript",
+        "closetext"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "UseSquirtbottleText"
+          ],
+          "raw": "writetext UseSquirtbottleText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "DidntUseSquirtbottleScript"
+          ],
+          "raw": "iffalse DidntUseSquirtbottleScript"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        }
+      ],
+      "first_command": "opentext",
+      "fallthrough_label": "WateredWeirdTreeScript",
+      "label_refs": [
+        "DidntUseSquirtbottleScript",
+        "WateredWeirdTreeScript"
+      ],
+      "text_refs": [
+        "UseSquirtbottleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WateredWeirdTreeScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext UsedSquirtbottleText",
+        "waitbutton",
+        "closetext",
+        "waitsfx",
+        "playsound SFX_SANDSTORM",
+        "applymovement ROUTE36_WEIRD_TREE, SudowoodoShakeMovement",
+        "opentext",
+        "writetext SudowoodoAttackedText",
+        "waitbutton",
+        "closetext",
+        "loadwildmon SUDOWOODO, 20",
+        "startbattle",
+        "setevent EVENT_FOUGHT_SUDOWOODO",
+        "ifequal DRAW, DidntCatchSudowoodo",
+        "disappear ROUTE36_WEIRD_TREE",
+        "variablesprite SPRITE_WEIRD_TREE, SPRITE_TWIN",
+        "reloadmapafterbattle",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "UsedSquirtbottleText"
+          ],
+          "raw": "writetext UsedSquirtbottleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_SANDSTORM"
+          ],
+          "raw": "playsound SFX_SANDSTORM"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE36_WEIRD_TREE",
+            "SudowoodoShakeMovement"
+          ],
+          "raw": "applymovement ROUTE36_WEIRD_TREE, SudowoodoShakeMovement"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SudowoodoAttackedText"
+          ],
+          "raw": "writetext SudowoodoAttackedText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "loadwildmon",
+          "args": [
+            "SUDOWOODO",
+            "20"
+          ],
+          "raw": "loadwildmon SUDOWOODO, 20"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_FOUGHT_SUDOWOODO"
+          ],
+          "raw": "setevent EVENT_FOUGHT_SUDOWOODO"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "DRAW",
+            "DidntCatchSudowoodo"
+          ],
+          "raw": "ifequal DRAW, DidntCatchSudowoodo"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ROUTE36_WEIRD_TREE"
+          ],
+          "raw": "disappear ROUTE36_WEIRD_TREE"
+        },
+        {
+          "command": "variablesprite",
+          "args": [
+            "SPRITE_WEIRD_TREE",
+            "SPRITE_TWIN"
+          ],
+          "raw": "variablesprite SPRITE_WEIRD_TREE, SPRITE_TWIN"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "DidntCatchSudowoodo"
+      ],
+      "text_refs": [
+        "SudowoodoAttackedText",
+        "UsedSquirtbottleText"
+      ],
+      "movement_refs": [
+        "SudowoodoShakeMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DidntUseSquirtbottleScript": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DidntCatchSudowoodo": {
+      "raw_lines": [
+        "reloadmapafterbattle",
+        "applymovement ROUTE36_WEIRD_TREE, WeirdTreeMovement_Flee",
+        "disappear ROUTE36_WEIRD_TREE",
+        "variablesprite SPRITE_WEIRD_TREE, SPRITE_TWIN",
+        "special LoadUsedSpritesGFX",
+        "special RefreshSprites",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE36_WEIRD_TREE",
+            "WeirdTreeMovement_Flee"
+          ],
+          "raw": "applymovement ROUTE36_WEIRD_TREE, WeirdTreeMovement_Flee"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ROUTE36_WEIRD_TREE"
+          ],
+          "raw": "disappear ROUTE36_WEIRD_TREE"
+        },
+        {
+          "command": "variablesprite",
+          "args": [
+            "SPRITE_WEIRD_TREE",
+            "SPRITE_TWIN"
+          ],
+          "raw": "variablesprite SPRITE_WEIRD_TREE, SPRITE_TWIN"
+        },
+        {
+          "command": "special",
+          "args": [
+            "LoadUsedSpritesGFX"
+          ],
+          "raw": "special LoadUsedSpritesGFX"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RefreshSprites"
+          ],
+          "raw": "special RefreshSprites"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "reloadmapafterbattle",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "WeirdTreeMovement_Flee"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36FloriaScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP",
+        "iftrue .SecondTimeTalking",
+        "setevent EVENT_MET_FLORIA",
+        "writetext FloriaText1",
+        "waitbutton",
+        "closetext",
+        "clearevent EVENT_FLORIA_AT_FLOWER_SHOP",
+        "readvar VAR_FACING",
+        "ifequal UP, .Up",
+        "applymovement ROUTE36_FLORIA, FloriaMovement1",
+        "disappear ROUTE36_FLORIA",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP"
+          ],
+          "raw": "checkevent EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36FloriaScript.SecondTimeTalking"
+          ],
+          "raw": "iftrue .SecondTimeTalking"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_MET_FLORIA"
+          ],
+          "raw": "setevent EVENT_MET_FLORIA"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "FloriaText1"
+          ],
+          "raw": "writetext FloriaText1"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_FLORIA_AT_FLOWER_SHOP"
+          ],
+          "raw": "clearevent EVENT_FLORIA_AT_FLOWER_SHOP"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_FACING"
+          ],
+          "raw": "readvar VAR_FACING"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "UP",
+            "Route36FloriaScript.Up"
+          ],
+          "raw": "ifequal UP, .Up"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE36_FLORIA",
+            "FloriaMovement1"
+          ],
+          "raw": "applymovement ROUTE36_FLORIA, FloriaMovement1"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ROUTE36_FLORIA"
+          ],
+          "raw": "disappear ROUTE36_FLORIA"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "Route36FloriaScript.SecondTimeTalking",
+        "Route36FloriaScript.Up"
+      ],
+      "text_refs": [
+        "FloriaText1"
+      ],
+      "movement_refs": [
+        "FloriaMovement1"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36FloriaScript.Up": {
+      "raw_lines": [
+        "applymovement ROUTE36_FLORIA, FloriaMovement2",
+        "disappear ROUTE36_FLORIA",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE36_FLORIA",
+            "FloriaMovement2"
+          ],
+          "raw": "applymovement ROUTE36_FLORIA, FloriaMovement2"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ROUTE36_FLORIA"
+          ],
+          "raw": "disappear ROUTE36_FLORIA"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "FloriaMovement2"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36FloriaScript.SecondTimeTalking": {
+      "raw_lines": [
+        "writetext FloriaText2",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "FloriaText2"
+          ],
+          "raw": "writetext FloriaText2"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "FloriaText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36RockSmashGuyScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_TM08_ROCK_SMASH",
+        "iftrue .AlreadyGotRockSmash",
+        "checkevent EVENT_FOUGHT_SUDOWOODO",
+        "iftrue .ClearedSudowoodo",
+        "writetext RockSmashGuyText1",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TM08_ROCK_SMASH"
+          ],
+          "raw": "checkevent EVENT_GOT_TM08_ROCK_SMASH"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36RockSmashGuyScript.AlreadyGotRockSmash"
+          ],
+          "raw": "iftrue .AlreadyGotRockSmash"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_FOUGHT_SUDOWOODO"
+          ],
+          "raw": "checkevent EVENT_FOUGHT_SUDOWOODO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36RockSmashGuyScript.ClearedSudowoodo"
+          ],
+          "raw": "iftrue .ClearedSudowoodo"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RockSmashGuyText1"
+          ],
+          "raw": "writetext RockSmashGuyText1"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "Route36RockSmashGuyScript.AlreadyGotRockSmash",
+        "Route36RockSmashGuyScript.ClearedSudowoodo"
+      ],
+      "text_refs": [
+        "RockSmashGuyText1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36RockSmashGuyScript.ClearedSudowoodo": {
+      "raw_lines": [
+        "writetext RockSmashGuyText2",
+        "promptbutton",
+        "verbosegiveitem TM_ROCK_SMASH",
+        "iffalse .NoRoomForTM",
+        "setevent EVENT_GOT_TM08_ROCK_SMASH"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RockSmashGuyText2"
+          ],
+          "raw": "writetext RockSmashGuyText2"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "TM_ROCK_SMASH"
+          ],
+          "raw": "verbosegiveitem TM_ROCK_SMASH"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Route36RockSmashGuyScript.NoRoomForTM"
+          ],
+          "raw": "iffalse .NoRoomForTM"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_TM08_ROCK_SMASH"
+          ],
+          "raw": "setevent EVENT_GOT_TM08_ROCK_SMASH"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "Route36RockSmashGuyScript.AlreadyGotRockSmash",
+      "label_refs": [
+        "Route36RockSmashGuyScript.AlreadyGotRockSmash",
+        "Route36RockSmashGuyScript.NoRoomForTM"
+      ],
+      "text_refs": [
+        "RockSmashGuyText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36RockSmashGuyScript.AlreadyGotRockSmash": {
+      "raw_lines": [
+        "writetext RockSmashGuyText3",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RockSmashGuyText3"
+          ],
+          "raw": "writetext RockSmashGuyText3"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "Route36RockSmashGuyScript.NoRoomForTM",
+      "label_refs": [
+        "Route36RockSmashGuyScript.NoRoomForTM"
+      ],
+      "text_refs": [
+        "RockSmashGuyText3"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36RockSmashGuyScript.NoRoomForTM": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36LassScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_FOUGHT_SUDOWOODO",
+        "iftrue .ClearedSudowoodo",
+        "writetext Route36LassText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_FOUGHT_SUDOWOODO"
+          ],
+          "raw": "checkevent EVENT_FOUGHT_SUDOWOODO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36LassScript.ClearedSudowoodo"
+          ],
+          "raw": "iftrue .ClearedSudowoodo"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route36LassText"
+          ],
+          "raw": "writetext Route36LassText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "Route36LassScript.ClearedSudowoodo"
+      ],
+      "text_refs": [
+        "Route36LassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36LassScript.ClearedSudowoodo": {
+      "raw_lines": [
+        "writetext Route36LassText_ClearedSudowoodo",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route36LassText_ClearedSudowoodo"
+          ],
+          "raw": "writetext Route36LassText_ClearedSudowoodo"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route36LassText_ClearedSudowoodo"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1": {
+      "raw_lines": [
+        "trainer SCHOOLBOY, ALAN1, EVENT_BEAT_SCHOOLBOY_ALAN, SchoolboyAlan1SeenText, SchoolboyAlan1BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "SCHOOLBOY",
+            "ALAN1",
+            "EVENT_BEAT_SCHOOLBOY_ALAN",
+            "SchoolboyAlan1SeenText",
+            "SchoolboyAlan1BeatenText",
+            "0",
+            "TrainerSchoolboyAlan1.Script"
+          ],
+          "raw": "trainer SCHOOLBOY, ALAN1, EVENT_BEAT_SCHOOLBOY_ALAN, SchoolboyAlan1SeenText, SchoolboyAlan1BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerSchoolboyAlan1.Script",
+      "label_refs": [
+        "TrainerSchoolboyAlan1.Script"
+      ],
+      "text_refs": [
+        "SchoolboyAlan1BeatenText",
+        "SchoolboyAlan1SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.Script": {
+      "raw_lines": [
+        "loadvar VAR_CALLERID, PHONE_SCHOOLBOY_ALAN",
+        "endifjustbattled",
+        "opentext",
+        "checkflag ENGINE_ALAN_READY_FOR_REMATCH",
+        "iftrue .ChooseRematch",
+        "checkflag ENGINE_ALAN_HAS_FIRE_STONE",
+        "iftrue .GiveFireStone",
+        "checkcellnum PHONE_SCHOOLBOY_ALAN",
+        "iftrue .NumberAccepted",
+        "checkevent EVENT_ALAN_ASKED_FOR_PHONE_NUMBER",
+        "iftrue .AskAgainForPhoneNumber",
+        "writetext SchoolboyAlanBooksText",
+        "promptbutton",
+        "setevent EVENT_ALAN_ASKED_FOR_PHONE_NUMBER",
+        "scall .AskNumber1",
+        "sjump .ContinueAskForPhoneNumber"
+      ],
+      "commands": [
+        {
+          "command": "loadvar",
+          "args": [
+            "VAR_CALLERID",
+            "PHONE_SCHOOLBOY_ALAN"
+          ],
+          "raw": "loadvar VAR_CALLERID, PHONE_SCHOOLBOY_ALAN"
+        },
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_ALAN_READY_FOR_REMATCH"
+          ],
+          "raw": "checkflag ENGINE_ALAN_READY_FOR_REMATCH"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerSchoolboyAlan1.ChooseRematch"
+          ],
+          "raw": "iftrue .ChooseRematch"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_ALAN_HAS_FIRE_STONE"
+          ],
+          "raw": "checkflag ENGINE_ALAN_HAS_FIRE_STONE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerSchoolboyAlan1.GiveFireStone"
+          ],
+          "raw": "iftrue .GiveFireStone"
+        },
+        {
+          "command": "checkcellnum",
+          "args": [
+            "PHONE_SCHOOLBOY_ALAN"
+          ],
+          "raw": "checkcellnum PHONE_SCHOOLBOY_ALAN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerSchoolboyAlan1.NumberAccepted"
+          ],
+          "raw": "iftrue .NumberAccepted"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_ALAN_ASKED_FOR_PHONE_NUMBER"
+          ],
+          "raw": "checkevent EVENT_ALAN_ASKED_FOR_PHONE_NUMBER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerSchoolboyAlan1.AskAgainForPhoneNumber"
+          ],
+          "raw": "iftrue .AskAgainForPhoneNumber"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SchoolboyAlanBooksText"
+          ],
+          "raw": "writetext SchoolboyAlanBooksText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_ALAN_ASKED_FOR_PHONE_NUMBER"
+          ],
+          "raw": "setevent EVENT_ALAN_ASKED_FOR_PHONE_NUMBER"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "TrainerSchoolboyAlan1.AskNumber1"
+          ],
+          "raw": "scall .AskNumber1"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerSchoolboyAlan1.ContinueAskForPhoneNumber"
+          ],
+          "raw": "sjump .ContinueAskForPhoneNumber"
+        }
+      ],
+      "first_command": "loadvar",
+      "label_refs": [
+        "TrainerSchoolboyAlan1.AskAgainForPhoneNumber",
+        "TrainerSchoolboyAlan1.AskNumber1",
+        "TrainerSchoolboyAlan1.ChooseRematch",
+        "TrainerSchoolboyAlan1.ContinueAskForPhoneNumber",
+        "TrainerSchoolboyAlan1.GiveFireStone",
+        "TrainerSchoolboyAlan1.NumberAccepted"
+      ],
+      "text_refs": [
+        "SchoolboyAlanBooksText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.AskAgainForPhoneNumber": {
+      "raw_lines": [
+        "scall .AskNumber2"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "TrainerSchoolboyAlan1.AskNumber2"
+          ],
+          "raw": "scall .AskNumber2"
+        }
+      ],
+      "first_command": "scall",
+      "fallthrough_label": "TrainerSchoolboyAlan1.ContinueAskForPhoneNumber",
+      "label_refs": [
+        "TrainerSchoolboyAlan1.AskNumber2",
+        "TrainerSchoolboyAlan1.ContinueAskForPhoneNumber"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.ContinueAskForPhoneNumber": {
+      "raw_lines": [
+        "askforphonenumber PHONE_SCHOOLBOY_ALAN",
+        "ifequal PHONE_CONTACTS_FULL, .PhoneFull",
+        "ifequal PHONE_CONTACT_REFUSED, .NumberDeclined",
+        "gettrainername STRING_BUFFER_3, SCHOOLBOY, ALAN1",
+        "scall .RegisteredNumber",
+        "sjump .NumberAccepted"
+      ],
+      "commands": [
+        {
+          "command": "askforphonenumber",
+          "args": [
+            "PHONE_SCHOOLBOY_ALAN"
+          ],
+          "raw": "askforphonenumber PHONE_SCHOOLBOY_ALAN"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PHONE_CONTACTS_FULL",
+            "TrainerSchoolboyAlan1.PhoneFull"
+          ],
+          "raw": "ifequal PHONE_CONTACTS_FULL, .PhoneFull"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PHONE_CONTACT_REFUSED",
+            "TrainerSchoolboyAlan1.NumberDeclined"
+          ],
+          "raw": "ifequal PHONE_CONTACT_REFUSED, .NumberDeclined"
+        },
+        {
+          "command": "gettrainername",
+          "args": [
+            "STRING_BUFFER_3",
+            "SCHOOLBOY",
+            "ALAN1"
+          ],
+          "raw": "gettrainername STRING_BUFFER_3, SCHOOLBOY, ALAN1"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "TrainerSchoolboyAlan1.RegisteredNumber"
+          ],
+          "raw": "scall .RegisteredNumber"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerSchoolboyAlan1.NumberAccepted"
+          ],
+          "raw": "sjump .NumberAccepted"
+        }
+      ],
+      "first_command": "askforphonenumber",
+      "label_refs": [
+        "TrainerSchoolboyAlan1.NumberAccepted",
+        "TrainerSchoolboyAlan1.NumberDeclined",
+        "TrainerSchoolboyAlan1.PhoneFull",
+        "TrainerSchoolboyAlan1.RegisteredNumber"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.ChooseRematch": {
+      "raw_lines": [
+        "scall .Rematch",
+        "winlosstext SchoolboyAlan1BeatenText, 0",
+        "readmem wAlanFightCount",
+        "ifequal 4, .Fight4",
+        "ifequal 3, .Fight3",
+        "ifequal 2, .Fight2",
+        "ifequal 1, .Fight1",
+        "ifequal 0, .LoadFight0"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "TrainerSchoolboyAlan1.Rematch"
+          ],
+          "raw": "scall .Rematch"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "SchoolboyAlan1BeatenText",
+            "0"
+          ],
+          "raw": "winlosstext SchoolboyAlan1BeatenText, 0"
+        },
+        {
+          "command": "readmem",
+          "args": [
+            "wAlanFightCount"
+          ],
+          "raw": "readmem wAlanFightCount"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "4",
+            "TrainerSchoolboyAlan1.Fight4"
+          ],
+          "raw": "ifequal 4, .Fight4"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "3",
+            "TrainerSchoolboyAlan1.Fight3"
+          ],
+          "raw": "ifequal 3, .Fight3"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "TrainerSchoolboyAlan1.Fight2"
+          ],
+          "raw": "ifequal 2, .Fight2"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "TrainerSchoolboyAlan1.Fight1"
+          ],
+          "raw": "ifequal 1, .Fight1"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "0",
+            "TrainerSchoolboyAlan1.LoadFight0"
+          ],
+          "raw": "ifequal 0, .LoadFight0"
+        }
+      ],
+      "first_command": "scall",
+      "fallthrough_label": "TrainerSchoolboyAlan1.Fight4",
+      "label_refs": [
+        "TrainerSchoolboyAlan1.Fight1",
+        "TrainerSchoolboyAlan1.Fight2",
+        "TrainerSchoolboyAlan1.Fight3",
+        "TrainerSchoolboyAlan1.Fight4",
+        "TrainerSchoolboyAlan1.LoadFight0",
+        "TrainerSchoolboyAlan1.Rematch"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.Fight4": {
+      "raw_lines": [
+        "checkevent EVENT_RESTORED_POWER_TO_KANTO",
+        "iftrue .LoadFight4"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_RESTORED_POWER_TO_KANTO"
+          ],
+          "raw": "checkevent EVENT_RESTORED_POWER_TO_KANTO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerSchoolboyAlan1.LoadFight4"
+          ],
+          "raw": "iftrue .LoadFight4"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerSchoolboyAlan1.Fight3",
+      "label_refs": [
+        "TrainerSchoolboyAlan1.Fight3",
+        "TrainerSchoolboyAlan1.LoadFight4"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.Fight3": {
+      "raw_lines": [
+        "checkevent EVENT_BEAT_ELITE_FOUR",
+        "iftrue .LoadFight3"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_ELITE_FOUR"
+          ],
+          "raw": "checkevent EVENT_BEAT_ELITE_FOUR"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerSchoolboyAlan1.LoadFight3"
+          ],
+          "raw": "iftrue .LoadFight3"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerSchoolboyAlan1.Fight2",
+      "label_refs": [
+        "TrainerSchoolboyAlan1.Fight2",
+        "TrainerSchoolboyAlan1.LoadFight3"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.Fight2": {
+      "raw_lines": [
+        "checkflag ENGINE_FLYPOINT_BLACKTHORN",
+        "iftrue .LoadFight2"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_FLYPOINT_BLACKTHORN"
+          ],
+          "raw": "checkflag ENGINE_FLYPOINT_BLACKTHORN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerSchoolboyAlan1.LoadFight2"
+          ],
+          "raw": "iftrue .LoadFight2"
+        }
+      ],
+      "first_command": "checkflag",
+      "fallthrough_label": "TrainerSchoolboyAlan1.Fight1",
+      "label_refs": [
+        "TrainerSchoolboyAlan1.Fight1",
+        "TrainerSchoolboyAlan1.LoadFight2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.Fight1": {
+      "raw_lines": [
+        "checkflag ENGINE_FLYPOINT_OLIVINE",
+        "iftrue .LoadFight1"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_FLYPOINT_OLIVINE"
+          ],
+          "raw": "checkflag ENGINE_FLYPOINT_OLIVINE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerSchoolboyAlan1.LoadFight1"
+          ],
+          "raw": "iftrue .LoadFight1"
+        }
+      ],
+      "first_command": "checkflag",
+      "fallthrough_label": "TrainerSchoolboyAlan1.LoadFight0",
+      "label_refs": [
+        "TrainerSchoolboyAlan1.LoadFight0",
+        "TrainerSchoolboyAlan1.LoadFight1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.LoadFight0": {
+      "raw_lines": [
+        "loadtrainer SCHOOLBOY, ALAN1",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wAlanFightCount, 1",
+        "clearflag ENGINE_ALAN_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "SCHOOLBOY",
+            "ALAN1"
+          ],
+          "raw": "loadtrainer SCHOOLBOY, ALAN1"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wAlanFightCount",
+            "1"
+          ],
+          "raw": "loadmem wAlanFightCount, 1"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_ALAN_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_ALAN_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.LoadFight1": {
+      "raw_lines": [
+        "loadtrainer SCHOOLBOY, ALAN2",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wAlanFightCount, 2",
+        "clearflag ENGINE_ALAN_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "SCHOOLBOY",
+            "ALAN2"
+          ],
+          "raw": "loadtrainer SCHOOLBOY, ALAN2"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wAlanFightCount",
+            "2"
+          ],
+          "raw": "loadmem wAlanFightCount, 2"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_ALAN_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_ALAN_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.LoadFight2": {
+      "raw_lines": [
+        "loadtrainer SCHOOLBOY, ALAN3",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wAlanFightCount, 3",
+        "clearflag ENGINE_ALAN_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "SCHOOLBOY",
+            "ALAN3"
+          ],
+          "raw": "loadtrainer SCHOOLBOY, ALAN3"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wAlanFightCount",
+            "3"
+          ],
+          "raw": "loadmem wAlanFightCount, 3"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_ALAN_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_ALAN_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.LoadFight3": {
+      "raw_lines": [
+        "loadtrainer SCHOOLBOY, ALAN4",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wAlanFightCount, 4",
+        "clearflag ENGINE_ALAN_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "SCHOOLBOY",
+            "ALAN4"
+          ],
+          "raw": "loadtrainer SCHOOLBOY, ALAN4"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wAlanFightCount",
+            "4"
+          ],
+          "raw": "loadmem wAlanFightCount, 4"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_ALAN_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_ALAN_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.LoadFight4": {
+      "raw_lines": [
+        "loadtrainer SCHOOLBOY, ALAN5",
+        "startbattle",
+        "reloadmapafterbattle",
+        "clearflag ENGINE_ALAN_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "SCHOOLBOY",
+            "ALAN5"
+          ],
+          "raw": "loadtrainer SCHOOLBOY, ALAN5"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_ALAN_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_ALAN_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.GiveFireStone": {
+      "raw_lines": [
+        "scall .Gift",
+        "verbosegiveitem FIRE_STONE",
+        "iffalse .BagFull",
+        "clearflag ENGINE_ALAN_HAS_FIRE_STONE",
+        "setevent EVENT_ALAN_GAVE_FIRE_STONE",
+        "sjump .NumberAccepted"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "TrainerSchoolboyAlan1.Gift"
+          ],
+          "raw": "scall .Gift"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "FIRE_STONE"
+          ],
+          "raw": "verbosegiveitem FIRE_STONE"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "TrainerSchoolboyAlan1.BagFull"
+          ],
+          "raw": "iffalse .BagFull"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_ALAN_HAS_FIRE_STONE"
+          ],
+          "raw": "clearflag ENGINE_ALAN_HAS_FIRE_STONE"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_ALAN_GAVE_FIRE_STONE"
+          ],
+          "raw": "setevent EVENT_ALAN_GAVE_FIRE_STONE"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerSchoolboyAlan1.NumberAccepted"
+          ],
+          "raw": "sjump .NumberAccepted"
+        }
+      ],
+      "first_command": "scall",
+      "label_refs": [
+        "TrainerSchoolboyAlan1.BagFull",
+        "TrainerSchoolboyAlan1.Gift",
+        "TrainerSchoolboyAlan1.NumberAccepted"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.BagFull": {
+      "raw_lines": [
+        "sjump .PackFull"
+      ],
+      "commands": [
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerSchoolboyAlan1.PackFull"
+          ],
+          "raw": "sjump .PackFull"
+        }
+      ],
+      "first_command": "sjump",
+      "label_refs": [
+        "TrainerSchoolboyAlan1.PackFull"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.AskNumber1": {
+      "raw_lines": [
+        "jumpstd AskNumber1MScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "AskNumber1MScript"
+          ],
+          "raw": "jumpstd AskNumber1MScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber1MScript"
+      ]
+    },
+    "TrainerSchoolboyAlan1.AskNumber2": {
+      "raw_lines": [
+        "jumpstd AskNumber2MScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "AskNumber2MScript"
+          ],
+          "raw": "jumpstd AskNumber2MScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber2MScript"
+      ]
+    },
+    "TrainerSchoolboyAlan1.RegisteredNumber": {
+      "raw_lines": [
+        "jumpstd RegisteredNumberMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RegisteredNumberMScript"
+          ],
+          "raw": "jumpstd RegisteredNumberMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RegisteredNumberMScript"
+      ]
+    },
+    "TrainerSchoolboyAlan1.NumberAccepted": {
+      "raw_lines": [
+        "jumpstd NumberAcceptedMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "NumberAcceptedMScript"
+          ],
+          "raw": "jumpstd NumberAcceptedMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberAcceptedMScript"
+      ]
+    },
+    "TrainerSchoolboyAlan1.NumberDeclined": {
+      "raw_lines": [
+        "jumpstd NumberDeclinedMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "NumberDeclinedMScript"
+          ],
+          "raw": "jumpstd NumberDeclinedMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberDeclinedMScript"
+      ]
+    },
+    "TrainerSchoolboyAlan1.PhoneFull": {
+      "raw_lines": [
+        "jumpstd PhoneFullMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PhoneFullMScript"
+          ],
+          "raw": "jumpstd PhoneFullMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PhoneFullMScript"
+      ]
+    },
+    "TrainerSchoolboyAlan1.Rematch": {
+      "raw_lines": [
+        "jumpstd RematchMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RematchMScript"
+          ],
+          "raw": "jumpstd RematchMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchMScript"
+      ]
+    },
+    "TrainerSchoolboyAlan1.Gift": {
+      "raw_lines": [
+        "jumpstd GiftMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "GiftMScript"
+          ],
+          "raw": "jumpstd GiftMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GiftMScript"
+      ]
+    },
+    "TrainerSchoolboyAlan1.PackFull": {
+      "raw_lines": [
+        "jumpstd PackFullMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PackFullMScript"
+          ],
+          "raw": "jumpstd PackFullMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PackFullMScript"
+      ]
+    },
+    "TrainerPsychicMark": {
+      "raw_lines": [
+        "trainer PSYCHIC_T, MARK, EVENT_BEAT_PSYCHIC_MARK, PsychicMarkSeenText, PsychicMarkBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "PSYCHIC_T",
+            "MARK",
+            "EVENT_BEAT_PSYCHIC_MARK",
+            "PsychicMarkSeenText",
+            "PsychicMarkBeatenText",
+            "0",
+            "TrainerPsychicMark.Script"
+          ],
+          "raw": "trainer PSYCHIC_T, MARK, EVENT_BEAT_PSYCHIC_MARK, PsychicMarkSeenText, PsychicMarkBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerPsychicMark.Script",
+      "label_refs": [
+        "TrainerPsychicMark.Script"
+      ],
+      "text_refs": [
+        "PsychicMarkBeatenText",
+        "PsychicMarkSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPsychicMark.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext PsychicMarkAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PsychicMarkAfterBattleText"
+          ],
+          "raw": "writetext PsychicMarkAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "PsychicMarkAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ArthurScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_HARD_STONE_FROM_ARTHUR",
+        "iftrue .AlreadyGotStone",
+        "readvar VAR_WEEKDAY",
+        "ifnotequal THURSDAY, ArthurNotThursdayScript",
+        "checkevent EVENT_MET_ARTHUR_OF_THURSDAY",
+        "iftrue .MetArthur",
+        "writetext MeetArthurText",
+        "promptbutton",
+        "setevent EVENT_MET_ARTHUR_OF_THURSDAY"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_HARD_STONE_FROM_ARTHUR"
+          ],
+          "raw": "checkevent EVENT_GOT_HARD_STONE_FROM_ARTHUR"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "ArthurScript.AlreadyGotStone"
+          ],
+          "raw": "iftrue .AlreadyGotStone"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifnotequal",
+          "args": [
+            "THURSDAY",
+            "ArthurNotThursdayScript"
+          ],
+          "raw": "ifnotequal THURSDAY, ArthurNotThursdayScript"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_MET_ARTHUR_OF_THURSDAY"
+          ],
+          "raw": "checkevent EVENT_MET_ARTHUR_OF_THURSDAY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "ArthurScript.MetArthur"
+          ],
+          "raw": "iftrue .MetArthur"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MeetArthurText"
+          ],
+          "raw": "writetext MeetArthurText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_MET_ARTHUR_OF_THURSDAY"
+          ],
+          "raw": "setevent EVENT_MET_ARTHUR_OF_THURSDAY"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "ArthurScript.MetArthur",
+      "label_refs": [
+        "ArthurNotThursdayScript",
+        "ArthurScript.AlreadyGotStone",
+        "ArthurScript.MetArthur"
+      ],
+      "text_refs": [
+        "MeetArthurText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ArthurScript.MetArthur": {
+      "raw_lines": [
+        "writetext ArthurGivesGiftText",
+        "promptbutton",
+        "verbosegiveitem HARD_STONE",
+        "iffalse .BagFull",
+        "setevent EVENT_GOT_HARD_STONE_FROM_ARTHUR",
+        "writetext ArthurGaveGiftText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "ArthurGivesGiftText"
+          ],
+          "raw": "writetext ArthurGivesGiftText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "HARD_STONE"
+          ],
+          "raw": "verbosegiveitem HARD_STONE"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "ArthurScript.BagFull"
+          ],
+          "raw": "iffalse .BagFull"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_HARD_STONE_FROM_ARTHUR"
+          ],
+          "raw": "setevent EVENT_GOT_HARD_STONE_FROM_ARTHUR"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ArthurGaveGiftText"
+          ],
+          "raw": "writetext ArthurGaveGiftText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "ArthurScript.BagFull"
+      ],
+      "text_refs": [
+        "ArthurGaveGiftText",
+        "ArthurGivesGiftText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ArthurScript.AlreadyGotStone": {
+      "raw_lines": [
+        "writetext ArthurThursdayText",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "ArthurThursdayText"
+          ],
+          "raw": "writetext ArthurThursdayText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "ArthurScript.BagFull",
+      "label_refs": [
+        "ArthurScript.BagFull"
+      ],
+      "text_refs": [
+        "ArthurThursdayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ArthurScript.BagFull": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ArthurNotThursdayScript": {
+      "raw_lines": [
+        "writetext ArthurNotThursdayText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "ArthurNotThursdayText"
+          ],
+          "raw": "writetext ArthurNotThursdayText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "ArthurNotThursdayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36Sign": {
+      "raw_lines": [
+        "jumptext Route36SignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "Route36SignText"
+          ],
+          "raw": "jumptext Route36SignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "Route36SignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphNorthSign": {
+      "raw_lines": [
+        "jumptext RuinsOfAlphNorthSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "RuinsOfAlphNorthSignText"
+          ],
+          "raw": "jumptext RuinsOfAlphNorthSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphNorthSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36TrainerTips1": {
+      "raw_lines": [
+        "jumptext Route36TrainerTips1Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "Route36TrainerTips1Text"
+          ],
+          "raw": "jumptext Route36TrainerTips1Text"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "Route36TrainerTips1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36TrainerTips2": {
+      "raw_lines": [
+        "jumptext Route36TrainerTips2Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "Route36TrainerTips2Text"
+          ],
+          "raw": "jumptext Route36TrainerTips2Text"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "Route36TrainerTips2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36FruitTree": {
+      "raw_lines": [
+        "fruittree FRUITTREE_ROUTE_36"
+      ],
+      "commands": [
+        {
+          "command": "fruittree",
+          "args": [
+            "FRUITTREE_ROUTE_36"
+          ],
+          "raw": "fruittree FRUITTREE_ROUTE_36"
+        }
+      ],
+      "first_command": "fruittree",
+      "fallthrough_label": "SudowoodoShakeMovement",
+      "label_refs": [
+        "SudowoodoShakeMovement"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SudowoodoShakeMovement": {
+      "raw_lines": [
+        "tree_shake",
+        "step_end"
+      ],
+      "commands": [
+        {
+          "command": "tree_shake",
+          "args": [],
+          "raw": "tree_shake"
+        },
+        {
+          "command": "step_end",
+          "args": [],
+          "raw": "step_end"
+        }
+      ],
+      "first_command": "tree_shake",
+      "fallthrough_label": "WeirdTreeMovement_Flee",
+      "label_refs": [
+        "WeirdTreeMovement_Flee"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WeirdTreeMovement_Flee": {
+      "raw_lines": [
+        "fast_jump_step UP",
+        "fast_jump_step UP",
+        "step_end"
+      ],
+      "commands": [
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "UP"
+          ],
+          "raw": "fast_jump_step UP"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "UP"
+          ],
+          "raw": "fast_jump_step UP"
+        },
+        {
+          "command": "step_end",
+          "args": [],
+          "raw": "step_end"
+        }
+      ],
+      "first_command": "fast_jump_step",
+      "fallthrough_label": "Route36SuicuneMovement",
+      "label_refs": [
+        "Route36SuicuneMovement"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36SuicuneMovement": {
+      "raw_lines": [
+        "set_sliding",
+        "fast_jump_step DOWN",
+        "fast_jump_step DOWN",
+        "fast_jump_step DOWN",
+        "fast_jump_step RIGHT",
+        "fast_jump_step RIGHT",
+        "fast_jump_step RIGHT",
+        "remove_sliding",
+        "step_end"
+      ],
+      "commands": [
+        {
+          "command": "set_sliding",
+          "args": [],
+          "raw": "set_sliding"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "DOWN"
+          ],
+          "raw": "fast_jump_step DOWN"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "DOWN"
+          ],
+          "raw": "fast_jump_step DOWN"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "DOWN"
+          ],
+          "raw": "fast_jump_step DOWN"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "RIGHT"
+          ],
+          "raw": "fast_jump_step RIGHT"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "RIGHT"
+          ],
+          "raw": "fast_jump_step RIGHT"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "RIGHT"
+          ],
+          "raw": "fast_jump_step RIGHT"
+        },
+        {
+          "command": "remove_sliding",
+          "args": [],
+          "raw": "remove_sliding"
+        },
+        {
+          "command": "step_end",
+          "args": [],
+          "raw": "step_end"
+        }
+      ],
+      "first_command": "set_sliding",
+      "fallthrough_label": "Route36_MapEvents",
+      "label_refs": [
+        "Route36_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 18,  8, ROUTE_36_NATIONAL_PARK_GATE, 3",
+        "warp_event 18,  9, ROUTE_36_NATIONAL_PARK_GATE, 4",
+        "warp_event 47, 13, ROUTE_36_RUINS_OF_ALPH_GATE, 1",
+        "warp_event 48, 13, ROUTE_36_RUINS_OF_ALPH_GATE, 2",
+        "def_coord_events",
+        "coord_event 20,  7, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript",
+        "coord_event 22,  7, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript",
+        "def_bg_events",
+        "bg_event 29,  1, BGEVENT_READ, Route36TrainerTips2",
+        "bg_event 45, 11, BGEVENT_READ, RuinsOfAlphNorthSign",
+        "bg_event 55,  7, BGEVENT_READ, Route36Sign",
+        "bg_event 21,  7, BGEVENT_READ, Route36TrainerTips1",
+        "def_object_events",
+        "object_event 20, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicMark, -1",
+        "object_event 31, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSchoolboyAlan1, -1",
+        "object_event 35,  9, SPRITE_WEIRD_TREE, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO",
+        "object_event 51,  8, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36LassScript, -1",
+        "object_event 44,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, -1",
+        "object_event 21,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36FruitTree, -1",
+        "object_event 46,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArthurScript, EVENT_ROUTE_36_ARTHUR_OF_THURSDAY",
+        "object_event 33, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FloriaScript, EVENT_FLORIA_AT_SUDOWOODO",
+        "object_event 21,  6, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_36"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "18",
+            "8",
+            "ROUTE_36_NATIONAL_PARK_GATE",
+            "3"
+          ],
+          "raw": "warp_event 18,  8, ROUTE_36_NATIONAL_PARK_GATE, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "18",
+            "9",
+            "ROUTE_36_NATIONAL_PARK_GATE",
+            "4"
+          ],
+          "raw": "warp_event 18,  9, ROUTE_36_NATIONAL_PARK_GATE, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "47",
+            "13",
+            "ROUTE_36_RUINS_OF_ALPH_GATE",
+            "1"
+          ],
+          "raw": "warp_event 47, 13, ROUTE_36_RUINS_OF_ALPH_GATE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "48",
+            "13",
+            "ROUTE_36_RUINS_OF_ALPH_GATE",
+            "2"
+          ],
+          "raw": "warp_event 48, 13, ROUTE_36_RUINS_OF_ALPH_GATE, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "20",
+            "7",
+            "SCENE_ROUTE36_SUICUNE",
+            "Route36SuicuneScript"
+          ],
+          "raw": "coord_event 20,  7, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "22",
+            "7",
+            "SCENE_ROUTE36_SUICUNE",
+            "Route36SuicuneScript"
+          ],
+          "raw": "coord_event 22,  7, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "29",
+            "1",
+            "BGEVENT_READ",
+            "Route36TrainerTips2"
+          ],
+          "raw": "bg_event 29,  1, BGEVENT_READ, Route36TrainerTips2"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "45",
+            "11",
+            "BGEVENT_READ",
+            "RuinsOfAlphNorthSign"
+          ],
+          "raw": "bg_event 45, 11, BGEVENT_READ, RuinsOfAlphNorthSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "55",
+            "7",
+            "BGEVENT_READ",
+            "Route36Sign"
+          ],
+          "raw": "bg_event 55,  7, BGEVENT_READ, Route36Sign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "21",
+            "7",
+            "BGEVENT_READ",
+            "Route36TrainerTips1"
+          ],
+          "raw": "bg_event 21,  7, BGEVENT_READ, Route36TrainerTips1"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "20",
+            "13",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerPsychicMark",
+            "-1"
+          ],
+          "raw": "object_event 20, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicMark, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "31",
+            "14",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "5",
+            "TrainerSchoolboyAlan1",
+            "-1"
+          ],
+          "raw": "object_event 31, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSchoolboyAlan1, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "35",
+            "9",
+            "SPRITE_WEIRD_TREE",
+            "SPRITEMOVEDATA_SUDOWOODO",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "SudowoodoScript",
+            "EVENT_ROUTE_36_SUDOWOODO"
+          ],
+          "raw": "object_event 35,  9, SPRITE_WEIRD_TREE, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "51",
+            "8",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "2",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route36LassScript",
+            "-1"
+          ],
+          "raw": "object_event 51,  8, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36LassScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "44",
+            "9",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route36RockSmashGuyScript",
+            "-1"
+          ],
+          "raw": "object_event 44,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "21",
+            "4",
+            "SPRITE_FRUIT_TREE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route36FruitTree",
+            "-1"
+          ],
+          "raw": "object_event 21,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36FruitTree, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "46",
+            "6",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ArthurScript",
+            "EVENT_ROUTE_36_ARTHUR_OF_THURSDAY"
+          ],
+          "raw": "object_event 46,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArthurScript, EVENT_ROUTE_36_ARTHUR_OF_THURSDAY"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "33",
+            "12",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route36FloriaScript",
+            "EVENT_FLORIA_AT_SUDOWOODO"
+          ],
+          "raw": "object_event 33, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FloriaScript, EVENT_FLORIA_AT_SUDOWOODO"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "21",
+            "6",
+            "SPRITE_SUICUNE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_SAW_SUICUNE_ON_ROUTE_36"
+          ],
+          "raw": "object_event 21,  6, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_36"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "UseSquirtbottleText": {
+      "raw_lines": [
+        "text \"It's a weird tree.\"",
+        "line \"Use SQUIRTBOTTLE?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's a weird tree."
+        },
+        {
+          "command": "line",
+          "value": "Use SQUIRTBOTTLE?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "UsedSquirtbottleText": {
+      "raw_lines": [
+        "text \"<PLAYER> used the\"",
+        "line \"SQUIRTBOTTLE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> used the"
+        },
+        {
+          "command": "line",
+          "value": "SQUIRTBOTTLE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SudowoodoAttackedText": {
+      "raw_lines": [
+        "text \"The weird tree\"",
+        "line \"doesn't like the\"",
+        "cont \"SQUIRTBOTTLE!\"",
+        "para \"The weird tree\"",
+        "line \"attacked!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The weird tree"
+        },
+        {
+          "command": "line",
+          "value": "doesn't like the"
+        },
+        {
+          "command": "cont",
+          "value": "SQUIRTBOTTLE!"
+        },
+        {
+          "command": "para",
+          "value": "The weird tree"
+        },
+        {
+          "command": "line",
+          "value": "attacked!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FloriaText1": {
+      "raw_lines": [
+        "text \"I'm the FLOWER\"",
+        "line \"SHOP's FLORIA!\"",
+        "para \"Listen, listen!\"",
+        "para \"When I sprinkled\"",
+        "line \"water on that\"",
+        "para \"wiggly tree, it\"",
+        "line \"jumped right up!\"",
+        "para \"It just has to be\"",
+        "line \"a #MON.\"",
+        "para \"I bet it would be\"",
+        "line \"shocked out of its\"",
+        "para \"disguise if you\"",
+        "line \"soaked it!\"",
+        "para \"I know! I'll tell\"",
+        "line \"my sis and borrow\"",
+        "cont \"her water bottle!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm the FLOWER"
+        },
+        {
+          "command": "line",
+          "value": "SHOP's FLORIA!"
+        },
+        {
+          "command": "para",
+          "value": "Listen, listen!"
+        },
+        {
+          "command": "para",
+          "value": "When I sprinkled"
+        },
+        {
+          "command": "line",
+          "value": "water on that"
+        },
+        {
+          "command": "para",
+          "value": "wiggly tree, it"
+        },
+        {
+          "command": "line",
+          "value": "jumped right up!"
+        },
+        {
+          "command": "para",
+          "value": "It just has to be"
+        },
+        {
+          "command": "line",
+          "value": "a #MON."
+        },
+        {
+          "command": "para",
+          "value": "I bet it would be"
+        },
+        {
+          "command": "line",
+          "value": "shocked out of its"
+        },
+        {
+          "command": "para",
+          "value": "disguise if you"
+        },
+        {
+          "command": "line",
+          "value": "soaked it!"
+        },
+        {
+          "command": "para",
+          "value": "I know! I'll tell"
+        },
+        {
+          "command": "line",
+          "value": "my sis and borrow"
+        },
+        {
+          "command": "cont",
+          "value": "her water bottle!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FloriaText2": {
+      "raw_lines": [
+        "text \"When I told my sis\"",
+        "line \"about the jiggly\"",
+        "para \"tree, she said\"",
+        "line \"it's dangerous.\"",
+        "para \"If I beat WHITNEY,\"",
+        "line \"I wonder if she'll\"",
+        "para \"lend me her water\"",
+        "line \"bottle\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "When I told my sis"
+        },
+        {
+          "command": "line",
+          "value": "about the jiggly"
+        },
+        {
+          "command": "para",
+          "value": "tree, she said"
+        },
+        {
+          "command": "line",
+          "value": "it's dangerous."
+        },
+        {
+          "command": "para",
+          "value": "If I beat WHITNEY,"
+        },
+        {
+          "command": "line",
+          "value": "I wonder if she'll"
+        },
+        {
+          "command": "para",
+          "value": "lend me her water"
+        },
+        {
+          "command": "line",
+          "value": "bottle\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RockSmashGuyText1": {
+      "raw_lines": [
+        "text \"Wa-hey!\"",
+        "para \"I was going to\"",
+        "line \"snap that tree\"",
+        "para \"with my straight-\"",
+        "line \"arm punch.\"",
+        "para \"But I couldn't!\"",
+        "line \"I'm a failure!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Wa-hey!"
+        },
+        {
+          "command": "para",
+          "value": "I was going to"
+        },
+        {
+          "command": "line",
+          "value": "snap that tree"
+        },
+        {
+          "command": "para",
+          "value": "with my straight-"
+        },
+        {
+          "command": "line",
+          "value": "arm punch."
+        },
+        {
+          "command": "para",
+          "value": "But I couldn't!"
+        },
+        {
+          "command": "line",
+          "value": "I'm a failure!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RockSmashGuyText2": {
+      "raw_lines": [
+        "text \"Did you clear that\"",
+        "line \"wretched tree?\"",
+        "para \"I'm impressed!\"",
+        "line \"I want you to\"",
+        "cont \"have this.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Did you clear that"
+        },
+        {
+          "command": "line",
+          "value": "wretched tree?"
+        },
+        {
+          "command": "para",
+          "value": "I'm impressed!"
+        },
+        {
+          "command": "line",
+          "value": "I want you to"
+        },
+        {
+          "command": "cont",
+          "value": "have this."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_ReceivedTM08": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"TM08.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "TM08."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RockSmashGuyText3": {
+      "raw_lines": [
+        "text \"That happens to be\"",
+        "line \"ROCK SMASH.\"",
+        "para \"You can shatter\"",
+        "line \"rocks with just a\"",
+        "para \"single well-aimed\"",
+        "line \"smack.\"",
+        "para \"If any rocks are\"",
+        "line \"in your way, just\"",
+        "cont \"smash 'em up!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "That happens to be"
+        },
+        {
+          "command": "line",
+          "value": "ROCK SMASH."
+        },
+        {
+          "command": "para",
+          "value": "You can shatter"
+        },
+        {
+          "command": "line",
+          "value": "rocks with just a"
+        },
+        {
+          "command": "para",
+          "value": "single well-aimed"
+        },
+        {
+          "command": "line",
+          "value": "smack."
+        },
+        {
+          "command": "para",
+          "value": "If any rocks are"
+        },
+        {
+          "command": "line",
+          "value": "in your way, just"
+        },
+        {
+          "command": "cont",
+          "value": "smash 'em up!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "UnusedOddTreeText": {
+      "raw_lines": [
+        "text \"An odd tree is\"",
+        "line \"blocking the way\"",
+        "cont \"to GOLDENROD CITY.\"",
+        "para \"I wanted to go see\"",
+        "line \"the huge #MON\"",
+        "para \"CENTER they just\"",
+        "line \"opened\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "An odd tree is"
+        },
+        {
+          "command": "line",
+          "value": "blocking the way"
+        },
+        {
+          "command": "cont",
+          "value": "to GOLDENROD CITY."
+        },
+        {
+          "command": "para",
+          "value": "I wanted to go see"
+        },
+        {
+          "command": "line",
+          "value": "the huge #MON"
+        },
+        {
+          "command": "para",
+          "value": "CENTER they just"
+        },
+        {
+          "command": "line",
+          "value": "opened\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36LassText": {
+      "raw_lines": [
+        "text \"An odd tree is\"",
+        "line \"blocking the way\"",
+        "cont \"to GOLDENROD CITY.\"",
+        "para \"It's preventing\"",
+        "line \"me from shopping.\"",
+        "para \"Something should\"",
+        "line \"be done about it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "An odd tree is"
+        },
+        {
+          "command": "line",
+          "value": "blocking the way"
+        },
+        {
+          "command": "cont",
+          "value": "to GOLDENROD CITY."
+        },
+        {
+          "command": "para",
+          "value": "It's preventing"
+        },
+        {
+          "command": "line",
+          "value": "me from shopping."
+        },
+        {
+          "command": "para",
+          "value": "Something should"
+        },
+        {
+          "command": "line",
+          "value": "be done about it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36LassText_ClearedSudowoodo": {
+      "raw_lines": [
+        "text \"That odd tree dis-\"",
+        "line \"appeared without a\"",
+        "cont \"trace.\"",
+        "para \"Oh! That tree was\"",
+        "line \"really a #MON?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "That odd tree dis-"
+        },
+        {
+          "command": "line",
+          "value": "appeared without a"
+        },
+        {
+          "command": "cont",
+          "value": "trace."
+        },
+        {
+          "command": "para",
+          "value": "Oh! That tree was"
+        },
+        {
+          "command": "line",
+          "value": "really a #MON?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PsychicMarkSeenText": {
+      "raw_lines": [
+        "text \"I'm going to read\"",
+        "line \"your thoughts!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm going to read"
+        },
+        {
+          "command": "line",
+          "value": "your thoughts!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PsychicMarkBeatenText": {
+      "raw_lines": [
+        "text \"I misread you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I misread you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PsychicMarkAfterBattleText": {
+      "raw_lines": [
+        "text \"I'd be strong if\"",
+        "line \"only I could tell\"",
+        "para \"what my opponent\"",
+        "line \"was thinking.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'd be strong if"
+        },
+        {
+          "command": "line",
+          "value": "only I could tell"
+        },
+        {
+          "command": "para",
+          "value": "what my opponent"
+        },
+        {
+          "command": "line",
+          "value": "was thinking."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SchoolboyAlan1SeenText": {
+      "raw_lines": [
+        "text \"Thanks to my stud-\"",
+        "line \"ies, I'm ready for\"",
+        "cont \"any #MON!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Thanks to my stud-"
+        },
+        {
+          "command": "line",
+          "value": "ies, I'm ready for"
+        },
+        {
+          "command": "cont",
+          "value": "any #MON!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SchoolboyAlan1BeatenText": {
+      "raw_lines": [
+        "text \"Oops! Computation\"",
+        "line \"error?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oops! Computation"
+        },
+        {
+          "command": "line",
+          "value": "error?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SchoolboyAlanBooksText": {
+      "raw_lines": [
+        "text \"Darn. I study five\"",
+        "line \"hours a day too.\"",
+        "para \"There's more to\"",
+        "line \"learning than just\"",
+        "cont \"reading books.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Darn. I study five"
+        },
+        {
+          "command": "line",
+          "value": "hours a day too."
+        },
+        {
+          "command": "para",
+          "value": "There's more to"
+        },
+        {
+          "command": "line",
+          "value": "learning than just"
+        },
+        {
+          "command": "cont",
+          "value": "reading books."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MeetArthurText": {
+      "raw_lines": [
+        "text \"ARTHUR: Who are\"",
+        "line \"you?\"",
+        "para \"I'm ARTHUR of\"",
+        "line \"Thursday.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ARTHUR: Who are"
+        },
+        {
+          "command": "line",
+          "value": "you?"
+        },
+        {
+          "command": "para",
+          "value": "I'm ARTHUR of"
+        },
+        {
+          "command": "line",
+          "value": "Thursday."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ArthurGivesGiftText": {
+      "raw_lines": [
+        "text \"Here. You can have\"",
+        "line \"this.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Here. You can have"
+        },
+        {
+          "command": "line",
+          "value": "this."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ArthurGaveGiftText": {
+      "raw_lines": [
+        "text \"ARTHUR: A #MON\"",
+        "line \"that uses rock-\"",
+        "para \"type moves should\"",
+        "line \"hold on to that.\"",
+        "para \"It pumps up rock-\"",
+        "line \"type attacks.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ARTHUR: A #MON"
+        },
+        {
+          "command": "line",
+          "value": "that uses rock-"
+        },
+        {
+          "command": "para",
+          "value": "type moves should"
+        },
+        {
+          "command": "line",
+          "value": "hold on to that."
+        },
+        {
+          "command": "para",
+          "value": "It pumps up rock-"
+        },
+        {
+          "command": "line",
+          "value": "type attacks."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ArthurThursdayText": {
+      "raw_lines": [
+        "text \"ARTHUR: I'm ARTHUR\"",
+        "line \"of Thursday. I'm\"",
+        "para \"the second son out\"",
+        "line \"of seven children.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ARTHUR: I'm ARTHUR"
+        },
+        {
+          "command": "line",
+          "value": "of Thursday. I'm"
+        },
+        {
+          "command": "para",
+          "value": "the second son out"
+        },
+        {
+          "command": "line",
+          "value": "of seven children."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ArthurNotThursdayText": {
+      "raw_lines": [
+        "text \"ARTHUR: Today's\"",
+        "line \"not Thursday. How\"",
+        "cont \"disappointing.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ARTHUR: Today's"
+        },
+        {
+          "command": "line",
+          "value": "not Thursday. How"
+        },
+        {
+          "command": "cont",
+          "value": "disappointing."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36SignText": {
+      "raw_lines": [
+        "text \"ROUTE 36\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ROUTE 36"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphNorthSignText": {
+      "raw_lines": [
+        "text \"RUINS OF ALPH\"",
+        "line \"NORTH ENTRANCE\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "RUINS OF ALPH"
+        },
+        {
+          "command": "line",
+          "value": "NORTH ENTRANCE"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36TrainerTips1Text": {
+      "raw_lines": [
+        "text \"TRAINER TIPS\"",
+        "para \"#MON stats\"",
+        "line \"vary--even within\"",
+        "cont \"the same species.\"",
+        "para \"Their stats may be\"",
+        "line \"similar at first.\"",
+        "para \"However, differ-\"",
+        "line \"ences will become\"",
+        "para \"pronounced as the\"",
+        "line \"#MON grow.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "TRAINER TIPS"
+        },
+        {
+          "command": "para",
+          "value": "#MON stats"
+        },
+        {
+          "command": "line",
+          "value": "vary--even within"
+        },
+        {
+          "command": "cont",
+          "value": "the same species."
+        },
+        {
+          "command": "para",
+          "value": "Their stats may be"
+        },
+        {
+          "command": "line",
+          "value": "similar at first."
+        },
+        {
+          "command": "para",
+          "value": "However, differ-"
+        },
+        {
+          "command": "line",
+          "value": "ences will become"
+        },
+        {
+          "command": "para",
+          "value": "pronounced as the"
+        },
+        {
+          "command": "line",
+          "value": "#MON grow."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36TrainerTips2Text": {
+      "raw_lines": [
+        "text \"TRAINER TIPS\"",
+        "para \"Use DIG to return\"",
+        "line \"to the entrance of\"",
+        "cont \"any place.\"",
+        "para \"It is convenient\"",
+        "line \"for exploring\"",
+        "para \"caves and other\"",
+        "line \"landmarks.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "TRAINER TIPS"
+        },
+        {
+          "command": "para",
+          "value": "Use DIG to return"
+        },
+        {
+          "command": "line",
+          "value": "to the entrance of"
+        },
+        {
+          "command": "cont",
+          "value": "any place."
+        },
+        {
+          "command": "para",
+          "value": "It is convenient"
+        },
+        {
+          "command": "line",
+          "value": "for exploring"
+        },
+        {
+          "command": "para",
+          "value": "caves and other"
+        },
+        {
+          "command": "line",
+          "value": "landmarks."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "FloriaMovement1": {
+      "raw_lines": [
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "FloriaMovement2": {
+      "raw_lines": [
+        "step LEFT",
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "AskNumber1MScript",
+    "AskNumber2MScript",
+    "GiftMScript",
+    "NumberAcceptedMScript",
+    "NumberDeclinedMScript",
+    "PackFullMScript",
+    "PhoneFullMScript",
+    "RegisteredNumberMScript",
+    "RematchMScript"
+  ],
+  "dependencies": {
+    "Route36_MapScripts": {
+      "label_refs": [
+        "Route36Noop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36Noop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36Noop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36ArthurCallback": {
+      "label_refs": [
+        "Route36ArthurCallback.ArthurAppears"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36ArthurCallback.ArthurAppears": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36SuicuneScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "Route36SuicuneMovement"
+      ],
+      "scene_refs": [
+        "SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE",
+        "SCENE_ROUTE36_NOOP"
+      ],
+      "std_calls": []
+    },
+    "SudowoodoScript": {
+      "label_refs": [
+        "SudowoodoScript.Fight"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "SudowoodoShakeMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SudowoodoScript.Fight": {
+      "label_refs": [
+        "DidntUseSquirtbottleScript",
+        "WateredWeirdTreeScript"
+      ],
+      "text_refs": [
+        "UseSquirtbottleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WateredWeirdTreeScript": {
+      "label_refs": [
+        "DidntCatchSudowoodo"
+      ],
+      "text_refs": [
+        "SudowoodoAttackedText",
+        "UsedSquirtbottleText"
+      ],
+      "movement_refs": [
+        "SudowoodoShakeMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DidntUseSquirtbottleScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DidntCatchSudowoodo": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "WeirdTreeMovement_Flee"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36FloriaScript": {
+      "label_refs": [
+        "Route36FloriaScript.SecondTimeTalking",
+        "Route36FloriaScript.Up"
+      ],
+      "text_refs": [
+        "FloriaText1"
+      ],
+      "movement_refs": [
+        "FloriaMovement1"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36FloriaScript.Up": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "FloriaMovement2"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36FloriaScript.SecondTimeTalking": {
+      "label_refs": [],
+      "text_refs": [
+        "FloriaText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36RockSmashGuyScript": {
+      "label_refs": [
+        "Route36RockSmashGuyScript.AlreadyGotRockSmash",
+        "Route36RockSmashGuyScript.ClearedSudowoodo"
+      ],
+      "text_refs": [
+        "RockSmashGuyText1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36RockSmashGuyScript.ClearedSudowoodo": {
+      "label_refs": [
+        "Route36RockSmashGuyScript.AlreadyGotRockSmash",
+        "Route36RockSmashGuyScript.NoRoomForTM"
+      ],
+      "text_refs": [
+        "RockSmashGuyText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36RockSmashGuyScript.AlreadyGotRockSmash": {
+      "label_refs": [
+        "Route36RockSmashGuyScript.NoRoomForTM"
+      ],
+      "text_refs": [
+        "RockSmashGuyText3"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36RockSmashGuyScript.NoRoomForTM": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36LassScript": {
+      "label_refs": [
+        "Route36LassScript.ClearedSudowoodo"
+      ],
+      "text_refs": [
+        "Route36LassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36LassScript.ClearedSudowoodo": {
+      "label_refs": [],
+      "text_refs": [
+        "Route36LassText_ClearedSudowoodo"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1": {
+      "label_refs": [
+        "TrainerSchoolboyAlan1.Script"
+      ],
+      "text_refs": [
+        "SchoolboyAlan1BeatenText",
+        "SchoolboyAlan1SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.Script": {
+      "label_refs": [
+        "TrainerSchoolboyAlan1.AskAgainForPhoneNumber",
+        "TrainerSchoolboyAlan1.AskNumber1",
+        "TrainerSchoolboyAlan1.ChooseRematch",
+        "TrainerSchoolboyAlan1.ContinueAskForPhoneNumber",
+        "TrainerSchoolboyAlan1.GiveFireStone",
+        "TrainerSchoolboyAlan1.NumberAccepted"
+      ],
+      "text_refs": [
+        "SchoolboyAlanBooksText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.AskAgainForPhoneNumber": {
+      "label_refs": [
+        "TrainerSchoolboyAlan1.AskNumber2",
+        "TrainerSchoolboyAlan1.ContinueAskForPhoneNumber"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.ContinueAskForPhoneNumber": {
+      "label_refs": [
+        "TrainerSchoolboyAlan1.NumberAccepted",
+        "TrainerSchoolboyAlan1.NumberDeclined",
+        "TrainerSchoolboyAlan1.PhoneFull",
+        "TrainerSchoolboyAlan1.RegisteredNumber"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.ChooseRematch": {
+      "label_refs": [
+        "TrainerSchoolboyAlan1.Fight1",
+        "TrainerSchoolboyAlan1.Fight2",
+        "TrainerSchoolboyAlan1.Fight3",
+        "TrainerSchoolboyAlan1.Fight4",
+        "TrainerSchoolboyAlan1.LoadFight0",
+        "TrainerSchoolboyAlan1.Rematch"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.Fight4": {
+      "label_refs": [
+        "TrainerSchoolboyAlan1.Fight3",
+        "TrainerSchoolboyAlan1.LoadFight4"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.Fight3": {
+      "label_refs": [
+        "TrainerSchoolboyAlan1.Fight2",
+        "TrainerSchoolboyAlan1.LoadFight3"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.Fight2": {
+      "label_refs": [
+        "TrainerSchoolboyAlan1.Fight1",
+        "TrainerSchoolboyAlan1.LoadFight2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.Fight1": {
+      "label_refs": [
+        "TrainerSchoolboyAlan1.LoadFight0",
+        "TrainerSchoolboyAlan1.LoadFight1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.LoadFight0": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.LoadFight1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.LoadFight2": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.LoadFight3": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.LoadFight4": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.GiveFireStone": {
+      "label_refs": [
+        "TrainerSchoolboyAlan1.BagFull",
+        "TrainerSchoolboyAlan1.Gift",
+        "TrainerSchoolboyAlan1.NumberAccepted"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.BagFull": {
+      "label_refs": [
+        "TrainerSchoolboyAlan1.PackFull"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSchoolboyAlan1.AskNumber1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber1MScript"
+      ]
+    },
+    "TrainerSchoolboyAlan1.AskNumber2": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber2MScript"
+      ]
+    },
+    "TrainerSchoolboyAlan1.RegisteredNumber": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RegisteredNumberMScript"
+      ]
+    },
+    "TrainerSchoolboyAlan1.NumberAccepted": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberAcceptedMScript"
+      ]
+    },
+    "TrainerSchoolboyAlan1.NumberDeclined": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberDeclinedMScript"
+      ]
+    },
+    "TrainerSchoolboyAlan1.PhoneFull": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PhoneFullMScript"
+      ]
+    },
+    "TrainerSchoolboyAlan1.Rematch": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchMScript"
+      ]
+    },
+    "TrainerSchoolboyAlan1.Gift": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GiftMScript"
+      ]
+    },
+    "TrainerSchoolboyAlan1.PackFull": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PackFullMScript"
+      ]
+    },
+    "TrainerPsychicMark": {
+      "label_refs": [
+        "TrainerPsychicMark.Script"
+      ],
+      "text_refs": [
+        "PsychicMarkBeatenText",
+        "PsychicMarkSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPsychicMark.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "PsychicMarkAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ArthurScript": {
+      "label_refs": [
+        "ArthurNotThursdayScript",
+        "ArthurScript.AlreadyGotStone",
+        "ArthurScript.MetArthur"
+      ],
+      "text_refs": [
+        "MeetArthurText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ArthurScript.MetArthur": {
+      "label_refs": [
+        "ArthurScript.BagFull"
+      ],
+      "text_refs": [
+        "ArthurGaveGiftText",
+        "ArthurGivesGiftText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ArthurScript.AlreadyGotStone": {
+      "label_refs": [
+        "ArthurScript.BagFull"
+      ],
+      "text_refs": [
+        "ArthurThursdayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ArthurScript.BagFull": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ArthurNotThursdayScript": {
+      "label_refs": [],
+      "text_refs": [
+        "ArthurNotThursdayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36Sign": {
+      "label_refs": [],
+      "text_refs": [
+        "Route36SignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphNorthSign": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphNorthSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36TrainerTips1": {
+      "label_refs": [],
+      "text_refs": [
+        "Route36TrainerTips1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36TrainerTips2": {
+      "label_refs": [],
+      "text_refs": [
+        "Route36TrainerTips2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36FruitTree": {
+      "label_refs": [
+        "SudowoodoShakeMovement"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SudowoodoShakeMovement": {
+      "label_refs": [
+        "WeirdTreeMovement_Flee"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WeirdTreeMovement_Flee": {
+      "label_refs": [
+        "Route36SuicuneMovement"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36SuicuneMovement": {
+      "label_refs": [
+        "Route36_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear",
+    "day_time"
+  ],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
+    "warp_events": 4,
+    "coord_events": 2,
+    "bg_events": 4,
+    "object_events": 9
+  }
+}

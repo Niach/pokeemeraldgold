@@ -1,0 +1,475 @@
+{
+  "crystal_map": "EcruteakMart",
+  "map_id": "ECRUTEAK_MART",
+  "group": "ECRUTEAK",
+  "group_index": 4,
+  "map_index": 6,
+  "tileset": "TILESET_MART",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_ECRUTEAK_CITY",
+  "music": "MUSIC_ECRUTEAK_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 6,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/Mart.blk",
+  "source_asm": "maps/EcruteakMart.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "ECRUTEAK_CITY",
+        "dest_warp_id": 9
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "ECRUTEAK_CITY",
+        "dest_warp_id": 9
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 1,
+        "y": 3,
+        "sprite": "SPRITE_CLERK",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakMartClerkScript",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 2,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakMartSuperNerdScript",
+        "flag": -1
+      },
+      {
+        "x": 6,
+        "y": 6,
+        "sprite": "SPRITE_GRANNY",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakMartGrannyScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "ECRUTEAKMART_CLERK",
+    "ECRUTEAKMART_SUPER_NERD",
+    "ECRUTEAKMART_GRANNY"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "EcruteakMart_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "EcruteakMartClerkScript",
+      "label_refs": [
+        "EcruteakMartClerkScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakMartClerkScript": {
+      "raw_lines": [
+        "opentext",
+        "pokemart MARTTYPE_STANDARD, MART_ECRUTEAK",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "pokemart",
+          "args": [
+            "MARTTYPE_STANDARD",
+            "MART_ECRUTEAK"
+          ],
+          "raw": "pokemart MARTTYPE_STANDARD, MART_ECRUTEAK"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakMartSuperNerdScript": {
+      "raw_lines": [
+        "jumptextfaceplayer EcruteakMartSuperNerdText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "EcruteakMartSuperNerdText"
+          ],
+          "raw": "jumptextfaceplayer EcruteakMartSuperNerdText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakMartSuperNerdText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakMartGrannyScript": {
+      "raw_lines": [
+        "jumptextfaceplayer EcruteakMartGrannyText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "EcruteakMartGrannyText"
+          ],
+          "raw": "jumptextfaceplayer EcruteakMartGrannyText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakMartGrannyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakMart_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, ECRUTEAK_CITY, 9",
+        "warp_event  3,  7, ECRUTEAK_CITY, 9",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakMartClerkScript, -1",
+        "object_event  5,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakMartSuperNerdScript, -1",
+        "object_event  6,  6, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakMartGrannyScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "ECRUTEAK_CITY",
+            "9"
+          ],
+          "raw": "warp_event  2,  7, ECRUTEAK_CITY, 9"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "ECRUTEAK_CITY",
+            "9"
+          ],
+          "raw": "warp_event  3,  7, ECRUTEAK_CITY, 9"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "3",
+            "SPRITE_CLERK",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakMartClerkScript",
+            "-1"
+          ],
+          "raw": "object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakMartClerkScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "2",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakMartSuperNerdScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakMartSuperNerdScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "6",
+            "SPRITE_GRANNY",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakMartGrannyScript",
+            "-1"
+          ],
+          "raw": "object_event  6,  6, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakMartGrannyScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "EcruteakMartSuperNerdText": {
+      "raw_lines": [
+        "text \"My EEVEE evolved\"",
+        "line \"into an ESPEON.\"",
+        "para \"But my friend's\"",
+        "line \"EEVEE turned into\"",
+        "cont \"an UMBREON.\"",
+        "para \"I wonder why? We\"",
+        "line \"both were raising\"",
+        "para \"our EEVEE in the\"",
+        "line \"same way\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My EEVEE evolved"
+        },
+        {
+          "command": "line",
+          "value": "into an ESPEON."
+        },
+        {
+          "command": "para",
+          "value": "But my friend's"
+        },
+        {
+          "command": "line",
+          "value": "EEVEE turned into"
+        },
+        {
+          "command": "cont",
+          "value": "an UMBREON."
+        },
+        {
+          "command": "para",
+          "value": "I wonder why? We"
+        },
+        {
+          "command": "line",
+          "value": "both were raising"
+        },
+        {
+          "command": "para",
+          "value": "our EEVEE in the"
+        },
+        {
+          "command": "line",
+          "value": "same way\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakMartGrannyText": {
+      "raw_lines": [
+        "text \"If you use REVIVE,\"",
+        "line \"a #MON that's\"",
+        "para \"fainted will wake\"",
+        "line \"right up.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If you use REVIVE,"
+        },
+        {
+          "command": "line",
+          "value": "a #MON that's"
+        },
+        {
+          "command": "para",
+          "value": "fainted will wake"
+        },
+        {
+          "command": "line",
+          "value": "right up."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "EcruteakMart_MapScripts": {
+      "label_refs": [
+        "EcruteakMartClerkScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakMartClerkScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakMartSuperNerdScript": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakMartSuperNerdText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakMartGrannyScript": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakMartGrannyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakMart_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 3
+  }
+}

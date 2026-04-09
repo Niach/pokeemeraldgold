@@ -31,6 +31,8 @@
     }
   ],
   "events": {
+    "scene_scripts": [],
+    "callbacks": [],
     "warp_events": [
       {
         "x": 7,
@@ -68,6 +70,11 @@
         "movement": "SPRITEMOVEDATA_STANDING_LEFT",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 2,
         "script": "TrainerHikerBailey",
         "flag": -1
       },
@@ -78,6 +85,11 @@
         "movement": "SPRITEMOVEDATA_STANDING_UP",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 2,
         "script": "TrainerCamperTed",
         "flag": -1
       },
@@ -88,6 +100,11 @@
         "movement": "SPRITEMOVEDATA_STANDING_DOWN",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 2,
         "script": "TrainerPicnickerErin1",
         "flag": -1
       },
@@ -98,6 +115,11 @@
         "movement": "SPRITEMOVEDATA_STILL",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "Route46FruitTree1",
         "flag": -1
       },
@@ -108,6 +130,11 @@
         "movement": "SPRITEMOVEDATA_STILL",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "Route46FruitTree2",
         "flag": -1
       },
@@ -118,12 +145,2134 @@
         "movement": "SPRITEMOVEDATA_STILL",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_ITEMBALL",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "Route46XSpeed",
+        "flag": "EVENT_ROUTE_46_X_SPEED"
       }
     ]
   },
+  "object_consts": [
+    "ROUTE46_POKEFAN_M",
+    "ROUTE46_YOUNGSTER",
+    "ROUTE46_LASS",
+    "ROUTE46_FRUIT_TREE1",
+    "ROUTE46_FRUIT_TREE2",
+    "ROUTE46_POKE_BALL"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "Route46_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "TrainerCamperTed",
+      "label_refs": [
+        "TrainerCamperTed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCamperTed": {
+      "raw_lines": [
+        "trainer CAMPER, TED, EVENT_BEAT_CAMPER_TED, CamperTedSeenText, CamperTedBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "CAMPER",
+            "TED",
+            "EVENT_BEAT_CAMPER_TED",
+            "CamperTedSeenText",
+            "CamperTedBeatenText",
+            "0",
+            "TrainerCamperTed.Script"
+          ],
+          "raw": "trainer CAMPER, TED, EVENT_BEAT_CAMPER_TED, CamperTedSeenText, CamperTedBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerCamperTed.Script",
+      "label_refs": [
+        "TrainerCamperTed.Script"
+      ],
+      "text_refs": [
+        "CamperTedBeatenText",
+        "CamperTedSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCamperTed.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext CamperTedAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CamperTedAfterBattleText"
+          ],
+          "raw": "writetext CamperTedAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "CamperTedAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1": {
+      "raw_lines": [
+        "trainer PICNICKER, ERIN1, EVENT_BEAT_PICNICKER_ERIN, PicnickerErin1SeenText, PicnickerErin1BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "PICNICKER",
+            "ERIN1",
+            "EVENT_BEAT_PICNICKER_ERIN",
+            "PicnickerErin1SeenText",
+            "PicnickerErin1BeatenText",
+            "0",
+            "TrainerPicnickerErin1.Script"
+          ],
+          "raw": "trainer PICNICKER, ERIN1, EVENT_BEAT_PICNICKER_ERIN, PicnickerErin1SeenText, PicnickerErin1BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerPicnickerErin1.Script",
+      "label_refs": [
+        "TrainerPicnickerErin1.Script"
+      ],
+      "text_refs": [
+        "PicnickerErin1BeatenText",
+        "PicnickerErin1SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.Script": {
+      "raw_lines": [
+        "loadvar VAR_CALLERID, PHONE_PICNICKER_ERIN",
+        "endifjustbattled",
+        "opentext",
+        "checkflag ENGINE_ERIN_READY_FOR_REMATCH",
+        "iftrue .WantsBattle",
+        "checkcellnum PHONE_PICNICKER_ERIN",
+        "iftrue Route46NumberAcceptedF",
+        "checkevent EVENT_ERIN_ASKED_FOR_PHONE_NUMBER",
+        "iftrue .AskedAlready",
+        "writetext PicnickerErinAfterBattleText",
+        "promptbutton",
+        "setevent EVENT_ERIN_ASKED_FOR_PHONE_NUMBER",
+        "scall Route46AskNumber1F",
+        "sjump .AskForNumber"
+      ],
+      "commands": [
+        {
+          "command": "loadvar",
+          "args": [
+            "VAR_CALLERID",
+            "PHONE_PICNICKER_ERIN"
+          ],
+          "raw": "loadvar VAR_CALLERID, PHONE_PICNICKER_ERIN"
+        },
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_ERIN_READY_FOR_REMATCH"
+          ],
+          "raw": "checkflag ENGINE_ERIN_READY_FOR_REMATCH"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerPicnickerErin1.WantsBattle"
+          ],
+          "raw": "iftrue .WantsBattle"
+        },
+        {
+          "command": "checkcellnum",
+          "args": [
+            "PHONE_PICNICKER_ERIN"
+          ],
+          "raw": "checkcellnum PHONE_PICNICKER_ERIN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route46NumberAcceptedF"
+          ],
+          "raw": "iftrue Route46NumberAcceptedF"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_ERIN_ASKED_FOR_PHONE_NUMBER"
+          ],
+          "raw": "checkevent EVENT_ERIN_ASKED_FOR_PHONE_NUMBER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerPicnickerErin1.AskedAlready"
+          ],
+          "raw": "iftrue .AskedAlready"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PicnickerErinAfterBattleText"
+          ],
+          "raw": "writetext PicnickerErinAfterBattleText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_ERIN_ASKED_FOR_PHONE_NUMBER"
+          ],
+          "raw": "setevent EVENT_ERIN_ASKED_FOR_PHONE_NUMBER"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "Route46AskNumber1F"
+          ],
+          "raw": "scall Route46AskNumber1F"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerPicnickerErin1.AskForNumber"
+          ],
+          "raw": "sjump .AskForNumber"
+        }
+      ],
+      "first_command": "loadvar",
+      "label_refs": [
+        "Route46AskNumber1F",
+        "Route46NumberAcceptedF",
+        "TrainerPicnickerErin1.AskForNumber",
+        "TrainerPicnickerErin1.AskedAlready",
+        "TrainerPicnickerErin1.WantsBattle"
+      ],
+      "text_refs": [
+        "PicnickerErinAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.AskedAlready": {
+      "raw_lines": [
+        "scall Route46AskNumber2F"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "Route46AskNumber2F"
+          ],
+          "raw": "scall Route46AskNumber2F"
+        }
+      ],
+      "first_command": "scall",
+      "fallthrough_label": "TrainerPicnickerErin1.AskForNumber",
+      "label_refs": [
+        "Route46AskNumber2F",
+        "TrainerPicnickerErin1.AskForNumber"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.AskForNumber": {
+      "raw_lines": [
+        "askforphonenumber PHONE_PICNICKER_ERIN",
+        "ifequal PHONE_CONTACTS_FULL, Route46PhoneFullF",
+        "ifequal PHONE_CONTACT_REFUSED, Route46NumberDeclinedF",
+        "gettrainername STRING_BUFFER_3, PICNICKER, ERIN1",
+        "scall Route46RegisteredNumberF",
+        "sjump Route46NumberAcceptedF"
+      ],
+      "commands": [
+        {
+          "command": "askforphonenumber",
+          "args": [
+            "PHONE_PICNICKER_ERIN"
+          ],
+          "raw": "askforphonenumber PHONE_PICNICKER_ERIN"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PHONE_CONTACTS_FULL",
+            "Route46PhoneFullF"
+          ],
+          "raw": "ifequal PHONE_CONTACTS_FULL, Route46PhoneFullF"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PHONE_CONTACT_REFUSED",
+            "Route46NumberDeclinedF"
+          ],
+          "raw": "ifequal PHONE_CONTACT_REFUSED, Route46NumberDeclinedF"
+        },
+        {
+          "command": "gettrainername",
+          "args": [
+            "STRING_BUFFER_3",
+            "PICNICKER",
+            "ERIN1"
+          ],
+          "raw": "gettrainername STRING_BUFFER_3, PICNICKER, ERIN1"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "Route46RegisteredNumberF"
+          ],
+          "raw": "scall Route46RegisteredNumberF"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Route46NumberAcceptedF"
+          ],
+          "raw": "sjump Route46NumberAcceptedF"
+        }
+      ],
+      "first_command": "askforphonenumber",
+      "label_refs": [
+        "Route46NumberAcceptedF",
+        "Route46NumberDeclinedF",
+        "Route46PhoneFullF",
+        "Route46RegisteredNumberF"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.WantsBattle": {
+      "raw_lines": [
+        "scall Route46RematchF",
+        "winlosstext PicnickerErin1BeatenText, 0",
+        "readmem wErinFightCount",
+        "ifequal 2, .Fight2",
+        "ifequal 1, .Fight1",
+        "ifequal 0, .LoadFight0"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "Route46RematchF"
+          ],
+          "raw": "scall Route46RematchF"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "PicnickerErin1BeatenText",
+            "0"
+          ],
+          "raw": "winlosstext PicnickerErin1BeatenText, 0"
+        },
+        {
+          "command": "readmem",
+          "args": [
+            "wErinFightCount"
+          ],
+          "raw": "readmem wErinFightCount"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "TrainerPicnickerErin1.Fight2"
+          ],
+          "raw": "ifequal 2, .Fight2"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "TrainerPicnickerErin1.Fight1"
+          ],
+          "raw": "ifequal 1, .Fight1"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "0",
+            "TrainerPicnickerErin1.LoadFight0"
+          ],
+          "raw": "ifequal 0, .LoadFight0"
+        }
+      ],
+      "first_command": "scall",
+      "fallthrough_label": "TrainerPicnickerErin1.Fight2",
+      "label_refs": [
+        "Route46RematchF",
+        "TrainerPicnickerErin1.Fight1",
+        "TrainerPicnickerErin1.Fight2",
+        "TrainerPicnickerErin1.LoadFight0"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.Fight2": {
+      "raw_lines": [
+        "checkevent EVENT_RESTORED_POWER_TO_KANTO",
+        "iftrue .LoadFight2"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_RESTORED_POWER_TO_KANTO"
+          ],
+          "raw": "checkevent EVENT_RESTORED_POWER_TO_KANTO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerPicnickerErin1.LoadFight2"
+          ],
+          "raw": "iftrue .LoadFight2"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerPicnickerErin1.Fight1",
+      "label_refs": [
+        "TrainerPicnickerErin1.Fight1",
+        "TrainerPicnickerErin1.LoadFight2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.Fight1": {
+      "raw_lines": [
+        "checkevent EVENT_BEAT_ELITE_FOUR",
+        "iftrue .LoadFight1"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_ELITE_FOUR"
+          ],
+          "raw": "checkevent EVENT_BEAT_ELITE_FOUR"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerPicnickerErin1.LoadFight1"
+          ],
+          "raw": "iftrue .LoadFight1"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerPicnickerErin1.LoadFight0",
+      "label_refs": [
+        "TrainerPicnickerErin1.LoadFight0",
+        "TrainerPicnickerErin1.LoadFight1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.LoadFight0": {
+      "raw_lines": [
+        "loadtrainer PICNICKER, ERIN1",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wErinFightCount, 1",
+        "clearflag ENGINE_ERIN_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "PICNICKER",
+            "ERIN1"
+          ],
+          "raw": "loadtrainer PICNICKER, ERIN1"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wErinFightCount",
+            "1"
+          ],
+          "raw": "loadmem wErinFightCount, 1"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_ERIN_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_ERIN_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.LoadFight1": {
+      "raw_lines": [
+        "loadtrainer PICNICKER, ERIN2",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wErinFightCount, 2",
+        "clearflag ENGINE_ERIN_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "PICNICKER",
+            "ERIN2"
+          ],
+          "raw": "loadtrainer PICNICKER, ERIN2"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wErinFightCount",
+            "2"
+          ],
+          "raw": "loadmem wErinFightCount, 2"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_ERIN_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_ERIN_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.LoadFight2": {
+      "raw_lines": [
+        "loadtrainer PICNICKER, ERIN3",
+        "startbattle",
+        "reloadmapafterbattle",
+        "clearflag ENGINE_ERIN_READY_FOR_REMATCH",
+        "checkevent EVENT_ERIN_CALCIUM",
+        "iftrue .HasCalcium",
+        "checkevent EVENT_GOT_CALCIUM_FROM_ERIN",
+        "iftrue .GotCalciumAlready",
+        "scall Route46RematchGiftF",
+        "verbosegiveitem CALCIUM",
+        "iffalse ErinNoRoomForCalcium",
+        "setevent EVENT_GOT_CALCIUM_FROM_ERIN",
+        "sjump Route46NumberAcceptedF"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "PICNICKER",
+            "ERIN3"
+          ],
+          "raw": "loadtrainer PICNICKER, ERIN3"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_ERIN_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_ERIN_READY_FOR_REMATCH"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_ERIN_CALCIUM"
+          ],
+          "raw": "checkevent EVENT_ERIN_CALCIUM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerPicnickerErin1.HasCalcium"
+          ],
+          "raw": "iftrue .HasCalcium"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_CALCIUM_FROM_ERIN"
+          ],
+          "raw": "checkevent EVENT_GOT_CALCIUM_FROM_ERIN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerPicnickerErin1.GotCalciumAlready"
+          ],
+          "raw": "iftrue .GotCalciumAlready"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "Route46RematchGiftF"
+          ],
+          "raw": "scall Route46RematchGiftF"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "CALCIUM"
+          ],
+          "raw": "verbosegiveitem CALCIUM"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "ErinNoRoomForCalcium"
+          ],
+          "raw": "iffalse ErinNoRoomForCalcium"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_CALCIUM_FROM_ERIN"
+          ],
+          "raw": "setevent EVENT_GOT_CALCIUM_FROM_ERIN"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Route46NumberAcceptedF"
+          ],
+          "raw": "sjump Route46NumberAcceptedF"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [
+        "ErinNoRoomForCalcium",
+        "Route46NumberAcceptedF",
+        "Route46RematchGiftF",
+        "TrainerPicnickerErin1.GotCalciumAlready",
+        "TrainerPicnickerErin1.HasCalcium"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.GotCalciumAlready": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.HasCalcium": {
+      "raw_lines": [
+        "opentext",
+        "writetext PicnickerErin2BeatenText",
+        "waitbutton",
+        "verbosegiveitem CALCIUM",
+        "iffalse ErinNoRoomForCalcium",
+        "clearevent EVENT_ERIN_CALCIUM",
+        "setevent EVENT_GOT_CALCIUM_FROM_ERIN",
+        "sjump Route46NumberAcceptedF"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PicnickerErin2BeatenText"
+          ],
+          "raw": "writetext PicnickerErin2BeatenText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "CALCIUM"
+          ],
+          "raw": "verbosegiveitem CALCIUM"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "ErinNoRoomForCalcium"
+          ],
+          "raw": "iffalse ErinNoRoomForCalcium"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_ERIN_CALCIUM"
+          ],
+          "raw": "clearevent EVENT_ERIN_CALCIUM"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_CALCIUM_FROM_ERIN"
+          ],
+          "raw": "setevent EVENT_GOT_CALCIUM_FROM_ERIN"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Route46NumberAcceptedF"
+          ],
+          "raw": "sjump Route46NumberAcceptedF"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "ErinNoRoomForCalcium",
+        "Route46NumberAcceptedF"
+      ],
+      "text_refs": [
+        "PicnickerErin2BeatenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route46AskNumber1F": {
+      "raw_lines": [
+        "jumpstd AskNumber1FScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "AskNumber1FScript"
+          ],
+          "raw": "jumpstd AskNumber1FScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber1FScript"
+      ]
+    },
+    "Route46AskNumber2F": {
+      "raw_lines": [
+        "jumpstd AskNumber2FScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "AskNumber2FScript"
+          ],
+          "raw": "jumpstd AskNumber2FScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber2FScript"
+      ]
+    },
+    "Route46RegisteredNumberF": {
+      "raw_lines": [
+        "jumpstd RegisteredNumberFScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RegisteredNumberFScript"
+          ],
+          "raw": "jumpstd RegisteredNumberFScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RegisteredNumberFScript"
+      ]
+    },
+    "Route46NumberAcceptedF": {
+      "raw_lines": [
+        "jumpstd NumberAcceptedFScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "NumberAcceptedFScript"
+          ],
+          "raw": "jumpstd NumberAcceptedFScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberAcceptedFScript"
+      ]
+    },
+    "Route46NumberDeclinedF": {
+      "raw_lines": [
+        "jumpstd NumberDeclinedFScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "NumberDeclinedFScript"
+          ],
+          "raw": "jumpstd NumberDeclinedFScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberDeclinedFScript"
+      ]
+    },
+    "Route46PhoneFullF": {
+      "raw_lines": [
+        "jumpstd PhoneFullFScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PhoneFullFScript"
+          ],
+          "raw": "jumpstd PhoneFullFScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PhoneFullFScript"
+      ]
+    },
+    "Route46RematchF": {
+      "raw_lines": [
+        "jumpstd RematchFScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RematchFScript"
+          ],
+          "raw": "jumpstd RematchFScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchFScript"
+      ]
+    },
+    "ErinNoRoomForCalcium": {
+      "raw_lines": [
+        "setevent EVENT_ERIN_CALCIUM",
+        "jumpstd PackFullFScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_ERIN_CALCIUM"
+          ],
+          "raw": "setevent EVENT_ERIN_CALCIUM"
+        },
+        {
+          "command": "jumpstd",
+          "args": [
+            "PackFullFScript"
+          ],
+          "raw": "jumpstd PackFullFScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "setevent",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PackFullFScript"
+      ]
+    },
+    "Route46RematchGiftF": {
+      "raw_lines": [
+        "jumpstd RematchGiftFScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RematchGiftFScript"
+          ],
+          "raw": "jumpstd RematchGiftFScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchGiftFScript"
+      ]
+    },
+    "TrainerHikerBailey": {
+      "raw_lines": [
+        "trainer HIKER, BAILEY, EVENT_BEAT_HIKER_BAILEY, HikerBaileySeenText, HikerBaileyBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "HIKER",
+            "BAILEY",
+            "EVENT_BEAT_HIKER_BAILEY",
+            "HikerBaileySeenText",
+            "HikerBaileyBeatenText",
+            "0",
+            "TrainerHikerBailey.Script"
+          ],
+          "raw": "trainer HIKER, BAILEY, EVENT_BEAT_HIKER_BAILEY, HikerBaileySeenText, HikerBaileyBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerHikerBailey.Script",
+      "label_refs": [
+        "TrainerHikerBailey.Script"
+      ],
+      "text_refs": [
+        "HikerBaileyBeatenText",
+        "HikerBaileySeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerBailey.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext HikerBaileyAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "HikerBaileyAfterBattleText"
+          ],
+          "raw": "writetext HikerBaileyAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "HikerBaileyAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route46Sign": {
+      "raw_lines": [
+        "jumptext Route46SignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "Route46SignText"
+          ],
+          "raw": "jumptext Route46SignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "Route46SignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route46XSpeed": {
+      "raw_lines": [
+        "itemball X_SPEED"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "X_SPEED"
+          ],
+          "raw": "itemball X_SPEED"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "Route46FruitTree1",
+      "label_refs": [
+        "Route46FruitTree1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route46FruitTree1": {
+      "raw_lines": [
+        "fruittree FRUITTREE_ROUTE_46_1"
+      ],
+      "commands": [
+        {
+          "command": "fruittree",
+          "args": [
+            "FRUITTREE_ROUTE_46_1"
+          ],
+          "raw": "fruittree FRUITTREE_ROUTE_46_1"
+        }
+      ],
+      "first_command": "fruittree",
+      "fallthrough_label": "Route46FruitTree2",
+      "label_refs": [
+        "Route46FruitTree2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route46FruitTree2": {
+      "raw_lines": [
+        "fruittree FRUITTREE_ROUTE_46_2"
+      ],
+      "commands": [
+        {
+          "command": "fruittree",
+          "args": [
+            "FRUITTREE_ROUTE_46_2"
+          ],
+          "raw": "fruittree FRUITTREE_ROUTE_46_2"
+        }
+      ],
+      "first_command": "fruittree",
+      "fallthrough_label": "Route46_MapEvents",
+      "label_refs": [
+        "Route46_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route46_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  7, 33, ROUTE_29_ROUTE_46_GATE, 1",
+        "warp_event  8, 33, ROUTE_29_ROUTE_46_GATE, 2",
+        "warp_event 14,  5, DARK_CAVE_VIOLET_ENTRANCE, 3",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  9, 27, BGEVENT_READ, Route46Sign",
+        "def_object_events",
+        "object_event 12, 19, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerBailey, -1",
+        "object_event  4, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperTed, -1",
+        "object_event  2, 13, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerErin1, -1",
+        "object_event  7,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route46FruitTree1, -1",
+        "object_event  8,  6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route46FruitTree2, -1",
+        "object_event  1, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route46XSpeed, EVENT_ROUTE_46_X_SPEED"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "7",
+            "33",
+            "ROUTE_29_ROUTE_46_GATE",
+            "1"
+          ],
+          "raw": "warp_event  7, 33, ROUTE_29_ROUTE_46_GATE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "8",
+            "33",
+            "ROUTE_29_ROUTE_46_GATE",
+            "2"
+          ],
+          "raw": "warp_event  8, 33, ROUTE_29_ROUTE_46_GATE, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "14",
+            "5",
+            "DARK_CAVE_VIOLET_ENTRANCE",
+            "3"
+          ],
+          "raw": "warp_event 14,  5, DARK_CAVE_VIOLET_ENTRANCE, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "9",
+            "27",
+            "BGEVENT_READ",
+            "Route46Sign"
+          ],
+          "raw": "bg_event  9, 27, BGEVENT_READ, Route46Sign"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "12",
+            "19",
+            "SPRITE_POKEFAN_M",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_TRAINER",
+            "2",
+            "TrainerHikerBailey",
+            "-1"
+          ],
+          "raw": "object_event 12, 19, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerBailey, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "14",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_TRAINER",
+            "2",
+            "TrainerCamperTed",
+            "-1"
+          ],
+          "raw": "object_event  4, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperTed, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "13",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_TRAINER",
+            "2",
+            "TrainerPicnickerErin1",
+            "-1"
+          ],
+          "raw": "object_event  2, 13, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerErin1, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "5",
+            "SPRITE_FRUIT_TREE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route46FruitTree1",
+            "-1"
+          ],
+          "raw": "object_event  7,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route46FruitTree1, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "6",
+            "SPRITE_FRUIT_TREE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route46FruitTree2",
+            "-1"
+          ],
+          "raw": "object_event  8,  6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route46FruitTree2, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "15",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "Route46XSpeed",
+            "EVENT_ROUTE_46_X_SPEED"
+          ],
+          "raw": "object_event  1, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route46XSpeed, EVENT_ROUTE_46_X_SPEED"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "HikerBaileySeenText": {
+      "raw_lines": [
+        "text \"Awright! I'll show\"",
+        "line \"you the power of\"",
+        "cont \"mountain #MON!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Awright! I'll show"
+        },
+        {
+          "command": "line",
+          "value": "you the power of"
+        },
+        {
+          "command": "cont",
+          "value": "mountain #MON!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "HikerBaileyBeatenText": {
+      "raw_lines": [
+        "text \"Mercy! You showed\"",
+        "line \"me your power!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Mercy! You showed"
+        },
+        {
+          "command": "line",
+          "value": "me your power!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "HikerBaileyAfterBattleText": {
+      "raw_lines": [
+        "text \"It's over. I don't\"",
+        "line \"mind. We HIKERS\"",
+        "cont \"are like that.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's over. I don't"
+        },
+        {
+          "command": "line",
+          "value": "mind. We HIKERS"
+        },
+        {
+          "command": "cont",
+          "value": "are like that."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CamperTedSeenText": {
+      "raw_lines": [
+        "text \"I'm raising #-\"",
+        "line \"MON too!\"",
+        "para \"Will you battle\"",
+        "line \"with me?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm raising #-"
+        },
+        {
+          "command": "line",
+          "value": "MON too!"
+        },
+        {
+          "command": "para",
+          "value": "Will you battle"
+        },
+        {
+          "command": "line",
+          "value": "with me?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CamperTedBeatenText": {
+      "raw_lines": [
+        "text \"Wha\u2026?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Wha\u2026?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CamperTedAfterBattleText": {
+      "raw_lines": [
+        "text \"I did my best but\"",
+        "line \"came up short.\"",
+        "para \"No excuses--I\"",
+        "line \"admit I lost.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I did my best but"
+        },
+        {
+          "command": "line",
+          "value": "came up short."
+        },
+        {
+          "command": "para",
+          "value": "No excuses--I"
+        },
+        {
+          "command": "line",
+          "value": "admit I lost."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PicnickerErin1SeenText": {
+      "raw_lines": [
+        "text \"I raise #MON\"",
+        "line \"too!\"",
+        "para \"Will you battle\"",
+        "line \"with me?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I raise #MON"
+        },
+        {
+          "command": "line",
+          "value": "too!"
+        },
+        {
+          "command": "para",
+          "value": "Will you battle"
+        },
+        {
+          "command": "line",
+          "value": "with me?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PicnickerErin1BeatenText": {
+      "raw_lines": [
+        "text \"Oh, rats!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, rats!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PicnickerErinAfterBattleText": {
+      "raw_lines": [
+        "text \"I've been to many\"",
+        "line \"GYMS, but the GYM\"",
+        "para \"in GOLDENROD is my\"",
+        "line \"favorite.\"",
+        "para \"It's filled with\"",
+        "line \"pretty flowers!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I've been to many"
+        },
+        {
+          "command": "line",
+          "value": "GYMS, but the GYM"
+        },
+        {
+          "command": "para",
+          "value": "in GOLDENROD is my"
+        },
+        {
+          "command": "line",
+          "value": "favorite."
+        },
+        {
+          "command": "para",
+          "value": "It's filled with"
+        },
+        {
+          "command": "line",
+          "value": "pretty flowers!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PicnickerErin2BeatenText": {
+      "raw_lines": [
+        "text \"Aww\u2026 I keep losing\"",
+        "line \"all the time!\"",
+        "para \"I'll just have to\"",
+        "line \"try harder!\"",
+        "para \"Anyway, thanks for\"",
+        "line \"battling me again\"",
+        "para \"and again. Here's\"",
+        "line \"that present from\"",
+        "cont \"the other time.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Aww\u2026 I keep losing"
+        },
+        {
+          "command": "line",
+          "value": "all the time!"
+        },
+        {
+          "command": "para",
+          "value": "I'll just have to"
+        },
+        {
+          "command": "line",
+          "value": "try harder!"
+        },
+        {
+          "command": "para",
+          "value": "Anyway, thanks for"
+        },
+        {
+          "command": "line",
+          "value": "battling me again"
+        },
+        {
+          "command": "para",
+          "value": "and again. Here's"
+        },
+        {
+          "command": "line",
+          "value": "that present from"
+        },
+        {
+          "command": "cont",
+          "value": "the other time."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route46SignText": {
+      "raw_lines": [
+        "text \"ROUTE 46\"",
+        "line \"MOUNTAIN RD. AHEAD\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ROUTE 46"
+        },
+        {
+          "command": "line",
+          "value": "MOUNTAIN RD. AHEAD"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "AskNumber1FScript",
+    "AskNumber2FScript",
+    "NumberAcceptedFScript",
+    "NumberDeclinedFScript",
+    "PackFullFScript",
+    "PhoneFullFScript",
+    "RegisteredNumberFScript",
+    "RematchFScript",
+    "RematchGiftFScript"
+  ],
+  "dependencies": {
+    "Route46_MapScripts": {
+      "label_refs": [
+        "TrainerCamperTed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCamperTed": {
+      "label_refs": [
+        "TrainerCamperTed.Script"
+      ],
+      "text_refs": [
+        "CamperTedBeatenText",
+        "CamperTedSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCamperTed.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "CamperTedAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1": {
+      "label_refs": [
+        "TrainerPicnickerErin1.Script"
+      ],
+      "text_refs": [
+        "PicnickerErin1BeatenText",
+        "PicnickerErin1SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.Script": {
+      "label_refs": [
+        "Route46AskNumber1F",
+        "Route46NumberAcceptedF",
+        "TrainerPicnickerErin1.AskForNumber",
+        "TrainerPicnickerErin1.AskedAlready",
+        "TrainerPicnickerErin1.WantsBattle"
+      ],
+      "text_refs": [
+        "PicnickerErinAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.AskedAlready": {
+      "label_refs": [
+        "Route46AskNumber2F",
+        "TrainerPicnickerErin1.AskForNumber"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.AskForNumber": {
+      "label_refs": [
+        "Route46NumberAcceptedF",
+        "Route46NumberDeclinedF",
+        "Route46PhoneFullF",
+        "Route46RegisteredNumberF"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.WantsBattle": {
+      "label_refs": [
+        "Route46RematchF",
+        "TrainerPicnickerErin1.Fight1",
+        "TrainerPicnickerErin1.Fight2",
+        "TrainerPicnickerErin1.LoadFight0"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.Fight2": {
+      "label_refs": [
+        "TrainerPicnickerErin1.Fight1",
+        "TrainerPicnickerErin1.LoadFight2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.Fight1": {
+      "label_refs": [
+        "TrainerPicnickerErin1.LoadFight0",
+        "TrainerPicnickerErin1.LoadFight1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.LoadFight0": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.LoadFight1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.LoadFight2": {
+      "label_refs": [
+        "ErinNoRoomForCalcium",
+        "Route46NumberAcceptedF",
+        "Route46RematchGiftF",
+        "TrainerPicnickerErin1.GotCalciumAlready",
+        "TrainerPicnickerErin1.HasCalcium"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.GotCalciumAlready": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPicnickerErin1.HasCalcium": {
+      "label_refs": [
+        "ErinNoRoomForCalcium",
+        "Route46NumberAcceptedF"
+      ],
+      "text_refs": [
+        "PicnickerErin2BeatenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route46AskNumber1F": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber1FScript"
+      ]
+    },
+    "Route46AskNumber2F": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber2FScript"
+      ]
+    },
+    "Route46RegisteredNumberF": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RegisteredNumberFScript"
+      ]
+    },
+    "Route46NumberAcceptedF": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberAcceptedFScript"
+      ]
+    },
+    "Route46NumberDeclinedF": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberDeclinedFScript"
+      ]
+    },
+    "Route46PhoneFullF": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PhoneFullFScript"
+      ]
+    },
+    "Route46RematchF": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchFScript"
+      ]
+    },
+    "ErinNoRoomForCalcium": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PackFullFScript"
+      ]
+    },
+    "Route46RematchGiftF": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchGiftFScript"
+      ]
+    },
+    "TrainerHikerBailey": {
+      "label_refs": [
+        "TrainerHikerBailey.Script"
+      ],
+      "text_refs": [
+        "HikerBaileyBeatenText",
+        "HikerBaileySeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerHikerBailey.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "HikerBaileyAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route46Sign": {
+      "label_refs": [],
+      "text_refs": [
+        "Route46SignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route46XSpeed": {
+      "label_refs": [
+        "Route46FruitTree1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route46FruitTree1": {
+      "label_refs": [
+        "Route46FruitTree2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route46FruitTree2": {
+      "label_refs": [
+        "Route46_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route46_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear"
+  ],
   "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
     "warp_events": 3,
     "coord_events": 0,
     "bg_events": 1,

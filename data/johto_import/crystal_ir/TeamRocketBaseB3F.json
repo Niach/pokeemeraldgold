@@ -1,0 +1,4279 @@
+{
+  "crystal_map": "TeamRocketBaseB3F",
+  "map_id": "TEAM_ROCKET_BASE_B3F",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 51,
+  "tileset": "TILESET_FACILITY",
+  "environment": "DUNGEON",
+  "landmark": "LANDMARK_MAHOGANY_TOWN",
+  "music": "MUSIC_ROCKET_HIDEOUT",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 15,
+  "height_blocks": 9,
+  "border_block": "00",
+  "blk_path": "maps/TeamRocketBaseB3F.blk",
+  "source_asm": "maps/TeamRocketBaseB3F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "TeamRocketBaseB3FLanceGetsPasswordScene",
+        "scene_id": "SCENE_TEAMROCKETBASEB3F_LANCE_GETS_PASSWORD"
+      },
+      {
+        "script": "TeamRocketBaseB3FNoop1Scene",
+        "scene_id": "SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER"
+      },
+      {
+        "script": "TeamRocketBaseB3FNoop2Scene",
+        "scene_id": "SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS"
+      },
+      {
+        "script": "TeamRocketBaseB3FNoop3Scene",
+        "scene_id": "SCENE_TEAMROCKETBASEB3F_NOOP"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_TILES",
+        "script": "TeamRocketBaseB3FCheckGiovanniDoorCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 2,
+        "dest_map": "TEAM_ROCKET_BASE_B2F",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 27,
+        "y": 2,
+        "dest_map": "TEAM_ROCKET_BASE_B2F",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 3,
+        "y": 6,
+        "dest_map": "TEAM_ROCKET_BASE_B2F",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 27,
+        "y": 14,
+        "dest_map": "TEAM_ROCKET_BASE_B2F",
+        "dest_warp_id": 5
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 10,
+        "y": 8,
+        "scene": "SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS",
+        "script": "RocketBaseBossLeft"
+      },
+      {
+        "x": 11,
+        "y": 8,
+        "scene": "SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS",
+        "script": "RocketBaseBossRight"
+      },
+      {
+        "x": 8,
+        "y": 10,
+        "scene": "SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER",
+        "script": "RocketBaseRival"
+      }
+    ],
+    "bg_events": [
+      {
+        "x": 10,
+        "y": 9,
+        "kind": "BGEVENT_IFNOTSET",
+        "script": "TeamRocketBaseB3FLockedDoor"
+      },
+      {
+        "x": 11,
+        "y": 9,
+        "kind": "BGEVENT_IFNOTSET",
+        "script": "TeamRocketBaseB3FLockedDoor"
+      },
+      {
+        "x": 10,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "TeamRocketBaseB3FOathScript"
+      },
+      {
+        "x": 11,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "TeamRocketBaseB3FOathScript"
+      },
+      {
+        "x": 12,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "TeamRocketBaseB3FOathScript"
+      },
+      {
+        "x": 13,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "TeamRocketBaseB3FOathScript"
+      },
+      {
+        "x": 4,
+        "y": 13,
+        "kind": "BGEVENT_READ",
+        "script": "TeamRocketBaseB3FOathScript"
+      },
+      {
+        "x": 5,
+        "y": 13,
+        "kind": "BGEVENT_READ",
+        "script": "TeamRocketBaseB3FOathScript"
+      },
+      {
+        "x": 6,
+        "y": 13,
+        "kind": "BGEVENT_READ",
+        "script": "TeamRocketBaseB3FOathScript"
+      },
+      {
+        "x": 7,
+        "y": 13,
+        "kind": "BGEVENT_READ",
+        "script": "TeamRocketBaseB3FOathScript"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 25,
+        "y": 14,
+        "sprite": "SPRITE_LANCE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "LanceGetPasswordScript",
+        "flag": "EVENT_TEAM_ROCKET_BASE_B3F_LANCE_PASSWORDS"
+      },
+      {
+        "x": 8,
+        "y": 3,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_TEAM_ROCKET_BASE_B3F_EXECUTIVE"
+      },
+      {
+        "x": 7,
+        "y": 2,
+        "sprite": "SPRITE_MOLTRES",
+        "movement": "SPRITEMOVEDATA_POKEMON",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RocketBaseMurkrow",
+        "flag": "EVENT_TEAM_ROCKET_BASE_POPULATION"
+      },
+      {
+        "x": 21,
+        "y": 7,
+        "sprite": "SPRITE_ROCKET_GIRL",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 0,
+        "script": "SlowpokeTailGrunt",
+        "flag": "EVENT_TEAM_ROCKET_BASE_POPULATION"
+      },
+      {
+        "x": 5,
+        "y": 14,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_FAST",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "RaticateTailGrunt",
+        "flag": "EVENT_TEAM_ROCKET_BASE_POPULATION"
+      },
+      {
+        "x": 23,
+        "y": 11,
+        "sprite": "SPRITE_SCIENTIST",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 0,
+        "script": "TrainerScientistRoss",
+        "flag": "EVENT_TEAM_ROCKET_BASE_POPULATION"
+      },
+      {
+        "x": 11,
+        "y": 15,
+        "sprite": "SPRITE_SCIENTIST",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerScientistMitch",
+        "flag": "EVENT_TEAM_ROCKET_BASE_POPULATION"
+      },
+      {
+        "x": 24,
+        "y": 14,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "TeamRocketBaseB3FRocketScript",
+        "flag": "EVENT_TEAM_ROCKET_BASE_POPULATION"
+      },
+      {
+        "x": 4,
+        "y": 5,
+        "sprite": "SPRITE_RIVAL",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_RIVAL_TEAM_ROCKET_BASE"
+      },
+      {
+        "x": 1,
+        "y": 12,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "TeamRocketBaseB3FProtein",
+        "flag": "EVENT_TEAM_ROCKET_BASE_B3F_PROTEIN"
+      },
+      {
+        "x": 3,
+        "y": 12,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "TeamRocketBaseB3FXSpecial",
+        "flag": "EVENT_TEAM_ROCKET_BASE_B3F_X_SPECIAL"
+      },
+      {
+        "x": 28,
+        "y": 9,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "TeamRocketBaseB3FFullHeal",
+        "flag": "EVENT_TEAM_ROCKET_BASE_B3F_FULL_HEAL"
+      },
+      {
+        "x": 17,
+        "y": 2,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "TeamRocketBaseB3FIceHeal",
+        "flag": "EVENT_TEAM_ROCKET_BASE_B3F_ICE_HEAL"
+      },
+      {
+        "x": 14,
+        "y": 10,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "TeamRocketBaseB3FUltraBall",
+        "flag": "EVENT_TEAM_ROCKET_BASE_B3F_ULTRA_BALL"
+      }
+    ]
+  },
+  "object_consts": [
+    "TEAMROCKETBASEB3F_LANCE",
+    "TEAMROCKETBASEB3F_ROCKET1",
+    "TEAMROCKETBASEB3F_MOLTRES",
+    "TEAMROCKETBASEB3F_ROCKET_GIRL",
+    "TEAMROCKETBASEB3F_ROCKET2",
+    "TEAMROCKETBASEB3F_SCIENTIST1",
+    "TEAMROCKETBASEB3F_SCIENTIST2",
+    "TEAMROCKETBASEB3F_ROCKET3",
+    "TEAMROCKETBASEB3F_RIVAL",
+    "TEAMROCKETBASEB3F_POKE_BALL1",
+    "TEAMROCKETBASEB3F_POKE_BALL2",
+    "TEAMROCKETBASEB3F_POKE_BALL3",
+    "TEAMROCKETBASEB3F_POKE_BALL4",
+    "TEAMROCKETBASEB3F_POKE_BALL5"
+  ],
+  "scene_ids": [
+    "SCENE_TEAMROCKETBASEB3F_LANCE_GETS_PASSWORD",
+    "SCENE_TEAMROCKETBASEB3F_NOOP",
+    "SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER",
+    "SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS"
+  ],
+  "scripts": {
+    "TeamRocketBaseB3F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script TeamRocketBaseB3FLanceGetsPasswordScene, SCENE_TEAMROCKETBASEB3F_LANCE_GETS_PASSWORD",
+        "scene_script TeamRocketBaseB3FNoop1Scene,             SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER",
+        "scene_script TeamRocketBaseB3FNoop2Scene,             SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS",
+        "scene_script TeamRocketBaseB3FNoop3Scene,             SCENE_TEAMROCKETBASEB3F_NOOP",
+        "def_callbacks",
+        "callback MAPCALLBACK_TILES, TeamRocketBaseB3FCheckGiovanniDoorCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "TeamRocketBaseB3FLanceGetsPasswordScene",
+            "SCENE_TEAMROCKETBASEB3F_LANCE_GETS_PASSWORD"
+          ],
+          "raw": "scene_script TeamRocketBaseB3FLanceGetsPasswordScene, SCENE_TEAMROCKETBASEB3F_LANCE_GETS_PASSWORD"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "TeamRocketBaseB3FNoop1Scene",
+            "SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER"
+          ],
+          "raw": "scene_script TeamRocketBaseB3FNoop1Scene,             SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "TeamRocketBaseB3FNoop2Scene",
+            "SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS"
+          ],
+          "raw": "scene_script TeamRocketBaseB3FNoop2Scene,             SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "TeamRocketBaseB3FNoop3Scene",
+            "SCENE_TEAMROCKETBASEB3F_NOOP"
+          ],
+          "raw": "scene_script TeamRocketBaseB3FNoop3Scene,             SCENE_TEAMROCKETBASEB3F_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_TILES",
+            "TeamRocketBaseB3FCheckGiovanniDoorCallback"
+          ],
+          "raw": "callback MAPCALLBACK_TILES, TeamRocketBaseB3FCheckGiovanniDoorCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "TeamRocketBaseB3FLanceGetsPasswordScene",
+      "label_refs": [
+        "TeamRocketBaseB3FLanceGetsPasswordScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FLanceGetsPasswordScene": {
+      "raw_lines": [
+        "sdefer LanceGetPasswordScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "sdefer",
+          "args": [
+            "LanceGetPasswordScript"
+          ],
+          "raw": "sdefer LanceGetPasswordScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "sdefer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FNoop3Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FCheckGiovanniDoorCallback": {
+      "raw_lines": [
+        "checkevent EVENT_OPENED_DOOR_TO_GIOVANNIS_OFFICE",
+        "iftrue .OpenSesame",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_OPENED_DOOR_TO_GIOVANNIS_OFFICE"
+          ],
+          "raw": "checkevent EVENT_OPENED_DOOR_TO_GIOVANNIS_OFFICE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TeamRocketBaseB3FCheckGiovanniDoorCallback.OpenSesame"
+          ],
+          "raw": "iftrue .OpenSesame"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "TeamRocketBaseB3FCheckGiovanniDoorCallback.OpenSesame"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FCheckGiovanniDoorCallback.OpenSesame": {
+      "raw_lines": [
+        "changeblock 10, 8, $07",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "changeblock",
+          "args": [
+            "10",
+            "8",
+            "$07"
+          ],
+          "raw": "changeblock 10, 8, $07"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "changeblock",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LanceGetPasswordScript": {
+      "raw_lines": [
+        "turnobject PLAYER, LEFT",
+        "pause 5",
+        "turnobject TEAMROCKETBASEB3F_MOLTRES, RIGHT",
+        "pause 20",
+        "applymovement TEAMROCKETBASEB3F_LANCE, RocketBaseLanceApproachesPlayerMovement",
+        "opentext",
+        "writetext LanceGetPasswordText",
+        "waitbutton",
+        "closetext",
+        "applymovement TEAMROCKETBASEB3F_LANCE, RocketBaseLanceLeavesMovement",
+        "disappear TEAMROCKETBASEB3F_LANCE",
+        "setscene SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYER, LEFT"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "5"
+          ],
+          "raw": "pause 5"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "TEAMROCKETBASEB3F_MOLTRES",
+            "RIGHT"
+          ],
+          "raw": "turnobject TEAMROCKETBASEB3F_MOLTRES, RIGHT"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "20"
+          ],
+          "raw": "pause 20"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "TEAMROCKETBASEB3F_LANCE",
+            "RocketBaseLanceApproachesPlayerMovement"
+          ],
+          "raw": "applymovement TEAMROCKETBASEB3F_LANCE, RocketBaseLanceApproachesPlayerMovement"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "LanceGetPasswordText"
+          ],
+          "raw": "writetext LanceGetPasswordText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "TEAMROCKETBASEB3F_LANCE",
+            "RocketBaseLanceLeavesMovement"
+          ],
+          "raw": "applymovement TEAMROCKETBASEB3F_LANCE, RocketBaseLanceLeavesMovement"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "TEAMROCKETBASEB3F_LANCE"
+          ],
+          "raw": "disappear TEAMROCKETBASEB3F_LANCE"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER"
+          ],
+          "raw": "setscene SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [],
+      "text_refs": [
+        "LanceGetPasswordText"
+      ],
+      "movement_refs": [
+        "RocketBaseLanceApproachesPlayerMovement",
+        "RocketBaseLanceLeavesMovement"
+      ],
+      "scene_refs": [
+        "SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER"
+      ],
+      "std_calls": []
+    },
+    "RocketBaseRival": {
+      "raw_lines": [
+        "turnobject PLAYER, LEFT",
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "special FadeOutMusic",
+        "appear TEAMROCKETBASEB3F_RIVAL",
+        "applymovement TEAMROCKETBASEB3F_RIVAL, RocketBaseRivalEnterMovement",
+        "turnobject PLAYER, LEFT",
+        "playmusic MUSIC_RIVAL_ENCOUNTER",
+        "opentext",
+        "writetext RocketBaseRivalText",
+        "waitbutton",
+        "closetext",
+        "playsound SFX_TACKLE",
+        "applymovement PLAYER, RocketBaseRivalShovesPlayerMovement",
+        "applymovement TEAMROCKETBASEB3F_RIVAL, RocketBaseRivalLeavesMovement",
+        "disappear TEAMROCKETBASEB3F_RIVAL",
+        "setscene SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS",
+        "special RestartMapMusic",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYER, LEFT"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "TEAMROCKETBASEB3F_RIVAL"
+          ],
+          "raw": "appear TEAMROCKETBASEB3F_RIVAL"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "TEAMROCKETBASEB3F_RIVAL",
+            "RocketBaseRivalEnterMovement"
+          ],
+          "raw": "applymovement TEAMROCKETBASEB3F_RIVAL, RocketBaseRivalEnterMovement"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYER, LEFT"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_ENCOUNTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_ENCOUNTER"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RocketBaseRivalText"
+          ],
+          "raw": "writetext RocketBaseRivalText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_TACKLE"
+          ],
+          "raw": "playsound SFX_TACKLE"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "RocketBaseRivalShovesPlayerMovement"
+          ],
+          "raw": "applymovement PLAYER, RocketBaseRivalShovesPlayerMovement"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "TEAMROCKETBASEB3F_RIVAL",
+            "RocketBaseRivalLeavesMovement"
+          ],
+          "raw": "applymovement TEAMROCKETBASEB3F_RIVAL, RocketBaseRivalLeavesMovement"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "TEAMROCKETBASEB3F_RIVAL"
+          ],
+          "raw": "disappear TEAMROCKETBASEB3F_RIVAL"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS"
+          ],
+          "raw": "setscene SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [],
+      "text_refs": [
+        "RocketBaseRivalText"
+      ],
+      "movement_refs": [
+        "RocketBaseRivalEnterMovement",
+        "RocketBaseRivalLeavesMovement",
+        "RocketBaseRivalShovesPlayerMovement"
+      ],
+      "scene_refs": [
+        "SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS"
+      ],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FRocketScript": {
+      "raw_lines": [
+        "jumptextfaceplayer TeamRocketBaseB3FRocketText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "TeamRocketBaseB3FRocketText"
+          ],
+          "raw": "jumptextfaceplayer TeamRocketBaseB3FRocketText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "TeamRocketBaseB3FRocketText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RocketBaseBossLeft": {
+      "raw_lines": [
+        "applymovement PLAYER, RocketBasePlayerApproachesBossLeftMovement",
+        "sjump RocketBaseBoss"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "RocketBasePlayerApproachesBossLeftMovement"
+          ],
+          "raw": "applymovement PLAYER, RocketBasePlayerApproachesBossLeftMovement"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "RocketBaseBoss"
+          ],
+          "raw": "sjump RocketBaseBoss"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [
+        "RocketBaseBoss"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "RocketBasePlayerApproachesBossLeftMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RocketBaseBossRight": {
+      "raw_lines": [
+        "applymovement PLAYER, RocketBasePlayerApproachesBossRightMovement"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "RocketBasePlayerApproachesBossRightMovement"
+          ],
+          "raw": "applymovement PLAYER, RocketBasePlayerApproachesBossRightMovement"
+        }
+      ],
+      "first_command": "applymovement",
+      "fallthrough_label": "RocketBaseBoss",
+      "label_refs": [
+        "RocketBaseBoss"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "RocketBasePlayerApproachesBossRightMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RocketBaseBoss": {
+      "raw_lines": [
+        "pause 30",
+        "showemote EMOTE_SHOCK, TEAMROCKETBASEB3F_ROCKET1, 15",
+        "playmusic MUSIC_ROCKET_ENCOUNTER",
+        "turnobject TEAMROCKETBASEB3F_ROCKET1, DOWN",
+        "opentext",
+        "writetext ExecutiveM4BeforeText",
+        "waitbutton",
+        "closetext",
+        "applymovement TEAMROCKETBASEB3F_ROCKET1, RocketBaseBossApproachesPlayerMovement",
+        "winlosstext ExecutiveM4BeatenText, 0",
+        "setlasttalked TEAMROCKETBASEB3F_ROCKET1",
+        "loadtrainer EXECUTIVEM, EXECUTIVEM_4",
+        "startbattle",
+        "reloadmapafterbattle",
+        "setevent EVENT_BEAT_ROCKET_EXECUTIVEM_4",
+        "opentext",
+        "writetext ExecutiveM4AfterText",
+        "waitbutton",
+        "closetext",
+        "applymovement TEAMROCKETBASEB3F_ROCKET1, RocketBaseBossHitsTableMovement",
+        "playsound SFX_TACKLE",
+        "applymovement TEAMROCKETBASEB3F_ROCKET1, RocketBaseBossLeavesMovement",
+        "disappear TEAMROCKETBASEB3F_ROCKET1",
+        "setscene SCENE_TEAMROCKETBASEB3F_NOOP",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "pause",
+          "args": [
+            "30"
+          ],
+          "raw": "pause 30"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "TEAMROCKETBASEB3F_ROCKET1",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, TEAMROCKETBASEB3F_ROCKET1, 15"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_ROCKET_ENCOUNTER"
+          ],
+          "raw": "playmusic MUSIC_ROCKET_ENCOUNTER"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "TEAMROCKETBASEB3F_ROCKET1",
+            "DOWN"
+          ],
+          "raw": "turnobject TEAMROCKETBASEB3F_ROCKET1, DOWN"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ExecutiveM4BeforeText"
+          ],
+          "raw": "writetext ExecutiveM4BeforeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "TEAMROCKETBASEB3F_ROCKET1",
+            "RocketBaseBossApproachesPlayerMovement"
+          ],
+          "raw": "applymovement TEAMROCKETBASEB3F_ROCKET1, RocketBaseBossApproachesPlayerMovement"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "ExecutiveM4BeatenText",
+            "0"
+          ],
+          "raw": "winlosstext ExecutiveM4BeatenText, 0"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "TEAMROCKETBASEB3F_ROCKET1"
+          ],
+          "raw": "setlasttalked TEAMROCKETBASEB3F_ROCKET1"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "EXECUTIVEM",
+            "EXECUTIVEM_4"
+          ],
+          "raw": "loadtrainer EXECUTIVEM, EXECUTIVEM_4"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_ROCKET_EXECUTIVEM_4"
+          ],
+          "raw": "setevent EVENT_BEAT_ROCKET_EXECUTIVEM_4"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ExecutiveM4AfterText"
+          ],
+          "raw": "writetext ExecutiveM4AfterText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "TEAMROCKETBASEB3F_ROCKET1",
+            "RocketBaseBossHitsTableMovement"
+          ],
+          "raw": "applymovement TEAMROCKETBASEB3F_ROCKET1, RocketBaseBossHitsTableMovement"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_TACKLE"
+          ],
+          "raw": "playsound SFX_TACKLE"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "TEAMROCKETBASEB3F_ROCKET1",
+            "RocketBaseBossLeavesMovement"
+          ],
+          "raw": "applymovement TEAMROCKETBASEB3F_ROCKET1, RocketBaseBossLeavesMovement"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "TEAMROCKETBASEB3F_ROCKET1"
+          ],
+          "raw": "disappear TEAMROCKETBASEB3F_ROCKET1"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_TEAMROCKETBASEB3F_NOOP"
+          ],
+          "raw": "setscene SCENE_TEAMROCKETBASEB3F_NOOP"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "pause",
+      "label_refs": [],
+      "text_refs": [
+        "ExecutiveM4AfterText",
+        "ExecutiveM4BeforeText"
+      ],
+      "movement_refs": [
+        "RocketBaseBossApproachesPlayerMovement",
+        "RocketBaseBossHitsTableMovement",
+        "RocketBaseBossLeavesMovement"
+      ],
+      "scene_refs": [
+        "SCENE_TEAMROCKETBASEB3F_NOOP"
+      ],
+      "std_calls": []
+    },
+    "RocketBaseMurkrow": {
+      "raw_lines": [
+        "opentext",
+        "writetext RocketBaseMurkrowText",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_LEARNED_HAIL_GIOVANNI",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RocketBaseMurkrowText"
+          ],
+          "raw": "writetext RocketBaseMurkrowText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_LEARNED_HAIL_GIOVANNI"
+          ],
+          "raw": "setevent EVENT_LEARNED_HAIL_GIOVANNI"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "RocketBaseMurkrowText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SlowpokeTailGrunt": {
+      "raw_lines": [
+        "trainer GRUNTF, GRUNTF_5, EVENT_BEAT_ROCKET_GRUNTF_5, GruntF5SeenText, GruntF5BeatenText, 0, GruntF5Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "GRUNTF",
+            "GRUNTF_5",
+            "EVENT_BEAT_ROCKET_GRUNTF_5",
+            "GruntF5SeenText",
+            "GruntF5BeatenText",
+            "0",
+            "GruntF5Script"
+          ],
+          "raw": "trainer GRUNTF, GRUNTF_5, EVENT_BEAT_ROCKET_GRUNTF_5, GruntF5SeenText, GruntF5BeatenText, 0, GruntF5Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "GruntF5Script",
+      "label_refs": [
+        "GruntF5Script"
+      ],
+      "text_refs": [
+        "GruntF5BeatenText",
+        "GruntF5SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GruntF5Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext GruntF5AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_LEARNED_SLOWPOKETAIL",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GruntF5AfterBattleText"
+          ],
+          "raw": "writetext GruntF5AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_LEARNED_SLOWPOKETAIL"
+          ],
+          "raw": "setevent EVENT_LEARNED_SLOWPOKETAIL"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "GruntF5AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RaticateTailGrunt": {
+      "raw_lines": [
+        "trainer GRUNTM, GRUNTM_28, EVENT_BEAT_ROCKET_GRUNTM_28, GruntM28SeenText, GruntM28BeatenText, 0, GruntM28Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "GRUNTM",
+            "GRUNTM_28",
+            "EVENT_BEAT_ROCKET_GRUNTM_28",
+            "GruntM28SeenText",
+            "GruntM28BeatenText",
+            "0",
+            "GruntM28Script"
+          ],
+          "raw": "trainer GRUNTM, GRUNTM_28, EVENT_BEAT_ROCKET_GRUNTM_28, GruntM28SeenText, GruntM28BeatenText, 0, GruntM28Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "GruntM28Script",
+      "label_refs": [
+        "GruntM28Script"
+      ],
+      "text_refs": [
+        "GruntM28BeatenText",
+        "GruntM28SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GruntM28Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext GruntM28AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_LEARNED_RATICATE_TAIL",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GruntM28AfterBattleText"
+          ],
+          "raw": "writetext GruntM28AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_LEARNED_RATICATE_TAIL"
+          ],
+          "raw": "setevent EVENT_LEARNED_RATICATE_TAIL"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "GruntM28AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerScientistRoss": {
+      "raw_lines": [
+        "trainer SCIENTIST, ROSS, EVENT_BEAT_SCIENTIST_ROSS, ScientistRossSeenText, ScientistRossBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "SCIENTIST",
+            "ROSS",
+            "EVENT_BEAT_SCIENTIST_ROSS",
+            "ScientistRossSeenText",
+            "ScientistRossBeatenText",
+            "0",
+            "TrainerScientistRoss.Script"
+          ],
+          "raw": "trainer SCIENTIST, ROSS, EVENT_BEAT_SCIENTIST_ROSS, ScientistRossSeenText, ScientistRossBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerScientistRoss.Script",
+      "label_refs": [
+        "TrainerScientistRoss.Script"
+      ],
+      "text_refs": [
+        "ScientistRossBeatenText",
+        "ScientistRossSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerScientistRoss.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext ScientistRossAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ScientistRossAfterBattleText"
+          ],
+          "raw": "writetext ScientistRossAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "ScientistRossAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerScientistMitch": {
+      "raw_lines": [
+        "trainer SCIENTIST, MITCH, EVENT_BEAT_SCIENTIST_MITCH, ScientistMitchSeenText, ScientistMitchBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "SCIENTIST",
+            "MITCH",
+            "EVENT_BEAT_SCIENTIST_MITCH",
+            "ScientistMitchSeenText",
+            "ScientistMitchBeatenText",
+            "0",
+            "TrainerScientistMitch.Script"
+          ],
+          "raw": "trainer SCIENTIST, MITCH, EVENT_BEAT_SCIENTIST_MITCH, ScientistMitchSeenText, ScientistMitchBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerScientistMitch.Script",
+      "label_refs": [
+        "TrainerScientistMitch.Script"
+      ],
+      "text_refs": [
+        "ScientistMitchBeatenText",
+        "ScientistMitchSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerScientistMitch.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext ScientistMitchAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ScientistMitchAfterBattleText"
+          ],
+          "raw": "writetext ScientistMitchAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "ScientistMitchAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FLockedDoor": {
+      "raw_lines": [
+        "conditional_event EVENT_OPENED_DOOR_TO_GIOVANNIS_OFFICE, .Script"
+      ],
+      "commands": [
+        {
+          "command": "conditional_event",
+          "args": [
+            "EVENT_OPENED_DOOR_TO_GIOVANNIS_OFFICE",
+            "TeamRocketBaseB3FLockedDoor.Script"
+          ],
+          "raw": "conditional_event EVENT_OPENED_DOOR_TO_GIOVANNIS_OFFICE, .Script"
+        }
+      ],
+      "first_command": "conditional_event",
+      "fallthrough_label": "TeamRocketBaseB3FLockedDoor.Script",
+      "label_refs": [
+        "TeamRocketBaseB3FLockedDoor.Script"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FLockedDoor.Script": {
+      "raw_lines": [
+        "opentext",
+        "checkevent EVENT_LEARNED_SLOWPOKETAIL",
+        "iffalse .NeedsPassword",
+        "checkevent EVENT_LEARNED_RATICATE_TAIL",
+        "iffalse .NeedsPassword",
+        "sjump .OpenSesame"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_LEARNED_SLOWPOKETAIL"
+          ],
+          "raw": "checkevent EVENT_LEARNED_SLOWPOKETAIL"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "TeamRocketBaseB3FLockedDoor.NeedsPassword"
+          ],
+          "raw": "iffalse .NeedsPassword"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_LEARNED_RATICATE_TAIL"
+          ],
+          "raw": "checkevent EVENT_LEARNED_RATICATE_TAIL"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "TeamRocketBaseB3FLockedDoor.NeedsPassword"
+          ],
+          "raw": "iffalse .NeedsPassword"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TeamRocketBaseB3FLockedDoor.OpenSesame"
+          ],
+          "raw": "sjump .OpenSesame"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "TeamRocketBaseB3FLockedDoor.NeedsPassword",
+        "TeamRocketBaseB3FLockedDoor.OpenSesame"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FLockedDoor.NeedsPassword": {
+      "raw_lines": [
+        "writetext TeamRocketBaseB3FLockedDoorNeedsPasswordText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "TeamRocketBaseB3FLockedDoorNeedsPasswordText"
+          ],
+          "raw": "writetext TeamRocketBaseB3FLockedDoorNeedsPasswordText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "TeamRocketBaseB3FLockedDoorNeedsPasswordText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FLockedDoor.OpenSesame": {
+      "raw_lines": [
+        "writetext TeamRocketBaseB3FLockedDoorOpenSesameText",
+        "waitbutton",
+        "playsound SFX_ENTER_DOOR",
+        "changeblock 10, 8, $07",
+        "refreshmap",
+        "closetext",
+        "setevent EVENT_OPENED_DOOR_TO_GIOVANNIS_OFFICE",
+        "waitsfx",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "TeamRocketBaseB3FLockedDoorOpenSesameText"
+          ],
+          "raw": "writetext TeamRocketBaseB3FLockedDoorOpenSesameText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "10",
+            "8",
+            "$07"
+          ],
+          "raw": "changeblock 10, 8, $07"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_OPENED_DOOR_TO_GIOVANNIS_OFFICE"
+          ],
+          "raw": "setevent EVENT_OPENED_DOOR_TO_GIOVANNIS_OFFICE"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "TeamRocketBaseB3FLockedDoorOpenSesameText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FOathScript": {
+      "raw_lines": [
+        "jumpstd TeamRocketOathScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "TeamRocketOathScript"
+          ],
+          "raw": "jumpstd TeamRocketOathScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "TeamRocketOathScript"
+      ]
+    },
+    "TeamRocketBaseB3FProtein": {
+      "raw_lines": [
+        "itemball PROTEIN"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "PROTEIN"
+          ],
+          "raw": "itemball PROTEIN"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "TeamRocketBaseB3FXSpecial",
+      "label_refs": [
+        "TeamRocketBaseB3FXSpecial"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FXSpecial": {
+      "raw_lines": [
+        "itemball X_SPECIAL"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "X_SPECIAL"
+          ],
+          "raw": "itemball X_SPECIAL"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "TeamRocketBaseB3FFullHeal",
+      "label_refs": [
+        "TeamRocketBaseB3FFullHeal"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FFullHeal": {
+      "raw_lines": [
+        "itemball FULL_HEAL"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "FULL_HEAL"
+          ],
+          "raw": "itemball FULL_HEAL"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "TeamRocketBaseB3FIceHeal",
+      "label_refs": [
+        "TeamRocketBaseB3FIceHeal"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FIceHeal": {
+      "raw_lines": [
+        "itemball ICE_HEAL"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "ICE_HEAL"
+          ],
+          "raw": "itemball ICE_HEAL"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "TeamRocketBaseB3FUltraBall",
+      "label_refs": [
+        "TeamRocketBaseB3FUltraBall"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FUltraBall": {
+      "raw_lines": [
+        "itemball ULTRA_BALL"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "ULTRA_BALL"
+          ],
+          "raw": "itemball ULTRA_BALL"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "TeamRocketBaseB3F_MapEvents",
+      "label_refs": [
+        "TeamRocketBaseB3F_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  2, TEAM_ROCKET_BASE_B2F, 2",
+        "warp_event 27,  2, TEAM_ROCKET_BASE_B2F, 3",
+        "warp_event  3,  6, TEAM_ROCKET_BASE_B2F, 4",
+        "warp_event 27, 14, TEAM_ROCKET_BASE_B2F, 5",
+        "def_coord_events",
+        "coord_event 10,  8, SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS, RocketBaseBossLeft",
+        "coord_event 11,  8, SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS, RocketBaseBossRight",
+        "coord_event  8, 10, SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER, RocketBaseRival",
+        "def_bg_events",
+        "bg_event 10,  9, BGEVENT_IFNOTSET, TeamRocketBaseB3FLockedDoor",
+        "bg_event 11,  9, BGEVENT_IFNOTSET, TeamRocketBaseB3FLockedDoor",
+        "bg_event 10,  1, BGEVENT_READ, TeamRocketBaseB3FOathScript",
+        "bg_event 11,  1, BGEVENT_READ, TeamRocketBaseB3FOathScript",
+        "bg_event 12,  1, BGEVENT_READ, TeamRocketBaseB3FOathScript",
+        "bg_event 13,  1, BGEVENT_READ, TeamRocketBaseB3FOathScript",
+        "bg_event  4, 13, BGEVENT_READ, TeamRocketBaseB3FOathScript",
+        "bg_event  5, 13, BGEVENT_READ, TeamRocketBaseB3FOathScript",
+        "bg_event  6, 13, BGEVENT_READ, TeamRocketBaseB3FOathScript",
+        "bg_event  7, 13, BGEVENT_READ, TeamRocketBaseB3FOathScript",
+        "def_object_events",
+        "object_event 25, 14, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LanceGetPasswordScript, EVENT_TEAM_ROCKET_BASE_B3F_LANCE_PASSWORDS",
+        "object_event  8,  3, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_B3F_EXECUTIVE",
+        "object_event  7,  2, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RocketBaseMurkrow, EVENT_TEAM_ROCKET_BASE_POPULATION",
+        "object_event 21,  7, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, SlowpokeTailGrunt, EVENT_TEAM_ROCKET_BASE_POPULATION",
+        "object_event  5, 14, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, RaticateTailGrunt, EVENT_TEAM_ROCKET_BASE_POPULATION",
+        "object_event 23, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerScientistRoss, EVENT_TEAM_ROCKET_BASE_POPULATION",
+        "object_event 11, 15, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerScientistMitch, EVENT_TEAM_ROCKET_BASE_POPULATION",
+        "object_event 24, 14, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TeamRocketBaseB3FRocketScript, EVENT_TEAM_ROCKET_BASE_POPULATION",
+        "object_event  4,  5, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_TEAM_ROCKET_BASE",
+        "object_event  1, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB3FProtein, EVENT_TEAM_ROCKET_BASE_B3F_PROTEIN",
+        "object_event  3, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB3FXSpecial, EVENT_TEAM_ROCKET_BASE_B3F_X_SPECIAL",
+        "object_event 28,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB3FFullHeal, EVENT_TEAM_ROCKET_BASE_B3F_FULL_HEAL",
+        "object_event 17,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB3FIceHeal, EVENT_TEAM_ROCKET_BASE_B3F_ICE_HEAL",
+        "object_event 14, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB3FUltraBall, EVENT_TEAM_ROCKET_BASE_B3F_ULTRA_BALL"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "2",
+            "TEAM_ROCKET_BASE_B2F",
+            "2"
+          ],
+          "raw": "warp_event  3,  2, TEAM_ROCKET_BASE_B2F, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "27",
+            "2",
+            "TEAM_ROCKET_BASE_B2F",
+            "3"
+          ],
+          "raw": "warp_event 27,  2, TEAM_ROCKET_BASE_B2F, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "6",
+            "TEAM_ROCKET_BASE_B2F",
+            "4"
+          ],
+          "raw": "warp_event  3,  6, TEAM_ROCKET_BASE_B2F, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "27",
+            "14",
+            "TEAM_ROCKET_BASE_B2F",
+            "5"
+          ],
+          "raw": "warp_event 27, 14, TEAM_ROCKET_BASE_B2F, 5"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "10",
+            "8",
+            "SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS",
+            "RocketBaseBossLeft"
+          ],
+          "raw": "coord_event 10,  8, SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS, RocketBaseBossLeft"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "11",
+            "8",
+            "SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS",
+            "RocketBaseBossRight"
+          ],
+          "raw": "coord_event 11,  8, SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS, RocketBaseBossRight"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "8",
+            "10",
+            "SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER",
+            "RocketBaseRival"
+          ],
+          "raw": "coord_event  8, 10, SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER, RocketBaseRival"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "10",
+            "9",
+            "BGEVENT_IFNOTSET",
+            "TeamRocketBaseB3FLockedDoor"
+          ],
+          "raw": "bg_event 10,  9, BGEVENT_IFNOTSET, TeamRocketBaseB3FLockedDoor"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "11",
+            "9",
+            "BGEVENT_IFNOTSET",
+            "TeamRocketBaseB3FLockedDoor"
+          ],
+          "raw": "bg_event 11,  9, BGEVENT_IFNOTSET, TeamRocketBaseB3FLockedDoor"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "10",
+            "1",
+            "BGEVENT_READ",
+            "TeamRocketBaseB3FOathScript"
+          ],
+          "raw": "bg_event 10,  1, BGEVENT_READ, TeamRocketBaseB3FOathScript"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "11",
+            "1",
+            "BGEVENT_READ",
+            "TeamRocketBaseB3FOathScript"
+          ],
+          "raw": "bg_event 11,  1, BGEVENT_READ, TeamRocketBaseB3FOathScript"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "12",
+            "1",
+            "BGEVENT_READ",
+            "TeamRocketBaseB3FOathScript"
+          ],
+          "raw": "bg_event 12,  1, BGEVENT_READ, TeamRocketBaseB3FOathScript"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "13",
+            "1",
+            "BGEVENT_READ",
+            "TeamRocketBaseB3FOathScript"
+          ],
+          "raw": "bg_event 13,  1, BGEVENT_READ, TeamRocketBaseB3FOathScript"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "4",
+            "13",
+            "BGEVENT_READ",
+            "TeamRocketBaseB3FOathScript"
+          ],
+          "raw": "bg_event  4, 13, BGEVENT_READ, TeamRocketBaseB3FOathScript"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "5",
+            "13",
+            "BGEVENT_READ",
+            "TeamRocketBaseB3FOathScript"
+          ],
+          "raw": "bg_event  5, 13, BGEVENT_READ, TeamRocketBaseB3FOathScript"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "6",
+            "13",
+            "BGEVENT_READ",
+            "TeamRocketBaseB3FOathScript"
+          ],
+          "raw": "bg_event  6, 13, BGEVENT_READ, TeamRocketBaseB3FOathScript"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "7",
+            "13",
+            "BGEVENT_READ",
+            "TeamRocketBaseB3FOathScript"
+          ],
+          "raw": "bg_event  7, 13, BGEVENT_READ, TeamRocketBaseB3FOathScript"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "25",
+            "14",
+            "SPRITE_LANCE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "LanceGetPasswordScript",
+            "EVENT_TEAM_ROCKET_BASE_B3F_LANCE_PASSWORDS"
+          ],
+          "raw": "object_event 25, 14, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LanceGetPasswordScript, EVENT_TEAM_ROCKET_BASE_B3F_LANCE_PASSWORDS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "3",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_TEAM_ROCKET_BASE_B3F_EXECUTIVE"
+          ],
+          "raw": "object_event  8,  3, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_B3F_EXECUTIVE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "2",
+            "SPRITE_MOLTRES",
+            "SPRITEMOVEDATA_POKEMON",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RocketBaseMurkrow",
+            "EVENT_TEAM_ROCKET_BASE_POPULATION"
+          ],
+          "raw": "object_event  7,  2, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RocketBaseMurkrow, EVENT_TEAM_ROCKET_BASE_POPULATION"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "21",
+            "7",
+            "SPRITE_ROCKET_GIRL",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "0",
+            "SlowpokeTailGrunt",
+            "EVENT_TEAM_ROCKET_BASE_POPULATION"
+          ],
+          "raw": "object_event 21,  7, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, SlowpokeTailGrunt, EVENT_TEAM_ROCKET_BASE_POPULATION"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "14",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_SPINRANDOM_FAST",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "RaticateTailGrunt",
+            "EVENT_TEAM_ROCKET_BASE_POPULATION"
+          ],
+          "raw": "object_event  5, 14, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, RaticateTailGrunt, EVENT_TEAM_ROCKET_BASE_POPULATION"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "23",
+            "11",
+            "SPRITE_SCIENTIST",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "0",
+            "TrainerScientistRoss",
+            "EVENT_TEAM_ROCKET_BASE_POPULATION"
+          ],
+          "raw": "object_event 23, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerScientistRoss, EVENT_TEAM_ROCKET_BASE_POPULATION"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "11",
+            "15",
+            "SPRITE_SCIENTIST",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerScientistMitch",
+            "EVENT_TEAM_ROCKET_BASE_POPULATION"
+          ],
+          "raw": "object_event 11, 15, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerScientistMitch, EVENT_TEAM_ROCKET_BASE_POPULATION"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "24",
+            "14",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "TeamRocketBaseB3FRocketScript",
+            "EVENT_TEAM_ROCKET_BASE_POPULATION"
+          ],
+          "raw": "object_event 24, 14, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TeamRocketBaseB3FRocketScript, EVENT_TEAM_ROCKET_BASE_POPULATION"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "5",
+            "SPRITE_RIVAL",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_RIVAL_TEAM_ROCKET_BASE"
+          ],
+          "raw": "object_event  4,  5, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_TEAM_ROCKET_BASE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "12",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "TeamRocketBaseB3FProtein",
+            "EVENT_TEAM_ROCKET_BASE_B3F_PROTEIN"
+          ],
+          "raw": "object_event  1, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB3FProtein, EVENT_TEAM_ROCKET_BASE_B3F_PROTEIN"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "12",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "TeamRocketBaseB3FXSpecial",
+            "EVENT_TEAM_ROCKET_BASE_B3F_X_SPECIAL"
+          ],
+          "raw": "object_event  3, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB3FXSpecial, EVENT_TEAM_ROCKET_BASE_B3F_X_SPECIAL"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "28",
+            "9",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "TeamRocketBaseB3FFullHeal",
+            "EVENT_TEAM_ROCKET_BASE_B3F_FULL_HEAL"
+          ],
+          "raw": "object_event 28,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB3FFullHeal, EVENT_TEAM_ROCKET_BASE_B3F_FULL_HEAL"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "17",
+            "2",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "TeamRocketBaseB3FIceHeal",
+            "EVENT_TEAM_ROCKET_BASE_B3F_ICE_HEAL"
+          ],
+          "raw": "object_event 17,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB3FIceHeal, EVENT_TEAM_ROCKET_BASE_B3F_ICE_HEAL"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "14",
+            "10",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "TeamRocketBaseB3FUltraBall",
+            "EVENT_TEAM_ROCKET_BASE_B3F_ULTRA_BALL"
+          ],
+          "raw": "object_event 14, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB3FUltraBall, EVENT_TEAM_ROCKET_BASE_B3F_ULTRA_BALL"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "LanceGetPasswordText": {
+      "raw_lines": [
+        "text \"LANCE: It takes\"",
+        "line \"two passwords to\"",
+        "para \"get into the\"",
+        "line \"boss's quarters.\"",
+        "para \"Those passwords\"",
+        "line \"are known only to\"",
+        "cont \"a few ROCKETS.\"",
+        "para \"That ROCKET there\"",
+        "line \"very graciously\"",
+        "cont \"told me so.\"",
+        "para \"<PLAY_G>, let's go\"",
+        "line \"get the passwords.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "LANCE: It takes"
+        },
+        {
+          "command": "line",
+          "value": "two passwords to"
+        },
+        {
+          "command": "para",
+          "value": "get into the"
+        },
+        {
+          "command": "line",
+          "value": "boss's quarters."
+        },
+        {
+          "command": "para",
+          "value": "Those passwords"
+        },
+        {
+          "command": "line",
+          "value": "are known only to"
+        },
+        {
+          "command": "cont",
+          "value": "a few ROCKETS."
+        },
+        {
+          "command": "para",
+          "value": "That ROCKET there"
+        },
+        {
+          "command": "line",
+          "value": "very graciously"
+        },
+        {
+          "command": "cont",
+          "value": "told me so."
+        },
+        {
+          "command": "para",
+          "value": "<PLAY_G>, let's go"
+        },
+        {
+          "command": "line",
+          "value": "get the passwords."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TeamRocketBaseB3FRocketText": {
+      "raw_lines": [
+        "text \"Urrggh\u2026 The guy\"",
+        "line \"in the cape is\"",
+        "cont \"incredibly tough\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Urrggh\u2026 The guy"
+        },
+        {
+          "command": "line",
+          "value": "in the cape is"
+        },
+        {
+          "command": "cont",
+          "value": "incredibly tough\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RocketBaseRivalText": {
+      "raw_lines": [
+        "text \"\u2026\"",
+        "para \"Didn't I tell you\"",
+        "line \"that I was going\"",
+        "para \"to destroy TEAM\"",
+        "line \"ROCKET?\"",
+        "para \"\u2026Tell me, who was\"",
+        "line \"the guy in the\"",
+        "para \"cape who used\"",
+        "line \"dragon #MON?\"",
+        "para \"My #MON were no\"",
+        "line \"match at all.\"",
+        "para \"I don't care that\"",
+        "line \"I lost. I can beat\"",
+        "para \"him by getting\"",
+        "line \"stronger #MON.\"",
+        "para \"It's what he said\"",
+        "line \"that bothers me\u2026\"",
+        "para \"He told me that\"",
+        "line \"I don't love and\"",
+        "para \"trust my #MON\"",
+        "line \"enough.\"",
+        "para \"I'm furious that I\"",
+        "line \"lost to a bleeding\"",
+        "cont \"heart like him.\"",
+        "para \"\u2026Humph! I don't\"",
+        "line \"have the time for\"",
+        "cont \"the likes of you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Didn't I tell you"
+        },
+        {
+          "command": "line",
+          "value": "that I was going"
+        },
+        {
+          "command": "para",
+          "value": "to destroy TEAM"
+        },
+        {
+          "command": "line",
+          "value": "ROCKET?"
+        },
+        {
+          "command": "para",
+          "value": "\u2026Tell me, who was"
+        },
+        {
+          "command": "line",
+          "value": "the guy in the"
+        },
+        {
+          "command": "para",
+          "value": "cape who used"
+        },
+        {
+          "command": "line",
+          "value": "dragon #MON?"
+        },
+        {
+          "command": "para",
+          "value": "My #MON were no"
+        },
+        {
+          "command": "line",
+          "value": "match at all."
+        },
+        {
+          "command": "para",
+          "value": "I don't care that"
+        },
+        {
+          "command": "line",
+          "value": "I lost. I can beat"
+        },
+        {
+          "command": "para",
+          "value": "him by getting"
+        },
+        {
+          "command": "line",
+          "value": "stronger #MON."
+        },
+        {
+          "command": "para",
+          "value": "It's what he said"
+        },
+        {
+          "command": "line",
+          "value": "that bothers me\u2026"
+        },
+        {
+          "command": "para",
+          "value": "He told me that"
+        },
+        {
+          "command": "line",
+          "value": "I don't love and"
+        },
+        {
+          "command": "para",
+          "value": "trust my #MON"
+        },
+        {
+          "command": "line",
+          "value": "enough."
+        },
+        {
+          "command": "para",
+          "value": "I'm furious that I"
+        },
+        {
+          "command": "line",
+          "value": "lost to a bleeding"
+        },
+        {
+          "command": "cont",
+          "value": "heart like him."
+        },
+        {
+          "command": "para",
+          "value": "\u2026Humph! I don't"
+        },
+        {
+          "command": "line",
+          "value": "have the time for"
+        },
+        {
+          "command": "cont",
+          "value": "the likes of you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ExecutiveM4BeforeText": {
+      "raw_lines": [
+        "text \"What? Who are you?\"",
+        "line \"This is the office\"",
+        "para \"of our leader,\"",
+        "line \"GIOVANNI.\"",
+        "para \"Since disbanding\"",
+        "line \"TEAM ROCKET three\"",
+        "para \"years ago, he has\"",
+        "line \"been in training.\"",
+        "para \"But we're certain\"",
+        "line \"he will be back\"",
+        "para \"some day to assume\"",
+        "line \"command again.\"",
+        "para \"That's why we're\"",
+        "line \"standing guard.\"",
+        "para \"I won't let any-\"",
+        "line \"one disturb this\"",
+        "cont \"place!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What? Who are you?"
+        },
+        {
+          "command": "line",
+          "value": "This is the office"
+        },
+        {
+          "command": "para",
+          "value": "of our leader,"
+        },
+        {
+          "command": "line",
+          "value": "GIOVANNI."
+        },
+        {
+          "command": "para",
+          "value": "Since disbanding"
+        },
+        {
+          "command": "line",
+          "value": "TEAM ROCKET three"
+        },
+        {
+          "command": "para",
+          "value": "years ago, he has"
+        },
+        {
+          "command": "line",
+          "value": "been in training."
+        },
+        {
+          "command": "para",
+          "value": "But we're certain"
+        },
+        {
+          "command": "line",
+          "value": "he will be back"
+        },
+        {
+          "command": "para",
+          "value": "some day to assume"
+        },
+        {
+          "command": "line",
+          "value": "command again."
+        },
+        {
+          "command": "para",
+          "value": "That's why we're"
+        },
+        {
+          "command": "line",
+          "value": "standing guard."
+        },
+        {
+          "command": "para",
+          "value": "I won't let any-"
+        },
+        {
+          "command": "line",
+          "value": "one disturb this"
+        },
+        {
+          "command": "cont",
+          "value": "place!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ExecutiveM4BeatenText": {
+      "raw_lines": [
+        "text \"I\u2026 I couldn't do a\"",
+        "line \"thing\u2026\"",
+        "para \"GIOVANNI, please\"",
+        "line \"forgive me\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I\u2026 I couldn't do a"
+        },
+        {
+          "command": "line",
+          "value": "thing\u2026"
+        },
+        {
+          "command": "para",
+          "value": "GIOVANNI, please"
+        },
+        {
+          "command": "line",
+          "value": "forgive me\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ExecutiveM4AfterText": {
+      "raw_lines": [
+        "text \"No, I can't let\"",
+        "line \"this affect me.\"",
+        "para \"I have to inform\"",
+        "line \"the others\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "No, I can't let"
+        },
+        {
+          "command": "line",
+          "value": "this affect me."
+        },
+        {
+          "command": "para",
+          "value": "I have to inform"
+        },
+        {
+          "command": "line",
+          "value": "the others\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RocketBaseMurkrowText": {
+      "raw_lines": [
+        "text \"MURKROW: The\"",
+        "line \"password is\u2026\"",
+        "para \"HAIL GIOVANNI.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MURKROW: The"
+        },
+        {
+          "command": "line",
+          "value": "password is\u2026"
+        },
+        {
+          "command": "para",
+          "value": "HAIL GIOVANNI."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntF5SeenText": {
+      "raw_lines": [
+        "text \"Do I know the\"",
+        "line \"password?\"",
+        "para \"Maybe.\"",
+        "para \"But no weakling's\"",
+        "line \"going to get it!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Do I know the"
+        },
+        {
+          "command": "line",
+          "value": "password?"
+        },
+        {
+          "command": "para",
+          "value": "Maybe."
+        },
+        {
+          "command": "para",
+          "value": "But no weakling's"
+        },
+        {
+          "command": "line",
+          "value": "going to get it!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntF5BeatenText": {
+      "raw_lines": [
+        "text \"All right. Stop.\"",
+        "line \"I'll tell you.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "All right. Stop."
+        },
+        {
+          "command": "line",
+          "value": "I'll tell you."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntF5AfterBattleText": {
+      "raw_lines": [
+        "text \"The password to\"",
+        "line \"the boss's room is\"",
+        "para \"SLOWPOKETAIL.\"",
+        "para \"But it's useless\"",
+        "line \"unless you have\"",
+        "cont \"two passwords.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The password to"
+        },
+        {
+          "command": "line",
+          "value": "the boss's room is"
+        },
+        {
+          "command": "para",
+          "value": "SLOWPOKETAIL."
+        },
+        {
+          "command": "para",
+          "value": "But it's useless"
+        },
+        {
+          "command": "line",
+          "value": "unless you have"
+        },
+        {
+          "command": "cont",
+          "value": "two passwords."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM28SeenText": {
+      "raw_lines": [
+        "text \"Hyuck-hyuck-hyuck!\"",
+        "para \"You're challenging\"",
+        "line \"me to a battle?\"",
+        "para \"Hah! You're nuts,\"",
+        "line \"but you have guts!\"",
+        "para \"I like that!\"",
+        "para \"If you can beat\"",
+        "line \"me, I'll tell you\"",
+        "para \"a password to the\"",
+        "line \"boss's room!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hyuck-hyuck-hyuck!"
+        },
+        {
+          "command": "para",
+          "value": "You're challenging"
+        },
+        {
+          "command": "line",
+          "value": "me to a battle?"
+        },
+        {
+          "command": "para",
+          "value": "Hah! You're nuts,"
+        },
+        {
+          "command": "line",
+          "value": "but you have guts!"
+        },
+        {
+          "command": "para",
+          "value": "I like that!"
+        },
+        {
+          "command": "para",
+          "value": "If you can beat"
+        },
+        {
+          "command": "line",
+          "value": "me, I'll tell you"
+        },
+        {
+          "command": "para",
+          "value": "a password to the"
+        },
+        {
+          "command": "line",
+          "value": "boss's room!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM28BeatenText": {
+      "raw_lines": [
+        "text \"Hyuck-hyuck-hyuck!\"",
+        "line \"You're good!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hyuck-hyuck-hyuck!"
+        },
+        {
+          "command": "line",
+          "value": "You're good!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM28AfterBattleText": {
+      "raw_lines": [
+        "text \"Hyuck-hyuck-hyuck!\"",
+        "para \"The password to\"",
+        "line \"the boss's room\u2026\"",
+        "para \"Uh\u2026, I think it is\"",
+        "line \"RATICATE TAIL.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hyuck-hyuck-hyuck!"
+        },
+        {
+          "command": "para",
+          "value": "The password to"
+        },
+        {
+          "command": "line",
+          "value": "the boss's room\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Uh\u2026, I think it is"
+        },
+        {
+          "command": "line",
+          "value": "RATICATE TAIL."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ScientistRossSeenText": {
+      "raw_lines": [
+        "text \"I used to work for\"",
+        "line \"SILPH, but now I\"",
+        "para \"run research for\"",
+        "line \"TEAM ROCKET.\"",
+        "para \"A meddlesome child\"",
+        "line \"like you needs to\"",
+        "cont \"be punished.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I used to work for"
+        },
+        {
+          "command": "line",
+          "value": "SILPH, but now I"
+        },
+        {
+          "command": "para",
+          "value": "run research for"
+        },
+        {
+          "command": "line",
+          "value": "TEAM ROCKET."
+        },
+        {
+          "command": "para",
+          "value": "A meddlesome child"
+        },
+        {
+          "command": "line",
+          "value": "like you needs to"
+        },
+        {
+          "command": "cont",
+          "value": "be punished."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ScientistRossBeatenText": {
+      "raw_lines": [
+        "text \"A mere tactical\"",
+        "line \"error cost me\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A mere tactical"
+        },
+        {
+          "command": "line",
+          "value": "error cost me\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ScientistRossAfterBattleText": {
+      "raw_lines": [
+        "text \"A radio signal\"",
+        "line \"that drives #-\"",
+        "cont \"MON mad\u2026\"",
+        "para \"My experiment is a\"",
+        "line \"complete success.\"",
+        "para \"My promotion is\"",
+        "line \"assured. This loss\"",
+        "para \"means absolutely\"",
+        "line \"nothing.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A radio signal"
+        },
+        {
+          "command": "line",
+          "value": "that drives #-"
+        },
+        {
+          "command": "cont",
+          "value": "MON mad\u2026"
+        },
+        {
+          "command": "para",
+          "value": "My experiment is a"
+        },
+        {
+          "command": "line",
+          "value": "complete success."
+        },
+        {
+          "command": "para",
+          "value": "My promotion is"
+        },
+        {
+          "command": "line",
+          "value": "assured. This loss"
+        },
+        {
+          "command": "para",
+          "value": "means absolutely"
+        },
+        {
+          "command": "line",
+          "value": "nothing."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ScientistMitchSeenText": {
+      "raw_lines": [
+        "text \"I don't care that\"",
+        "line \"#MON are hurt\"",
+        "cont \"by our experiment.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I don't care that"
+        },
+        {
+          "command": "line",
+          "value": "#MON are hurt"
+        },
+        {
+          "command": "cont",
+          "value": "by our experiment."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ScientistMitchBeatenText": {
+      "raw_lines": [
+        "text \"Thinking is my\"",
+        "line \"strong suit, not\"",
+        "cont \"battling.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Thinking is my"
+        },
+        {
+          "command": "line",
+          "value": "strong suit, not"
+        },
+        {
+          "command": "cont",
+          "value": "battling."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ScientistMitchAfterBattleText": {
+      "raw_lines": [
+        "text \"If we turn up the\"",
+        "line \"power of our radio\"",
+        "para \"signal for broad-\"",
+        "line \"cast nationwide\u2026\"",
+        "para \"The very thought\"",
+        "line \"excites me!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If we turn up the"
+        },
+        {
+          "command": "line",
+          "value": "power of our radio"
+        },
+        {
+          "command": "para",
+          "value": "signal for broad-"
+        },
+        {
+          "command": "line",
+          "value": "cast nationwide\u2026"
+        },
+        {
+          "command": "para",
+          "value": "The very thought"
+        },
+        {
+          "command": "line",
+          "value": "excites me!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TeamRocketBaseB3FLockedDoorNeedsPasswordText": {
+      "raw_lines": [
+        "text \"The door's closed\u2026\"",
+        "para \"It needs two\"",
+        "line \"passwords to open.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The door's closed\u2026"
+        },
+        {
+          "command": "para",
+          "value": "It needs two"
+        },
+        {
+          "command": "line",
+          "value": "passwords to open."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TeamRocketBaseB3FLockedDoorOpenSesameText": {
+      "raw_lines": [
+        "text \"The door's closed\u2026\"",
+        "para \"<PLAYER> entered\"",
+        "line \"the two passwords.\"",
+        "para \"The door opened!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The door's closed\u2026"
+        },
+        {
+          "command": "para",
+          "value": "<PLAYER> entered"
+        },
+        {
+          "command": "line",
+          "value": "the two passwords."
+        },
+        {
+          "command": "para",
+          "value": "The door opened!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "RocketBaseLanceApproachesPlayerMovement": {
+      "raw_lines": [
+        "step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "RocketBaseLanceLeavesMovement": {
+      "raw_lines": [
+        "step DOWN",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "RocketBasePlayerApproachesBossLeftMovement": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step UP",
+        "step LEFT",
+        "step LEFT",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "RocketBasePlayerApproachesBossRightMovement": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step LEFT",
+        "step UP",
+        "step LEFT",
+        "step LEFT",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "RocketBaseBossApproachesPlayerMovement": {
+      "raw_lines": [
+        "step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "RocketBaseBossHitsTableMovement": {
+      "raw_lines": [
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "RocketBaseBossLeavesMovement": {
+      "raw_lines": [
+        "fix_facing",
+        "fast_jump_step LEFT",
+        "remove_fixed_facing",
+        "step_sleep 8",
+        "step_sleep 8",
+        "slow_step RIGHT",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step RIGHT",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "big_step LEFT",
+        "big_step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "fix_facing",
+          "args": []
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "remove_fixed_facing",
+          "args": []
+        },
+        {
+          "command": "step_sleep",
+          "args": [
+            "8"
+          ]
+        },
+        {
+          "command": "step_sleep",
+          "args": [
+            "8"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "RocketBaseRivalEnterMovement": {
+      "raw_lines": [
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "RocketBaseRivalLeavesMovement": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "RocketBaseRivalShovesPlayerMovement": {
+      "raw_lines": [
+        "fix_facing",
+        "big_step RIGHT",
+        "remove_fixed_facing",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "fix_facing",
+          "args": []
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "remove_fixed_facing",
+          "args": []
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "TeamRocketOathScript"
+  ],
+  "dependencies": {
+    "TeamRocketBaseB3F_MapScripts": {
+      "label_refs": [
+        "TeamRocketBaseB3FLanceGetsPasswordScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FLanceGetsPasswordScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FNoop3Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FCheckGiovanniDoorCallback": {
+      "label_refs": [
+        "TeamRocketBaseB3FCheckGiovanniDoorCallback.OpenSesame"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FCheckGiovanniDoorCallback.OpenSesame": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LanceGetPasswordScript": {
+      "label_refs": [],
+      "text_refs": [
+        "LanceGetPasswordText"
+      ],
+      "movement_refs": [
+        "RocketBaseLanceApproachesPlayerMovement",
+        "RocketBaseLanceLeavesMovement"
+      ],
+      "scene_refs": [
+        "SCENE_TEAMROCKETBASEB3F_RIVAL_ENCOUNTER"
+      ],
+      "std_calls": []
+    },
+    "RocketBaseRival": {
+      "label_refs": [],
+      "text_refs": [
+        "RocketBaseRivalText"
+      ],
+      "movement_refs": [
+        "RocketBaseRivalEnterMovement",
+        "RocketBaseRivalLeavesMovement",
+        "RocketBaseRivalShovesPlayerMovement"
+      ],
+      "scene_refs": [
+        "SCENE_TEAMROCKETBASEB3F_ROCKET_BOSS"
+      ],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FRocketScript": {
+      "label_refs": [],
+      "text_refs": [
+        "TeamRocketBaseB3FRocketText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RocketBaseBossLeft": {
+      "label_refs": [
+        "RocketBaseBoss"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "RocketBasePlayerApproachesBossLeftMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RocketBaseBossRight": {
+      "label_refs": [
+        "RocketBaseBoss"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "RocketBasePlayerApproachesBossRightMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RocketBaseBoss": {
+      "label_refs": [],
+      "text_refs": [
+        "ExecutiveM4AfterText",
+        "ExecutiveM4BeforeText"
+      ],
+      "movement_refs": [
+        "RocketBaseBossApproachesPlayerMovement",
+        "RocketBaseBossHitsTableMovement",
+        "RocketBaseBossLeavesMovement"
+      ],
+      "scene_refs": [
+        "SCENE_TEAMROCKETBASEB3F_NOOP"
+      ],
+      "std_calls": []
+    },
+    "RocketBaseMurkrow": {
+      "label_refs": [],
+      "text_refs": [
+        "RocketBaseMurkrowText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SlowpokeTailGrunt": {
+      "label_refs": [
+        "GruntF5Script"
+      ],
+      "text_refs": [
+        "GruntF5BeatenText",
+        "GruntF5SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GruntF5Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GruntF5AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RaticateTailGrunt": {
+      "label_refs": [
+        "GruntM28Script"
+      ],
+      "text_refs": [
+        "GruntM28BeatenText",
+        "GruntM28SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GruntM28Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GruntM28AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerScientistRoss": {
+      "label_refs": [
+        "TrainerScientistRoss.Script"
+      ],
+      "text_refs": [
+        "ScientistRossBeatenText",
+        "ScientistRossSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerScientistRoss.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "ScientistRossAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerScientistMitch": {
+      "label_refs": [
+        "TrainerScientistMitch.Script"
+      ],
+      "text_refs": [
+        "ScientistMitchBeatenText",
+        "ScientistMitchSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerScientistMitch.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "ScientistMitchAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FLockedDoor": {
+      "label_refs": [
+        "TeamRocketBaseB3FLockedDoor.Script"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FLockedDoor.Script": {
+      "label_refs": [
+        "TeamRocketBaseB3FLockedDoor.NeedsPassword",
+        "TeamRocketBaseB3FLockedDoor.OpenSesame"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FLockedDoor.NeedsPassword": {
+      "label_refs": [],
+      "text_refs": [
+        "TeamRocketBaseB3FLockedDoorNeedsPasswordText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FLockedDoor.OpenSesame": {
+      "label_refs": [],
+      "text_refs": [
+        "TeamRocketBaseB3FLockedDoorOpenSesameText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FOathScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "TeamRocketOathScript"
+      ]
+    },
+    "TeamRocketBaseB3FProtein": {
+      "label_refs": [
+        "TeamRocketBaseB3FXSpecial"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FXSpecial": {
+      "label_refs": [
+        "TeamRocketBaseB3FFullHeal"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FFullHeal": {
+      "label_refs": [
+        "TeamRocketBaseB3FIceHeal"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FIceHeal": {
+      "label_refs": [
+        "TeamRocketBaseB3FUltraBall"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3FUltraBall": {
+      "label_refs": [
+        "TeamRocketBaseB3F_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeamRocketBaseB3F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 4,
+    "callbacks": 1,
+    "warp_events": 4,
+    "coord_events": 3,
+    "bg_events": 10,
+    "object_events": 14
+  }
+}

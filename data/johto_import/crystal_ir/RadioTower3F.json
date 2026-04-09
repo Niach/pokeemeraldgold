@@ -1,0 +1,2463 @@
+{
+  "crystal_map": "RadioTower3F",
+  "map_id": "RADIO_TOWER_3F",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 19,
+  "tileset": "TILESET_RADIO_TOWER",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_RADIO_TOWER",
+  "music": "RADIO_TOWER_MUSIC | MUSIC_GOLDENROD_CITY",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 9,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/RadioTower3F.blk",
+  "source_asm": "maps/RadioTower3F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_TILES",
+        "script": "RadioTower3FCardKeyShutterCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 0,
+        "y": 0,
+        "dest_map": "RADIO_TOWER_2F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 7,
+        "y": 0,
+        "dest_map": "RADIO_TOWER_4F",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 17,
+        "y": 0,
+        "dest_map": "RADIO_TOWER_4F",
+        "dest_warp_id": 4
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 3,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "RadioTower3FPersonnelSign"
+      },
+      {
+        "x": 9,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "RadioTower3FPokemonMusicSign"
+      },
+      {
+        "x": 14,
+        "y": 2,
+        "kind": "BGEVENT_UP",
+        "script": "CardKeySlotScript"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 7,
+        "y": 4,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RadioTower3FSuperNerdScript",
+        "flag": "EVENT_RADIO_TOWER_CIVILIANS_AFTER"
+      },
+      {
+        "x": 3,
+        "y": 4,
+        "sprite": "SPRITE_GYM_GUIDE",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_FAST",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RadioTower3FGymGuideScript",
+        "flag": -1
+      },
+      {
+        "x": 11,
+        "y": 3,
+        "sprite": "SPRITE_COOLTRAINER_F",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RadioTower3FCooltrainerFScript",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 1,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 2,
+        "script": "TrainerGruntM7",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 6,
+        "y": 2,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerGruntM8",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 16,
+        "y": 6,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerGruntM9",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 9,
+        "y": 6,
+        "sprite": "SPRITE_SCIENTIST",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 5,
+        "script": "TrainerScientistMarc",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      }
+    ]
+  },
+  "object_consts": [
+    "RADIOTOWER3F_SUPER_NERD",
+    "RADIOTOWER3F_GYM_GUIDE",
+    "RADIOTOWER3F_COOLTRAINER_F",
+    "RADIOTOWER3F_ROCKET1",
+    "RADIOTOWER3F_ROCKET2",
+    "RADIOTOWER3F_ROCKET3",
+    "RADIOTOWER3F_SCIENTIST"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "RadioTower3F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks",
+        "callback MAPCALLBACK_TILES, RadioTower3FCardKeyShutterCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_TILES",
+            "RadioTower3FCardKeyShutterCallback"
+          ],
+          "raw": "callback MAPCALLBACK_TILES, RadioTower3FCardKeyShutterCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "RadioTower3FCardKeyShutterCallback",
+      "label_refs": [
+        "RadioTower3FCardKeyShutterCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FCardKeyShutterCallback": {
+      "raw_lines": [
+        "checkevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER",
+        "iftrue .Change",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER"
+          ],
+          "raw": "checkevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RadioTower3FCardKeyShutterCallback.Change"
+          ],
+          "raw": "iftrue .Change"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "RadioTower3FCardKeyShutterCallback.Change"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FCardKeyShutterCallback.Change": {
+      "raw_lines": [
+        "changeblock 14, 2, $2a",
+        "changeblock 14, 4, $01",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "changeblock",
+          "args": [
+            "14",
+            "2",
+            "$2a"
+          ],
+          "raw": "changeblock 14, 2, $2a"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "14",
+            "4",
+            "$01"
+          ],
+          "raw": "changeblock 14, 4, $01"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "changeblock",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FSuperNerdScript": {
+      "raw_lines": [
+        "jumptextfaceplayer RadioTower3FSuperNerdText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "RadioTower3FSuperNerdText"
+          ],
+          "raw": "jumptextfaceplayer RadioTower3FSuperNerdText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower3FSuperNerdText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FGymGuideScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_CLEARED_RADIO_TOWER",
+        "iftrue .NoRockets",
+        "writetext RadioTower3FGymGuideText_Rockets",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_RADIO_TOWER"
+          ],
+          "raw": "checkevent EVENT_CLEARED_RADIO_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RadioTower3FGymGuideScript.NoRockets"
+          ],
+          "raw": "iftrue .NoRockets"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower3FGymGuideText_Rockets"
+          ],
+          "raw": "writetext RadioTower3FGymGuideText_Rockets"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "RadioTower3FGymGuideScript.NoRockets"
+      ],
+      "text_refs": [
+        "RadioTower3FGymGuideText_Rockets"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FGymGuideScript.NoRockets": {
+      "raw_lines": [
+        "writetext RadioTower3FGymGuideText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower3FGymGuideText"
+          ],
+          "raw": "writetext RadioTower3FGymGuideText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower3FGymGuideText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FCooltrainerFScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_SUNNY_DAY_FROM_RADIO_TOWER",
+        "iftrue .GotSunnyDay",
+        "checkevent EVENT_CLEARED_RADIO_TOWER",
+        "iftrue .NoRockets",
+        "checkevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER",
+        "iftrue .UsedCardKey",
+        "writetext RadioTower3FCooltrainerFPleaseSaveDirectorText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_SUNNY_DAY_FROM_RADIO_TOWER"
+          ],
+          "raw": "checkevent EVENT_GOT_SUNNY_DAY_FROM_RADIO_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RadioTower3FCooltrainerFScript.GotSunnyDay"
+          ],
+          "raw": "iftrue .GotSunnyDay"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_RADIO_TOWER"
+          ],
+          "raw": "checkevent EVENT_CLEARED_RADIO_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RadioTower3FCooltrainerFScript.NoRockets"
+          ],
+          "raw": "iftrue .NoRockets"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER"
+          ],
+          "raw": "checkevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RadioTower3FCooltrainerFScript.UsedCardKey"
+          ],
+          "raw": "iftrue .UsedCardKey"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower3FCooltrainerFPleaseSaveDirectorText"
+          ],
+          "raw": "writetext RadioTower3FCooltrainerFPleaseSaveDirectorText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "RadioTower3FCooltrainerFScript.GotSunnyDay",
+        "RadioTower3FCooltrainerFScript.NoRockets",
+        "RadioTower3FCooltrainerFScript.UsedCardKey"
+      ],
+      "text_refs": [
+        "RadioTower3FCooltrainerFPleaseSaveDirectorText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FCooltrainerFScript.UsedCardKey": {
+      "raw_lines": [
+        "writetext RadioTower3FCooltrainerFIsDirectorSafeText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower3FCooltrainerFIsDirectorSafeText"
+          ],
+          "raw": "writetext RadioTower3FCooltrainerFIsDirectorSafeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower3FCooltrainerFIsDirectorSafeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FCooltrainerFScript.NoRockets": {
+      "raw_lines": [
+        "writetext RadioTower3FCooltrainerFYoureMyHeroText",
+        "promptbutton",
+        "verbosegiveitem TM_SUNNY_DAY",
+        "iffalse .NoRoom",
+        "writetext RadioTower3FCooltrainerFItsSunnyDayText",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_GOT_SUNNY_DAY_FROM_RADIO_TOWER",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower3FCooltrainerFYoureMyHeroText"
+          ],
+          "raw": "writetext RadioTower3FCooltrainerFYoureMyHeroText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "TM_SUNNY_DAY"
+          ],
+          "raw": "verbosegiveitem TM_SUNNY_DAY"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "RadioTower3FCooltrainerFScript.NoRoom"
+          ],
+          "raw": "iffalse .NoRoom"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower3FCooltrainerFItsSunnyDayText"
+          ],
+          "raw": "writetext RadioTower3FCooltrainerFItsSunnyDayText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_SUNNY_DAY_FROM_RADIO_TOWER"
+          ],
+          "raw": "setevent EVENT_GOT_SUNNY_DAY_FROM_RADIO_TOWER"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "RadioTower3FCooltrainerFScript.NoRoom"
+      ],
+      "text_refs": [
+        "RadioTower3FCooltrainerFItsSunnyDayText",
+        "RadioTower3FCooltrainerFYoureMyHeroText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FCooltrainerFScript.GotSunnyDay": {
+      "raw_lines": [
+        "writetext RadioTower3FCooltrainerFYouWereMarvelousText",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower3FCooltrainerFYouWereMarvelousText"
+          ],
+          "raw": "writetext RadioTower3FCooltrainerFYouWereMarvelousText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "RadioTower3FCooltrainerFScript.NoRoom",
+      "label_refs": [
+        "RadioTower3FCooltrainerFScript.NoRoom"
+      ],
+      "text_refs": [
+        "RadioTower3FCooltrainerFYouWereMarvelousText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FCooltrainerFScript.NoRoom": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM7": {
+      "raw_lines": [
+        "trainer GRUNTM, GRUNTM_7, EVENT_BEAT_ROCKET_GRUNTM_7, GruntM7SeenText, GruntM7BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "GRUNTM",
+            "GRUNTM_7",
+            "EVENT_BEAT_ROCKET_GRUNTM_7",
+            "GruntM7SeenText",
+            "GruntM7BeatenText",
+            "0",
+            "TrainerGruntM7.Script"
+          ],
+          "raw": "trainer GRUNTM, GRUNTM_7, EVENT_BEAT_ROCKET_GRUNTM_7, GruntM7SeenText, GruntM7BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerGruntM7.Script",
+      "label_refs": [
+        "TrainerGruntM7.Script"
+      ],
+      "text_refs": [
+        "GruntM7BeatenText",
+        "GruntM7SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM7.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext GruntM7AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GruntM7AfterBattleText"
+          ],
+          "raw": "writetext GruntM7AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "GruntM7AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM8": {
+      "raw_lines": [
+        "trainer GRUNTM, GRUNTM_8, EVENT_BEAT_ROCKET_GRUNTM_8, GruntM8SeenText, GruntM8BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "GRUNTM",
+            "GRUNTM_8",
+            "EVENT_BEAT_ROCKET_GRUNTM_8",
+            "GruntM8SeenText",
+            "GruntM8BeatenText",
+            "0",
+            "TrainerGruntM8.Script"
+          ],
+          "raw": "trainer GRUNTM, GRUNTM_8, EVENT_BEAT_ROCKET_GRUNTM_8, GruntM8SeenText, GruntM8BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerGruntM8.Script",
+      "label_refs": [
+        "TrainerGruntM8.Script"
+      ],
+      "text_refs": [
+        "GruntM8BeatenText",
+        "GruntM8SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM8.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext GruntM8AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GruntM8AfterBattleText"
+          ],
+          "raw": "writetext GruntM8AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "GruntM8AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM9": {
+      "raw_lines": [
+        "trainer GRUNTM, GRUNTM_9, EVENT_BEAT_ROCKET_GRUNTM_9, GruntM9SeenText, GruntM9BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "GRUNTM",
+            "GRUNTM_9",
+            "EVENT_BEAT_ROCKET_GRUNTM_9",
+            "GruntM9SeenText",
+            "GruntM9BeatenText",
+            "0",
+            "TrainerGruntM9.Script"
+          ],
+          "raw": "trainer GRUNTM, GRUNTM_9, EVENT_BEAT_ROCKET_GRUNTM_9, GruntM9SeenText, GruntM9BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerGruntM9.Script",
+      "label_refs": [
+        "TrainerGruntM9.Script"
+      ],
+      "text_refs": [
+        "GruntM9BeatenText",
+        "GruntM9SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM9.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext GruntM9AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GruntM9AfterBattleText"
+          ],
+          "raw": "writetext GruntM9AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "GruntM9AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerScientistMarc": {
+      "raw_lines": [
+        "trainer SCIENTIST, MARC, EVENT_BEAT_SCIENTIST_MARC, ScientistMarcSeenText, ScientistMarcBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "SCIENTIST",
+            "MARC",
+            "EVENT_BEAT_SCIENTIST_MARC",
+            "ScientistMarcSeenText",
+            "ScientistMarcBeatenText",
+            "0",
+            "TrainerScientistMarc.Script"
+          ],
+          "raw": "trainer SCIENTIST, MARC, EVENT_BEAT_SCIENTIST_MARC, ScientistMarcSeenText, ScientistMarcBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerScientistMarc.Script",
+      "label_refs": [
+        "TrainerScientistMarc.Script"
+      ],
+      "text_refs": [
+        "ScientistMarcBeatenText",
+        "ScientistMarcSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerScientistMarc.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext ScientistMarcAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ScientistMarcAfterBattleText"
+          ],
+          "raw": "writetext ScientistMarcAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "ScientistMarcAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CardKeySlotScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext RadioTower3FCardKeySlotText",
+        "waitbutton",
+        "checkevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER",
+        "iftrue .UsedCardKey",
+        "checkitem CARD_KEY",
+        "iftrue .HaveCardKey"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower3FCardKeySlotText"
+          ],
+          "raw": "writetext RadioTower3FCardKeySlotText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER"
+          ],
+          "raw": "checkevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CardKeySlotScript.UsedCardKey"
+          ],
+          "raw": "iftrue .UsedCardKey"
+        },
+        {
+          "command": "checkitem",
+          "args": [
+            "CARD_KEY"
+          ],
+          "raw": "checkitem CARD_KEY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CardKeySlotScript.HaveCardKey"
+          ],
+          "raw": "iftrue .HaveCardKey"
+        }
+      ],
+      "first_command": "opentext",
+      "fallthrough_label": "CardKeySlotScript.UsedCardKey",
+      "label_refs": [
+        "CardKeySlotScript.HaveCardKey",
+        "CardKeySlotScript.UsedCardKey"
+      ],
+      "text_refs": [
+        "RadioTower3FCardKeySlotText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CardKeySlotScript.UsedCardKey": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CardKeySlotScript.HaveCardKey": {
+      "raw_lines": [
+        "writetext InsertedTheCardKeyText",
+        "waitbutton",
+        "setevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER",
+        "playsound SFX_ENTER_DOOR",
+        "changeblock 14, 2, $2a",
+        "changeblock 14, 4, $01",
+        "refreshmap",
+        "closetext",
+        "waitsfx",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "InsertedTheCardKeyText"
+          ],
+          "raw": "writetext InsertedTheCardKeyText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER"
+          ],
+          "raw": "setevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "14",
+            "2",
+            "$2a"
+          ],
+          "raw": "changeblock 14, 2, $2a"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "14",
+            "4",
+            "$01"
+          ],
+          "raw": "changeblock 14, 4, $01"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "InsertedTheCardKeyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FPersonnelSign": {
+      "raw_lines": [
+        "jumptext RadioTower3FPersonnelSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "RadioTower3FPersonnelSignText"
+          ],
+          "raw": "jumptext RadioTower3FPersonnelSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower3FPersonnelSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FPokemonMusicSign": {
+      "raw_lines": [
+        "jumptext RadioTower3FPokemonMusicSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "RadioTower3FPokemonMusicSignText"
+          ],
+          "raw": "jumptext RadioTower3FPokemonMusicSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower3FPokemonMusicSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  0,  0, RADIO_TOWER_2F, 1",
+        "warp_event  7,  0, RADIO_TOWER_4F, 2",
+        "warp_event 17,  0, RADIO_TOWER_4F, 4",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  3,  0, BGEVENT_READ, RadioTower3FPersonnelSign",
+        "bg_event  9,  0, BGEVENT_READ, RadioTower3FPokemonMusicSign",
+        "bg_event 14,  2, BGEVENT_UP, CardKeySlotScript",
+        "def_object_events",
+        "object_event  7,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RadioTower3FSuperNerdScript, EVENT_RADIO_TOWER_CIVILIANS_AFTER",
+        "object_event  3,  4, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower3FGymGuideScript, -1",
+        "object_event 11,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower3FCooltrainerFScript, -1",
+        "object_event  5,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntM7, EVENT_RADIO_TOWER_ROCKET_TAKEOVER",
+        "object_event  6,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM8, EVENT_RADIO_TOWER_ROCKET_TAKEOVER",
+        "object_event 16,  6, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM9, EVENT_RADIO_TOWER_ROCKET_TAKEOVER",
+        "object_event  9,  6, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerScientistMarc, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "0",
+            "RADIO_TOWER_2F",
+            "1"
+          ],
+          "raw": "warp_event  0,  0, RADIO_TOWER_2F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "7",
+            "0",
+            "RADIO_TOWER_4F",
+            "2"
+          ],
+          "raw": "warp_event  7,  0, RADIO_TOWER_4F, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "0",
+            "RADIO_TOWER_4F",
+            "4"
+          ],
+          "raw": "warp_event 17,  0, RADIO_TOWER_4F, 4"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "0",
+            "BGEVENT_READ",
+            "RadioTower3FPersonnelSign"
+          ],
+          "raw": "bg_event  3,  0, BGEVENT_READ, RadioTower3FPersonnelSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "9",
+            "0",
+            "BGEVENT_READ",
+            "RadioTower3FPokemonMusicSign"
+          ],
+          "raw": "bg_event  9,  0, BGEVENT_READ, RadioTower3FPokemonMusicSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "14",
+            "2",
+            "BGEVENT_UP",
+            "CardKeySlotScript"
+          ],
+          "raw": "bg_event 14,  2, BGEVENT_UP, CardKeySlotScript"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "4",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RadioTower3FSuperNerdScript",
+            "EVENT_RADIO_TOWER_CIVILIANS_AFTER"
+          ],
+          "raw": "object_event  7,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RadioTower3FSuperNerdScript, EVENT_RADIO_TOWER_CIVILIANS_AFTER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "4",
+            "SPRITE_GYM_GUIDE",
+            "SPRITEMOVEDATA_SPINRANDOM_FAST",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RadioTower3FGymGuideScript",
+            "-1"
+          ],
+          "raw": "object_event  3,  4, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower3FGymGuideScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "11",
+            "3",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RadioTower3FCooltrainerFScript",
+            "-1"
+          ],
+          "raw": "object_event 11,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower3FCooltrainerFScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "1",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_TRAINER",
+            "2",
+            "TrainerGruntM7",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event  5,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntM7, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "2",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerGruntM8",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event  6,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM8, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "16",
+            "6",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerGruntM9",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event 16,  6, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM9, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "6",
+            "SPRITE_SCIENTIST",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "5",
+            "TrainerScientistMarc",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event  9,  6, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerScientistMarc, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "RadioTower3FSuperNerdText": {
+      "raw_lines": [
+        "text \"We have recordings\"",
+        "line \"of the cries of\"",
+        "para \"all #MON that\"",
+        "line \"have been found.\"",
+        "para \"We must have about\"",
+        "line \"200 kinds.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We have recordings"
+        },
+        {
+          "command": "line",
+          "value": "of the cries of"
+        },
+        {
+          "command": "para",
+          "value": "all #MON that"
+        },
+        {
+          "command": "line",
+          "value": "have been found."
+        },
+        {
+          "command": "para",
+          "value": "We must have about"
+        },
+        {
+          "command": "line",
+          "value": "200 kinds."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower3FGymGuideText_Rockets": {
+      "raw_lines": [
+        "text \"To trainers, #-\"",
+        "line \"MON are their\"",
+        "cont \"beloved partners.\"",
+        "para \"It's terrible how\"",
+        "line \"TEAM ROCKET is\"",
+        "para \"trying to control\"",
+        "line \"#MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "To trainers, #-"
+        },
+        {
+          "command": "line",
+          "value": "MON are their"
+        },
+        {
+          "command": "cont",
+          "value": "beloved partners."
+        },
+        {
+          "command": "para",
+          "value": "It's terrible how"
+        },
+        {
+          "command": "line",
+          "value": "TEAM ROCKET is"
+        },
+        {
+          "command": "para",
+          "value": "trying to control"
+        },
+        {
+          "command": "line",
+          "value": "#MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower3FGymGuideText": {
+      "raw_lines": [
+        "text \"We run 24 hours a\"",
+        "line \"day to broadcast\"",
+        "para \"entertaining pro-\"",
+        "line \"grams.\"",
+        "para \"I'll do my best to\"",
+        "line \"run around the\"",
+        "cont \"clock too!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We run 24 hours a"
+        },
+        {
+          "command": "line",
+          "value": "day to broadcast"
+        },
+        {
+          "command": "para",
+          "value": "entertaining pro-"
+        },
+        {
+          "command": "line",
+          "value": "grams."
+        },
+        {
+          "command": "para",
+          "value": "I'll do my best to"
+        },
+        {
+          "command": "line",
+          "value": "run around the"
+        },
+        {
+          "command": "cont",
+          "value": "clock too!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower3FCooltrainerFPleaseSaveDirectorText": {
+      "raw_lines": [
+        "text \"The TEAM ROCKET\"",
+        "line \"boss has locked\"",
+        "cont \"himself in.\"",
+        "para \"But the DIRECTOR\"",
+        "line \"can open it.\"",
+        "para \"He's up on the\"",
+        "line \"fifth floor.\"",
+        "para \"Please save him!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The TEAM ROCKET"
+        },
+        {
+          "command": "line",
+          "value": "boss has locked"
+        },
+        {
+          "command": "cont",
+          "value": "himself in."
+        },
+        {
+          "command": "para",
+          "value": "But the DIRECTOR"
+        },
+        {
+          "command": "line",
+          "value": "can open it."
+        },
+        {
+          "command": "para",
+          "value": "He's up on the"
+        },
+        {
+          "command": "line",
+          "value": "fifth floor."
+        },
+        {
+          "command": "para",
+          "value": "Please save him!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower3FCooltrainerFIsDirectorSafeText": {
+      "raw_lines": [
+        "text \"Is the DIRECTOR\"",
+        "line \"safe?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Is the DIRECTOR"
+        },
+        {
+          "command": "line",
+          "value": "safe?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower3FCooltrainerFYoureMyHeroText": {
+      "raw_lines": [
+        "text \"Thank you!\"",
+        "line \"You're my hero!\"",
+        "para \"This is a token of\"",
+        "line \"my appreciation.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Thank you!"
+        },
+        {
+          "command": "line",
+          "value": "You're my hero!"
+        },
+        {
+          "command": "para",
+          "value": "This is a token of"
+        },
+        {
+          "command": "line",
+          "value": "my appreciation."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower3FCooltrainerFItsSunnyDayText": {
+      "raw_lines": [
+        "text \"It's SUNNY DAY.\"",
+        "line \"It powers up fire-\"",
+        "cont \"type moves for a\"",
+        "cont \"while.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's SUNNY DAY."
+        },
+        {
+          "command": "line",
+          "value": "It powers up fire-"
+        },
+        {
+          "command": "cont",
+          "value": "type moves for a"
+        },
+        {
+          "command": "cont",
+          "value": "while."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower3FCooltrainerFYouWereMarvelousText": {
+      "raw_lines": [
+        "text \"You were simply\"",
+        "line \"marvelous!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You were simply"
+        },
+        {
+          "command": "line",
+          "value": "marvelous!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM7SeenText": {
+      "raw_lines": [
+        "text \"I've been given\"",
+        "line \"strict orders.\"",
+        "para \"I'm to crush any-\"",
+        "line \"one who challenges\"",
+        "cont \"TEAM ROCKET!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I've been given"
+        },
+        {
+          "command": "line",
+          "value": "strict orders."
+        },
+        {
+          "command": "para",
+          "value": "I'm to crush any-"
+        },
+        {
+          "command": "line",
+          "value": "one who challenges"
+        },
+        {
+          "command": "cont",
+          "value": "TEAM ROCKET!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM7BeatenText": {
+      "raw_lines": [
+        "text \"What?!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What?!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM7AfterBattleText": {
+      "raw_lines": [
+        "text \"I failed in my\"",
+        "line \"duties\u2026\"",
+        "para \"I'll be docked pay\"",
+        "line \"for this\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I failed in my"
+        },
+        {
+          "command": "line",
+          "value": "duties\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I'll be docked pay"
+        },
+        {
+          "command": "line",
+          "value": "for this\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM8SeenText": {
+      "raw_lines": [
+        "text \"It feels great\"",
+        "line \"ordering #MON\"",
+        "cont \"to commit crimes.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It feels great"
+        },
+        {
+          "command": "line",
+          "value": "ordering #MON"
+        },
+        {
+          "command": "cont",
+          "value": "to commit crimes."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM8BeatenText": {
+      "raw_lines": [
+        "text \"You're kidding!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You're kidding!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM8AfterBattleText": {
+      "raw_lines": [
+        "text \"I feel lousy over\"",
+        "line \"losing!\"",
+        "para \"Darn it! I hate\"",
+        "line \"useless #MON!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I feel lousy over"
+        },
+        {
+          "command": "line",
+          "value": "losing!"
+        },
+        {
+          "command": "para",
+          "value": "Darn it! I hate"
+        },
+        {
+          "command": "line",
+          "value": "useless #MON!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM9SeenText": {
+      "raw_lines": [
+        "text \"Why did the shut-\"",
+        "line \"ter open? Did you\"",
+        "para \"have something to\"",
+        "line \"do with this?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Why did the shut-"
+        },
+        {
+          "command": "line",
+          "value": "ter open? Did you"
+        },
+        {
+          "command": "para",
+          "value": "have something to"
+        },
+        {
+          "command": "line",
+          "value": "do with this?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM9BeatenText": {
+      "raw_lines": [
+        "text \"I'm done for!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm done for!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM9AfterBattleText": {
+      "raw_lines": [
+        "text \"What?! You made it\"",
+        "line \"past our men in\"",
+        "cont \"the UNDERGROUND?\"",
+        "para \"How could you?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What?! You made it"
+        },
+        {
+          "command": "line",
+          "value": "past our men in"
+        },
+        {
+          "command": "cont",
+          "value": "the UNDERGROUND?"
+        },
+        {
+          "command": "para",
+          "value": "How could you?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ScientistMarcSeenText": {
+      "raw_lines": [
+        "text \"An unknown child\"",
+        "line \"wandering here?\"",
+        "para \"Who are you?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "An unknown child"
+        },
+        {
+          "command": "line",
+          "value": "wandering here?"
+        },
+        {
+          "command": "para",
+          "value": "Who are you?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ScientistMarcBeatenText": {
+      "raw_lines": [
+        "text \"Tch! I took you\"",
+        "line \"too lightly!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Tch! I took you"
+        },
+        {
+          "command": "line",
+          "value": "too lightly!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ScientistMarcAfterBattleText": {
+      "raw_lines": [
+        "text \"Bwahahaha\u2026\"",
+        "para \"I can transmit as\"",
+        "line \"strong a signal as\"",
+        "cont \"I need from here.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Bwahahaha\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I can transmit as"
+        },
+        {
+          "command": "line",
+          "value": "strong a signal as"
+        },
+        {
+          "command": "cont",
+          "value": "I need from here."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower3FCardKeySlotText": {
+      "raw_lines": [
+        "text \"It's the CARD KEY\"",
+        "line \"slot.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's the CARD KEY"
+        },
+        {
+          "command": "line",
+          "value": "slot."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "InsertedTheCardKeyText": {
+      "raw_lines": [
+        "text \"<PLAYER> inserted\"",
+        "line \"the CARD KEY.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> inserted"
+        },
+        {
+          "command": "line",
+          "value": "the CARD KEY."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower3FPersonnelSignText": {
+      "raw_lines": [
+        "text \"3F PERSONNEL\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "3F PERSONNEL"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower3FPokemonMusicSignText": {
+      "raw_lines": [
+        "text \"#MON MUSIC with\"",
+        "line \"Host DJ BEN\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#MON MUSIC with"
+        },
+        {
+          "command": "line",
+          "value": "Host DJ BEN"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "RadioTower3F_MapScripts": {
+      "label_refs": [
+        "RadioTower3FCardKeyShutterCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FCardKeyShutterCallback": {
+      "label_refs": [
+        "RadioTower3FCardKeyShutterCallback.Change"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FCardKeyShutterCallback.Change": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FSuperNerdScript": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower3FSuperNerdText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FGymGuideScript": {
+      "label_refs": [
+        "RadioTower3FGymGuideScript.NoRockets"
+      ],
+      "text_refs": [
+        "RadioTower3FGymGuideText_Rockets"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FGymGuideScript.NoRockets": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower3FGymGuideText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FCooltrainerFScript": {
+      "label_refs": [
+        "RadioTower3FCooltrainerFScript.GotSunnyDay",
+        "RadioTower3FCooltrainerFScript.NoRockets",
+        "RadioTower3FCooltrainerFScript.UsedCardKey"
+      ],
+      "text_refs": [
+        "RadioTower3FCooltrainerFPleaseSaveDirectorText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FCooltrainerFScript.UsedCardKey": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower3FCooltrainerFIsDirectorSafeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FCooltrainerFScript.NoRockets": {
+      "label_refs": [
+        "RadioTower3FCooltrainerFScript.NoRoom"
+      ],
+      "text_refs": [
+        "RadioTower3FCooltrainerFItsSunnyDayText",
+        "RadioTower3FCooltrainerFYoureMyHeroText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FCooltrainerFScript.GotSunnyDay": {
+      "label_refs": [
+        "RadioTower3FCooltrainerFScript.NoRoom"
+      ],
+      "text_refs": [
+        "RadioTower3FCooltrainerFYouWereMarvelousText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FCooltrainerFScript.NoRoom": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM7": {
+      "label_refs": [
+        "TrainerGruntM7.Script"
+      ],
+      "text_refs": [
+        "GruntM7BeatenText",
+        "GruntM7SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM7.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GruntM7AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM8": {
+      "label_refs": [
+        "TrainerGruntM8.Script"
+      ],
+      "text_refs": [
+        "GruntM8BeatenText",
+        "GruntM8SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM8.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GruntM8AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM9": {
+      "label_refs": [
+        "TrainerGruntM9.Script"
+      ],
+      "text_refs": [
+        "GruntM9BeatenText",
+        "GruntM9SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM9.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GruntM9AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerScientistMarc": {
+      "label_refs": [
+        "TrainerScientistMarc.Script"
+      ],
+      "text_refs": [
+        "ScientistMarcBeatenText",
+        "ScientistMarcSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerScientistMarc.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "ScientistMarcAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CardKeySlotScript": {
+      "label_refs": [
+        "CardKeySlotScript.HaveCardKey",
+        "CardKeySlotScript.UsedCardKey"
+      ],
+      "text_refs": [
+        "RadioTower3FCardKeySlotText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CardKeySlotScript.UsedCardKey": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CardKeySlotScript.HaveCardKey": {
+      "label_refs": [],
+      "text_refs": [
+        "InsertedTheCardKeyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FPersonnelSign": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower3FPersonnelSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3FPokemonMusicSign": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower3FPokemonMusicSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower3F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 1,
+    "warp_events": 3,
+    "coord_events": 0,
+    "bg_events": 3,
+    "object_events": 7
+  }
+}

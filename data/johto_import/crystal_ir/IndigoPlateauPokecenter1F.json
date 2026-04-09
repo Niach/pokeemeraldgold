@@ -1,0 +1,2428 @@
+{
+  "crystal_map": "IndigoPlateauPokecenter1F",
+  "map_id": "INDIGO_PLATEAU_POKECENTER_1F",
+  "group": "INDIGO",
+  "group_index": 16,
+  "map_index": 2,
+  "tileset": "TILESET_POKECENTER",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_INDIGO_PLATEAU",
+  "music": "MUSIC_INDIGO_PLATEAU",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 9,
+  "height_blocks": 7,
+  "border_block": "00",
+  "blk_path": "maps/IndigoPlateauPokecenter1F.blk",
+  "source_asm": "maps/IndigoPlateauPokecenter1F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "IndigoPlateauPokecenter1FNoopScene",
+        "scene_id": "SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "IndigoPlateauPokecenter1FPrepareElite4Callback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 5,
+        "y": 13,
+        "dest_map": "ROUTE_23",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 6,
+        "y": 13,
+        "dest_map": "ROUTE_23",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 0,
+        "y": 13,
+        "dest_map": "POKECENTER_2F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 14,
+        "y": 3,
+        "dest_map": "WILLS_ROOM",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 16,
+        "y": 4,
+        "scene": "SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE",
+        "script": "PlateauRivalBattle1"
+      },
+      {
+        "x": 17,
+        "y": 4,
+        "scene": "SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE",
+        "script": "PlateauRivalBattle2"
+      }
+    ],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 3,
+        "y": 7,
+        "sprite": "SPRITE_NURSE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "IndigoPlateauPokecenter1FNurseScript",
+        "flag": -1
+      },
+      {
+        "x": 11,
+        "y": 7,
+        "sprite": "SPRITE_CLERK",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "IndigoPlateauPokecenter1FClerkScript",
+        "flag": -1
+      },
+      {
+        "x": 11,
+        "y": 11,
+        "sprite": "SPRITE_COOLTRAINER_M",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 2,
+        "movement_range_y": 2,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "IndigoPlateauPokecenter1FCooltrainerMScript",
+        "flag": -1
+      },
+      {
+        "x": 16,
+        "y": 9,
+        "sprite": "SPRITE_RIVAL",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL"
+      },
+      {
+        "x": 1,
+        "y": 9,
+        "sprite": "SPRITE_GRAMPS",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "TeleportGuyScript",
+        "flag": "EVENT_TELEPORT_GUY"
+      },
+      {
+        "x": 0,
+        "y": 9,
+        "sprite": "SPRITE_JYNX",
+        "movement": "SPRITEMOVEDATA_POKEMON",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "AbraScript",
+        "flag": "EVENT_TELEPORT_GUY"
+      }
+    ]
+  },
+  "object_consts": [
+    "INDIGOPLATEAUPOKECENTER1F_NURSE",
+    "INDIGOPLATEAUPOKECENTER1F_CLERK",
+    "INDIGOPLATEAUPOKECENTER1F_COOLTRAINER_M",
+    "INDIGOPLATEAUPOKECENTER1F_RIVAL",
+    "INDIGOPLATEAUPOKECENTER1F_GRAMPS",
+    "INDIGOPLATEAUPOKECENTER1F_ABRA"
+  ],
+  "scene_ids": [
+    "SCENE_BRUNOSROOM_LOCK_DOOR",
+    "SCENE_HALLOFFAME_ENTER",
+    "SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE",
+    "SCENE_KARENSROOM_LOCK_DOOR",
+    "SCENE_KOGASROOM_LOCK_DOOR",
+    "SCENE_LANCESROOM_LOCK_DOOR",
+    "SCENE_WILLSROOM_LOCK_DOOR"
+  ],
+  "scripts": {
+    "IndigoPlateauPokecenter1F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script IndigoPlateauPokecenter1FNoopScene, SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, IndigoPlateauPokecenter1FPrepareElite4Callback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "IndigoPlateauPokecenter1FNoopScene",
+            "SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE"
+          ],
+          "raw": "scene_script IndigoPlateauPokecenter1FNoopScene, SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "IndigoPlateauPokecenter1FPrepareElite4Callback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, IndigoPlateauPokecenter1FPrepareElite4Callback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "IndigoPlateauPokecenter1FNoopScene",
+      "label_refs": [
+        "IndigoPlateauPokecenter1FNoopScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IndigoPlateauPokecenter1FNoopScene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IndigoPlateauPokecenter1FPrepareElite4Callback": {
+      "raw_lines": [
+        "setmapscene WILLS_ROOM, SCENE_WILLSROOM_LOCK_DOOR",
+        "setmapscene KOGAS_ROOM, SCENE_KOGASROOM_LOCK_DOOR",
+        "setmapscene BRUNOS_ROOM, SCENE_BRUNOSROOM_LOCK_DOOR",
+        "setmapscene KARENS_ROOM, SCENE_KARENSROOM_LOCK_DOOR",
+        "setmapscene LANCES_ROOM, SCENE_LANCESROOM_LOCK_DOOR",
+        "setmapscene HALL_OF_FAME, SCENE_HALLOFFAME_ENTER",
+        "clearevent EVENT_WILLS_ROOM_ENTRANCE_CLOSED",
+        "clearevent EVENT_WILLS_ROOM_EXIT_OPEN",
+        "clearevent EVENT_KOGAS_ROOM_ENTRANCE_CLOSED",
+        "clearevent EVENT_KOGAS_ROOM_EXIT_OPEN",
+        "clearevent EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED",
+        "clearevent EVENT_BRUNOS_ROOM_EXIT_OPEN",
+        "clearevent EVENT_KARENS_ROOM_ENTRANCE_CLOSED",
+        "clearevent EVENT_KARENS_ROOM_EXIT_OPEN",
+        "clearevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED",
+        "clearevent EVENT_LANCES_ROOM_EXIT_OPEN",
+        "clearevent EVENT_BEAT_ELITE_4_WILL",
+        "clearevent EVENT_BEAT_ELITE_4_KOGA",
+        "clearevent EVENT_BEAT_ELITE_4_BRUNO",
+        "clearevent EVENT_BEAT_ELITE_4_KAREN",
+        "clearevent EVENT_BEAT_CHAMPION_LANCE",
+        "setevent EVENT_LANCES_ROOM_OAK_AND_MARY",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "setmapscene",
+          "args": [
+            "WILLS_ROOM",
+            "SCENE_WILLSROOM_LOCK_DOOR"
+          ],
+          "raw": "setmapscene WILLS_ROOM, SCENE_WILLSROOM_LOCK_DOOR"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "KOGAS_ROOM",
+            "SCENE_KOGASROOM_LOCK_DOOR"
+          ],
+          "raw": "setmapscene KOGAS_ROOM, SCENE_KOGASROOM_LOCK_DOOR"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "BRUNOS_ROOM",
+            "SCENE_BRUNOSROOM_LOCK_DOOR"
+          ],
+          "raw": "setmapscene BRUNOS_ROOM, SCENE_BRUNOSROOM_LOCK_DOOR"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "KARENS_ROOM",
+            "SCENE_KARENSROOM_LOCK_DOOR"
+          ],
+          "raw": "setmapscene KARENS_ROOM, SCENE_KARENSROOM_LOCK_DOOR"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "LANCES_ROOM",
+            "SCENE_LANCESROOM_LOCK_DOOR"
+          ],
+          "raw": "setmapscene LANCES_ROOM, SCENE_LANCESROOM_LOCK_DOOR"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "HALL_OF_FAME",
+            "SCENE_HALLOFFAME_ENTER"
+          ],
+          "raw": "setmapscene HALL_OF_FAME, SCENE_HALLOFFAME_ENTER"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_WILLS_ROOM_ENTRANCE_CLOSED"
+          ],
+          "raw": "clearevent EVENT_WILLS_ROOM_ENTRANCE_CLOSED"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_WILLS_ROOM_EXIT_OPEN"
+          ],
+          "raw": "clearevent EVENT_WILLS_ROOM_EXIT_OPEN"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_KOGAS_ROOM_ENTRANCE_CLOSED"
+          ],
+          "raw": "clearevent EVENT_KOGAS_ROOM_ENTRANCE_CLOSED"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_KOGAS_ROOM_EXIT_OPEN"
+          ],
+          "raw": "clearevent EVENT_KOGAS_ROOM_EXIT_OPEN"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED"
+          ],
+          "raw": "clearevent EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_BRUNOS_ROOM_EXIT_OPEN"
+          ],
+          "raw": "clearevent EVENT_BRUNOS_ROOM_EXIT_OPEN"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_KARENS_ROOM_ENTRANCE_CLOSED"
+          ],
+          "raw": "clearevent EVENT_KARENS_ROOM_ENTRANCE_CLOSED"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_KARENS_ROOM_EXIT_OPEN"
+          ],
+          "raw": "clearevent EVENT_KARENS_ROOM_EXIT_OPEN"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_LANCES_ROOM_ENTRANCE_CLOSED"
+          ],
+          "raw": "clearevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_LANCES_ROOM_EXIT_OPEN"
+          ],
+          "raw": "clearevent EVENT_LANCES_ROOM_EXIT_OPEN"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_BEAT_ELITE_4_WILL"
+          ],
+          "raw": "clearevent EVENT_BEAT_ELITE_4_WILL"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_BEAT_ELITE_4_KOGA"
+          ],
+          "raw": "clearevent EVENT_BEAT_ELITE_4_KOGA"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_BEAT_ELITE_4_BRUNO"
+          ],
+          "raw": "clearevent EVENT_BEAT_ELITE_4_BRUNO"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_BEAT_ELITE_4_KAREN"
+          ],
+          "raw": "clearevent EVENT_BEAT_ELITE_4_KAREN"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_BEAT_CHAMPION_LANCE"
+          ],
+          "raw": "clearevent EVENT_BEAT_CHAMPION_LANCE"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_LANCES_ROOM_OAK_AND_MARY"
+          ],
+          "raw": "setevent EVENT_LANCES_ROOM_OAK_AND_MARY"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "setmapscene",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_BRUNOSROOM_LOCK_DOOR",
+        "SCENE_HALLOFFAME_ENTER",
+        "SCENE_KARENSROOM_LOCK_DOOR",
+        "SCENE_KOGASROOM_LOCK_DOOR",
+        "SCENE_LANCESROOM_LOCK_DOOR",
+        "SCENE_WILLSROOM_LOCK_DOOR"
+      ],
+      "std_calls": []
+    },
+    "PlateauRivalBattle1": {
+      "raw_lines": [
+        "checkevent EVENT_BEAT_RIVAL_IN_MT_MOON",
+        "iffalse PlateauRivalScriptDone",
+        "checkflag ENGINE_INDIGO_PLATEAU_RIVAL_FIGHT",
+        "iftrue PlateauRivalScriptDone",
+        "readvar VAR_WEEKDAY",
+        "ifequal SUNDAY, PlateauRivalScriptDone",
+        "ifequal TUESDAY, PlateauRivalScriptDone",
+        "ifequal THURSDAY, PlateauRivalScriptDone",
+        "ifequal FRIDAY, PlateauRivalScriptDone",
+        "ifequal SATURDAY, PlateauRivalScriptDone",
+        "moveobject INDIGOPLATEAUPOKECENTER1F_RIVAL, 17, 9",
+        "appear INDIGOPLATEAUPOKECENTER1F_RIVAL",
+        "turnobject PLAYER, DOWN",
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "special FadeOutMusic",
+        "pause 15",
+        "applymovement INDIGOPLATEAUPOKECENTER1F_RIVAL, PlateauRivalMovement1",
+        "playmusic MUSIC_RIVAL_ENCOUNTER",
+        "turnobject PLAYER, RIGHT",
+        "sjump PlateauRivalBattleCommon"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_RIVAL_IN_MT_MOON"
+          ],
+          "raw": "checkevent EVENT_BEAT_RIVAL_IN_MT_MOON"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "PlateauRivalScriptDone"
+          ],
+          "raw": "iffalse PlateauRivalScriptDone"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_INDIGO_PLATEAU_RIVAL_FIGHT"
+          ],
+          "raw": "checkflag ENGINE_INDIGO_PLATEAU_RIVAL_FIGHT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "PlateauRivalScriptDone"
+          ],
+          "raw": "iftrue PlateauRivalScriptDone"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SUNDAY",
+            "PlateauRivalScriptDone"
+          ],
+          "raw": "ifequal SUNDAY, PlateauRivalScriptDone"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "TUESDAY",
+            "PlateauRivalScriptDone"
+          ],
+          "raw": "ifequal TUESDAY, PlateauRivalScriptDone"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "THURSDAY",
+            "PlateauRivalScriptDone"
+          ],
+          "raw": "ifequal THURSDAY, PlateauRivalScriptDone"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "FRIDAY",
+            "PlateauRivalScriptDone"
+          ],
+          "raw": "ifequal FRIDAY, PlateauRivalScriptDone"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SATURDAY",
+            "PlateauRivalScriptDone"
+          ],
+          "raw": "ifequal SATURDAY, PlateauRivalScriptDone"
+        },
+        {
+          "command": "moveobject",
+          "args": [
+            "INDIGOPLATEAUPOKECENTER1F_RIVAL",
+            "17",
+            "9"
+          ],
+          "raw": "moveobject INDIGOPLATEAUPOKECENTER1F_RIVAL, 17, 9"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "INDIGOPLATEAUPOKECENTER1F_RIVAL"
+          ],
+          "raw": "appear INDIGOPLATEAUPOKECENTER1F_RIVAL"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "INDIGOPLATEAUPOKECENTER1F_RIVAL",
+            "PlateauRivalMovement1"
+          ],
+          "raw": "applymovement INDIGOPLATEAUPOKECENTER1F_RIVAL, PlateauRivalMovement1"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_ENCOUNTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_ENCOUNTER"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "PlateauRivalBattleCommon"
+          ],
+          "raw": "sjump PlateauRivalBattleCommon"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "PlateauRivalBattleCommon",
+        "PlateauRivalScriptDone"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "PlateauRivalMovement1"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlateauRivalBattle2": {
+      "raw_lines": [
+        "checkevent EVENT_BEAT_RIVAL_IN_MT_MOON",
+        "iffalse PlateauRivalScriptDone",
+        "checkflag ENGINE_INDIGO_PLATEAU_RIVAL_FIGHT",
+        "iftrue PlateauRivalScriptDone",
+        "readvar VAR_WEEKDAY",
+        "ifequal SUNDAY, PlateauRivalScriptDone",
+        "ifequal TUESDAY, PlateauRivalScriptDone",
+        "ifequal THURSDAY, PlateauRivalScriptDone",
+        "ifequal FRIDAY, PlateauRivalScriptDone",
+        "ifequal SATURDAY, PlateauRivalScriptDone",
+        "appear INDIGOPLATEAUPOKECENTER1F_RIVAL",
+        "turnobject PLAYER, DOWN",
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "special FadeOutMusic",
+        "pause 15",
+        "applymovement INDIGOPLATEAUPOKECENTER1F_RIVAL, PlateauRivalMovement2",
+        "playmusic MUSIC_RIVAL_ENCOUNTER",
+        "turnobject PLAYER, LEFT"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_RIVAL_IN_MT_MOON"
+          ],
+          "raw": "checkevent EVENT_BEAT_RIVAL_IN_MT_MOON"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "PlateauRivalScriptDone"
+          ],
+          "raw": "iffalse PlateauRivalScriptDone"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_INDIGO_PLATEAU_RIVAL_FIGHT"
+          ],
+          "raw": "checkflag ENGINE_INDIGO_PLATEAU_RIVAL_FIGHT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "PlateauRivalScriptDone"
+          ],
+          "raw": "iftrue PlateauRivalScriptDone"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SUNDAY",
+            "PlateauRivalScriptDone"
+          ],
+          "raw": "ifequal SUNDAY, PlateauRivalScriptDone"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "TUESDAY",
+            "PlateauRivalScriptDone"
+          ],
+          "raw": "ifequal TUESDAY, PlateauRivalScriptDone"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "THURSDAY",
+            "PlateauRivalScriptDone"
+          ],
+          "raw": "ifequal THURSDAY, PlateauRivalScriptDone"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "FRIDAY",
+            "PlateauRivalScriptDone"
+          ],
+          "raw": "ifequal FRIDAY, PlateauRivalScriptDone"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SATURDAY",
+            "PlateauRivalScriptDone"
+          ],
+          "raw": "ifequal SATURDAY, PlateauRivalScriptDone"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "INDIGOPLATEAUPOKECENTER1F_RIVAL"
+          ],
+          "raw": "appear INDIGOPLATEAUPOKECENTER1F_RIVAL"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "INDIGOPLATEAUPOKECENTER1F_RIVAL",
+            "PlateauRivalMovement2"
+          ],
+          "raw": "applymovement INDIGOPLATEAUPOKECENTER1F_RIVAL, PlateauRivalMovement2"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_ENCOUNTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_ENCOUNTER"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYER, LEFT"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "PlateauRivalBattleCommon",
+      "label_refs": [
+        "PlateauRivalBattleCommon",
+        "PlateauRivalScriptDone"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "PlateauRivalMovement2"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlateauRivalBattleCommon": {
+      "raw_lines": [
+        "opentext",
+        "writetext PlateauRivalText1",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL",
+        "checkevent EVENT_GOT_TOTODILE_FROM_ELM",
+        "iftrue .Totodile",
+        "checkevent EVENT_GOT_CHIKORITA_FROM_ELM",
+        "iftrue .Chikorita",
+        "winlosstext PlateauRivalWinText, PlateauRivalLoseText",
+        "setlasttalked INDIGOPLATEAUPOKECENTER1F_RIVAL",
+        "loadtrainer RIVAL2, RIVAL2_2_TOTODILE",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmapafterbattle",
+        "sjump PlateauRivalPostBattle"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PlateauRivalText1"
+          ],
+          "raw": "writetext PlateauRivalText1"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL"
+          ],
+          "raw": "setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TOTODILE_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_TOTODILE_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "PlateauRivalBattleCommon.Totodile"
+          ],
+          "raw": "iftrue .Totodile"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_CHIKORITA_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_CHIKORITA_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "PlateauRivalBattleCommon.Chikorita"
+          ],
+          "raw": "iftrue .Chikorita"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "PlateauRivalWinText",
+            "PlateauRivalLoseText"
+          ],
+          "raw": "winlosstext PlateauRivalWinText, PlateauRivalLoseText"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "INDIGOPLATEAUPOKECENTER1F_RIVAL"
+          ],
+          "raw": "setlasttalked INDIGOPLATEAUPOKECENTER1F_RIVAL"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "RIVAL2",
+            "RIVAL2_2_TOTODILE"
+          ],
+          "raw": "loadtrainer RIVAL2, RIVAL2_2_TOTODILE"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "PlateauRivalPostBattle"
+          ],
+          "raw": "sjump PlateauRivalPostBattle"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "PlateauRivalBattleCommon.Chikorita",
+        "PlateauRivalBattleCommon.Totodile",
+        "PlateauRivalPostBattle"
+      ],
+      "text_refs": [
+        "PlateauRivalText1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlateauRivalBattleCommon.Totodile": {
+      "raw_lines": [
+        "winlosstext PlateauRivalWinText, PlateauRivalLoseText",
+        "setlasttalked INDIGOPLATEAUPOKECENTER1F_RIVAL",
+        "loadtrainer RIVAL2, RIVAL2_2_CHIKORITA",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmapafterbattle",
+        "sjump PlateauRivalPostBattle"
+      ],
+      "commands": [
+        {
+          "command": "winlosstext",
+          "args": [
+            "PlateauRivalWinText",
+            "PlateauRivalLoseText"
+          ],
+          "raw": "winlosstext PlateauRivalWinText, PlateauRivalLoseText"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "INDIGOPLATEAUPOKECENTER1F_RIVAL"
+          ],
+          "raw": "setlasttalked INDIGOPLATEAUPOKECENTER1F_RIVAL"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "RIVAL2",
+            "RIVAL2_2_CHIKORITA"
+          ],
+          "raw": "loadtrainer RIVAL2, RIVAL2_2_CHIKORITA"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "PlateauRivalPostBattle"
+          ],
+          "raw": "sjump PlateauRivalPostBattle"
+        }
+      ],
+      "first_command": "winlosstext",
+      "label_refs": [
+        "PlateauRivalPostBattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlateauRivalBattleCommon.Chikorita": {
+      "raw_lines": [
+        "winlosstext PlateauRivalWinText, PlateauRivalLoseText",
+        "setlasttalked INDIGOPLATEAUPOKECENTER1F_RIVAL",
+        "loadtrainer RIVAL2, RIVAL2_2_CYNDAQUIL",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmapafterbattle",
+        "sjump PlateauRivalPostBattle"
+      ],
+      "commands": [
+        {
+          "command": "winlosstext",
+          "args": [
+            "PlateauRivalWinText",
+            "PlateauRivalLoseText"
+          ],
+          "raw": "winlosstext PlateauRivalWinText, PlateauRivalLoseText"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "INDIGOPLATEAUPOKECENTER1F_RIVAL"
+          ],
+          "raw": "setlasttalked INDIGOPLATEAUPOKECENTER1F_RIVAL"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "RIVAL2",
+            "RIVAL2_2_CYNDAQUIL"
+          ],
+          "raw": "loadtrainer RIVAL2, RIVAL2_2_CYNDAQUIL"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "PlateauRivalPostBattle"
+          ],
+          "raw": "sjump PlateauRivalPostBattle"
+        }
+      ],
+      "first_command": "winlosstext",
+      "label_refs": [
+        "PlateauRivalPostBattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlateauRivalPostBattle": {
+      "raw_lines": [
+        "playmusic MUSIC_RIVAL_AFTER",
+        "opentext",
+        "writetext PlateauRivalText2",
+        "waitbutton",
+        "closetext",
+        "turnobject PLAYER, DOWN",
+        "applymovement INDIGOPLATEAUPOKECENTER1F_RIVAL, PlateauRivalLeavesMovement",
+        "disappear INDIGOPLATEAUPOKECENTER1F_RIVAL",
+        "setscene SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE",
+        "playmapmusic",
+        "setflag ENGINE_INDIGO_PLATEAU_RIVAL_FIGHT"
+      ],
+      "commands": [
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_AFTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_AFTER"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PlateauRivalText2"
+          ],
+          "raw": "writetext PlateauRivalText2"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "INDIGOPLATEAUPOKECENTER1F_RIVAL",
+            "PlateauRivalLeavesMovement"
+          ],
+          "raw": "applymovement INDIGOPLATEAUPOKECENTER1F_RIVAL, PlateauRivalLeavesMovement"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "INDIGOPLATEAUPOKECENTER1F_RIVAL"
+          ],
+          "raw": "disappear INDIGOPLATEAUPOKECENTER1F_RIVAL"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE"
+          ],
+          "raw": "setscene SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE"
+        },
+        {
+          "command": "playmapmusic",
+          "args": [],
+          "raw": "playmapmusic"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_INDIGO_PLATEAU_RIVAL_FIGHT"
+          ],
+          "raw": "setflag ENGINE_INDIGO_PLATEAU_RIVAL_FIGHT"
+        }
+      ],
+      "first_command": "playmusic",
+      "fallthrough_label": "PlateauRivalScriptDone",
+      "label_refs": [
+        "PlateauRivalScriptDone"
+      ],
+      "text_refs": [
+        "PlateauRivalText2"
+      ],
+      "movement_refs": [
+        "PlateauRivalLeavesMovement"
+      ],
+      "scene_refs": [
+        "SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE"
+      ],
+      "std_calls": []
+    },
+    "PlateauRivalScriptDone": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IndigoPlateauPokecenter1FNurseScript": {
+      "raw_lines": [
+        "jumpstd PokecenterNurseScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PokecenterNurseScript"
+          ],
+          "raw": "jumpstd PokecenterNurseScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterNurseScript"
+      ]
+    },
+    "IndigoPlateauPokecenter1FClerkScript": {
+      "raw_lines": [
+        "opentext",
+        "pokemart MARTTYPE_STANDARD, MART_INDIGO_PLATEAU",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "pokemart",
+          "args": [
+            "MARTTYPE_STANDARD",
+            "MART_INDIGO_PLATEAU"
+          ],
+          "raw": "pokemart MARTTYPE_STANDARD, MART_INDIGO_PLATEAU"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IndigoPlateauPokecenter1FCooltrainerMScript": {
+      "raw_lines": [
+        "jumptextfaceplayer IndigoPlateauPokecenter1FCooltrainerMText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "IndigoPlateauPokecenter1FCooltrainerMText"
+          ],
+          "raw": "jumptextfaceplayer IndigoPlateauPokecenter1FCooltrainerMText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "IndigoPlateauPokecenter1FCooltrainerMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeleportGuyScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext TeleportGuyText1",
+        "yesorno",
+        "iffalse .No",
+        "writetext TeleportGuyYesText",
+        "waitbutton",
+        "closetext",
+        "playsound SFX_WARP_TO",
+        "special FadeOutToWhite",
+        "waitsfx",
+        "warp NEW_BARK_TOWN, 13, 6",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "TeleportGuyText1"
+          ],
+          "raw": "writetext TeleportGuyText1"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "TeleportGuyScript.No"
+          ],
+          "raw": "iffalse .No"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "TeleportGuyYesText"
+          ],
+          "raw": "writetext TeleportGuyYesText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_WARP_TO"
+          ],
+          "raw": "playsound SFX_WARP_TO"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutToWhite"
+          ],
+          "raw": "special FadeOutToWhite"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "warp",
+          "args": [
+            "NEW_BARK_TOWN",
+            "13",
+            "6"
+          ],
+          "raw": "warp NEW_BARK_TOWN, 13, 6"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "TeleportGuyScript.No"
+      ],
+      "text_refs": [
+        "TeleportGuyText1",
+        "TeleportGuyYesText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeleportGuyScript.No": {
+      "raw_lines": [
+        "writetext TeleportGuyNoText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "TeleportGuyNoText"
+          ],
+          "raw": "writetext TeleportGuyNoText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "TeleportGuyNoText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AbraScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext AbraText",
+        "cry ABRA",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AbraText"
+          ],
+          "raw": "writetext AbraText"
+        },
+        {
+          "command": "cry",
+          "args": [
+            "ABRA"
+          ],
+          "raw": "cry ABRA"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "AbraText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IndigoPlateauPokecenter1F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  5, 13, ROUTE_23, 1",
+        "warp_event  6, 13, ROUTE_23, 2",
+        "warp_event  0, 13, POKECENTER_2F, 1",
+        "warp_event 14,  3, WILLS_ROOM, 1",
+        "def_coord_events",
+        "coord_event 16,  4, SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE, PlateauRivalBattle1",
+        "coord_event 17,  4, SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE, PlateauRivalBattle2",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  3,  7, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FNurseScript, -1",
+        "object_event 11,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FClerkScript, -1",
+        "object_event 11, 11, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FCooltrainerMScript, -1",
+        "object_event 16,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL",
+        "object_event  1,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, EVENT_TELEPORT_GUY",
+        "object_event  0,  9, SPRITE_JYNX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, EVENT_TELEPORT_GUY"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "13",
+            "ROUTE_23",
+            "1"
+          ],
+          "raw": "warp_event  5, 13, ROUTE_23, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "6",
+            "13",
+            "ROUTE_23",
+            "2"
+          ],
+          "raw": "warp_event  6, 13, ROUTE_23, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "13",
+            "POKECENTER_2F",
+            "1"
+          ],
+          "raw": "warp_event  0, 13, POKECENTER_2F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "14",
+            "3",
+            "WILLS_ROOM",
+            "1"
+          ],
+          "raw": "warp_event 14,  3, WILLS_ROOM, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "16",
+            "4",
+            "SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE",
+            "PlateauRivalBattle1"
+          ],
+          "raw": "coord_event 16,  4, SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE, PlateauRivalBattle1"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "17",
+            "4",
+            "SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE",
+            "PlateauRivalBattle2"
+          ],
+          "raw": "coord_event 17,  4, SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE, PlateauRivalBattle2"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "7",
+            "SPRITE_NURSE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "IndigoPlateauPokecenter1FNurseScript",
+            "-1"
+          ],
+          "raw": "object_event  3,  7, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FNurseScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "11",
+            "7",
+            "SPRITE_CLERK",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "IndigoPlateauPokecenter1FClerkScript",
+            "-1"
+          ],
+          "raw": "object_event 11,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FClerkScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "11",
+            "11",
+            "SPRITE_COOLTRAINER_M",
+            "SPRITEMOVEDATA_WANDER",
+            "2",
+            "2",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "IndigoPlateauPokecenter1FCooltrainerMScript",
+            "-1"
+          ],
+          "raw": "object_event 11, 11, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FCooltrainerMScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "16",
+            "9",
+            "SPRITE_RIVAL",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL"
+          ],
+          "raw": "object_event 16,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "9",
+            "SPRITE_GRAMPS",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "TeleportGuyScript",
+            "EVENT_TELEPORT_GUY"
+          ],
+          "raw": "object_event  1,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, EVENT_TELEPORT_GUY"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "0",
+            "9",
+            "SPRITE_JYNX",
+            "SPRITEMOVEDATA_POKEMON",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "AbraScript",
+            "EVENT_TELEPORT_GUY"
+          ],
+          "raw": "object_event  0,  9, SPRITE_JYNX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, EVENT_TELEPORT_GUY"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "IndigoPlateauPokecenter1FCooltrainerMText": {
+      "raw_lines": [
+        "text \"At the #MON\"",
+        "line \"LEAGUE, you'll get\"",
+        "para \"tested by the\"",
+        "line \"ELITE FOUR.\"",
+        "para \"You have to beat\"",
+        "line \"them all. If you\"",
+        "para \"lose, you have to\"",
+        "line \"start all over!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "At the #MON"
+        },
+        {
+          "command": "line",
+          "value": "LEAGUE, you'll get"
+        },
+        {
+          "command": "para",
+          "value": "tested by the"
+        },
+        {
+          "command": "line",
+          "value": "ELITE FOUR."
+        },
+        {
+          "command": "para",
+          "value": "You have to beat"
+        },
+        {
+          "command": "line",
+          "value": "them all. If you"
+        },
+        {
+          "command": "para",
+          "value": "lose, you have to"
+        },
+        {
+          "command": "line",
+          "value": "start all over!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PlateauRivalText1": {
+      "raw_lines": [
+        "text \"Hold it.\"",
+        "para \"You're going to\"",
+        "line \"take the #MON\"",
+        "para \"LEAGUE challenge\"",
+        "line \"now?\"",
+        "para \"That's not going\"",
+        "line \"to happen.\"",
+        "para \"My super-well-\"",
+        "line \"trained #MON\"",
+        "para \"are going to pound\"",
+        "line \"you.\"",
+        "para \"<PLAYER>!\"",
+        "line \"I challenge you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hold it."
+        },
+        {
+          "command": "para",
+          "value": "You're going to"
+        },
+        {
+          "command": "line",
+          "value": "take the #MON"
+        },
+        {
+          "command": "para",
+          "value": "LEAGUE challenge"
+        },
+        {
+          "command": "line",
+          "value": "now?"
+        },
+        {
+          "command": "para",
+          "value": "That's not going"
+        },
+        {
+          "command": "line",
+          "value": "to happen."
+        },
+        {
+          "command": "para",
+          "value": "My super-well-"
+        },
+        {
+          "command": "line",
+          "value": "trained #MON"
+        },
+        {
+          "command": "para",
+          "value": "are going to pound"
+        },
+        {
+          "command": "line",
+          "value": "you."
+        },
+        {
+          "command": "para",
+          "value": "<PLAYER>!"
+        },
+        {
+          "command": "line",
+          "value": "I challenge you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PlateauRivalWinText": {
+      "raw_lines": [
+        "text \"\u2026\"",
+        "para \"OK--I lost\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026"
+        },
+        {
+          "command": "para",
+          "value": "OK--I lost\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PlateauRivalText2": {
+      "raw_lines": [
+        "text \"\u2026Darn\u2026 I still\"",
+        "line \"can't win\u2026\"",
+        "para \"I\u2026 I have to think\"",
+        "line \"more about my\"",
+        "cont \"#MON\u2026\"",
+        "para \"Humph! Try not to\"",
+        "line \"lose!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026Darn\u2026 I still"
+        },
+        {
+          "command": "line",
+          "value": "can't win\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I\u2026 I have to think"
+        },
+        {
+          "command": "line",
+          "value": "more about my"
+        },
+        {
+          "command": "cont",
+          "value": "#MON\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Humph! Try not to"
+        },
+        {
+          "command": "line",
+          "value": "lose!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PlateauRivalLoseText": {
+      "raw_lines": [
+        "text \"\u2026\"",
+        "para \"Whew\u2026\"",
+        "line \"With my partners,\"",
+        "para \"I'm going to be\"",
+        "line \"the CHAMPION!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Whew\u2026"
+        },
+        {
+          "command": "line",
+          "value": "With my partners,"
+        },
+        {
+          "command": "para",
+          "value": "I'm going to be"
+        },
+        {
+          "command": "line",
+          "value": "the CHAMPION!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TeleportGuyText1": {
+      "raw_lines": [
+        "text \"Ah! You're chal-\"",
+        "line \"lenging the ELITE\"",
+        "para \"FOUR? Are you sure\"",
+        "line \"you're ready?\"",
+        "para \"If you need to\"",
+        "line \"train some more,\"",
+        "para \"my ABRA can help\"",
+        "line \"you.\"",
+        "para \"It can TELEPORT\"",
+        "line \"you home.\"",
+        "para \"Would you like to\"",
+        "line \"go home now?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ah! You're chal-"
+        },
+        {
+          "command": "line",
+          "value": "lenging the ELITE"
+        },
+        {
+          "command": "para",
+          "value": "FOUR? Are you sure"
+        },
+        {
+          "command": "line",
+          "value": "you're ready?"
+        },
+        {
+          "command": "para",
+          "value": "If you need to"
+        },
+        {
+          "command": "line",
+          "value": "train some more,"
+        },
+        {
+          "command": "para",
+          "value": "my ABRA can help"
+        },
+        {
+          "command": "line",
+          "value": "you."
+        },
+        {
+          "command": "para",
+          "value": "It can TELEPORT"
+        },
+        {
+          "command": "line",
+          "value": "you home."
+        },
+        {
+          "command": "para",
+          "value": "Would you like to"
+        },
+        {
+          "command": "line",
+          "value": "go home now?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TeleportGuyYesText": {
+      "raw_lines": [
+        "text \"OK, OK. Picture\"",
+        "line \"your house in your\"",
+        "cont \"mind\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OK, OK. Picture"
+        },
+        {
+          "command": "line",
+          "value": "your house in your"
+        },
+        {
+          "command": "cont",
+          "value": "mind\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TeleportGuyNoText": {
+      "raw_lines": [
+        "text \"OK, OK. The best\"",
+        "line \"of luck to you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OK, OK. The best"
+        },
+        {
+          "command": "line",
+          "value": "of luck to you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AbraText": {
+      "raw_lines": [
+        "text \"ABRA: Aabra\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ABRA: Aabra\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "PlateauRivalMovement1": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "turn_head LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "PlateauRivalMovement2": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "turn_head RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "PlateauRivalLeavesMovement": {
+      "raw_lines": [
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "PokecenterNurseScript"
+  ],
+  "dependencies": {
+    "IndigoPlateauPokecenter1F_MapScripts": {
+      "label_refs": [
+        "IndigoPlateauPokecenter1FNoopScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IndigoPlateauPokecenter1FNoopScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IndigoPlateauPokecenter1FPrepareElite4Callback": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_BRUNOSROOM_LOCK_DOOR",
+        "SCENE_HALLOFFAME_ENTER",
+        "SCENE_KARENSROOM_LOCK_DOOR",
+        "SCENE_KOGASROOM_LOCK_DOOR",
+        "SCENE_LANCESROOM_LOCK_DOOR",
+        "SCENE_WILLSROOM_LOCK_DOOR"
+      ],
+      "std_calls": []
+    },
+    "PlateauRivalBattle1": {
+      "label_refs": [
+        "PlateauRivalBattleCommon",
+        "PlateauRivalScriptDone"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "PlateauRivalMovement1"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlateauRivalBattle2": {
+      "label_refs": [
+        "PlateauRivalBattleCommon",
+        "PlateauRivalScriptDone"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "PlateauRivalMovement2"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlateauRivalBattleCommon": {
+      "label_refs": [
+        "PlateauRivalBattleCommon.Chikorita",
+        "PlateauRivalBattleCommon.Totodile",
+        "PlateauRivalPostBattle"
+      ],
+      "text_refs": [
+        "PlateauRivalText1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlateauRivalBattleCommon.Totodile": {
+      "label_refs": [
+        "PlateauRivalPostBattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlateauRivalBattleCommon.Chikorita": {
+      "label_refs": [
+        "PlateauRivalPostBattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlateauRivalPostBattle": {
+      "label_refs": [
+        "PlateauRivalScriptDone"
+      ],
+      "text_refs": [
+        "PlateauRivalText2"
+      ],
+      "movement_refs": [
+        "PlateauRivalLeavesMovement"
+      ],
+      "scene_refs": [
+        "SCENE_INDIGOPLATEAUPOKECENTER1F_RIVAL_BATTLE"
+      ],
+      "std_calls": []
+    },
+    "PlateauRivalScriptDone": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IndigoPlateauPokecenter1FNurseScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterNurseScript"
+      ]
+    },
+    "IndigoPlateauPokecenter1FClerkScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IndigoPlateauPokecenter1FCooltrainerMScript": {
+      "label_refs": [],
+      "text_refs": [
+        "IndigoPlateauPokecenter1FCooltrainerMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeleportGuyScript": {
+      "label_refs": [
+        "TeleportGuyScript.No"
+      ],
+      "text_refs": [
+        "TeleportGuyText1",
+        "TeleportGuyYesText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TeleportGuyScript.No": {
+      "label_refs": [],
+      "text_refs": [
+        "TeleportGuyNoText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AbraScript": {
+      "label_refs": [],
+      "text_refs": [
+        "AbraText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IndigoPlateauPokecenter1F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "day_time"
+  ],
+  "event_counts": {
+    "scene_scripts": 1,
+    "callbacks": 1,
+    "warp_events": 4,
+    "coord_events": 2,
+    "bg_events": 0,
+    "object_events": 6
+  }
+}

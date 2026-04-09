@@ -1,0 +1,1909 @@
+{
+  "crystal_map": "OlivineLighthouse2F",
+  "map_id": "OLIVINE_LIGHTHOUSE_2F",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 43,
+  "tileset": "TILESET_LIGHTHOUSE",
+  "environment": "DUNGEON",
+  "landmark": "LANDMARK_LIGHTHOUSE",
+  "music": "MUSIC_LIGHTHOUSE",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 10,
+  "height_blocks": 9,
+  "border_block": "00",
+  "blk_path": "maps/OlivineLighthouse2F.blk",
+  "source_asm": "maps/OlivineLighthouse2F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 11,
+        "dest_map": "OLIVINE_LIGHTHOUSE_1F",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 5,
+        "y": 3,
+        "dest_map": "OLIVINE_LIGHTHOUSE_3F",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 16,
+        "y": 13,
+        "dest_map": "OLIVINE_LIGHTHOUSE_1F",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 17,
+        "y": 13,
+        "dest_map": "OLIVINE_LIGHTHOUSE_1F",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 16,
+        "y": 11,
+        "dest_map": "OLIVINE_LIGHTHOUSE_3F",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 17,
+        "y": 11,
+        "dest_map": "OLIVINE_LIGHTHOUSE_3F",
+        "dest_warp_id": 5
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 9,
+        "y": 3,
+        "sprite": "SPRITE_SAILOR",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerSailorHuey",
+        "flag": -1
+      },
+      {
+        "x": 17,
+        "y": 8,
+        "sprite": "SPRITE_GENTLEMAN",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerGentlemanAlfred",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "OLIVINELIGHTHOUSE2F_SAILOR",
+    "OLIVINELIGHTHOUSE2F_GENTLEMAN"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "OlivineLighthouse2F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "TrainerGentlemanAlfred",
+      "label_refs": [
+        "TrainerGentlemanAlfred"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGentlemanAlfred": {
+      "raw_lines": [
+        "trainer GENTLEMAN, ALFRED, EVENT_BEAT_GENTLEMAN_ALFRED, GentlemanAlfredSeenText, GentlemanAlfredBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "GENTLEMAN",
+            "ALFRED",
+            "EVENT_BEAT_GENTLEMAN_ALFRED",
+            "GentlemanAlfredSeenText",
+            "GentlemanAlfredBeatenText",
+            "0",
+            "TrainerGentlemanAlfred.Script"
+          ],
+          "raw": "trainer GENTLEMAN, ALFRED, EVENT_BEAT_GENTLEMAN_ALFRED, GentlemanAlfredSeenText, GentlemanAlfredBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerGentlemanAlfred.Script",
+      "label_refs": [
+        "TrainerGentlemanAlfred.Script"
+      ],
+      "text_refs": [
+        "GentlemanAlfredBeatenText",
+        "GentlemanAlfredSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGentlemanAlfred.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext GentlemanAlfredAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GentlemanAlfredAfterBattleText"
+          ],
+          "raw": "writetext GentlemanAlfredAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "GentlemanAlfredAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey": {
+      "raw_lines": [
+        "trainer SAILOR, HUEY1, EVENT_BEAT_SAILOR_HUEY, SailorHueySeenText, SailorHueyBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "SAILOR",
+            "HUEY1",
+            "EVENT_BEAT_SAILOR_HUEY",
+            "SailorHueySeenText",
+            "SailorHueyBeatenText",
+            "0",
+            "TrainerSailorHuey.Script"
+          ],
+          "raw": "trainer SAILOR, HUEY1, EVENT_BEAT_SAILOR_HUEY, SailorHueySeenText, SailorHueyBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerSailorHuey.Script",
+      "label_refs": [
+        "TrainerSailorHuey.Script"
+      ],
+      "text_refs": [
+        "SailorHueyBeatenText",
+        "SailorHueySeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.Script": {
+      "raw_lines": [
+        "loadvar VAR_CALLERID, PHONE_SAILOR_HUEY",
+        "endifjustbattled",
+        "opentext",
+        "checkflag ENGINE_HUEY_READY_FOR_REMATCH",
+        "iftrue .WantsBattle",
+        "checkcellnum PHONE_SAILOR_HUEY",
+        "iftrue .NumberAccepted",
+        "checkevent EVENT_HUEY_ASKED_FOR_PHONE_NUMBER",
+        "iftrue .AskedBefore",
+        "setevent EVENT_HUEY_ASKED_FOR_PHONE_NUMBER",
+        "scall .AskNumber1",
+        "sjump .AskForNumber"
+      ],
+      "commands": [
+        {
+          "command": "loadvar",
+          "args": [
+            "VAR_CALLERID",
+            "PHONE_SAILOR_HUEY"
+          ],
+          "raw": "loadvar VAR_CALLERID, PHONE_SAILOR_HUEY"
+        },
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_HUEY_READY_FOR_REMATCH"
+          ],
+          "raw": "checkflag ENGINE_HUEY_READY_FOR_REMATCH"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerSailorHuey.WantsBattle"
+          ],
+          "raw": "iftrue .WantsBattle"
+        },
+        {
+          "command": "checkcellnum",
+          "args": [
+            "PHONE_SAILOR_HUEY"
+          ],
+          "raw": "checkcellnum PHONE_SAILOR_HUEY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerSailorHuey.NumberAccepted"
+          ],
+          "raw": "iftrue .NumberAccepted"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_HUEY_ASKED_FOR_PHONE_NUMBER"
+          ],
+          "raw": "checkevent EVENT_HUEY_ASKED_FOR_PHONE_NUMBER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerSailorHuey.AskedBefore"
+          ],
+          "raw": "iftrue .AskedBefore"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_HUEY_ASKED_FOR_PHONE_NUMBER"
+          ],
+          "raw": "setevent EVENT_HUEY_ASKED_FOR_PHONE_NUMBER"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "TrainerSailorHuey.AskNumber1"
+          ],
+          "raw": "scall .AskNumber1"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerSailorHuey.AskForNumber"
+          ],
+          "raw": "sjump .AskForNumber"
+        }
+      ],
+      "first_command": "loadvar",
+      "label_refs": [
+        "TrainerSailorHuey.AskForNumber",
+        "TrainerSailorHuey.AskNumber1",
+        "TrainerSailorHuey.AskedBefore",
+        "TrainerSailorHuey.NumberAccepted",
+        "TrainerSailorHuey.WantsBattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.AskedBefore": {
+      "raw_lines": [
+        "scall .AskNumber2"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "TrainerSailorHuey.AskNumber2"
+          ],
+          "raw": "scall .AskNumber2"
+        }
+      ],
+      "first_command": "scall",
+      "fallthrough_label": "TrainerSailorHuey.AskForNumber",
+      "label_refs": [
+        "TrainerSailorHuey.AskForNumber",
+        "TrainerSailorHuey.AskNumber2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.AskForNumber": {
+      "raw_lines": [
+        "askforphonenumber PHONE_SAILOR_HUEY",
+        "ifequal PHONE_CONTACTS_FULL, .PhoneFull",
+        "ifequal PHONE_CONTACT_REFUSED, .NumberDeclined",
+        "gettrainername STRING_BUFFER_3, SAILOR, HUEY1",
+        "scall .RegisteredNumber",
+        "sjump .NumberAccepted"
+      ],
+      "commands": [
+        {
+          "command": "askforphonenumber",
+          "args": [
+            "PHONE_SAILOR_HUEY"
+          ],
+          "raw": "askforphonenumber PHONE_SAILOR_HUEY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PHONE_CONTACTS_FULL",
+            "TrainerSailorHuey.PhoneFull"
+          ],
+          "raw": "ifequal PHONE_CONTACTS_FULL, .PhoneFull"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PHONE_CONTACT_REFUSED",
+            "TrainerSailorHuey.NumberDeclined"
+          ],
+          "raw": "ifequal PHONE_CONTACT_REFUSED, .NumberDeclined"
+        },
+        {
+          "command": "gettrainername",
+          "args": [
+            "STRING_BUFFER_3",
+            "SAILOR",
+            "HUEY1"
+          ],
+          "raw": "gettrainername STRING_BUFFER_3, SAILOR, HUEY1"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "TrainerSailorHuey.RegisteredNumber"
+          ],
+          "raw": "scall .RegisteredNumber"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerSailorHuey.NumberAccepted"
+          ],
+          "raw": "sjump .NumberAccepted"
+        }
+      ],
+      "first_command": "askforphonenumber",
+      "label_refs": [
+        "TrainerSailorHuey.NumberAccepted",
+        "TrainerSailorHuey.NumberDeclined",
+        "TrainerSailorHuey.PhoneFull",
+        "TrainerSailorHuey.RegisteredNumber"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.WantsBattle": {
+      "raw_lines": [
+        "scall .Rematch",
+        "winlosstext SailorHueyBeatenText, 0",
+        "readmem wHueyFightCount",
+        "ifequal 3, .Fight3",
+        "ifequal 2, .Fight2",
+        "ifequal 1, .Fight1",
+        "ifequal 0, .LoadFight0"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "TrainerSailorHuey.Rematch"
+          ],
+          "raw": "scall .Rematch"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "SailorHueyBeatenText",
+            "0"
+          ],
+          "raw": "winlosstext SailorHueyBeatenText, 0"
+        },
+        {
+          "command": "readmem",
+          "args": [
+            "wHueyFightCount"
+          ],
+          "raw": "readmem wHueyFightCount"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "3",
+            "TrainerSailorHuey.Fight3"
+          ],
+          "raw": "ifequal 3, .Fight3"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "TrainerSailorHuey.Fight2"
+          ],
+          "raw": "ifequal 2, .Fight2"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "TrainerSailorHuey.Fight1"
+          ],
+          "raw": "ifequal 1, .Fight1"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "0",
+            "TrainerSailorHuey.LoadFight0"
+          ],
+          "raw": "ifequal 0, .LoadFight0"
+        }
+      ],
+      "first_command": "scall",
+      "fallthrough_label": "TrainerSailorHuey.Fight3",
+      "label_refs": [
+        "TrainerSailorHuey.Fight1",
+        "TrainerSailorHuey.Fight2",
+        "TrainerSailorHuey.Fight3",
+        "TrainerSailorHuey.LoadFight0",
+        "TrainerSailorHuey.Rematch"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.Fight3": {
+      "raw_lines": [
+        "checkevent EVENT_RESTORED_POWER_TO_KANTO",
+        "iftrue .LoadFight3"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_RESTORED_POWER_TO_KANTO"
+          ],
+          "raw": "checkevent EVENT_RESTORED_POWER_TO_KANTO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerSailorHuey.LoadFight3"
+          ],
+          "raw": "iftrue .LoadFight3"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerSailorHuey.Fight2",
+      "label_refs": [
+        "TrainerSailorHuey.Fight2",
+        "TrainerSailorHuey.LoadFight3"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.Fight2": {
+      "raw_lines": [
+        "checkevent EVENT_BEAT_ELITE_FOUR",
+        "iftrue .LoadFight2"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_ELITE_FOUR"
+          ],
+          "raw": "checkevent EVENT_BEAT_ELITE_FOUR"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerSailorHuey.LoadFight2"
+          ],
+          "raw": "iftrue .LoadFight2"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerSailorHuey.Fight1",
+      "label_refs": [
+        "TrainerSailorHuey.Fight1",
+        "TrainerSailorHuey.LoadFight2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.Fight1": {
+      "raw_lines": [
+        "checkevent EVENT_CLEARED_RADIO_TOWER",
+        "iftrue .LoadFight1"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_RADIO_TOWER"
+          ],
+          "raw": "checkevent EVENT_CLEARED_RADIO_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerSailorHuey.LoadFight1"
+          ],
+          "raw": "iftrue .LoadFight1"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerSailorHuey.LoadFight0",
+      "label_refs": [
+        "TrainerSailorHuey.LoadFight0",
+        "TrainerSailorHuey.LoadFight1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.LoadFight0": {
+      "raw_lines": [
+        "loadtrainer SAILOR, HUEY1",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wHueyFightCount, 1",
+        "clearflag ENGINE_HUEY_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "SAILOR",
+            "HUEY1"
+          ],
+          "raw": "loadtrainer SAILOR, HUEY1"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wHueyFightCount",
+            "1"
+          ],
+          "raw": "loadmem wHueyFightCount, 1"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_HUEY_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_HUEY_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.LoadFight1": {
+      "raw_lines": [
+        "loadtrainer SAILOR, HUEY2",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wHueyFightCount, 2",
+        "clearflag ENGINE_HUEY_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "SAILOR",
+            "HUEY2"
+          ],
+          "raw": "loadtrainer SAILOR, HUEY2"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wHueyFightCount",
+            "2"
+          ],
+          "raw": "loadmem wHueyFightCount, 2"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_HUEY_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_HUEY_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.LoadFight2": {
+      "raw_lines": [
+        "loadtrainer SAILOR, HUEY3",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wHueyFightCount, 3",
+        "clearflag ENGINE_HUEY_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "SAILOR",
+            "HUEY3"
+          ],
+          "raw": "loadtrainer SAILOR, HUEY3"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wHueyFightCount",
+            "3"
+          ],
+          "raw": "loadmem wHueyFightCount, 3"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_HUEY_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_HUEY_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.LoadFight3": {
+      "raw_lines": [
+        "loadtrainer SAILOR, HUEY4",
+        "startbattle",
+        "reloadmapafterbattle",
+        "clearflag ENGINE_HUEY_READY_FOR_REMATCH",
+        "checkevent EVENT_HUEY_PROTEIN",
+        "iftrue .HasProtein",
+        "checkevent EVENT_GOT_PROTEIN_FROM_HUEY",
+        "iftrue .SkipGift",
+        "scall .RematchGift",
+        "verbosegiveitem PROTEIN",
+        "iffalse .PackFull",
+        "setevent EVENT_GOT_PROTEIN_FROM_HUEY",
+        "sjump .NumberAccepted"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "SAILOR",
+            "HUEY4"
+          ],
+          "raw": "loadtrainer SAILOR, HUEY4"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_HUEY_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_HUEY_READY_FOR_REMATCH"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_HUEY_PROTEIN"
+          ],
+          "raw": "checkevent EVENT_HUEY_PROTEIN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerSailorHuey.HasProtein"
+          ],
+          "raw": "iftrue .HasProtein"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_PROTEIN_FROM_HUEY"
+          ],
+          "raw": "checkevent EVENT_GOT_PROTEIN_FROM_HUEY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerSailorHuey.SkipGift"
+          ],
+          "raw": "iftrue .SkipGift"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "TrainerSailorHuey.RematchGift"
+          ],
+          "raw": "scall .RematchGift"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "PROTEIN"
+          ],
+          "raw": "verbosegiveitem PROTEIN"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "TrainerSailorHuey.PackFull"
+          ],
+          "raw": "iffalse .PackFull"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_PROTEIN_FROM_HUEY"
+          ],
+          "raw": "setevent EVENT_GOT_PROTEIN_FROM_HUEY"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerSailorHuey.NumberAccepted"
+          ],
+          "raw": "sjump .NumberAccepted"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [
+        "TrainerSailorHuey.HasProtein",
+        "TrainerSailorHuey.NumberAccepted",
+        "TrainerSailorHuey.PackFull",
+        "TrainerSailorHuey.RematchGift",
+        "TrainerSailorHuey.SkipGift"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.SkipGift": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.HasProtein": {
+      "raw_lines": [
+        "opentext",
+        "writetext SailorHueyGiveProteinText",
+        "waitbutton",
+        "verbosegiveitem PROTEIN",
+        "iffalse .PackFull",
+        "clearevent EVENT_HUEY_PROTEIN",
+        "setevent EVENT_GOT_PROTEIN_FROM_HUEY",
+        "sjump .NumberAccepted"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SailorHueyGiveProteinText"
+          ],
+          "raw": "writetext SailorHueyGiveProteinText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "PROTEIN"
+          ],
+          "raw": "verbosegiveitem PROTEIN"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "TrainerSailorHuey.PackFull"
+          ],
+          "raw": "iffalse .PackFull"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_HUEY_PROTEIN"
+          ],
+          "raw": "clearevent EVENT_HUEY_PROTEIN"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_PROTEIN_FROM_HUEY"
+          ],
+          "raw": "setevent EVENT_GOT_PROTEIN_FROM_HUEY"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerSailorHuey.NumberAccepted"
+          ],
+          "raw": "sjump .NumberAccepted"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "TrainerSailorHuey.NumberAccepted",
+        "TrainerSailorHuey.PackFull"
+      ],
+      "text_refs": [
+        "SailorHueyGiveProteinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.AskNumber1": {
+      "raw_lines": [
+        "jumpstd AskNumber1MScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "AskNumber1MScript"
+          ],
+          "raw": "jumpstd AskNumber1MScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber1MScript"
+      ]
+    },
+    "TrainerSailorHuey.AskNumber2": {
+      "raw_lines": [
+        "jumpstd AskNumber2MScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "AskNumber2MScript"
+          ],
+          "raw": "jumpstd AskNumber2MScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber2MScript"
+      ]
+    },
+    "TrainerSailorHuey.RegisteredNumber": {
+      "raw_lines": [
+        "jumpstd RegisteredNumberMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RegisteredNumberMScript"
+          ],
+          "raw": "jumpstd RegisteredNumberMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RegisteredNumberMScript"
+      ]
+    },
+    "TrainerSailorHuey.NumberAccepted": {
+      "raw_lines": [
+        "jumpstd NumberAcceptedMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "NumberAcceptedMScript"
+          ],
+          "raw": "jumpstd NumberAcceptedMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberAcceptedMScript"
+      ]
+    },
+    "TrainerSailorHuey.NumberDeclined": {
+      "raw_lines": [
+        "jumpstd NumberDeclinedMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "NumberDeclinedMScript"
+          ],
+          "raw": "jumpstd NumberDeclinedMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberDeclinedMScript"
+      ]
+    },
+    "TrainerSailorHuey.PhoneFull": {
+      "raw_lines": [
+        "jumpstd PhoneFullMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PhoneFullMScript"
+          ],
+          "raw": "jumpstd PhoneFullMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PhoneFullMScript"
+      ]
+    },
+    "TrainerSailorHuey.Rematch": {
+      "raw_lines": [
+        "jumpstd RematchMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RematchMScript"
+          ],
+          "raw": "jumpstd RematchMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchMScript"
+      ]
+    },
+    "TrainerSailorHuey.PackFull": {
+      "raw_lines": [
+        "setevent EVENT_HUEY_PROTEIN",
+        "jumpstd PackFullMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_HUEY_PROTEIN"
+          ],
+          "raw": "setevent EVENT_HUEY_PROTEIN"
+        },
+        {
+          "command": "jumpstd",
+          "args": [
+            "PackFullMScript"
+          ],
+          "raw": "jumpstd PackFullMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "setevent",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PackFullMScript"
+      ]
+    },
+    "TrainerSailorHuey.RematchGift": {
+      "raw_lines": [
+        "jumpstd RematchGiftMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RematchGiftMScript"
+          ],
+          "raw": "jumpstd RematchGiftMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchGiftMScript"
+      ]
+    },
+    "OlivineLighthouse2F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3, 11, OLIVINE_LIGHTHOUSE_1F, 3",
+        "warp_event  5,  3, OLIVINE_LIGHTHOUSE_3F, 2",
+        "warp_event 16, 13, OLIVINE_LIGHTHOUSE_1F, 4",
+        "warp_event 17, 13, OLIVINE_LIGHTHOUSE_1F, 5",
+        "warp_event 16, 11, OLIVINE_LIGHTHOUSE_3F, 4",
+        "warp_event 17, 11, OLIVINE_LIGHTHOUSE_3F, 5",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  9,  3, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSailorHuey, -1",
+        "object_event 17,  8, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerGentlemanAlfred, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "11",
+            "OLIVINE_LIGHTHOUSE_1F",
+            "3"
+          ],
+          "raw": "warp_event  3, 11, OLIVINE_LIGHTHOUSE_1F, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "3",
+            "OLIVINE_LIGHTHOUSE_3F",
+            "2"
+          ],
+          "raw": "warp_event  5,  3, OLIVINE_LIGHTHOUSE_3F, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "16",
+            "13",
+            "OLIVINE_LIGHTHOUSE_1F",
+            "4"
+          ],
+          "raw": "warp_event 16, 13, OLIVINE_LIGHTHOUSE_1F, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "13",
+            "OLIVINE_LIGHTHOUSE_1F",
+            "5"
+          ],
+          "raw": "warp_event 17, 13, OLIVINE_LIGHTHOUSE_1F, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "16",
+            "11",
+            "OLIVINE_LIGHTHOUSE_3F",
+            "4"
+          ],
+          "raw": "warp_event 16, 11, OLIVINE_LIGHTHOUSE_3F, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "11",
+            "OLIVINE_LIGHTHOUSE_3F",
+            "5"
+          ],
+          "raw": "warp_event 17, 11, OLIVINE_LIGHTHOUSE_3F, 5"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "3",
+            "SPRITE_SAILOR",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerSailorHuey",
+            "-1"
+          ],
+          "raw": "object_event  9,  3, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSailorHuey, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "17",
+            "8",
+            "SPRITE_GENTLEMAN",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerGentlemanAlfred",
+            "-1"
+          ],
+          "raw": "object_event 17,  8, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerGentlemanAlfred, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "SailorHueySeenText": {
+      "raw_lines": [
+        "text \"Men of the sea are\"",
+        "line \"always spoiling\"",
+        "cont \"for a good fight!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Men of the sea are"
+        },
+        {
+          "command": "line",
+          "value": "always spoiling"
+        },
+        {
+          "command": "cont",
+          "value": "for a good fight!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SailorHueyBeatenText": {
+      "raw_lines": [
+        "text \"Urf!\"",
+        "line \"I lose!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Urf!"
+        },
+        {
+          "command": "line",
+          "value": "I lose!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SailorHueyUnusedText": {
+      "raw_lines": [
+        "text \"What power!\"",
+        "line \"How would you like\"",
+        "para \"to sail the seas\"",
+        "line \"with me?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What power!"
+        },
+        {
+          "command": "line",
+          "value": "How would you like"
+        },
+        {
+          "command": "para",
+          "value": "to sail the seas"
+        },
+        {
+          "command": "line",
+          "value": "with me?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GentlemanAlfredSeenText": {
+      "raw_lines": [
+        "text \"Hm? This is no\"",
+        "line \"place for playing.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hm? This is no"
+        },
+        {
+          "command": "line",
+          "value": "place for playing."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GentlemanAlfredBeatenText": {
+      "raw_lines": [
+        "text \"Ah! I can see that\"",
+        "line \"you're serious.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ah! I can see that"
+        },
+        {
+          "command": "line",
+          "value": "you're serious."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GentlemanAlfredAfterBattleText": {
+      "raw_lines": [
+        "text \"Up top is a #-\"",
+        "line \"MON that keeps the\"",
+        "cont \"LIGHTHOUSE lit.\"",
+        "para \"But I hear that\"",
+        "line \"it's sick now and\"",
+        "para \"can't be cured by\"",
+        "line \"ordinary medicine.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Up top is a #-"
+        },
+        {
+          "command": "line",
+          "value": "MON that keeps the"
+        },
+        {
+          "command": "cont",
+          "value": "LIGHTHOUSE lit."
+        },
+        {
+          "command": "para",
+          "value": "But I hear that"
+        },
+        {
+          "command": "line",
+          "value": "it's sick now and"
+        },
+        {
+          "command": "para",
+          "value": "can't be cured by"
+        },
+        {
+          "command": "line",
+          "value": "ordinary medicine."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SailorHueyGiveProteinText": {
+      "raw_lines": [
+        "text \"Man! You're as\"",
+        "line \"tough as ever!\"",
+        "para \"Anyway, here's\"",
+        "line \"that medicine from\"",
+        "cont \"before.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Man! You're as"
+        },
+        {
+          "command": "line",
+          "value": "tough as ever!"
+        },
+        {
+          "command": "para",
+          "value": "Anyway, here's"
+        },
+        {
+          "command": "line",
+          "value": "that medicine from"
+        },
+        {
+          "command": "cont",
+          "value": "before."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "AskNumber1MScript",
+    "AskNumber2MScript",
+    "NumberAcceptedMScript",
+    "NumberDeclinedMScript",
+    "PackFullMScript",
+    "PhoneFullMScript",
+    "RegisteredNumberMScript",
+    "RematchGiftMScript",
+    "RematchMScript"
+  ],
+  "dependencies": {
+    "OlivineLighthouse2F_MapScripts": {
+      "label_refs": [
+        "TrainerGentlemanAlfred"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGentlemanAlfred": {
+      "label_refs": [
+        "TrainerGentlemanAlfred.Script"
+      ],
+      "text_refs": [
+        "GentlemanAlfredBeatenText",
+        "GentlemanAlfredSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGentlemanAlfred.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GentlemanAlfredAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey": {
+      "label_refs": [
+        "TrainerSailorHuey.Script"
+      ],
+      "text_refs": [
+        "SailorHueyBeatenText",
+        "SailorHueySeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.Script": {
+      "label_refs": [
+        "TrainerSailorHuey.AskForNumber",
+        "TrainerSailorHuey.AskNumber1",
+        "TrainerSailorHuey.AskedBefore",
+        "TrainerSailorHuey.NumberAccepted",
+        "TrainerSailorHuey.WantsBattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.AskedBefore": {
+      "label_refs": [
+        "TrainerSailorHuey.AskForNumber",
+        "TrainerSailorHuey.AskNumber2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.AskForNumber": {
+      "label_refs": [
+        "TrainerSailorHuey.NumberAccepted",
+        "TrainerSailorHuey.NumberDeclined",
+        "TrainerSailorHuey.PhoneFull",
+        "TrainerSailorHuey.RegisteredNumber"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.WantsBattle": {
+      "label_refs": [
+        "TrainerSailorHuey.Fight1",
+        "TrainerSailorHuey.Fight2",
+        "TrainerSailorHuey.Fight3",
+        "TrainerSailorHuey.LoadFight0",
+        "TrainerSailorHuey.Rematch"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.Fight3": {
+      "label_refs": [
+        "TrainerSailorHuey.Fight2",
+        "TrainerSailorHuey.LoadFight3"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.Fight2": {
+      "label_refs": [
+        "TrainerSailorHuey.Fight1",
+        "TrainerSailorHuey.LoadFight2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.Fight1": {
+      "label_refs": [
+        "TrainerSailorHuey.LoadFight0",
+        "TrainerSailorHuey.LoadFight1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.LoadFight0": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.LoadFight1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.LoadFight2": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.LoadFight3": {
+      "label_refs": [
+        "TrainerSailorHuey.HasProtein",
+        "TrainerSailorHuey.NumberAccepted",
+        "TrainerSailorHuey.PackFull",
+        "TrainerSailorHuey.RematchGift",
+        "TrainerSailorHuey.SkipGift"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.SkipGift": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.HasProtein": {
+      "label_refs": [
+        "TrainerSailorHuey.NumberAccepted",
+        "TrainerSailorHuey.PackFull"
+      ],
+      "text_refs": [
+        "SailorHueyGiveProteinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorHuey.AskNumber1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber1MScript"
+      ]
+    },
+    "TrainerSailorHuey.AskNumber2": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber2MScript"
+      ]
+    },
+    "TrainerSailorHuey.RegisteredNumber": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RegisteredNumberMScript"
+      ]
+    },
+    "TrainerSailorHuey.NumberAccepted": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberAcceptedMScript"
+      ]
+    },
+    "TrainerSailorHuey.NumberDeclined": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberDeclinedMScript"
+      ]
+    },
+    "TrainerSailorHuey.PhoneFull": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PhoneFullMScript"
+      ]
+    },
+    "TrainerSailorHuey.Rematch": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchMScript"
+      ]
+    },
+    "TrainerSailorHuey.PackFull": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PackFullMScript"
+      ]
+    },
+    "TrainerSailorHuey.RematchGift": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchGiftMScript"
+      ]
+    },
+    "OlivineLighthouse2F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 6,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 2
+  }
+}

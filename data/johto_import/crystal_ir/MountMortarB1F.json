@@ -1,0 +1,1233 @@
+{
+  "crystal_map": "MountMortarB1F",
+  "map_id": "MOUNT_MORTAR_B1F",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 60,
+  "tileset": "TILESET_DARK_CAVE",
+  "environment": "CAVE",
+  "landmark": "LANDMARK_MT_MORTAR",
+  "music": "MUSIC_UNION_CAVE",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_NITE",
+  "fishgroup": "FISHGROUP_LAKE",
+  "width_blocks": 20,
+  "height_blocks": 18,
+  "border_block": "09",
+  "blk_path": "maps/MountMortarB1F.blk",
+  "source_asm": "maps/MountMortarB1F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 3,
+        "dest_map": "MOUNT_MORTAR_1F_INSIDE",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 19,
+        "y": 29,
+        "dest_map": "MOUNT_MORTAR_1F_OUTSIDE",
+        "dest_warp_id": 7
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 4,
+        "y": 6,
+        "kind": "BGEVENT_ITEM",
+        "script": "MountMortarB1FHiddenMaxRevive"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 29,
+        "y": 12,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "MountMortarB1FHyperPotion",
+        "flag": "EVENT_MOUNT_MORTAR_B1F_HYPER_POTION"
+      },
+      {
+        "x": 4,
+        "y": 16,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "MountMortarB1FCarbos",
+        "flag": "EVENT_MOUNT_MORTAR_B1F_CARBOS"
+      },
+      {
+        "x": 9,
+        "y": 10,
+        "sprite": "SPRITE_BOULDER",
+        "movement": "SPRITEMOVEDATA_STRENGTH_BOULDER",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MountMortarB1FBoulder",
+        "flag": -1
+      },
+      {
+        "x": 16,
+        "y": 4,
+        "sprite": "SPRITE_BLACK_BELT",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MountMortarB1FKiyoScript",
+        "flag": -1
+      },
+      {
+        "x": 34,
+        "y": 24,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "MountMortarB1FFullRestore",
+        "flag": "EVENT_MOUNT_MORTAR_B1F_FULL_RESTORE"
+      },
+      {
+        "x": 32,
+        "y": 3,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "MountMortarB1FMaxEther",
+        "flag": "EVENT_MOUNT_MORTAR_B1F_MAX_ETHER"
+      },
+      {
+        "x": 21,
+        "y": 26,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "MountMortarB1FPPUp",
+        "flag": "EVENT_MOUNT_MORTAR_B1F_PP_UP"
+      }
+    ]
+  },
+  "object_consts": [
+    "MOUNTMORTARB1F_POKE_BALL1",
+    "MOUNTMORTARB1F_POKE_BALL2",
+    "MOUNTMORTARB1F_BOULDER",
+    "MOUNTMORTARB1F_KIYO",
+    "MOUNTMORTARB1F_POKE_BALL3",
+    "MOUNTMORTARB1F_POKE_BALL4",
+    "MOUNTMORTARB1F_POKE_BALL5"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "MountMortarB1F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "MountMortarB1FKiyoScript",
+      "label_refs": [
+        "MountMortarB1FKiyoScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FKiyoScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_TYROGUE_FROM_KIYO",
+        "iftrue .GotTyrogue",
+        "checkevent EVENT_BEAT_BLACKBELT_KIYO",
+        "iftrue .BeatKiyo",
+        "writetext MountMortarB1FKiyoIntroText",
+        "waitbutton",
+        "closetext",
+        "winlosstext MountMortarB1FKiyoWinText, 0",
+        "loadtrainer BLACKBELT_T, KIYO",
+        "startbattle",
+        "reloadmapafterbattle",
+        "setevent EVENT_BEAT_BLACKBELT_KIYO",
+        "opentext"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TYROGUE_FROM_KIYO"
+          ],
+          "raw": "checkevent EVENT_GOT_TYROGUE_FROM_KIYO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MountMortarB1FKiyoScript.GotTyrogue"
+          ],
+          "raw": "iftrue .GotTyrogue"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_BLACKBELT_KIYO"
+          ],
+          "raw": "checkevent EVENT_BEAT_BLACKBELT_KIYO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MountMortarB1FKiyoScript.BeatKiyo"
+          ],
+          "raw": "iftrue .BeatKiyo"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MountMortarB1FKiyoIntroText"
+          ],
+          "raw": "writetext MountMortarB1FKiyoIntroText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "MountMortarB1FKiyoWinText",
+            "0"
+          ],
+          "raw": "winlosstext MountMortarB1FKiyoWinText, 0"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "BLACKBELT_T",
+            "KIYO"
+          ],
+          "raw": "loadtrainer BLACKBELT_T, KIYO"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_BLACKBELT_KIYO"
+          ],
+          "raw": "setevent EVENT_BEAT_BLACKBELT_KIYO"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "MountMortarB1FKiyoScript.BeatKiyo",
+      "label_refs": [
+        "MountMortarB1FKiyoScript.BeatKiyo",
+        "MountMortarB1FKiyoScript.GotTyrogue"
+      ],
+      "text_refs": [
+        "MountMortarB1FKiyoIntroText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FKiyoScript.BeatKiyo": {
+      "raw_lines": [
+        "writetext MountMortarB1FTyrogueRewardText",
+        "promptbutton",
+        "waitsfx",
+        "readvar VAR_PARTYCOUNT",
+        "ifequal PARTY_LENGTH, .NoRoom",
+        "writetext MountMortarB1FReceiveMonText",
+        "playsound SFX_CAUGHT_MON",
+        "waitsfx",
+        "givepoke TYROGUE, 10",
+        "setevent EVENT_GOT_TYROGUE_FROM_KIYO"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "MountMortarB1FTyrogueRewardText"
+          ],
+          "raw": "writetext MountMortarB1FTyrogueRewardText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_PARTYCOUNT"
+          ],
+          "raw": "readvar VAR_PARTYCOUNT"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PARTY_LENGTH",
+            "MountMortarB1FKiyoScript.NoRoom"
+          ],
+          "raw": "ifequal PARTY_LENGTH, .NoRoom"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MountMortarB1FReceiveMonText"
+          ],
+          "raw": "writetext MountMortarB1FReceiveMonText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_CAUGHT_MON"
+          ],
+          "raw": "playsound SFX_CAUGHT_MON"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "givepoke",
+          "args": [
+            "TYROGUE",
+            "10"
+          ],
+          "raw": "givepoke TYROGUE, 10"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_TYROGUE_FROM_KIYO"
+          ],
+          "raw": "setevent EVENT_GOT_TYROGUE_FROM_KIYO"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "MountMortarB1FKiyoScript.GotTyrogue",
+      "label_refs": [
+        "MountMortarB1FKiyoScript.GotTyrogue",
+        "MountMortarB1FKiyoScript.NoRoom"
+      ],
+      "text_refs": [
+        "MountMortarB1FReceiveMonText",
+        "MountMortarB1FTyrogueRewardText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FKiyoScript.GotTyrogue": {
+      "raw_lines": [
+        "writetext MountMortarB1FKiyoGotTyrogueText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "MountMortarB1FKiyoGotTyrogueText"
+          ],
+          "raw": "writetext MountMortarB1FKiyoGotTyrogueText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "MountMortarB1FKiyoGotTyrogueText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FKiyoScript.NoRoom": {
+      "raw_lines": [
+        "writetext MountMortarB1FKiyoFullPartyText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "MountMortarB1FKiyoFullPartyText"
+          ],
+          "raw": "writetext MountMortarB1FKiyoFullPartyText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "MountMortarB1FKiyoFullPartyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FBoulder": {
+      "raw_lines": [
+        "jumpstd StrengthBoulderScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "StrengthBoulderScript"
+          ],
+          "raw": "jumpstd StrengthBoulderScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "StrengthBoulderScript"
+      ]
+    },
+    "MountMortarB1FHyperPotion": {
+      "raw_lines": [
+        "itemball HYPER_POTION"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "HYPER_POTION"
+          ],
+          "raw": "itemball HYPER_POTION"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "MountMortarB1FCarbos",
+      "label_refs": [
+        "MountMortarB1FCarbos"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FCarbos": {
+      "raw_lines": [
+        "itemball CARBOS"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "CARBOS"
+          ],
+          "raw": "itemball CARBOS"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "MountMortarB1FFullRestore",
+      "label_refs": [
+        "MountMortarB1FFullRestore"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FFullRestore": {
+      "raw_lines": [
+        "itemball FULL_RESTORE"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "FULL_RESTORE"
+          ],
+          "raw": "itemball FULL_RESTORE"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "MountMortarB1FMaxEther",
+      "label_refs": [
+        "MountMortarB1FMaxEther"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FMaxEther": {
+      "raw_lines": [
+        "itemball MAX_ETHER"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "MAX_ETHER"
+          ],
+          "raw": "itemball MAX_ETHER"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "MountMortarB1FPPUp",
+      "label_refs": [
+        "MountMortarB1FPPUp"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FPPUp": {
+      "raw_lines": [
+        "itemball PP_UP"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "PP_UP"
+          ],
+          "raw": "itemball PP_UP"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "MountMortarB1FHiddenMaxRevive",
+      "label_refs": [
+        "MountMortarB1FHiddenMaxRevive"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FHiddenMaxRevive": {
+      "raw_lines": [
+        "hiddenitem MAX_REVIVE, EVENT_MOUNT_MORTAR_B1F_HIDDEN_MAX_REVIVE"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "MAX_REVIVE",
+            "EVENT_MOUNT_MORTAR_B1F_HIDDEN_MAX_REVIVE"
+          ],
+          "raw": "hiddenitem MAX_REVIVE, EVENT_MOUNT_MORTAR_B1F_HIDDEN_MAX_REVIVE"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "MountMortarB1F_MapEvents",
+      "label_refs": [
+        "MountMortarB1F_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  3, MOUNT_MORTAR_1F_INSIDE, 5",
+        "warp_event 19, 29, MOUNT_MORTAR_1F_OUTSIDE, 7",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  4,  6, BGEVENT_ITEM, MountMortarB1FHiddenMaxRevive",
+        "def_object_events",
+        "object_event 29, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FHyperPotion, EVENT_MOUNT_MORTAR_B1F_HYPER_POTION",
+        "object_event  4, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FCarbos, EVENT_MOUNT_MORTAR_B1F_CARBOS",
+        "object_event  9, 10, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMortarB1FBoulder, -1",
+        "object_event 16,  4, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MountMortarB1FKiyoScript, -1",
+        "object_event 34, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FFullRestore, EVENT_MOUNT_MORTAR_B1F_FULL_RESTORE",
+        "object_event 32,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FMaxEther, EVENT_MOUNT_MORTAR_B1F_MAX_ETHER",
+        "object_event 21, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FPPUp, EVENT_MOUNT_MORTAR_B1F_PP_UP"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "3",
+            "MOUNT_MORTAR_1F_INSIDE",
+            "5"
+          ],
+          "raw": "warp_event  3,  3, MOUNT_MORTAR_1F_INSIDE, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "19",
+            "29",
+            "MOUNT_MORTAR_1F_OUTSIDE",
+            "7"
+          ],
+          "raw": "warp_event 19, 29, MOUNT_MORTAR_1F_OUTSIDE, 7"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "4",
+            "6",
+            "BGEVENT_ITEM",
+            "MountMortarB1FHiddenMaxRevive"
+          ],
+          "raw": "bg_event  4,  6, BGEVENT_ITEM, MountMortarB1FHiddenMaxRevive"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "29",
+            "12",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "MountMortarB1FHyperPotion",
+            "EVENT_MOUNT_MORTAR_B1F_HYPER_POTION"
+          ],
+          "raw": "object_event 29, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FHyperPotion, EVENT_MOUNT_MORTAR_B1F_HYPER_POTION"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "16",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "MountMortarB1FCarbos",
+            "EVENT_MOUNT_MORTAR_B1F_CARBOS"
+          ],
+          "raw": "object_event  4, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FCarbos, EVENT_MOUNT_MORTAR_B1F_CARBOS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "10",
+            "SPRITE_BOULDER",
+            "SPRITEMOVEDATA_STRENGTH_BOULDER",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MountMortarB1FBoulder",
+            "-1"
+          ],
+          "raw": "object_event  9, 10, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MountMortarB1FBoulder, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "16",
+            "4",
+            "SPRITE_BLACK_BELT",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MountMortarB1FKiyoScript",
+            "-1"
+          ],
+          "raw": "object_event 16,  4, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MountMortarB1FKiyoScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "34",
+            "24",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "MountMortarB1FFullRestore",
+            "EVENT_MOUNT_MORTAR_B1F_FULL_RESTORE"
+          ],
+          "raw": "object_event 34, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FFullRestore, EVENT_MOUNT_MORTAR_B1F_FULL_RESTORE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "32",
+            "3",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "MountMortarB1FMaxEther",
+            "EVENT_MOUNT_MORTAR_B1F_MAX_ETHER"
+          ],
+          "raw": "object_event 32,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FMaxEther, EVENT_MOUNT_MORTAR_B1F_MAX_ETHER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "21",
+            "26",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "MountMortarB1FPPUp",
+            "EVENT_MOUNT_MORTAR_B1F_PP_UP"
+          ],
+          "raw": "object_event 21, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FPPUp, EVENT_MOUNT_MORTAR_B1F_PP_UP"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "MountMortarB1FKiyoIntroText": {
+      "raw_lines": [
+        "text \"Hey!\"",
+        "para \"I am the KARATE\"",
+        "line \"KING!\"",
+        "para \"I train alone here\"",
+        "line \"in the dark!\"",
+        "para \"You!\"",
+        "line \"Battle with me!\"",
+        "para \"Hwaaarggh!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hey!"
+        },
+        {
+          "command": "para",
+          "value": "I am the KARATE"
+        },
+        {
+          "command": "line",
+          "value": "KING!"
+        },
+        {
+          "command": "para",
+          "value": "I train alone here"
+        },
+        {
+          "command": "line",
+          "value": "in the dark!"
+        },
+        {
+          "command": "para",
+          "value": "You!"
+        },
+        {
+          "command": "line",
+          "value": "Battle with me!"
+        },
+        {
+          "command": "para",
+          "value": "Hwaaarggh!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MountMortarB1FKiyoWinText": {
+      "raw_lines": [
+        "text \"Waaaarggh!\"",
+        "line \"I'm beaten!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Waaaarggh!"
+        },
+        {
+          "command": "line",
+          "value": "I'm beaten!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MountMortarB1FTyrogueRewardText": {
+      "raw_lines": [
+        "text \"I\u2026 I'm crushed\u2026\"",
+        "para \"My training is\"",
+        "line \"still not enough\u2026\"",
+        "para \"But a loss is a\"",
+        "line \"loss. I admit it.\"",
+        "para \"As proof that you\"",
+        "line \"defeated me, I'll\"",
+        "para \"give you a rare\"",
+        "line \"fighting #MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I\u2026 I'm crushed\u2026"
+        },
+        {
+          "command": "para",
+          "value": "My training is"
+        },
+        {
+          "command": "line",
+          "value": "still not enough\u2026"
+        },
+        {
+          "command": "para",
+          "value": "But a loss is a"
+        },
+        {
+          "command": "line",
+          "value": "loss. I admit it."
+        },
+        {
+          "command": "para",
+          "value": "As proof that you"
+        },
+        {
+          "command": "line",
+          "value": "defeated me, I'll"
+        },
+        {
+          "command": "para",
+          "value": "give you a rare"
+        },
+        {
+          "command": "line",
+          "value": "fighting #MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MountMortarB1FReceiveMonText": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"TYROGUE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "TYROGUE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MountMortarB1FKiyoGotTyrogueText": {
+      "raw_lines": [
+        "text \"TYROGUE is a\"",
+        "line \"fighting-type.\"",
+        "para \"It evolves into a\"",
+        "line \"tougher #MON.\"",
+        "para \"Keep up the hard\"",
+        "line \"work. I'll keep\"",
+        "cont \"training too.\"",
+        "para \"Farewell!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "TYROGUE is a"
+        },
+        {
+          "command": "line",
+          "value": "fighting-type."
+        },
+        {
+          "command": "para",
+          "value": "It evolves into a"
+        },
+        {
+          "command": "line",
+          "value": "tougher #MON."
+        },
+        {
+          "command": "para",
+          "value": "Keep up the hard"
+        },
+        {
+          "command": "line",
+          "value": "work. I'll keep"
+        },
+        {
+          "command": "cont",
+          "value": "training too."
+        },
+        {
+          "command": "para",
+          "value": "Farewell!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MountMortarB1FKiyoFullPartyText": {
+      "raw_lines": [
+        "text \"You have no room\"",
+        "line \"in your party!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You have no room"
+        },
+        {
+          "command": "line",
+          "value": "in your party!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "StrengthBoulderScript"
+  ],
+  "dependencies": {
+    "MountMortarB1F_MapScripts": {
+      "label_refs": [
+        "MountMortarB1FKiyoScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FKiyoScript": {
+      "label_refs": [
+        "MountMortarB1FKiyoScript.BeatKiyo",
+        "MountMortarB1FKiyoScript.GotTyrogue"
+      ],
+      "text_refs": [
+        "MountMortarB1FKiyoIntroText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FKiyoScript.BeatKiyo": {
+      "label_refs": [
+        "MountMortarB1FKiyoScript.GotTyrogue",
+        "MountMortarB1FKiyoScript.NoRoom"
+      ],
+      "text_refs": [
+        "MountMortarB1FReceiveMonText",
+        "MountMortarB1FTyrogueRewardText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FKiyoScript.GotTyrogue": {
+      "label_refs": [],
+      "text_refs": [
+        "MountMortarB1FKiyoGotTyrogueText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FKiyoScript.NoRoom": {
+      "label_refs": [],
+      "text_refs": [
+        "MountMortarB1FKiyoFullPartyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FBoulder": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "StrengthBoulderScript"
+      ]
+    },
+    "MountMortarB1FHyperPotion": {
+      "label_refs": [
+        "MountMortarB1FCarbos"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FCarbos": {
+      "label_refs": [
+        "MountMortarB1FFullRestore"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FFullRestore": {
+      "label_refs": [
+        "MountMortarB1FMaxEther"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FMaxEther": {
+      "label_refs": [
+        "MountMortarB1FPPUp"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FPPUp": {
+      "label_refs": [
+        "MountMortarB1FHiddenMaxRevive"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1FHiddenMaxRevive": {
+      "label_refs": [
+        "MountMortarB1F_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MountMortarB1F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 1,
+    "object_events": 7
+  }
+}

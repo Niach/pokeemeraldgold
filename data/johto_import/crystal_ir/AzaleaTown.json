@@ -1,0 +1,3664 @@
+{
+  "crystal_map": "AzaleaTown",
+  "map_id": "AZALEA_TOWN",
+  "group": "AZALEA",
+  "group_index": 8,
+  "map_index": 7,
+  "tileset": "TILESET_JOHTO_MODERN",
+  "environment": "TOWN",
+  "landmark": "LANDMARK_AZALEA_TOWN",
+  "music": "MUSIC_AZALEA_TOWN",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_AUTO",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 20,
+  "height_blocks": 9,
+  "border_block": "05",
+  "blk_path": "maps/AzaleaTown.blk",
+  "source_asm": "maps/AzaleaTown.asm",
+  "connections": [
+    {
+      "direction": "west",
+      "map": "Route34",
+      "target_map_id": "ROUTE_34",
+      "offset": -18
+    },
+    {
+      "direction": "east",
+      "map": "Route33",
+      "target_map_id": "ROUTE_33",
+      "offset": 0
+    }
+  ],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "AzaleaTownNoop1Scene",
+        "scene_id": "SCENE_AZALEATOWN_NOOP"
+      },
+      {
+        "script": "AzaleaTownNoop2Scene",
+        "scene_id": "SCENE_AZALEATOWN_RIVAL_BATTLE"
+      },
+      {
+        "script": "AzaleaTownNoop3Scene",
+        "scene_id": "SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "AzaleaTownFlypointCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 15,
+        "y": 9,
+        "dest_map": "AZALEA_POKECENTER_1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 21,
+        "y": 13,
+        "dest_map": "CHARCOAL_KILN",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 21,
+        "y": 5,
+        "dest_map": "AZALEA_MART",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 9,
+        "y": 5,
+        "dest_map": "KURTS_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 10,
+        "y": 15,
+        "dest_map": "AZALEA_GYM",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 31,
+        "y": 7,
+        "dest_map": "SLOWPOKE_WELL_B1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 2,
+        "y": 10,
+        "dest_map": "ILEX_FOREST_AZALEA_GATE",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 2,
+        "y": 11,
+        "dest_map": "ILEX_FOREST_AZALEA_GATE",
+        "dest_warp_id": 4
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 5,
+        "y": 10,
+        "scene": "SCENE_AZALEATOWN_RIVAL_BATTLE",
+        "script": "AzaleaTownRivalBattleScene1"
+      },
+      {
+        "x": 5,
+        "y": 11,
+        "scene": "SCENE_AZALEATOWN_RIVAL_BATTLE",
+        "script": "AzaleaTownRivalBattleScene2"
+      },
+      {
+        "x": 9,
+        "y": 6,
+        "scene": "SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL",
+        "script": "AzaleaTownCelebiScene"
+      }
+    ],
+    "bg_events": [
+      {
+        "x": 19,
+        "y": 9,
+        "kind": "BGEVENT_READ",
+        "script": "AzaleaTownSign"
+      },
+      {
+        "x": 10,
+        "y": 9,
+        "kind": "BGEVENT_READ",
+        "script": "KurtsHouseSign"
+      },
+      {
+        "x": 14,
+        "y": 15,
+        "kind": "BGEVENT_READ",
+        "script": "AzaleaGymSign"
+      },
+      {
+        "x": 29,
+        "y": 7,
+        "kind": "BGEVENT_READ",
+        "script": "SlowpokeWellSign"
+      },
+      {
+        "x": 19,
+        "y": 13,
+        "kind": "BGEVENT_READ",
+        "script": "CharcoalKilnSign"
+      },
+      {
+        "x": 16,
+        "y": 9,
+        "kind": "BGEVENT_READ",
+        "script": "AzaleaTownPokecenterSign"
+      },
+      {
+        "x": 22,
+        "y": 5,
+        "kind": "BGEVENT_READ",
+        "script": "AzaleaTownMartSign"
+      },
+      {
+        "x": 3,
+        "y": 9,
+        "kind": "BGEVENT_READ",
+        "script": "AzaleaTownIlextForestSign"
+      },
+      {
+        "x": 31,
+        "y": 6,
+        "kind": "BGEVENT_ITEM",
+        "script": "AzaleaTownHiddenFullHeal"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 31,
+        "y": 9,
+        "sprite": "SPRITE_AZALEA_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "AzaleaTownRocket1Script",
+        "flag": "EVENT_AZALEA_TOWN_SLOWPOKETAIL_ROCKET"
+      },
+      {
+        "x": 21,
+        "y": 9,
+        "sprite": "SPRITE_GRAMPS",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 2,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "AzaleaTownGrampsScript",
+        "flag": -1
+      },
+      {
+        "x": 15,
+        "y": 13,
+        "sprite": "SPRITE_TEACHER",
+        "movement": "SPRITEMOVEDATA_WALK_UP_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 2,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "AzaleaTownTeacherScript",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 9,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "AzaleaTownYoungsterScript",
+        "flag": -1
+      },
+      {
+        "x": 8,
+        "y": 17,
+        "sprite": "SPRITE_SLOWPOKE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "AzaleaTownSlowpokeScript",
+        "flag": "EVENT_AZALEA_TOWN_SLOWPOKES"
+      },
+      {
+        "x": 18,
+        "y": 9,
+        "sprite": "SPRITE_SLOWPOKE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "AzaleaTownSlowpokeScript",
+        "flag": "EVENT_AZALEA_TOWN_SLOWPOKES"
+      },
+      {
+        "x": 29,
+        "y": 9,
+        "sprite": "SPRITE_SLOWPOKE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "AzaleaTownSlowpokeScript",
+        "flag": "EVENT_AZALEA_TOWN_SLOWPOKES"
+      },
+      {
+        "x": 15,
+        "y": 15,
+        "sprite": "SPRITE_SLOWPOKE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "AzaleaTownSlowpokeScript",
+        "flag": "EVENT_AZALEA_TOWN_SLOWPOKES"
+      },
+      {
+        "x": 8,
+        "y": 2,
+        "sprite": "SPRITE_FRUIT_TREE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "WhiteApricornTree",
+        "flag": -1
+      },
+      {
+        "x": 11,
+        "y": 10,
+        "sprite": "SPRITE_AZALEA_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_RIVAL_AZALEA_TOWN"
+      },
+      {
+        "x": 10,
+        "y": 16,
+        "sprite": "SPRITE_AZALEA_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "AzaleaTownRocket2Script",
+        "flag": "EVENT_SLOWPOKE_WELL_ROCKETS"
+      },
+      {
+        "x": 6,
+        "y": 5,
+        "sprite": "SPRITE_KURT_OUTSIDE",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "AzaleaTownKurtScript",
+        "flag": "EVENT_AZALEA_TOWN_KURT"
+      }
+    ]
+  },
+  "object_consts": [
+    "AZALEATOWN_AZALEA_ROCKET1",
+    "AZALEATOWN_GRAMPS",
+    "AZALEATOWN_TEACHER",
+    "AZALEATOWN_YOUNGSTER",
+    "AZALEATOWN_SLOWPOKE1",
+    "AZALEATOWN_SLOWPOKE2",
+    "AZALEATOWN_SLOWPOKE3",
+    "AZALEATOWN_SLOWPOKE4",
+    "AZALEATOWN_FRUIT_TREE",
+    "AZALEATOWN_RIVAL",
+    "AZALEATOWN_AZALEA_ROCKET3",
+    "AZALEATOWN_KURT_OUTSIDE"
+  ],
+  "scene_ids": [
+    "SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL",
+    "SCENE_AZALEATOWN_NOOP",
+    "SCENE_AZALEATOWN_RIVAL_BATTLE"
+  ],
+  "scripts": {
+    "AzaleaTown_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script AzaleaTownNoop1Scene, SCENE_AZALEATOWN_NOOP",
+        "scene_script AzaleaTownNoop2Scene, SCENE_AZALEATOWN_RIVAL_BATTLE",
+        "scene_script AzaleaTownNoop3Scene, SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, AzaleaTownFlypointCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "AzaleaTownNoop1Scene",
+            "SCENE_AZALEATOWN_NOOP"
+          ],
+          "raw": "scene_script AzaleaTownNoop1Scene, SCENE_AZALEATOWN_NOOP"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "AzaleaTownNoop2Scene",
+            "SCENE_AZALEATOWN_RIVAL_BATTLE"
+          ],
+          "raw": "scene_script AzaleaTownNoop2Scene, SCENE_AZALEATOWN_RIVAL_BATTLE"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "AzaleaTownNoop3Scene",
+            "SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL"
+          ],
+          "raw": "scene_script AzaleaTownNoop3Scene, SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "AzaleaTownFlypointCallback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, AzaleaTownFlypointCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "AzaleaTownNoop1Scene",
+      "label_refs": [
+        "AzaleaTownNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownNoop3Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownFlypointCallback": {
+      "raw_lines": [
+        "setflag ENGINE_FLYPOINT_AZALEA",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_FLYPOINT_AZALEA"
+          ],
+          "raw": "setflag ENGINE_FLYPOINT_AZALEA"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "setflag",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownRivalBattleScene1": {
+      "raw_lines": [
+        "moveobject AZALEATOWN_RIVAL, 11, 11",
+        "turnobject PLAYER, RIGHT",
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "special FadeOutMusic",
+        "pause 15",
+        "appear AZALEATOWN_RIVAL",
+        "applymovement AZALEATOWN_RIVAL, AzaleaTownRivalBattleApproachMovement1",
+        "turnobject PLAYER, DOWN",
+        "sjump AzaleaTownRivalBattleScript"
+      ],
+      "commands": [
+        {
+          "command": "moveobject",
+          "args": [
+            "AZALEATOWN_RIVAL",
+            "11",
+            "11"
+          ],
+          "raw": "moveobject AZALEATOWN_RIVAL, 11, 11"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "AZALEATOWN_RIVAL"
+          ],
+          "raw": "appear AZALEATOWN_RIVAL"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "AZALEATOWN_RIVAL",
+            "AzaleaTownRivalBattleApproachMovement1"
+          ],
+          "raw": "applymovement AZALEATOWN_RIVAL, AzaleaTownRivalBattleApproachMovement1"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "AzaleaTownRivalBattleScript"
+          ],
+          "raw": "sjump AzaleaTownRivalBattleScript"
+        }
+      ],
+      "first_command": "moveobject",
+      "label_refs": [
+        "AzaleaTownRivalBattleScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "AzaleaTownRivalBattleApproachMovement1"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownRivalBattleScene2": {
+      "raw_lines": [
+        "turnobject PLAYER, RIGHT",
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "special FadeOutMusic",
+        "pause 15",
+        "appear AZALEATOWN_RIVAL",
+        "applymovement AZALEATOWN_RIVAL, AzaleaTownRivalBattleApproachMovement2",
+        "turnobject PLAYER, UP"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "AZALEATOWN_RIVAL"
+          ],
+          "raw": "appear AZALEATOWN_RIVAL"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "AZALEATOWN_RIVAL",
+            "AzaleaTownRivalBattleApproachMovement2"
+          ],
+          "raw": "applymovement AZALEATOWN_RIVAL, AzaleaTownRivalBattleApproachMovement2"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "UP"
+          ],
+          "raw": "turnobject PLAYER, UP"
+        }
+      ],
+      "first_command": "turnobject",
+      "fallthrough_label": "AzaleaTownRivalBattleScript",
+      "label_refs": [
+        "AzaleaTownRivalBattleScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "AzaleaTownRivalBattleApproachMovement2"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownRivalBattleScript": {
+      "raw_lines": [
+        "playmusic MUSIC_RIVAL_ENCOUNTER",
+        "opentext",
+        "writetext AzaleaTownRivalBeforeText",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_RIVAL_AZALEA_TOWN",
+        "checkevent EVENT_GOT_TOTODILE_FROM_ELM",
+        "iftrue .Totodile",
+        "checkevent EVENT_GOT_CHIKORITA_FROM_ELM",
+        "iftrue .Chikorita",
+        "winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText",
+        "setlasttalked AZALEATOWN_RIVAL",
+        "loadtrainer RIVAL1, RIVAL1_2_TOTODILE",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmapafterbattle",
+        "sjump .AfterBattle"
+      ],
+      "commands": [
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_ENCOUNTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_ENCOUNTER"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AzaleaTownRivalBeforeText"
+          ],
+          "raw": "writetext AzaleaTownRivalBeforeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_RIVAL_AZALEA_TOWN"
+          ],
+          "raw": "setevent EVENT_RIVAL_AZALEA_TOWN"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TOTODILE_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_TOTODILE_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "AzaleaTownRivalBattleScript.Totodile"
+          ],
+          "raw": "iftrue .Totodile"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_CHIKORITA_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_CHIKORITA_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "AzaleaTownRivalBattleScript.Chikorita"
+          ],
+          "raw": "iftrue .Chikorita"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "AzaleaTownRivalWinText",
+            "AzaleaTownRivalLossText"
+          ],
+          "raw": "winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "AZALEATOWN_RIVAL"
+          ],
+          "raw": "setlasttalked AZALEATOWN_RIVAL"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "RIVAL1",
+            "RIVAL1_2_TOTODILE"
+          ],
+          "raw": "loadtrainer RIVAL1, RIVAL1_2_TOTODILE"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "AzaleaTownRivalBattleScript.AfterBattle"
+          ],
+          "raw": "sjump .AfterBattle"
+        }
+      ],
+      "first_command": "playmusic",
+      "label_refs": [
+        "AzaleaTownRivalBattleScript.AfterBattle",
+        "AzaleaTownRivalBattleScript.Chikorita",
+        "AzaleaTownRivalBattleScript.Totodile"
+      ],
+      "text_refs": [
+        "AzaleaTownRivalBeforeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownRivalBattleScript.Totodile": {
+      "raw_lines": [
+        "winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText",
+        "setlasttalked AZALEATOWN_RIVAL",
+        "loadtrainer RIVAL1, RIVAL1_2_CHIKORITA",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmapafterbattle",
+        "sjump .AfterBattle"
+      ],
+      "commands": [
+        {
+          "command": "winlosstext",
+          "args": [
+            "AzaleaTownRivalWinText",
+            "AzaleaTownRivalLossText"
+          ],
+          "raw": "winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "AZALEATOWN_RIVAL"
+          ],
+          "raw": "setlasttalked AZALEATOWN_RIVAL"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "RIVAL1",
+            "RIVAL1_2_CHIKORITA"
+          ],
+          "raw": "loadtrainer RIVAL1, RIVAL1_2_CHIKORITA"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "AzaleaTownRivalBattleScript.AfterBattle"
+          ],
+          "raw": "sjump .AfterBattle"
+        }
+      ],
+      "first_command": "winlosstext",
+      "label_refs": [
+        "AzaleaTownRivalBattleScript.AfterBattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownRivalBattleScript.Chikorita": {
+      "raw_lines": [
+        "winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText",
+        "setlasttalked AZALEATOWN_RIVAL",
+        "loadtrainer RIVAL1, RIVAL1_2_CYNDAQUIL",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmapafterbattle",
+        "sjump .AfterBattle"
+      ],
+      "commands": [
+        {
+          "command": "winlosstext",
+          "args": [
+            "AzaleaTownRivalWinText",
+            "AzaleaTownRivalLossText"
+          ],
+          "raw": "winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "AZALEATOWN_RIVAL"
+          ],
+          "raw": "setlasttalked AZALEATOWN_RIVAL"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "RIVAL1",
+            "RIVAL1_2_CYNDAQUIL"
+          ],
+          "raw": "loadtrainer RIVAL1, RIVAL1_2_CYNDAQUIL"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "AzaleaTownRivalBattleScript.AfterBattle"
+          ],
+          "raw": "sjump .AfterBattle"
+        }
+      ],
+      "first_command": "winlosstext",
+      "label_refs": [
+        "AzaleaTownRivalBattleScript.AfterBattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownRivalBattleScript.AfterBattle": {
+      "raw_lines": [
+        "playmusic MUSIC_RIVAL_AFTER",
+        "opentext",
+        "writetext AzaleaTownRivalAfterText",
+        "waitbutton",
+        "closetext",
+        "turnobject PLAYER, LEFT",
+        "applymovement AZALEATOWN_RIVAL, AzaleaTownRivalBattleExitMovement",
+        "playsound SFX_EXIT_BUILDING",
+        "disappear AZALEATOWN_RIVAL",
+        "setscene SCENE_AZALEATOWN_NOOP",
+        "waitsfx",
+        "playmapmusic",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_AFTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_AFTER"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AzaleaTownRivalAfterText"
+          ],
+          "raw": "writetext AzaleaTownRivalAfterText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYER, LEFT"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "AZALEATOWN_RIVAL",
+            "AzaleaTownRivalBattleExitMovement"
+          ],
+          "raw": "applymovement AZALEATOWN_RIVAL, AzaleaTownRivalBattleExitMovement"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "AZALEATOWN_RIVAL"
+          ],
+          "raw": "disappear AZALEATOWN_RIVAL"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_AZALEATOWN_NOOP"
+          ],
+          "raw": "setscene SCENE_AZALEATOWN_NOOP"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "playmapmusic",
+          "args": [],
+          "raw": "playmapmusic"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playmusic",
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownRivalAfterText"
+      ],
+      "movement_refs": [
+        "AzaleaTownRivalBattleExitMovement"
+      ],
+      "scene_refs": [
+        "SCENE_AZALEATOWN_NOOP"
+      ],
+      "std_calls": []
+    },
+    "AzaleaTownRocket1Script": {
+      "raw_lines": [
+        "jumptextfaceplayer AzaleaTownRocket1Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "AzaleaTownRocket1Text"
+          ],
+          "raw": "jumptextfaceplayer AzaleaTownRocket1Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownRocket1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownRocket2Script": {
+      "raw_lines": [
+        "jumptextfaceplayer AzaleaTownRocket2Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "AzaleaTownRocket2Text"
+          ],
+          "raw": "jumptextfaceplayer AzaleaTownRocket2Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownRocket2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownGrampsScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_CLEARED_SLOWPOKE_WELL",
+        "iftrue .ClearedWell",
+        "writetext AzaleaTownGrampsTextBefore",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_SLOWPOKE_WELL"
+          ],
+          "raw": "checkevent EVENT_CLEARED_SLOWPOKE_WELL"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "AzaleaTownGrampsScript.ClearedWell"
+          ],
+          "raw": "iftrue .ClearedWell"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AzaleaTownGrampsTextBefore"
+          ],
+          "raw": "writetext AzaleaTownGrampsTextBefore"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "AzaleaTownGrampsScript.ClearedWell"
+      ],
+      "text_refs": [
+        "AzaleaTownGrampsTextBefore"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownGrampsScript.ClearedWell": {
+      "raw_lines": [
+        "writetext AzaleaTownGrampsTextAfter",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "AzaleaTownGrampsTextAfter"
+          ],
+          "raw": "writetext AzaleaTownGrampsTextAfter"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownGrampsTextAfter"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownTeacherScript": {
+      "raw_lines": [
+        "jumptextfaceplayer AzaleaTownTeacherText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "AzaleaTownTeacherText"
+          ],
+          "raw": "jumptextfaceplayer AzaleaTownTeacherText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownTeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownYoungsterScript": {
+      "raw_lines": [
+        "jumptextfaceplayer AzaleaTownYoungsterText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "AzaleaTownYoungsterText"
+          ],
+          "raw": "jumptextfaceplayer AzaleaTownYoungsterText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownSlowpokeScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext AzaleaTownSlowpokeText1",
+        "pause 60",
+        "writetext AzaleaTownSlowpokeText2",
+        "cry SLOWPOKE",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AzaleaTownSlowpokeText1"
+          ],
+          "raw": "writetext AzaleaTownSlowpokeText1"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "60"
+          ],
+          "raw": "pause 60"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AzaleaTownSlowpokeText2"
+          ],
+          "raw": "writetext AzaleaTownSlowpokeText2"
+        },
+        {
+          "command": "cry",
+          "args": [
+            "SLOWPOKE"
+          ],
+          "raw": "cry SLOWPOKE"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownSlowpokeText1",
+        "AzaleaTownSlowpokeText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UnusedWoosterScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext WoosterText",
+        "cry QUAGSIRE",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "WoosterText"
+          ],
+          "raw": "writetext WoosterText"
+        },
+        {
+          "command": "cry",
+          "args": [
+            "QUAGSIRE"
+          ],
+          "raw": "cry QUAGSIRE"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "WoosterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownCelebiScene": {
+      "raw_lines": [
+        "applymovement PLAYER, AzaleaTownPlayerLeavesKurtsHouseMovement",
+        "opentext",
+        "writetext AzaleaTownKurtText1",
+        "promptbutton",
+        "turnobject AZALEATOWN_KURT_OUTSIDE, RIGHT",
+        "writetext AzaleaTownKurtText2",
+        "promptbutton",
+        "writetext AzaleaTownKurtText3",
+        "waitbutton",
+        "verbosegiveitem GS_BALL",
+        "turnobject AZALEATOWN_KURT_OUTSIDE, LEFT",
+        "setflag ENGINE_FOREST_IS_RESTLESS",
+        "clearevent EVENT_ILEX_FOREST_LASS",
+        "setevent EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS",
+        "setscene SCENE_AZALEATOWN_NOOP",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "AzaleaTownPlayerLeavesKurtsHouseMovement"
+          ],
+          "raw": "applymovement PLAYER, AzaleaTownPlayerLeavesKurtsHouseMovement"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AzaleaTownKurtText1"
+          ],
+          "raw": "writetext AzaleaTownKurtText1"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "AZALEATOWN_KURT_OUTSIDE",
+            "RIGHT"
+          ],
+          "raw": "turnobject AZALEATOWN_KURT_OUTSIDE, RIGHT"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AzaleaTownKurtText2"
+          ],
+          "raw": "writetext AzaleaTownKurtText2"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AzaleaTownKurtText3"
+          ],
+          "raw": "writetext AzaleaTownKurtText3"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "GS_BALL"
+          ],
+          "raw": "verbosegiveitem GS_BALL"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "AZALEATOWN_KURT_OUTSIDE",
+            "LEFT"
+          ],
+          "raw": "turnobject AZALEATOWN_KURT_OUTSIDE, LEFT"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_FOREST_IS_RESTLESS"
+          ],
+          "raw": "setflag ENGINE_FOREST_IS_RESTLESS"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_ILEX_FOREST_LASS"
+          ],
+          "raw": "clearevent EVENT_ILEX_FOREST_LASS"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS"
+          ],
+          "raw": "setevent EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_AZALEATOWN_NOOP"
+          ],
+          "raw": "setscene SCENE_AZALEATOWN_NOOP"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownKurtText1",
+        "AzaleaTownKurtText2",
+        "AzaleaTownKurtText3"
+      ],
+      "movement_refs": [
+        "AzaleaTownPlayerLeavesKurtsHouseMovement"
+      ],
+      "scene_refs": [
+        "SCENE_AZALEATOWN_NOOP"
+      ],
+      "std_calls": []
+    },
+    "AzaleaTownKurtScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext AzaleaTownKurtText3",
+        "waitbutton",
+        "turnobject AZALEATOWN_KURT_OUTSIDE, LEFT",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AzaleaTownKurtText3"
+          ],
+          "raw": "writetext AzaleaTownKurtText3"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "AZALEATOWN_KURT_OUTSIDE",
+            "LEFT"
+          ],
+          "raw": "turnobject AZALEATOWN_KURT_OUTSIDE, LEFT"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownKurtText3"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownSign": {
+      "raw_lines": [
+        "jumptext AzaleaTownSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "AzaleaTownSignText"
+          ],
+          "raw": "jumptext AzaleaTownSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsHouseSign": {
+      "raw_lines": [
+        "jumptext KurtsHouseSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "KurtsHouseSignText"
+          ],
+          "raw": "jumptext KurtsHouseSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "KurtsHouseSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymSign": {
+      "raw_lines": [
+        "jumptext AzaleaGymSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "AzaleaGymSignText"
+          ],
+          "raw": "jumptext AzaleaGymSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaGymSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SlowpokeWellSign": {
+      "raw_lines": [
+        "jumptext SlowpokeWellSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "SlowpokeWellSignText"
+          ],
+          "raw": "jumptext SlowpokeWellSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "SlowpokeWellSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnSign": {
+      "raw_lines": [
+        "jumptext CharcoalKilnSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "CharcoalKilnSignText"
+          ],
+          "raw": "jumptext CharcoalKilnSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "CharcoalKilnSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownIlextForestSign": {
+      "raw_lines": [
+        "jumptext AzaleaTownIlexForestSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "AzaleaTownIlexForestSignText"
+          ],
+          "raw": "jumptext AzaleaTownIlexForestSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownIlexForestSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownPokecenterSign": {
+      "raw_lines": [
+        "jumpstd PokecenterSignScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PokecenterSignScript"
+          ],
+          "raw": "jumpstd PokecenterSignScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterSignScript"
+      ]
+    },
+    "AzaleaTownMartSign": {
+      "raw_lines": [
+        "jumpstd MartSignScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "MartSignScript"
+          ],
+          "raw": "jumpstd MartSignScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MartSignScript"
+      ]
+    },
+    "WhiteApricornTree": {
+      "raw_lines": [
+        "fruittree FRUITTREE_AZALEA_TOWN"
+      ],
+      "commands": [
+        {
+          "command": "fruittree",
+          "args": [
+            "FRUITTREE_AZALEA_TOWN"
+          ],
+          "raw": "fruittree FRUITTREE_AZALEA_TOWN"
+        }
+      ],
+      "first_command": "fruittree",
+      "fallthrough_label": "AzaleaTownHiddenFullHeal",
+      "label_refs": [
+        "AzaleaTownHiddenFullHeal"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownHiddenFullHeal": {
+      "raw_lines": [
+        "hiddenitem FULL_HEAL, EVENT_AZALEA_TOWN_HIDDEN_FULL_HEAL"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "FULL_HEAL",
+            "EVENT_AZALEA_TOWN_HIDDEN_FULL_HEAL"
+          ],
+          "raw": "hiddenitem FULL_HEAL, EVENT_AZALEA_TOWN_HIDDEN_FULL_HEAL"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "AzaleaTown_MapEvents",
+      "label_refs": [
+        "AzaleaTown_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTown_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 15,  9, AZALEA_POKECENTER_1F, 1",
+        "warp_event 21, 13, CHARCOAL_KILN, 1",
+        "warp_event 21,  5, AZALEA_MART, 2",
+        "warp_event  9,  5, KURTS_HOUSE, 1",
+        "warp_event 10, 15, AZALEA_GYM, 1",
+        "warp_event 31,  7, SLOWPOKE_WELL_B1F, 1",
+        "warp_event  2, 10, ILEX_FOREST_AZALEA_GATE, 3",
+        "warp_event  2, 11, ILEX_FOREST_AZALEA_GATE, 4",
+        "def_coord_events",
+        "coord_event  5, 10, SCENE_AZALEATOWN_RIVAL_BATTLE, AzaleaTownRivalBattleScene1",
+        "coord_event  5, 11, SCENE_AZALEATOWN_RIVAL_BATTLE, AzaleaTownRivalBattleScene2",
+        "coord_event  9,  6, SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL, AzaleaTownCelebiScene",
+        "def_bg_events",
+        "bg_event 19,  9, BGEVENT_READ, AzaleaTownSign",
+        "bg_event 10,  9, BGEVENT_READ, KurtsHouseSign",
+        "bg_event 14, 15, BGEVENT_READ, AzaleaGymSign",
+        "bg_event 29,  7, BGEVENT_READ, SlowpokeWellSign",
+        "bg_event 19, 13, BGEVENT_READ, CharcoalKilnSign",
+        "bg_event 16,  9, BGEVENT_READ, AzaleaTownPokecenterSign",
+        "bg_event 22,  5, BGEVENT_READ, AzaleaTownMartSign",
+        "bg_event  3,  9, BGEVENT_READ, AzaleaTownIlextForestSign",
+        "bg_event 31,  6, BGEVENT_ITEM, AzaleaTownHiddenFullHeal",
+        "def_object_events",
+        "object_event 31,  9, SPRITE_AZALEA_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownRocket1Script, EVENT_AZALEA_TOWN_SLOWPOKETAIL_ROCKET",
+        "object_event 21,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownGrampsScript, -1",
+        "object_event 15, 13, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaTownTeacherScript, -1",
+        "object_event  7,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaTownYoungsterScript, -1",
+        "object_event  8, 17, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES",
+        "object_event 18,  9, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES",
+        "object_event 29,  9, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES",
+        "object_event 15, 15, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES",
+        "object_event  8,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WhiteApricornTree, -1",
+        "object_event 11, 10, SPRITE_AZALEA_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_AZALEA_TOWN",
+        "object_event 10, 16, SPRITE_AZALEA_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownRocket2Script, EVENT_SLOWPOKE_WELL_ROCKETS",
+        "object_event  6,  5, SPRITE_KURT_OUTSIDE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownKurtScript, EVENT_AZALEA_TOWN_KURT"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "15",
+            "9",
+            "AZALEA_POKECENTER_1F",
+            "1"
+          ],
+          "raw": "warp_event 15,  9, AZALEA_POKECENTER_1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "21",
+            "13",
+            "CHARCOAL_KILN",
+            "1"
+          ],
+          "raw": "warp_event 21, 13, CHARCOAL_KILN, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "21",
+            "5",
+            "AZALEA_MART",
+            "2"
+          ],
+          "raw": "warp_event 21,  5, AZALEA_MART, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "5",
+            "KURTS_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event  9,  5, KURTS_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "10",
+            "15",
+            "AZALEA_GYM",
+            "1"
+          ],
+          "raw": "warp_event 10, 15, AZALEA_GYM, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "31",
+            "7",
+            "SLOWPOKE_WELL_B1F",
+            "1"
+          ],
+          "raw": "warp_event 31,  7, SLOWPOKE_WELL_B1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "10",
+            "ILEX_FOREST_AZALEA_GATE",
+            "3"
+          ],
+          "raw": "warp_event  2, 10, ILEX_FOREST_AZALEA_GATE, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "11",
+            "ILEX_FOREST_AZALEA_GATE",
+            "4"
+          ],
+          "raw": "warp_event  2, 11, ILEX_FOREST_AZALEA_GATE, 4"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "5",
+            "10",
+            "SCENE_AZALEATOWN_RIVAL_BATTLE",
+            "AzaleaTownRivalBattleScene1"
+          ],
+          "raw": "coord_event  5, 10, SCENE_AZALEATOWN_RIVAL_BATTLE, AzaleaTownRivalBattleScene1"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "5",
+            "11",
+            "SCENE_AZALEATOWN_RIVAL_BATTLE",
+            "AzaleaTownRivalBattleScene2"
+          ],
+          "raw": "coord_event  5, 11, SCENE_AZALEATOWN_RIVAL_BATTLE, AzaleaTownRivalBattleScene2"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "9",
+            "6",
+            "SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL",
+            "AzaleaTownCelebiScene"
+          ],
+          "raw": "coord_event  9,  6, SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL, AzaleaTownCelebiScene"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "19",
+            "9",
+            "BGEVENT_READ",
+            "AzaleaTownSign"
+          ],
+          "raw": "bg_event 19,  9, BGEVENT_READ, AzaleaTownSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "10",
+            "9",
+            "BGEVENT_READ",
+            "KurtsHouseSign"
+          ],
+          "raw": "bg_event 10,  9, BGEVENT_READ, KurtsHouseSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "14",
+            "15",
+            "BGEVENT_READ",
+            "AzaleaGymSign"
+          ],
+          "raw": "bg_event 14, 15, BGEVENT_READ, AzaleaGymSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "29",
+            "7",
+            "BGEVENT_READ",
+            "SlowpokeWellSign"
+          ],
+          "raw": "bg_event 29,  7, BGEVENT_READ, SlowpokeWellSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "19",
+            "13",
+            "BGEVENT_READ",
+            "CharcoalKilnSign"
+          ],
+          "raw": "bg_event 19, 13, BGEVENT_READ, CharcoalKilnSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "16",
+            "9",
+            "BGEVENT_READ",
+            "AzaleaTownPokecenterSign"
+          ],
+          "raw": "bg_event 16,  9, BGEVENT_READ, AzaleaTownPokecenterSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "22",
+            "5",
+            "BGEVENT_READ",
+            "AzaleaTownMartSign"
+          ],
+          "raw": "bg_event 22,  5, BGEVENT_READ, AzaleaTownMartSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "9",
+            "BGEVENT_READ",
+            "AzaleaTownIlextForestSign"
+          ],
+          "raw": "bg_event  3,  9, BGEVENT_READ, AzaleaTownIlextForestSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "31",
+            "6",
+            "BGEVENT_ITEM",
+            "AzaleaTownHiddenFullHeal"
+          ],
+          "raw": "bg_event 31,  6, BGEVENT_ITEM, AzaleaTownHiddenFullHeal"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "31",
+            "9",
+            "SPRITE_AZALEA_ROCKET",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "AzaleaTownRocket1Script",
+            "EVENT_AZALEA_TOWN_SLOWPOKETAIL_ROCKET"
+          ],
+          "raw": "object_event 31,  9, SPRITE_AZALEA_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownRocket1Script, EVENT_AZALEA_TOWN_SLOWPOKETAIL_ROCKET"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "21",
+            "9",
+            "SPRITE_GRAMPS",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "2",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "AzaleaTownGrampsScript",
+            "-1"
+          ],
+          "raw": "object_event 21,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownGrampsScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "15",
+            "13",
+            "SPRITE_TEACHER",
+            "SPRITEMOVEDATA_WALK_UP_DOWN",
+            "0",
+            "2",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "AzaleaTownTeacherScript",
+            "-1"
+          ],
+          "raw": "object_event 15, 13, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaTownTeacherScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "9",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "AzaleaTownYoungsterScript",
+            "-1"
+          ],
+          "raw": "object_event  7,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaTownYoungsterScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "17",
+            "SPRITE_SLOWPOKE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "AzaleaTownSlowpokeScript",
+            "EVENT_AZALEA_TOWN_SLOWPOKES"
+          ],
+          "raw": "object_event  8, 17, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "18",
+            "9",
+            "SPRITE_SLOWPOKE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "AzaleaTownSlowpokeScript",
+            "EVENT_AZALEA_TOWN_SLOWPOKES"
+          ],
+          "raw": "object_event 18,  9, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "29",
+            "9",
+            "SPRITE_SLOWPOKE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "AzaleaTownSlowpokeScript",
+            "EVENT_AZALEA_TOWN_SLOWPOKES"
+          ],
+          "raw": "object_event 29,  9, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "15",
+            "15",
+            "SPRITE_SLOWPOKE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "AzaleaTownSlowpokeScript",
+            "EVENT_AZALEA_TOWN_SLOWPOKES"
+          ],
+          "raw": "object_event 15, 15, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownSlowpokeScript, EVENT_AZALEA_TOWN_SLOWPOKES"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "2",
+            "SPRITE_FRUIT_TREE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "WhiteApricornTree",
+            "-1"
+          ],
+          "raw": "object_event  8,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WhiteApricornTree, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "11",
+            "10",
+            "SPRITE_AZALEA_ROCKET",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_RIVAL_AZALEA_TOWN"
+          ],
+          "raw": "object_event 11, 10, SPRITE_AZALEA_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_AZALEA_TOWN"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "10",
+            "16",
+            "SPRITE_AZALEA_ROCKET",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "AzaleaTownRocket2Script",
+            "EVENT_SLOWPOKE_WELL_ROCKETS"
+          ],
+          "raw": "object_event 10, 16, SPRITE_AZALEA_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownRocket2Script, EVENT_SLOWPOKE_WELL_ROCKETS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "5",
+            "SPRITE_KURT_OUTSIDE",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "AzaleaTownKurtScript",
+            "EVENT_AZALEA_TOWN_KURT"
+          ],
+          "raw": "object_event  6,  5, SPRITE_KURT_OUTSIDE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownKurtScript, EVENT_AZALEA_TOWN_KURT"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "AzaleaTownRivalBeforeText": {
+      "raw_lines": [
+        "text \"\u2026Tell me some-\"",
+        "line \"thing.\"",
+        "para \"Is it true that\"",
+        "line \"TEAM ROCKET has\"",
+        "cont \"returned?\"",
+        "para \"What? You beat\"",
+        "line \"them? Hah! Quit\"",
+        "cont \"lying.\"",
+        "para \"You're not joking?\"",
+        "line \"Then let's see how\"",
+        "cont \"good you are.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026Tell me some-"
+        },
+        {
+          "command": "line",
+          "value": "thing."
+        },
+        {
+          "command": "para",
+          "value": "Is it true that"
+        },
+        {
+          "command": "line",
+          "value": "TEAM ROCKET has"
+        },
+        {
+          "command": "cont",
+          "value": "returned?"
+        },
+        {
+          "command": "para",
+          "value": "What? You beat"
+        },
+        {
+          "command": "line",
+          "value": "them? Hah! Quit"
+        },
+        {
+          "command": "cont",
+          "value": "lying."
+        },
+        {
+          "command": "para",
+          "value": "You're not joking?"
+        },
+        {
+          "command": "line",
+          "value": "Then let's see how"
+        },
+        {
+          "command": "cont",
+          "value": "good you are."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaTownRivalWinText": {
+      "raw_lines": [
+        "text \"\u2026 Humph! Useless\"",
+        "line \"#MON!\"",
+        "para \"Listen, you. You\"",
+        "line \"only won because\"",
+        "para \"my #MON were\"",
+        "line \"weak.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026 Humph! Useless"
+        },
+        {
+          "command": "line",
+          "value": "#MON!"
+        },
+        {
+          "command": "para",
+          "value": "Listen, you. You"
+        },
+        {
+          "command": "line",
+          "value": "only won because"
+        },
+        {
+          "command": "para",
+          "value": "my #MON were"
+        },
+        {
+          "command": "line",
+          "value": "weak."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaTownRivalAfterText": {
+      "raw_lines": [
+        "text \"I hate the weak.\"",
+        "para \"#MON, trainers.\"",
+        "line \"It doesn't matter\"",
+        "cont \"who or what.\"",
+        "para \"I'm going to be\"",
+        "line \"strong and wipe\"",
+        "cont \"out the weak.\"",
+        "para \"That goes for TEAM\"",
+        "line \"ROCKET too.\"",
+        "para \"They act big and\"",
+        "line \"tough in a group.\"",
+        "para \"But get them\"",
+        "line \"alone, and they're\"",
+        "cont \"weak.\"",
+        "para \"I hate them all.\"",
+        "para \"You stay out of my\"",
+        "line \"way. A weakling\"",
+        "para \"like you is only a\"",
+        "line \"distraction.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I hate the weak."
+        },
+        {
+          "command": "para",
+          "value": "#MON, trainers."
+        },
+        {
+          "command": "line",
+          "value": "It doesn't matter"
+        },
+        {
+          "command": "cont",
+          "value": "who or what."
+        },
+        {
+          "command": "para",
+          "value": "I'm going to be"
+        },
+        {
+          "command": "line",
+          "value": "strong and wipe"
+        },
+        {
+          "command": "cont",
+          "value": "out the weak."
+        },
+        {
+          "command": "para",
+          "value": "That goes for TEAM"
+        },
+        {
+          "command": "line",
+          "value": "ROCKET too."
+        },
+        {
+          "command": "para",
+          "value": "They act big and"
+        },
+        {
+          "command": "line",
+          "value": "tough in a group."
+        },
+        {
+          "command": "para",
+          "value": "But get them"
+        },
+        {
+          "command": "line",
+          "value": "alone, and they're"
+        },
+        {
+          "command": "cont",
+          "value": "weak."
+        },
+        {
+          "command": "para",
+          "value": "I hate them all."
+        },
+        {
+          "command": "para",
+          "value": "You stay out of my"
+        },
+        {
+          "command": "line",
+          "value": "way. A weakling"
+        },
+        {
+          "command": "para",
+          "value": "like you is only a"
+        },
+        {
+          "command": "line",
+          "value": "distraction."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaTownRivalLossText": {
+      "raw_lines": [
+        "text \"\u2026Humph! I knew\"",
+        "line \"you were lying.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026Humph! I knew"
+        },
+        {
+          "command": "line",
+          "value": "you were lying."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaTownRocket1Text": {
+      "raw_lines": [
+        "text \"It's unsafe to go\"",
+        "line \"in there, so I'm\"",
+        "cont \"standing guard.\"",
+        "para \"Aren't I a good\"",
+        "line \"Samaritan?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's unsafe to go"
+        },
+        {
+          "command": "line",
+          "value": "in there, so I'm"
+        },
+        {
+          "command": "cont",
+          "value": "standing guard."
+        },
+        {
+          "command": "para",
+          "value": "Aren't I a good"
+        },
+        {
+          "command": "line",
+          "value": "Samaritan?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaTownRocket2Text": {
+      "raw_lines": [
+        "text \"Do you know about\"",
+        "line \"SLOWPOKETAIL? I\"",
+        "cont \"heard it's tasty!\"",
+        "para \"Aren't you glad I\"",
+        "line \"told you that?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Do you know about"
+        },
+        {
+          "command": "line",
+          "value": "SLOWPOKETAIL? I"
+        },
+        {
+          "command": "cont",
+          "value": "heard it's tasty!"
+        },
+        {
+          "command": "para",
+          "value": "Aren't you glad I"
+        },
+        {
+          "command": "line",
+          "value": "told you that?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaTownGrampsTextBefore": {
+      "raw_lines": [
+        "text \"The SLOWPOKE have\"",
+        "line \"disappeared from\"",
+        "cont \"town\u2026\"",
+        "para \"I heard their\"",
+        "line \"TAILS are being\"",
+        "cont \"sold somewhere.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The SLOWPOKE have"
+        },
+        {
+          "command": "line",
+          "value": "disappeared from"
+        },
+        {
+          "command": "cont",
+          "value": "town\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I heard their"
+        },
+        {
+          "command": "line",
+          "value": "TAILS are being"
+        },
+        {
+          "command": "cont",
+          "value": "sold somewhere."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaTownGrampsTextAfter": {
+      "raw_lines": [
+        "text \"The SLOWPOKE have\"",
+        "line \"returned.\"",
+        "para \"Knowing them, they\"",
+        "line \"could've just been\"",
+        "para \"goofing off some-\"",
+        "line \"where.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The SLOWPOKE have"
+        },
+        {
+          "command": "line",
+          "value": "returned."
+        },
+        {
+          "command": "para",
+          "value": "Knowing them, they"
+        },
+        {
+          "command": "line",
+          "value": "could've just been"
+        },
+        {
+          "command": "para",
+          "value": "goofing off some-"
+        },
+        {
+          "command": "line",
+          "value": "where."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaTownTeacherText": {
+      "raw_lines": [
+        "text \"Did you come to\"",
+        "line \"get KURT to make\"",
+        "cont \"some BALLS?\"",
+        "para \"A lot of people do\"",
+        "line \"just that.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Did you come to"
+        },
+        {
+          "command": "line",
+          "value": "get KURT to make"
+        },
+        {
+          "command": "cont",
+          "value": "some BALLS?"
+        },
+        {
+          "command": "para",
+          "value": "A lot of people do"
+        },
+        {
+          "command": "line",
+          "value": "just that."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaTownYoungsterText": {
+      "raw_lines": [
+        "text \"Cut through AZALEA\"",
+        "line \"and you'll be in\"",
+        "cont \"ILEX FOREST.\"",
+        "para \"But these skinny\"",
+        "line \"trees make it\"",
+        "para \"impossible to get\"",
+        "line \"through.\"",
+        "para \"The CHARCOAL MAN's\"",
+        "line \"#MON can CUT\"",
+        "cont \"down trees.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Cut through AZALEA"
+        },
+        {
+          "command": "line",
+          "value": "and you'll be in"
+        },
+        {
+          "command": "cont",
+          "value": "ILEX FOREST."
+        },
+        {
+          "command": "para",
+          "value": "But these skinny"
+        },
+        {
+          "command": "line",
+          "value": "trees make it"
+        },
+        {
+          "command": "para",
+          "value": "impossible to get"
+        },
+        {
+          "command": "line",
+          "value": "through."
+        },
+        {
+          "command": "para",
+          "value": "The CHARCOAL MAN's"
+        },
+        {
+          "command": "line",
+          "value": "#MON can CUT"
+        },
+        {
+          "command": "cont",
+          "value": "down trees."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaTownSlowpokeText1": {
+      "raw_lines": [
+        "text \"SLOWPOKE: \u2026\"",
+        "para \"<\u2026\u2026> <\u2026\u2026> <\u2026\u2026>\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "SLOWPOKE: \u2026"
+        },
+        {
+          "command": "para",
+          "value": "<\u2026\u2026> <\u2026\u2026> <\u2026\u2026>"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaTownSlowpokeText2": {
+      "raw_lines": [
+        "text \"<\u2026\u2026> <\u2026\u2026>Yawn?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<\u2026\u2026> <\u2026\u2026>Yawn?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "WoosterText": {
+      "raw_lines": [
+        "text \"WOOSTER: Gugyoo\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "WOOSTER: Gugyoo\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaTownKurtText1": {
+      "raw_lines": [
+        "text \"ILEX FOREST is\"",
+        "line \"restless!\"",
+        "para \"What is going on?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ILEX FOREST is"
+        },
+        {
+          "command": "line",
+          "value": "restless!"
+        },
+        {
+          "command": "para",
+          "value": "What is going on?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaTownKurtText2": {
+      "raw_lines": [
+        "text \"<PLAYER>, here's\"",
+        "line \"your GS BALL back!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER>, here's"
+        },
+        {
+          "command": "line",
+          "value": "your GS BALL back!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaTownKurtText3": {
+      "raw_lines": [
+        "text \"Could you go see\"",
+        "line \"why ILEX FOREST is\"",
+        "cont \"so restless?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Could you go see"
+        },
+        {
+          "command": "line",
+          "value": "why ILEX FOREST is"
+        },
+        {
+          "command": "cont",
+          "value": "so restless?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaTownSignText": {
+      "raw_lines": [
+        "text \"AZALEA TOWN\"",
+        "line \"Where People and\"",
+        "para \"#MON Live in\"",
+        "line \"Happy Harmony\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "AZALEA TOWN"
+        },
+        {
+          "command": "line",
+          "value": "Where People and"
+        },
+        {
+          "command": "para",
+          "value": "#MON Live in"
+        },
+        {
+          "command": "line",
+          "value": "Happy Harmony"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsHouseSignText": {
+      "raw_lines": [
+        "text \"KURT'S HOUSE\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "KURT'S HOUSE"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaGymSignText": {
+      "raw_lines": [
+        "text \"AZALEA TOWN\"",
+        "line \"#MON GYM\"",
+        "cont \"LEADER: BUGSY\"",
+        "para \"The Walking\"",
+        "line \"Bug #MON\"",
+        "cont \"Encyclopedia\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "AZALEA TOWN"
+        },
+        {
+          "command": "line",
+          "value": "#MON GYM"
+        },
+        {
+          "command": "cont",
+          "value": "LEADER: BUGSY"
+        },
+        {
+          "command": "para",
+          "value": "The Walking"
+        },
+        {
+          "command": "line",
+          "value": "Bug #MON"
+        },
+        {
+          "command": "cont",
+          "value": "Encyclopedia"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SlowpokeWellSignText": {
+      "raw_lines": [
+        "text \"SLOWPOKE WELL\"",
+        "para \"Also known as the\"",
+        "line \"RAINMAKER WELL.\"",
+        "para \"Locals believe\"",
+        "line \"that a SLOWPOKE's\"",
+        "cont \"yawn summons rain.\"",
+        "para \"Records show that\"",
+        "line \"a SLOWPOKE's yawn\"",
+        "para \"ended a drought\"",
+        "line \"400 years ago.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "SLOWPOKE WELL"
+        },
+        {
+          "command": "para",
+          "value": "Also known as the"
+        },
+        {
+          "command": "line",
+          "value": "RAINMAKER WELL."
+        },
+        {
+          "command": "para",
+          "value": "Locals believe"
+        },
+        {
+          "command": "line",
+          "value": "that a SLOWPOKE's"
+        },
+        {
+          "command": "cont",
+          "value": "yawn summons rain."
+        },
+        {
+          "command": "para",
+          "value": "Records show that"
+        },
+        {
+          "command": "line",
+          "value": "a SLOWPOKE's yawn"
+        },
+        {
+          "command": "para",
+          "value": "ended a drought"
+        },
+        {
+          "command": "line",
+          "value": "400 years ago."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CharcoalKilnSignText": {
+      "raw_lines": [
+        "text \"CHARCOAL KILN\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "CHARCOAL KILN"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaTownIlexForestSignText": {
+      "raw_lines": [
+        "text \"ILEX FOREST\"",
+        "para \"Enter through the\"",
+        "line \"gate.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ILEX FOREST"
+        },
+        {
+          "command": "para",
+          "value": "Enter through the"
+        },
+        {
+          "command": "line",
+          "value": "gate."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "AzaleaTownRivalBattleApproachMovement1": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "AzaleaTownRivalBattleApproachMovement2": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "AzaleaTownRivalBattleExitMovement": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "AzaleaTownPlayerLeavesKurtsHouseMovement": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step UP",
+        "turn_head LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "MartSignScript",
+    "PokecenterSignScript"
+  ],
+  "dependencies": {
+    "AzaleaTown_MapScripts": {
+      "label_refs": [
+        "AzaleaTownNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownNoop3Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownFlypointCallback": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownRivalBattleScene1": {
+      "label_refs": [
+        "AzaleaTownRivalBattleScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "AzaleaTownRivalBattleApproachMovement1"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownRivalBattleScene2": {
+      "label_refs": [
+        "AzaleaTownRivalBattleScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "AzaleaTownRivalBattleApproachMovement2"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownRivalBattleScript": {
+      "label_refs": [
+        "AzaleaTownRivalBattleScript.AfterBattle",
+        "AzaleaTownRivalBattleScript.Chikorita",
+        "AzaleaTownRivalBattleScript.Totodile"
+      ],
+      "text_refs": [
+        "AzaleaTownRivalBeforeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownRivalBattleScript.Totodile": {
+      "label_refs": [
+        "AzaleaTownRivalBattleScript.AfterBattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownRivalBattleScript.Chikorita": {
+      "label_refs": [
+        "AzaleaTownRivalBattleScript.AfterBattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownRivalBattleScript.AfterBattle": {
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownRivalAfterText"
+      ],
+      "movement_refs": [
+        "AzaleaTownRivalBattleExitMovement"
+      ],
+      "scene_refs": [
+        "SCENE_AZALEATOWN_NOOP"
+      ],
+      "std_calls": []
+    },
+    "AzaleaTownRocket1Script": {
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownRocket1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownRocket2Script": {
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownRocket2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownGrampsScript": {
+      "label_refs": [
+        "AzaleaTownGrampsScript.ClearedWell"
+      ],
+      "text_refs": [
+        "AzaleaTownGrampsTextBefore"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownGrampsScript.ClearedWell": {
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownGrampsTextAfter"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownTeacherScript": {
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownTeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownYoungsterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownSlowpokeScript": {
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownSlowpokeText1",
+        "AzaleaTownSlowpokeText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UnusedWoosterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "WoosterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownCelebiScene": {
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownKurtText1",
+        "AzaleaTownKurtText2",
+        "AzaleaTownKurtText3"
+      ],
+      "movement_refs": [
+        "AzaleaTownPlayerLeavesKurtsHouseMovement"
+      ],
+      "scene_refs": [
+        "SCENE_AZALEATOWN_NOOP"
+      ],
+      "std_calls": []
+    },
+    "AzaleaTownKurtScript": {
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownKurtText3"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownSign": {
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsHouseSign": {
+      "label_refs": [],
+      "text_refs": [
+        "KurtsHouseSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymSign": {
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaGymSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SlowpokeWellSign": {
+      "label_refs": [],
+      "text_refs": [
+        "SlowpokeWellSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CharcoalKilnSign": {
+      "label_refs": [],
+      "text_refs": [
+        "CharcoalKilnSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownIlextForestSign": {
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaTownIlexForestSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownPokecenterSign": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterSignScript"
+      ]
+    },
+    "AzaleaTownMartSign": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MartSignScript"
+      ]
+    },
+    "WhiteApricornTree": {
+      "label_refs": [
+        "AzaleaTownHiddenFullHeal"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTownHiddenFullHeal": {
+      "label_refs": [
+        "AzaleaTown_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaTown_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 3,
+    "callbacks": 1,
+    "warp_events": 8,
+    "coord_events": 3,
+    "bg_events": 9,
+    "object_events": 12
+  }
+}

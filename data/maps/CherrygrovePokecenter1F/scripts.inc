@@ -1,2 +1,37 @@
 CherrygrovePokecenter1F_MapScripts::
 	.byte 0
+
+JohtoScript_CherrygrovePokecenter1F_CherrygrovePokecenter1FNurseScript::
+	setorcopyvar VAR_0x800B, LOCALID_CHERRYGROVEPOKECENTER1F_NURSE
+	call Common_EventScript_PkmnCenterNurse
+	waitmessage
+	waitbuttonpress
+	release
+	end
+
+JohtoScript_CherrygrovePokecenter1F_CherrygrovePokecenter1FFisherScript::
+	lock
+	faceplayer
+	msgbox Crystal_CherrygrovePokecenter1F_CherrygrovePokecenter1FFisherText, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_CherrygrovePokecenter1F_CherrygrovePokecenter1FGentlemanScript::
+	lock
+	faceplayer
+	msgbox Crystal_CherrygrovePokecenter1F_CherrygrovePokecenter1FGentlemanText, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_CherrygrovePokecenter1F_CherrygrovePokecenter1FTeacherScript::
+	lock
+	faceplayer
+	goto_if_set FLAG_SYS_POKEDEX_GET, JohtoScript_CherrygrovePokecenter1F_CherrygrovePokecenter1FTeacherScript_CommCenterOpen
+	msgbox Crystal_CherrygrovePokecenter1F_CherrygrovePokecenter1FTeacherText, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_CherrygrovePokecenter1F_CherrygrovePokecenter1FTeacherScript_CommCenterOpen:
+	msgbox Crystal_CherrygrovePokecenter1F_CherrygrovePokecenter1FTeacherText_CommCenterOpen, MSGBOX_DEFAULT
+	release
+	end

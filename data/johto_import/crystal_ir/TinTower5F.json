@@ -1,0 +1,374 @@
+{
+  "crystal_map": "TinTower5F",
+  "map_id": "TIN_TOWER_5F",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 8,
+  "tileset": "TILESET_TOWER",
+  "environment": "DUNGEON",
+  "landmark": "LANDMARK_TIN_TOWER",
+  "music": "MUSIC_TIN_TOWER",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 10,
+  "height_blocks": 9,
+  "border_block": "00",
+  "blk_path": "maps/TinTower5F.blk",
+  "source_asm": "maps/TinTower5F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 11,
+        "y": 15,
+        "dest_map": "TIN_TOWER_6F",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "dest_map": "TIN_TOWER_4F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 2,
+        "y": 14,
+        "dest_map": "TIN_TOWER_4F",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 17,
+        "y": 15,
+        "dest_map": "TIN_TOWER_4F",
+        "dest_warp_id": 4
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 16,
+        "y": 14,
+        "kind": "BGEVENT_ITEM",
+        "script": "TinTower5FHiddenFullRestore"
+      },
+      {
+        "x": 3,
+        "y": 15,
+        "kind": "BGEVENT_ITEM",
+        "script": "TinTower5FHiddenCarbos"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 9,
+        "y": 9,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "TinTower5FRareCandy",
+        "flag": "EVENT_TIN_TOWER_5F_RARE_CANDY"
+      }
+    ]
+  },
+  "object_consts": [
+    "TINTOWER5F_POKE_BALL"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "TinTower5F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "TinTower5FRareCandy",
+      "label_refs": [
+        "TinTower5FRareCandy"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTower5FRareCandy": {
+      "raw_lines": [
+        "itemball RARE_CANDY"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "RARE_CANDY"
+          ],
+          "raw": "itemball RARE_CANDY"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "TinTower5FHiddenFullRestore",
+      "label_refs": [
+        "TinTower5FHiddenFullRestore"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTower5FHiddenFullRestore": {
+      "raw_lines": [
+        "hiddenitem FULL_RESTORE, EVENT_TIN_TOWER_5F_HIDDEN_FULL_RESTORE"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "FULL_RESTORE",
+            "EVENT_TIN_TOWER_5F_HIDDEN_FULL_RESTORE"
+          ],
+          "raw": "hiddenitem FULL_RESTORE, EVENT_TIN_TOWER_5F_HIDDEN_FULL_RESTORE"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "TinTower5FHiddenCarbos",
+      "label_refs": [
+        "TinTower5FHiddenCarbos"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTower5FHiddenCarbos": {
+      "raw_lines": [
+        "hiddenitem CARBOS, EVENT_TIN_TOWER_5F_HIDDEN_CARBOS"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "CARBOS",
+            "EVENT_TIN_TOWER_5F_HIDDEN_CARBOS"
+          ],
+          "raw": "hiddenitem CARBOS, EVENT_TIN_TOWER_5F_HIDDEN_CARBOS"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "TinTower5F_MapEvents",
+      "label_refs": [
+        "TinTower5F_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTower5F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 11, 15, TIN_TOWER_6F, 2",
+        "warp_event  2,  4, TIN_TOWER_4F, 1",
+        "warp_event  2, 14, TIN_TOWER_4F, 3",
+        "warp_event 17, 15, TIN_TOWER_4F, 4",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event 16, 14, BGEVENT_ITEM, TinTower5FHiddenFullRestore",
+        "bg_event  3, 15, BGEVENT_ITEM, TinTower5FHiddenCarbos",
+        "def_object_events",
+        "object_event  9,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TinTower5FRareCandy, EVENT_TIN_TOWER_5F_RARE_CANDY"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "11",
+            "15",
+            "TIN_TOWER_6F",
+            "2"
+          ],
+          "raw": "warp_event 11, 15, TIN_TOWER_6F, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "4",
+            "TIN_TOWER_4F",
+            "1"
+          ],
+          "raw": "warp_event  2,  4, TIN_TOWER_4F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "14",
+            "TIN_TOWER_4F",
+            "3"
+          ],
+          "raw": "warp_event  2, 14, TIN_TOWER_4F, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "15",
+            "TIN_TOWER_4F",
+            "4"
+          ],
+          "raw": "warp_event 17, 15, TIN_TOWER_4F, 4"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "16",
+            "14",
+            "BGEVENT_ITEM",
+            "TinTower5FHiddenFullRestore"
+          ],
+          "raw": "bg_event 16, 14, BGEVENT_ITEM, TinTower5FHiddenFullRestore"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "15",
+            "BGEVENT_ITEM",
+            "TinTower5FHiddenCarbos"
+          ],
+          "raw": "bg_event  3, 15, BGEVENT_ITEM, TinTower5FHiddenCarbos"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "9",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "TinTower5FRareCandy",
+            "EVENT_TIN_TOWER_5F_RARE_CANDY"
+          ],
+          "raw": "object_event  9,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TinTower5FRareCandy, EVENT_TIN_TOWER_5F_RARE_CANDY"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {},
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "TinTower5F_MapScripts": {
+      "label_refs": [
+        "TinTower5FRareCandy"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTower5FRareCandy": {
+      "label_refs": [
+        "TinTower5FHiddenFullRestore"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTower5FHiddenFullRestore": {
+      "label_refs": [
+        "TinTower5FHiddenCarbos"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTower5FHiddenCarbos": {
+      "label_refs": [
+        "TinTower5F_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTower5F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 4,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 1
+  }
+}

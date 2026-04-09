@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ROUTE30",
-      "offset": 5,
+      "offset": 10,
       "direction": "up"
     },
     {
@@ -24,7 +24,75 @@
       "direction": "right"
     }
   ],
-  "object_events": [],
+  "object_events": [
+    {
+      "local_id": "LOCALID_CHERRYGROVE_CITY_GUIDE_GENT",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
+      "x": 32,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CherrygroveCity_EventScript_GuideGent",
+      "flag": "FLAG_HIDE_CHERRYGROVE_CITY_GUIDE_GENT"
+    },
+    {
+      "local_id": "LOCALID_CHERRYGROVE_CITY_RIVAL",
+      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "x": 39,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CherrygroveCity_EventScript_Rival",
+      "flag": "FLAG_HIDE_CHERRYGROVE_CITY_RIVAL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 27,
+      "y": 12,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 1,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CherrygroveCity_EventScript_Teacher",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 23,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 1,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CherrygroveCity_EventScript_Youngster",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "x": 7,
+      "y": 12,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CherrygroveCity_EventScript_Fisher",
+      "flag": "0"
+    }
+  ],
   "warp_events": [
     {
       "x": 23,
@@ -62,6 +130,58 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_JOHTO_CHERRYGROVE_SCENE_STATE",
+      "var_value": "1",
+      "script": "CherrygroveCity_EventScript_RivalSceneNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 7,
+      "elevation": 3,
+      "var": "VAR_JOHTO_CHERRYGROVE_SCENE_STATE",
+      "var_value": "1",
+      "script": "CherrygroveCity_EventScript_RivalSceneSouth"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 8,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CherrygroveCity_EventScript_CitySign"
+    },
+    {
+      "type": "sign",
+      "x": 23,
+      "y": 9,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CherrygroveCity_EventScript_GuideHouseSign"
+    },
+    {
+      "type": "sign",
+      "x": 24,
+      "y": 3,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CherrygroveCity_EventScript_MartSign"
+    },
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 3,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CherrygroveCity_EventScript_PokecenterSign"
+    }
+  ]
 }

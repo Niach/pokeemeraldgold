@@ -1,0 +1,1891 @@
+{
+  "crystal_map": "RadioTower4F",
+  "map_id": "RADIO_TOWER_4F",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 20,
+  "tileset": "TILESET_RADIO_TOWER",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_RADIO_TOWER",
+  "music": "RADIO_TOWER_MUSIC | MUSIC_GOLDENROD_CITY",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 9,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/RadioTower4F.blk",
+  "source_asm": "maps/RadioTower4F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 0,
+        "y": 0,
+        "dest_map": "RADIO_TOWER_5F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 9,
+        "y": 0,
+        "dest_map": "RADIO_TOWER_3F",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 12,
+        "y": 0,
+        "dest_map": "RADIO_TOWER_5F",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 17,
+        "y": 0,
+        "dest_map": "RADIO_TOWER_3F",
+        "dest_warp_id": 3
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 7,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "RadioTower4FProductionSign"
+      },
+      {
+        "x": 15,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "RadioTower4FStudio2Sign"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 6,
+        "y": 4,
+        "sprite": "SPRITE_FISHER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RadioTower4FFisherScript",
+        "flag": "EVENT_RADIO_TOWER_CIVILIANS_AFTER"
+      },
+      {
+        "x": 14,
+        "y": 6,
+        "sprite": "SPRITE_TEACHER",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RadioTower4FDJMaryScript",
+        "flag": -1
+      },
+      {
+        "x": 12,
+        "y": 7,
+        "sprite": "SPRITE_GROWLITHE",
+        "movement": "SPRITEMOVEDATA_POKEMON",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RadioTowerMeowth",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 6,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_SPINCLOCKWISE",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerGruntM10",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 14,
+        "y": 1,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 2,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 2,
+        "script": "TrainerExecutivem2",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 12,
+        "y": 4,
+        "sprite": "SPRITE_ROCKET_GIRL",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerGruntF4",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 4,
+        "y": 2,
+        "sprite": "SPRITE_SCIENTIST",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 4,
+        "script": "TrainerScientistRich",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      }
+    ]
+  },
+  "object_consts": [
+    "RADIOTOWER4F_FISHER",
+    "RADIOTOWER4F_TEACHER",
+    "RADIOTOWER4F_GROWLITHE",
+    "RADIOTOWER4F_ROCKET1",
+    "RADIOTOWER4F_ROCKET2",
+    "RADIOTOWER4F_ROCKET_GIRL",
+    "RADIOTOWER4F_SCIENTIST"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "RadioTower4F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "RadioTower4FFisherScript",
+      "label_refs": [
+        "RadioTower4FFisherScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower4FFisherScript": {
+      "raw_lines": [
+        "jumptextfaceplayer RadioTower4FFisherText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "RadioTower4FFisherText"
+          ],
+          "raw": "jumptextfaceplayer RadioTower4FFisherText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower4FFisherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower4FDJMaryScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_PINK_BOW_FROM_MARY",
+        "iftrue .GotPinkBow",
+        "checkevent EVENT_CLEARED_RADIO_TOWER",
+        "iftrue .ClearedRockets",
+        "writetext RadioTower4FDJMaryText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_PINK_BOW_FROM_MARY"
+          ],
+          "raw": "checkevent EVENT_GOT_PINK_BOW_FROM_MARY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RadioTower4FDJMaryScript.GotPinkBow"
+          ],
+          "raw": "iftrue .GotPinkBow"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_RADIO_TOWER"
+          ],
+          "raw": "checkevent EVENT_CLEARED_RADIO_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RadioTower4FDJMaryScript.ClearedRockets"
+          ],
+          "raw": "iftrue .ClearedRockets"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower4FDJMaryText"
+          ],
+          "raw": "writetext RadioTower4FDJMaryText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "RadioTower4FDJMaryScript.ClearedRockets",
+        "RadioTower4FDJMaryScript.GotPinkBow"
+      ],
+      "text_refs": [
+        "RadioTower4FDJMaryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower4FDJMaryScript.ClearedRockets": {
+      "raw_lines": [
+        "writetext RadioTower4FDJMaryText_ClearedRockets",
+        "promptbutton",
+        "verbosegiveitem PINK_BOW",
+        "iffalse .NoRoom",
+        "writetext RadioTower4FDJMaryText_GivePinkBow",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_GOT_PINK_BOW_FROM_MARY",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower4FDJMaryText_ClearedRockets"
+          ],
+          "raw": "writetext RadioTower4FDJMaryText_ClearedRockets"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "PINK_BOW"
+          ],
+          "raw": "verbosegiveitem PINK_BOW"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "RadioTower4FDJMaryScript.NoRoom"
+          ],
+          "raw": "iffalse .NoRoom"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower4FDJMaryText_GivePinkBow"
+          ],
+          "raw": "writetext RadioTower4FDJMaryText_GivePinkBow"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_PINK_BOW_FROM_MARY"
+          ],
+          "raw": "setevent EVENT_GOT_PINK_BOW_FROM_MARY"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "RadioTower4FDJMaryScript.NoRoom"
+      ],
+      "text_refs": [
+        "RadioTower4FDJMaryText_ClearedRockets",
+        "RadioTower4FDJMaryText_GivePinkBow"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower4FDJMaryScript.GotPinkBow": {
+      "raw_lines": [
+        "writetext RadioTower4FDJMaryText_After",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower4FDJMaryText_After"
+          ],
+          "raw": "writetext RadioTower4FDJMaryText_After"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "RadioTower4FDJMaryScript.NoRoom",
+      "label_refs": [
+        "RadioTower4FDJMaryScript.NoRoom"
+      ],
+      "text_refs": [
+        "RadioTower4FDJMaryText_After"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower4FDJMaryScript.NoRoom": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTowerMeowth": {
+      "raw_lines": [
+        "opentext",
+        "writetext RadioTowerMeowthText",
+        "cry MEOWTH",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTowerMeowthText"
+          ],
+          "raw": "writetext RadioTowerMeowthText"
+        },
+        {
+          "command": "cry",
+          "args": [
+            "MEOWTH"
+          ],
+          "raw": "cry MEOWTH"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTowerMeowthText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM10": {
+      "raw_lines": [
+        "trainer GRUNTM, GRUNTM_10, EVENT_BEAT_ROCKET_GRUNTM_10, GruntM10SeenText, GruntM10BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "GRUNTM",
+            "GRUNTM_10",
+            "EVENT_BEAT_ROCKET_GRUNTM_10",
+            "GruntM10SeenText",
+            "GruntM10BeatenText",
+            "0",
+            "TrainerGruntM10.Script"
+          ],
+          "raw": "trainer GRUNTM, GRUNTM_10, EVENT_BEAT_ROCKET_GRUNTM_10, GruntM10SeenText, GruntM10BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerGruntM10.Script",
+      "label_refs": [
+        "TrainerGruntM10.Script"
+      ],
+      "text_refs": [
+        "GruntM10BeatenText",
+        "GruntM10SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM10.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext GruntM10AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GruntM10AfterBattleText"
+          ],
+          "raw": "writetext GruntM10AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "GruntM10AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerExecutivem2": {
+      "raw_lines": [
+        "trainer EXECUTIVEM, EXECUTIVEM_2, EVENT_BEAT_ROCKET_EXECUTIVEM_2, Executivem2SeenText, Executivem2BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "EXECUTIVEM",
+            "EXECUTIVEM_2",
+            "EVENT_BEAT_ROCKET_EXECUTIVEM_2",
+            "Executivem2SeenText",
+            "Executivem2BeatenText",
+            "0",
+            "TrainerExecutivem2.Script"
+          ],
+          "raw": "trainer EXECUTIVEM, EXECUTIVEM_2, EVENT_BEAT_ROCKET_EXECUTIVEM_2, Executivem2SeenText, Executivem2BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerExecutivem2.Script",
+      "label_refs": [
+        "TrainerExecutivem2.Script"
+      ],
+      "text_refs": [
+        "Executivem2BeatenText",
+        "Executivem2SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerExecutivem2.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext Executivem2AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Executivem2AfterBattleText"
+          ],
+          "raw": "writetext Executivem2AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "Executivem2AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntF4": {
+      "raw_lines": [
+        "trainer GRUNTF, GRUNTF_4, EVENT_BEAT_ROCKET_GRUNTF_4, GruntF4SeenText, GruntF4BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "GRUNTF",
+            "GRUNTF_4",
+            "EVENT_BEAT_ROCKET_GRUNTF_4",
+            "GruntF4SeenText",
+            "GruntF4BeatenText",
+            "0",
+            "TrainerGruntF4.Script"
+          ],
+          "raw": "trainer GRUNTF, GRUNTF_4, EVENT_BEAT_ROCKET_GRUNTF_4, GruntF4SeenText, GruntF4BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerGruntF4.Script",
+      "label_refs": [
+        "TrainerGruntF4.Script"
+      ],
+      "text_refs": [
+        "GruntF4BeatenText",
+        "GruntF4SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntF4.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext GruntF4AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GruntF4AfterBattleText"
+          ],
+          "raw": "writetext GruntF4AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "GruntF4AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerScientistRich": {
+      "raw_lines": [
+        "trainer SCIENTIST, RICH, EVENT_BEAT_SCIENTIST_RICH, ScientistRichSeenText, ScientistRichBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "SCIENTIST",
+            "RICH",
+            "EVENT_BEAT_SCIENTIST_RICH",
+            "ScientistRichSeenText",
+            "ScientistRichBeatenText",
+            "0",
+            "TrainerScientistRich.Script"
+          ],
+          "raw": "trainer SCIENTIST, RICH, EVENT_BEAT_SCIENTIST_RICH, ScientistRichSeenText, ScientistRichBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerScientistRich.Script",
+      "label_refs": [
+        "TrainerScientistRich.Script"
+      ],
+      "text_refs": [
+        "ScientistRichBeatenText",
+        "ScientistRichSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerScientistRich.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext ScientistRichAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ScientistRichAfterBattleText"
+          ],
+          "raw": "writetext ScientistRichAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "ScientistRichAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower4FProductionSign": {
+      "raw_lines": [
+        "jumptext RadioTower4FProductionSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "RadioTower4FProductionSignText"
+          ],
+          "raw": "jumptext RadioTower4FProductionSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower4FProductionSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower4FStudio2Sign": {
+      "raw_lines": [
+        "jumptext RadioTower4FStudio2SignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "RadioTower4FStudio2SignText"
+          ],
+          "raw": "jumptext RadioTower4FStudio2SignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower4FStudio2SignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower4F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  0,  0, RADIO_TOWER_5F, 1",
+        "warp_event  9,  0, RADIO_TOWER_3F, 2",
+        "warp_event 12,  0, RADIO_TOWER_5F, 2",
+        "warp_event 17,  0, RADIO_TOWER_3F, 3",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  7,  0, BGEVENT_READ, RadioTower4FProductionSign",
+        "bg_event 15,  0, BGEVENT_READ, RadioTower4FStudio2Sign",
+        "def_object_events",
+        "object_event  6,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower4FFisherScript, EVENT_RADIO_TOWER_CIVILIANS_AFTER",
+        "object_event 14,  6, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower4FDJMaryScript, -1",
+        "object_event 12,  7, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTowerMeowth, -1",
+        "object_event  5,  6, SPRITE_ROCKET, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM10, EVENT_RADIO_TOWER_ROCKET_TAKEOVER",
+        "object_event 14,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 2, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerExecutivem2, EVENT_RADIO_TOWER_ROCKET_TAKEOVER",
+        "object_event 12,  4, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGruntF4, EVENT_RADIO_TOWER_ROCKET_TAKEOVER",
+        "object_event  4,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerScientistRich, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "0",
+            "RADIO_TOWER_5F",
+            "1"
+          ],
+          "raw": "warp_event  0,  0, RADIO_TOWER_5F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "0",
+            "RADIO_TOWER_3F",
+            "2"
+          ],
+          "raw": "warp_event  9,  0, RADIO_TOWER_3F, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "12",
+            "0",
+            "RADIO_TOWER_5F",
+            "2"
+          ],
+          "raw": "warp_event 12,  0, RADIO_TOWER_5F, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "0",
+            "RADIO_TOWER_3F",
+            "3"
+          ],
+          "raw": "warp_event 17,  0, RADIO_TOWER_3F, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "7",
+            "0",
+            "BGEVENT_READ",
+            "RadioTower4FProductionSign"
+          ],
+          "raw": "bg_event  7,  0, BGEVENT_READ, RadioTower4FProductionSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "15",
+            "0",
+            "BGEVENT_READ",
+            "RadioTower4FStudio2Sign"
+          ],
+          "raw": "bg_event 15,  0, BGEVENT_READ, RadioTower4FStudio2Sign"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "4",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RadioTower4FFisherScript",
+            "EVENT_RADIO_TOWER_CIVILIANS_AFTER"
+          ],
+          "raw": "object_event  6,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower4FFisherScript, EVENT_RADIO_TOWER_CIVILIANS_AFTER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "14",
+            "6",
+            "SPRITE_TEACHER",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RadioTower4FDJMaryScript",
+            "-1"
+          ],
+          "raw": "object_event 14,  6, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower4FDJMaryScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "12",
+            "7",
+            "SPRITE_GROWLITHE",
+            "SPRITEMOVEDATA_POKEMON",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RadioTowerMeowth",
+            "-1"
+          ],
+          "raw": "object_event 12,  7, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTowerMeowth, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "6",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_SPINCLOCKWISE",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerGruntM10",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event  5,  6, SPRITE_ROCKET, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM10, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "14",
+            "1",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "2",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_TRAINER",
+            "2",
+            "TrainerExecutivem2",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event 14,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 2, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerExecutivem2, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "12",
+            "4",
+            "SPRITE_ROCKET_GIRL",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerGruntF4",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event 12,  4, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGruntF4, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "2",
+            "SPRITE_SCIENTIST",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "4",
+            "TrainerScientistRich",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event  4,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerScientistRich, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "RadioTower4FFisherText": {
+      "raw_lines": [
+        "text \"I listened to the\"",
+        "line \"radio while I was\"",
+        "cont \"at the RUINS.\"",
+        "para \"I heard a strange\"",
+        "line \"broadcast there.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I listened to the"
+        },
+        {
+          "command": "line",
+          "value": "radio while I was"
+        },
+        {
+          "command": "cont",
+          "value": "at the RUINS."
+        },
+        {
+          "command": "para",
+          "value": "I heard a strange"
+        },
+        {
+          "command": "line",
+          "value": "broadcast there."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower4FDJMaryText": {
+      "raw_lines": [
+        "text \"MARY: Why? Why do\"",
+        "line \"I have to suffer\"",
+        "cont \"through this?\"",
+        "para \"MEOWTH, help me!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MARY: Why? Why do"
+        },
+        {
+          "command": "line",
+          "value": "I have to suffer"
+        },
+        {
+          "command": "cont",
+          "value": "through this?"
+        },
+        {
+          "command": "para",
+          "value": "MEOWTH, help me!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower4FDJMaryText_ClearedRockets": {
+      "raw_lines": [
+        "text \"MARY: Oh! You're\"",
+        "line \"my little savior!\"",
+        "para \"Will you take this\"",
+        "line \"as my thanks?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MARY: Oh! You're"
+        },
+        {
+          "command": "line",
+          "value": "my little savior!"
+        },
+        {
+          "command": "para",
+          "value": "Will you take this"
+        },
+        {
+          "command": "line",
+          "value": "as my thanks?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower4FDJMaryText_GivePinkBow": {
+      "raw_lines": [
+        "text \"MARY: It's just\"",
+        "line \"right for #MON\"",
+        "para \"that know normal-\"",
+        "line \"type moves.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MARY: It's just"
+        },
+        {
+          "command": "line",
+          "value": "right for #MON"
+        },
+        {
+          "command": "para",
+          "value": "that know normal-"
+        },
+        {
+          "command": "line",
+          "value": "type moves."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower4FDJMaryText_After": {
+      "raw_lines": [
+        "text \"MARY: Please tune\"",
+        "line \"into me on PROF.\"",
+        "para \"OAK'S #MON TALK\"",
+        "line \"show.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MARY: Please tune"
+        },
+        {
+          "command": "line",
+          "value": "into me on PROF."
+        },
+        {
+          "command": "para",
+          "value": "OAK'S #MON TALK"
+        },
+        {
+          "command": "line",
+          "value": "show."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTowerMeowthText": {
+      "raw_lines": [
+        "text \"MEOWTH: Meowth\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MEOWTH: Meowth\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM10SeenText": {
+      "raw_lines": [
+        "text \"You plan to rescue\"",
+        "line \"the DIRECTOR?\"",
+        "para \"That won't be pos-\"",
+        "line \"sible because I'm\"",
+        "cont \"going to beat you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You plan to rescue"
+        },
+        {
+          "command": "line",
+          "value": "the DIRECTOR?"
+        },
+        {
+          "command": "para",
+          "value": "That won't be pos-"
+        },
+        {
+          "command": "line",
+          "value": "sible because I'm"
+        },
+        {
+          "command": "cont",
+          "value": "going to beat you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM10BeatenText": {
+      "raw_lines": [
+        "text \"No! Unbelievable!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "No! Unbelievable!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM10AfterBattleText": {
+      "raw_lines": [
+        "text \"I don't believe\"",
+        "line \"it! I was beaten!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I don't believe"
+        },
+        {
+          "command": "line",
+          "value": "it! I was beaten!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Executivem2SeenText": {
+      "raw_lines": [
+        "text \"Stop! I'm known as\"",
+        "line \"the TEAM ROCKET\"",
+        "cont \"fortress!\"",
+        "para \"You're not taking\"",
+        "line \"another step!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Stop! I'm known as"
+        },
+        {
+          "command": "line",
+          "value": "the TEAM ROCKET"
+        },
+        {
+          "command": "cont",
+          "value": "fortress!"
+        },
+        {
+          "command": "para",
+          "value": "You're not taking"
+        },
+        {
+          "command": "line",
+          "value": "another step!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Executivem2BeatenText": {
+      "raw_lines": [
+        "text \"The fortress came\"",
+        "line \"down!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The fortress came"
+        },
+        {
+          "command": "line",
+          "value": "down!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Executivem2AfterBattleText": {
+      "raw_lines": [
+        "text \"You've earned my\"",
+        "line \"respect, so here's\"",
+        "cont \"some advice.\"",
+        "para \"It's not too late.\"",
+        "line \"You can still turn\"",
+        "cont \"back.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You've earned my"
+        },
+        {
+          "command": "line",
+          "value": "respect, so here's"
+        },
+        {
+          "command": "cont",
+          "value": "some advice."
+        },
+        {
+          "command": "para",
+          "value": "It's not too late."
+        },
+        {
+          "command": "line",
+          "value": "You can still turn"
+        },
+        {
+          "command": "cont",
+          "value": "back."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntF4SeenText": {
+      "raw_lines": [
+        "text \"Don't I think\"",
+        "line \"#MON are cute?\"",
+        "para \"I'll think my\"",
+        "line \"#MON are cute--\"",
+        "para \"after they beat\"",
+        "line \"yours!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Don't I think"
+        },
+        {
+          "command": "line",
+          "value": "#MON are cute?"
+        },
+        {
+          "command": "para",
+          "value": "I'll think my"
+        },
+        {
+          "command": "line",
+          "value": "#MON are cute--"
+        },
+        {
+          "command": "para",
+          "value": "after they beat"
+        },
+        {
+          "command": "line",
+          "value": "yours!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntF4BeatenText": {
+      "raw_lines": [
+        "text \"Oh, no! They're so\"",
+        "line \"useless!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, no! They're so"
+        },
+        {
+          "command": "line",
+          "value": "useless!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntF4AfterBattleText": {
+      "raw_lines": [
+        "text \"I love my\"",
+        "line \"beautiful self!\"",
+        "para \"Who cares about\"",
+        "line \"#MON?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I love my"
+        },
+        {
+          "command": "line",
+          "value": "beautiful self!"
+        },
+        {
+          "command": "para",
+          "value": "Who cares about"
+        },
+        {
+          "command": "line",
+          "value": "#MON?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ScientistRichSeenText": {
+      "raw_lines": [
+        "text \"Most excellent.\"",
+        "para \"This RADIO TOWER\"",
+        "line \"will fulfill our\"",
+        "cont \"grand design.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Most excellent."
+        },
+        {
+          "command": "para",
+          "value": "This RADIO TOWER"
+        },
+        {
+          "command": "line",
+          "value": "will fulfill our"
+        },
+        {
+          "command": "cont",
+          "value": "grand design."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ScientistRichBeatenText": {
+      "raw_lines": [
+        "text \"Hmmm\u2026\"",
+        "para \"All grand plans\"",
+        "line \"come with snags.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hmmm\u2026"
+        },
+        {
+          "command": "para",
+          "value": "All grand plans"
+        },
+        {
+          "command": "line",
+          "value": "come with snags."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ScientistRichAfterBattleText": {
+      "raw_lines": [
+        "text \"Do you honestly\"",
+        "line \"believe you can\"",
+        "cont \"stop TEAM ROCKET?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Do you honestly"
+        },
+        {
+          "command": "line",
+          "value": "believe you can"
+        },
+        {
+          "command": "cont",
+          "value": "stop TEAM ROCKET?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower4FProductionSignText": {
+      "raw_lines": [
+        "text \"4F PRODUCTION\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "4F PRODUCTION"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower4FStudio2SignText": {
+      "raw_lines": [
+        "text \"4F STUDIO 2\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "4F STUDIO 2"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "RadioTower4F_MapScripts": {
+      "label_refs": [
+        "RadioTower4FFisherScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower4FFisherScript": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower4FFisherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower4FDJMaryScript": {
+      "label_refs": [
+        "RadioTower4FDJMaryScript.ClearedRockets",
+        "RadioTower4FDJMaryScript.GotPinkBow"
+      ],
+      "text_refs": [
+        "RadioTower4FDJMaryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower4FDJMaryScript.ClearedRockets": {
+      "label_refs": [
+        "RadioTower4FDJMaryScript.NoRoom"
+      ],
+      "text_refs": [
+        "RadioTower4FDJMaryText_ClearedRockets",
+        "RadioTower4FDJMaryText_GivePinkBow"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower4FDJMaryScript.GotPinkBow": {
+      "label_refs": [
+        "RadioTower4FDJMaryScript.NoRoom"
+      ],
+      "text_refs": [
+        "RadioTower4FDJMaryText_After"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower4FDJMaryScript.NoRoom": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTowerMeowth": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTowerMeowthText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM10": {
+      "label_refs": [
+        "TrainerGruntM10.Script"
+      ],
+      "text_refs": [
+        "GruntM10BeatenText",
+        "GruntM10SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM10.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GruntM10AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerExecutivem2": {
+      "label_refs": [
+        "TrainerExecutivem2.Script"
+      ],
+      "text_refs": [
+        "Executivem2BeatenText",
+        "Executivem2SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerExecutivem2.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "Executivem2AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntF4": {
+      "label_refs": [
+        "TrainerGruntF4.Script"
+      ],
+      "text_refs": [
+        "GruntF4BeatenText",
+        "GruntF4SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntF4.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GruntF4AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerScientistRich": {
+      "label_refs": [
+        "TrainerScientistRich.Script"
+      ],
+      "text_refs": [
+        "ScientistRichBeatenText",
+        "ScientistRichSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerScientistRich.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "ScientistRichAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower4FProductionSign": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower4FProductionSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower4FStudio2Sign": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower4FStudio2SignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower4F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 4,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 7
+  }
+}

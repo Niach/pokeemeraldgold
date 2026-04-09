@@ -1,0 +1,5114 @@
+{
+  "crystal_map": "GoldenrodUnderground",
+  "map_id": "GOLDENROD_UNDERGROUND",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 53,
+  "tileset": "TILESET_GATE",
+  "environment": "DUNGEON",
+  "landmark": "LANDMARK_GOLDENROD_CITY",
+  "music": "MUSIC_UNION_CAVE",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 15,
+  "height_blocks": 18,
+  "border_block": "00",
+  "blk_path": "maps/GoldenrodUnderground.blk",
+  "source_asm": "maps/GoldenrodUnderground.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "GoldenrodUndergroundResetSwitchesCallback"
+      },
+      {
+        "type": "MAPCALLBACK_TILES",
+        "script": "GoldenrodUndergroundCheckBasementKeyCallback"
+      },
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "GoldenrodUndergroundCheckDayOfWeekCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 2,
+        "dest_map": "GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES",
+        "dest_warp_id": 7
+      },
+      {
+        "x": 3,
+        "y": 34,
+        "dest_map": "GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 18,
+        "y": 6,
+        "dest_map": "GOLDENROD_UNDERGROUND",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 21,
+        "y": 31,
+        "dest_map": "GOLDENROD_UNDERGROUND",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 22,
+        "y": 31,
+        "dest_map": "GOLDENROD_UNDERGROUND",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 22,
+        "y": 27,
+        "dest_map": "GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 18,
+        "y": 6,
+        "kind": "BGEVENT_READ",
+        "script": "BasementDoorScript"
+      },
+      {
+        "x": 19,
+        "y": 6,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodUndergroundNoEntrySign"
+      },
+      {
+        "x": 6,
+        "y": 13,
+        "kind": "BGEVENT_ITEM",
+        "script": "GoldenrodUndergroundHiddenParlyzHeal"
+      },
+      {
+        "x": 4,
+        "y": 18,
+        "kind": "BGEVENT_ITEM",
+        "script": "GoldenrodUndergroundHiddenSuperPotion"
+      },
+      {
+        "x": 17,
+        "y": 8,
+        "kind": "BGEVENT_ITEM",
+        "script": "GoldenrodUndergroundHiddenAntidote"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 5,
+        "y": 31,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerSupernerdEric",
+        "flag": -1
+      },
+      {
+        "x": 6,
+        "y": 9,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 2,
+        "script": "TrainerSupernerdTeru",
+        "flag": -1
+      },
+      {
+        "x": 3,
+        "y": 27,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_FAST",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 2,
+        "script": "TrainerPokemaniacIssac",
+        "flag": -1
+      },
+      {
+        "x": 2,
+        "y": 6,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerPokemaniacDonald",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 25,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodUndergroundCoinCase",
+        "flag": "EVENT_GOLDENROD_UNDERGROUND_COIN_CASE"
+      },
+      {
+        "x": 7,
+        "y": 11,
+        "sprite": "SPRITE_GRAMPS",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BargainMerchantScript",
+        "flag": "EVENT_GOLDENROD_UNDERGROUND_GRAMPS"
+      },
+      {
+        "x": 7,
+        "y": 14,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "OlderHaircutBrotherScript",
+        "flag": "EVENT_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER"
+      },
+      {
+        "x": 7,
+        "y": 15,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "YoungerHaircutBrotherScript",
+        "flag": "EVENT_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER"
+      },
+      {
+        "x": 7,
+        "y": 21,
+        "sprite": "SPRITE_GRANNY",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BitterMerchantScript",
+        "flag": "EVENT_GOLDENROD_UNDERGROUND_GRANNY"
+      }
+    ]
+  },
+  "object_consts": [
+    "GOLDENRODUNDERGROUND_SUPER_NERD1",
+    "GOLDENRODUNDERGROUND_SUPER_NERD2",
+    "GOLDENRODUNDERGROUND_SUPER_NERD3",
+    "GOLDENRODUNDERGROUND_SUPER_NERD4",
+    "GOLDENRODUNDERGROUND_POKE_BALL",
+    "GOLDENRODUNDERGROUND_GRAMPS",
+    "GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER",
+    "GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER",
+    "GOLDENRODUNDERGROUND_GRANNY"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "GoldenrodUnderground_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, GoldenrodUndergroundResetSwitchesCallback",
+        "callback MAPCALLBACK_TILES, GoldenrodUndergroundCheckBasementKeyCallback",
+        "callback MAPCALLBACK_OBJECTS, GoldenrodUndergroundCheckDayOfWeekCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "GoldenrodUndergroundResetSwitchesCallback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, GoldenrodUndergroundResetSwitchesCallback"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_TILES",
+            "GoldenrodUndergroundCheckBasementKeyCallback"
+          ],
+          "raw": "callback MAPCALLBACK_TILES, GoldenrodUndergroundCheckBasementKeyCallback"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "GoldenrodUndergroundCheckDayOfWeekCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, GoldenrodUndergroundCheckDayOfWeekCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "GoldenrodUndergroundResetSwitchesCallback",
+      "label_refs": [
+        "GoldenrodUndergroundResetSwitchesCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundResetSwitchesCallback": {
+      "raw_lines": [
+        "clearevent EVENT_SWITCH_1",
+        "clearevent EVENT_SWITCH_2",
+        "clearevent EVENT_SWITCH_3",
+        "clearevent EVENT_EMERGENCY_SWITCH",
+        "clearevent EVENT_DOOR_1_OPEN",
+        "clearevent EVENT_DOOR_2_OPEN",
+        "clearevent EVENT_DOOR_3_OPEN",
+        "clearevent EVENT_DOOR_4_OPEN",
+        "clearevent EVENT_DOOR_5_OPEN",
+        "clearevent EVENT_DOOR_6_OPEN",
+        "clearevent EVENT_DOOR_7_OPEN",
+        "clearevent EVENT_DOOR_8_OPEN",
+        "clearevent EVENT_DOOR_9_OPEN",
+        "clearevent EVENT_DOOR_10_OPEN",
+        "clearevent EVENT_DOOR_11_OPEN",
+        "setval 0",
+        "writemem wUndergroundSwitchPositions",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_SWITCH_1"
+          ],
+          "raw": "clearevent EVENT_SWITCH_1"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_SWITCH_2"
+          ],
+          "raw": "clearevent EVENT_SWITCH_2"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_SWITCH_3"
+          ],
+          "raw": "clearevent EVENT_SWITCH_3"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_EMERGENCY_SWITCH"
+          ],
+          "raw": "clearevent EVENT_EMERGENCY_SWITCH"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_DOOR_1_OPEN"
+          ],
+          "raw": "clearevent EVENT_DOOR_1_OPEN"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_DOOR_2_OPEN"
+          ],
+          "raw": "clearevent EVENT_DOOR_2_OPEN"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_DOOR_3_OPEN"
+          ],
+          "raw": "clearevent EVENT_DOOR_3_OPEN"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_DOOR_4_OPEN"
+          ],
+          "raw": "clearevent EVENT_DOOR_4_OPEN"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_DOOR_5_OPEN"
+          ],
+          "raw": "clearevent EVENT_DOOR_5_OPEN"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_DOOR_6_OPEN"
+          ],
+          "raw": "clearevent EVENT_DOOR_6_OPEN"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_DOOR_7_OPEN"
+          ],
+          "raw": "clearevent EVENT_DOOR_7_OPEN"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_DOOR_8_OPEN"
+          ],
+          "raw": "clearevent EVENT_DOOR_8_OPEN"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_DOOR_9_OPEN"
+          ],
+          "raw": "clearevent EVENT_DOOR_9_OPEN"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_DOOR_10_OPEN"
+          ],
+          "raw": "clearevent EVENT_DOOR_10_OPEN"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_DOOR_11_OPEN"
+          ],
+          "raw": "clearevent EVENT_DOOR_11_OPEN"
+        },
+        {
+          "command": "setval",
+          "args": [
+            "0"
+          ],
+          "raw": "setval 0"
+        },
+        {
+          "command": "writemem",
+          "args": [
+            "wUndergroundSwitchPositions"
+          ],
+          "raw": "writemem wUndergroundSwitchPositions"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "clearevent",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckBasementKeyCallback": {
+      "raw_lines": [
+        "checkevent EVENT_USED_BASEMENT_KEY",
+        "iffalse .LockBasementDoor",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_USED_BASEMENT_KEY"
+          ],
+          "raw": "checkevent EVENT_USED_BASEMENT_KEY"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodUndergroundCheckBasementKeyCallback.LockBasementDoor"
+          ],
+          "raw": "iffalse .LockBasementDoor"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "GoldenrodUndergroundCheckBasementKeyCallback.LockBasementDoor"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckBasementKeyCallback.LockBasementDoor": {
+      "raw_lines": [
+        "changeblock 18, 6, $3d",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "changeblock",
+          "args": [
+            "18",
+            "6",
+            "$3d"
+          ],
+          "raw": "changeblock 18, 6, $3d"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "changeblock",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckDayOfWeekCallback": {
+      "raw_lines": [
+        "readvar VAR_WEEKDAY",
+        "ifequal MONDAY, .Monday",
+        "ifequal TUESDAY, .Tuesday",
+        "ifequal WEDNESDAY, .Wednesday",
+        "ifequal THURSDAY, .Thursday",
+        "ifequal FRIDAY, .Friday",
+        "ifequal SATURDAY, .Saturday",
+        "disappear GOLDENRODUNDERGROUND_GRAMPS",
+        "disappear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER",
+        "appear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER",
+        "appear GOLDENRODUNDERGROUND_GRANNY",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "MONDAY",
+            "GoldenrodUndergroundCheckDayOfWeekCallback.Monday"
+          ],
+          "raw": "ifequal MONDAY, .Monday"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "TUESDAY",
+            "GoldenrodUndergroundCheckDayOfWeekCallback.Tuesday"
+          ],
+          "raw": "ifequal TUESDAY, .Tuesday"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "WEDNESDAY",
+            "GoldenrodUndergroundCheckDayOfWeekCallback.Wednesday"
+          ],
+          "raw": "ifequal WEDNESDAY, .Wednesday"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "THURSDAY",
+            "GoldenrodUndergroundCheckDayOfWeekCallback.Thursday"
+          ],
+          "raw": "ifequal THURSDAY, .Thursday"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "FRIDAY",
+            "GoldenrodUndergroundCheckDayOfWeekCallback.Friday"
+          ],
+          "raw": "ifequal FRIDAY, .Friday"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SATURDAY",
+            "GoldenrodUndergroundCheckDayOfWeekCallback.Saturday"
+          ],
+          "raw": "ifequal SATURDAY, .Saturday"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_GRAMPS"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_GRAMPS"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER"
+          ],
+          "raw": "appear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "GOLDENRODUNDERGROUND_GRANNY"
+          ],
+          "raw": "appear GOLDENRODUNDERGROUND_GRANNY"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "readvar",
+      "label_refs": [
+        "GoldenrodUndergroundCheckDayOfWeekCallback.Friday",
+        "GoldenrodUndergroundCheckDayOfWeekCallback.Monday",
+        "GoldenrodUndergroundCheckDayOfWeekCallback.Saturday",
+        "GoldenrodUndergroundCheckDayOfWeekCallback.Thursday",
+        "GoldenrodUndergroundCheckDayOfWeekCallback.Tuesday",
+        "GoldenrodUndergroundCheckDayOfWeekCallback.Wednesday"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckDayOfWeekCallback.Monday": {
+      "raw_lines": [
+        "disappear GOLDENRODUNDERGROUND_GRAMPS",
+        "checktime MORN",
+        "iffalse .NotMondayMorning",
+        "appear GOLDENRODUNDERGROUND_GRAMPS"
+      ],
+      "commands": [
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_GRAMPS"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_GRAMPS"
+        },
+        {
+          "command": "checktime",
+          "args": [
+            "MORN"
+          ],
+          "raw": "checktime MORN"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodUndergroundCheckDayOfWeekCallback.NotMondayMorning"
+          ],
+          "raw": "iffalse .NotMondayMorning"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "GOLDENRODUNDERGROUND_GRAMPS"
+          ],
+          "raw": "appear GOLDENRODUNDERGROUND_GRAMPS"
+        }
+      ],
+      "first_command": "disappear",
+      "fallthrough_label": "GoldenrodUndergroundCheckDayOfWeekCallback.NotMondayMorning",
+      "label_refs": [
+        "GoldenrodUndergroundCheckDayOfWeekCallback.NotMondayMorning"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckDayOfWeekCallback.NotMondayMorning": {
+      "raw_lines": [
+        "disappear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER",
+        "disappear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER",
+        "disappear GOLDENRODUNDERGROUND_GRANNY",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_GRANNY"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_GRANNY"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "disappear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckDayOfWeekCallback.Tuesday": {
+      "raw_lines": [
+        "disappear GOLDENRODUNDERGROUND_GRAMPS",
+        "appear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER",
+        "disappear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER",
+        "disappear GOLDENRODUNDERGROUND_GRANNY",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_GRAMPS"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_GRAMPS"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER"
+          ],
+          "raw": "appear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_GRANNY"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_GRANNY"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "disappear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckDayOfWeekCallback.Wednesday": {
+      "raw_lines": [
+        "disappear GOLDENRODUNDERGROUND_GRAMPS",
+        "disappear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER",
+        "appear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER",
+        "disappear GOLDENRODUNDERGROUND_GRANNY",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_GRAMPS"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_GRAMPS"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER"
+          ],
+          "raw": "appear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_GRANNY"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_GRANNY"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "disappear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckDayOfWeekCallback.Thursday": {
+      "raw_lines": [
+        "disappear GOLDENRODUNDERGROUND_GRAMPS",
+        "appear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER",
+        "disappear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER",
+        "disappear GOLDENRODUNDERGROUND_GRANNY",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_GRAMPS"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_GRAMPS"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER"
+          ],
+          "raw": "appear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_GRANNY"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_GRANNY"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "disappear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckDayOfWeekCallback.Friday": {
+      "raw_lines": [
+        "disappear GOLDENRODUNDERGROUND_GRAMPS",
+        "disappear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER",
+        "appear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER",
+        "disappear GOLDENRODUNDERGROUND_GRANNY",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_GRAMPS"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_GRAMPS"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER"
+          ],
+          "raw": "appear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_GRANNY"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_GRANNY"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "disappear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckDayOfWeekCallback.Saturday": {
+      "raw_lines": [
+        "disappear GOLDENRODUNDERGROUND_GRAMPS",
+        "appear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER",
+        "disappear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER",
+        "appear GOLDENRODUNDERGROUND_GRANNY",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_GRAMPS"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_GRAMPS"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER"
+          ],
+          "raw": "appear GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER"
+          ],
+          "raw": "disappear GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "GOLDENRODUNDERGROUND_GRANNY"
+          ],
+          "raw": "appear GOLDENRODUNDERGROUND_GRANNY"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "disappear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSupernerdEric": {
+      "raw_lines": [
+        "trainer SUPER_NERD, ERIC, EVENT_BEAT_SUPER_NERD_ERIC, SupernerdEricSeenText, SupernerdEricBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "SUPER_NERD",
+            "ERIC",
+            "EVENT_BEAT_SUPER_NERD_ERIC",
+            "SupernerdEricSeenText",
+            "SupernerdEricBeatenText",
+            "0",
+            "TrainerSupernerdEric.Script"
+          ],
+          "raw": "trainer SUPER_NERD, ERIC, EVENT_BEAT_SUPER_NERD_ERIC, SupernerdEricSeenText, SupernerdEricBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerSupernerdEric.Script",
+      "label_refs": [
+        "TrainerSupernerdEric.Script"
+      ],
+      "text_refs": [
+        "SupernerdEricBeatenText",
+        "SupernerdEricSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSupernerdEric.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext SupernerdEricAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SupernerdEricAfterBattleText"
+          ],
+          "raw": "writetext SupernerdEricAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "SupernerdEricAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSupernerdTeru": {
+      "raw_lines": [
+        "trainer SUPER_NERD, TERU, EVENT_BEAT_SUPER_NERD_TERU, SupernerdTeruSeenText, SupernerdTeruBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "SUPER_NERD",
+            "TERU",
+            "EVENT_BEAT_SUPER_NERD_TERU",
+            "SupernerdTeruSeenText",
+            "SupernerdTeruBeatenText",
+            "0",
+            "TrainerSupernerdTeru.Script"
+          ],
+          "raw": "trainer SUPER_NERD, TERU, EVENT_BEAT_SUPER_NERD_TERU, SupernerdTeruSeenText, SupernerdTeruBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerSupernerdTeru.Script",
+      "label_refs": [
+        "TrainerSupernerdTeru.Script"
+      ],
+      "text_refs": [
+        "SupernerdTeruBeatenText",
+        "SupernerdTeruSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSupernerdTeru.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext SupernerdTeruAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SupernerdTeruAfterBattleText"
+          ],
+          "raw": "writetext SupernerdTeruAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "SupernerdTeruAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPokemaniacIssac": {
+      "raw_lines": [
+        "trainer POKEMANIAC, ISSAC, EVENT_BEAT_POKEMANIAC_ISSAC, PokemaniacIssacSeenText, PokemaniacIssacBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "POKEMANIAC",
+            "ISSAC",
+            "EVENT_BEAT_POKEMANIAC_ISSAC",
+            "PokemaniacIssacSeenText",
+            "PokemaniacIssacBeatenText",
+            "0",
+            "TrainerPokemaniacIssac.Script"
+          ],
+          "raw": "trainer POKEMANIAC, ISSAC, EVENT_BEAT_POKEMANIAC_ISSAC, PokemaniacIssacSeenText, PokemaniacIssacBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerPokemaniacIssac.Script",
+      "label_refs": [
+        "TrainerPokemaniacIssac.Script"
+      ],
+      "text_refs": [
+        "PokemaniacIssacBeatenText",
+        "PokemaniacIssacSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPokemaniacIssac.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext PokemaniacIssacAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PokemaniacIssacAfterBattleText"
+          ],
+          "raw": "writetext PokemaniacIssacAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "PokemaniacIssacAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPokemaniacDonald": {
+      "raw_lines": [
+        "trainer POKEMANIAC, DONALD, EVENT_BEAT_POKEMANIAC_DONALD, PokemaniacDonaldSeenText, PokemaniacDonaldBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "POKEMANIAC",
+            "DONALD",
+            "EVENT_BEAT_POKEMANIAC_DONALD",
+            "PokemaniacDonaldSeenText",
+            "PokemaniacDonaldBeatenText",
+            "0",
+            "TrainerPokemaniacDonald.Script"
+          ],
+          "raw": "trainer POKEMANIAC, DONALD, EVENT_BEAT_POKEMANIAC_DONALD, PokemaniacDonaldSeenText, PokemaniacDonaldBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerPokemaniacDonald.Script",
+      "label_refs": [
+        "TrainerPokemaniacDonald.Script"
+      ],
+      "text_refs": [
+        "PokemaniacDonaldBeatenText",
+        "PokemaniacDonaldSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPokemaniacDonald.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext PokemaniacDonaldAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PokemaniacDonaldAfterBattleText"
+          ],
+          "raw": "writetext PokemaniacDonaldAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "PokemaniacDonaldAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BitterMerchantScript": {
+      "raw_lines": [
+        "opentext",
+        "readvar VAR_WEEKDAY",
+        "ifequal SUNDAY, .Open",
+        "ifequal SATURDAY, .Open",
+        "sjump GoldenrodUndergroundScript_ShopClosed"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SUNDAY",
+            "BitterMerchantScript.Open"
+          ],
+          "raw": "ifequal SUNDAY, .Open"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SATURDAY",
+            "BitterMerchantScript.Open"
+          ],
+          "raw": "ifequal SATURDAY, .Open"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodUndergroundScript_ShopClosed"
+          ],
+          "raw": "sjump GoldenrodUndergroundScript_ShopClosed"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "BitterMerchantScript.Open",
+        "GoldenrodUndergroundScript_ShopClosed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BitterMerchantScript.Open": {
+      "raw_lines": [
+        "pokemart MARTTYPE_BITTER, MART_UNDERGROUND",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "pokemart",
+          "args": [
+            "MARTTYPE_BITTER",
+            "MART_UNDERGROUND"
+          ],
+          "raw": "pokemart MARTTYPE_BITTER, MART_UNDERGROUND"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "pokemart",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BargainMerchantScript": {
+      "raw_lines": [
+        "opentext",
+        "checkflag ENGINE_GOLDENROD_UNDERGROUND_MERCHANT_CLOSED",
+        "iftrue GoldenrodUndergroundScript_ShopClosed",
+        "readvar VAR_WEEKDAY",
+        "ifequal MONDAY, .CheckMorn",
+        "sjump GoldenrodUndergroundScript_ShopClosed"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_GOLDENROD_UNDERGROUND_MERCHANT_CLOSED"
+          ],
+          "raw": "checkflag ENGINE_GOLDENROD_UNDERGROUND_MERCHANT_CLOSED"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoldenrodUndergroundScript_ShopClosed"
+          ],
+          "raw": "iftrue GoldenrodUndergroundScript_ShopClosed"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "MONDAY",
+            "BargainMerchantScript.CheckMorn"
+          ],
+          "raw": "ifequal MONDAY, .CheckMorn"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodUndergroundScript_ShopClosed"
+          ],
+          "raw": "sjump GoldenrodUndergroundScript_ShopClosed"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "BargainMerchantScript.CheckMorn",
+        "GoldenrodUndergroundScript_ShopClosed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BargainMerchantScript.CheckMorn": {
+      "raw_lines": [
+        "checktime MORN",
+        "iffalse GoldenrodUndergroundScript_ShopClosed",
+        "pokemart MARTTYPE_BARGAIN, 0",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checktime",
+          "args": [
+            "MORN"
+          ],
+          "raw": "checktime MORN"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodUndergroundScript_ShopClosed"
+          ],
+          "raw": "iffalse GoldenrodUndergroundScript_ShopClosed"
+        },
+        {
+          "command": "pokemart",
+          "args": [
+            "MARTTYPE_BARGAIN",
+            "0"
+          ],
+          "raw": "pokemart MARTTYPE_BARGAIN, 0"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checktime",
+      "label_refs": [
+        "GoldenrodUndergroundScript_ShopClosed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlderHaircutBrotherScript": {
+      "raw_lines": [
+        "opentext",
+        "readvar VAR_WEEKDAY",
+        "ifequal TUESDAY, .DoHaircut",
+        "ifequal THURSDAY, .DoHaircut",
+        "ifequal SATURDAY, .DoHaircut",
+        "sjump GoldenrodUndergroundScript_ShopClosed"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "TUESDAY",
+            "OlderHaircutBrotherScript.DoHaircut"
+          ],
+          "raw": "ifequal TUESDAY, .DoHaircut"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "THURSDAY",
+            "OlderHaircutBrotherScript.DoHaircut"
+          ],
+          "raw": "ifequal THURSDAY, .DoHaircut"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SATURDAY",
+            "OlderHaircutBrotherScript.DoHaircut"
+          ],
+          "raw": "ifequal SATURDAY, .DoHaircut"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodUndergroundScript_ShopClosed"
+          ],
+          "raw": "sjump GoldenrodUndergroundScript_ShopClosed"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "GoldenrodUndergroundScript_ShopClosed",
+        "OlderHaircutBrotherScript.DoHaircut"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlderHaircutBrotherScript.DoHaircut": {
+      "raw_lines": [
+        "checkflag ENGINE_GOLDENROD_UNDERGROUND_GOT_HAIRCUT",
+        "iftrue .AlreadyGotHaircut",
+        "special PlaceMoneyTopRight",
+        "writetext GoldenrodUndergroundOlderHaircutBrotherOfferHaircutText",
+        "yesorno",
+        "iffalse .Refused",
+        "checkmoney YOUR_MONEY, GOLDENRODUNDERGROUND_OLDER_HAIRCUT_PRICE",
+        "ifequal HAVE_LESS, .NotEnoughMoney",
+        "writetext GoldenrodUndergroundOlderHaircutBrotherAskWhichMonText",
+        "promptbutton",
+        "special OlderHaircutBrother",
+        "ifequal $0, .Refused",
+        "ifequal $1, .Refused",
+        "setflag ENGINE_GOLDENROD_UNDERGROUND_GOT_HAIRCUT",
+        "ifequal $2, .two",
+        "ifequal $3, .three",
+        "sjump .else"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_GOLDENROD_UNDERGROUND_GOT_HAIRCUT"
+          ],
+          "raw": "checkflag ENGINE_GOLDENROD_UNDERGROUND_GOT_HAIRCUT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "OlderHaircutBrotherScript.AlreadyGotHaircut"
+          ],
+          "raw": "iftrue .AlreadyGotHaircut"
+        },
+        {
+          "command": "special",
+          "args": [
+            "PlaceMoneyTopRight"
+          ],
+          "raw": "special PlaceMoneyTopRight"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodUndergroundOlderHaircutBrotherOfferHaircutText"
+          ],
+          "raw": "writetext GoldenrodUndergroundOlderHaircutBrotherOfferHaircutText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "OlderHaircutBrotherScript.Refused"
+          ],
+          "raw": "iffalse .Refused"
+        },
+        {
+          "command": "checkmoney",
+          "args": [
+            "YOUR_MONEY",
+            "GOLDENRODUNDERGROUND_OLDER_HAIRCUT_PRICE"
+          ],
+          "raw": "checkmoney YOUR_MONEY, GOLDENRODUNDERGROUND_OLDER_HAIRCUT_PRICE"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "HAVE_LESS",
+            "OlderHaircutBrotherScript.NotEnoughMoney"
+          ],
+          "raw": "ifequal HAVE_LESS, .NotEnoughMoney"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodUndergroundOlderHaircutBrotherAskWhichMonText"
+          ],
+          "raw": "writetext GoldenrodUndergroundOlderHaircutBrotherAskWhichMonText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "special",
+          "args": [
+            "OlderHaircutBrother"
+          ],
+          "raw": "special OlderHaircutBrother"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "$0",
+            "OlderHaircutBrotherScript.Refused"
+          ],
+          "raw": "ifequal $0, .Refused"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "$1",
+            "OlderHaircutBrotherScript.Refused"
+          ],
+          "raw": "ifequal $1, .Refused"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_GOLDENROD_UNDERGROUND_GOT_HAIRCUT"
+          ],
+          "raw": "setflag ENGINE_GOLDENROD_UNDERGROUND_GOT_HAIRCUT"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "$2",
+            "OlderHaircutBrotherScript.two"
+          ],
+          "raw": "ifequal $2, .two"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "$3",
+            "OlderHaircutBrotherScript.three"
+          ],
+          "raw": "ifequal $3, .three"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "OlderHaircutBrotherScript.else"
+          ],
+          "raw": "sjump .else"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "OlderHaircutBrotherScript.AlreadyGotHaircut",
+        "OlderHaircutBrotherScript.NotEnoughMoney",
+        "OlderHaircutBrotherScript.Refused",
+        "OlderHaircutBrotherScript.else",
+        "OlderHaircutBrotherScript.three",
+        "OlderHaircutBrotherScript.two"
+      ],
+      "text_refs": [
+        "GoldenrodUndergroundOlderHaircutBrotherAskWhichMonText",
+        "GoldenrodUndergroundOlderHaircutBrotherOfferHaircutText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlderHaircutBrotherScript.two": {
+      "raw_lines": [
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2",
+        "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3",
+        "sjump .then"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+          ],
+          "raw": "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+          ],
+          "raw": "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "OlderHaircutBrotherScript.then"
+          ],
+          "raw": "sjump .then"
+        }
+      ],
+      "first_command": "setevent",
+      "label_refs": [
+        "OlderHaircutBrotherScript.then"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlderHaircutBrotherScript.three": {
+      "raw_lines": [
+        "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2",
+        "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3",
+        "sjump .then"
+      ],
+      "commands": [
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+          ],
+          "raw": "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "OlderHaircutBrotherScript.then"
+          ],
+          "raw": "sjump .then"
+        }
+      ],
+      "first_command": "clearevent",
+      "label_refs": [
+        "OlderHaircutBrotherScript.then"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlderHaircutBrotherScript.else": {
+      "raw_lines": [
+        "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2",
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3",
+        "sjump .then"
+      ],
+      "commands": [
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+          ],
+          "raw": "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "OlderHaircutBrotherScript.then"
+          ],
+          "raw": "sjump .then"
+        }
+      ],
+      "first_command": "clearevent",
+      "label_refs": [
+        "OlderHaircutBrotherScript.then"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlderHaircutBrotherScript.then": {
+      "raw_lines": [
+        "takemoney YOUR_MONEY, GOLDENRODUNDERGROUND_OLDER_HAIRCUT_PRICE",
+        "special PlaceMoneyTopRight",
+        "writetext GoldenrodUndergroundOlderHaircutBrotherWatchItBecomeBeautifulText",
+        "waitbutton",
+        "closetext",
+        "special FadeOutToWhite",
+        "playmusic MUSIC_HEAL",
+        "pause 60",
+        "special FadeInFromWhite",
+        "special RestartMapMusic",
+        "opentext",
+        "writetext GoldenrodUndergroundOlderHaircutBrotherAllDoneText",
+        "waitbutton",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iftrue EitherHaircutBrotherScript_SlightlyHappier",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2",
+        "iftrue EitherHaircutBrotherScript_Happier",
+        "sjump EitherHaircutBrotherScript_MuchHappier"
+      ],
+      "commands": [
+        {
+          "command": "takemoney",
+          "args": [
+            "YOUR_MONEY",
+            "GOLDENRODUNDERGROUND_OLDER_HAIRCUT_PRICE"
+          ],
+          "raw": "takemoney YOUR_MONEY, GOLDENRODUNDERGROUND_OLDER_HAIRCUT_PRICE"
+        },
+        {
+          "command": "special",
+          "args": [
+            "PlaceMoneyTopRight"
+          ],
+          "raw": "special PlaceMoneyTopRight"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodUndergroundOlderHaircutBrotherWatchItBecomeBeautifulText"
+          ],
+          "raw": "writetext GoldenrodUndergroundOlderHaircutBrotherWatchItBecomeBeautifulText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutToWhite"
+          ],
+          "raw": "special FadeOutToWhite"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_HEAL"
+          ],
+          "raw": "playmusic MUSIC_HEAL"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "60"
+          ],
+          "raw": "pause 60"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeInFromWhite"
+          ],
+          "raw": "special FadeInFromWhite"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodUndergroundOlderHaircutBrotherAllDoneText"
+          ],
+          "raw": "writetext GoldenrodUndergroundOlderHaircutBrotherAllDoneText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EitherHaircutBrotherScript_SlightlyHappier"
+          ],
+          "raw": "iftrue EitherHaircutBrotherScript_SlightlyHappier"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EitherHaircutBrotherScript_Happier"
+          ],
+          "raw": "iftrue EitherHaircutBrotherScript_Happier"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "EitherHaircutBrotherScript_MuchHappier"
+          ],
+          "raw": "sjump EitherHaircutBrotherScript_MuchHappier"
+        }
+      ],
+      "first_command": "takemoney",
+      "label_refs": [
+        "EitherHaircutBrotherScript_Happier",
+        "EitherHaircutBrotherScript_MuchHappier",
+        "EitherHaircutBrotherScript_SlightlyHappier"
+      ],
+      "text_refs": [
+        "GoldenrodUndergroundOlderHaircutBrotherAllDoneText",
+        "GoldenrodUndergroundOlderHaircutBrotherWatchItBecomeBeautifulText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlderHaircutBrotherScript.Refused": {
+      "raw_lines": [
+        "writetext GoldenrodUndergroundOlderHaircutBrotherThatsAShameText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodUndergroundOlderHaircutBrotherThatsAShameText"
+          ],
+          "raw": "writetext GoldenrodUndergroundOlderHaircutBrotherThatsAShameText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundOlderHaircutBrotherThatsAShameText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlderHaircutBrotherScript.NotEnoughMoney": {
+      "raw_lines": [
+        "writetext GoldenrodUndergroundOlderHaircutBrotherYoullNeedMoreMoneyText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodUndergroundOlderHaircutBrotherYoullNeedMoreMoneyText"
+          ],
+          "raw": "writetext GoldenrodUndergroundOlderHaircutBrotherYoullNeedMoreMoneyText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundOlderHaircutBrotherYoullNeedMoreMoneyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlderHaircutBrotherScript.AlreadyGotHaircut": {
+      "raw_lines": [
+        "writetext GoldenrodUndergroundOlderHaircutBrotherOneHaircutADayText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodUndergroundOlderHaircutBrotherOneHaircutADayText"
+          ],
+          "raw": "writetext GoldenrodUndergroundOlderHaircutBrotherOneHaircutADayText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundOlderHaircutBrotherOneHaircutADayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "YoungerHaircutBrotherScript": {
+      "raw_lines": [
+        "opentext",
+        "readvar VAR_WEEKDAY",
+        "ifequal SUNDAY, .DoHaircut",
+        "ifequal WEDNESDAY, .DoHaircut",
+        "ifequal FRIDAY, .DoHaircut",
+        "sjump GoldenrodUndergroundScript_ShopClosed"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SUNDAY",
+            "YoungerHaircutBrotherScript.DoHaircut"
+          ],
+          "raw": "ifequal SUNDAY, .DoHaircut"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "WEDNESDAY",
+            "YoungerHaircutBrotherScript.DoHaircut"
+          ],
+          "raw": "ifequal WEDNESDAY, .DoHaircut"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "FRIDAY",
+            "YoungerHaircutBrotherScript.DoHaircut"
+          ],
+          "raw": "ifequal FRIDAY, .DoHaircut"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodUndergroundScript_ShopClosed"
+          ],
+          "raw": "sjump GoldenrodUndergroundScript_ShopClosed"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "GoldenrodUndergroundScript_ShopClosed",
+        "YoungerHaircutBrotherScript.DoHaircut"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "YoungerHaircutBrotherScript.DoHaircut": {
+      "raw_lines": [
+        "checkflag ENGINE_GOLDENROD_UNDERGROUND_GOT_HAIRCUT",
+        "iftrue .AlreadyGotHaircut",
+        "special PlaceMoneyTopRight",
+        "writetext GoldenrodUndergroundYoungerHaircutBrotherOfferHaircutText",
+        "yesorno",
+        "iffalse .Refused",
+        "checkmoney YOUR_MONEY, GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_PRICE",
+        "ifequal HAVE_LESS, .NotEnoughMoney",
+        "writetext GoldenrodUndergroundYoungerHaircutBrotherAskWhichMonText",
+        "promptbutton",
+        "special YoungerHaircutBrother",
+        "ifequal $0, .Refused",
+        "ifequal $1, .Refused",
+        "setflag ENGINE_GOLDENROD_UNDERGROUND_GOT_HAIRCUT",
+        "ifequal $2, .two",
+        "ifequal $3, .three",
+        "sjump .else"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_GOLDENROD_UNDERGROUND_GOT_HAIRCUT"
+          ],
+          "raw": "checkflag ENGINE_GOLDENROD_UNDERGROUND_GOT_HAIRCUT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "YoungerHaircutBrotherScript.AlreadyGotHaircut"
+          ],
+          "raw": "iftrue .AlreadyGotHaircut"
+        },
+        {
+          "command": "special",
+          "args": [
+            "PlaceMoneyTopRight"
+          ],
+          "raw": "special PlaceMoneyTopRight"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodUndergroundYoungerHaircutBrotherOfferHaircutText"
+          ],
+          "raw": "writetext GoldenrodUndergroundYoungerHaircutBrotherOfferHaircutText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "YoungerHaircutBrotherScript.Refused"
+          ],
+          "raw": "iffalse .Refused"
+        },
+        {
+          "command": "checkmoney",
+          "args": [
+            "YOUR_MONEY",
+            "GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_PRICE"
+          ],
+          "raw": "checkmoney YOUR_MONEY, GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_PRICE"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "HAVE_LESS",
+            "YoungerHaircutBrotherScript.NotEnoughMoney"
+          ],
+          "raw": "ifequal HAVE_LESS, .NotEnoughMoney"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodUndergroundYoungerHaircutBrotherAskWhichMonText"
+          ],
+          "raw": "writetext GoldenrodUndergroundYoungerHaircutBrotherAskWhichMonText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "special",
+          "args": [
+            "YoungerHaircutBrother"
+          ],
+          "raw": "special YoungerHaircutBrother"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "$0",
+            "YoungerHaircutBrotherScript.Refused"
+          ],
+          "raw": "ifequal $0, .Refused"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "$1",
+            "YoungerHaircutBrotherScript.Refused"
+          ],
+          "raw": "ifequal $1, .Refused"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_GOLDENROD_UNDERGROUND_GOT_HAIRCUT"
+          ],
+          "raw": "setflag ENGINE_GOLDENROD_UNDERGROUND_GOT_HAIRCUT"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "$2",
+            "YoungerHaircutBrotherScript.two"
+          ],
+          "raw": "ifequal $2, .two"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "$3",
+            "YoungerHaircutBrotherScript.three"
+          ],
+          "raw": "ifequal $3, .three"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "YoungerHaircutBrotherScript.else"
+          ],
+          "raw": "sjump .else"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "YoungerHaircutBrotherScript.AlreadyGotHaircut",
+        "YoungerHaircutBrotherScript.NotEnoughMoney",
+        "YoungerHaircutBrotherScript.Refused",
+        "YoungerHaircutBrotherScript.else",
+        "YoungerHaircutBrotherScript.three",
+        "YoungerHaircutBrotherScript.two"
+      ],
+      "text_refs": [
+        "GoldenrodUndergroundYoungerHaircutBrotherAskWhichMonText",
+        "GoldenrodUndergroundYoungerHaircutBrotherOfferHaircutText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "YoungerHaircutBrotherScript.two": {
+      "raw_lines": [
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2",
+        "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3",
+        "sjump .then"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+          ],
+          "raw": "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+          ],
+          "raw": "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "YoungerHaircutBrotherScript.then"
+          ],
+          "raw": "sjump .then"
+        }
+      ],
+      "first_command": "setevent",
+      "label_refs": [
+        "YoungerHaircutBrotherScript.then"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "YoungerHaircutBrotherScript.three": {
+      "raw_lines": [
+        "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2",
+        "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3",
+        "sjump .then"
+      ],
+      "commands": [
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+          ],
+          "raw": "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "YoungerHaircutBrotherScript.then"
+          ],
+          "raw": "sjump .then"
+        }
+      ],
+      "first_command": "clearevent",
+      "label_refs": [
+        "YoungerHaircutBrotherScript.then"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "YoungerHaircutBrotherScript.else": {
+      "raw_lines": [
+        "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2",
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3",
+        "sjump .then"
+      ],
+      "commands": [
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+          ],
+          "raw": "clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "YoungerHaircutBrotherScript.then"
+          ],
+          "raw": "sjump .then"
+        }
+      ],
+      "first_command": "clearevent",
+      "label_refs": [
+        "YoungerHaircutBrotherScript.then"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "YoungerHaircutBrotherScript.then": {
+      "raw_lines": [
+        "takemoney YOUR_MONEY, GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_PRICE",
+        "special PlaceMoneyTopRight",
+        "writetext GoldenrodUndergroundYoungerHaircutBrotherIllMakeItLookCoolText",
+        "waitbutton",
+        "closetext",
+        "special FadeOutToWhite",
+        "playmusic MUSIC_HEAL",
+        "pause 60",
+        "special FadeInFromWhite",
+        "special RestartMapMusic",
+        "opentext",
+        "writetext GoldenrodUndergroundYoungerHaircutBrotherAllDoneText",
+        "waitbutton",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iftrue EitherHaircutBrotherScript_SlightlyHappier",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2",
+        "iftrue EitherHaircutBrotherScript_Happier",
+        "sjump EitherHaircutBrotherScript_MuchHappier"
+      ],
+      "commands": [
+        {
+          "command": "takemoney",
+          "args": [
+            "YOUR_MONEY",
+            "GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_PRICE"
+          ],
+          "raw": "takemoney YOUR_MONEY, GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_PRICE"
+        },
+        {
+          "command": "special",
+          "args": [
+            "PlaceMoneyTopRight"
+          ],
+          "raw": "special PlaceMoneyTopRight"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodUndergroundYoungerHaircutBrotherIllMakeItLookCoolText"
+          ],
+          "raw": "writetext GoldenrodUndergroundYoungerHaircutBrotherIllMakeItLookCoolText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutToWhite"
+          ],
+          "raw": "special FadeOutToWhite"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_HEAL"
+          ],
+          "raw": "playmusic MUSIC_HEAL"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "60"
+          ],
+          "raw": "pause 60"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeInFromWhite"
+          ],
+          "raw": "special FadeInFromWhite"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodUndergroundYoungerHaircutBrotherAllDoneText"
+          ],
+          "raw": "writetext GoldenrodUndergroundYoungerHaircutBrotherAllDoneText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EitherHaircutBrotherScript_SlightlyHappier"
+          ],
+          "raw": "iftrue EitherHaircutBrotherScript_SlightlyHappier"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EitherHaircutBrotherScript_Happier"
+          ],
+          "raw": "iftrue EitherHaircutBrotherScript_Happier"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "EitherHaircutBrotherScript_MuchHappier"
+          ],
+          "raw": "sjump EitherHaircutBrotherScript_MuchHappier"
+        }
+      ],
+      "first_command": "takemoney",
+      "label_refs": [
+        "EitherHaircutBrotherScript_Happier",
+        "EitherHaircutBrotherScript_MuchHappier",
+        "EitherHaircutBrotherScript_SlightlyHappier"
+      ],
+      "text_refs": [
+        "GoldenrodUndergroundYoungerHaircutBrotherAllDoneText",
+        "GoldenrodUndergroundYoungerHaircutBrotherIllMakeItLookCoolText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "YoungerHaircutBrotherScript.Refused": {
+      "raw_lines": [
+        "writetext GoldenrodUndergroundYoungerHaircutBrotherHowDisappointingText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodUndergroundYoungerHaircutBrotherHowDisappointingText"
+          ],
+          "raw": "writetext GoldenrodUndergroundYoungerHaircutBrotherHowDisappointingText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundYoungerHaircutBrotherHowDisappointingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "YoungerHaircutBrotherScript.NotEnoughMoney": {
+      "raw_lines": [
+        "writetext GoldenrodUndergroundYoungerHaircutBrotherShortOnFundsText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodUndergroundYoungerHaircutBrotherShortOnFundsText"
+          ],
+          "raw": "writetext GoldenrodUndergroundYoungerHaircutBrotherShortOnFundsText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundYoungerHaircutBrotherShortOnFundsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "YoungerHaircutBrotherScript.AlreadyGotHaircut": {
+      "raw_lines": [
+        "writetext GoldenrodUndergroundYoungerHaircutBrotherOneHaircutADayText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodUndergroundYoungerHaircutBrotherOneHaircutADayText"
+          ],
+          "raw": "writetext GoldenrodUndergroundYoungerHaircutBrotherOneHaircutADayText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundYoungerHaircutBrotherOneHaircutADayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EitherHaircutBrotherScript_SlightlyHappier": {
+      "raw_lines": [
+        "writetext HaircutBrosText_SlightlyHappier",
+        "special PlayCurMonCry",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "HaircutBrosText_SlightlyHappier"
+          ],
+          "raw": "writetext HaircutBrosText_SlightlyHappier"
+        },
+        {
+          "command": "special",
+          "args": [
+            "PlayCurMonCry"
+          ],
+          "raw": "special PlayCurMonCry"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "HaircutBrosText_SlightlyHappier"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EitherHaircutBrotherScript_Happier": {
+      "raw_lines": [
+        "writetext HaircutBrosText_Happier",
+        "special PlayCurMonCry",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "HaircutBrosText_Happier"
+          ],
+          "raw": "writetext HaircutBrosText_Happier"
+        },
+        {
+          "command": "special",
+          "args": [
+            "PlayCurMonCry"
+          ],
+          "raw": "special PlayCurMonCry"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "HaircutBrosText_Happier"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EitherHaircutBrotherScript_MuchHappier": {
+      "raw_lines": [
+        "writetext HaircutBrosText_MuchHappier",
+        "special PlayCurMonCry",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "HaircutBrosText_MuchHappier"
+          ],
+          "raw": "writetext HaircutBrosText_MuchHappier"
+        },
+        {
+          "command": "special",
+          "args": [
+            "PlayCurMonCry"
+          ],
+          "raw": "special PlayCurMonCry"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "HaircutBrosText_MuchHappier"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BasementDoorScript": {
+      "raw_lines": [
+        "opentext",
+        "checkevent EVENT_USED_BASEMENT_KEY",
+        "iftrue .Open",
+        "checkitem BASEMENT_KEY",
+        "iftrue .Unlock",
+        "writetext GoldenrodUndergroundTheDoorsLockedText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_USED_BASEMENT_KEY"
+          ],
+          "raw": "checkevent EVENT_USED_BASEMENT_KEY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "BasementDoorScript.Open"
+          ],
+          "raw": "iftrue .Open"
+        },
+        {
+          "command": "checkitem",
+          "args": [
+            "BASEMENT_KEY"
+          ],
+          "raw": "checkitem BASEMENT_KEY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "BasementDoorScript.Unlock"
+          ],
+          "raw": "iftrue .Unlock"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodUndergroundTheDoorsLockedText"
+          ],
+          "raw": "writetext GoldenrodUndergroundTheDoorsLockedText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "BasementDoorScript.Open",
+        "BasementDoorScript.Unlock"
+      ],
+      "text_refs": [
+        "GoldenrodUndergroundTheDoorsLockedText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BasementDoorScript.Unlock": {
+      "raw_lines": [
+        "playsound SFX_TRANSACTION",
+        "writetext GoldenrodUndergroundBasementKeyOpenedDoorText",
+        "waitbutton",
+        "closetext",
+        "changeblock 18, 6, $2e",
+        "refreshmap",
+        "closetext",
+        "setevent EVENT_USED_BASEMENT_KEY",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_TRANSACTION"
+          ],
+          "raw": "playsound SFX_TRANSACTION"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodUndergroundBasementKeyOpenedDoorText"
+          ],
+          "raw": "writetext GoldenrodUndergroundBasementKeyOpenedDoorText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "18",
+            "6",
+            "$2e"
+          ],
+          "raw": "changeblock 18, 6, $2e"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_USED_BASEMENT_KEY"
+          ],
+          "raw": "setevent EVENT_USED_BASEMENT_KEY"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playsound",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundBasementKeyOpenedDoorText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BasementDoorScript.Open": {
+      "raw_lines": [
+        "writetext GoldenrodUndergroundTheDoorIsOpenText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodUndergroundTheDoorIsOpenText"
+          ],
+          "raw": "writetext GoldenrodUndergroundTheDoorIsOpenText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundTheDoorIsOpenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundScript_ShopClosed": {
+      "raw_lines": [
+        "writetext GoldenrodUndergroundWeAreNotOpenTodayText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodUndergroundWeAreNotOpenTodayText"
+          ],
+          "raw": "writetext GoldenrodUndergroundWeAreNotOpenTodayText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundWeAreNotOpenTodayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCoinCase": {
+      "raw_lines": [
+        "itemball COIN_CASE"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "COIN_CASE"
+          ],
+          "raw": "itemball COIN_CASE"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "GoldenrodUndergroundNoEntrySign",
+      "label_refs": [
+        "GoldenrodUndergroundNoEntrySign"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundNoEntrySign": {
+      "raw_lines": [
+        "jumptext GoldenrodUndergroundNoEntryText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "GoldenrodUndergroundNoEntryText"
+          ],
+          "raw": "jumptext GoldenrodUndergroundNoEntryText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundNoEntryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundHiddenParlyzHeal": {
+      "raw_lines": [
+        "hiddenitem PARLYZ_HEAL, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_PARLYZ_HEAL"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "PARLYZ_HEAL",
+            "EVENT_GOLDENROD_UNDERGROUND_HIDDEN_PARLYZ_HEAL"
+          ],
+          "raw": "hiddenitem PARLYZ_HEAL, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_PARLYZ_HEAL"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "GoldenrodUndergroundHiddenSuperPotion",
+      "label_refs": [
+        "GoldenrodUndergroundHiddenSuperPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundHiddenSuperPotion": {
+      "raw_lines": [
+        "hiddenitem SUPER_POTION, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_SUPER_POTION"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "SUPER_POTION",
+            "EVENT_GOLDENROD_UNDERGROUND_HIDDEN_SUPER_POTION"
+          ],
+          "raw": "hiddenitem SUPER_POTION, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_SUPER_POTION"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "GoldenrodUndergroundHiddenAntidote",
+      "label_refs": [
+        "GoldenrodUndergroundHiddenAntidote"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundHiddenAntidote": {
+      "raw_lines": [
+        "hiddenitem ANTIDOTE, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_ANTIDOTE"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "ANTIDOTE",
+            "EVENT_GOLDENROD_UNDERGROUND_HIDDEN_ANTIDOTE"
+          ],
+          "raw": "hiddenitem ANTIDOTE, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_ANTIDOTE"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "GoldenrodUnderground_MapEvents",
+      "label_refs": [
+        "GoldenrodUnderground_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUnderground_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  2, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 7",
+        "warp_event  3, 34, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 4",
+        "warp_event 18,  6, GOLDENROD_UNDERGROUND, 4",
+        "warp_event 21, 31, GOLDENROD_UNDERGROUND, 3",
+        "warp_event 22, 31, GOLDENROD_UNDERGROUND, 3",
+        "warp_event 22, 27, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event 18,  6, BGEVENT_READ, BasementDoorScript",
+        "bg_event 19,  6, BGEVENT_READ, GoldenrodUndergroundNoEntrySign",
+        "bg_event  6, 13, BGEVENT_ITEM, GoldenrodUndergroundHiddenParlyzHeal",
+        "bg_event  4, 18, BGEVENT_ITEM, GoldenrodUndergroundHiddenSuperPotion",
+        "bg_event 17,  8, BGEVENT_ITEM, GoldenrodUndergroundHiddenAntidote",
+        "def_object_events",
+        "object_event  5, 31, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdEric, -1",
+        "object_event  6,  9, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerSupernerdTeru, -1",
+        "object_event  3, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacIssac, -1",
+        "object_event  2,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacDonald, -1",
+        "object_event  7, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundCoinCase, EVENT_GOLDENROD_UNDERGROUND_COIN_CASE",
+        "object_event  7, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BargainMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRAMPS",
+        "object_event  7, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlderHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER",
+        "object_event  7, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, YoungerHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER",
+        "object_event  7, 21, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BitterMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRANNY"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "2",
+            "GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES",
+            "7"
+          ],
+          "raw": "warp_event  3,  2, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 7"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "34",
+            "GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES",
+            "4"
+          ],
+          "raw": "warp_event  3, 34, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "18",
+            "6",
+            "GOLDENROD_UNDERGROUND",
+            "4"
+          ],
+          "raw": "warp_event 18,  6, GOLDENROD_UNDERGROUND, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "21",
+            "31",
+            "GOLDENROD_UNDERGROUND",
+            "3"
+          ],
+          "raw": "warp_event 21, 31, GOLDENROD_UNDERGROUND, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "22",
+            "31",
+            "GOLDENROD_UNDERGROUND",
+            "3"
+          ],
+          "raw": "warp_event 22, 31, GOLDENROD_UNDERGROUND, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "22",
+            "27",
+            "GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES",
+            "1"
+          ],
+          "raw": "warp_event 22, 27, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "18",
+            "6",
+            "BGEVENT_READ",
+            "BasementDoorScript"
+          ],
+          "raw": "bg_event 18,  6, BGEVENT_READ, BasementDoorScript"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "19",
+            "6",
+            "BGEVENT_READ",
+            "GoldenrodUndergroundNoEntrySign"
+          ],
+          "raw": "bg_event 19,  6, BGEVENT_READ, GoldenrodUndergroundNoEntrySign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "6",
+            "13",
+            "BGEVENT_ITEM",
+            "GoldenrodUndergroundHiddenParlyzHeal"
+          ],
+          "raw": "bg_event  6, 13, BGEVENT_ITEM, GoldenrodUndergroundHiddenParlyzHeal"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "4",
+            "18",
+            "BGEVENT_ITEM",
+            "GoldenrodUndergroundHiddenSuperPotion"
+          ],
+          "raw": "bg_event  4, 18, BGEVENT_ITEM, GoldenrodUndergroundHiddenSuperPotion"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "17",
+            "8",
+            "BGEVENT_ITEM",
+            "GoldenrodUndergroundHiddenAntidote"
+          ],
+          "raw": "bg_event 17,  8, BGEVENT_ITEM, GoldenrodUndergroundHiddenAntidote"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "31",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerSupernerdEric",
+            "-1"
+          ],
+          "raw": "object_event  5, 31, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdEric, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "9",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_TRAINER",
+            "2",
+            "TrainerSupernerdTeru",
+            "-1"
+          ],
+          "raw": "object_event  6,  9, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerSupernerdTeru, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "27",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_SPINRANDOM_FAST",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "2",
+            "TrainerPokemaniacIssac",
+            "-1"
+          ],
+          "raw": "object_event  3, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacIssac, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "6",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerPokemaniacDonald",
+            "-1"
+          ],
+          "raw": "object_event  2,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacDonald, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "25",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "GoldenrodUndergroundCoinCase",
+            "EVENT_GOLDENROD_UNDERGROUND_COIN_CASE"
+          ],
+          "raw": "object_event  7, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundCoinCase, EVENT_GOLDENROD_UNDERGROUND_COIN_CASE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "11",
+            "SPRITE_GRAMPS",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BargainMerchantScript",
+            "EVENT_GOLDENROD_UNDERGROUND_GRAMPS"
+          ],
+          "raw": "object_event  7, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BargainMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRAMPS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "14",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "OlderHaircutBrotherScript",
+            "EVENT_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER"
+          ],
+          "raw": "object_event  7, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlderHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "15",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "YoungerHaircutBrotherScript",
+            "EVENT_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER"
+          ],
+          "raw": "object_event  7, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, YoungerHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "21",
+            "SPRITE_GRANNY",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BitterMerchantScript",
+            "EVENT_GOLDENROD_UNDERGROUND_GRANNY"
+          ],
+          "raw": "object_event  7, 21, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BitterMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRANNY"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "SupernerdEricSeenText": {
+      "raw_lines": [
+        "text \"I got booted out\"",
+        "line \"of the GAME COR-\"",
+        "cont \"NER.\"",
+        "para \"I was trying to\"",
+        "line \"cheat using my\"",
+        "cont \"#MON\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I got booted out"
+        },
+        {
+          "command": "line",
+          "value": "of the GAME COR-"
+        },
+        {
+          "command": "cont",
+          "value": "NER."
+        },
+        {
+          "command": "para",
+          "value": "I was trying to"
+        },
+        {
+          "command": "line",
+          "value": "cheat using my"
+        },
+        {
+          "command": "cont",
+          "value": "#MON\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SupernerdEricBeatenText": {
+      "raw_lines": [
+        "text \"\u2026Grumble\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026Grumble\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SupernerdEricAfterBattleText": {
+      "raw_lines": [
+        "text \"I guess I have to\"",
+        "line \"do things fair and\"",
+        "cont \"square\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I guess I have to"
+        },
+        {
+          "command": "line",
+          "value": "do things fair and"
+        },
+        {
+          "command": "cont",
+          "value": "square\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SupernerdTeruSeenText": {
+      "raw_lines": [
+        "text \"Do you consider\"",
+        "line \"type alignments in\"",
+        "cont \"battle?\"",
+        "para \"If you know your\"",
+        "line \"type advantages,\"",
+        "para \"you'll do better\"",
+        "line \"in battle.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Do you consider"
+        },
+        {
+          "command": "line",
+          "value": "type alignments in"
+        },
+        {
+          "command": "cont",
+          "value": "battle?"
+        },
+        {
+          "command": "para",
+          "value": "If you know your"
+        },
+        {
+          "command": "line",
+          "value": "type advantages,"
+        },
+        {
+          "command": "para",
+          "value": "you'll do better"
+        },
+        {
+          "command": "line",
+          "value": "in battle."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SupernerdTeruBeatenText": {
+      "raw_lines": [
+        "text \"Ow, ow, ow!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ow, ow, ow!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SupernerdTeruAfterBattleText": {
+      "raw_lines": [
+        "text \"I know my #MON\"",
+        "line \"type alignments.\"",
+        "para \"But I only use one\"",
+        "line \"type of #MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I know my #MON"
+        },
+        {
+          "command": "line",
+          "value": "type alignments."
+        },
+        {
+          "command": "para",
+          "value": "But I only use one"
+        },
+        {
+          "command": "line",
+          "value": "type of #MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PokemaniacIssacSeenText": {
+      "raw_lines": [
+        "text \"My #MON just\"",
+        "line \"got a haircut!\"",
+        "para \"I'll show you how\"",
+        "line \"strong it is!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My #MON just"
+        },
+        {
+          "command": "line",
+          "value": "got a haircut!"
+        },
+        {
+          "command": "para",
+          "value": "I'll show you how"
+        },
+        {
+          "command": "line",
+          "value": "strong it is!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PokemaniacIssacBeatenText": {
+      "raw_lines": [
+        "text \"Aiyeeee!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Aiyeeee!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PokemaniacIssacAfterBattleText": {
+      "raw_lines": [
+        "text \"Your #MON will\"",
+        "line \"like you more if\"",
+        "para \"you give them\"",
+        "line \"haircuts.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Your #MON will"
+        },
+        {
+          "command": "line",
+          "value": "like you more if"
+        },
+        {
+          "command": "para",
+          "value": "you give them"
+        },
+        {
+          "command": "line",
+          "value": "haircuts."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PokemaniacDonaldSeenText": {
+      "raw_lines": [
+        "text \"I think you have\"",
+        "line \"some rare #MON\"",
+        "cont \"with you.\"",
+        "para \"Let me see them!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I think you have"
+        },
+        {
+          "command": "line",
+          "value": "some rare #MON"
+        },
+        {
+          "command": "cont",
+          "value": "with you."
+        },
+        {
+          "command": "para",
+          "value": "Let me see them!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PokemaniacDonaldBeatenText": {
+      "raw_lines": [
+        "text \"Gaah! I lost!\"",
+        "line \"That makes me mad!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Gaah! I lost!"
+        },
+        {
+          "command": "line",
+          "value": "That makes me mad!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PokemaniacDonaldAfterBattleText": {
+      "raw_lines": [
+        "text \"Are you making a\"",
+        "line \"#DEX? Here's a\"",
+        "cont \"hot tip.\"",
+        "para \"The HIKER on ROUTE\"",
+        "line \"33, ANTHONY, is a\"",
+        "cont \"good guy.\"",
+        "para \"He'll phone you if\"",
+        "line \"he sees any rare\"",
+        "cont \"#MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Are you making a"
+        },
+        {
+          "command": "line",
+          "value": "#DEX? Here's a"
+        },
+        {
+          "command": "cont",
+          "value": "hot tip."
+        },
+        {
+          "command": "para",
+          "value": "The HIKER on ROUTE"
+        },
+        {
+          "command": "line",
+          "value": "33, ANTHONY, is a"
+        },
+        {
+          "command": "cont",
+          "value": "good guy."
+        },
+        {
+          "command": "para",
+          "value": "He'll phone you if"
+        },
+        {
+          "command": "line",
+          "value": "he sees any rare"
+        },
+        {
+          "command": "cont",
+          "value": "#MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundTheDoorsLockedText": {
+      "raw_lines": [
+        "text \"The door's locked\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The door's locked\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundTheDoorIsOpenText": {
+      "raw_lines": [
+        "text \"The door is open.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The door is open."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundBasementKeyOpenedDoorText": {
+      "raw_lines": [
+        "text \"The BASEMENT KEY\"",
+        "line \"opened the door.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The BASEMENT KEY"
+        },
+        {
+          "command": "line",
+          "value": "opened the door."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundOlderHaircutBrotherOfferHaircutText": {
+      "raw_lines": [
+        "text \"Welcome!\"",
+        "para \"I run the #MON\"",
+        "line \"SALON!\"",
+        "para \"I'm the older and\"",
+        "line \"better of the two\"",
+        "cont \"HAIRCUT BROTHERS.\"",
+        "para \"I can make your\"",
+        "line \"#MON beautiful\"",
+        "cont \"for just \u00a5500.\"",
+        "para \"Would you like me\"",
+        "line \"to do that?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Welcome!"
+        },
+        {
+          "command": "para",
+          "value": "I run the #MON"
+        },
+        {
+          "command": "line",
+          "value": "SALON!"
+        },
+        {
+          "command": "para",
+          "value": "I'm the older and"
+        },
+        {
+          "command": "line",
+          "value": "better of the two"
+        },
+        {
+          "command": "cont",
+          "value": "HAIRCUT BROTHERS."
+        },
+        {
+          "command": "para",
+          "value": "I can make your"
+        },
+        {
+          "command": "line",
+          "value": "#MON beautiful"
+        },
+        {
+          "command": "cont",
+          "value": "for just \u00a5500."
+        },
+        {
+          "command": "para",
+          "value": "Would you like me"
+        },
+        {
+          "command": "line",
+          "value": "to do that?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundOlderHaircutBrotherAskWhichMonText": {
+      "raw_lines": [
+        "text \"Which #MON\"",
+        "line \"should I work on?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Which #MON"
+        },
+        {
+          "command": "line",
+          "value": "should I work on?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundOlderHaircutBrotherWatchItBecomeBeautifulText": {
+      "raw_lines": [
+        "text \"OK! Watch it\"",
+        "line \"become beautiful!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OK! Watch it"
+        },
+        {
+          "command": "line",
+          "value": "become beautiful!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundOlderHaircutBrotherAllDoneText": {
+      "raw_lines": [
+        "text \"There! All done!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "There! All done!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundOlderHaircutBrotherThatsAShameText": {
+      "raw_lines": [
+        "text \"Is that right?\"",
+        "line \"That's a shame!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Is that right?"
+        },
+        {
+          "command": "line",
+          "value": "That's a shame!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundOlderHaircutBrotherYoullNeedMoreMoneyText": {
+      "raw_lines": [
+        "text \"You'll need more\"",
+        "line \"money than that.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You'll need more"
+        },
+        {
+          "command": "line",
+          "value": "money than that."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundOlderHaircutBrotherOneHaircutADayText": {
+      "raw_lines": [
+        "text \"I do only one\"",
+        "line \"haircut a day. I'm\"",
+        "cont \"done for today.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I do only one"
+        },
+        {
+          "command": "line",
+          "value": "haircut a day. I'm"
+        },
+        {
+          "command": "cont",
+          "value": "done for today."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundYoungerHaircutBrotherOfferHaircutText": {
+      "raw_lines": [
+        "text \"Welcome to the\"",
+        "line \"#MON SALON!\"",
+        "para \"I'm the younger\"",
+        "line \"and less expen-\"",
+        "cont \"sive of the two\"",
+        "cont \"HAIRCUT BROTHERS.\"",
+        "para \"I'll spiff up your\"",
+        "line \"#MON for just\"",
+        "cont \"\u00a5300.\"",
+        "para \"So? How about it?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Welcome to the"
+        },
+        {
+          "command": "line",
+          "value": "#MON SALON!"
+        },
+        {
+          "command": "para",
+          "value": "I'm the younger"
+        },
+        {
+          "command": "line",
+          "value": "and less expen-"
+        },
+        {
+          "command": "cont",
+          "value": "sive of the two"
+        },
+        {
+          "command": "cont",
+          "value": "HAIRCUT BROTHERS."
+        },
+        {
+          "command": "para",
+          "value": "I'll spiff up your"
+        },
+        {
+          "command": "line",
+          "value": "#MON for just"
+        },
+        {
+          "command": "cont",
+          "value": "\u00a5300."
+        },
+        {
+          "command": "para",
+          "value": "So? How about it?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundYoungerHaircutBrotherAskWhichMonText": {
+      "raw_lines": [
+        "text \"OK, which #MON\"",
+        "line \"should I do?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OK, which #MON"
+        },
+        {
+          "command": "line",
+          "value": "should I do?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundYoungerHaircutBrotherIllMakeItLookCoolText": {
+      "raw_lines": [
+        "text \"OK! I'll make it\"",
+        "line \"look cool!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OK! I'll make it"
+        },
+        {
+          "command": "line",
+          "value": "look cool!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundYoungerHaircutBrotherAllDoneText": {
+      "raw_lines": [
+        "text \"There we go!\"",
+        "line \"All done!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "There we go!"
+        },
+        {
+          "command": "line",
+          "value": "All done!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundYoungerHaircutBrotherHowDisappointingText": {
+      "raw_lines": [
+        "text \"No? \"",
+        "line \"How disappointing!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "No? "
+        },
+        {
+          "command": "line",
+          "value": "How disappointing!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundYoungerHaircutBrotherShortOnFundsText": {
+      "raw_lines": [
+        "text \"You're a little\"",
+        "line \"short on funds.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You're a little"
+        },
+        {
+          "command": "line",
+          "value": "short on funds."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundYoungerHaircutBrotherOneHaircutADayText": {
+      "raw_lines": [
+        "text \"I can do only one\"",
+        "line \"haircut a day.\"",
+        "para \"Sorry, but I'm all\"",
+        "line \"done for today.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I can do only one"
+        },
+        {
+          "command": "line",
+          "value": "haircut a day."
+        },
+        {
+          "command": "para",
+          "value": "Sorry, but I'm all"
+        },
+        {
+          "command": "line",
+          "value": "done for today."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "HaircutBrosText_SlightlyHappier": {
+      "raw_lines": [
+        "text_ram wStringBuffer3",
+        "text \" looks a\"",
+        "line \"little happier.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text_ram",
+          "value": "wStringBuffer3"
+        },
+        {
+          "command": "text",
+          "value": " looks a"
+        },
+        {
+          "command": "line",
+          "value": "little happier."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "HaircutBrosText_Happier": {
+      "raw_lines": [
+        "text_ram wStringBuffer3",
+        "text \" looks\"",
+        "line \"happy.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text_ram",
+          "value": "wStringBuffer3"
+        },
+        {
+          "command": "text",
+          "value": " looks"
+        },
+        {
+          "command": "line",
+          "value": "happy."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "HaircutBrosText_MuchHappier": {
+      "raw_lines": [
+        "text_ram wStringBuffer3",
+        "text \" looks\"",
+        "line \"delighted!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text_ram",
+          "value": "wStringBuffer3"
+        },
+        {
+          "command": "text",
+          "value": " looks"
+        },
+        {
+          "command": "line",
+          "value": "delighted!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundWeAreNotOpenTodayText": {
+      "raw_lines": [
+        "text \"We're not open\"",
+        "line \"today.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We're not open"
+        },
+        {
+          "command": "line",
+          "value": "today."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodUndergroundNoEntryText": {
+      "raw_lines": [
+        "text \"NO ENTRY BEYOND\"",
+        "line \"THIS POINT\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "NO ENTRY BEYOND"
+        },
+        {
+          "command": "line",
+          "value": "THIS POINT"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "GoldenrodUnderground_MapScripts": {
+      "label_refs": [
+        "GoldenrodUndergroundResetSwitchesCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundResetSwitchesCallback": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckBasementKeyCallback": {
+      "label_refs": [
+        "GoldenrodUndergroundCheckBasementKeyCallback.LockBasementDoor"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckBasementKeyCallback.LockBasementDoor": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckDayOfWeekCallback": {
+      "label_refs": [
+        "GoldenrodUndergroundCheckDayOfWeekCallback.Friday",
+        "GoldenrodUndergroundCheckDayOfWeekCallback.Monday",
+        "GoldenrodUndergroundCheckDayOfWeekCallback.Saturday",
+        "GoldenrodUndergroundCheckDayOfWeekCallback.Thursday",
+        "GoldenrodUndergroundCheckDayOfWeekCallback.Tuesday",
+        "GoldenrodUndergroundCheckDayOfWeekCallback.Wednesday"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckDayOfWeekCallback.Monday": {
+      "label_refs": [
+        "GoldenrodUndergroundCheckDayOfWeekCallback.NotMondayMorning"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckDayOfWeekCallback.NotMondayMorning": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckDayOfWeekCallback.Tuesday": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckDayOfWeekCallback.Wednesday": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckDayOfWeekCallback.Thursday": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckDayOfWeekCallback.Friday": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCheckDayOfWeekCallback.Saturday": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSupernerdEric": {
+      "label_refs": [
+        "TrainerSupernerdEric.Script"
+      ],
+      "text_refs": [
+        "SupernerdEricBeatenText",
+        "SupernerdEricSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSupernerdEric.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "SupernerdEricAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSupernerdTeru": {
+      "label_refs": [
+        "TrainerSupernerdTeru.Script"
+      ],
+      "text_refs": [
+        "SupernerdTeruBeatenText",
+        "SupernerdTeruSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSupernerdTeru.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "SupernerdTeruAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPokemaniacIssac": {
+      "label_refs": [
+        "TrainerPokemaniacIssac.Script"
+      ],
+      "text_refs": [
+        "PokemaniacIssacBeatenText",
+        "PokemaniacIssacSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPokemaniacIssac.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "PokemaniacIssacAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPokemaniacDonald": {
+      "label_refs": [
+        "TrainerPokemaniacDonald.Script"
+      ],
+      "text_refs": [
+        "PokemaniacDonaldBeatenText",
+        "PokemaniacDonaldSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPokemaniacDonald.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "PokemaniacDonaldAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BitterMerchantScript": {
+      "label_refs": [
+        "BitterMerchantScript.Open",
+        "GoldenrodUndergroundScript_ShopClosed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BitterMerchantScript.Open": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BargainMerchantScript": {
+      "label_refs": [
+        "BargainMerchantScript.CheckMorn",
+        "GoldenrodUndergroundScript_ShopClosed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BargainMerchantScript.CheckMorn": {
+      "label_refs": [
+        "GoldenrodUndergroundScript_ShopClosed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlderHaircutBrotherScript": {
+      "label_refs": [
+        "GoldenrodUndergroundScript_ShopClosed",
+        "OlderHaircutBrotherScript.DoHaircut"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlderHaircutBrotherScript.DoHaircut": {
+      "label_refs": [
+        "OlderHaircutBrotherScript.AlreadyGotHaircut",
+        "OlderHaircutBrotherScript.NotEnoughMoney",
+        "OlderHaircutBrotherScript.Refused",
+        "OlderHaircutBrotherScript.else",
+        "OlderHaircutBrotherScript.three",
+        "OlderHaircutBrotherScript.two"
+      ],
+      "text_refs": [
+        "GoldenrodUndergroundOlderHaircutBrotherAskWhichMonText",
+        "GoldenrodUndergroundOlderHaircutBrotherOfferHaircutText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlderHaircutBrotherScript.two": {
+      "label_refs": [
+        "OlderHaircutBrotherScript.then"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlderHaircutBrotherScript.three": {
+      "label_refs": [
+        "OlderHaircutBrotherScript.then"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlderHaircutBrotherScript.else": {
+      "label_refs": [
+        "OlderHaircutBrotherScript.then"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlderHaircutBrotherScript.then": {
+      "label_refs": [
+        "EitherHaircutBrotherScript_Happier",
+        "EitherHaircutBrotherScript_MuchHappier",
+        "EitherHaircutBrotherScript_SlightlyHappier"
+      ],
+      "text_refs": [
+        "GoldenrodUndergroundOlderHaircutBrotherAllDoneText",
+        "GoldenrodUndergroundOlderHaircutBrotherWatchItBecomeBeautifulText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlderHaircutBrotherScript.Refused": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundOlderHaircutBrotherThatsAShameText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlderHaircutBrotherScript.NotEnoughMoney": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundOlderHaircutBrotherYoullNeedMoreMoneyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlderHaircutBrotherScript.AlreadyGotHaircut": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundOlderHaircutBrotherOneHaircutADayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "YoungerHaircutBrotherScript": {
+      "label_refs": [
+        "GoldenrodUndergroundScript_ShopClosed",
+        "YoungerHaircutBrotherScript.DoHaircut"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "YoungerHaircutBrotherScript.DoHaircut": {
+      "label_refs": [
+        "YoungerHaircutBrotherScript.AlreadyGotHaircut",
+        "YoungerHaircutBrotherScript.NotEnoughMoney",
+        "YoungerHaircutBrotherScript.Refused",
+        "YoungerHaircutBrotherScript.else",
+        "YoungerHaircutBrotherScript.three",
+        "YoungerHaircutBrotherScript.two"
+      ],
+      "text_refs": [
+        "GoldenrodUndergroundYoungerHaircutBrotherAskWhichMonText",
+        "GoldenrodUndergroundYoungerHaircutBrotherOfferHaircutText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "YoungerHaircutBrotherScript.two": {
+      "label_refs": [
+        "YoungerHaircutBrotherScript.then"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "YoungerHaircutBrotherScript.three": {
+      "label_refs": [
+        "YoungerHaircutBrotherScript.then"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "YoungerHaircutBrotherScript.else": {
+      "label_refs": [
+        "YoungerHaircutBrotherScript.then"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "YoungerHaircutBrotherScript.then": {
+      "label_refs": [
+        "EitherHaircutBrotherScript_Happier",
+        "EitherHaircutBrotherScript_MuchHappier",
+        "EitherHaircutBrotherScript_SlightlyHappier"
+      ],
+      "text_refs": [
+        "GoldenrodUndergroundYoungerHaircutBrotherAllDoneText",
+        "GoldenrodUndergroundYoungerHaircutBrotherIllMakeItLookCoolText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "YoungerHaircutBrotherScript.Refused": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundYoungerHaircutBrotherHowDisappointingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "YoungerHaircutBrotherScript.NotEnoughMoney": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundYoungerHaircutBrotherShortOnFundsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "YoungerHaircutBrotherScript.AlreadyGotHaircut": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundYoungerHaircutBrotherOneHaircutADayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EitherHaircutBrotherScript_SlightlyHappier": {
+      "label_refs": [],
+      "text_refs": [
+        "HaircutBrosText_SlightlyHappier"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EitherHaircutBrotherScript_Happier": {
+      "label_refs": [],
+      "text_refs": [
+        "HaircutBrosText_Happier"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EitherHaircutBrotherScript_MuchHappier": {
+      "label_refs": [],
+      "text_refs": [
+        "HaircutBrosText_MuchHappier"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BasementDoorScript": {
+      "label_refs": [
+        "BasementDoorScript.Open",
+        "BasementDoorScript.Unlock"
+      ],
+      "text_refs": [
+        "GoldenrodUndergroundTheDoorsLockedText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BasementDoorScript.Unlock": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundBasementKeyOpenedDoorText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BasementDoorScript.Open": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundTheDoorIsOpenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundScript_ShopClosed": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundWeAreNotOpenTodayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundCoinCase": {
+      "label_refs": [
+        "GoldenrodUndergroundNoEntrySign"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundNoEntrySign": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodUndergroundNoEntryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundHiddenParlyzHeal": {
+      "label_refs": [
+        "GoldenrodUndergroundHiddenSuperPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundHiddenSuperPotion": {
+      "label_refs": [
+        "GoldenrodUndergroundHiddenAntidote"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUndergroundHiddenAntidote": {
+      "label_refs": [
+        "GoldenrodUnderground_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodUnderground_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "day_time"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 3,
+    "warp_events": 6,
+    "coord_events": 0,
+    "bg_events": 5,
+    "object_events": 9
+  }
+}

@@ -1,0 +1,1999 @@
+{
+  "crystal_map": "MahoganyTown",
+  "map_id": "MAHOGANY_TOWN",
+  "group": "MAHOGANY",
+  "group_index": 2,
+  "map_index": 7,
+  "tileset": "TILESET_JOHTO",
+  "environment": "TOWN",
+  "landmark": "LANDMARK_MAHOGANY_TOWN",
+  "music": "MUSIC_CHERRYGROVE_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_AUTO",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 10,
+  "height_blocks": 9,
+  "border_block": "71",
+  "blk_path": "maps/MahoganyTown.blk",
+  "source_asm": "maps/MahoganyTown.asm",
+  "connections": [
+    {
+      "direction": "north",
+      "map": "Route43",
+      "target_map_id": "ROUTE_43",
+      "offset": 0
+    },
+    {
+      "direction": "west",
+      "map": "Route42",
+      "target_map_id": "ROUTE_42",
+      "offset": 0
+    },
+    {
+      "direction": "east",
+      "map": "Route44",
+      "target_map_id": "ROUTE_44",
+      "offset": 0
+    }
+  ],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "MahoganyTownNoop1Scene",
+        "scene_id": "SCENE_MAHOGANYTOWN_TRY_RAGECANDYBAR"
+      },
+      {
+        "script": "MahoganyTownNoop2Scene",
+        "scene_id": "SCENE_MAHOGANYTOWN_NOOP"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "MahoganyTownFlypointCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 11,
+        "y": 7,
+        "dest_map": "MAHOGANY_MART_1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 17,
+        "y": 7,
+        "dest_map": "MAHOGANY_RED_GYARADOS_SPEECH_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 6,
+        "y": 13,
+        "dest_map": "MAHOGANY_GYM",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 15,
+        "y": 13,
+        "dest_map": "MAHOGANY_POKECENTER_1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 9,
+        "y": 1,
+        "dest_map": "ROUTE_43_MAHOGANY_GATE",
+        "dest_warp_id": 3
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 19,
+        "y": 8,
+        "scene": "SCENE_MAHOGANYTOWN_TRY_RAGECANDYBAR",
+        "script": "MahoganyTownTryARageCandyBarScript"
+      },
+      {
+        "x": 19,
+        "y": 9,
+        "scene": "SCENE_MAHOGANYTOWN_TRY_RAGECANDYBAR",
+        "script": "MahoganyTownTryARageCandyBarScript"
+      }
+    ],
+    "bg_events": [
+      {
+        "x": 1,
+        "y": 5,
+        "kind": "BGEVENT_READ",
+        "script": "MahoganyTownSign"
+      },
+      {
+        "x": 9,
+        "y": 7,
+        "kind": "BGEVENT_READ",
+        "script": "MahoganyTownRagecandybarSign"
+      },
+      {
+        "x": 3,
+        "y": 13,
+        "kind": "BGEVENT_READ",
+        "script": "MahoganyGymSign"
+      },
+      {
+        "x": 16,
+        "y": 13,
+        "kind": "BGEVENT_READ",
+        "script": "MahoganyTownPokecenterSign"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 19,
+        "y": 8,
+        "sprite": "SPRITE_POKEFAN_M",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MahoganyTownPokefanMScript",
+        "flag": "EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST"
+      },
+      {
+        "x": 6,
+        "y": 9,
+        "sprite": "SPRITE_GRAMPS",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MahoganyTownGrampsScript",
+        "flag": -1
+      },
+      {
+        "x": 6,
+        "y": 14,
+        "sprite": "SPRITE_FISHER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MahoganyTownFisherScript",
+        "flag": "EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_GYM"
+      },
+      {
+        "x": 12,
+        "y": 8,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MahoganyTownLassScript",
+        "flag": "EVENT_MAHOGANY_MART_OWNERS"
+      }
+    ]
+  },
+  "object_consts": [
+    "MAHOGANYTOWN_POKEFAN_M",
+    "MAHOGANYTOWN_GRAMPS",
+    "MAHOGANYTOWN_FISHER",
+    "MAHOGANYTOWN_LASS"
+  ],
+  "scene_ids": [
+    "SCENE_MAHOGANYTOWN_NOOP",
+    "SCENE_MAHOGANYTOWN_TRY_RAGECANDYBAR"
+  ],
+  "scripts": {
+    "MahoganyTown_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script MahoganyTownNoop1Scene, SCENE_MAHOGANYTOWN_TRY_RAGECANDYBAR",
+        "scene_script MahoganyTownNoop2Scene, SCENE_MAHOGANYTOWN_NOOP",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, MahoganyTownFlypointCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "MahoganyTownNoop1Scene",
+            "SCENE_MAHOGANYTOWN_TRY_RAGECANDYBAR"
+          ],
+          "raw": "scene_script MahoganyTownNoop1Scene, SCENE_MAHOGANYTOWN_TRY_RAGECANDYBAR"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "MahoganyTownNoop2Scene",
+            "SCENE_MAHOGANYTOWN_NOOP"
+          ],
+          "raw": "scene_script MahoganyTownNoop2Scene, SCENE_MAHOGANYTOWN_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "MahoganyTownFlypointCallback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, MahoganyTownFlypointCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "MahoganyTownNoop1Scene",
+      "label_refs": [
+        "MahoganyTownNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownFlypointCallback": {
+      "raw_lines": [
+        "setflag ENGINE_FLYPOINT_MAHOGANY",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_FLYPOINT_MAHOGANY"
+          ],
+          "raw": "setflag ENGINE_FLYPOINT_MAHOGANY"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "setflag",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownTryARageCandyBarScript": {
+      "raw_lines": [
+        "showemote EMOTE_SHOCK, MAHOGANYTOWN_POKEFAN_M, 15",
+        "applymovement MAHOGANYTOWN_POKEFAN_M, MahoganyTownRageCandyBarMerchantBlocksYouMovement",
+        "follow PLAYER, MAHOGANYTOWN_POKEFAN_M",
+        "applymovement PLAYER, MahoganyTownPlayerStepLeftMovement",
+        "stopfollow",
+        "turnobject PLAYER, RIGHT",
+        "scall RageCandyBarMerchantScript",
+        "applymovement MAHOGANYTOWN_POKEFAN_M, MahoganyTownRageCandyBarMerchantReturnsMovement",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "MAHOGANYTOWN_POKEFAN_M",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, MAHOGANYTOWN_POKEFAN_M, 15"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "MAHOGANYTOWN_POKEFAN_M",
+            "MahoganyTownRageCandyBarMerchantBlocksYouMovement"
+          ],
+          "raw": "applymovement MAHOGANYTOWN_POKEFAN_M, MahoganyTownRageCandyBarMerchantBlocksYouMovement"
+        },
+        {
+          "command": "follow",
+          "args": [
+            "PLAYER",
+            "MAHOGANYTOWN_POKEFAN_M"
+          ],
+          "raw": "follow PLAYER, MAHOGANYTOWN_POKEFAN_M"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "MahoganyTownPlayerStepLeftMovement"
+          ],
+          "raw": "applymovement PLAYER, MahoganyTownPlayerStepLeftMovement"
+        },
+        {
+          "command": "stopfollow",
+          "args": [],
+          "raw": "stopfollow"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "RageCandyBarMerchantScript"
+          ],
+          "raw": "scall RageCandyBarMerchantScript"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "MAHOGANYTOWN_POKEFAN_M",
+            "MahoganyTownRageCandyBarMerchantReturnsMovement"
+          ],
+          "raw": "applymovement MAHOGANYTOWN_POKEFAN_M, MahoganyTownRageCandyBarMerchantReturnsMovement"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "showemote",
+      "label_refs": [
+        "RageCandyBarMerchantScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MahoganyTownPlayerStepLeftMovement",
+        "MahoganyTownRageCandyBarMerchantBlocksYouMovement",
+        "MahoganyTownRageCandyBarMerchantReturnsMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownPokefanMScript": {
+      "raw_lines": [
+        "faceplayer"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "RageCandyBarMerchantScript",
+      "label_refs": [
+        "RageCandyBarMerchantScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RageCandyBarMerchantScript": {
+      "raw_lines": [
+        "checkevent EVENT_CLEARED_ROCKET_HIDEOUT",
+        "iftrue .ClearedRocketHideout",
+        "scall .SellRageCandyBars",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_ROCKET_HIDEOUT"
+          ],
+          "raw": "checkevent EVENT_CLEARED_ROCKET_HIDEOUT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RageCandyBarMerchantScript.ClearedRocketHideout"
+          ],
+          "raw": "iftrue .ClearedRocketHideout"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "RageCandyBarMerchantScript.SellRageCandyBars"
+          ],
+          "raw": "scall .SellRageCandyBars"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "RageCandyBarMerchantScript.ClearedRocketHideout",
+        "RageCandyBarMerchantScript.SellRageCandyBars"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RageCandyBarMerchantScript.ClearedRocketHideout": {
+      "raw_lines": [
+        "opentext",
+        "writetext RageCandyBarMerchantSoldOutText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RageCandyBarMerchantSoldOutText"
+          ],
+          "raw": "writetext RageCandyBarMerchantSoldOutText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "RageCandyBarMerchantSoldOutText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RageCandyBarMerchantScript.SellRageCandyBars": {
+      "raw_lines": [
+        "opentext",
+        "writetext RageCandyBarMerchantTryOneText",
+        "special PlaceMoneyTopRight",
+        "yesorno",
+        "iffalse .Refused",
+        "checkmoney YOUR_MONEY, MAHOGANYTOWN_RAGECANDYBAR_PRICE",
+        "ifequal HAVE_LESS, .NotEnoughMoney",
+        "giveitem RAGECANDYBAR",
+        "iffalse .NoRoom",
+        "waitsfx",
+        "playsound SFX_TRANSACTION",
+        "takemoney YOUR_MONEY, MAHOGANYTOWN_RAGECANDYBAR_PRICE",
+        "special PlaceMoneyTopRight",
+        "writetext RageCandyBarMerchantSavorItText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RageCandyBarMerchantTryOneText"
+          ],
+          "raw": "writetext RageCandyBarMerchantTryOneText"
+        },
+        {
+          "command": "special",
+          "args": [
+            "PlaceMoneyTopRight"
+          ],
+          "raw": "special PlaceMoneyTopRight"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "RageCandyBarMerchantScript.Refused"
+          ],
+          "raw": "iffalse .Refused"
+        },
+        {
+          "command": "checkmoney",
+          "args": [
+            "YOUR_MONEY",
+            "MAHOGANYTOWN_RAGECANDYBAR_PRICE"
+          ],
+          "raw": "checkmoney YOUR_MONEY, MAHOGANYTOWN_RAGECANDYBAR_PRICE"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "HAVE_LESS",
+            "RageCandyBarMerchantScript.NotEnoughMoney"
+          ],
+          "raw": "ifequal HAVE_LESS, .NotEnoughMoney"
+        },
+        {
+          "command": "giveitem",
+          "args": [
+            "RAGECANDYBAR"
+          ],
+          "raw": "giveitem RAGECANDYBAR"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "RageCandyBarMerchantScript.NoRoom"
+          ],
+          "raw": "iffalse .NoRoom"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_TRANSACTION"
+          ],
+          "raw": "playsound SFX_TRANSACTION"
+        },
+        {
+          "command": "takemoney",
+          "args": [
+            "YOUR_MONEY",
+            "MAHOGANYTOWN_RAGECANDYBAR_PRICE"
+          ],
+          "raw": "takemoney YOUR_MONEY, MAHOGANYTOWN_RAGECANDYBAR_PRICE"
+        },
+        {
+          "command": "special",
+          "args": [
+            "PlaceMoneyTopRight"
+          ],
+          "raw": "special PlaceMoneyTopRight"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RageCandyBarMerchantSavorItText"
+          ],
+          "raw": "writetext RageCandyBarMerchantSavorItText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "RageCandyBarMerchantScript.NoRoom",
+        "RageCandyBarMerchantScript.NotEnoughMoney",
+        "RageCandyBarMerchantScript.Refused"
+      ],
+      "text_refs": [
+        "RageCandyBarMerchantSavorItText",
+        "RageCandyBarMerchantTryOneText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RageCandyBarMerchantScript.NotEnoughMoney": {
+      "raw_lines": [
+        "writetext RageCandyBarMerchantNotEnoughMoneyText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RageCandyBarMerchantNotEnoughMoneyText"
+          ],
+          "raw": "writetext RageCandyBarMerchantNotEnoughMoneyText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RageCandyBarMerchantNotEnoughMoneyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RageCandyBarMerchantScript.Refused": {
+      "raw_lines": [
+        "writetext RageCandyBarMerchantRefusedText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RageCandyBarMerchantRefusedText"
+          ],
+          "raw": "writetext RageCandyBarMerchantRefusedText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RageCandyBarMerchantRefusedText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RageCandyBarMerchantScript.NoRoom": {
+      "raw_lines": [
+        "writetext RageCandyBarMerchantNoRoomText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RageCandyBarMerchantNoRoomText"
+          ],
+          "raw": "writetext RageCandyBarMerchantNoRoomText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RageCandyBarMerchantNoRoomText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownGrampsScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_CLEARED_ROCKET_HIDEOUT",
+        "iftrue .ClearedRocketHideout",
+        "writetext MahoganyTownGrampsText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_ROCKET_HIDEOUT"
+          ],
+          "raw": "checkevent EVENT_CLEARED_ROCKET_HIDEOUT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MahoganyTownGrampsScript.ClearedRocketHideout"
+          ],
+          "raw": "iftrue .ClearedRocketHideout"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MahoganyTownGrampsText"
+          ],
+          "raw": "writetext MahoganyTownGrampsText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "MahoganyTownGrampsScript.ClearedRocketHideout"
+      ],
+      "text_refs": [
+        "MahoganyTownGrampsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownGrampsScript.ClearedRocketHideout": {
+      "raw_lines": [
+        "writetext MahoganyTownGrampsText_ClearedRocketHideout",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "MahoganyTownGrampsText_ClearedRocketHideout"
+          ],
+          "raw": "writetext MahoganyTownGrampsText_ClearedRocketHideout"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyTownGrampsText_ClearedRocketHideout"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownFisherScript": {
+      "raw_lines": [
+        "jumptextfaceplayer MahoganyTownFisherText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "MahoganyTownFisherText"
+          ],
+          "raw": "jumptextfaceplayer MahoganyTownFisherText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyTownFisherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownLassScript": {
+      "raw_lines": [
+        "jumptextfaceplayer MahoganyTownLassText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "MahoganyTownLassText"
+          ],
+          "raw": "jumptextfaceplayer MahoganyTownLassText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyTownLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownSign": {
+      "raw_lines": [
+        "jumptext MahoganyTownSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "MahoganyTownSignText"
+          ],
+          "raw": "jumptext MahoganyTownSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyTownSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownRagecandybarSign": {
+      "raw_lines": [
+        "jumptext MahoganyTownRagecandybarSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "MahoganyTownRagecandybarSignText"
+          ],
+          "raw": "jumptext MahoganyTownRagecandybarSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyTownRagecandybarSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyGymSign": {
+      "raw_lines": [
+        "jumptext MahoganyGymSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "MahoganyGymSignText"
+          ],
+          "raw": "jumptext MahoganyGymSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyGymSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownPokecenterSign": {
+      "raw_lines": [
+        "jumpstd PokecenterSignScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PokecenterSignScript"
+          ],
+          "raw": "jumpstd PokecenterSignScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterSignScript"
+      ]
+    },
+    "MahoganyTown_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 11,  7, MAHOGANY_MART_1F, 1",
+        "warp_event 17,  7, MAHOGANY_RED_GYARADOS_SPEECH_HOUSE, 1",
+        "warp_event  6, 13, MAHOGANY_GYM, 1",
+        "warp_event 15, 13, MAHOGANY_POKECENTER_1F, 1",
+        "warp_event  9,  1, ROUTE_43_MAHOGANY_GATE, 3",
+        "def_coord_events",
+        "coord_event 19,  8, SCENE_MAHOGANYTOWN_TRY_RAGECANDYBAR, MahoganyTownTryARageCandyBarScript",
+        "coord_event 19,  9, SCENE_MAHOGANYTOWN_TRY_RAGECANDYBAR, MahoganyTownTryARageCandyBarScript",
+        "def_bg_events",
+        "bg_event  1,  5, BGEVENT_READ, MahoganyTownSign",
+        "bg_event  9,  7, BGEVENT_READ, MahoganyTownRagecandybarSign",
+        "bg_event  3, 13, BGEVENT_READ, MahoganyGymSign",
+        "bg_event 16, 13, BGEVENT_READ, MahoganyTownPokecenterSign",
+        "def_object_events",
+        "object_event 19,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownPokefanMScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST",
+        "object_event  6,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownGrampsScript, -1",
+        "object_event  6, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyTownFisherScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_GYM",
+        "object_event 12,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownLassScript, EVENT_MAHOGANY_MART_OWNERS"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "11",
+            "7",
+            "MAHOGANY_MART_1F",
+            "1"
+          ],
+          "raw": "warp_event 11,  7, MAHOGANY_MART_1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "7",
+            "MAHOGANY_RED_GYARADOS_SPEECH_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event 17,  7, MAHOGANY_RED_GYARADOS_SPEECH_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "6",
+            "13",
+            "MAHOGANY_GYM",
+            "1"
+          ],
+          "raw": "warp_event  6, 13, MAHOGANY_GYM, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "15",
+            "13",
+            "MAHOGANY_POKECENTER_1F",
+            "1"
+          ],
+          "raw": "warp_event 15, 13, MAHOGANY_POKECENTER_1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "1",
+            "ROUTE_43_MAHOGANY_GATE",
+            "3"
+          ],
+          "raw": "warp_event  9,  1, ROUTE_43_MAHOGANY_GATE, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "19",
+            "8",
+            "SCENE_MAHOGANYTOWN_TRY_RAGECANDYBAR",
+            "MahoganyTownTryARageCandyBarScript"
+          ],
+          "raw": "coord_event 19,  8, SCENE_MAHOGANYTOWN_TRY_RAGECANDYBAR, MahoganyTownTryARageCandyBarScript"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "19",
+            "9",
+            "SCENE_MAHOGANYTOWN_TRY_RAGECANDYBAR",
+            "MahoganyTownTryARageCandyBarScript"
+          ],
+          "raw": "coord_event 19,  9, SCENE_MAHOGANYTOWN_TRY_RAGECANDYBAR, MahoganyTownTryARageCandyBarScript"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "5",
+            "BGEVENT_READ",
+            "MahoganyTownSign"
+          ],
+          "raw": "bg_event  1,  5, BGEVENT_READ, MahoganyTownSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "9",
+            "7",
+            "BGEVENT_READ",
+            "MahoganyTownRagecandybarSign"
+          ],
+          "raw": "bg_event  9,  7, BGEVENT_READ, MahoganyTownRagecandybarSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "13",
+            "BGEVENT_READ",
+            "MahoganyGymSign"
+          ],
+          "raw": "bg_event  3, 13, BGEVENT_READ, MahoganyGymSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "16",
+            "13",
+            "BGEVENT_READ",
+            "MahoganyTownPokecenterSign"
+          ],
+          "raw": "bg_event 16, 13, BGEVENT_READ, MahoganyTownPokecenterSign"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "19",
+            "8",
+            "SPRITE_POKEFAN_M",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MahoganyTownPokefanMScript",
+            "EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST"
+          ],
+          "raw": "object_event 19,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownPokefanMScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "9",
+            "SPRITE_GRAMPS",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MahoganyTownGrampsScript",
+            "-1"
+          ],
+          "raw": "object_event  6,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownGrampsScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "14",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MahoganyTownFisherScript",
+            "EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_GYM"
+          ],
+          "raw": "object_event  6, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyTownFisherScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_GYM"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "12",
+            "8",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MahoganyTownLassScript",
+            "EVENT_MAHOGANY_MART_OWNERS"
+          ],
+          "raw": "object_event 12,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownLassScript, EVENT_MAHOGANY_MART_OWNERS"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "RageCandyBarMerchantTryOneText": {
+      "raw_lines": [
+        "text \"Hiya, kid!\"",
+        "para \"I see you're new\"",
+        "line \"in MAHOGANY TOWN.\"",
+        "para \"Since you're new,\"",
+        "line \"you should try a\"",
+        "para \"yummy RAGECANDY-\"",
+        "line \"BAR!\"",
+        "para \"Right now, it can\"",
+        "line \"be yours for just\"",
+        "cont \"\u00a5300! Want one?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hiya, kid!"
+        },
+        {
+          "command": "para",
+          "value": "I see you're new"
+        },
+        {
+          "command": "line",
+          "value": "in MAHOGANY TOWN."
+        },
+        {
+          "command": "para",
+          "value": "Since you're new,"
+        },
+        {
+          "command": "line",
+          "value": "you should try a"
+        },
+        {
+          "command": "para",
+          "value": "yummy RAGECANDY-"
+        },
+        {
+          "command": "line",
+          "value": "BAR!"
+        },
+        {
+          "command": "para",
+          "value": "Right now, it can"
+        },
+        {
+          "command": "line",
+          "value": "be yours for just"
+        },
+        {
+          "command": "cont",
+          "value": "\u00a5300! Want one?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RageCandyBarMerchantSavorItText": {
+      "raw_lines": [
+        "text \"Good! Savor it!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Good! Savor it!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RageCandyBarMerchantNotEnoughMoneyText": {
+      "raw_lines": [
+        "text \"You don't have\"",
+        "line \"enough money.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You don't have"
+        },
+        {
+          "command": "line",
+          "value": "enough money."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RageCandyBarMerchantRefusedText": {
+      "raw_lines": [
+        "text \"Oh, fine then\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, fine then\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RageCandyBarMerchantNoRoomText": {
+      "raw_lines": [
+        "text \"You don't have\"",
+        "line \"room for this.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You don't have"
+        },
+        {
+          "command": "line",
+          "value": "room for this."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RageCandyBarMerchantSoldOutText": {
+      "raw_lines": [
+        "text \"RAGECANDYBAR's\"",
+        "line \"sold out.\"",
+        "para \"I'm packing up.\"",
+        "line \"Don't bother me,\"",
+        "cont \"kiddo.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "RAGECANDYBAR's"
+        },
+        {
+          "command": "line",
+          "value": "sold out."
+        },
+        {
+          "command": "para",
+          "value": "I'm packing up."
+        },
+        {
+          "command": "line",
+          "value": "Don't bother me,"
+        },
+        {
+          "command": "cont",
+          "value": "kiddo."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MahoganyTownGrampsText": {
+      "raw_lines": [
+        "text \"Are you off to see\"",
+        "line \"the GYARADOS ram-\"",
+        "cont \"page at the LAKE?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Are you off to see"
+        },
+        {
+          "command": "line",
+          "value": "the GYARADOS ram-"
+        },
+        {
+          "command": "cont",
+          "value": "page at the LAKE?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MahoganyTownGrampsText_ClearedRocketHideout": {
+      "raw_lines": [
+        "text \"MAGIKARP have\"",
+        "line \"returned to LAKE\"",
+        "cont \"OF RAGE.\"",
+        "para \"That should be\"",
+        "line \"good news for the\"",
+        "cont \"anglers there.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MAGIKARP have"
+        },
+        {
+          "command": "line",
+          "value": "returned to LAKE"
+        },
+        {
+          "command": "cont",
+          "value": "OF RAGE."
+        },
+        {
+          "command": "para",
+          "value": "That should be"
+        },
+        {
+          "command": "line",
+          "value": "good news for the"
+        },
+        {
+          "command": "cont",
+          "value": "anglers there."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MahoganyTownFisherText": {
+      "raw_lines": [
+        "text \"Since you came\"",
+        "line \"this far, take the\"",
+        "para \"time to do some\"",
+        "line \"sightseeing.\"",
+        "para \"You should head\"",
+        "line \"north and check\"",
+        "para \"out LAKE OF RAGE\"",
+        "line \"right now.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Since you came"
+        },
+        {
+          "command": "line",
+          "value": "this far, take the"
+        },
+        {
+          "command": "para",
+          "value": "time to do some"
+        },
+        {
+          "command": "line",
+          "value": "sightseeing."
+        },
+        {
+          "command": "para",
+          "value": "You should head"
+        },
+        {
+          "command": "line",
+          "value": "north and check"
+        },
+        {
+          "command": "para",
+          "value": "out LAKE OF RAGE"
+        },
+        {
+          "command": "line",
+          "value": "right now."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MahoganyTownLassText": {
+      "raw_lines": [
+        "text \"Visit Grandma's\"",
+        "line \"shop. She sells\"",
+        "para \"stuff that nobody\"",
+        "line \"else has.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Visit Grandma's"
+        },
+        {
+          "command": "line",
+          "value": "shop. She sells"
+        },
+        {
+          "command": "para",
+          "value": "stuff that nobody"
+        },
+        {
+          "command": "line",
+          "value": "else has."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MahoganyTownSignText": {
+      "raw_lines": [
+        "text \"MAHOGANY TOWN\"",
+        "para \"Welcome to the\"",
+        "line \"Home of the Ninja\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MAHOGANY TOWN"
+        },
+        {
+          "command": "para",
+          "value": "Welcome to the"
+        },
+        {
+          "command": "line",
+          "value": "Home of the Ninja"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MahoganyTownRagecandybarSignText": {
+      "raw_lines": [
+        "text \"While visiting\"",
+        "line \"MAHOGANY TOWN, try\"",
+        "cont \"a RAGECANDYBAR!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "While visiting"
+        },
+        {
+          "command": "line",
+          "value": "MAHOGANY TOWN, try"
+        },
+        {
+          "command": "cont",
+          "value": "a RAGECANDYBAR!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MahoganyGymSignText": {
+      "raw_lines": [
+        "text \"MAHOGANY TOWN\"",
+        "line \"#MON GYM\"",
+        "cont \"LEADER: PRYCE\"",
+        "para \"The Teacher of\"",
+        "line \"Winter's Harshness\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MAHOGANY TOWN"
+        },
+        {
+          "command": "line",
+          "value": "#MON GYM"
+        },
+        {
+          "command": "cont",
+          "value": "LEADER: PRYCE"
+        },
+        {
+          "command": "para",
+          "value": "The Teacher of"
+        },
+        {
+          "command": "line",
+          "value": "Winter's Harshness"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "MahoganyTownCollideDownFaceLeftMovement": {
+      "raw_lines": [
+        "step DOWN",
+        "big_step UP",
+        "turn_head DOWN"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        }
+      ]
+    },
+    "MahoganyTownPlayerStepLeftMovement": {
+      "raw_lines": [
+        "step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MahoganyTownRageCandyBarMerchantBlocksYouMovement": {
+      "raw_lines": [
+        "step RIGHT",
+        "step DOWN",
+        "turn_head LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MahoganyTownRageCandyBarMerchantReturnsMovement": {
+      "raw_lines": [
+        "step UP",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "PokecenterSignScript"
+  ],
+  "dependencies": {
+    "MahoganyTown_MapScripts": {
+      "label_refs": [
+        "MahoganyTownNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownFlypointCallback": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownTryARageCandyBarScript": {
+      "label_refs": [
+        "RageCandyBarMerchantScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MahoganyTownPlayerStepLeftMovement",
+        "MahoganyTownRageCandyBarMerchantBlocksYouMovement",
+        "MahoganyTownRageCandyBarMerchantReturnsMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownPokefanMScript": {
+      "label_refs": [
+        "RageCandyBarMerchantScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RageCandyBarMerchantScript": {
+      "label_refs": [
+        "RageCandyBarMerchantScript.ClearedRocketHideout",
+        "RageCandyBarMerchantScript.SellRageCandyBars"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RageCandyBarMerchantScript.ClearedRocketHideout": {
+      "label_refs": [],
+      "text_refs": [
+        "RageCandyBarMerchantSoldOutText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RageCandyBarMerchantScript.SellRageCandyBars": {
+      "label_refs": [
+        "RageCandyBarMerchantScript.NoRoom",
+        "RageCandyBarMerchantScript.NotEnoughMoney",
+        "RageCandyBarMerchantScript.Refused"
+      ],
+      "text_refs": [
+        "RageCandyBarMerchantSavorItText",
+        "RageCandyBarMerchantTryOneText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RageCandyBarMerchantScript.NotEnoughMoney": {
+      "label_refs": [],
+      "text_refs": [
+        "RageCandyBarMerchantNotEnoughMoneyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RageCandyBarMerchantScript.Refused": {
+      "label_refs": [],
+      "text_refs": [
+        "RageCandyBarMerchantRefusedText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RageCandyBarMerchantScript.NoRoom": {
+      "label_refs": [],
+      "text_refs": [
+        "RageCandyBarMerchantNoRoomText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownGrampsScript": {
+      "label_refs": [
+        "MahoganyTownGrampsScript.ClearedRocketHideout"
+      ],
+      "text_refs": [
+        "MahoganyTownGrampsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownGrampsScript.ClearedRocketHideout": {
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyTownGrampsText_ClearedRocketHideout"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownFisherScript": {
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyTownFisherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownLassScript": {
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyTownLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownSign": {
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyTownSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownRagecandybarSign": {
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyTownRagecandybarSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyGymSign": {
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyGymSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyTownPokecenterSign": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterSignScript"
+      ]
+    },
+    "MahoganyTown_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
+    "warp_events": 5,
+    "coord_events": 2,
+    "bg_events": 4,
+    "object_events": 4
+  }
+}

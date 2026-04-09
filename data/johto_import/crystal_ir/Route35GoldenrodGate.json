@@ -1,0 +1,1490 @@
+{
+  "crystal_map": "Route35GoldenrodGate",
+  "map_id": "ROUTE_35_GOLDENROD_GATE",
+  "group": "VIOLET",
+  "group_index": 10,
+  "map_index": 14,
+  "tileset": "TILESET_GATE",
+  "environment": "GATE",
+  "landmark": "LANDMARK_ROUTE_35",
+  "music": "MUSIC_ROUTE_36",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/NorthSouthGate.blk",
+  "source_asm": "maps/Route35GoldenrodGate.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 4,
+        "y": 0,
+        "dest_map": "ROUTE_35",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 5,
+        "y": 0,
+        "dest_map": "ROUTE_35",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 12
+      },
+      {
+        "x": 5,
+        "y": 7,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 12
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 0,
+        "y": 4,
+        "sprite": "SPRITE_OFFICER",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RandyScript",
+        "flag": -1
+      },
+      {
+        "x": 6,
+        "y": 4,
+        "sprite": "SPRITE_POKEFAN_F",
+        "movement": "SPRITEMOVEDATA_WALK_UP_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route35GoldenrodGatePokefanFScript",
+        "flag": -1
+      },
+      {
+        "x": 3,
+        "y": 2,
+        "sprite": "SPRITE_FISHER",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route35GoldenrodGateFisherScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "ROUTE35GOLDENRODGATE_RANDY",
+    "ROUTE35GOLDENRODGATE_POKEFAN_F",
+    "ROUTE35GOLDENRODGATE_FISHER"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "Route35GoldenrodGate_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "RandyScript",
+      "label_refs": [
+        "RandyScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RandyScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_HP_UP_FROM_RANDY",
+        "iftrue .gothpup",
+        "checkevent EVENT_GAVE_KENYA",
+        "iftrue .questcomplete",
+        "checkevent EVENT_GOT_KENYA",
+        "iftrue .alreadyhavekenya",
+        "writetext Route35GoldenrodGateRandyAskTakeThisMonToMyFriendText",
+        "yesorno",
+        "iffalse .refused",
+        "writetext Route35GoldenrodGateRandyThanksText",
+        "promptbutton",
+        "waitsfx",
+        "readvar VAR_PARTYCOUNT",
+        "ifequal PARTY_LENGTH, .partyfull",
+        "writetext Route35GoldenrodGatePlayerReceivedAMonWithMailText",
+        "playsound SFX_KEY_ITEM",
+        "waitsfx",
+        "givepoke SPEAROW, 10, NO_ITEM, GiftSpearowName, GiftSpearowOTName",
+        "givepokemail GiftSpearowMail",
+        "setevent EVENT_GOT_KENYA"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_HP_UP_FROM_RANDY"
+          ],
+          "raw": "checkevent EVENT_GOT_HP_UP_FROM_RANDY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RandyScript.gothpup"
+          ],
+          "raw": "iftrue .gothpup"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GAVE_KENYA"
+          ],
+          "raw": "checkevent EVENT_GAVE_KENYA"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RandyScript.questcomplete"
+          ],
+          "raw": "iftrue .questcomplete"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_KENYA"
+          ],
+          "raw": "checkevent EVENT_GOT_KENYA"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RandyScript.alreadyhavekenya"
+          ],
+          "raw": "iftrue .alreadyhavekenya"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route35GoldenrodGateRandyAskTakeThisMonToMyFriendText"
+          ],
+          "raw": "writetext Route35GoldenrodGateRandyAskTakeThisMonToMyFriendText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "RandyScript.refused"
+          ],
+          "raw": "iffalse .refused"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route35GoldenrodGateRandyThanksText"
+          ],
+          "raw": "writetext Route35GoldenrodGateRandyThanksText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_PARTYCOUNT"
+          ],
+          "raw": "readvar VAR_PARTYCOUNT"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PARTY_LENGTH",
+            "RandyScript.partyfull"
+          ],
+          "raw": "ifequal PARTY_LENGTH, .partyfull"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route35GoldenrodGatePlayerReceivedAMonWithMailText"
+          ],
+          "raw": "writetext Route35GoldenrodGatePlayerReceivedAMonWithMailText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_KEY_ITEM"
+          ],
+          "raw": "playsound SFX_KEY_ITEM"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "givepoke",
+          "args": [
+            "SPEAROW",
+            "10",
+            "NO_ITEM",
+            "GiftSpearowName",
+            "GiftSpearowOTName"
+          ],
+          "raw": "givepoke SPEAROW, 10, NO_ITEM, GiftSpearowName, GiftSpearowOTName"
+        },
+        {
+          "command": "givepokemail",
+          "args": [
+            "GiftSpearowMail"
+          ],
+          "raw": "givepokemail GiftSpearowMail"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_KENYA"
+          ],
+          "raw": "setevent EVENT_GOT_KENYA"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "RandyScript.alreadyhavekenya",
+      "label_refs": [
+        "RandyScript.alreadyhavekenya",
+        "RandyScript.gothpup",
+        "RandyScript.partyfull",
+        "RandyScript.questcomplete",
+        "RandyScript.refused"
+      ],
+      "text_refs": [
+        "Route35GoldenrodGatePlayerReceivedAMonWithMailText",
+        "Route35GoldenrodGateRandyAskTakeThisMonToMyFriendText",
+        "Route35GoldenrodGateRandyThanksText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RandyScript.alreadyhavekenya": {
+      "raw_lines": [
+        "writetext Route35GoldenrodGateRandyWeirdTreeBlockingRoadText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route35GoldenrodGateRandyWeirdTreeBlockingRoadText"
+          ],
+          "raw": "writetext Route35GoldenrodGateRandyWeirdTreeBlockingRoadText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route35GoldenrodGateRandyWeirdTreeBlockingRoadText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RandyScript.partyfull": {
+      "raw_lines": [
+        "writetext Route35GoldenrodGateRandyCantCarryAnotherMonText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route35GoldenrodGateRandyCantCarryAnotherMonText"
+          ],
+          "raw": "writetext Route35GoldenrodGateRandyCantCarryAnotherMonText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route35GoldenrodGateRandyCantCarryAnotherMonText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RandyScript.refused": {
+      "raw_lines": [
+        "writetext Route35GoldenrodGateRandyOhNeverMindThenText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route35GoldenrodGateRandyOhNeverMindThenText"
+          ],
+          "raw": "writetext Route35GoldenrodGateRandyOhNeverMindThenText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route35GoldenrodGateRandyOhNeverMindThenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RandyScript.questcomplete": {
+      "raw_lines": [
+        "writetext Route35GoldenrodGateRandySomethingForYourTroubleText",
+        "promptbutton",
+        "verbosegiveitem HP_UP",
+        "iffalse .bagfull",
+        "setevent EVENT_GOT_HP_UP_FROM_RANDY"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route35GoldenrodGateRandySomethingForYourTroubleText"
+          ],
+          "raw": "writetext Route35GoldenrodGateRandySomethingForYourTroubleText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "HP_UP"
+          ],
+          "raw": "verbosegiveitem HP_UP"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "RandyScript.bagfull"
+          ],
+          "raw": "iffalse .bagfull"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_HP_UP_FROM_RANDY"
+          ],
+          "raw": "setevent EVENT_GOT_HP_UP_FROM_RANDY"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "RandyScript.gothpup",
+      "label_refs": [
+        "RandyScript.bagfull",
+        "RandyScript.gothpup"
+      ],
+      "text_refs": [
+        "Route35GoldenrodGateRandySomethingForYourTroubleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RandyScript.gothpup": {
+      "raw_lines": [
+        "writetext Route35GoldenrodGateRandyMyPalWasSnoozingRightText",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route35GoldenrodGateRandyMyPalWasSnoozingRightText"
+          ],
+          "raw": "writetext Route35GoldenrodGateRandyMyPalWasSnoozingRightText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "RandyScript.bagfull",
+      "label_refs": [
+        "RandyScript.bagfull"
+      ],
+      "text_refs": [
+        "Route35GoldenrodGateRandyMyPalWasSnoozingRightText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RandyScript.bagfull": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GiftSpearowMail": {
+      "raw_lines": [
+        "db FLOWER_MAIL",
+        "db   \"DARK CAVE leads\"",
+        "next \"to another road@\""
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "FLOWER_MAIL"
+          ],
+          "raw": "db FLOWER_MAIL"
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"DARK CAVE leads\""
+          ],
+          "raw": "db   \"DARK CAVE leads\""
+        },
+        {
+          "command": "next",
+          "args": [
+            "\"to another road@\""
+          ],
+          "raw": "next \"to another road@\""
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "GiftSpearowName",
+      "label_refs": [
+        "GiftSpearowName"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GiftSpearowName": {
+      "raw_lines": [
+        "db \"KENYA@\""
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "\"KENYA@\""
+          ],
+          "raw": "db \"KENYA@\""
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "GiftSpearowOTName",
+      "label_refs": [
+        "GiftSpearowOTName"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GiftSpearowOTName": {
+      "raw_lines": [
+        "db \"RANDY@\"",
+        "db 0"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "\"RANDY@\""
+          ],
+          "raw": "db \"RANDY@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "0"
+          ],
+          "raw": "db 0"
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "Route35GoldenrodGatePokefanFScript",
+      "label_refs": [
+        "Route35GoldenrodGatePokefanFScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35GoldenrodGatePokefanFScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_FOUGHT_SUDOWOODO",
+        "iftrue .FoughtSudowoodo",
+        "writetext Route35GoldenrodGatePokefanFText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_FOUGHT_SUDOWOODO"
+          ],
+          "raw": "checkevent EVENT_FOUGHT_SUDOWOODO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route35GoldenrodGatePokefanFScript.FoughtSudowoodo"
+          ],
+          "raw": "iftrue .FoughtSudowoodo"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route35GoldenrodGatePokefanFText"
+          ],
+          "raw": "writetext Route35GoldenrodGatePokefanFText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "Route35GoldenrodGatePokefanFScript.FoughtSudowoodo"
+      ],
+      "text_refs": [
+        "Route35GoldenrodGatePokefanFText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35GoldenrodGatePokefanFScript.FoughtSudowoodo": {
+      "raw_lines": [
+        "writetext Route35GoldenrodGatePokefanFText_FoughtSudowoodo",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route35GoldenrodGatePokefanFText_FoughtSudowoodo"
+          ],
+          "raw": "writetext Route35GoldenrodGatePokefanFText_FoughtSudowoodo"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route35GoldenrodGatePokefanFText_FoughtSudowoodo"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35GoldenrodGateFisherScript": {
+      "raw_lines": [
+        "jumptextfaceplayer Route35GoldenrodGateFisherText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Route35GoldenrodGateFisherText"
+          ],
+          "raw": "jumptextfaceplayer Route35GoldenrodGateFisherText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Route35GoldenrodGateFisherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35GoldenrodGate_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  4,  0, ROUTE_35, 1",
+        "warp_event  5,  0, ROUTE_35, 2",
+        "warp_event  4,  7, GOLDENROD_CITY, 12",
+        "warp_event  5,  7, GOLDENROD_CITY, 12",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RandyScript, -1",
+        "object_event  6,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route35GoldenrodGatePokefanFScript, -1",
+        "object_event  3,  2, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route35GoldenrodGateFisherScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "0",
+            "ROUTE_35",
+            "1"
+          ],
+          "raw": "warp_event  4,  0, ROUTE_35, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "0",
+            "ROUTE_35",
+            "2"
+          ],
+          "raw": "warp_event  5,  0, ROUTE_35, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "GOLDENROD_CITY",
+            "12"
+          ],
+          "raw": "warp_event  4,  7, GOLDENROD_CITY, 12"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "7",
+            "GOLDENROD_CITY",
+            "12"
+          ],
+          "raw": "warp_event  5,  7, GOLDENROD_CITY, 12"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "0",
+            "4",
+            "SPRITE_OFFICER",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RandyScript",
+            "-1"
+          ],
+          "raw": "object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RandyScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "4",
+            "SPRITE_POKEFAN_F",
+            "SPRITEMOVEDATA_WALK_UP_DOWN",
+            "0",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route35GoldenrodGatePokefanFScript",
+            "-1"
+          ],
+          "raw": "object_event  6,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route35GoldenrodGatePokefanFScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "2",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route35GoldenrodGateFisherScript",
+            "-1"
+          ],
+          "raw": "object_event  3,  2, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route35GoldenrodGateFisherScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "Route35GoldenrodGateRandyAskTakeThisMonToMyFriendText": {
+      "raw_lines": [
+        "text \"Excuse me, kid!\"",
+        "line \"Can you do a guy\"",
+        "cont \"a favor?\"",
+        "para \"Can you take this\"",
+        "line \"#MON with MAIL\"",
+        "cont \"to my friend?\"",
+        "para \"He's on ROUTE 31.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Excuse me, kid!"
+        },
+        {
+          "command": "line",
+          "value": "Can you do a guy"
+        },
+        {
+          "command": "cont",
+          "value": "a favor?"
+        },
+        {
+          "command": "para",
+          "value": "Can you take this"
+        },
+        {
+          "command": "line",
+          "value": "#MON with MAIL"
+        },
+        {
+          "command": "cont",
+          "value": "to my friend?"
+        },
+        {
+          "command": "para",
+          "value": "He's on ROUTE 31."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35GoldenrodGateRandyThanksText": {
+      "raw_lines": [
+        "text \"You will? Perfect!\"",
+        "line \"Thanks, kid!\"",
+        "para \"My pal's a chubby\"",
+        "line \"guy who snoozes\"",
+        "cont \"all the time.\"",
+        "para \"You'll recognize\"",
+        "line \"him right away!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You will? Perfect!"
+        },
+        {
+          "command": "line",
+          "value": "Thanks, kid!"
+        },
+        {
+          "command": "para",
+          "value": "My pal's a chubby"
+        },
+        {
+          "command": "line",
+          "value": "guy who snoozes"
+        },
+        {
+          "command": "cont",
+          "value": "all the time."
+        },
+        {
+          "command": "para",
+          "value": "You'll recognize"
+        },
+        {
+          "command": "line",
+          "value": "him right away!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35GoldenrodGatePlayerReceivedAMonWithMailText": {
+      "raw_lines": [
+        "text \"<PLAYER> received a\"",
+        "line \"#MON with MAIL.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received a"
+        },
+        {
+          "command": "line",
+          "value": "#MON with MAIL."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35GoldenrodGateRandyWeirdTreeBlockingRoadText": {
+      "raw_lines": [
+        "text \"You can read it,\"",
+        "line \"but don't lose it!\"",
+        "cont \"ROUTE 31!\"",
+        "para \"Oh, yeah. There\"",
+        "line \"was a weird tree\"",
+        "cont \"blocking the road.\"",
+        "para \"I wonder if it's\"",
+        "line \"been cleared?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You can read it,"
+        },
+        {
+          "command": "line",
+          "value": "but don't lose it!"
+        },
+        {
+          "command": "cont",
+          "value": "ROUTE 31!"
+        },
+        {
+          "command": "para",
+          "value": "Oh, yeah. There"
+        },
+        {
+          "command": "line",
+          "value": "was a weird tree"
+        },
+        {
+          "command": "cont",
+          "value": "blocking the road."
+        },
+        {
+          "command": "para",
+          "value": "I wonder if it's"
+        },
+        {
+          "command": "line",
+          "value": "been cleared?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35GoldenrodGateRandyCantCarryAnotherMonText": {
+      "raw_lines": [
+        "text \"You can't carry\"",
+        "line \"another #MON\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You can't carry"
+        },
+        {
+          "command": "line",
+          "value": "another #MON\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35GoldenrodGateRandyOhNeverMindThenText": {
+      "raw_lines": [
+        "text \"Oh\u2026 Never mind,\"",
+        "line \"then\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh\u2026 Never mind,"
+        },
+        {
+          "command": "line",
+          "value": "then\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35GoldenrodGateRandySomethingForYourTroubleText": {
+      "raw_lines": [
+        "text \"Thanks, kid! You\"",
+        "line \"made the delivery\"",
+        "cont \"for me!\"",
+        "para \"Here's something\"",
+        "line \"for your trouble!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Thanks, kid! You"
+        },
+        {
+          "command": "line",
+          "value": "made the delivery"
+        },
+        {
+          "command": "cont",
+          "value": "for me!"
+        },
+        {
+          "command": "para",
+          "value": "Here's something"
+        },
+        {
+          "command": "line",
+          "value": "for your trouble!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35GoldenrodGateRandyMyPalWasSnoozingRightText": {
+      "raw_lines": [
+        "text \"My pal was snooz-\"",
+        "line \"ing, right? Heh,\"",
+        "cont \"what'd I say?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My pal was snooz-"
+        },
+        {
+          "command": "line",
+          "value": "ing, right? Heh,"
+        },
+        {
+          "command": "cont",
+          "value": "what'd I say?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35GoldenrodGatePokefanFText": {
+      "raw_lines": [
+        "text \"A strange tree is\"",
+        "line \"blocking the road.\"",
+        "para \"It wriggles around\"",
+        "line \"if you talk to it.\"",
+        "para \"I heard it became\"",
+        "line \"wild when someone\"",
+        "para \"watered it with a\"",
+        "line \"SQUIRTBOTTLE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A strange tree is"
+        },
+        {
+          "command": "line",
+          "value": "blocking the road."
+        },
+        {
+          "command": "para",
+          "value": "It wriggles around"
+        },
+        {
+          "command": "line",
+          "value": "if you talk to it."
+        },
+        {
+          "command": "para",
+          "value": "I heard it became"
+        },
+        {
+          "command": "line",
+          "value": "wild when someone"
+        },
+        {
+          "command": "para",
+          "value": "watered it with a"
+        },
+        {
+          "command": "line",
+          "value": "SQUIRTBOTTLE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35GoldenrodGatePokefanFText_FoughtSudowoodo": {
+      "raw_lines": [
+        "text \"I like the #MON\"",
+        "line \"Lullaby they play\"",
+        "cont \"on the radio.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I like the #MON"
+        },
+        {
+          "command": "line",
+          "value": "Lullaby they play"
+        },
+        {
+          "command": "cont",
+          "value": "on the radio."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route35GoldenrodGateFisherText": {
+      "raw_lines": [
+        "text \"I wonder how many\"",
+        "line \"kinds of #MON\"",
+        "para \"there are in the\"",
+        "line \"world.\"",
+        "para \"Three years ago,\"",
+        "line \"PROF.OAK said that\"",
+        "para \"there were 150\"",
+        "line \"different kinds.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I wonder how many"
+        },
+        {
+          "command": "line",
+          "value": "kinds of #MON"
+        },
+        {
+          "command": "para",
+          "value": "there are in the"
+        },
+        {
+          "command": "line",
+          "value": "world."
+        },
+        {
+          "command": "para",
+          "value": "Three years ago,"
+        },
+        {
+          "command": "line",
+          "value": "PROF.OAK said that"
+        },
+        {
+          "command": "para",
+          "value": "there were 150"
+        },
+        {
+          "command": "line",
+          "value": "different kinds."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "Route35GoldenrodGate_MapScripts": {
+      "label_refs": [
+        "RandyScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RandyScript": {
+      "label_refs": [
+        "RandyScript.alreadyhavekenya",
+        "RandyScript.gothpup",
+        "RandyScript.partyfull",
+        "RandyScript.questcomplete",
+        "RandyScript.refused"
+      ],
+      "text_refs": [
+        "Route35GoldenrodGatePlayerReceivedAMonWithMailText",
+        "Route35GoldenrodGateRandyAskTakeThisMonToMyFriendText",
+        "Route35GoldenrodGateRandyThanksText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RandyScript.alreadyhavekenya": {
+      "label_refs": [],
+      "text_refs": [
+        "Route35GoldenrodGateRandyWeirdTreeBlockingRoadText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RandyScript.partyfull": {
+      "label_refs": [],
+      "text_refs": [
+        "Route35GoldenrodGateRandyCantCarryAnotherMonText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RandyScript.refused": {
+      "label_refs": [],
+      "text_refs": [
+        "Route35GoldenrodGateRandyOhNeverMindThenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RandyScript.questcomplete": {
+      "label_refs": [
+        "RandyScript.bagfull",
+        "RandyScript.gothpup"
+      ],
+      "text_refs": [
+        "Route35GoldenrodGateRandySomethingForYourTroubleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RandyScript.gothpup": {
+      "label_refs": [
+        "RandyScript.bagfull"
+      ],
+      "text_refs": [
+        "Route35GoldenrodGateRandyMyPalWasSnoozingRightText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RandyScript.bagfull": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GiftSpearowMail": {
+      "label_refs": [
+        "GiftSpearowName"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GiftSpearowName": {
+      "label_refs": [
+        "GiftSpearowOTName"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GiftSpearowOTName": {
+      "label_refs": [
+        "Route35GoldenrodGatePokefanFScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35GoldenrodGatePokefanFScript": {
+      "label_refs": [
+        "Route35GoldenrodGatePokefanFScript.FoughtSudowoodo"
+      ],
+      "text_refs": [
+        "Route35GoldenrodGatePokefanFText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35GoldenrodGatePokefanFScript.FoughtSudowoodo": {
+      "label_refs": [],
+      "text_refs": [
+        "Route35GoldenrodGatePokefanFText_FoughtSudowoodo"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35GoldenrodGateFisherScript": {
+      "label_refs": [],
+      "text_refs": [
+        "Route35GoldenrodGateFisherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route35GoldenrodGate_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 4,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 3
+  }
+}

@@ -1,0 +1,1399 @@
+{
+  "crystal_map": "GoldenrodDeptStore6F",
+  "map_id": "GOLDENROD_DEPT_STORE_6F",
+  "group": "GOLDENROD",
+  "group_index": 11,
+  "map_index": 16,
+  "tileset": "TILESET_MART",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_GOLDENROD_CITY",
+  "music": "MUSIC_GOLDENROD_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 8,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/DeptStore6F.blk",
+  "source_asm": "maps/GoldenrodDeptStore6F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 15,
+        "y": 0,
+        "dest_map": "GOLDENROD_DEPT_STORE_5F",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 2,
+        "y": 0,
+        "dest_map": "GOLDENROD_DEPT_STORE_ELEVATOR",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 13,
+        "y": 0,
+        "dest_map": "GOLDENROD_DEPT_STORE_ROOF",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 14,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodDeptStore6FDirectory"
+      },
+      {
+        "x": 3,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodDeptStore6FElevatorButton"
+      },
+      {
+        "x": 8,
+        "y": 1,
+        "kind": "BGEVENT_UP",
+        "script": "GoldenrodVendingMachine"
+      },
+      {
+        "x": 9,
+        "y": 1,
+        "kind": "BGEVENT_UP",
+        "script": "GoldenrodVendingMachine"
+      },
+      {
+        "x": 10,
+        "y": 1,
+        "kind": "BGEVENT_UP",
+        "script": "GoldenrodVendingMachine"
+      },
+      {
+        "x": 11,
+        "y": 1,
+        "kind": "BGEVENT_UP",
+        "script": "GoldenrodVendingMachine"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 10,
+        "y": 2,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodDeptStore6FLassScript",
+        "flag": -1
+      },
+      {
+        "x": 8,
+        "y": 2,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodDeptStore6FSuperNerdScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "GOLDENRODDEPTSTORE6F_LASS",
+    "GOLDENRODDEPTSTORE6F_SUPER_NERD"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "GoldenrodDeptStore6F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "GoldenrodVendingMachine",
+      "label_refs": [
+        "GoldenrodVendingMachine"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine": {
+      "raw_lines": [
+        "opentext",
+        "writetext GoldenrodVendingText"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodVendingText"
+          ],
+          "raw": "writetext GoldenrodVendingText"
+        }
+      ],
+      "first_command": "opentext",
+      "fallthrough_label": "GoldenrodVendingMachine.Start",
+      "label_refs": [
+        "GoldenrodVendingMachine.Start"
+      ],
+      "text_refs": [
+        "GoldenrodVendingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine.Start": {
+      "raw_lines": [
+        "special PlaceMoneyTopRight",
+        "loadmenu .MenuHeader",
+        "verticalmenu",
+        "closewindow",
+        "ifequal 1, .FreshWater",
+        "ifequal 2, .SodaPop",
+        "ifequal 3, .Lemonade",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "special",
+          "args": [
+            "PlaceMoneyTopRight"
+          ],
+          "raw": "special PlaceMoneyTopRight"
+        },
+        {
+          "command": "loadmenu",
+          "args": [
+            "GoldenrodVendingMachine.MenuHeader"
+          ],
+          "raw": "loadmenu .MenuHeader"
+        },
+        {
+          "command": "verticalmenu",
+          "args": [],
+          "raw": "verticalmenu"
+        },
+        {
+          "command": "closewindow",
+          "args": [],
+          "raw": "closewindow"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "GoldenrodVendingMachine.FreshWater"
+          ],
+          "raw": "ifequal 1, .FreshWater"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "GoldenrodVendingMachine.SodaPop"
+          ],
+          "raw": "ifequal 2, .SodaPop"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "3",
+            "GoldenrodVendingMachine.Lemonade"
+          ],
+          "raw": "ifequal 3, .Lemonade"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "special",
+      "label_refs": [
+        "GoldenrodVendingMachine.FreshWater",
+        "GoldenrodVendingMachine.Lemonade",
+        "GoldenrodVendingMachine.SodaPop"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine.FreshWater": {
+      "raw_lines": [
+        "checkmoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_FRESH_WATER_PRICE",
+        "ifequal HAVE_LESS, .NotEnoughMoney",
+        "giveitem FRESH_WATER",
+        "iffalse .NotEnoughSpace",
+        "takemoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_FRESH_WATER_PRICE",
+        "getitemname STRING_BUFFER_3, FRESH_WATER",
+        "sjump .VendItem"
+      ],
+      "commands": [
+        {
+          "command": "checkmoney",
+          "args": [
+            "YOUR_MONEY",
+            "GOLDENRODDEPTSTORE6F_FRESH_WATER_PRICE"
+          ],
+          "raw": "checkmoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_FRESH_WATER_PRICE"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "HAVE_LESS",
+            "GoldenrodVendingMachine.NotEnoughMoney"
+          ],
+          "raw": "ifequal HAVE_LESS, .NotEnoughMoney"
+        },
+        {
+          "command": "giveitem",
+          "args": [
+            "FRESH_WATER"
+          ],
+          "raw": "giveitem FRESH_WATER"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodVendingMachine.NotEnoughSpace"
+          ],
+          "raw": "iffalse .NotEnoughSpace"
+        },
+        {
+          "command": "takemoney",
+          "args": [
+            "YOUR_MONEY",
+            "GOLDENRODDEPTSTORE6F_FRESH_WATER_PRICE"
+          ],
+          "raw": "takemoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_FRESH_WATER_PRICE"
+        },
+        {
+          "command": "getitemname",
+          "args": [
+            "STRING_BUFFER_3",
+            "FRESH_WATER"
+          ],
+          "raw": "getitemname STRING_BUFFER_3, FRESH_WATER"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodVendingMachine.VendItem"
+          ],
+          "raw": "sjump .VendItem"
+        }
+      ],
+      "first_command": "checkmoney",
+      "label_refs": [
+        "GoldenrodVendingMachine.NotEnoughMoney",
+        "GoldenrodVendingMachine.NotEnoughSpace",
+        "GoldenrodVendingMachine.VendItem"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine.SodaPop": {
+      "raw_lines": [
+        "checkmoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_SODA_POP_PRICE",
+        "ifequal HAVE_LESS, .NotEnoughMoney",
+        "giveitem SODA_POP",
+        "iffalse .NotEnoughSpace",
+        "takemoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_SODA_POP_PRICE",
+        "getitemname STRING_BUFFER_3, SODA_POP",
+        "sjump .VendItem"
+      ],
+      "commands": [
+        {
+          "command": "checkmoney",
+          "args": [
+            "YOUR_MONEY",
+            "GOLDENRODDEPTSTORE6F_SODA_POP_PRICE"
+          ],
+          "raw": "checkmoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_SODA_POP_PRICE"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "HAVE_LESS",
+            "GoldenrodVendingMachine.NotEnoughMoney"
+          ],
+          "raw": "ifequal HAVE_LESS, .NotEnoughMoney"
+        },
+        {
+          "command": "giveitem",
+          "args": [
+            "SODA_POP"
+          ],
+          "raw": "giveitem SODA_POP"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodVendingMachine.NotEnoughSpace"
+          ],
+          "raw": "iffalse .NotEnoughSpace"
+        },
+        {
+          "command": "takemoney",
+          "args": [
+            "YOUR_MONEY",
+            "GOLDENRODDEPTSTORE6F_SODA_POP_PRICE"
+          ],
+          "raw": "takemoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_SODA_POP_PRICE"
+        },
+        {
+          "command": "getitemname",
+          "args": [
+            "STRING_BUFFER_3",
+            "SODA_POP"
+          ],
+          "raw": "getitemname STRING_BUFFER_3, SODA_POP"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodVendingMachine.VendItem"
+          ],
+          "raw": "sjump .VendItem"
+        }
+      ],
+      "first_command": "checkmoney",
+      "label_refs": [
+        "GoldenrodVendingMachine.NotEnoughMoney",
+        "GoldenrodVendingMachine.NotEnoughSpace",
+        "GoldenrodVendingMachine.VendItem"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine.Lemonade": {
+      "raw_lines": [
+        "checkmoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_LEMONADE_PRICE",
+        "ifequal HAVE_LESS, .NotEnoughMoney",
+        "giveitem LEMONADE",
+        "iffalse .NotEnoughSpace",
+        "takemoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_LEMONADE_PRICE",
+        "getitemname STRING_BUFFER_3, LEMONADE",
+        "sjump .VendItem"
+      ],
+      "commands": [
+        {
+          "command": "checkmoney",
+          "args": [
+            "YOUR_MONEY",
+            "GOLDENRODDEPTSTORE6F_LEMONADE_PRICE"
+          ],
+          "raw": "checkmoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_LEMONADE_PRICE"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "HAVE_LESS",
+            "GoldenrodVendingMachine.NotEnoughMoney"
+          ],
+          "raw": "ifequal HAVE_LESS, .NotEnoughMoney"
+        },
+        {
+          "command": "giveitem",
+          "args": [
+            "LEMONADE"
+          ],
+          "raw": "giveitem LEMONADE"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodVendingMachine.NotEnoughSpace"
+          ],
+          "raw": "iffalse .NotEnoughSpace"
+        },
+        {
+          "command": "takemoney",
+          "args": [
+            "YOUR_MONEY",
+            "GOLDENRODDEPTSTORE6F_LEMONADE_PRICE"
+          ],
+          "raw": "takemoney YOUR_MONEY, GOLDENRODDEPTSTORE6F_LEMONADE_PRICE"
+        },
+        {
+          "command": "getitemname",
+          "args": [
+            "STRING_BUFFER_3",
+            "LEMONADE"
+          ],
+          "raw": "getitemname STRING_BUFFER_3, LEMONADE"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodVendingMachine.VendItem"
+          ],
+          "raw": "sjump .VendItem"
+        }
+      ],
+      "first_command": "checkmoney",
+      "label_refs": [
+        "GoldenrodVendingMachine.NotEnoughMoney",
+        "GoldenrodVendingMachine.NotEnoughSpace",
+        "GoldenrodVendingMachine.VendItem"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine.VendItem": {
+      "raw_lines": [
+        "pause 10",
+        "playsound SFX_ENTER_DOOR",
+        "writetext GoldenrodClangText",
+        "promptbutton",
+        "itemnotify",
+        "sjump .Start"
+      ],
+      "commands": [
+        {
+          "command": "pause",
+          "args": [
+            "10"
+          ],
+          "raw": "pause 10"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodClangText"
+          ],
+          "raw": "writetext GoldenrodClangText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "itemnotify",
+          "args": [],
+          "raw": "itemnotify"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodVendingMachine.Start"
+          ],
+          "raw": "sjump .Start"
+        }
+      ],
+      "first_command": "pause",
+      "label_refs": [
+        "GoldenrodVendingMachine.Start"
+      ],
+      "text_refs": [
+        "GoldenrodClangText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine.NotEnoughMoney": {
+      "raw_lines": [
+        "writetext GoldenrodVendingNoMoneyText",
+        "waitbutton",
+        "sjump .Start"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodVendingNoMoneyText"
+          ],
+          "raw": "writetext GoldenrodVendingNoMoneyText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodVendingMachine.Start"
+          ],
+          "raw": "sjump .Start"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "GoldenrodVendingMachine.Start"
+      ],
+      "text_refs": [
+        "GoldenrodVendingNoMoneyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine.NotEnoughSpace": {
+      "raw_lines": [
+        "writetext GoldenrodVendingNoSpaceText",
+        "waitbutton",
+        "sjump .Start"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodVendingNoSpaceText"
+          ],
+          "raw": "writetext GoldenrodVendingNoSpaceText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "GoldenrodVendingMachine.Start"
+          ],
+          "raw": "sjump .Start"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "GoldenrodVendingMachine.Start"
+      ],
+      "text_refs": [
+        "GoldenrodVendingNoSpaceText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine.MenuHeader": {
+      "raw_lines": [
+        "db MENU_BACKUP_TILES",
+        "menu_coords 0, 2, SCREEN_WIDTH - 1, TEXTBOX_Y - 1",
+        "dw .MenuData",
+        "db 1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "MENU_BACKUP_TILES"
+          ],
+          "raw": "db MENU_BACKUP_TILES"
+        },
+        {
+          "command": "menu_coords",
+          "args": [
+            "0",
+            "2",
+            "SCREEN_WIDTH - 1",
+            "TEXTBOX_Y - 1"
+          ],
+          "raw": "menu_coords 0, 2, SCREEN_WIDTH - 1, TEXTBOX_Y - 1"
+        },
+        {
+          "command": "dw",
+          "args": [
+            "GoldenrodVendingMachine.MenuData"
+          ],
+          "raw": "dw .MenuData"
+        },
+        {
+          "command": "db",
+          "args": [
+            "1"
+          ],
+          "raw": "db 1"
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "GoldenrodVendingMachine.MenuData",
+      "label_refs": [
+        "GoldenrodVendingMachine.MenuData"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine.MenuData": {
+      "raw_lines": [
+        "db STATICMENU_CURSOR",
+        "db 4",
+        "db \"FRESH WATER  \u00a5{d:GOLDENRODDEPTSTORE6F_FRESH_WATER_PRICE}@\"",
+        "db \"SODA POP     \u00a5{d:GOLDENRODDEPTSTORE6F_SODA_POP_PRICE}@\"",
+        "db \"LEMONADE     \u00a5{d:GOLDENRODDEPTSTORE6F_LEMONADE_PRICE}@\"",
+        "db \"CANCEL@\""
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "STATICMENU_CURSOR"
+          ],
+          "raw": "db STATICMENU_CURSOR"
+        },
+        {
+          "command": "db",
+          "args": [
+            "4"
+          ],
+          "raw": "db 4"
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"FRESH WATER  \u00a5{d:GOLDENRODDEPTSTORE6F_FRESH_WATER_PRICE}@\""
+          ],
+          "raw": "db \"FRESH WATER  \u00a5{d:GOLDENRODDEPTSTORE6F_FRESH_WATER_PRICE}@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"SODA POP     \u00a5{d:GOLDENRODDEPTSTORE6F_SODA_POP_PRICE}@\""
+          ],
+          "raw": "db \"SODA POP     \u00a5{d:GOLDENRODDEPTSTORE6F_SODA_POP_PRICE}@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"LEMONADE     \u00a5{d:GOLDENRODDEPTSTORE6F_LEMONADE_PRICE}@\""
+          ],
+          "raw": "db \"LEMONADE     \u00a5{d:GOLDENRODDEPTSTORE6F_LEMONADE_PRICE}@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"CANCEL@\""
+          ],
+          "raw": "db \"CANCEL@\""
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "GoldenrodDeptStore6FLassScript",
+      "label_refs": [
+        "GoldenrodDeptStore6FLassScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore6FLassScript": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodDeptStore6FLassText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodDeptStore6FLassText"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodDeptStore6FLassText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodDeptStore6FLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore6FSuperNerdScript": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodDeptStore6FSuperNerdText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodDeptStore6FSuperNerdText"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodDeptStore6FSuperNerdText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodDeptStore6FSuperNerdText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore6FDirectory": {
+      "raw_lines": [
+        "jumptext GoldenrodDeptStore6FDirectoryText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "GoldenrodDeptStore6FDirectoryText"
+          ],
+          "raw": "jumptext GoldenrodDeptStore6FDirectoryText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodDeptStore6FDirectoryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore6FElevatorButton": {
+      "raw_lines": [
+        "jumpstd ElevatorButtonScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "ElevatorButtonScript"
+          ],
+          "raw": "jumpstd ElevatorButtonScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "ElevatorButtonScript"
+      ]
+    },
+    "GoldenrodDeptStore6F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 15,  0, GOLDENROD_DEPT_STORE_5F, 2",
+        "warp_event  2,  0, GOLDENROD_DEPT_STORE_ELEVATOR, 1",
+        "warp_event 13,  0, GOLDENROD_DEPT_STORE_ROOF, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event 14,  0, BGEVENT_READ, GoldenrodDeptStore6FDirectory",
+        "bg_event  3,  0, BGEVENT_READ, GoldenrodDeptStore6FElevatorButton",
+        "bg_event  8,  1, BGEVENT_UP, GoldenrodVendingMachine",
+        "bg_event  9,  1, BGEVENT_UP, GoldenrodVendingMachine",
+        "bg_event 10,  1, BGEVENT_UP, GoldenrodVendingMachine",
+        "bg_event 11,  1, BGEVENT_UP, GoldenrodVendingMachine",
+        "def_object_events",
+        "object_event 10,  2, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore6FLassScript, -1",
+        "object_event  8,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore6FSuperNerdScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "15",
+            "0",
+            "GOLDENROD_DEPT_STORE_5F",
+            "2"
+          ],
+          "raw": "warp_event 15,  0, GOLDENROD_DEPT_STORE_5F, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "0",
+            "GOLDENROD_DEPT_STORE_ELEVATOR",
+            "1"
+          ],
+          "raw": "warp_event  2,  0, GOLDENROD_DEPT_STORE_ELEVATOR, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "13",
+            "0",
+            "GOLDENROD_DEPT_STORE_ROOF",
+            "1"
+          ],
+          "raw": "warp_event 13,  0, GOLDENROD_DEPT_STORE_ROOF, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "14",
+            "0",
+            "BGEVENT_READ",
+            "GoldenrodDeptStore6FDirectory"
+          ],
+          "raw": "bg_event 14,  0, BGEVENT_READ, GoldenrodDeptStore6FDirectory"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "0",
+            "BGEVENT_READ",
+            "GoldenrodDeptStore6FElevatorButton"
+          ],
+          "raw": "bg_event  3,  0, BGEVENT_READ, GoldenrodDeptStore6FElevatorButton"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "8",
+            "1",
+            "BGEVENT_UP",
+            "GoldenrodVendingMachine"
+          ],
+          "raw": "bg_event  8,  1, BGEVENT_UP, GoldenrodVendingMachine"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "9",
+            "1",
+            "BGEVENT_UP",
+            "GoldenrodVendingMachine"
+          ],
+          "raw": "bg_event  9,  1, BGEVENT_UP, GoldenrodVendingMachine"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "10",
+            "1",
+            "BGEVENT_UP",
+            "GoldenrodVendingMachine"
+          ],
+          "raw": "bg_event 10,  1, BGEVENT_UP, GoldenrodVendingMachine"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "11",
+            "1",
+            "BGEVENT_UP",
+            "GoldenrodVendingMachine"
+          ],
+          "raw": "bg_event 11,  1, BGEVENT_UP, GoldenrodVendingMachine"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "10",
+            "2",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodDeptStore6FLassScript",
+            "-1"
+          ],
+          "raw": "object_event 10,  2, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore6FLassScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "2",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodDeptStore6FSuperNerdScript",
+            "-1"
+          ],
+          "raw": "object_event  8,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore6FSuperNerdScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "GoldenrodVendingText": {
+      "raw_lines": [
+        "text \"A vending machine!\"",
+        "line \"Here's the menu.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A vending machine!"
+        },
+        {
+          "command": "line",
+          "value": "Here's the menu."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodClangText": {
+      "raw_lines": [
+        "text \"Clang! A can of\"",
+        "line \"@\"",
+        "text_ram wStringBuffer3",
+        "text_start",
+        "cont \"popped out!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Clang! A can of"
+        },
+        {
+          "command": "line",
+          "value": "@"
+        },
+        {
+          "command": "text_ram",
+          "value": "wStringBuffer3"
+        },
+        {
+          "command": "text_start",
+          "value": ""
+        },
+        {
+          "command": "cont",
+          "value": "popped out!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodVendingNoMoneyText": {
+      "raw_lines": [
+        "text \"Oops, not enough\"",
+        "line \"money.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oops, not enough"
+        },
+        {
+          "command": "line",
+          "value": "money."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodVendingNoSpaceText": {
+      "raw_lines": [
+        "text \"There's no more\"",
+        "line \"room for stuff.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "There's no more"
+        },
+        {
+          "command": "line",
+          "value": "room for stuff."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodDeptStore6FLassText": {
+      "raw_lines": [
+        "text \"Do you listen to\"",
+        "line \"LUCKY CHANNEL?\"",
+        "para \"If you want to\"",
+        "line \"win, trade #MON\"",
+        "para \"with as many peo-\"",
+        "line \"ple as possible to\"",
+        "para \"get different ID\"",
+        "line \"numbers.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Do you listen to"
+        },
+        {
+          "command": "line",
+          "value": "LUCKY CHANNEL?"
+        },
+        {
+          "command": "para",
+          "value": "If you want to"
+        },
+        {
+          "command": "line",
+          "value": "win, trade #MON"
+        },
+        {
+          "command": "para",
+          "value": "with as many peo-"
+        },
+        {
+          "command": "line",
+          "value": "ple as possible to"
+        },
+        {
+          "command": "para",
+          "value": "get different ID"
+        },
+        {
+          "command": "line",
+          "value": "numbers."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodDeptStore6FSuperNerdText": {
+      "raw_lines": [
+        "text \"If you're tired,\"",
+        "line \"try the vending\"",
+        "cont \"machine's drinks.\"",
+        "para \"Your #MON will\"",
+        "line \"love them too.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If you're tired,"
+        },
+        {
+          "command": "line",
+          "value": "try the vending"
+        },
+        {
+          "command": "cont",
+          "value": "machine's drinks."
+        },
+        {
+          "command": "para",
+          "value": "Your #MON will"
+        },
+        {
+          "command": "line",
+          "value": "love them too."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodDeptStore6FDirectoryText": {
+      "raw_lines": [
+        "text \"Take a Break from\"",
+        "line \"Shopping!\"",
+        "para \"6F TRANQUIL SQUARE\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Take a Break from"
+        },
+        {
+          "command": "line",
+          "value": "Shopping!"
+        },
+        {
+          "command": "para",
+          "value": "6F TRANQUIL SQUARE"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "ElevatorButtonScript"
+  ],
+  "dependencies": {
+    "GoldenrodDeptStore6F_MapScripts": {
+      "label_refs": [
+        "GoldenrodVendingMachine"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine": {
+      "label_refs": [
+        "GoldenrodVendingMachine.Start"
+      ],
+      "text_refs": [
+        "GoldenrodVendingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine.Start": {
+      "label_refs": [
+        "GoldenrodVendingMachine.FreshWater",
+        "GoldenrodVendingMachine.Lemonade",
+        "GoldenrodVendingMachine.SodaPop"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine.FreshWater": {
+      "label_refs": [
+        "GoldenrodVendingMachine.NotEnoughMoney",
+        "GoldenrodVendingMachine.NotEnoughSpace",
+        "GoldenrodVendingMachine.VendItem"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine.SodaPop": {
+      "label_refs": [
+        "GoldenrodVendingMachine.NotEnoughMoney",
+        "GoldenrodVendingMachine.NotEnoughSpace",
+        "GoldenrodVendingMachine.VendItem"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine.Lemonade": {
+      "label_refs": [
+        "GoldenrodVendingMachine.NotEnoughMoney",
+        "GoldenrodVendingMachine.NotEnoughSpace",
+        "GoldenrodVendingMachine.VendItem"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine.VendItem": {
+      "label_refs": [
+        "GoldenrodVendingMachine.Start"
+      ],
+      "text_refs": [
+        "GoldenrodClangText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine.NotEnoughMoney": {
+      "label_refs": [
+        "GoldenrodVendingMachine.Start"
+      ],
+      "text_refs": [
+        "GoldenrodVendingNoMoneyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine.NotEnoughSpace": {
+      "label_refs": [
+        "GoldenrodVendingMachine.Start"
+      ],
+      "text_refs": [
+        "GoldenrodVendingNoSpaceText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine.MenuHeader": {
+      "label_refs": [
+        "GoldenrodVendingMachine.MenuData"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodVendingMachine.MenuData": {
+      "label_refs": [
+        "GoldenrodDeptStore6FLassScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore6FLassScript": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodDeptStore6FLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore6FSuperNerdScript": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodDeptStore6FSuperNerdText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore6FDirectory": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodDeptStore6FDirectoryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore6FElevatorButton": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "ElevatorButtonScript"
+      ]
+    },
+    "GoldenrodDeptStore6F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 3,
+    "coord_events": 0,
+    "bg_events": 6,
+    "object_events": 2
+  }
+}

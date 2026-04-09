@@ -1,0 +1,2156 @@
+{
+  "crystal_map": "EcruteakCity",
+  "map_id": "ECRUTEAK_CITY",
+  "group": "ECRUTEAK",
+  "group_index": 4,
+  "map_index": 9,
+  "tileset": "TILESET_JOHTO",
+  "environment": "TOWN",
+  "landmark": "LANDMARK_ECRUTEAK_CITY",
+  "music": "MUSIC_ECRUTEAK_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_AUTO",
+  "fishgroup": "FISHGROUP_POND",
+  "width_blocks": 20,
+  "height_blocks": 18,
+  "border_block": "05",
+  "blk_path": "maps/EcruteakCity.blk",
+  "source_asm": "maps/EcruteakCity.asm",
+  "connections": [
+    {
+      "direction": "south",
+      "map": "Route37",
+      "target_map_id": "ROUTE_37",
+      "offset": 5
+    },
+    {
+      "direction": "west",
+      "map": "Route38",
+      "target_map_id": "ROUTE_38",
+      "offset": 5
+    },
+    {
+      "direction": "east",
+      "map": "Route42",
+      "target_map_id": "ROUTE_42",
+      "offset": 9
+    }
+  ],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "EcruteakCityFlypointCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 35,
+        "y": 26,
+        "dest_map": "ROUTE_42_ECRUTEAK_GATE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 35,
+        "y": 27,
+        "dest_map": "ROUTE_42_ECRUTEAK_GATE",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 18,
+        "y": 11,
+        "dest_map": "ECRUTEAK_TIN_TOWER_ENTRANCE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 20,
+        "y": 2,
+        "dest_map": "WISE_TRIOS_ROOM",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 20,
+        "y": 3,
+        "dest_map": "WISE_TRIOS_ROOM",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 23,
+        "y": 27,
+        "dest_map": "ECRUTEAK_POKECENTER_1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 5,
+        "y": 21,
+        "dest_map": "ECRUTEAK_LUGIA_SPEECH_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 23,
+        "y": 21,
+        "dest_map": "DANCE_THEATER",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 29,
+        "y": 21,
+        "dest_map": "ECRUTEAK_MART",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 6,
+        "y": 27,
+        "dest_map": "ECRUTEAK_GYM",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 13,
+        "y": 27,
+        "dest_map": "ECRUTEAK_ITEMFINDER_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 37,
+        "y": 7,
+        "dest_map": "TIN_TOWER_1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 5,
+        "y": 5,
+        "dest_map": "BURNED_TOWER_1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 0,
+        "y": 18,
+        "dest_map": "ROUTE_38_ECRUTEAK_GATE",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 0,
+        "y": 19,
+        "dest_map": "ROUTE_38_ECRUTEAK_GATE",
+        "dest_warp_id": 4
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 15,
+        "y": 21,
+        "kind": "BGEVENT_READ",
+        "script": "EcruteakCitySign"
+      },
+      {
+        "x": 38,
+        "y": 10,
+        "kind": "BGEVENT_READ",
+        "script": "TinTowerSign"
+      },
+      {
+        "x": 8,
+        "y": 28,
+        "kind": "BGEVENT_READ",
+        "script": "EcruteakGymSign"
+      },
+      {
+        "x": 21,
+        "y": 21,
+        "kind": "BGEVENT_READ",
+        "script": "EcruteakDanceTheaterSign"
+      },
+      {
+        "x": 2,
+        "y": 10,
+        "kind": "BGEVENT_READ",
+        "script": "BurnedTowerSign"
+      },
+      {
+        "x": 24,
+        "y": 27,
+        "kind": "BGEVENT_READ",
+        "script": "EcruteakCityPokecenterSign"
+      },
+      {
+        "x": 30,
+        "y": 21,
+        "kind": "BGEVENT_READ",
+        "script": "EcruteakCityMartSign"
+      },
+      {
+        "x": 23,
+        "y": 14,
+        "kind": "BGEVENT_ITEM",
+        "script": "EcruteakCityHiddenHyperPotion"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 18,
+        "y": 15,
+        "sprite": "SPRITE_GRAMPS",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakCityGramps1Script",
+        "flag": -1
+      },
+      {
+        "x": 20,
+        "y": 21,
+        "sprite": "SPRITE_GRAMPS",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakCityGramps2Script",
+        "flag": -1
+      },
+      {
+        "x": 21,
+        "y": 29,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 2,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakCityLass1Script",
+        "flag": -1
+      },
+      {
+        "x": 3,
+        "y": 9,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakCityLass2Script",
+        "flag": -1
+      },
+      {
+        "x": 9,
+        "y": 22,
+        "sprite": "SPRITE_FISHER",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakCityFisherScript",
+        "flag": -1
+      },
+      {
+        "x": 10,
+        "y": 14,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakCityYoungsterScript",
+        "flag": -1
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "sprite": "SPRITE_GRAMPS",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EcruteakCityGramps3Script",
+        "flag": "EVENT_ECRUTEAK_CITY_GRAMPS"
+      }
+    ]
+  },
+  "object_consts": [
+    "ECRUTEAKCITY_GRAMPS1",
+    "ECRUTEAKCITY_GRAMPS2",
+    "ECRUTEAKCITY_LASS1",
+    "ECRUTEAKCITY_LASS2",
+    "ECRUTEAKCITY_FISHER",
+    "ECRUTEAKCITY_YOUNGSTER",
+    "ECRUTEAKCITY_GRAMPS3"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "EcruteakCity_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, EcruteakCityFlypointCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "EcruteakCityFlypointCallback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, EcruteakCityFlypointCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "EcruteakCityFlypointCallback",
+      "label_refs": [
+        "EcruteakCityFlypointCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityFlypointCallback": {
+      "raw_lines": [
+        "setflag ENGINE_FLYPOINT_ECRUTEAK",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_FLYPOINT_ECRUTEAK"
+          ],
+          "raw": "setflag ENGINE_FLYPOINT_ECRUTEAK"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "setflag",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityGramps1Script": {
+      "raw_lines": [
+        "jumptextfaceplayer EcruteakCityGramps1Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "EcruteakCityGramps1Text"
+          ],
+          "raw": "jumptextfaceplayer EcruteakCityGramps1Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakCityGramps1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityGramps2Script": {
+      "raw_lines": [
+        "jumptextfaceplayer EcruteakCityGramps2Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "EcruteakCityGramps2Text"
+          ],
+          "raw": "jumptextfaceplayer EcruteakCityGramps2Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakCityGramps2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityGramps3Script": {
+      "raw_lines": [
+        "jumptextfaceplayer EcruteakCityGramps3Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "EcruteakCityGramps3Text"
+          ],
+          "raw": "jumptextfaceplayer EcruteakCityGramps3Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakCityGramps3Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityLass1Script": {
+      "raw_lines": [
+        "jumptextfaceplayer EcruteakCityLass1Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "EcruteakCityLass1Text"
+          ],
+          "raw": "jumptextfaceplayer EcruteakCityLass1Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakCityLass1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityLass2Script": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_RELEASED_THE_BEASTS",
+        "iftrue .ReleasedBeasts",
+        "writetext EcruteakCityLass2Text",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_RELEASED_THE_BEASTS"
+          ],
+          "raw": "checkevent EVENT_RELEASED_THE_BEASTS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EcruteakCityLass2Script.ReleasedBeasts"
+          ],
+          "raw": "iftrue .ReleasedBeasts"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakCityLass2Text"
+          ],
+          "raw": "writetext EcruteakCityLass2Text"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "EcruteakCityLass2Script.ReleasedBeasts"
+      ],
+      "text_refs": [
+        "EcruteakCityLass2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityLass2Script.ReleasedBeasts": {
+      "raw_lines": [
+        "writetext EcruteakCityLass2Text_ReleasedBeasts",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakCityLass2Text_ReleasedBeasts"
+          ],
+          "raw": "writetext EcruteakCityLass2Text_ReleasedBeasts"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakCityLass2Text_ReleasedBeasts"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityFisherScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_JASMINE_RETURNED_TO_GYM",
+        "iftrue .JasmineReturned",
+        "writetext EcruteakCityFisherText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_JASMINE_RETURNED_TO_GYM"
+          ],
+          "raw": "checkevent EVENT_JASMINE_RETURNED_TO_GYM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "EcruteakCityFisherScript.JasmineReturned"
+          ],
+          "raw": "iftrue .JasmineReturned"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakCityFisherText"
+          ],
+          "raw": "writetext EcruteakCityFisherText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "EcruteakCityFisherScript.JasmineReturned"
+      ],
+      "text_refs": [
+        "EcruteakCityFisherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityFisherScript.JasmineReturned": {
+      "raw_lines": [
+        "writetext EcruteakCityFisherText_JasmineReturned",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "EcruteakCityFisherText_JasmineReturned"
+          ],
+          "raw": "writetext EcruteakCityFisherText_JasmineReturned"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakCityFisherText_JasmineReturned"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityYoungsterScript": {
+      "raw_lines": [
+        "jumptextfaceplayer EcruteakCityYoungsterText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "EcruteakCityYoungsterText"
+          ],
+          "raw": "jumptextfaceplayer EcruteakCityYoungsterText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakCityYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCitySign": {
+      "raw_lines": [
+        "jumptext EcruteakCitySignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "EcruteakCitySignText"
+          ],
+          "raw": "jumptext EcruteakCitySignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakCitySignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTowerSign": {
+      "raw_lines": [
+        "jumptext TinTowerSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "TinTowerSignText"
+          ],
+          "raw": "jumptext TinTowerSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "TinTowerSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakGymSign": {
+      "raw_lines": [
+        "jumptext EcruteakGymSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "EcruteakGymSignText"
+          ],
+          "raw": "jumptext EcruteakGymSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakGymSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakDanceTheaterSign": {
+      "raw_lines": [
+        "jumptext EcruteakDanceTheaterSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "EcruteakDanceTheaterSignText"
+          ],
+          "raw": "jumptext EcruteakDanceTheaterSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakDanceTheaterSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTowerSign": {
+      "raw_lines": [
+        "jumptext BurnedTowerSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "BurnedTowerSignText"
+          ],
+          "raw": "jumptext BurnedTowerSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "BurnedTowerSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityPokecenterSign": {
+      "raw_lines": [
+        "jumpstd PokecenterSignScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PokecenterSignScript"
+          ],
+          "raw": "jumpstd PokecenterSignScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterSignScript"
+      ]
+    },
+    "EcruteakCityMartSign": {
+      "raw_lines": [
+        "jumpstd MartSignScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "MartSignScript"
+          ],
+          "raw": "jumpstd MartSignScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MartSignScript"
+      ]
+    },
+    "EcruteakCityHiddenHyperPotion": {
+      "raw_lines": [
+        "hiddenitem HYPER_POTION, EVENT_ECRUTEAK_CITY_HIDDEN_HYPER_POTION"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "HYPER_POTION",
+            "EVENT_ECRUTEAK_CITY_HIDDEN_HYPER_POTION"
+          ],
+          "raw": "hiddenitem HYPER_POTION, EVENT_ECRUTEAK_CITY_HIDDEN_HYPER_POTION"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "EcruteakCity_MapEvents",
+      "label_refs": [
+        "EcruteakCity_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCity_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 35, 26, ROUTE_42_ECRUTEAK_GATE, 1",
+        "warp_event 35, 27, ROUTE_42_ECRUTEAK_GATE, 2",
+        "warp_event 18, 11, ECRUTEAK_TIN_TOWER_ENTRANCE, 1",
+        "warp_event 20,  2, WISE_TRIOS_ROOM, 1",
+        "warp_event 20,  3, WISE_TRIOS_ROOM, 2",
+        "warp_event 23, 27, ECRUTEAK_POKECENTER_1F, 1",
+        "warp_event  5, 21, ECRUTEAK_LUGIA_SPEECH_HOUSE, 1",
+        "warp_event 23, 21, DANCE_THEATER, 1",
+        "warp_event 29, 21, ECRUTEAK_MART, 2",
+        "warp_event  6, 27, ECRUTEAK_GYM, 1",
+        "warp_event 13, 27, ECRUTEAK_ITEMFINDER_HOUSE, 1",
+        "warp_event 37,  7, TIN_TOWER_1F, 1",
+        "warp_event  5,  5, BURNED_TOWER_1F, 1",
+        "warp_event  0, 18, ROUTE_38_ECRUTEAK_GATE, 3",
+        "warp_event  0, 19, ROUTE_38_ECRUTEAK_GATE, 4",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event 15, 21, BGEVENT_READ, EcruteakCitySign",
+        "bg_event 38, 10, BGEVENT_READ, TinTowerSign",
+        "bg_event  8, 28, BGEVENT_READ, EcruteakGymSign",
+        "bg_event 21, 21, BGEVENT_READ, EcruteakDanceTheaterSign",
+        "bg_event  2, 10, BGEVENT_READ, BurnedTowerSign",
+        "bg_event 24, 27, BGEVENT_READ, EcruteakCityPokecenterSign",
+        "bg_event 30, 21, BGEVENT_READ, EcruteakCityMartSign",
+        "bg_event 23, 14, BGEVENT_ITEM, EcruteakCityHiddenHyperPotion",
+        "def_object_events",
+        "object_event 18, 15, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps1Script, -1",
+        "object_event 20, 21, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps2Script, -1",
+        "object_event 21, 29, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass1Script, -1",
+        "object_event  3,  9, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass2Script, -1",
+        "object_event  9, 22, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFisherScript, -1",
+        "object_event 10, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCityYoungsterScript, -1",
+        "object_event  3,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "35",
+            "26",
+            "ROUTE_42_ECRUTEAK_GATE",
+            "1"
+          ],
+          "raw": "warp_event 35, 26, ROUTE_42_ECRUTEAK_GATE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "35",
+            "27",
+            "ROUTE_42_ECRUTEAK_GATE",
+            "2"
+          ],
+          "raw": "warp_event 35, 27, ROUTE_42_ECRUTEAK_GATE, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "18",
+            "11",
+            "ECRUTEAK_TIN_TOWER_ENTRANCE",
+            "1"
+          ],
+          "raw": "warp_event 18, 11, ECRUTEAK_TIN_TOWER_ENTRANCE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "20",
+            "2",
+            "WISE_TRIOS_ROOM",
+            "1"
+          ],
+          "raw": "warp_event 20,  2, WISE_TRIOS_ROOM, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "20",
+            "3",
+            "WISE_TRIOS_ROOM",
+            "2"
+          ],
+          "raw": "warp_event 20,  3, WISE_TRIOS_ROOM, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "23",
+            "27",
+            "ECRUTEAK_POKECENTER_1F",
+            "1"
+          ],
+          "raw": "warp_event 23, 27, ECRUTEAK_POKECENTER_1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "21",
+            "ECRUTEAK_LUGIA_SPEECH_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event  5, 21, ECRUTEAK_LUGIA_SPEECH_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "23",
+            "21",
+            "DANCE_THEATER",
+            "1"
+          ],
+          "raw": "warp_event 23, 21, DANCE_THEATER, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "29",
+            "21",
+            "ECRUTEAK_MART",
+            "2"
+          ],
+          "raw": "warp_event 29, 21, ECRUTEAK_MART, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "6",
+            "27",
+            "ECRUTEAK_GYM",
+            "1"
+          ],
+          "raw": "warp_event  6, 27, ECRUTEAK_GYM, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "13",
+            "27",
+            "ECRUTEAK_ITEMFINDER_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event 13, 27, ECRUTEAK_ITEMFINDER_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "37",
+            "7",
+            "TIN_TOWER_1F",
+            "1"
+          ],
+          "raw": "warp_event 37,  7, TIN_TOWER_1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "5",
+            "BURNED_TOWER_1F",
+            "1"
+          ],
+          "raw": "warp_event  5,  5, BURNED_TOWER_1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "18",
+            "ROUTE_38_ECRUTEAK_GATE",
+            "3"
+          ],
+          "raw": "warp_event  0, 18, ROUTE_38_ECRUTEAK_GATE, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "19",
+            "ROUTE_38_ECRUTEAK_GATE",
+            "4"
+          ],
+          "raw": "warp_event  0, 19, ROUTE_38_ECRUTEAK_GATE, 4"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "15",
+            "21",
+            "BGEVENT_READ",
+            "EcruteakCitySign"
+          ],
+          "raw": "bg_event 15, 21, BGEVENT_READ, EcruteakCitySign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "38",
+            "10",
+            "BGEVENT_READ",
+            "TinTowerSign"
+          ],
+          "raw": "bg_event 38, 10, BGEVENT_READ, TinTowerSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "8",
+            "28",
+            "BGEVENT_READ",
+            "EcruteakGymSign"
+          ],
+          "raw": "bg_event  8, 28, BGEVENT_READ, EcruteakGymSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "21",
+            "21",
+            "BGEVENT_READ",
+            "EcruteakDanceTheaterSign"
+          ],
+          "raw": "bg_event 21, 21, BGEVENT_READ, EcruteakDanceTheaterSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "2",
+            "10",
+            "BGEVENT_READ",
+            "BurnedTowerSign"
+          ],
+          "raw": "bg_event  2, 10, BGEVENT_READ, BurnedTowerSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "24",
+            "27",
+            "BGEVENT_READ",
+            "EcruteakCityPokecenterSign"
+          ],
+          "raw": "bg_event 24, 27, BGEVENT_READ, EcruteakCityPokecenterSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "30",
+            "21",
+            "BGEVENT_READ",
+            "EcruteakCityMartSign"
+          ],
+          "raw": "bg_event 30, 21, BGEVENT_READ, EcruteakCityMartSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "23",
+            "14",
+            "BGEVENT_ITEM",
+            "EcruteakCityHiddenHyperPotion"
+          ],
+          "raw": "bg_event 23, 14, BGEVENT_ITEM, EcruteakCityHiddenHyperPotion"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "18",
+            "15",
+            "SPRITE_GRAMPS",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakCityGramps1Script",
+            "-1"
+          ],
+          "raw": "object_event 18, 15, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps1Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "20",
+            "21",
+            "SPRITE_GRAMPS",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakCityGramps2Script",
+            "-1"
+          ],
+          "raw": "object_event 20, 21, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps2Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "21",
+            "29",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "2",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakCityLass1Script",
+            "-1"
+          ],
+          "raw": "object_event 21, 29, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass1Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "9",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakCityLass2Script",
+            "-1"
+          ],
+          "raw": "object_event  3,  9, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass2Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "22",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakCityFisherScript",
+            "-1"
+          ],
+          "raw": "object_event  9, 22, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFisherScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "10",
+            "14",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakCityYoungsterScript",
+            "-1"
+          ],
+          "raw": "object_event 10, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCityYoungsterScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "7",
+            "SPRITE_GRAMPS",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EcruteakCityGramps3Script",
+            "EVENT_ECRUTEAK_CITY_GRAMPS"
+          ],
+          "raw": "object_event  3,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "UnusedMissingDaughterText": {
+      "raw_lines": [
+        "text \"Oh, no. Oh, no\u2026\"",
+        "para \"My daughter is\"",
+        "line \"missing.\"",
+        "para \"No\u2026 She couldn't\"",
+        "line \"have gone to the\"",
+        "cont \"BURNED TOWER.\"",
+        "para \"I told her not to\"",
+        "line \"go near it\u2026\"",
+        "para \"People seem to\"",
+        "line \"disappear there\u2026\"",
+        "para \"Oh, what should I\"",
+        "line \"do\u2026?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, no. Oh, no\u2026"
+        },
+        {
+          "command": "para",
+          "value": "My daughter is"
+        },
+        {
+          "command": "line",
+          "value": "missing."
+        },
+        {
+          "command": "para",
+          "value": "No\u2026 She couldn't"
+        },
+        {
+          "command": "line",
+          "value": "have gone to the"
+        },
+        {
+          "command": "cont",
+          "value": "BURNED TOWER."
+        },
+        {
+          "command": "para",
+          "value": "I told her not to"
+        },
+        {
+          "command": "line",
+          "value": "go near it\u2026"
+        },
+        {
+          "command": "para",
+          "value": "People seem to"
+        },
+        {
+          "command": "line",
+          "value": "disappear there\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Oh, what should I"
+        },
+        {
+          "command": "line",
+          "value": "do\u2026?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakCityGramps1Text": {
+      "raw_lines": [
+        "text \"ECRUTEAK used to\"",
+        "line \"have two towers:\"",
+        "para \"one each in the\"",
+        "line \"east and west.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ECRUTEAK used to"
+        },
+        {
+          "command": "line",
+          "value": "have two towers:"
+        },
+        {
+          "command": "para",
+          "value": "one each in the"
+        },
+        {
+          "command": "line",
+          "value": "east and west."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakCityGramps2Text": {
+      "raw_lines": [
+        "text \"Ah, child.\"",
+        "line \"Have you learned\"",
+        "para \"to dance like the\"",
+        "line \"KIMONO GIRLS?\"",
+        "para \"If you go to their\"",
+        "line \"DANCE THEATER, an\"",
+        "para \"odd old man will\"",
+        "line \"give you something\"",
+        "cont \"nice, I hear.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ah, child."
+        },
+        {
+          "command": "line",
+          "value": "Have you learned"
+        },
+        {
+          "command": "para",
+          "value": "to dance like the"
+        },
+        {
+          "command": "line",
+          "value": "KIMONO GIRLS?"
+        },
+        {
+          "command": "para",
+          "value": "If you go to their"
+        },
+        {
+          "command": "line",
+          "value": "DANCE THEATER, an"
+        },
+        {
+          "command": "para",
+          "value": "odd old man will"
+        },
+        {
+          "command": "line",
+          "value": "give you something"
+        },
+        {
+          "command": "cont",
+          "value": "nice, I hear."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakCityLass1Text": {
+      "raw_lines": [
+        "text \"I'm going to prac-\"",
+        "line \"tice at the DANCE\"",
+        "para \"THEATER. Care to\"",
+        "line \"join me?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm going to prac-"
+        },
+        {
+          "command": "line",
+          "value": "tice at the DANCE"
+        },
+        {
+          "command": "para",
+          "value": "THEATER. Care to"
+        },
+        {
+          "command": "line",
+          "value": "join me?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakCityLass2Text": {
+      "raw_lines": [
+        "text \"The tower that\"",
+        "line \"used to be here\u2026\"",
+        "para \"My grandma told me\"",
+        "line \"it used to be much\"",
+        "cont \"taller.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The tower that"
+        },
+        {
+          "command": "line",
+          "value": "used to be here\u2026"
+        },
+        {
+          "command": "para",
+          "value": "My grandma told me"
+        },
+        {
+          "command": "line",
+          "value": "it used to be much"
+        },
+        {
+          "command": "cont",
+          "value": "taller."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakCityLass2Text_ReleasedBeasts": {
+      "raw_lines": [
+        "text \"Three big #MON\"",
+        "line \"ran off in differ-\"",
+        "cont \"ent directions.\"",
+        "cont \"What were they?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Three big #MON"
+        },
+        {
+          "command": "line",
+          "value": "ran off in differ-"
+        },
+        {
+          "command": "cont",
+          "value": "ent directions."
+        },
+        {
+          "command": "cont",
+          "value": "What were they?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakCityFisherText": {
+      "raw_lines": [
+        "text \"I heard a rumor\"",
+        "line \"about OLIVINE\"",
+        "cont \"LIGHTHOUSE.\"",
+        "para \"The #MON that\"",
+        "line \"serves as the\"",
+        "para \"beacon fell ill.\"",
+        "line \"Sounds like they\"",
+        "cont \"are in trouble.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I heard a rumor"
+        },
+        {
+          "command": "line",
+          "value": "about OLIVINE"
+        },
+        {
+          "command": "cont",
+          "value": "LIGHTHOUSE."
+        },
+        {
+          "command": "para",
+          "value": "The #MON that"
+        },
+        {
+          "command": "line",
+          "value": "serves as the"
+        },
+        {
+          "command": "para",
+          "value": "beacon fell ill."
+        },
+        {
+          "command": "line",
+          "value": "Sounds like they"
+        },
+        {
+          "command": "cont",
+          "value": "are in trouble."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakCityFisherText_JasmineReturned": {
+      "raw_lines": [
+        "text \"The #MON at\"",
+        "line \"OLIVINE LIGHTHOUSE\"",
+        "cont \"has been cured.\"",
+        "para \"Boats can safely\"",
+        "line \"sail out to sea at\"",
+        "cont \"night again.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The #MON at"
+        },
+        {
+          "command": "line",
+          "value": "OLIVINE LIGHTHOUSE"
+        },
+        {
+          "command": "cont",
+          "value": "has been cured."
+        },
+        {
+          "command": "para",
+          "value": "Boats can safely"
+        },
+        {
+          "command": "line",
+          "value": "sail out to sea at"
+        },
+        {
+          "command": "cont",
+          "value": "night again."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakCityYoungsterText": {
+      "raw_lines": [
+        "text \"I hear #MON are\"",
+        "line \"rampaging at the\"",
+        "para \"LAKE OF RAGE. I'd\"",
+        "line \"like to see that.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I hear #MON are"
+        },
+        {
+          "command": "line",
+          "value": "rampaging at the"
+        },
+        {
+          "command": "para",
+          "value": "LAKE OF RAGE. I'd"
+        },
+        {
+          "command": "line",
+          "value": "like to see that."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakCityGramps3Text": {
+      "raw_lines": [
+        "text \"In the distant\"",
+        "line \"past\u2026\"",
+        "para \"This tower burned\"",
+        "line \"in a fire. Three\"",
+        "para \"nameless #MON\"",
+        "line \"perished in it.\"",
+        "para \"A rainbow-colored\"",
+        "line \"#MON descended\"",
+        "para \"from the sky and\"",
+        "line \"resurrected them\u2026\"",
+        "para \"It's a legend that\"",
+        "line \"has been passed\"",
+        "para \"down by ECRUTEAK\"",
+        "line \"GYM LEADERS.\"",
+        "para \"Me?\"",
+        "para \"I was a trainer\"",
+        "line \"way back when.\"",
+        "cont \"Hohoho!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "In the distant"
+        },
+        {
+          "command": "line",
+          "value": "past\u2026"
+        },
+        {
+          "command": "para",
+          "value": "This tower burned"
+        },
+        {
+          "command": "line",
+          "value": "in a fire. Three"
+        },
+        {
+          "command": "para",
+          "value": "nameless #MON"
+        },
+        {
+          "command": "line",
+          "value": "perished in it."
+        },
+        {
+          "command": "para",
+          "value": "A rainbow-colored"
+        },
+        {
+          "command": "line",
+          "value": "#MON descended"
+        },
+        {
+          "command": "para",
+          "value": "from the sky and"
+        },
+        {
+          "command": "line",
+          "value": "resurrected them\u2026"
+        },
+        {
+          "command": "para",
+          "value": "It's a legend that"
+        },
+        {
+          "command": "line",
+          "value": "has been passed"
+        },
+        {
+          "command": "para",
+          "value": "down by ECRUTEAK"
+        },
+        {
+          "command": "line",
+          "value": "GYM LEADERS."
+        },
+        {
+          "command": "para",
+          "value": "Me?"
+        },
+        {
+          "command": "para",
+          "value": "I was a trainer"
+        },
+        {
+          "command": "line",
+          "value": "way back when."
+        },
+        {
+          "command": "cont",
+          "value": "Hohoho!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakCitySignText": {
+      "raw_lines": [
+        "text \"ECRUTEAK CITY\"",
+        "line \"A Historical City\"",
+        "para \"Where the Past\"",
+        "line \"Meets the Present\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ECRUTEAK CITY"
+        },
+        {
+          "command": "line",
+          "value": "A Historical City"
+        },
+        {
+          "command": "para",
+          "value": "Where the Past"
+        },
+        {
+          "command": "line",
+          "value": "Meets the Present"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TinTowerSignText": {
+      "raw_lines": [
+        "text \"TIN TOWER\"",
+        "para \"A legendary #-\"",
+        "line \"MON is said to\"",
+        "cont \"roost here.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "TIN TOWER"
+        },
+        {
+          "command": "para",
+          "value": "A legendary #-"
+        },
+        {
+          "command": "line",
+          "value": "MON is said to"
+        },
+        {
+          "command": "cont",
+          "value": "roost here."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakGymSignText": {
+      "raw_lines": [
+        "text \"ECRUTEAK CITY\"",
+        "line \"#MON GYM\"",
+        "cont \"LEADER: MORTY\"",
+        "para \"The Mystic Seer of\"",
+        "line \"the Future\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ECRUTEAK CITY"
+        },
+        {
+          "command": "line",
+          "value": "#MON GYM"
+        },
+        {
+          "command": "cont",
+          "value": "LEADER: MORTY"
+        },
+        {
+          "command": "para",
+          "value": "The Mystic Seer of"
+        },
+        {
+          "command": "line",
+          "value": "the Future"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EcruteakDanceTheaterSignText": {
+      "raw_lines": [
+        "text \"ECRUTEAK DANCE\"",
+        "line \"THEATER\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ECRUTEAK DANCE"
+        },
+        {
+          "command": "line",
+          "value": "THEATER"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BurnedTowerSignText": {
+      "raw_lines": [
+        "text \"BURNED TOWER\"",
+        "para \"It was destroyed\"",
+        "line \"by a mysterious\"",
+        "cont \"fire.\"",
+        "para \"Please stay away,\"",
+        "line \"as it is unsafe.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "BURNED TOWER"
+        },
+        {
+          "command": "para",
+          "value": "It was destroyed"
+        },
+        {
+          "command": "line",
+          "value": "by a mysterious"
+        },
+        {
+          "command": "cont",
+          "value": "fire."
+        },
+        {
+          "command": "para",
+          "value": "Please stay away,"
+        },
+        {
+          "command": "line",
+          "value": "as it is unsafe."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "MartSignScript",
+    "PokecenterSignScript"
+  ],
+  "dependencies": {
+    "EcruteakCity_MapScripts": {
+      "label_refs": [
+        "EcruteakCityFlypointCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityFlypointCallback": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityGramps1Script": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakCityGramps1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityGramps2Script": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakCityGramps2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityGramps3Script": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakCityGramps3Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityLass1Script": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakCityLass1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityLass2Script": {
+      "label_refs": [
+        "EcruteakCityLass2Script.ReleasedBeasts"
+      ],
+      "text_refs": [
+        "EcruteakCityLass2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityLass2Script.ReleasedBeasts": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakCityLass2Text_ReleasedBeasts"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityFisherScript": {
+      "label_refs": [
+        "EcruteakCityFisherScript.JasmineReturned"
+      ],
+      "text_refs": [
+        "EcruteakCityFisherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityFisherScript.JasmineReturned": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakCityFisherText_JasmineReturned"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityYoungsterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakCityYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCitySign": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakCitySignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TinTowerSign": {
+      "label_refs": [],
+      "text_refs": [
+        "TinTowerSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakGymSign": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakGymSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakDanceTheaterSign": {
+      "label_refs": [],
+      "text_refs": [
+        "EcruteakDanceTheaterSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BurnedTowerSign": {
+      "label_refs": [],
+      "text_refs": [
+        "BurnedTowerSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCityPokecenterSign": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterSignScript"
+      ]
+    },
+    "EcruteakCityMartSign": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MartSignScript"
+      ]
+    },
+    "EcruteakCityHiddenHyperPotion": {
+      "label_refs": [
+        "EcruteakCity_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EcruteakCity_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 1,
+    "warp_events": 15,
+    "coord_events": 0,
+    "bg_events": 8,
+    "object_events": 7
+  }
+}

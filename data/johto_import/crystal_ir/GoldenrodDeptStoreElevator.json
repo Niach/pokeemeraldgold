@@ -1,0 +1,621 @@
+{
+  "crystal_map": "GoldenrodDeptStoreElevator",
+  "map_id": "GOLDENROD_DEPT_STORE_ELEVATOR",
+  "group": "GOLDENROD",
+  "group_index": 11,
+  "map_index": 17,
+  "tileset": "TILESET_MART",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_GOLDENROD_CITY",
+  "music": "MUSIC_GOLDENROD_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 2,
+  "height_blocks": 2,
+  "border_block": "00",
+  "blk_path": "maps/DeptStoreElevator.blk",
+  "source_asm": "maps/GoldenrodDeptStoreElevator.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 1,
+        "y": 3,
+        "dest_map": "GOLDENROD_DEPT_STORE_1F",
+        "dest_warp_id": -1
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "dest_map": "GOLDENROD_DEPT_STORE_1F",
+        "dest_warp_id": -1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 3,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodDeptStoreElevatorScript"
+      }
+    ],
+    "object_events": []
+  },
+  "object_consts": [],
+  "scene_ids": [],
+  "scripts": {
+    "GoldenrodDeptStoreElevator_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "GoldenrodDeptStoreElevatorScript",
+      "label_refs": [
+        "GoldenrodDeptStoreElevatorScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStoreElevatorScript": {
+      "raw_lines": [
+        "opentext",
+        "elevator GoldenrodDeptStoreElevatorData",
+        "closetext",
+        "iffalse .Done",
+        "pause 5",
+        "playsound SFX_ELEVATOR",
+        "earthquake 60",
+        "waitsfx",
+        "checkevent EVENT_GOLDENROD_UNDERGROUND_WAREHOUSE_BLOCKED_OFF",
+        "iftrue .Done",
+        "checkevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1",
+        "iftrue .BoxLayout1",
+        "checkevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2",
+        "iftrue .BoxLayout2",
+        "checkevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3",
+        "iftrue .BoxLayout3"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "elevator",
+          "args": [
+            "GoldenrodDeptStoreElevatorData"
+          ],
+          "raw": "elevator GoldenrodDeptStoreElevatorData"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodDeptStoreElevatorScript.Done"
+          ],
+          "raw": "iffalse .Done"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "5"
+          ],
+          "raw": "pause 5"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ELEVATOR"
+          ],
+          "raw": "playsound SFX_ELEVATOR"
+        },
+        {
+          "command": "earthquake",
+          "args": [
+            "60"
+          ],
+          "raw": "earthquake 60"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOLDENROD_UNDERGROUND_WAREHOUSE_BLOCKED_OFF"
+          ],
+          "raw": "checkevent EVENT_GOLDENROD_UNDERGROUND_WAREHOUSE_BLOCKED_OFF"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoldenrodDeptStoreElevatorScript.Done"
+          ],
+          "raw": "iftrue .Done"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1"
+          ],
+          "raw": "checkevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoldenrodDeptStoreElevatorScript.BoxLayout1"
+          ],
+          "raw": "iftrue .BoxLayout1"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2"
+          ],
+          "raw": "checkevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoldenrodDeptStoreElevatorScript.BoxLayout2"
+          ],
+          "raw": "iftrue .BoxLayout2"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3"
+          ],
+          "raw": "checkevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoldenrodDeptStoreElevatorScript.BoxLayout3"
+          ],
+          "raw": "iftrue .BoxLayout3"
+        }
+      ],
+      "first_command": "opentext",
+      "fallthrough_label": "GoldenrodDeptStoreElevatorScript.BoxLayout3",
+      "label_refs": [
+        "GoldenrodDeptStoreElevatorScript.BoxLayout1",
+        "GoldenrodDeptStoreElevatorScript.BoxLayout2",
+        "GoldenrodDeptStoreElevatorScript.BoxLayout3",
+        "GoldenrodDeptStoreElevatorScript.Done"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStoreElevatorScript.BoxLayout3": {
+      "raw_lines": [
+        "setevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1",
+        "clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2",
+        "clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1"
+          ],
+          "raw": "setevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2"
+          ],
+          "raw": "clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3"
+          ],
+          "raw": "clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "setevent",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStoreElevatorScript.BoxLayout1": {
+      "raw_lines": [
+        "clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1",
+        "setevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2",
+        "clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1"
+          ],
+          "raw": "clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2"
+          ],
+          "raw": "setevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3"
+          ],
+          "raw": "clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "clearevent",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStoreElevatorScript.BoxLayout2": {
+      "raw_lines": [
+        "clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1",
+        "clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2",
+        "setevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1"
+          ],
+          "raw": "clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2"
+          ],
+          "raw": "clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3"
+          ],
+          "raw": "setevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "clearevent",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStoreElevatorScript.Done": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStoreElevatorData": {
+      "raw_lines": [
+        "db 7",
+        "elevfloor FLOOR_B1F, 2, GOLDENROD_DEPT_STORE_B1F",
+        "elevfloor FLOOR_1F,  4, GOLDENROD_DEPT_STORE_1F",
+        "elevfloor FLOOR_2F,  3, GOLDENROD_DEPT_STORE_2F",
+        "elevfloor FLOOR_3F,  3, GOLDENROD_DEPT_STORE_3F",
+        "elevfloor FLOOR_4F,  3, GOLDENROD_DEPT_STORE_4F",
+        "elevfloor FLOOR_5F,  3, GOLDENROD_DEPT_STORE_5F",
+        "elevfloor FLOOR_6F,  2, GOLDENROD_DEPT_STORE_6F",
+        "db -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "7"
+          ],
+          "raw": "db 7"
+        },
+        {
+          "command": "elevfloor",
+          "args": [
+            "FLOOR_B1F",
+            "2",
+            "GOLDENROD_DEPT_STORE_B1F"
+          ],
+          "raw": "elevfloor FLOOR_B1F, 2, GOLDENROD_DEPT_STORE_B1F"
+        },
+        {
+          "command": "elevfloor",
+          "args": [
+            "FLOOR_1F",
+            "4",
+            "GOLDENROD_DEPT_STORE_1F"
+          ],
+          "raw": "elevfloor FLOOR_1F,  4, GOLDENROD_DEPT_STORE_1F"
+        },
+        {
+          "command": "elevfloor",
+          "args": [
+            "FLOOR_2F",
+            "3",
+            "GOLDENROD_DEPT_STORE_2F"
+          ],
+          "raw": "elevfloor FLOOR_2F,  3, GOLDENROD_DEPT_STORE_2F"
+        },
+        {
+          "command": "elevfloor",
+          "args": [
+            "FLOOR_3F",
+            "3",
+            "GOLDENROD_DEPT_STORE_3F"
+          ],
+          "raw": "elevfloor FLOOR_3F,  3, GOLDENROD_DEPT_STORE_3F"
+        },
+        {
+          "command": "elevfloor",
+          "args": [
+            "FLOOR_4F",
+            "3",
+            "GOLDENROD_DEPT_STORE_4F"
+          ],
+          "raw": "elevfloor FLOOR_4F,  3, GOLDENROD_DEPT_STORE_4F"
+        },
+        {
+          "command": "elevfloor",
+          "args": [
+            "FLOOR_5F",
+            "3",
+            "GOLDENROD_DEPT_STORE_5F"
+          ],
+          "raw": "elevfloor FLOOR_5F,  3, GOLDENROD_DEPT_STORE_5F"
+        },
+        {
+          "command": "elevfloor",
+          "args": [
+            "FLOOR_6F",
+            "2",
+            "GOLDENROD_DEPT_STORE_6F"
+          ],
+          "raw": "elevfloor FLOOR_6F,  2, GOLDENROD_DEPT_STORE_6F"
+        },
+        {
+          "command": "db",
+          "args": [
+            "-1"
+          ],
+          "raw": "db -1"
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "GoldenrodDeptStoreElevator_MapEvents",
+      "label_refs": [
+        "GoldenrodDeptStoreElevator_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStoreElevator_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  1,  3, GOLDENROD_DEPT_STORE_1F, -1",
+        "warp_event  2,  3, GOLDENROD_DEPT_STORE_1F, -1",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  3,  0, BGEVENT_READ, GoldenrodDeptStoreElevatorScript",
+        "def_object_events"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "1",
+            "3",
+            "GOLDENROD_DEPT_STORE_1F",
+            "-1"
+          ],
+          "raw": "warp_event  1,  3, GOLDENROD_DEPT_STORE_1F, -1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "3",
+            "GOLDENROD_DEPT_STORE_1F",
+            "-1"
+          ],
+          "raw": "warp_event  2,  3, GOLDENROD_DEPT_STORE_1F, -1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "0",
+            "BGEVENT_READ",
+            "GoldenrodDeptStoreElevatorScript"
+          ],
+          "raw": "bg_event  3,  0, BGEVENT_READ, GoldenrodDeptStoreElevatorScript"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {},
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "GoldenrodDeptStoreElevator_MapScripts": {
+      "label_refs": [
+        "GoldenrodDeptStoreElevatorScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStoreElevatorScript": {
+      "label_refs": [
+        "GoldenrodDeptStoreElevatorScript.BoxLayout1",
+        "GoldenrodDeptStoreElevatorScript.BoxLayout2",
+        "GoldenrodDeptStoreElevatorScript.BoxLayout3",
+        "GoldenrodDeptStoreElevatorScript.Done"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStoreElevatorScript.BoxLayout3": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStoreElevatorScript.BoxLayout1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStoreElevatorScript.BoxLayout2": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStoreElevatorScript.Done": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStoreElevatorData": {
+      "label_refs": [
+        "GoldenrodDeptStoreElevator_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStoreElevator_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 1,
+    "object_events": 0
+  }
+}

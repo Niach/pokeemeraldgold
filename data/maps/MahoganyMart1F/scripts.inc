@@ -1,0 +1,132 @@
+@ Manually maintained after Johto import. Imported scaffold replaced.
+
+MahoganyMart1F_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, MahoganyMart1F_OnLoad
+	map_script MAP_SCRIPT_ON_TRANSITION, MahoganyMart1F_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, MahoganyMart1F_OnFrame
+	.byte 0
+
+MahoganyMart1F_OnLoad:
+	goto_if_set EVENT_UNCOVERED_STAIRCASE_IN_MAHOGANY_MART, MahoganyMart1F_OnLoad_ShowStairs
+	end
+
+MahoganyMart1F_OnLoad_ShowStairs:
+	setmetatile 6, 2, 0x1e, FALSE
+	end
+
+MahoganyMart1F_OnTransition:
+	goto_if_eq VAR_JOHTO_MAHOGANY_BLACKTHORN_SCENE_STATE, 1, MahoganyMart1F_OnTransition_ShowSceneActors
+	goto MahoganyMart1F_OnTransition_HideSceneActors
+
+MahoganyMart1F_OnTransition_ShowSceneActors:
+	goto_if_set EVENT_UNCOVERED_STAIRCASE_IN_MAHOGANY_MART, MahoganyMart1F_OnTransition_HideSceneActors
+	clearflag FLAG_HIDE_MAHOGANY_MART_LANCE
+	clearflag FLAG_HIDE_MAHOGANY_MART_DRAGONITE
+	end
+
+MahoganyMart1F_OnTransition_HideSceneActors:
+	setflag FLAG_HIDE_MAHOGANY_MART_LANCE
+	setflag FLAG_HIDE_MAHOGANY_MART_DRAGONITE
+	end
+
+MahoganyMart1F_OnFrame:
+	map_script_2 VAR_JOHTO_MAHOGANY_BLACKTHORN_SCENE_STATE, 1, JohtoScript_MahoganyMart1F_LanceUncoversStaircase
+	.2byte 0
+
+JohtoScript_MahoganyMart1F_MahoganyMart1FBlackBeltScript::
+	lock
+	faceplayer
+	goto_if_set EVENT_DECIDED_TO_HELP_LANCE, JohtoScript_MahoganyMart1F_MahoganyMart1FBlackBeltScript_Branch
+	msgbox Crystal_MahoganyMart1F_MahoganyMart1FBlackBeltText, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_MahoganyMart1F_MahoganyMart1FBlackBeltScript_Branch:
+	msgbox Crystal_MahoganyMart1F_MahoganyMart1FBlackBeltText_LanceEntered, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_MahoganyMart1F_MahoganyMart1FGrannyScript::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart JohtoScript_MahoganyMart1F_MahoganyMart1FGrannyScript_Pokemart
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+JohtoScript_MahoganyMart1F_MahoganyMart1FGrannyScript_Pokemart:
+	.2byte ITEM_LAVA_COOKIE
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_HYPER_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_SUPER_REPEL
+	.2byte ITEM_REVIVE
+	.2byte ITEM_GLITTER_MAIL
+	pokemartlistend
+
+JohtoScript_MahoganyMart1F_MahoganyMart1FPharmacistScript::
+	lock
+	faceplayer
+	goto_if_set EVENT_DECIDED_TO_HELP_LANCE, JohtoScript_MahoganyMart1F_MahoganyMart1FPharmacistScript_LanceEntered
+	msgbox Crystal_MahoganyMart1F_MahoganyMart1FRageCandyBarText, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_MahoganyMart1F_MahoganyMart1FPharmacistScript_LanceEntered:
+	msgbox Crystal_MahoganyMart1F_MahoganyMart1FPharmacistText_LanceEntered, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_MahoganyMart1F_ObjectEvent::
+	end
+
+JohtoScript_MahoganyMart1F_LanceUncoversStaircase:
+	lockall
+	pause 15
+	msgbox Crystal_MahoganyMart1F_MahoganyMart1FLanceDragoniteHyperBeamText, MSGBOX_DEFAULT
+	playsound SE_BANG
+	applymovement LOCALID_MAHOGANYMART1F_DRAGONITE, Crystal_MahoganyMart1F_MahoganyMart1FDragoniteTackleMovement
+	applymovement LOCALID_MAHOGANYMART1F_BLACK_BELT, Crystal_MahoganyMart1F_MahoganyMart1FBlackBeltKnockedBackMovement
+	waitmovement 0
+	pause 15
+	disappear LOCALID_MAHOGANYMART1F_DRAGONITE
+	pause 15
+	applymovement LOCALID_MAHOGANYMART1F_LANCE, Crystal_MahoganyMart1F_MahoganyMart1FLanceApproachPlayerMovement
+	waitmovement 0
+	msgbox Crystal_MahoganyMart1F_MahoganyMart1FLanceRadioText, MSGBOX_DEFAULT
+	follow LOCALID_MAHOGANYMART1F_LANCE, LOCALID_PLAYER
+	applymovement LOCALID_MAHOGANYMART1F_LANCE, Crystal_MahoganyMart1F_MahoganyMart1FLanceApproachPharmacistMovement
+	applymovement LOCALID_MAHOGANYMART1F_PHARMACIST, Crystal_MahoganyMart1F_MahoganyMart1FPharmacistShovedAsideMovement
+	applymovement LOCALID_MAHOGANYMART1F_LANCE, Crystal_MahoganyMart1F_MahoganyMart1FLanceApproachHiddenStairsMovement
+	waitmovement 0
+	stopfollow
+	opentext
+	writetext Crystal_MahoganyMart1F_MahoganyMart1FLanceStairsText
+	waitbutton
+	applymovement LOCALID_MAHOGANYMART1F_PHARMACIST, Common_Movement_ExclamationMark
+	waitmovement 0
+	playsound SE_FAINT
+	setmetatile 6, 2, 0x1e, FALSE
+	special DrawWholeMapView
+	closetext
+	waitsfx
+	setevent EVENT_UNCOVERED_STAIRCASE_IN_MAHOGANY_MART
+	turnobject LOCALID_MAHOGANYMART1F_LANCE, DIR_WEST
+	msgbox Crystal_MahoganyMart1F_MahoganyMart1FLanceSplitUpText, MSGBOX_DEFAULT
+	applymovement LOCALID_MAHOGANYMART1F_LANCE, Crystal_MahoganyMart1F_MahoganyMart1FLanceGoDownStairsMovement
+	waitmovement 0
+	playsound SE_EXIT
+	setflag FLAG_HIDE_MAHOGANY_MART_LANCE
+	setflag FLAG_HIDE_MAHOGANY_MART_DRAGONITE
+	removeobject LOCALID_MAHOGANYMART1F_LANCE
+	removeobject LOCALID_MAHOGANYMART1F_DRAGONITE
+	setevent EVENT_DECIDED_TO_HELP_LANCE
+	setvar VAR_JOHTO_MAHOGANY_BLACKTHORN_SCENE_STATE, 2
+	waitsfx
+	releaseall
+	end

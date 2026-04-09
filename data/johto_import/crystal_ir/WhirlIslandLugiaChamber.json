@@ -1,0 +1,469 @@
+{
+  "crystal_map": "WhirlIslandLugiaChamber",
+  "map_id": "WHIRL_ISLAND_LUGIA_CHAMBER",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 73,
+  "tileset": "TILESET_DARK_CAVE",
+  "environment": "CAVE",
+  "landmark": "LANDMARK_WHIRL_ISLANDS",
+  "music": "MUSIC_UNION_CAVE",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DARK",
+  "fishgroup": "FISHGROUP_WHIRL_ISLANDS",
+  "width_blocks": 10,
+  "height_blocks": 9,
+  "border_block": "0F",
+  "blk_path": "maps/WhirlIslandLugiaChamber.blk",
+  "source_asm": "maps/WhirlIslandLugiaChamber.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "WhirlIslandLugiaChamberLugiaCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 9,
+        "y": 13,
+        "dest_map": "WHIRL_ISLAND_B2F",
+        "dest_warp_id": 3
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 9,
+        "y": 5,
+        "sprite": "SPRITE_LUGIA",
+        "movement": "SPRITEMOVEDATA_POKEMON",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Lugia",
+        "flag": "EVENT_WHIRL_ISLAND_LUGIA_CHAMBER_LUGIA"
+      }
+    ]
+  },
+  "object_consts": [
+    "WHIRLISLANDLUGIACHAMBER_LUGIA"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "WhirlIslandLugiaChamber_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks",
+        "callback MAPCALLBACK_OBJECTS, WhirlIslandLugiaChamberLugiaCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "WhirlIslandLugiaChamberLugiaCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, WhirlIslandLugiaChamberLugiaCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "WhirlIslandLugiaChamberLugiaCallback",
+      "label_refs": [
+        "WhirlIslandLugiaChamberLugiaCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WhirlIslandLugiaChamberLugiaCallback": {
+      "raw_lines": [
+        "checkevent EVENT_FOUGHT_LUGIA",
+        "iftrue .NoAppear",
+        "checkitem SILVER_WING",
+        "iftrue .Appear",
+        "sjump .NoAppear"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_FOUGHT_LUGIA"
+          ],
+          "raw": "checkevent EVENT_FOUGHT_LUGIA"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "WhirlIslandLugiaChamberLugiaCallback.NoAppear"
+          ],
+          "raw": "iftrue .NoAppear"
+        },
+        {
+          "command": "checkitem",
+          "args": [
+            "SILVER_WING"
+          ],
+          "raw": "checkitem SILVER_WING"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "WhirlIslandLugiaChamberLugiaCallback.Appear"
+          ],
+          "raw": "iftrue .Appear"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "WhirlIslandLugiaChamberLugiaCallback.NoAppear"
+          ],
+          "raw": "sjump .NoAppear"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "WhirlIslandLugiaChamberLugiaCallback.Appear",
+        "WhirlIslandLugiaChamberLugiaCallback.NoAppear"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WhirlIslandLugiaChamberLugiaCallback.Appear": {
+      "raw_lines": [
+        "appear WHIRLISLANDLUGIACHAMBER_LUGIA",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "appear",
+          "args": [
+            "WHIRLISLANDLUGIACHAMBER_LUGIA"
+          ],
+          "raw": "appear WHIRLISLANDLUGIACHAMBER_LUGIA"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "appear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WhirlIslandLugiaChamberLugiaCallback.NoAppear": {
+      "raw_lines": [
+        "disappear WHIRLISLANDLUGIACHAMBER_LUGIA",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "disappear",
+          "args": [
+            "WHIRLISLANDLUGIACHAMBER_LUGIA"
+          ],
+          "raw": "disappear WHIRLISLANDLUGIACHAMBER_LUGIA"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "disappear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Lugia": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext LugiaText",
+        "cry LUGIA",
+        "pause 15",
+        "closetext",
+        "setevent EVENT_FOUGHT_LUGIA",
+        "loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM",
+        "loadwildmon LUGIA, 60",
+        "startbattle",
+        "disappear WHIRLISLANDLUGIACHAMBER_LUGIA",
+        "reloadmapafterbattle",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "LugiaText"
+          ],
+          "raw": "writetext LugiaText"
+        },
+        {
+          "command": "cry",
+          "args": [
+            "LUGIA"
+          ],
+          "raw": "cry LUGIA"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_FOUGHT_LUGIA"
+          ],
+          "raw": "setevent EVENT_FOUGHT_LUGIA"
+        },
+        {
+          "command": "loadvar",
+          "args": [
+            "VAR_BATTLETYPE",
+            "BATTLETYPE_FORCEITEM"
+          ],
+          "raw": "loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM"
+        },
+        {
+          "command": "loadwildmon",
+          "args": [
+            "LUGIA",
+            "60"
+          ],
+          "raw": "loadwildmon LUGIA, 60"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "WHIRLISLANDLUGIACHAMBER_LUGIA"
+          ],
+          "raw": "disappear WHIRLISLANDLUGIACHAMBER_LUGIA"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "LugiaText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WhirlIslandLugiaChamber_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  9, 13, WHIRL_ISLAND_B2F, 3",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  9,  5, SPRITE_LUGIA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Lugia, EVENT_WHIRL_ISLAND_LUGIA_CHAMBER_LUGIA"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "13",
+            "WHIRL_ISLAND_B2F",
+            "3"
+          ],
+          "raw": "warp_event  9, 13, WHIRL_ISLAND_B2F, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "5",
+            "SPRITE_LUGIA",
+            "SPRITEMOVEDATA_POKEMON",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Lugia",
+            "EVENT_WHIRL_ISLAND_LUGIA_CHAMBER_LUGIA"
+          ],
+          "raw": "object_event  9,  5, SPRITE_LUGIA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Lugia, EVENT_WHIRL_ISLAND_LUGIA_CHAMBER_LUGIA"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "LugiaText": {
+      "raw_lines": [
+        "text \"Gyaaas!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Gyaaas!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "WhirlIslandLugiaChamber_MapScripts": {
+      "label_refs": [
+        "WhirlIslandLugiaChamberLugiaCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WhirlIslandLugiaChamberLugiaCallback": {
+      "label_refs": [
+        "WhirlIslandLugiaChamberLugiaCallback.Appear",
+        "WhirlIslandLugiaChamberLugiaCallback.NoAppear"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WhirlIslandLugiaChamberLugiaCallback.Appear": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WhirlIslandLugiaChamberLugiaCallback.NoAppear": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Lugia": {
+      "label_refs": [],
+      "text_refs": [
+        "LugiaText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WhirlIslandLugiaChamber_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 1,
+    "warp_events": 1,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 1
+  }
+}

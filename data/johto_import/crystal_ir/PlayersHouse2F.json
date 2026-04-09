@@ -18,6 +18,17 @@
   "source_asm": "maps/PlayersHouse2F.asm",
   "connections": [],
   "events": {
+    "scene_scripts": [],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "PlayersHouse2FInitializeRoomCallback"
+      },
+      {
+        "type": "MAPCALLBACK_TILES",
+        "script": "PlayersHouse2FSetUpTileDecorationsCallback"
+      }
+    ],
     "warp_events": [
       {
         "x": 7,
@@ -61,8 +72,13 @@
         "movement": "SPRITEMOVEDATA_STILL",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_SCRIPT",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "PlayersHouseGameConsoleScript",
+        "flag": "EVENT_PLAYERS_HOUSE_2F_CONSOLE"
       },
       {
         "x": 4,
@@ -71,8 +87,13 @@
         "movement": "SPRITEMOVEDATA_STILL",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_SCRIPT",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "PlayersHouseDoll1Script",
+        "flag": "EVENT_PLAYERS_HOUSE_2F_DOLL_1"
       },
       {
         "x": 5,
@@ -81,8 +102,13 @@
         "movement": "SPRITEMOVEDATA_STILL",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_SCRIPT",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "PlayersHouseDoll2Script",
+        "flag": "EVENT_PLAYERS_HOUSE_2F_DOLL_2"
       },
       {
         "x": 0,
@@ -91,12 +117,1116 @@
         "movement": "SPRITEMOVEDATA_BIGDOLL",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_SCRIPT",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "PlayersHouseBigDollScript",
+        "flag": "EVENT_PLAYERS_HOUSE_2F_BIG_DOLL"
       }
     ]
   },
+  "object_consts": [
+    "PLAYERSHOUSE2F_CONSOLE",
+    "PLAYERSHOUSE2F_DOLL_1",
+    "PLAYERSHOUSE2F_DOLL_2",
+    "PLAYERSHOUSE2F_BIG_DOLL"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "PlayersHouse2F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, PlayersHouse2FInitializeRoomCallback",
+        "callback MAPCALLBACK_TILES, PlayersHouse2FSetUpTileDecorationsCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "PlayersHouse2FInitializeRoomCallback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, PlayersHouse2FInitializeRoomCallback"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_TILES",
+            "PlayersHouse2FSetUpTileDecorationsCallback"
+          ],
+          "raw": "callback MAPCALLBACK_TILES, PlayersHouse2FSetUpTileDecorationsCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "PlayersHouse2FNoopScene",
+      "label_refs": [
+        "PlayersHouse2FNoopScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse2FNoopScene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse2FInitializeRoomCallback": {
+      "raw_lines": [
+        "special ToggleDecorationsVisibility",
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8",
+        "checkevent EVENT_INITIALIZED_EVENTS",
+        "iftrue .SkipInitialization",
+        "jumpstd InitializeEventsScript",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "special",
+          "args": [
+            "ToggleDecorationsVisibility"
+          ],
+          "raw": "special ToggleDecorationsVisibility"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_INITIALIZED_EVENTS"
+          ],
+          "raw": "checkevent EVENT_INITIALIZED_EVENTS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "PlayersHouse2FInitializeRoomCallback.SkipInitialization"
+          ],
+          "raw": "iftrue .SkipInitialization"
+        },
+        {
+          "command": "jumpstd",
+          "args": [
+            "InitializeEventsScript"
+          ],
+          "raw": "jumpstd InitializeEventsScript"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "special",
+      "label_refs": [
+        "PlayersHouse2FInitializeRoomCallback.SkipInitialization"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "InitializeEventsScript"
+      ]
+    },
+    "PlayersHouse2FInitializeRoomCallback.SkipInitialization": {
+      "raw_lines": [
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "endcallback",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse2FSetUpTileDecorationsCallback": {
+      "raw_lines": [
+        "special ToggleMaptileDecorations",
+        "endcallback",
+        "db 0, 0, 0"
+      ],
+      "commands": [
+        {
+          "command": "special",
+          "args": [
+            "ToggleMaptileDecorations"
+          ],
+          "raw": "special ToggleMaptileDecorations"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        },
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0, 0"
+        }
+      ],
+      "first_command": "special",
+      "fallthrough_label": "PlayersHouseDoll1Script",
+      "label_refs": [
+        "PlayersHouseDoll1Script"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouseDoll1Script": {
+      "raw_lines": [
+        "describedecoration DECODESC_LEFT_DOLL"
+      ],
+      "commands": [
+        {
+          "command": "describedecoration",
+          "args": [
+            "DECODESC_LEFT_DOLL"
+          ],
+          "raw": "describedecoration DECODESC_LEFT_DOLL"
+        }
+      ],
+      "first_command": "describedecoration",
+      "fallthrough_label": "PlayersHouseDoll2Script",
+      "label_refs": [
+        "PlayersHouseDoll2Script"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouseDoll2Script": {
+      "raw_lines": [
+        "describedecoration DECODESC_RIGHT_DOLL"
+      ],
+      "commands": [
+        {
+          "command": "describedecoration",
+          "args": [
+            "DECODESC_RIGHT_DOLL"
+          ],
+          "raw": "describedecoration DECODESC_RIGHT_DOLL"
+        }
+      ],
+      "first_command": "describedecoration",
+      "fallthrough_label": "PlayersHouseBigDollScript",
+      "label_refs": [
+        "PlayersHouseBigDollScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouseBigDollScript": {
+      "raw_lines": [
+        "describedecoration DECODESC_BIG_DOLL"
+      ],
+      "commands": [
+        {
+          "command": "describedecoration",
+          "args": [
+            "DECODESC_BIG_DOLL"
+          ],
+          "raw": "describedecoration DECODESC_BIG_DOLL"
+        }
+      ],
+      "first_command": "describedecoration",
+      "fallthrough_label": "PlayersHouseGameConsoleScript",
+      "label_refs": [
+        "PlayersHouseGameConsoleScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouseGameConsoleScript": {
+      "raw_lines": [
+        "describedecoration DECODESC_CONSOLE"
+      ],
+      "commands": [
+        {
+          "command": "describedecoration",
+          "args": [
+            "DECODESC_CONSOLE"
+          ],
+          "raw": "describedecoration DECODESC_CONSOLE"
+        }
+      ],
+      "first_command": "describedecoration",
+      "fallthrough_label": "PlayersHousePosterScript",
+      "label_refs": [
+        "PlayersHousePosterScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHousePosterScript": {
+      "raw_lines": [
+        "conditional_event EVENT_PLAYERS_ROOM_POSTER, .Script"
+      ],
+      "commands": [
+        {
+          "command": "conditional_event",
+          "args": [
+            "EVENT_PLAYERS_ROOM_POSTER",
+            "PlayersHousePosterScript.Script"
+          ],
+          "raw": "conditional_event EVENT_PLAYERS_ROOM_POSTER, .Script"
+        }
+      ],
+      "first_command": "conditional_event",
+      "fallthrough_label": "PlayersHousePosterScript.Script",
+      "label_refs": [
+        "PlayersHousePosterScript.Script"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHousePosterScript.Script": {
+      "raw_lines": [
+        "describedecoration DECODESC_POSTER"
+      ],
+      "commands": [
+        {
+          "command": "describedecoration",
+          "args": [
+            "DECODESC_POSTER"
+          ],
+          "raw": "describedecoration DECODESC_POSTER"
+        }
+      ],
+      "first_command": "describedecoration",
+      "fallthrough_label": "PlayersHouseRadioScript",
+      "label_refs": [
+        "PlayersHouseRadioScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouseRadioScript": {
+      "raw_lines": [
+        "checkevent EVENT_GOT_A_POKEMON_FROM_ELM",
+        "iftrue .NormalRadio",
+        "checkevent EVENT_LISTENED_TO_INITIAL_RADIO",
+        "iftrue .AbbreviatedRadio",
+        "playmusic MUSIC_POKEMON_TALK",
+        "opentext",
+        "writetext PlayersRadioText1",
+        "pause 45",
+        "writetext PlayersRadioText2",
+        "pause 45",
+        "writetext PlayersRadioText3",
+        "pause 45",
+        "musicfadeout MUSIC_NEW_BARK_TOWN, 16",
+        "writetext PlayersRadioText4",
+        "pause 45",
+        "closetext",
+        "setevent EVENT_LISTENED_TO_INITIAL_RADIO",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_A_POKEMON_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_A_POKEMON_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "PlayersHouseRadioScript.NormalRadio"
+          ],
+          "raw": "iftrue .NormalRadio"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_LISTENED_TO_INITIAL_RADIO"
+          ],
+          "raw": "checkevent EVENT_LISTENED_TO_INITIAL_RADIO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "PlayersHouseRadioScript.AbbreviatedRadio"
+          ],
+          "raw": "iftrue .AbbreviatedRadio"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_POKEMON_TALK"
+          ],
+          "raw": "playmusic MUSIC_POKEMON_TALK"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PlayersRadioText1"
+          ],
+          "raw": "writetext PlayersRadioText1"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "45"
+          ],
+          "raw": "pause 45"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PlayersRadioText2"
+          ],
+          "raw": "writetext PlayersRadioText2"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "45"
+          ],
+          "raw": "pause 45"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PlayersRadioText3"
+          ],
+          "raw": "writetext PlayersRadioText3"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "45"
+          ],
+          "raw": "pause 45"
+        },
+        {
+          "command": "musicfadeout",
+          "args": [
+            "MUSIC_NEW_BARK_TOWN",
+            "16"
+          ],
+          "raw": "musicfadeout MUSIC_NEW_BARK_TOWN, 16"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PlayersRadioText4"
+          ],
+          "raw": "writetext PlayersRadioText4"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "45"
+          ],
+          "raw": "pause 45"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_LISTENED_TO_INITIAL_RADIO"
+          ],
+          "raw": "setevent EVENT_LISTENED_TO_INITIAL_RADIO"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "PlayersHouseRadioScript.AbbreviatedRadio",
+        "PlayersHouseRadioScript.NormalRadio"
+      ],
+      "text_refs": [
+        "PlayersRadioText1",
+        "PlayersRadioText2",
+        "PlayersRadioText3",
+        "PlayersRadioText4"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouseRadioScript.NormalRadio": {
+      "raw_lines": [
+        "jumpstd Radio1Script"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "Radio1Script"
+          ],
+          "raw": "jumpstd Radio1Script"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "Radio1Script"
+      ]
+    },
+    "PlayersHouseRadioScript.AbbreviatedRadio": {
+      "raw_lines": [
+        "opentext",
+        "writetext PlayersRadioText4",
+        "pause 45",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PlayersRadioText4"
+          ],
+          "raw": "writetext PlayersRadioText4"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "45"
+          ],
+          "raw": "pause 45"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "PlayersRadioText4"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouseBookshelfScript": {
+      "raw_lines": [
+        "jumpstd PictureBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PictureBookshelfScript"
+          ],
+          "raw": "jumpstd PictureBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "PlayersHousePCScript": {
+      "raw_lines": [
+        "opentext",
+        "special PlayersHousePC",
+        "iftrue .Warp",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "special",
+          "args": [
+            "PlayersHousePC"
+          ],
+          "raw": "special PlayersHousePC"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "PlayersHousePCScript.Warp"
+          ],
+          "raw": "iftrue .Warp"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "PlayersHousePCScript.Warp"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHousePCScript.Warp": {
+      "raw_lines": [
+        "warp NONE, 0, 0",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "warp",
+          "args": [
+            "NONE",
+            "0",
+            "0"
+          ],
+          "raw": "warp NONE, 0, 0"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "warp",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse2F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  7,  0, PLAYERS_HOUSE_1F, 3",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  2,  1, BGEVENT_UP, PlayersHousePCScript",
+        "bg_event  3,  1, BGEVENT_READ, PlayersHouseRadioScript",
+        "bg_event  5,  1, BGEVENT_READ, PlayersHouseBookshelfScript",
+        "bg_event  6,  0, BGEVENT_IFSET, PlayersHousePosterScript",
+        "def_object_events",
+        "object_event  4,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseGameConsoleScript, EVENT_PLAYERS_HOUSE_2F_CONSOLE",
+        "object_event  4,  4, SPRITE_DOLL_1, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseDoll1Script, EVENT_PLAYERS_HOUSE_2F_DOLL_1",
+        "object_event  5,  4, SPRITE_DOLL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseDoll2Script, EVENT_PLAYERS_HOUSE_2F_DOLL_2",
+        "object_event  0,  1, SPRITE_BIG_DOLL, SPRITEMOVEDATA_BIGDOLL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseBigDollScript, EVENT_PLAYERS_HOUSE_2F_BIG_DOLL"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "7",
+            "0",
+            "PLAYERS_HOUSE_1F",
+            "3"
+          ],
+          "raw": "warp_event  7,  0, PLAYERS_HOUSE_1F, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "2",
+            "1",
+            "BGEVENT_UP",
+            "PlayersHousePCScript"
+          ],
+          "raw": "bg_event  2,  1, BGEVENT_UP, PlayersHousePCScript"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "1",
+            "BGEVENT_READ",
+            "PlayersHouseRadioScript"
+          ],
+          "raw": "bg_event  3,  1, BGEVENT_READ, PlayersHouseRadioScript"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "5",
+            "1",
+            "BGEVENT_READ",
+            "PlayersHouseBookshelfScript"
+          ],
+          "raw": "bg_event  5,  1, BGEVENT_READ, PlayersHouseBookshelfScript"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "6",
+            "0",
+            "BGEVENT_IFSET",
+            "PlayersHousePosterScript"
+          ],
+          "raw": "bg_event  6,  0, BGEVENT_IFSET, PlayersHousePosterScript"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "2",
+            "SPRITE_CONSOLE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "PlayersHouseGameConsoleScript",
+            "EVENT_PLAYERS_HOUSE_2F_CONSOLE"
+          ],
+          "raw": "object_event  4,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseGameConsoleScript, EVENT_PLAYERS_HOUSE_2F_CONSOLE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "4",
+            "SPRITE_DOLL_1",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "PlayersHouseDoll1Script",
+            "EVENT_PLAYERS_HOUSE_2F_DOLL_1"
+          ],
+          "raw": "object_event  4,  4, SPRITE_DOLL_1, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseDoll1Script, EVENT_PLAYERS_HOUSE_2F_DOLL_1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "4",
+            "SPRITE_DOLL_2",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "PlayersHouseDoll2Script",
+            "EVENT_PLAYERS_HOUSE_2F_DOLL_2"
+          ],
+          "raw": "object_event  5,  4, SPRITE_DOLL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseDoll2Script, EVENT_PLAYERS_HOUSE_2F_DOLL_2"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "0",
+            "1",
+            "SPRITE_BIG_DOLL",
+            "SPRITEMOVEDATA_BIGDOLL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "PlayersHouseBigDollScript",
+            "EVENT_PLAYERS_HOUSE_2F_BIG_DOLL"
+          ],
+          "raw": "object_event  0,  1, SPRITE_BIG_DOLL, SPRITEMOVEDATA_BIGDOLL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseBigDollScript, EVENT_PLAYERS_HOUSE_2F_BIG_DOLL"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "PlayersRadioText1": {
+      "raw_lines": [
+        "text \"PROF.OAK'S #MON\"",
+        "line \"TALK! Please tune\"",
+        "cont \"in next time!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "PROF.OAK'S #MON"
+        },
+        {
+          "command": "line",
+          "value": "TALK! Please tune"
+        },
+        {
+          "command": "cont",
+          "value": "in next time!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PlayersRadioText2": {
+      "raw_lines": [
+        "text \"#MON CHANNEL!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#MON CHANNEL!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PlayersRadioText3": {
+      "raw_lines": [
+        "text \"This is DJ MARY,\"",
+        "line \"your co-host!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This is DJ MARY,"
+        },
+        {
+          "command": "line",
+          "value": "your co-host!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PlayersRadioText4": {
+      "raw_lines": [
+        "text \"#MON!\"",
+        "line \"#MON CHANNEL\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#MON!"
+        },
+        {
+          "command": "line",
+          "value": "#MON CHANNEL\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "InitializeEventsScript",
+    "PictureBookshelfScript",
+    "Radio1Script"
+  ],
+  "dependencies": {
+    "PlayersHouse2F_MapScripts": {
+      "label_refs": [
+        "PlayersHouse2FNoopScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse2FNoopScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse2FInitializeRoomCallback": {
+      "label_refs": [
+        "PlayersHouse2FInitializeRoomCallback.SkipInitialization"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "InitializeEventsScript"
+      ]
+    },
+    "PlayersHouse2FInitializeRoomCallback.SkipInitialization": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse2FSetUpTileDecorationsCallback": {
+      "label_refs": [
+        "PlayersHouseDoll1Script"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouseDoll1Script": {
+      "label_refs": [
+        "PlayersHouseDoll2Script"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouseDoll2Script": {
+      "label_refs": [
+        "PlayersHouseBigDollScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouseBigDollScript": {
+      "label_refs": [
+        "PlayersHouseGameConsoleScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouseGameConsoleScript": {
+      "label_refs": [
+        "PlayersHousePosterScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHousePosterScript": {
+      "label_refs": [
+        "PlayersHousePosterScript.Script"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHousePosterScript.Script": {
+      "label_refs": [
+        "PlayersHouseRadioScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouseRadioScript": {
+      "label_refs": [
+        "PlayersHouseRadioScript.AbbreviatedRadio",
+        "PlayersHouseRadioScript.NormalRadio"
+      ],
+      "text_refs": [
+        "PlayersRadioText1",
+        "PlayersRadioText2",
+        "PlayersRadioText3",
+        "PlayersRadioText4"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouseRadioScript.NormalRadio": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "Radio1Script"
+      ]
+    },
+    "PlayersHouseRadioScript.AbbreviatedRadio": {
+      "label_refs": [],
+      "text_refs": [
+        "PlayersRadioText4"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouseBookshelfScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "PlayersHousePCScript": {
+      "label_refs": [
+        "PlayersHousePCScript.Warp"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHousePCScript.Warp": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse2F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio",
+    "decorations"
+  ],
   "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 2,
     "warp_events": 1,
     "coord_events": 0,
     "bg_events": 4,

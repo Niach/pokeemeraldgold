@@ -1,0 +1,2737 @@
+{
+  "crystal_map": "EarlsPokemonAcademy",
+  "map_id": "EARLS_POKEMON_ACADEMY",
+  "group": "VIOLET",
+  "group_index": 10,
+  "map_index": 8,
+  "tileset": "TILESET_LAB",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_VIOLET_CITY",
+  "music": "MUSIC_VIOLET_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 8,
+  "border_block": "00",
+  "blk_path": "maps/EarlsPokemonAcademy.blk",
+  "source_asm": "maps/EarlsPokemonAcademy.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 15,
+        "dest_map": "VIOLET_CITY",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 4,
+        "y": 15,
+        "dest_map": "VIOLET_CITY",
+        "dest_warp_id": 3
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 0,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "AcademyBookshelf"
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "AcademyBookshelf"
+      },
+      {
+        "x": 3,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "AcademyBlackboard"
+      },
+      {
+        "x": 4,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "AcademyBlackboard"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 4,
+        "y": 2,
+        "sprite": "SPRITE_FISHER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "AcademyEarl",
+        "flag": "EVENT_EARLS_ACADEMY_EARL"
+      },
+      {
+        "x": 2,
+        "y": 5,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EarlsPokemonAcademyYoungster1Script",
+        "flag": -1
+      },
+      {
+        "x": 3,
+        "y": 11,
+        "sprite": "SPRITE_GAMEBOY_KID",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EarlsPokemonAcademyGameboyKid1Script",
+        "flag": -1
+      },
+      {
+        "x": 4,
+        "y": 11,
+        "sprite": "SPRITE_GAMEBOY_KID",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EarlsPokemonAcademyGameboyKid2Script",
+        "flag": -1
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "EarlsPokemonAcademyYoungster2Script",
+        "flag": -1
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "sprite": "SPRITE_POKEDEX",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "AcademyNotebook",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "EARLSPOKEMONACADEMY_EARL",
+    "EARLSPOKEMONACADEMY_YOUNGSTER1",
+    "EARLSPOKEMONACADEMY_GAMEBOY_KID1",
+    "EARLSPOKEMONACADEMY_GAMEBOY_KID2",
+    "EARLSPOKEMONACADEMY_YOUNGSTER2",
+    "EARLSPOKEMONACADEMY_POKEDEX"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "EarlsPokemonAcademy_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "AcademyEarl",
+      "label_refs": [
+        "AcademyEarl"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyEarl": {
+      "raw_lines": [
+        "applymovement EARLSPOKEMONACADEMY_EARL, AcademyEarlSpinMovement",
+        "faceplayer",
+        "opentext",
+        "writetext AcademyEarlIntroText",
+        "yesorno",
+        "iffalse .Part1",
+        "writetext AcademyEarlTeachHowToWinText",
+        "yesorno",
+        "iffalse .Done"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "EARLSPOKEMONACADEMY_EARL",
+            "AcademyEarlSpinMovement"
+          ],
+          "raw": "applymovement EARLSPOKEMONACADEMY_EARL, AcademyEarlSpinMovement"
+        },
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AcademyEarlIntroText"
+          ],
+          "raw": "writetext AcademyEarlIntroText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "AcademyEarl.Part1"
+          ],
+          "raw": "iffalse .Part1"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AcademyEarlTeachHowToWinText"
+          ],
+          "raw": "writetext AcademyEarlTeachHowToWinText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "AcademyEarl.Done"
+          ],
+          "raw": "iffalse .Done"
+        }
+      ],
+      "first_command": "applymovement",
+      "fallthrough_label": "AcademyEarl.Part1",
+      "label_refs": [
+        "AcademyEarl.Done",
+        "AcademyEarl.Part1"
+      ],
+      "text_refs": [
+        "AcademyEarlIntroText",
+        "AcademyEarlTeachHowToWinText"
+      ],
+      "movement_refs": [
+        "AcademyEarlSpinMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyEarl.Part1": {
+      "raw_lines": [
+        "writetext AcademyEarlTeachMoreText",
+        "yesorno",
+        "iffalse .Done",
+        "writetext AcademyEarlTeachHowToRaiseWellText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "AcademyEarlTeachMoreText"
+          ],
+          "raw": "writetext AcademyEarlTeachMoreText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "AcademyEarl.Done"
+          ],
+          "raw": "iffalse .Done"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AcademyEarlTeachHowToRaiseWellText"
+          ],
+          "raw": "writetext AcademyEarlTeachHowToRaiseWellText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "AcademyEarl.Done"
+      ],
+      "text_refs": [
+        "AcademyEarlTeachHowToRaiseWellText",
+        "AcademyEarlTeachMoreText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyEarl.Done": {
+      "raw_lines": [
+        "writetext AcademyEarlNoMoreToTeachText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "AcademyEarlNoMoreToTeachText"
+          ],
+          "raw": "writetext AcademyEarlNoMoreToTeachText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "AcademyEarlNoMoreToTeachText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EarlsPokemonAcademyYoungster1Script": {
+      "raw_lines": [
+        "jumptextfaceplayer EarlsPokemonAcademyYoungster1Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "EarlsPokemonAcademyYoungster1Text"
+          ],
+          "raw": "jumptextfaceplayer EarlsPokemonAcademyYoungster1Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "EarlsPokemonAcademyYoungster1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EarlsPokemonAcademyGameboyKid1Script": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext EarlsPokemonAcademyGameboyKid1Text",
+        "waitbutton",
+        "closetext",
+        "turnobject EARLSPOKEMONACADEMY_GAMEBOY_KID1, DOWN",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "EarlsPokemonAcademyGameboyKid1Text"
+          ],
+          "raw": "writetext EarlsPokemonAcademyGameboyKid1Text"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "EARLSPOKEMONACADEMY_GAMEBOY_KID1",
+            "DOWN"
+          ],
+          "raw": "turnobject EARLSPOKEMONACADEMY_GAMEBOY_KID1, DOWN"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "EarlsPokemonAcademyGameboyKid1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EarlsPokemonAcademyGameboyKid2Script": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext EarlsPokemonAcademyGameboyKid2Text",
+        "waitbutton",
+        "closetext",
+        "turnobject EARLSPOKEMONACADEMY_GAMEBOY_KID2, DOWN",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "EarlsPokemonAcademyGameboyKid2Text"
+          ],
+          "raw": "writetext EarlsPokemonAcademyGameboyKid2Text"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "EARLSPOKEMONACADEMY_GAMEBOY_KID2",
+            "DOWN"
+          ],
+          "raw": "turnobject EARLSPOKEMONACADEMY_GAMEBOY_KID2, DOWN"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "EarlsPokemonAcademyGameboyKid2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EarlsPokemonAcademyYoungster2Script": {
+      "raw_lines": [
+        "jumptextfaceplayer EarlsPokemonAcademyYoungster2Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "EarlsPokemonAcademyYoungster2Text"
+          ],
+          "raw": "jumptextfaceplayer EarlsPokemonAcademyYoungster2Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "EarlsPokemonAcademyYoungster2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard": {
+      "raw_lines": [
+        "opentext",
+        "writetext AcademyBlackboardText"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AcademyBlackboardText"
+          ],
+          "raw": "writetext AcademyBlackboardText"
+        }
+      ],
+      "first_command": "opentext",
+      "fallthrough_label": "AcademyBlackboard.Loop",
+      "label_refs": [
+        "AcademyBlackboard.Loop"
+      ],
+      "text_refs": [
+        "AcademyBlackboardText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard.Loop": {
+      "raw_lines": [
+        "loadmenu .BlackboardMenuHeader",
+        "_2dmenu",
+        "closewindow",
+        "ifequal 1, .Poison",
+        "ifequal 2, .Paralysis",
+        "ifequal 3, .Sleep",
+        "ifequal 4, .Burn",
+        "ifequal 5, .Freeze",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadmenu",
+          "args": [
+            "AcademyBlackboard.BlackboardMenuHeader"
+          ],
+          "raw": "loadmenu .BlackboardMenuHeader"
+        },
+        {
+          "command": "_2dmenu",
+          "args": [],
+          "raw": "_2dmenu"
+        },
+        {
+          "command": "closewindow",
+          "args": [],
+          "raw": "closewindow"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "AcademyBlackboard.Poison"
+          ],
+          "raw": "ifequal 1, .Poison"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "AcademyBlackboard.Paralysis"
+          ],
+          "raw": "ifequal 2, .Paralysis"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "3",
+            "AcademyBlackboard.Sleep"
+          ],
+          "raw": "ifequal 3, .Sleep"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "4",
+            "AcademyBlackboard.Burn"
+          ],
+          "raw": "ifequal 4, .Burn"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "5",
+            "AcademyBlackboard.Freeze"
+          ],
+          "raw": "ifequal 5, .Freeze"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadmenu",
+      "label_refs": [
+        "AcademyBlackboard.Burn",
+        "AcademyBlackboard.Freeze",
+        "AcademyBlackboard.Paralysis",
+        "AcademyBlackboard.Poison",
+        "AcademyBlackboard.Sleep"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard.Poison": {
+      "raw_lines": [
+        "writetext AcademyPoisonText",
+        "waitbutton",
+        "sjump .Loop"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "AcademyPoisonText"
+          ],
+          "raw": "writetext AcademyPoisonText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "AcademyBlackboard.Loop"
+          ],
+          "raw": "sjump .Loop"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "AcademyBlackboard.Loop"
+      ],
+      "text_refs": [
+        "AcademyPoisonText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard.Paralysis": {
+      "raw_lines": [
+        "writetext AcademyParalysisText",
+        "waitbutton",
+        "sjump .Loop"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "AcademyParalysisText"
+          ],
+          "raw": "writetext AcademyParalysisText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "AcademyBlackboard.Loop"
+          ],
+          "raw": "sjump .Loop"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "AcademyBlackboard.Loop"
+      ],
+      "text_refs": [
+        "AcademyParalysisText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard.Sleep": {
+      "raw_lines": [
+        "writetext AcademySleepText",
+        "waitbutton",
+        "sjump .Loop"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "AcademySleepText"
+          ],
+          "raw": "writetext AcademySleepText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "AcademyBlackboard.Loop"
+          ],
+          "raw": "sjump .Loop"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "AcademyBlackboard.Loop"
+      ],
+      "text_refs": [
+        "AcademySleepText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard.Burn": {
+      "raw_lines": [
+        "writetext AcademyBurnText",
+        "waitbutton",
+        "sjump .Loop"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "AcademyBurnText"
+          ],
+          "raw": "writetext AcademyBurnText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "AcademyBlackboard.Loop"
+          ],
+          "raw": "sjump .Loop"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "AcademyBlackboard.Loop"
+      ],
+      "text_refs": [
+        "AcademyBurnText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard.Freeze": {
+      "raw_lines": [
+        "writetext AcademyFreezeText",
+        "waitbutton",
+        "sjump .Loop"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "AcademyFreezeText"
+          ],
+          "raw": "writetext AcademyFreezeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "AcademyBlackboard.Loop"
+          ],
+          "raw": "sjump .Loop"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "AcademyBlackboard.Loop"
+      ],
+      "text_refs": [
+        "AcademyFreezeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard.BlackboardMenuHeader": {
+      "raw_lines": [
+        "db MENU_BACKUP_TILES",
+        "menu_coords 0, 0, 11, 8",
+        "dw .MenuData",
+        "db 1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "MENU_BACKUP_TILES"
+          ],
+          "raw": "db MENU_BACKUP_TILES"
+        },
+        {
+          "command": "menu_coords",
+          "args": [
+            "0",
+            "0",
+            "11",
+            "8"
+          ],
+          "raw": "menu_coords 0, 0, 11, 8"
+        },
+        {
+          "command": "dw",
+          "args": [
+            "AcademyBlackboard.MenuData"
+          ],
+          "raw": "dw .MenuData"
+        },
+        {
+          "command": "db",
+          "args": [
+            "1"
+          ],
+          "raw": "db 1"
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "AcademyBlackboard.MenuData",
+      "label_refs": [
+        "AcademyBlackboard.MenuData"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard.MenuData": {
+      "raw_lines": [
+        "db STATICMENU_CURSOR",
+        "dn 3, 2",
+        "db 5",
+        "dba .Text",
+        "dbw BANK(@), NULL"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "STATICMENU_CURSOR"
+          ],
+          "raw": "db STATICMENU_CURSOR"
+        },
+        {
+          "command": "dn",
+          "args": [
+            "3",
+            "2"
+          ],
+          "raw": "dn 3, 2"
+        },
+        {
+          "command": "db",
+          "args": [
+            "5"
+          ],
+          "raw": "db 5"
+        },
+        {
+          "command": "dba",
+          "args": [
+            "AcademyBlackboard.Text"
+          ],
+          "raw": "dba .Text"
+        },
+        {
+          "command": "dbw",
+          "args": [
+            "BANK(@)",
+            "NULL"
+          ],
+          "raw": "dbw BANK(@), NULL"
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "AcademyBlackboard.Text",
+      "label_refs": [
+        "AcademyBlackboard.Text"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard.Text": {
+      "raw_lines": [
+        "db \"PSN@\"",
+        "db \"PAR@\"",
+        "db \"SLP@\"",
+        "db \"BRN@\"",
+        "db \"FRZ@\"",
+        "db \"QUIT@\""
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "\"PSN@\""
+          ],
+          "raw": "db \"PSN@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"PAR@\""
+          ],
+          "raw": "db \"PAR@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"SLP@\""
+          ],
+          "raw": "db \"SLP@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"BRN@\""
+          ],
+          "raw": "db \"BRN@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"FRZ@\""
+          ],
+          "raw": "db \"FRZ@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"QUIT@\""
+          ],
+          "raw": "db \"QUIT@\""
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "AcademyNotebook",
+      "label_refs": [
+        "AcademyNotebook"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyNotebook": {
+      "raw_lines": [
+        "opentext",
+        "writetext AcademyNotebookText",
+        "yesorno",
+        "iffalse .Done",
+        "writetext AcademyNotebookText1",
+        "yesorno",
+        "iffalse .Done",
+        "writetext AcademyNotebookText2",
+        "yesorno",
+        "iffalse .Done",
+        "writetext AcademyNotebookText3",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AcademyNotebookText"
+          ],
+          "raw": "writetext AcademyNotebookText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "AcademyNotebook.Done"
+          ],
+          "raw": "iffalse .Done"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AcademyNotebookText1"
+          ],
+          "raw": "writetext AcademyNotebookText1"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "AcademyNotebook.Done"
+          ],
+          "raw": "iffalse .Done"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AcademyNotebookText2"
+          ],
+          "raw": "writetext AcademyNotebookText2"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "AcademyNotebook.Done"
+          ],
+          "raw": "iffalse .Done"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AcademyNotebookText3"
+          ],
+          "raw": "writetext AcademyNotebookText3"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "opentext",
+      "fallthrough_label": "AcademyNotebook.Done",
+      "label_refs": [
+        "AcademyNotebook.Done"
+      ],
+      "text_refs": [
+        "AcademyNotebookText",
+        "AcademyNotebookText1",
+        "AcademyNotebookText2",
+        "AcademyNotebookText3"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyNotebook.Done": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyStickerMachine": {
+      "raw_lines": [
+        "jumptext AcademyStickerMachineText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "AcademyStickerMachineText"
+          ],
+          "raw": "jumptext AcademyStickerMachineText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "AcademyStickerMachineText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBookshelf": {
+      "raw_lines": [
+        "jumpstd DifficultBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "DifficultBookshelfScript"
+          ],
+          "raw": "jumpstd DifficultBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "DifficultBookshelfScript"
+      ]
+    },
+    "EarlsPokemonAcademy_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3, 15, VIOLET_CITY, 3",
+        "warp_event  4, 15, VIOLET_CITY, 3",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, AcademyBookshelf",
+        "bg_event  1,  1, BGEVENT_READ, AcademyBookshelf",
+        "bg_event  3,  0, BGEVENT_READ, AcademyBlackboard",
+        "bg_event  4,  0, BGEVENT_READ, AcademyBlackboard",
+        "def_object_events",
+        "object_event  4,  2, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AcademyEarl, EVENT_EARLS_ACADEMY_EARL",
+        "object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyYoungster1Script, -1",
+        "object_event  3, 11, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyGameboyKid1Script, -1",
+        "object_event  4, 11, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyGameboyKid2Script, -1",
+        "object_event  4,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyYoungster2Script, -1",
+        "object_event  2,  4, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AcademyNotebook, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "15",
+            "VIOLET_CITY",
+            "3"
+          ],
+          "raw": "warp_event  3, 15, VIOLET_CITY, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "15",
+            "VIOLET_CITY",
+            "3"
+          ],
+          "raw": "warp_event  4, 15, VIOLET_CITY, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "AcademyBookshelf"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, AcademyBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "AcademyBookshelf"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, AcademyBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "0",
+            "BGEVENT_READ",
+            "AcademyBlackboard"
+          ],
+          "raw": "bg_event  3,  0, BGEVENT_READ, AcademyBlackboard"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "4",
+            "0",
+            "BGEVENT_READ",
+            "AcademyBlackboard"
+          ],
+          "raw": "bg_event  4,  0, BGEVENT_READ, AcademyBlackboard"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "2",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "AcademyEarl",
+            "EVENT_EARLS_ACADEMY_EARL"
+          ],
+          "raw": "object_event  4,  2, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AcademyEarl, EVENT_EARLS_ACADEMY_EARL"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "5",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EarlsPokemonAcademyYoungster1Script",
+            "-1"
+          ],
+          "raw": "object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyYoungster1Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "11",
+            "SPRITE_GAMEBOY_KID",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EarlsPokemonAcademyGameboyKid1Script",
+            "-1"
+          ],
+          "raw": "object_event  3, 11, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyGameboyKid1Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "11",
+            "SPRITE_GAMEBOY_KID",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EarlsPokemonAcademyGameboyKid2Script",
+            "-1"
+          ],
+          "raw": "object_event  4, 11, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyGameboyKid2Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "7",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "EarlsPokemonAcademyYoungster2Script",
+            "-1"
+          ],
+          "raw": "object_event  4,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EarlsPokemonAcademyYoungster2Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "4",
+            "SPRITE_POKEDEX",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "AcademyNotebook",
+            "-1"
+          ],
+          "raw": "object_event  2,  4, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AcademyNotebook, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "AcademyEarlIntroText": {
+      "raw_lines": [
+        "text \"EARL, I am!\"",
+        "para \"Wonderful are\"",
+        "line \"#MON, yes!\"",
+        "para \"Teach you I will\"",
+        "line \"to be a better\"",
+        "cont \"trainer!\"",
+        "para \"What you want to\"",
+        "line \"know? Want to be\"",
+        "cont \"a winner is you?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "EARL, I am!"
+        },
+        {
+          "command": "para",
+          "value": "Wonderful are"
+        },
+        {
+          "command": "line",
+          "value": "#MON, yes!"
+        },
+        {
+          "command": "para",
+          "value": "Teach you I will"
+        },
+        {
+          "command": "line",
+          "value": "to be a better"
+        },
+        {
+          "command": "cont",
+          "value": "trainer!"
+        },
+        {
+          "command": "para",
+          "value": "What you want to"
+        },
+        {
+          "command": "line",
+          "value": "know? Want to be"
+        },
+        {
+          "command": "cont",
+          "value": "a winner is you?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AcademyEarlTeachHowToWinText": {
+      "raw_lines": [
+        "text \"Good! Teach you,\"",
+        "line \"I will!\"",
+        "para \"In battle, #MON\"",
+        "line \"top on list jump\"",
+        "cont \"out first!\"",
+        "para \"Change order in\"",
+        "line \"list, make battle\"",
+        "cont \"easy, maybe!\"",
+        "para \"More from me you\"",
+        "line \"want to hear?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Good! Teach you,"
+        },
+        {
+          "command": "line",
+          "value": "I will!"
+        },
+        {
+          "command": "para",
+          "value": "In battle, #MON"
+        },
+        {
+          "command": "line",
+          "value": "top on list jump"
+        },
+        {
+          "command": "cont",
+          "value": "out first!"
+        },
+        {
+          "command": "para",
+          "value": "Change order in"
+        },
+        {
+          "command": "line",
+          "value": "list, make battle"
+        },
+        {
+          "command": "cont",
+          "value": "easy, maybe!"
+        },
+        {
+          "command": "para",
+          "value": "More from me you"
+        },
+        {
+          "command": "line",
+          "value": "want to hear?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AcademyEarlTeachMoreText": {
+      "raw_lines": [
+        "text \"So, want to know\"",
+        "line \"how to raise\"",
+        "cont \"#MON well?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "So, want to know"
+        },
+        {
+          "command": "line",
+          "value": "how to raise"
+        },
+        {
+          "command": "cont",
+          "value": "#MON well?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AcademyEarlTeachHowToRaiseWellText": {
+      "raw_lines": [
+        "text \"Fine! Teach you,\"",
+        "line \"I will!\"",
+        "para \"If #MON come\"",
+        "line \"out in battle even\"",
+        "para \"briefly, some EXP.\"",
+        "line \"Points it gets.\"",
+        "para \"At top of list put\"",
+        "line \"weak #MON.\"",
+        "para \"Switch in battle\"",
+        "line \"quick!\"",
+        "para \"This way, weak\"",
+        "line \"#MON strong\"",
+        "cont \"become!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Fine! Teach you,"
+        },
+        {
+          "command": "line",
+          "value": "I will!"
+        },
+        {
+          "command": "para",
+          "value": "If #MON come"
+        },
+        {
+          "command": "line",
+          "value": "out in battle even"
+        },
+        {
+          "command": "para",
+          "value": "briefly, some EXP."
+        },
+        {
+          "command": "line",
+          "value": "Points it gets."
+        },
+        {
+          "command": "para",
+          "value": "At top of list put"
+        },
+        {
+          "command": "line",
+          "value": "weak #MON."
+        },
+        {
+          "command": "para",
+          "value": "Switch in battle"
+        },
+        {
+          "command": "line",
+          "value": "quick!"
+        },
+        {
+          "command": "para",
+          "value": "This way, weak"
+        },
+        {
+          "command": "line",
+          "value": "#MON strong"
+        },
+        {
+          "command": "cont",
+          "value": "become!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AcademyEarlNoMoreToTeachText": {
+      "raw_lines": [
+        "text \"Oh! Smart student\"",
+        "line \"you are! Nothing\"",
+        "cont \"more do I teach!\"",
+        "para \"Good to #MON\"",
+        "line \"you must be!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh! Smart student"
+        },
+        {
+          "command": "line",
+          "value": "you are! Nothing"
+        },
+        {
+          "command": "cont",
+          "value": "more do I teach!"
+        },
+        {
+          "command": "para",
+          "value": "Good to #MON"
+        },
+        {
+          "command": "line",
+          "value": "you must be!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EarlsPokemonAcademyYoungster1Text": {
+      "raw_lines": [
+        "text \"I'm taking notes\"",
+        "line \"of the teacher's\"",
+        "cont \"lecture.\"",
+        "para \"I'd better copy\"",
+        "line \"the stuff on the\"",
+        "cont \"blackboard too.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm taking notes"
+        },
+        {
+          "command": "line",
+          "value": "of the teacher's"
+        },
+        {
+          "command": "cont",
+          "value": "lecture."
+        },
+        {
+          "command": "para",
+          "value": "I'd better copy"
+        },
+        {
+          "command": "line",
+          "value": "the stuff on the"
+        },
+        {
+          "command": "cont",
+          "value": "blackboard too."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EarlsPokemonAcademyGameboyKid1Text": {
+      "raw_lines": [
+        "text \"I traded my best\"",
+        "line \"#MON to the\"",
+        "cont \"guy beside me.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I traded my best"
+        },
+        {
+          "command": "line",
+          "value": "#MON to the"
+        },
+        {
+          "command": "cont",
+          "value": "guy beside me."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EarlsPokemonAcademyGameboyKid2Text": {
+      "raw_lines": [
+        "text \"Huh? The #MON I\"",
+        "line \"just got is hold-\"",
+        "cont \"ing something!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Huh? The #MON I"
+        },
+        {
+          "command": "line",
+          "value": "just got is hold-"
+        },
+        {
+          "command": "cont",
+          "value": "ing something!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EarlsPokemonAcademyYoungster2Text": {
+      "raw_lines": [
+        "text \"A #MON holding\"",
+        "line \"a BERRY will heal\"",
+        "cont \"itself in battle.\"",
+        "para \"Many other items\"",
+        "line \"can be held by\"",
+        "cont \"#MON\u2026\"",
+        "para \"It sure is tough\"",
+        "line \"taking notes\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A #MON holding"
+        },
+        {
+          "command": "line",
+          "value": "a BERRY will heal"
+        },
+        {
+          "command": "cont",
+          "value": "itself in battle."
+        },
+        {
+          "command": "para",
+          "value": "Many other items"
+        },
+        {
+          "command": "line",
+          "value": "can be held by"
+        },
+        {
+          "command": "cont",
+          "value": "#MON\u2026"
+        },
+        {
+          "command": "para",
+          "value": "It sure is tough"
+        },
+        {
+          "command": "line",
+          "value": "taking notes\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AcademyBlackboardText": {
+      "raw_lines": [
+        "text \"The blackboard\"",
+        "line \"describes #MON\"",
+        "para \"status changes in\"",
+        "line \"battle.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The blackboard"
+        },
+        {
+          "command": "line",
+          "value": "describes #MON"
+        },
+        {
+          "command": "para",
+          "value": "status changes in"
+        },
+        {
+          "command": "line",
+          "value": "battle."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AcademyBlackboardText2": {
+      "raw_lines": [
+        "text \"Read which topic?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Read which topic?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AcademyPoisonText": {
+      "raw_lines": [
+        "text \"If poisoned, a\"",
+        "line \"#MON steadily\"",
+        "cont \"loses HP.\"",
+        "para \"Poison lingers\"",
+        "line \"after the battle,\"",
+        "para \"and HP is lost as\"",
+        "line \"you walk.\"",
+        "para \"To cure it, use an\"",
+        "line \"ANTIDOTE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If poisoned, a"
+        },
+        {
+          "command": "line",
+          "value": "#MON steadily"
+        },
+        {
+          "command": "cont",
+          "value": "loses HP."
+        },
+        {
+          "command": "para",
+          "value": "Poison lingers"
+        },
+        {
+          "command": "line",
+          "value": "after the battle,"
+        },
+        {
+          "command": "para",
+          "value": "and HP is lost as"
+        },
+        {
+          "command": "line",
+          "value": "you walk."
+        },
+        {
+          "command": "para",
+          "value": "To cure it, use an"
+        },
+        {
+          "command": "line",
+          "value": "ANTIDOTE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AcademyParalysisText": {
+      "raw_lines": [
+        "text \"Paralysis reduces\"",
+        "line \"speed and may\"",
+        "cont \"prevent movement.\"",
+        "para \"It remains after\"",
+        "line \"battle, so use\"",
+        "cont \"a PARLYZ HEAL.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Paralysis reduces"
+        },
+        {
+          "command": "line",
+          "value": "speed and may"
+        },
+        {
+          "command": "cont",
+          "value": "prevent movement."
+        },
+        {
+          "command": "para",
+          "value": "It remains after"
+        },
+        {
+          "command": "line",
+          "value": "battle, so use"
+        },
+        {
+          "command": "cont",
+          "value": "a PARLYZ HEAL."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AcademySleepText": {
+      "raw_lines": [
+        "text \"If asleep, your\"",
+        "line \"#MON can't make\"",
+        "cont \"a move.\"",
+        "para \"A sleeping #MON\"",
+        "line \"doesn't wake up\"",
+        "cont \"after battle.\"",
+        "para \"Wake it up with\"",
+        "line \"an AWAKENING.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If asleep, your"
+        },
+        {
+          "command": "line",
+          "value": "#MON can't make"
+        },
+        {
+          "command": "cont",
+          "value": "a move."
+        },
+        {
+          "command": "para",
+          "value": "A sleeping #MON"
+        },
+        {
+          "command": "line",
+          "value": "doesn't wake up"
+        },
+        {
+          "command": "cont",
+          "value": "after battle."
+        },
+        {
+          "command": "para",
+          "value": "Wake it up with"
+        },
+        {
+          "command": "line",
+          "value": "an AWAKENING."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AcademyBurnText": {
+      "raw_lines": [
+        "text \"A burn steadily\"",
+        "line \"consumes HP.\"",
+        "para \"It also reduces\"",
+        "line \"attack power.\"",
+        "para \"A burn lingers\"",
+        "line \"after battle.\"",
+        "para \"Use a BURN HEAL as\"",
+        "line \"the cure.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A burn steadily"
+        },
+        {
+          "command": "line",
+          "value": "consumes HP."
+        },
+        {
+          "command": "para",
+          "value": "It also reduces"
+        },
+        {
+          "command": "line",
+          "value": "attack power."
+        },
+        {
+          "command": "para",
+          "value": "A burn lingers"
+        },
+        {
+          "command": "line",
+          "value": "after battle."
+        },
+        {
+          "command": "para",
+          "value": "Use a BURN HEAL as"
+        },
+        {
+          "command": "line",
+          "value": "the cure."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AcademyFreezeText": {
+      "raw_lines": [
+        "text \"If your #MON is\"",
+        "line \"frozen, it can't\"",
+        "cont \"do a thing.\"",
+        "para \"It remains frozen\"",
+        "line \"after battle.\"",
+        "para \"Thaw it out with\"",
+        "line \"an ICE HEAL.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If your #MON is"
+        },
+        {
+          "command": "line",
+          "value": "frozen, it can't"
+        },
+        {
+          "command": "cont",
+          "value": "do a thing."
+        },
+        {
+          "command": "para",
+          "value": "It remains frozen"
+        },
+        {
+          "command": "line",
+          "value": "after battle."
+        },
+        {
+          "command": "para",
+          "value": "Thaw it out with"
+        },
+        {
+          "command": "line",
+          "value": "an ICE HEAL."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AcademyNotebookText": {
+      "raw_lines": [
+        "text \"It's this kid's\"",
+        "line \"notebook\u2026\"",
+        "para \"Catch #MON\"",
+        "line \"using # BALLS.\"",
+        "para \"Up to six can be\"",
+        "line \"in your party.\"",
+        "para \"Keep reading?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's this kid's"
+        },
+        {
+          "command": "line",
+          "value": "notebook\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Catch #MON"
+        },
+        {
+          "command": "line",
+          "value": "using # BALLS."
+        },
+        {
+          "command": "para",
+          "value": "Up to six can be"
+        },
+        {
+          "command": "line",
+          "value": "in your party."
+        },
+        {
+          "command": "para",
+          "value": "Keep reading?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AcademyNotebookText1": {
+      "raw_lines": [
+        "text \"Before throwing a\"",
+        "line \"# BALL, weaken\"",
+        "cont \"the target first.\"",
+        "para \"A poisoned or\"",
+        "line \"burned #MON is\"",
+        "cont \"easier to catch.\"",
+        "para \"Keep reading?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Before throwing a"
+        },
+        {
+          "command": "line",
+          "value": "# BALL, weaken"
+        },
+        {
+          "command": "cont",
+          "value": "the target first."
+        },
+        {
+          "command": "para",
+          "value": "A poisoned or"
+        },
+        {
+          "command": "line",
+          "value": "burned #MON is"
+        },
+        {
+          "command": "cont",
+          "value": "easier to catch."
+        },
+        {
+          "command": "para",
+          "value": "Keep reading?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AcademyNotebookText2": {
+      "raw_lines": [
+        "text \"Some moves may\"",
+        "line \"cause confusion.\"",
+        "para \"Confusion may make\"",
+        "line \"a #MON attack\"",
+        "cont \"itself.\"",
+        "para \"Leaving battle\"",
+        "line \"clears up any\"",
+        "cont \"confusion.\"",
+        "para \"Keep reading?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Some moves may"
+        },
+        {
+          "command": "line",
+          "value": "cause confusion."
+        },
+        {
+          "command": "para",
+          "value": "Confusion may make"
+        },
+        {
+          "command": "line",
+          "value": "a #MON attack"
+        },
+        {
+          "command": "cont",
+          "value": "itself."
+        },
+        {
+          "command": "para",
+          "value": "Leaving battle"
+        },
+        {
+          "command": "line",
+          "value": "clears up any"
+        },
+        {
+          "command": "cont",
+          "value": "confusion."
+        },
+        {
+          "command": "para",
+          "value": "Keep reading?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AcademyNotebookText3": {
+      "raw_lines": [
+        "text \"People who catch\"",
+        "line \"and use #MON\"",
+        "para \"in battle are\"",
+        "line \"#MON trainers.\"",
+        "para \"They are expected\"",
+        "line \"to visit #MON\"",
+        "para \"GYMS and defeat\"",
+        "line \"other trainers.\"",
+        "para \"The next page\"",
+        "line \"is\u2026 Blank!\"",
+        "para \"Boy: E-he-he\u2026\"",
+        "para \"I haven't written\"",
+        "line \"anymore\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "People who catch"
+        },
+        {
+          "command": "line",
+          "value": "and use #MON"
+        },
+        {
+          "command": "para",
+          "value": "in battle are"
+        },
+        {
+          "command": "line",
+          "value": "#MON trainers."
+        },
+        {
+          "command": "para",
+          "value": "They are expected"
+        },
+        {
+          "command": "line",
+          "value": "to visit #MON"
+        },
+        {
+          "command": "para",
+          "value": "GYMS and defeat"
+        },
+        {
+          "command": "line",
+          "value": "other trainers."
+        },
+        {
+          "command": "para",
+          "value": "The next page"
+        },
+        {
+          "command": "line",
+          "value": "is\u2026 Blank!"
+        },
+        {
+          "command": "para",
+          "value": "Boy: E-he-he\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I haven't written"
+        },
+        {
+          "command": "line",
+          "value": "anymore\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AcademyStickerMachineText": {
+      "raw_lines": [
+        "text \"This super machine\"",
+        "line \"prints data out as\"",
+        "para \"stickers!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This super machine"
+        },
+        {
+          "command": "line",
+          "value": "prints data out as"
+        },
+        {
+          "command": "para",
+          "value": "stickers!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "AcademyEarlSpinMovement": {
+      "raw_lines": [
+        "turn_head DOWN",
+        "turn_head LEFT",
+        "turn_head UP",
+        "turn_head RIGHT",
+        "turn_head DOWN",
+        "turn_head LEFT",
+        "turn_head UP",
+        "turn_head RIGHT",
+        "turn_head DOWN",
+        "turn_head LEFT",
+        "turn_head UP",
+        "turn_head RIGHT",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "DifficultBookshelfScript"
+  ],
+  "dependencies": {
+    "EarlsPokemonAcademy_MapScripts": {
+      "label_refs": [
+        "AcademyEarl"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyEarl": {
+      "label_refs": [
+        "AcademyEarl.Done",
+        "AcademyEarl.Part1"
+      ],
+      "text_refs": [
+        "AcademyEarlIntroText",
+        "AcademyEarlTeachHowToWinText"
+      ],
+      "movement_refs": [
+        "AcademyEarlSpinMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyEarl.Part1": {
+      "label_refs": [
+        "AcademyEarl.Done"
+      ],
+      "text_refs": [
+        "AcademyEarlTeachHowToRaiseWellText",
+        "AcademyEarlTeachMoreText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyEarl.Done": {
+      "label_refs": [],
+      "text_refs": [
+        "AcademyEarlNoMoreToTeachText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EarlsPokemonAcademyYoungster1Script": {
+      "label_refs": [],
+      "text_refs": [
+        "EarlsPokemonAcademyYoungster1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EarlsPokemonAcademyGameboyKid1Script": {
+      "label_refs": [],
+      "text_refs": [
+        "EarlsPokemonAcademyGameboyKid1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EarlsPokemonAcademyGameboyKid2Script": {
+      "label_refs": [],
+      "text_refs": [
+        "EarlsPokemonAcademyGameboyKid2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EarlsPokemonAcademyYoungster2Script": {
+      "label_refs": [],
+      "text_refs": [
+        "EarlsPokemonAcademyYoungster2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard": {
+      "label_refs": [
+        "AcademyBlackboard.Loop"
+      ],
+      "text_refs": [
+        "AcademyBlackboardText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard.Loop": {
+      "label_refs": [
+        "AcademyBlackboard.Burn",
+        "AcademyBlackboard.Freeze",
+        "AcademyBlackboard.Paralysis",
+        "AcademyBlackboard.Poison",
+        "AcademyBlackboard.Sleep"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard.Poison": {
+      "label_refs": [
+        "AcademyBlackboard.Loop"
+      ],
+      "text_refs": [
+        "AcademyPoisonText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard.Paralysis": {
+      "label_refs": [
+        "AcademyBlackboard.Loop"
+      ],
+      "text_refs": [
+        "AcademyParalysisText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard.Sleep": {
+      "label_refs": [
+        "AcademyBlackboard.Loop"
+      ],
+      "text_refs": [
+        "AcademySleepText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard.Burn": {
+      "label_refs": [
+        "AcademyBlackboard.Loop"
+      ],
+      "text_refs": [
+        "AcademyBurnText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard.Freeze": {
+      "label_refs": [
+        "AcademyBlackboard.Loop"
+      ],
+      "text_refs": [
+        "AcademyFreezeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard.BlackboardMenuHeader": {
+      "label_refs": [
+        "AcademyBlackboard.MenuData"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard.MenuData": {
+      "label_refs": [
+        "AcademyBlackboard.Text"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBlackboard.Text": {
+      "label_refs": [
+        "AcademyNotebook"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyNotebook": {
+      "label_refs": [
+        "AcademyNotebook.Done"
+      ],
+      "text_refs": [
+        "AcademyNotebookText",
+        "AcademyNotebookText1",
+        "AcademyNotebookText2",
+        "AcademyNotebookText3"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyNotebook.Done": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyStickerMachine": {
+      "label_refs": [],
+      "text_refs": [
+        "AcademyStickerMachineText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AcademyBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "DifficultBookshelfScript"
+      ]
+    },
+    "EarlsPokemonAcademy_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 4,
+    "object_events": 6
+  }
+}

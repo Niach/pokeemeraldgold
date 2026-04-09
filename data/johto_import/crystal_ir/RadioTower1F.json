@@ -1,0 +1,3161 @@
+{
+  "crystal_map": "RadioTower1F",
+  "map_id": "RADIO_TOWER_1F",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 17,
+  "tileset": "TILESET_RADIO_TOWER",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_RADIO_TOWER",
+  "music": "RADIO_TOWER_MUSIC | MUSIC_GOLDENROD_CITY",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 9,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/RadioTower1F.blk",
+  "source_asm": "maps/RadioTower1F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 11
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 11
+      },
+      {
+        "x": 15,
+        "y": 0,
+        "dest_map": "RADIO_TOWER_2F",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 3,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "RadioTower1FDirectory"
+      },
+      {
+        "x": 13,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "RadioTower1FLuckyChannelSign"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 5,
+        "y": 6,
+        "sprite": "SPRITE_RECEPTIONIST",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RadioTower1FReceptionistScript",
+        "flag": -1
+      },
+      {
+        "x": 16,
+        "y": 4,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RadioTower1FLassScript",
+        "flag": "EVENT_GOLDENROD_CITY_CIVILIANS"
+      },
+      {
+        "x": 15,
+        "y": 4,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RadioTower1FYoungsterScript",
+        "flag": "EVENT_GOLDENROD_CITY_CIVILIANS"
+      },
+      {
+        "x": 14,
+        "y": 1,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerGruntM3",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 8,
+        "y": 6,
+        "sprite": "SPRITE_GENTLEMAN",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RadioTower1FLuckyNumberManScript",
+        "flag": "EVENT_GOLDENROD_CITY_CIVILIANS"
+      },
+      {
+        "x": 12,
+        "y": 6,
+        "sprite": "SPRITE_COOLTRAINER_F",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RadioTower1FRadioCardWomanScript",
+        "flag": "EVENT_GOLDENROD_CITY_CIVILIANS"
+      }
+    ]
+  },
+  "object_consts": [
+    "RADIOTOWER1F_RECEPTIONIST",
+    "RADIOTOWER1F_LASS",
+    "RADIOTOWER1F_YOUNGSTER",
+    "RADIOTOWER1F_ROCKET",
+    "RADIOTOWER1F_LUCKYNUMBERMAN",
+    "RADIOTOWER1F_CARD_WOMAN"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "RadioTower1F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "RadioTower1FReceptionistScript",
+      "label_refs": [
+        "RadioTower1FReceptionistScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FReceptionistScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkflag ENGINE_ROCKETS_IN_RADIO_TOWER",
+        "iftrue .Rockets",
+        "writetext RadioTower1FReceptionistWelcomeText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_ROCKETS_IN_RADIO_TOWER"
+          ],
+          "raw": "checkflag ENGINE_ROCKETS_IN_RADIO_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RadioTower1FReceptionistScript.Rockets"
+          ],
+          "raw": "iftrue .Rockets"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FReceptionistWelcomeText"
+          ],
+          "raw": "writetext RadioTower1FReceptionistWelcomeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "RadioTower1FReceptionistScript.Rockets"
+      ],
+      "text_refs": [
+        "RadioTower1FReceptionistWelcomeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FReceptionistScript.Rockets": {
+      "raw_lines": [
+        "writetext RadioTower1FReceptionistNoToursText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FReceptionistNoToursText"
+          ],
+          "raw": "writetext RadioTower1FReceptionistNoToursText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FReceptionistNoToursText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLuckyNumberManScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext RadioTower1FLuckyNumberManAskToPlayText",
+        "promptbutton",
+        "special CheckLuckyNumberShowFlag",
+        "iffalse .skip",
+        "special ResetLuckyNumberShowFlag"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FLuckyNumberManAskToPlayText"
+          ],
+          "raw": "writetext RadioTower1FLuckyNumberManAskToPlayText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "special",
+          "args": [
+            "CheckLuckyNumberShowFlag"
+          ],
+          "raw": "special CheckLuckyNumberShowFlag"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "RadioTower1FLuckyNumberManScript.skip"
+          ],
+          "raw": "iffalse .skip"
+        },
+        {
+          "command": "special",
+          "args": [
+            "ResetLuckyNumberShowFlag"
+          ],
+          "raw": "special ResetLuckyNumberShowFlag"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "RadioTower1FLuckyNumberManScript.skip",
+      "label_refs": [
+        "RadioTower1FLuckyNumberManScript.skip"
+      ],
+      "text_refs": [
+        "RadioTower1FLuckyNumberManAskToPlayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLuckyNumberManScript.skip": {
+      "raw_lines": [
+        "special PrintTodaysLuckyNumber",
+        "checkflag ENGINE_LUCKY_NUMBER_SHOW",
+        "iftrue .GameOver",
+        "writetext RadioTower1FLuckyNumberManThisWeeksIdIsText",
+        "promptbutton",
+        "closetext",
+        "applymovement RADIOTOWER1F_LUCKYNUMBERMAN, RadioTower1FLuckyNumberManGoToPCMovement",
+        "opentext",
+        "writetext RadioTower1FLuckyNumberManCheckIfMatchText",
+        "promptbutton",
+        "waitsfx",
+        "writetext RadioTower1FLuckyNumberManDotDotDotText",
+        "playsound SFX_DEX_FANFARE_20_49",
+        "waitsfx",
+        "promptbutton",
+        "special CheckForLuckyNumberWinners",
+        "closetext",
+        "applymovement RADIOTOWER1F_LUCKYNUMBERMAN, RadioTower1FLuckyNumberManReturnToPlayerMovement",
+        "opentext",
+        "ifequal 1, .FirstPlace",
+        "ifequal 2, .SecondPlace",
+        "ifequal 3, .ThirdPlace",
+        "sjump .NoPrize"
+      ],
+      "commands": [
+        {
+          "command": "special",
+          "args": [
+            "PrintTodaysLuckyNumber"
+          ],
+          "raw": "special PrintTodaysLuckyNumber"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_LUCKY_NUMBER_SHOW"
+          ],
+          "raw": "checkflag ENGINE_LUCKY_NUMBER_SHOW"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RadioTower1FLuckyNumberManScript.GameOver"
+          ],
+          "raw": "iftrue .GameOver"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FLuckyNumberManThisWeeksIdIsText"
+          ],
+          "raw": "writetext RadioTower1FLuckyNumberManThisWeeksIdIsText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "RADIOTOWER1F_LUCKYNUMBERMAN",
+            "RadioTower1FLuckyNumberManGoToPCMovement"
+          ],
+          "raw": "applymovement RADIOTOWER1F_LUCKYNUMBERMAN, RadioTower1FLuckyNumberManGoToPCMovement"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FLuckyNumberManCheckIfMatchText"
+          ],
+          "raw": "writetext RadioTower1FLuckyNumberManCheckIfMatchText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FLuckyNumberManDotDotDotText"
+          ],
+          "raw": "writetext RadioTower1FLuckyNumberManDotDotDotText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_DEX_FANFARE_20_49"
+          ],
+          "raw": "playsound SFX_DEX_FANFARE_20_49"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "special",
+          "args": [
+            "CheckForLuckyNumberWinners"
+          ],
+          "raw": "special CheckForLuckyNumberWinners"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "RADIOTOWER1F_LUCKYNUMBERMAN",
+            "RadioTower1FLuckyNumberManReturnToPlayerMovement"
+          ],
+          "raw": "applymovement RADIOTOWER1F_LUCKYNUMBERMAN, RadioTower1FLuckyNumberManReturnToPlayerMovement"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "RadioTower1FLuckyNumberManScript.FirstPlace"
+          ],
+          "raw": "ifequal 1, .FirstPlace"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "RadioTower1FLuckyNumberManScript.SecondPlace"
+          ],
+          "raw": "ifequal 2, .SecondPlace"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "3",
+            "RadioTower1FLuckyNumberManScript.ThirdPlace"
+          ],
+          "raw": "ifequal 3, .ThirdPlace"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "RadioTower1FLuckyNumberManScript.NoPrize"
+          ],
+          "raw": "sjump .NoPrize"
+        }
+      ],
+      "first_command": "special",
+      "label_refs": [
+        "RadioTower1FLuckyNumberManScript.FirstPlace",
+        "RadioTower1FLuckyNumberManScript.GameOver",
+        "RadioTower1FLuckyNumberManScript.NoPrize",
+        "RadioTower1FLuckyNumberManScript.SecondPlace",
+        "RadioTower1FLuckyNumberManScript.ThirdPlace"
+      ],
+      "text_refs": [
+        "RadioTower1FLuckyNumberManCheckIfMatchText",
+        "RadioTower1FLuckyNumberManDotDotDotText",
+        "RadioTower1FLuckyNumberManThisWeeksIdIsText"
+      ],
+      "movement_refs": [
+        "RadioTower1FLuckyNumberManGoToPCMovement",
+        "RadioTower1FLuckyNumberManReturnToPlayerMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLuckyNumberManScript.GameOver": {
+      "raw_lines": [
+        "writetext RadioTower1FLuckyNumberManComeAgainText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FLuckyNumberManComeAgainText"
+          ],
+          "raw": "writetext RadioTower1FLuckyNumberManComeAgainText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FLuckyNumberManComeAgainText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLuckyNumberManScript.FirstPlace": {
+      "raw_lines": [
+        "writetext RadioTower1FLuckyNumberManPerfectMatchText",
+        "playsound SFX_1ST_PLACE",
+        "waitsfx",
+        "promptbutton",
+        "giveitem MASTER_BALL",
+        "iffalse .BagFull",
+        "itemnotify",
+        "setflag ENGINE_LUCKY_NUMBER_SHOW",
+        "sjump .GameOver"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FLuckyNumberManPerfectMatchText"
+          ],
+          "raw": "writetext RadioTower1FLuckyNumberManPerfectMatchText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_1ST_PLACE"
+          ],
+          "raw": "playsound SFX_1ST_PLACE"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "giveitem",
+          "args": [
+            "MASTER_BALL"
+          ],
+          "raw": "giveitem MASTER_BALL"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "RadioTower1FLuckyNumberManScript.BagFull"
+          ],
+          "raw": "iffalse .BagFull"
+        },
+        {
+          "command": "itemnotify",
+          "args": [],
+          "raw": "itemnotify"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_LUCKY_NUMBER_SHOW"
+          ],
+          "raw": "setflag ENGINE_LUCKY_NUMBER_SHOW"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "RadioTower1FLuckyNumberManScript.GameOver"
+          ],
+          "raw": "sjump .GameOver"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "RadioTower1FLuckyNumberManScript.BagFull",
+        "RadioTower1FLuckyNumberManScript.GameOver"
+      ],
+      "text_refs": [
+        "RadioTower1FLuckyNumberManPerfectMatchText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLuckyNumberManScript.SecondPlace": {
+      "raw_lines": [
+        "writetext RadioTower1FLuckyNumberManOkayMatchText",
+        "playsound SFX_2ND_PLACE",
+        "waitsfx",
+        "promptbutton",
+        "giveitem EXP_SHARE",
+        "iffalse .BagFull",
+        "itemnotify",
+        "setflag ENGINE_LUCKY_NUMBER_SHOW",
+        "sjump .GameOver"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FLuckyNumberManOkayMatchText"
+          ],
+          "raw": "writetext RadioTower1FLuckyNumberManOkayMatchText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_2ND_PLACE"
+          ],
+          "raw": "playsound SFX_2ND_PLACE"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "giveitem",
+          "args": [
+            "EXP_SHARE"
+          ],
+          "raw": "giveitem EXP_SHARE"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "RadioTower1FLuckyNumberManScript.BagFull"
+          ],
+          "raw": "iffalse .BagFull"
+        },
+        {
+          "command": "itemnotify",
+          "args": [],
+          "raw": "itemnotify"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_LUCKY_NUMBER_SHOW"
+          ],
+          "raw": "setflag ENGINE_LUCKY_NUMBER_SHOW"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "RadioTower1FLuckyNumberManScript.GameOver"
+          ],
+          "raw": "sjump .GameOver"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "RadioTower1FLuckyNumberManScript.BagFull",
+        "RadioTower1FLuckyNumberManScript.GameOver"
+      ],
+      "text_refs": [
+        "RadioTower1FLuckyNumberManOkayMatchText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLuckyNumberManScript.ThirdPlace": {
+      "raw_lines": [
+        "writetext RadioTower1FLuckyNumberManWeakMatchText",
+        "playsound SFX_3RD_PLACE",
+        "waitsfx",
+        "promptbutton",
+        "giveitem PP_UP",
+        "iffalse .BagFull",
+        "itemnotify",
+        "setflag ENGINE_LUCKY_NUMBER_SHOW",
+        "sjump .GameOver"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FLuckyNumberManWeakMatchText"
+          ],
+          "raw": "writetext RadioTower1FLuckyNumberManWeakMatchText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_3RD_PLACE"
+          ],
+          "raw": "playsound SFX_3RD_PLACE"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "giveitem",
+          "args": [
+            "PP_UP"
+          ],
+          "raw": "giveitem PP_UP"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "RadioTower1FLuckyNumberManScript.BagFull"
+          ],
+          "raw": "iffalse .BagFull"
+        },
+        {
+          "command": "itemnotify",
+          "args": [],
+          "raw": "itemnotify"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_LUCKY_NUMBER_SHOW"
+          ],
+          "raw": "setflag ENGINE_LUCKY_NUMBER_SHOW"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "RadioTower1FLuckyNumberManScript.GameOver"
+          ],
+          "raw": "sjump .GameOver"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "RadioTower1FLuckyNumberManScript.BagFull",
+        "RadioTower1FLuckyNumberManScript.GameOver"
+      ],
+      "text_refs": [
+        "RadioTower1FLuckyNumberManWeakMatchText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLuckyNumberManScript.NoPrize": {
+      "raw_lines": [
+        "writetext RadioTower1FLuckyNumberManNoneOfYourIDNumbersMatchText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FLuckyNumberManNoneOfYourIDNumbersMatchText"
+          ],
+          "raw": "writetext RadioTower1FLuckyNumberManNoneOfYourIDNumbersMatchText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FLuckyNumberManNoneOfYourIDNumbersMatchText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLuckyNumberManScript.BagFull": {
+      "raw_lines": [
+        "writetext RadioTower1FLuckyNumberManNoRoomForYourPrizeText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FLuckyNumberManNoRoomForYourPrizeText"
+          ],
+          "raw": "writetext RadioTower1FLuckyNumberManNoRoomForYourPrizeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FLuckyNumberManNoRoomForYourPrizeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FRadioCardWomanScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkflag ENGINE_RADIO_CARD",
+        "iftrue .GotCard",
+        "writetext RadioTower1FRadioCardWomanOfferQuizText",
+        "yesorno",
+        "iffalse .NoQuiz",
+        "writetext RadioTower1FRadioCardWomanQuestion1Text",
+        "yesorno",
+        "iffalse .WrongAnswer",
+        "playsound SFX_ELEVATOR_END",
+        "waitsfx",
+        "writetext RadioTower1FRadioCardWomanQuestion2Text",
+        "yesorno",
+        "iffalse .WrongAnswer",
+        "playsound SFX_ELEVATOR_END",
+        "waitsfx",
+        "writetext RadioTower1FRadioCardWomanQuestion3Text",
+        "yesorno",
+        "iftrue .WrongAnswer",
+        "playsound SFX_ELEVATOR_END",
+        "waitsfx",
+        "writetext RadioTower1FRadioCardWomanQuestion4Text",
+        "yesorno",
+        "iffalse .WrongAnswer",
+        "playsound SFX_ELEVATOR_END",
+        "waitsfx",
+        "writetext RadioTower1FRadioCardWomanQuestion5Text",
+        "yesorno",
+        "iftrue .WrongAnswer",
+        "playsound SFX_ELEVATOR_END",
+        "waitsfx",
+        "writetext RadioTower1FRadioCardWomanYouWinText",
+        "promptbutton",
+        "getstring STRING_BUFFER_4, .RadioCardText",
+        "scall .ReceiveItem",
+        "writetext RadioTower1FPokegearIsARadioText",
+        "promptbutton",
+        "setflag ENGINE_RADIO_CARD"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_RADIO_CARD"
+          ],
+          "raw": "checkflag ENGINE_RADIO_CARD"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RadioTower1FRadioCardWomanScript.GotCard"
+          ],
+          "raw": "iftrue .GotCard"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FRadioCardWomanOfferQuizText"
+          ],
+          "raw": "writetext RadioTower1FRadioCardWomanOfferQuizText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "RadioTower1FRadioCardWomanScript.NoQuiz"
+          ],
+          "raw": "iffalse .NoQuiz"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FRadioCardWomanQuestion1Text"
+          ],
+          "raw": "writetext RadioTower1FRadioCardWomanQuestion1Text"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "RadioTower1FRadioCardWomanScript.WrongAnswer"
+          ],
+          "raw": "iffalse .WrongAnswer"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ELEVATOR_END"
+          ],
+          "raw": "playsound SFX_ELEVATOR_END"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FRadioCardWomanQuestion2Text"
+          ],
+          "raw": "writetext RadioTower1FRadioCardWomanQuestion2Text"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "RadioTower1FRadioCardWomanScript.WrongAnswer"
+          ],
+          "raw": "iffalse .WrongAnswer"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ELEVATOR_END"
+          ],
+          "raw": "playsound SFX_ELEVATOR_END"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FRadioCardWomanQuestion3Text"
+          ],
+          "raw": "writetext RadioTower1FRadioCardWomanQuestion3Text"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RadioTower1FRadioCardWomanScript.WrongAnswer"
+          ],
+          "raw": "iftrue .WrongAnswer"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ELEVATOR_END"
+          ],
+          "raw": "playsound SFX_ELEVATOR_END"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FRadioCardWomanQuestion4Text"
+          ],
+          "raw": "writetext RadioTower1FRadioCardWomanQuestion4Text"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "RadioTower1FRadioCardWomanScript.WrongAnswer"
+          ],
+          "raw": "iffalse .WrongAnswer"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ELEVATOR_END"
+          ],
+          "raw": "playsound SFX_ELEVATOR_END"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FRadioCardWomanQuestion5Text"
+          ],
+          "raw": "writetext RadioTower1FRadioCardWomanQuestion5Text"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RadioTower1FRadioCardWomanScript.WrongAnswer"
+          ],
+          "raw": "iftrue .WrongAnswer"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ELEVATOR_END"
+          ],
+          "raw": "playsound SFX_ELEVATOR_END"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FRadioCardWomanYouWinText"
+          ],
+          "raw": "writetext RadioTower1FRadioCardWomanYouWinText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "getstring",
+          "args": [
+            "STRING_BUFFER_4",
+            "RadioTower1FRadioCardWomanScript.RadioCardText"
+          ],
+          "raw": "getstring STRING_BUFFER_4, .RadioCardText"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "RadioTower1FRadioCardWomanScript.ReceiveItem"
+          ],
+          "raw": "scall .ReceiveItem"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FPokegearIsARadioText"
+          ],
+          "raw": "writetext RadioTower1FPokegearIsARadioText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_RADIO_CARD"
+          ],
+          "raw": "setflag ENGINE_RADIO_CARD"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "RadioTower1FRadioCardWomanScript.GotCard",
+      "label_refs": [
+        "RadioTower1FRadioCardWomanScript.GotCard",
+        "RadioTower1FRadioCardWomanScript.NoQuiz",
+        "RadioTower1FRadioCardWomanScript.ReceiveItem",
+        "RadioTower1FRadioCardWomanScript.WrongAnswer"
+      ],
+      "text_refs": [
+        "RadioTower1FPokegearIsARadioText",
+        "RadioTower1FRadioCardWomanOfferQuizText",
+        "RadioTower1FRadioCardWomanQuestion1Text",
+        "RadioTower1FRadioCardWomanQuestion2Text",
+        "RadioTower1FRadioCardWomanQuestion3Text",
+        "RadioTower1FRadioCardWomanQuestion4Text",
+        "RadioTower1FRadioCardWomanQuestion5Text",
+        "RadioTower1FRadioCardWomanYouWinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FRadioCardWomanScript.GotCard": {
+      "raw_lines": [
+        "writetext RadioTower1FRadioCardWomanTuneInText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FRadioCardWomanTuneInText"
+          ],
+          "raw": "writetext RadioTower1FRadioCardWomanTuneInText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FRadioCardWomanTuneInText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FRadioCardWomanScript.RadioCardText": {
+      "raw_lines": [
+        "db \"RADIO CARD@\""
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "\"RADIO CARD@\""
+          ],
+          "raw": "db \"RADIO CARD@\""
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "RadioTower1FRadioCardWomanScript.ReceiveItem",
+      "label_refs": [
+        "RadioTower1FRadioCardWomanScript.ReceiveItem"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FRadioCardWomanScript.ReceiveItem": {
+      "raw_lines": [
+        "jumpstd ReceiveItemScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "ReceiveItemScript"
+          ],
+          "raw": "jumpstd ReceiveItemScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "ReceiveItemScript"
+      ]
+    },
+    "RadioTower1FRadioCardWomanScript.WrongAnswer": {
+      "raw_lines": [
+        "playsound SFX_WRONG",
+        "writetext RadioTower1FRadioCardWomanWrongAnswerText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_WRONG"
+          ],
+          "raw": "playsound SFX_WRONG"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FRadioCardWomanWrongAnswerText"
+          ],
+          "raw": "writetext RadioTower1FRadioCardWomanWrongAnswerText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playsound",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FRadioCardWomanWrongAnswerText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FRadioCardWomanScript.NoQuiz": {
+      "raw_lines": [
+        "writetext RadioTower1FRadioCardWomanNotTakingQuizText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RadioTower1FRadioCardWomanNotTakingQuizText"
+          ],
+          "raw": "writetext RadioTower1FRadioCardWomanNotTakingQuizText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FRadioCardWomanNotTakingQuizText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLassScript": {
+      "raw_lines": [
+        "jumptextfaceplayer RadioTower1FLassText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "RadioTower1FLassText"
+          ],
+          "raw": "jumptextfaceplayer RadioTower1FLassText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FYoungsterScript": {
+      "raw_lines": [
+        "jumptextfaceplayer RadioTower1FYoungsterText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "RadioTower1FYoungsterText"
+          ],
+          "raw": "jumptextfaceplayer RadioTower1FYoungsterText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM3": {
+      "raw_lines": [
+        "trainer GRUNTM, GRUNTM_3, EVENT_BEAT_ROCKET_GRUNTM_3, GruntM3SeenText, GruntM3BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "GRUNTM",
+            "GRUNTM_3",
+            "EVENT_BEAT_ROCKET_GRUNTM_3",
+            "GruntM3SeenText",
+            "GruntM3BeatenText",
+            "0",
+            "TrainerGruntM3.Script"
+          ],
+          "raw": "trainer GRUNTM, GRUNTM_3, EVENT_BEAT_ROCKET_GRUNTM_3, GruntM3SeenText, GruntM3BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerGruntM3.Script",
+      "label_refs": [
+        "TrainerGruntM3.Script"
+      ],
+      "text_refs": [
+        "GruntM3BeatenText",
+        "GruntM3SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM3.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext GruntM3AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GruntM3AfterBattleText"
+          ],
+          "raw": "writetext GruntM3AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "GruntM3AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FDirectory": {
+      "raw_lines": [
+        "jumptext RadioTower1FDirectoryText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "RadioTower1FDirectoryText"
+          ],
+          "raw": "jumptext RadioTower1FDirectoryText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FDirectoryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLuckyChannelSign": {
+      "raw_lines": [
+        "jumptext RadioTower1FLuckyChannelSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "RadioTower1FLuckyChannelSignText"
+          ],
+          "raw": "jumptext RadioTower1FLuckyChannelSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FLuckyChannelSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, GOLDENROD_CITY, 11",
+        "warp_event  3,  7, GOLDENROD_CITY, 11",
+        "warp_event 15,  0, RADIO_TOWER_2F, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  3,  0, BGEVENT_READ, RadioTower1FDirectory",
+        "bg_event 13,  0, BGEVENT_READ, RadioTower1FLuckyChannelSign",
+        "def_object_events",
+        "object_event  5,  6, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower1FReceptionistScript, -1",
+        "object_event 16,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower1FLassScript, EVENT_GOLDENROD_CITY_CIVILIANS",
+        "object_event 15,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RadioTower1FYoungsterScript, EVENT_GOLDENROD_CITY_CIVILIANS",
+        "object_event 14,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM3, EVENT_RADIO_TOWER_ROCKET_TAKEOVER",
+        "object_event  8,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RadioTower1FLuckyNumberManScript, EVENT_GOLDENROD_CITY_CIVILIANS",
+        "object_event 12,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower1FRadioCardWomanScript, EVENT_GOLDENROD_CITY_CIVILIANS"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "GOLDENROD_CITY",
+            "11"
+          ],
+          "raw": "warp_event  2,  7, GOLDENROD_CITY, 11"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "GOLDENROD_CITY",
+            "11"
+          ],
+          "raw": "warp_event  3,  7, GOLDENROD_CITY, 11"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "15",
+            "0",
+            "RADIO_TOWER_2F",
+            "2"
+          ],
+          "raw": "warp_event 15,  0, RADIO_TOWER_2F, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "0",
+            "BGEVENT_READ",
+            "RadioTower1FDirectory"
+          ],
+          "raw": "bg_event  3,  0, BGEVENT_READ, RadioTower1FDirectory"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "13",
+            "0",
+            "BGEVENT_READ",
+            "RadioTower1FLuckyChannelSign"
+          ],
+          "raw": "bg_event 13,  0, BGEVENT_READ, RadioTower1FLuckyChannelSign"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "6",
+            "SPRITE_RECEPTIONIST",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RadioTower1FReceptionistScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  6, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower1FReceptionistScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "16",
+            "4",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RadioTower1FLassScript",
+            "EVENT_GOLDENROD_CITY_CIVILIANS"
+          ],
+          "raw": "object_event 16,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower1FLassScript, EVENT_GOLDENROD_CITY_CIVILIANS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "15",
+            "4",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RadioTower1FYoungsterScript",
+            "EVENT_GOLDENROD_CITY_CIVILIANS"
+          ],
+          "raw": "object_event 15,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RadioTower1FYoungsterScript, EVENT_GOLDENROD_CITY_CIVILIANS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "14",
+            "1",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerGruntM3",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event 14,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM3, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "6",
+            "SPRITE_GENTLEMAN",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RadioTower1FLuckyNumberManScript",
+            "EVENT_GOLDENROD_CITY_CIVILIANS"
+          ],
+          "raw": "object_event  8,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RadioTower1FLuckyNumberManScript, EVENT_GOLDENROD_CITY_CIVILIANS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "12",
+            "6",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RadioTower1FRadioCardWomanScript",
+            "EVENT_GOLDENROD_CITY_CIVILIANS"
+          ],
+          "raw": "object_event 12,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower1FRadioCardWomanScript, EVENT_GOLDENROD_CITY_CIVILIANS"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "RadioTower1FReceptionistWelcomeText": {
+      "raw_lines": [
+        "text \"Welcome!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Welcome!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FReceptionistNoToursText": {
+      "raw_lines": [
+        "text \"Hello. I'm sorry,\"",
+        "line \"but we're not\"",
+        "cont \"offering any tours\"",
+        "cont \"today.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hello. I'm sorry,"
+        },
+        {
+          "command": "line",
+          "value": "but we're not"
+        },
+        {
+          "command": "cont",
+          "value": "offering any tours"
+        },
+        {
+          "command": "cont",
+          "value": "today."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FLuckyNumberManAskToPlayText": {
+      "raw_lines": [
+        "text \"Hi, are you here\"",
+        "line \"for the LUCKY NUM-\"",
+        "cont \"BER SHOW?\"",
+        "para \"Want me to check\"",
+        "line \"the ID numbers of\"",
+        "cont \"your #MON?\"",
+        "para \"If you get lucky,\"",
+        "line \"you win a prize.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hi, are you here"
+        },
+        {
+          "command": "line",
+          "value": "for the LUCKY NUM-"
+        },
+        {
+          "command": "cont",
+          "value": "BER SHOW?"
+        },
+        {
+          "command": "para",
+          "value": "Want me to check"
+        },
+        {
+          "command": "line",
+          "value": "the ID numbers of"
+        },
+        {
+          "command": "cont",
+          "value": "your #MON?"
+        },
+        {
+          "command": "para",
+          "value": "If you get lucky,"
+        },
+        {
+          "command": "line",
+          "value": "you win a prize."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FLuckyNumberManThisWeeksIdIsText": {
+      "raw_lines": [
+        "text \"This week's ID\"",
+        "line \"number is @\"",
+        "text_ram wStringBuffer3",
+        "text \".\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This week's ID"
+        },
+        {
+          "command": "line",
+          "value": "number is @"
+        },
+        {
+          "command": "text_ram",
+          "value": "wStringBuffer3"
+        },
+        {
+          "command": "text",
+          "value": "."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FLuckyNumberManCheckIfMatchText": {
+      "raw_lines": [
+        "text \"Let's see if you\"",
+        "line \"have a match.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Let's see if you"
+        },
+        {
+          "command": "line",
+          "value": "have a match."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FLuckyNumberManDotDotDotText": {
+      "raw_lines": [
+        "text \"<\u2026\u2026>\"",
+        "line \"<\u2026\u2026>\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<\u2026\u2026>"
+        },
+        {
+          "command": "line",
+          "value": "<\u2026\u2026>"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FLuckyNumberManComeAgainText": {
+      "raw_lines": [
+        "text \"Please come back\"",
+        "line \"next week for the\"",
+        "cont \"next LUCKY NUMBER.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Please come back"
+        },
+        {
+          "command": "line",
+          "value": "next week for the"
+        },
+        {
+          "command": "cont",
+          "value": "next LUCKY NUMBER."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FLuckyNumberManPerfectMatchText": {
+      "raw_lines": [
+        "text \"Wow! You have a\"",
+        "line \"perfect match of\"",
+        "cont \"all five numbers!\"",
+        "para \"We have a grand\"",
+        "line \"prize winner!\"",
+        "para \"You have won a\"",
+        "line \"MASTER BALL!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Wow! You have a"
+        },
+        {
+          "command": "line",
+          "value": "perfect match of"
+        },
+        {
+          "command": "cont",
+          "value": "all five numbers!"
+        },
+        {
+          "command": "para",
+          "value": "We have a grand"
+        },
+        {
+          "command": "line",
+          "value": "prize winner!"
+        },
+        {
+          "command": "para",
+          "value": "You have won a"
+        },
+        {
+          "command": "line",
+          "value": "MASTER BALL!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FLuckyNumberManOkayMatchText": {
+      "raw_lines": [
+        "text \"Hey! You've\"",
+        "line \"matched the last\"",
+        "cont \"three numbers!\"",
+        "para \"You've won second\"",
+        "line \"prize, an EXP.\"",
+        "cont \"SHARE!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hey! You've"
+        },
+        {
+          "command": "line",
+          "value": "matched the last"
+        },
+        {
+          "command": "cont",
+          "value": "three numbers!"
+        },
+        {
+          "command": "para",
+          "value": "You've won second"
+        },
+        {
+          "command": "line",
+          "value": "prize, an EXP."
+        },
+        {
+          "command": "cont",
+          "value": "SHARE!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FLuckyNumberManWeakMatchText": {
+      "raw_lines": [
+        "text \"Ooh, you've\"",
+        "line \"matched the last\"",
+        "cont \"two numbers.\"",
+        "para \"You've won third\"",
+        "line \"prize, a PP UP.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ooh, you've"
+        },
+        {
+          "command": "line",
+          "value": "matched the last"
+        },
+        {
+          "command": "cont",
+          "value": "two numbers."
+        },
+        {
+          "command": "para",
+          "value": "You've won third"
+        },
+        {
+          "command": "line",
+          "value": "prize, a PP UP."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FLuckyNumberManNoneOfYourIDNumbersMatchText": {
+      "raw_lines": [
+        "text \"Nope, none of your\"",
+        "line \"ID numbers match.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Nope, none of your"
+        },
+        {
+          "command": "line",
+          "value": "ID numbers match."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FLuckyNumberManNoRoomForYourPrizeText": {
+      "raw_lines": [
+        "text \"You've got no room\"",
+        "line \"for your prize.\"",
+        "para \"Make room and come\"",
+        "line \"back right away.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You've got no room"
+        },
+        {
+          "command": "line",
+          "value": "for your prize."
+        },
+        {
+          "command": "para",
+          "value": "Make room and come"
+        },
+        {
+          "command": "line",
+          "value": "back right away."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FRadioCardWomanOfferQuizText": {
+      "raw_lines": [
+        "text \"We have a special\"",
+        "line \"quiz campaign on\"",
+        "cont \"right now.\"",
+        "para \"Answer five ques-\"",
+        "line \"tions correctly to\"",
+        "cont \"win a RADIO CARD.\"",
+        "para \"Slide it into your\"",
+        "line \"#GEAR to play\"",
+        "para \"the radio anytime,\"",
+        "line \"anywhere.\"",
+        "para \"Would you like to\"",
+        "line \"take the quiz?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We have a special"
+        },
+        {
+          "command": "line",
+          "value": "quiz campaign on"
+        },
+        {
+          "command": "cont",
+          "value": "right now."
+        },
+        {
+          "command": "para",
+          "value": "Answer five ques-"
+        },
+        {
+          "command": "line",
+          "value": "tions correctly to"
+        },
+        {
+          "command": "cont",
+          "value": "win a RADIO CARD."
+        },
+        {
+          "command": "para",
+          "value": "Slide it into your"
+        },
+        {
+          "command": "line",
+          "value": "#GEAR to play"
+        },
+        {
+          "command": "para",
+          "value": "the radio anytime,"
+        },
+        {
+          "command": "line",
+          "value": "anywhere."
+        },
+        {
+          "command": "para",
+          "value": "Would you like to"
+        },
+        {
+          "command": "line",
+          "value": "take the quiz?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FRadioCardWomanQuestion1Text": {
+      "raw_lines": [
+        "text \"Question 1:\"",
+        "para \"Is there a #MON\"",
+        "line \"that appears only\"",
+        "cont \"in the morning?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Question 1:"
+        },
+        {
+          "command": "para",
+          "value": "Is there a #MON"
+        },
+        {
+          "command": "line",
+          "value": "that appears only"
+        },
+        {
+          "command": "cont",
+          "value": "in the morning?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FRadioCardWomanQuestion2Text": {
+      "raw_lines": [
+        "text \"Correct!\"",
+        "line \"Question 2:\"",
+        "para \"Is this statement\"",
+        "line \"correct?\"",
+        "para \"You can't buy a\"",
+        "line \"BERRY at a MART.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Correct!"
+        },
+        {
+          "command": "line",
+          "value": "Question 2:"
+        },
+        {
+          "command": "para",
+          "value": "Is this statement"
+        },
+        {
+          "command": "line",
+          "value": "correct?"
+        },
+        {
+          "command": "para",
+          "value": "You can't buy a"
+        },
+        {
+          "command": "line",
+          "value": "BERRY at a MART."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FRadioCardWomanQuestion3Text": {
+      "raw_lines": [
+        "text \"Bull's-eye!\"",
+        "line \"Question 3:\"",
+        "para \"Does HM01 contain\"",
+        "line \"the move FLASH?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Bull's-eye!"
+        },
+        {
+          "command": "line",
+          "value": "Question 3:"
+        },
+        {
+          "command": "para",
+          "value": "Does HM01 contain"
+        },
+        {
+          "command": "line",
+          "value": "the move FLASH?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FRadioCardWomanQuestion4Text": {
+      "raw_lines": [
+        "text \"So far so good!\"",
+        "line \"Question 4:\"",
+        "para \"Is FALKNER the\"",
+        "line \"VIOLET GYM LEADER\"",
+        "para \"who uses bird\"",
+        "line \"#MON?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "So far so good!"
+        },
+        {
+          "command": "line",
+          "value": "Question 4:"
+        },
+        {
+          "command": "para",
+          "value": "Is FALKNER the"
+        },
+        {
+          "command": "line",
+          "value": "VIOLET GYM LEADER"
+        },
+        {
+          "command": "para",
+          "value": "who uses bird"
+        },
+        {
+          "command": "line",
+          "value": "#MON?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FRadioCardWomanQuestion5Text": {
+      "raw_lines": [
+        "text \"Wow! Right again!\"",
+        "line \"Here's the final\"",
+        "cont \"question:\"",
+        "para \"Do GOLDENROD GAME\"",
+        "line \"CORNER's slots\"",
+        "para \"have CHARMANDER\"",
+        "line \"on their reels?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Wow! Right again!"
+        },
+        {
+          "command": "line",
+          "value": "Here's the final"
+        },
+        {
+          "command": "cont",
+          "value": "question:"
+        },
+        {
+          "command": "para",
+          "value": "Do GOLDENROD GAME"
+        },
+        {
+          "command": "line",
+          "value": "CORNER's slots"
+        },
+        {
+          "command": "para",
+          "value": "have CHARMANDER"
+        },
+        {
+          "command": "line",
+          "value": "on their reels?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FRadioCardWomanYouWinText": {
+      "raw_lines": [
+        "text \"Bingo! You got it!\"",
+        "line \"Congratulations!\"",
+        "para \"Here's your prize,\"",
+        "line \"a RADIO CARD!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Bingo! You got it!"
+        },
+        {
+          "command": "line",
+          "value": "Congratulations!"
+        },
+        {
+          "command": "para",
+          "value": "Here's your prize,"
+        },
+        {
+          "command": "line",
+          "value": "a RADIO CARD!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FPokegearIsARadioText": {
+      "raw_lines": [
+        "text \"<PLAYER>'s #GEAR\"",
+        "line \"can now double as\"",
+        "cont \"a radio!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER>'s #GEAR"
+        },
+        {
+          "command": "line",
+          "value": "can now double as"
+        },
+        {
+          "command": "cont",
+          "value": "a radio!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FRadioCardWomanTuneInText": {
+      "raw_lines": [
+        "text \"Please tune in to\"",
+        "line \"our radio shows.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Please tune in to"
+        },
+        {
+          "command": "line",
+          "value": "our radio shows."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FRadioCardWomanWrongAnswerText": {
+      "raw_lines": [
+        "text \"Oh, dear.\"",
+        "line \"Sorry, but you\"",
+        "para \"got it wrong.\"",
+        "line \"Please try again!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, dear."
+        },
+        {
+          "command": "line",
+          "value": "Sorry, but you"
+        },
+        {
+          "command": "para",
+          "value": "got it wrong."
+        },
+        {
+          "command": "line",
+          "value": "Please try again!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FRadioCardWomanNotTakingQuizText": {
+      "raw_lines": [
+        "text \"Oh. I see. Please\"",
+        "line \"see me if you\"",
+        "cont \"change your mind.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh. I see. Please"
+        },
+        {
+          "command": "line",
+          "value": "see me if you"
+        },
+        {
+          "command": "cont",
+          "value": "change your mind."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FLassText": {
+      "raw_lines": [
+        "text \"BEN is a fabulous\"",
+        "line \"DJ.\"",
+        "para \"His sweet voice\"",
+        "line \"makes me melt!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "BEN is a fabulous"
+        },
+        {
+          "command": "line",
+          "value": "DJ."
+        },
+        {
+          "command": "para",
+          "value": "His sweet voice"
+        },
+        {
+          "command": "line",
+          "value": "makes me melt!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FYoungsterText": {
+      "raw_lines": [
+        "text \"I love MARY, from\"",
+        "line \"#MON TALK.\"",
+        "para \"I only know what\"",
+        "line \"she sounds like,\"",
+        "cont \"though.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I love MARY, from"
+        },
+        {
+          "command": "line",
+          "value": "#MON TALK."
+        },
+        {
+          "command": "para",
+          "value": "I only know what"
+        },
+        {
+          "command": "line",
+          "value": "she sounds like,"
+        },
+        {
+          "command": "cont",
+          "value": "though."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM3SeenText": {
+      "raw_lines": [
+        "text \"We've finally\"",
+        "line \"taken over the\"",
+        "cont \"RADIO TOWER!\"",
+        "para \"Now everyone will\"",
+        "line \"get to experience\"",
+        "para \"the true terror of\"",
+        "line \"TEAM ROCKET!\"",
+        "para \"We'll show you\"",
+        "line \"how scary we are!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We've finally"
+        },
+        {
+          "command": "line",
+          "value": "taken over the"
+        },
+        {
+          "command": "cont",
+          "value": "RADIO TOWER!"
+        },
+        {
+          "command": "para",
+          "value": "Now everyone will"
+        },
+        {
+          "command": "line",
+          "value": "get to experience"
+        },
+        {
+          "command": "para",
+          "value": "the true terror of"
+        },
+        {
+          "command": "line",
+          "value": "TEAM ROCKET!"
+        },
+        {
+          "command": "para",
+          "value": "We'll show you"
+        },
+        {
+          "command": "line",
+          "value": "how scary we are!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM3BeatenText": {
+      "raw_lines": [
+        "text \"Too strong! We\"",
+        "line \"must watch you\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Too strong! We"
+        },
+        {
+          "command": "line",
+          "value": "must watch you\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GruntM3AfterBattleText": {
+      "raw_lines": [
+        "text \"You're too strong.\"",
+        "para \"Our plan could be\"",
+        "line \"ruined. I must\"",
+        "cont \"warn the others\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You're too strong."
+        },
+        {
+          "command": "para",
+          "value": "Our plan could be"
+        },
+        {
+          "command": "line",
+          "value": "ruined. I must"
+        },
+        {
+          "command": "cont",
+          "value": "warn the others\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FDirectoryText": {
+      "raw_lines": [
+        "text \"1F RECEPTION\"",
+        "line \"2F SALES\"",
+        "para \"3F PERSONNEL\"",
+        "line \"4F PRODUCTION\"",
+        "para \"5F DIRECTOR'S\"",
+        "line \"   OFFICE\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "1F RECEPTION"
+        },
+        {
+          "command": "line",
+          "value": "2F SALES"
+        },
+        {
+          "command": "para",
+          "value": "3F PERSONNEL"
+        },
+        {
+          "command": "line",
+          "value": "4F PRODUCTION"
+        },
+        {
+          "command": "para",
+          "value": "5F DIRECTOR'S"
+        },
+        {
+          "command": "line",
+          "value": "   OFFICE"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RadioTower1FLuckyChannelSignText": {
+      "raw_lines": [
+        "text \"LUCKY CHANNEL!\"",
+        "para \"Win with #MON\"",
+        "line \"ID numbers!\"",
+        "para \"Trade your #MON\"",
+        "line \"to collect differ-\"",
+        "cont \"ent ID numbers!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "LUCKY CHANNEL!"
+        },
+        {
+          "command": "para",
+          "value": "Win with #MON"
+        },
+        {
+          "command": "line",
+          "value": "ID numbers!"
+        },
+        {
+          "command": "para",
+          "value": "Trade your #MON"
+        },
+        {
+          "command": "line",
+          "value": "to collect differ-"
+        },
+        {
+          "command": "cont",
+          "value": "ent ID numbers!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "RadioTower1FLuckyNumberManGoToPCMovement": {
+      "raw_lines": [
+        "step RIGHT",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "RadioTower1FLuckyNumberManReturnToPlayerMovement": {
+      "raw_lines": [
+        "step LEFT",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "ReceiveItemScript"
+  ],
+  "dependencies": {
+    "RadioTower1F_MapScripts": {
+      "label_refs": [
+        "RadioTower1FReceptionistScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FReceptionistScript": {
+      "label_refs": [
+        "RadioTower1FReceptionistScript.Rockets"
+      ],
+      "text_refs": [
+        "RadioTower1FReceptionistWelcomeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FReceptionistScript.Rockets": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FReceptionistNoToursText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLuckyNumberManScript": {
+      "label_refs": [
+        "RadioTower1FLuckyNumberManScript.skip"
+      ],
+      "text_refs": [
+        "RadioTower1FLuckyNumberManAskToPlayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLuckyNumberManScript.skip": {
+      "label_refs": [
+        "RadioTower1FLuckyNumberManScript.FirstPlace",
+        "RadioTower1FLuckyNumberManScript.GameOver",
+        "RadioTower1FLuckyNumberManScript.NoPrize",
+        "RadioTower1FLuckyNumberManScript.SecondPlace",
+        "RadioTower1FLuckyNumberManScript.ThirdPlace"
+      ],
+      "text_refs": [
+        "RadioTower1FLuckyNumberManCheckIfMatchText",
+        "RadioTower1FLuckyNumberManDotDotDotText",
+        "RadioTower1FLuckyNumberManThisWeeksIdIsText"
+      ],
+      "movement_refs": [
+        "RadioTower1FLuckyNumberManGoToPCMovement",
+        "RadioTower1FLuckyNumberManReturnToPlayerMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLuckyNumberManScript.GameOver": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FLuckyNumberManComeAgainText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLuckyNumberManScript.FirstPlace": {
+      "label_refs": [
+        "RadioTower1FLuckyNumberManScript.BagFull",
+        "RadioTower1FLuckyNumberManScript.GameOver"
+      ],
+      "text_refs": [
+        "RadioTower1FLuckyNumberManPerfectMatchText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLuckyNumberManScript.SecondPlace": {
+      "label_refs": [
+        "RadioTower1FLuckyNumberManScript.BagFull",
+        "RadioTower1FLuckyNumberManScript.GameOver"
+      ],
+      "text_refs": [
+        "RadioTower1FLuckyNumberManOkayMatchText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLuckyNumberManScript.ThirdPlace": {
+      "label_refs": [
+        "RadioTower1FLuckyNumberManScript.BagFull",
+        "RadioTower1FLuckyNumberManScript.GameOver"
+      ],
+      "text_refs": [
+        "RadioTower1FLuckyNumberManWeakMatchText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLuckyNumberManScript.NoPrize": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FLuckyNumberManNoneOfYourIDNumbersMatchText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLuckyNumberManScript.BagFull": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FLuckyNumberManNoRoomForYourPrizeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FRadioCardWomanScript": {
+      "label_refs": [
+        "RadioTower1FRadioCardWomanScript.GotCard",
+        "RadioTower1FRadioCardWomanScript.NoQuiz",
+        "RadioTower1FRadioCardWomanScript.ReceiveItem",
+        "RadioTower1FRadioCardWomanScript.WrongAnswer"
+      ],
+      "text_refs": [
+        "RadioTower1FPokegearIsARadioText",
+        "RadioTower1FRadioCardWomanOfferQuizText",
+        "RadioTower1FRadioCardWomanQuestion1Text",
+        "RadioTower1FRadioCardWomanQuestion2Text",
+        "RadioTower1FRadioCardWomanQuestion3Text",
+        "RadioTower1FRadioCardWomanQuestion4Text",
+        "RadioTower1FRadioCardWomanQuestion5Text",
+        "RadioTower1FRadioCardWomanYouWinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FRadioCardWomanScript.GotCard": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FRadioCardWomanTuneInText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FRadioCardWomanScript.RadioCardText": {
+      "label_refs": [
+        "RadioTower1FRadioCardWomanScript.ReceiveItem"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FRadioCardWomanScript.ReceiveItem": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "ReceiveItemScript"
+      ]
+    },
+    "RadioTower1FRadioCardWomanScript.WrongAnswer": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FRadioCardWomanWrongAnswerText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FRadioCardWomanScript.NoQuiz": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FRadioCardWomanNotTakingQuizText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLassScript": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FYoungsterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM3": {
+      "label_refs": [
+        "TrainerGruntM3.Script"
+      ],
+      "text_refs": [
+        "GruntM3BeatenText",
+        "GruntM3SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerGruntM3.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GruntM3AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FDirectory": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FDirectoryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1FLuckyChannelSign": {
+      "label_refs": [],
+      "text_refs": [
+        "RadioTower1FLuckyChannelSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RadioTower1F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear",
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 3,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 6
+  }
+}

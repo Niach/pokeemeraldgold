@@ -1,0 +1,308 @@
+{
+  "crystal_map": "IcePathB3F",
+  "map_id": "ICE_PATH_B3F",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 65,
+  "tileset": "TILESET_ICE_PATH",
+  "environment": "CAVE",
+  "landmark": "LANDMARK_ICE_PATH",
+  "music": "MUSIC_DARK_CAVE",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_NITE",
+  "fishgroup": "FISHGROUP_DRATINI",
+  "width_blocks": 10,
+  "height_blocks": 9,
+  "border_block": "19",
+  "blk_path": "maps/IcePathB3F.blk",
+  "source_asm": "maps/IcePathB3F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 5,
+        "dest_map": "ICE_PATH_B2F_MAHOGANY_SIDE",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 15,
+        "y": 5,
+        "dest_map": "ICE_PATH_B2F_BLACKTHORN_SIDE",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 5,
+        "y": 7,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "IcePathB3FNevermeltice",
+        "flag": "EVENT_ICE_PATH_B3F_NEVERMELTICE"
+      },
+      {
+        "x": 6,
+        "y": 6,
+        "sprite": "SPRITE_ROCK",
+        "movement": "SPRITEMOVEDATA_SMASHABLE_ROCK",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "IcePathB3FRock",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "ICEPATHB3F_POKE_BALL",
+    "ICEPATHB3F_ROCK"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "IcePathB3F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "IcePathB3FNevermeltice",
+      "label_refs": [
+        "IcePathB3FNevermeltice"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IcePathB3FNevermeltice": {
+      "raw_lines": [
+        "itemball NEVERMELTICE"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "NEVERMELTICE"
+          ],
+          "raw": "itemball NEVERMELTICE"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "IcePathB3FRock",
+      "label_refs": [
+        "IcePathB3FRock"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IcePathB3FRock": {
+      "raw_lines": [
+        "jumpstd SmashRockScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "SmashRockScript"
+          ],
+          "raw": "jumpstd SmashRockScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "SmashRockScript"
+      ]
+    },
+    "IcePathB3F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  5, ICE_PATH_B2F_MAHOGANY_SIDE, 2",
+        "warp_event 15,  5, ICE_PATH_B2F_BLACKTHORN_SIDE, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  5,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePathB3FNevermeltice, EVENT_ICE_PATH_B3F_NEVERMELTICE",
+        "object_event  6,  6, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB3FRock, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "5",
+            "ICE_PATH_B2F_MAHOGANY_SIDE",
+            "2"
+          ],
+          "raw": "warp_event  3,  5, ICE_PATH_B2F_MAHOGANY_SIDE, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "15",
+            "5",
+            "ICE_PATH_B2F_BLACKTHORN_SIDE",
+            "2"
+          ],
+          "raw": "warp_event 15,  5, ICE_PATH_B2F_BLACKTHORN_SIDE, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "7",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "IcePathB3FNevermeltice",
+            "EVENT_ICE_PATH_B3F_NEVERMELTICE"
+          ],
+          "raw": "object_event  5,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePathB3FNevermeltice, EVENT_ICE_PATH_B3F_NEVERMELTICE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "6",
+            "SPRITE_ROCK",
+            "SPRITEMOVEDATA_SMASHABLE_ROCK",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "IcePathB3FRock",
+            "-1"
+          ],
+          "raw": "object_event  6,  6, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB3FRock, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {},
+  "movements": {},
+  "std_calls": [
+    "SmashRockScript"
+  ],
+  "dependencies": {
+    "IcePathB3F_MapScripts": {
+      "label_refs": [
+        "IcePathB3FNevermeltice"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IcePathB3FNevermeltice": {
+      "label_refs": [
+        "IcePathB3FRock"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IcePathB3FRock": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "SmashRockScript"
+      ]
+    },
+    "IcePathB3F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 2
+  }
+}

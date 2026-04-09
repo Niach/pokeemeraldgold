@@ -1,0 +1,508 @@
+{
+  "crystal_map": "DayOfWeekSiblingsHouse",
+  "map_id": "DAY_OF_WEEK_SIBLINGS_HOUSE",
+  "group": "NEW_BARK",
+  "group_index": 24,
+  "map_index": 11,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_ROUTE_26",
+  "music": "MUSIC_AZALEA_TOWN",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/House1.blk",
+  "source_asm": "maps/DayOfWeekSiblingsHouse.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "ROUTE_26",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "ROUTE_26",
+        "dest_warp_id": 3
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 3,
+        "y": 3,
+        "sprite": "SPRITE_POKEDEX",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "DayOfWeekSiblingsHousePokedexScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "DAYOFWEEKSIBLINGSHOUSE_POKEDEX"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "DayOfWeekSiblingsHouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "DayOfWeekSiblingsHousePokedexScript",
+      "label_refs": [
+        "DayOfWeekSiblingsHousePokedexScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayOfWeekSiblingsHousePokedexScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext DayOfWeekSiblingsHousePokedexText1",
+        "yesorno",
+        "iffalse .End",
+        "writetext DayOfWeekSiblingsHousePokedexText2",
+        "yesorno",
+        "iffalse .End",
+        "writetext DayOfWeekSiblingsHousePokedexText3",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DayOfWeekSiblingsHousePokedexText1"
+          ],
+          "raw": "writetext DayOfWeekSiblingsHousePokedexText1"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "DayOfWeekSiblingsHousePokedexScript.End"
+          ],
+          "raw": "iffalse .End"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DayOfWeekSiblingsHousePokedexText2"
+          ],
+          "raw": "writetext DayOfWeekSiblingsHousePokedexText2"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "DayOfWeekSiblingsHousePokedexScript.End"
+          ],
+          "raw": "iffalse .End"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "DayOfWeekSiblingsHousePokedexText3"
+          ],
+          "raw": "writetext DayOfWeekSiblingsHousePokedexText3"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "opentext",
+      "fallthrough_label": "DayOfWeekSiblingsHousePokedexScript.End",
+      "label_refs": [
+        "DayOfWeekSiblingsHousePokedexScript.End"
+      ],
+      "text_refs": [
+        "DayOfWeekSiblingsHousePokedexText1",
+        "DayOfWeekSiblingsHousePokedexText2",
+        "DayOfWeekSiblingsHousePokedexText3"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayOfWeekSiblingsHousePokedexScript.End": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayOfWeekSiblingsHouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, ROUTE_26, 3",
+        "warp_event  3,  7, ROUTE_26, 3",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  3,  3, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayOfWeekSiblingsHousePokedexScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "ROUTE_26",
+            "3"
+          ],
+          "raw": "warp_event  2,  7, ROUTE_26, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "ROUTE_26",
+            "3"
+          ],
+          "raw": "warp_event  3,  7, ROUTE_26, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "3",
+            "SPRITE_POKEDEX",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "DayOfWeekSiblingsHousePokedexScript",
+            "-1"
+          ],
+          "raw": "object_event  3,  3, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayOfWeekSiblingsHousePokedexScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "DayOfWeekSiblingsHousePokedexText1": {
+      "raw_lines": [
+        "text \"There's something\"",
+        "line \"written here.\"",
+        "para \"Read it?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "There's something"
+        },
+        {
+          "command": "line",
+          "value": "written here."
+        },
+        {
+          "command": "para",
+          "value": "Read it?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DayOfWeekSiblingsHousePokedexText2": {
+      "raw_lines": [
+        "text \"To my brothers and\"",
+        "line \"sisters:\"",
+        "para \"We take pride in\"",
+        "line \"serving #MON\"",
+        "cont \"trainers.\"",
+        "para \"When trainers talk\"",
+        "line \"to you, give them\"",
+        "cont \"something useful.\"",
+        "para \"Love,\"",
+        "line \"MONICA\"",
+        "para \"Keep reading?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "To my brothers and"
+        },
+        {
+          "command": "line",
+          "value": "sisters:"
+        },
+        {
+          "command": "para",
+          "value": "We take pride in"
+        },
+        {
+          "command": "line",
+          "value": "serving #MON"
+        },
+        {
+          "command": "cont",
+          "value": "trainers."
+        },
+        {
+          "command": "para",
+          "value": "When trainers talk"
+        },
+        {
+          "command": "line",
+          "value": "to you, give them"
+        },
+        {
+          "command": "cont",
+          "value": "something useful."
+        },
+        {
+          "command": "para",
+          "value": "Love,"
+        },
+        {
+          "command": "line",
+          "value": "MONICA"
+        },
+        {
+          "command": "para",
+          "value": "Keep reading?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DayOfWeekSiblingsHousePokedexText3": {
+      "raw_lines": [
+        "text \"Monday, MONICA\"",
+        "line \"ROUTE 40\"",
+        "para \"Tuesday, TUSCANY\"",
+        "line \"ROUTE 29\"",
+        "para \"Wednesday, WESLEY\"",
+        "line \"LAKE OF RAGE\"",
+        "para \"Thursday, ARTHUR\"",
+        "line \"ROUTE 36\"",
+        "para \"Friday, FRIEDA\"",
+        "line \"ROUTE 32\"",
+        "para \"Saturday, SANTOS\"",
+        "line \"BLACKTHORN CITY\"",
+        "para \"Sunday, SUNNY\"",
+        "line \"ROUTE 37\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Monday, MONICA"
+        },
+        {
+          "command": "line",
+          "value": "ROUTE 40"
+        },
+        {
+          "command": "para",
+          "value": "Tuesday, TUSCANY"
+        },
+        {
+          "command": "line",
+          "value": "ROUTE 29"
+        },
+        {
+          "command": "para",
+          "value": "Wednesday, WESLEY"
+        },
+        {
+          "command": "line",
+          "value": "LAKE OF RAGE"
+        },
+        {
+          "command": "para",
+          "value": "Thursday, ARTHUR"
+        },
+        {
+          "command": "line",
+          "value": "ROUTE 36"
+        },
+        {
+          "command": "para",
+          "value": "Friday, FRIEDA"
+        },
+        {
+          "command": "line",
+          "value": "ROUTE 32"
+        },
+        {
+          "command": "para",
+          "value": "Saturday, SANTOS"
+        },
+        {
+          "command": "line",
+          "value": "BLACKTHORN CITY"
+        },
+        {
+          "command": "para",
+          "value": "Sunday, SUNNY"
+        },
+        {
+          "command": "line",
+          "value": "ROUTE 37"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "DayOfWeekSiblingsHouse_MapScripts": {
+      "label_refs": [
+        "DayOfWeekSiblingsHousePokedexScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayOfWeekSiblingsHousePokedexScript": {
+      "label_refs": [
+        "DayOfWeekSiblingsHousePokedexScript.End"
+      ],
+      "text_refs": [
+        "DayOfWeekSiblingsHousePokedexText1",
+        "DayOfWeekSiblingsHousePokedexText2",
+        "DayOfWeekSiblingsHousePokedexText3"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayOfWeekSiblingsHousePokedexScript.End": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DayOfWeekSiblingsHouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 1
+  }
+}

@@ -1,0 +1,786 @@
+{
+  "crystal_map": "OlivineLighthouse4F",
+  "map_id": "OLIVINE_LIGHTHOUSE_4F",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 45,
+  "tileset": "TILESET_LIGHTHOUSE",
+  "environment": "DUNGEON",
+  "landmark": "LANDMARK_LIGHTHOUSE",
+  "music": "MUSIC_LIGHTHOUSE",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 10,
+  "height_blocks": 9,
+  "border_block": "00",
+  "blk_path": "maps/OlivineLighthouse4F.blk",
+  "source_asm": "maps/OlivineLighthouse4F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 13,
+        "y": 3,
+        "dest_map": "OLIVINE_LIGHTHOUSE_3F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 3,
+        "y": 5,
+        "dest_map": "OLIVINE_LIGHTHOUSE_5F",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 9,
+        "y": 7,
+        "dest_map": "OLIVINE_LIGHTHOUSE_5F",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 9,
+        "y": 5,
+        "dest_map": "OLIVINE_LIGHTHOUSE_3F",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 16,
+        "y": 9,
+        "dest_map": "OLIVINE_LIGHTHOUSE_3F",
+        "dest_warp_id": 6
+      },
+      {
+        "x": 17,
+        "y": 9,
+        "dest_map": "OLIVINE_LIGHTHOUSE_3F",
+        "dest_warp_id": 7
+      },
+      {
+        "x": 8,
+        "y": 3,
+        "dest_map": "OLIVINE_LIGHTHOUSE_3F",
+        "dest_warp_id": 8
+      },
+      {
+        "x": 9,
+        "y": 3,
+        "dest_map": "OLIVINE_LIGHTHOUSE_3F",
+        "dest_warp_id": 9
+      },
+      {
+        "x": 16,
+        "y": 7,
+        "dest_map": "OLIVINE_LIGHTHOUSE_5F",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 17,
+        "y": 7,
+        "dest_map": "OLIVINE_LIGHTHOUSE_5F",
+        "dest_warp_id": 5
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 7,
+        "y": 14,
+        "sprite": "SPRITE_SAILOR",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerSailorKent",
+        "flag": -1
+      },
+      {
+        "x": 11,
+        "y": 2,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerLassConnie",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "OLIVINELIGHTHOUSE4F_SAILOR",
+    "OLIVINELIGHTHOUSE4F_LASS"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "OlivineLighthouse4F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "TrainerLassConnie",
+      "label_refs": [
+        "TrainerLassConnie"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerLassConnie": {
+      "raw_lines": [
+        "trainer LASS, CONNIE1, EVENT_BEAT_LASS_CONNIE, LassConnie1SeenText, LassConnie1BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "LASS",
+            "CONNIE1",
+            "EVENT_BEAT_LASS_CONNIE",
+            "LassConnie1SeenText",
+            "LassConnie1BeatenText",
+            "0",
+            "TrainerLassConnie.Script"
+          ],
+          "raw": "trainer LASS, CONNIE1, EVENT_BEAT_LASS_CONNIE, LassConnie1SeenText, LassConnie1BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerLassConnie.Script",
+      "label_refs": [
+        "TrainerLassConnie.Script"
+      ],
+      "text_refs": [
+        "LassConnie1BeatenText",
+        "LassConnie1SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerLassConnie.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext LassConnie1AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "LassConnie1AfterBattleText"
+          ],
+          "raw": "writetext LassConnie1AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "LassConnie1AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorKent": {
+      "raw_lines": [
+        "trainer SAILOR, KENT, EVENT_BEAT_SAILOR_KENT, SailorKentSeenText, SailorKentBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "SAILOR",
+            "KENT",
+            "EVENT_BEAT_SAILOR_KENT",
+            "SailorKentSeenText",
+            "SailorKentBeatenText",
+            "0",
+            "TrainerSailorKent.Script"
+          ],
+          "raw": "trainer SAILOR, KENT, EVENT_BEAT_SAILOR_KENT, SailorKentSeenText, SailorKentBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerSailorKent.Script",
+      "label_refs": [
+        "TrainerSailorKent.Script"
+      ],
+      "text_refs": [
+        "SailorKentBeatenText",
+        "SailorKentSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorKent.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext SailorKentAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SailorKentAfterBattleText"
+          ],
+          "raw": "writetext SailorKentAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "SailorKentAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineLighthouse4F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 13,  3, OLIVINE_LIGHTHOUSE_3F, 1",
+        "warp_event  3,  5, OLIVINE_LIGHTHOUSE_5F, 2",
+        "warp_event  9,  7, OLIVINE_LIGHTHOUSE_5F, 3",
+        "warp_event  9,  5, OLIVINE_LIGHTHOUSE_3F, 3",
+        "warp_event 16,  9, OLIVINE_LIGHTHOUSE_3F, 6",
+        "warp_event 17,  9, OLIVINE_LIGHTHOUSE_3F, 7",
+        "warp_event  8,  3, OLIVINE_LIGHTHOUSE_3F, 8",
+        "warp_event  9,  3, OLIVINE_LIGHTHOUSE_3F, 9",
+        "warp_event 16,  7, OLIVINE_LIGHTHOUSE_5F, 4",
+        "warp_event 17,  7, OLIVINE_LIGHTHOUSE_5F, 5",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  7, 14, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSailorKent, -1",
+        "object_event 11,  2, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassConnie, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "13",
+            "3",
+            "OLIVINE_LIGHTHOUSE_3F",
+            "1"
+          ],
+          "raw": "warp_event 13,  3, OLIVINE_LIGHTHOUSE_3F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "5",
+            "OLIVINE_LIGHTHOUSE_5F",
+            "2"
+          ],
+          "raw": "warp_event  3,  5, OLIVINE_LIGHTHOUSE_5F, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "7",
+            "OLIVINE_LIGHTHOUSE_5F",
+            "3"
+          ],
+          "raw": "warp_event  9,  7, OLIVINE_LIGHTHOUSE_5F, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "5",
+            "OLIVINE_LIGHTHOUSE_3F",
+            "3"
+          ],
+          "raw": "warp_event  9,  5, OLIVINE_LIGHTHOUSE_3F, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "16",
+            "9",
+            "OLIVINE_LIGHTHOUSE_3F",
+            "6"
+          ],
+          "raw": "warp_event 16,  9, OLIVINE_LIGHTHOUSE_3F, 6"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "9",
+            "OLIVINE_LIGHTHOUSE_3F",
+            "7"
+          ],
+          "raw": "warp_event 17,  9, OLIVINE_LIGHTHOUSE_3F, 7"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "8",
+            "3",
+            "OLIVINE_LIGHTHOUSE_3F",
+            "8"
+          ],
+          "raw": "warp_event  8,  3, OLIVINE_LIGHTHOUSE_3F, 8"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "3",
+            "OLIVINE_LIGHTHOUSE_3F",
+            "9"
+          ],
+          "raw": "warp_event  9,  3, OLIVINE_LIGHTHOUSE_3F, 9"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "16",
+            "7",
+            "OLIVINE_LIGHTHOUSE_5F",
+            "4"
+          ],
+          "raw": "warp_event 16,  7, OLIVINE_LIGHTHOUSE_5F, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "7",
+            "OLIVINE_LIGHTHOUSE_5F",
+            "5"
+          ],
+          "raw": "warp_event 17,  7, OLIVINE_LIGHTHOUSE_5F, 5"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "14",
+            "SPRITE_SAILOR",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerSailorKent",
+            "-1"
+          ],
+          "raw": "object_event  7, 14, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSailorKent, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "11",
+            "2",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerLassConnie",
+            "-1"
+          ],
+          "raw": "object_event 11,  2, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassConnie, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "SailorKentSeenText": {
+      "raw_lines": [
+        "text \"JASMINE must be\"",
+        "line \"worried sick about\"",
+        "cont \"the #MON here.\"",
+        "para \"She won't even\"",
+        "line \"smile these days.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "JASMINE must be"
+        },
+        {
+          "command": "line",
+          "value": "worried sick about"
+        },
+        {
+          "command": "cont",
+          "value": "the #MON here."
+        },
+        {
+          "command": "para",
+          "value": "She won't even"
+        },
+        {
+          "command": "line",
+          "value": "smile these days."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SailorKentBeatenText": {
+      "raw_lines": [
+        "text \"I can't manage a\"",
+        "line \"smile either\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I can't manage a"
+        },
+        {
+          "command": "line",
+          "value": "smile either\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SailorKentAfterBattleText": {
+      "raw_lines": [
+        "text \"Speaking of sick,\"",
+        "line \"I've heard there's\"",
+        "para \"a good PHARMACY in\"",
+        "line \"CIANWOOD.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Speaking of sick,"
+        },
+        {
+          "command": "line",
+          "value": "I've heard there's"
+        },
+        {
+          "command": "para",
+          "value": "a good PHARMACY in"
+        },
+        {
+          "command": "line",
+          "value": "CIANWOOD."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LassConnie1SeenText": {
+      "raw_lines": [
+        "text \"JASMINE is this\"",
+        "line \"city's GYM LEADER.\"",
+        "para \"I mean to bring\"",
+        "line \"her back with me.\"",
+        "para \"Nobody had better\"",
+        "line \"get in my way!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "JASMINE is this"
+        },
+        {
+          "command": "line",
+          "value": "city's GYM LEADER."
+        },
+        {
+          "command": "para",
+          "value": "I mean to bring"
+        },
+        {
+          "command": "line",
+          "value": "her back with me."
+        },
+        {
+          "command": "para",
+          "value": "Nobody had better"
+        },
+        {
+          "command": "line",
+          "value": "get in my way!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LassConnie1BeatenText": {
+      "raw_lines": [
+        "text \"Aaack! My #MON!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Aaack! My #MON!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LassConnie1AfterBattleText": {
+      "raw_lines": [
+        "text \"Right. Anybody\"",
+        "line \"would be worried\"",
+        "cont \"if his or her own\"",
+        "cont \"#MON were hurt.\"",
+        "para \"I'll pray for the\"",
+        "line \"#MON here, so\"",
+        "para \"JASMINE can come\"",
+        "line \"back to the GYM.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Right. Anybody"
+        },
+        {
+          "command": "line",
+          "value": "would be worried"
+        },
+        {
+          "command": "cont",
+          "value": "if his or her own"
+        },
+        {
+          "command": "cont",
+          "value": "#MON were hurt."
+        },
+        {
+          "command": "para",
+          "value": "I'll pray for the"
+        },
+        {
+          "command": "line",
+          "value": "#MON here, so"
+        },
+        {
+          "command": "para",
+          "value": "JASMINE can come"
+        },
+        {
+          "command": "line",
+          "value": "back to the GYM."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "OlivineLighthouse4F_MapScripts": {
+      "label_refs": [
+        "TrainerLassConnie"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerLassConnie": {
+      "label_refs": [
+        "TrainerLassConnie.Script"
+      ],
+      "text_refs": [
+        "LassConnie1BeatenText",
+        "LassConnie1SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerLassConnie.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "LassConnie1AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorKent": {
+      "label_refs": [
+        "TrainerSailorKent.Script"
+      ],
+      "text_refs": [
+        "SailorKentBeatenText",
+        "SailorKentSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSailorKent.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "SailorKentAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineLighthouse4F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 10,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 2
+  }
+}

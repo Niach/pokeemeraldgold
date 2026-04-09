@@ -7,6 +7,7 @@
 #include "main.h"
 #include "match_call.h"
 #include "overworld.h"
+#include "johto_story.h"
 #include "pokemon.h"
 #include "pokenav.h"
 #include "sound.h"
@@ -406,7 +407,7 @@ void BufferMatchCallNameAndDesc(struct PokenavMatchCallEntry *matchCallEntry, u8
         const struct Trainer *trainer = &gTrainers[index];
         int class = trainer->trainerClass;
         className = gTrainerClassNames[class];
-        trainerName = trainer->trainerName;
+        trainerName = GetTrainerNameWithJohtoOverride(index);
     }
     else
     {

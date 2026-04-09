@@ -1,0 +1,2315 @@
+{
+  "crystal_map": "LancesRoom",
+  "map_id": "LANCES_ROOM",
+  "group": "INDIGO",
+  "group_index": 16,
+  "map_index": 7,
+  "tileset": "TILESET_CHAMPIONS_ROOM",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_INDIGO_PLATEAU",
+  "music": "MUSIC_INDIGO_PLATEAU",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 12,
+  "border_block": "00",
+  "blk_path": "maps/LancesRoom.blk",
+  "source_asm": "maps/LancesRoom.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "LancesRoomLockDoorScene",
+        "scene_id": "SCENE_LANCESROOM_LOCK_DOOR"
+      },
+      {
+        "script": "LancesRoomNoopScene",
+        "scene_id": "SCENE_LANCESROOM_APPROACH_LANCE"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_TILES",
+        "script": "LancesRoomDoorsCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 4,
+        "y": 23,
+        "dest_map": "KARENS_ROOM",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 5,
+        "y": 23,
+        "dest_map": "KARENS_ROOM",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 4,
+        "y": 1,
+        "dest_map": "HALL_OF_FAME",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 5,
+        "y": 1,
+        "dest_map": "HALL_OF_FAME",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 4,
+        "y": 5,
+        "scene": "SCENE_LANCESROOM_APPROACH_LANCE",
+        "script": "Script_ApproachLanceFromLeft"
+      },
+      {
+        "x": 5,
+        "y": 5,
+        "scene": "SCENE_LANCESROOM_APPROACH_LANCE",
+        "script": "Script_ApproachLanceFromRight"
+      }
+    ],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 5,
+        "y": 3,
+        "sprite": "SPRITE_LANCE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "LancesRoomLanceScript",
+        "flag": -1
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "sprite": "SPRITE_TEACHER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_LANCES_ROOM_OAK_AND_MARY"
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "sprite": "SPRITE_OAK",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_LANCES_ROOM_OAK_AND_MARY"
+      }
+    ]
+  },
+  "object_consts": [
+    "LANCESROOM_LANCE",
+    "LANCESROOM_MARY",
+    "LANCESROOM_OAK"
+  ],
+  "scene_ids": [
+    "SCENE_LANCESROOM_APPROACH_LANCE",
+    "SCENE_LANCESROOM_LOCK_DOOR"
+  ],
+  "scripts": {
+    "LancesRoom_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script LancesRoomLockDoorScene, SCENE_LANCESROOM_LOCK_DOOR",
+        "scene_script LancesRoomNoopScene,     SCENE_LANCESROOM_APPROACH_LANCE",
+        "def_callbacks",
+        "callback MAPCALLBACK_TILES, LancesRoomDoorsCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "LancesRoomLockDoorScene",
+            "SCENE_LANCESROOM_LOCK_DOOR"
+          ],
+          "raw": "scene_script LancesRoomLockDoorScene, SCENE_LANCESROOM_LOCK_DOOR"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "LancesRoomNoopScene",
+            "SCENE_LANCESROOM_APPROACH_LANCE"
+          ],
+          "raw": "scene_script LancesRoomNoopScene,     SCENE_LANCESROOM_APPROACH_LANCE"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_TILES",
+            "LancesRoomDoorsCallback"
+          ],
+          "raw": "callback MAPCALLBACK_TILES, LancesRoomDoorsCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "LancesRoomLockDoorScene",
+      "label_refs": [
+        "LancesRoomLockDoorScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LancesRoomLockDoorScene": {
+      "raw_lines": [
+        "sdefer LancesRoomDoorLocksBehindYouScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "sdefer",
+          "args": [
+            "LancesRoomDoorLocksBehindYouScript"
+          ],
+          "raw": "sdefer LancesRoomDoorLocksBehindYouScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "sdefer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LancesRoomNoopScene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LancesRoomDoorsCallback": {
+      "raw_lines": [
+        "checkevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED",
+        "iffalse .KeepEntranceOpen",
+        "changeblock 4, 22, $34"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_LANCES_ROOM_ENTRANCE_CLOSED"
+          ],
+          "raw": "checkevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "LancesRoomDoorsCallback.KeepEntranceOpen"
+          ],
+          "raw": "iffalse .KeepEntranceOpen"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "22",
+            "$34"
+          ],
+          "raw": "changeblock 4, 22, $34"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "LancesRoomDoorsCallback.KeepEntranceOpen",
+      "label_refs": [
+        "LancesRoomDoorsCallback.KeepEntranceOpen"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LancesRoomDoorsCallback.KeepEntranceOpen": {
+      "raw_lines": [
+        "checkevent EVENT_LANCES_ROOM_EXIT_OPEN",
+        "iffalse .KeepExitClosed",
+        "changeblock 4, 0, $0b"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_LANCES_ROOM_EXIT_OPEN"
+          ],
+          "raw": "checkevent EVENT_LANCES_ROOM_EXIT_OPEN"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "LancesRoomDoorsCallback.KeepExitClosed"
+          ],
+          "raw": "iffalse .KeepExitClosed"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "0",
+            "$0b"
+          ],
+          "raw": "changeblock 4, 0, $0b"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "LancesRoomDoorsCallback.KeepExitClosed",
+      "label_refs": [
+        "LancesRoomDoorsCallback.KeepExitClosed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LancesRoomDoorsCallback.KeepExitClosed": {
+      "raw_lines": [
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "endcallback",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LancesRoomDoorLocksBehindYouScript": {
+      "raw_lines": [
+        "applymovement PLAYER, LancesRoom_EnterMovement",
+        "reanchormap $86",
+        "playsound SFX_STRENGTH",
+        "earthquake 80",
+        "changeblock 4, 22, $34",
+        "refreshmap",
+        "closetext",
+        "setscene SCENE_LANCESROOM_APPROACH_LANCE",
+        "setevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "LancesRoom_EnterMovement"
+          ],
+          "raw": "applymovement PLAYER, LancesRoom_EnterMovement"
+        },
+        {
+          "command": "reanchormap",
+          "args": [
+            "$86"
+          ],
+          "raw": "reanchormap $86"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_STRENGTH"
+          ],
+          "raw": "playsound SFX_STRENGTH"
+        },
+        {
+          "command": "earthquake",
+          "args": [
+            "80"
+          ],
+          "raw": "earthquake 80"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "22",
+            "$34"
+          ],
+          "raw": "changeblock 4, 22, $34"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_LANCESROOM_APPROACH_LANCE"
+          ],
+          "raw": "setscene SCENE_LANCESROOM_APPROACH_LANCE"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_LANCES_ROOM_ENTRANCE_CLOSED"
+          ],
+          "raw": "setevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "LancesRoom_EnterMovement"
+      ],
+      "scene_refs": [
+        "SCENE_LANCESROOM_APPROACH_LANCE"
+      ],
+      "std_calls": []
+    },
+    "Script_ApproachLanceFromLeft": {
+      "raw_lines": [
+        "special FadeOutMusic",
+        "applymovement PLAYER, MovementData_ApproachLanceFromLeft",
+        "sjump LancesRoomLanceScript"
+      ],
+      "commands": [
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "MovementData_ApproachLanceFromLeft"
+          ],
+          "raw": "applymovement PLAYER, MovementData_ApproachLanceFromLeft"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "LancesRoomLanceScript"
+          ],
+          "raw": "sjump LancesRoomLanceScript"
+        }
+      ],
+      "first_command": "special",
+      "label_refs": [
+        "LancesRoomLanceScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_ApproachLanceFromLeft"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Script_ApproachLanceFromRight": {
+      "raw_lines": [
+        "special FadeOutMusic",
+        "applymovement PLAYER, MovementData_ApproachLanceFromRight"
+      ],
+      "commands": [
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "MovementData_ApproachLanceFromRight"
+          ],
+          "raw": "applymovement PLAYER, MovementData_ApproachLanceFromRight"
+        }
+      ],
+      "first_command": "special",
+      "fallthrough_label": "LancesRoomLanceScript",
+      "label_refs": [
+        "LancesRoomLanceScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_ApproachLanceFromRight"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LancesRoomLanceScript": {
+      "raw_lines": [
+        "turnobject LANCESROOM_LANCE, LEFT",
+        "opentext",
+        "writetext LanceBattleIntroText",
+        "waitbutton",
+        "closetext",
+        "winlosstext LanceBattleWinText, 0",
+        "setlasttalked LANCESROOM_LANCE",
+        "loadtrainer CHAMPION, LANCE",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmapafterbattle",
+        "setevent EVENT_BEAT_CHAMPION_LANCE",
+        "opentext",
+        "writetext LanceBattleAfterText",
+        "waitbutton",
+        "closetext",
+        "playsound SFX_ENTER_DOOR",
+        "changeblock 4, 0, $0b",
+        "refreshmap",
+        "closetext",
+        "setevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED",
+        "musicfadeout MUSIC_BEAUTY_ENCOUNTER, 16",
+        "pause 30",
+        "showemote EMOTE_SHOCK, LANCESROOM_LANCE, 15",
+        "turnobject LANCESROOM_LANCE, DOWN",
+        "pause 10",
+        "turnobject PLAYER, DOWN",
+        "appear LANCESROOM_MARY",
+        "applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryRushesIn",
+        "opentext",
+        "writetext LancesRoomMaryOhNoOakText",
+        "waitbutton",
+        "closetext",
+        "appear LANCESROOM_OAK",
+        "applymovement LANCESROOM_OAK, LancesRoomMovementData_OakWalksIn",
+        "follow LANCESROOM_MARY, LANCESROOM_OAK",
+        "applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryYieldsToOak",
+        "stopfollow",
+        "turnobject LANCESROOM_OAK, UP",
+        "turnobject LANCESROOM_LANCE, LEFT",
+        "opentext",
+        "writetext LancesRoomOakCongratulationsText",
+        "waitbutton",
+        "closetext",
+        "applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryInterviewChampion",
+        "turnobject PLAYER, LEFT",
+        "opentext",
+        "writetext LancesRoomMaryInterviewText",
+        "waitbutton",
+        "closetext",
+        "applymovement LANCESROOM_LANCE, LancesRoomMovementData_LancePositionsSelfToGuidePlayerAway",
+        "turnobject PLAYER, UP",
+        "opentext",
+        "writetext LancesRoomNoisyText",
+        "waitbutton",
+        "closetext",
+        "follow LANCESROOM_LANCE, PLAYER",
+        "turnobject LANCESROOM_MARY, UP",
+        "turnobject LANCESROOM_OAK, UP",
+        "applymovement LANCESROOM_LANCE, LancesRoomMovementData_LanceLeadsPlayerToHallOfFame",
+        "stopfollow",
+        "playsound SFX_EXIT_BUILDING",
+        "disappear LANCESROOM_LANCE",
+        "applymovement PLAYER, LancesRoomMovementData_PlayerExits",
+        "playsound SFX_EXIT_BUILDING",
+        "disappear PLAYER",
+        "applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryTriesToFollow",
+        "showemote EMOTE_SHOCK, LANCESROOM_MARY, 15",
+        "opentext",
+        "writetext LancesRoomMaryNoInterviewText",
+        "pause 30",
+        "closetext",
+        "applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryRunsBackAndForth",
+        "special FadeOutToWhite",
+        "pause 15",
+        "warpfacing UP, HALL_OF_FAME, 4, 13",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "LANCESROOM_LANCE",
+            "LEFT"
+          ],
+          "raw": "turnobject LANCESROOM_LANCE, LEFT"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "LanceBattleIntroText"
+          ],
+          "raw": "writetext LanceBattleIntroText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "LanceBattleWinText",
+            "0"
+          ],
+          "raw": "winlosstext LanceBattleWinText, 0"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "LANCESROOM_LANCE"
+          ],
+          "raw": "setlasttalked LANCESROOM_LANCE"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "CHAMPION",
+            "LANCE"
+          ],
+          "raw": "loadtrainer CHAMPION, LANCE"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_CHAMPION_LANCE"
+          ],
+          "raw": "setevent EVENT_BEAT_CHAMPION_LANCE"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "LanceBattleAfterText"
+          ],
+          "raw": "writetext LanceBattleAfterText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "0",
+            "$0b"
+          ],
+          "raw": "changeblock 4, 0, $0b"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_LANCES_ROOM_ENTRANCE_CLOSED"
+          ],
+          "raw": "setevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED"
+        },
+        {
+          "command": "musicfadeout",
+          "args": [
+            "MUSIC_BEAUTY_ENCOUNTER",
+            "16"
+          ],
+          "raw": "musicfadeout MUSIC_BEAUTY_ENCOUNTER, 16"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "30"
+          ],
+          "raw": "pause 30"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "LANCESROOM_LANCE",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, LANCESROOM_LANCE, 15"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "LANCESROOM_LANCE",
+            "DOWN"
+          ],
+          "raw": "turnobject LANCESROOM_LANCE, DOWN"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "10"
+          ],
+          "raw": "pause 10"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "LANCESROOM_MARY"
+          ],
+          "raw": "appear LANCESROOM_MARY"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "LANCESROOM_MARY",
+            "LancesRoomMovementData_MaryRushesIn"
+          ],
+          "raw": "applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryRushesIn"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "LancesRoomMaryOhNoOakText"
+          ],
+          "raw": "writetext LancesRoomMaryOhNoOakText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "LANCESROOM_OAK"
+          ],
+          "raw": "appear LANCESROOM_OAK"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "LANCESROOM_OAK",
+            "LancesRoomMovementData_OakWalksIn"
+          ],
+          "raw": "applymovement LANCESROOM_OAK, LancesRoomMovementData_OakWalksIn"
+        },
+        {
+          "command": "follow",
+          "args": [
+            "LANCESROOM_MARY",
+            "LANCESROOM_OAK"
+          ],
+          "raw": "follow LANCESROOM_MARY, LANCESROOM_OAK"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "LANCESROOM_MARY",
+            "LancesRoomMovementData_MaryYieldsToOak"
+          ],
+          "raw": "applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryYieldsToOak"
+        },
+        {
+          "command": "stopfollow",
+          "args": [],
+          "raw": "stopfollow"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "LANCESROOM_OAK",
+            "UP"
+          ],
+          "raw": "turnobject LANCESROOM_OAK, UP"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "LANCESROOM_LANCE",
+            "LEFT"
+          ],
+          "raw": "turnobject LANCESROOM_LANCE, LEFT"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "LancesRoomOakCongratulationsText"
+          ],
+          "raw": "writetext LancesRoomOakCongratulationsText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "LANCESROOM_MARY",
+            "LancesRoomMovementData_MaryInterviewChampion"
+          ],
+          "raw": "applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryInterviewChampion"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYER, LEFT"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "LancesRoomMaryInterviewText"
+          ],
+          "raw": "writetext LancesRoomMaryInterviewText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "LANCESROOM_LANCE",
+            "LancesRoomMovementData_LancePositionsSelfToGuidePlayerAway"
+          ],
+          "raw": "applymovement LANCESROOM_LANCE, LancesRoomMovementData_LancePositionsSelfToGuidePlayerAway"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "UP"
+          ],
+          "raw": "turnobject PLAYER, UP"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "LancesRoomNoisyText"
+          ],
+          "raw": "writetext LancesRoomNoisyText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "follow",
+          "args": [
+            "LANCESROOM_LANCE",
+            "PLAYER"
+          ],
+          "raw": "follow LANCESROOM_LANCE, PLAYER"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "LANCESROOM_MARY",
+            "UP"
+          ],
+          "raw": "turnobject LANCESROOM_MARY, UP"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "LANCESROOM_OAK",
+            "UP"
+          ],
+          "raw": "turnobject LANCESROOM_OAK, UP"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "LANCESROOM_LANCE",
+            "LancesRoomMovementData_LanceLeadsPlayerToHallOfFame"
+          ],
+          "raw": "applymovement LANCESROOM_LANCE, LancesRoomMovementData_LanceLeadsPlayerToHallOfFame"
+        },
+        {
+          "command": "stopfollow",
+          "args": [],
+          "raw": "stopfollow"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "LANCESROOM_LANCE"
+          ],
+          "raw": "disappear LANCESROOM_LANCE"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "LancesRoomMovementData_PlayerExits"
+          ],
+          "raw": "applymovement PLAYER, LancesRoomMovementData_PlayerExits"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "PLAYER"
+          ],
+          "raw": "disappear PLAYER"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "LANCESROOM_MARY",
+            "LancesRoomMovementData_MaryTriesToFollow"
+          ],
+          "raw": "applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryTriesToFollow"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "LANCESROOM_MARY",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, LANCESROOM_MARY, 15"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "LancesRoomMaryNoInterviewText"
+          ],
+          "raw": "writetext LancesRoomMaryNoInterviewText"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "30"
+          ],
+          "raw": "pause 30"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "LANCESROOM_MARY",
+            "LancesRoomMovementData_MaryRunsBackAndForth"
+          ],
+          "raw": "applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryRunsBackAndForth"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutToWhite"
+          ],
+          "raw": "special FadeOutToWhite"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "warpfacing",
+          "args": [
+            "UP",
+            "HALL_OF_FAME",
+            "4",
+            "13"
+          ],
+          "raw": "warpfacing UP, HALL_OF_FAME, 4, 13"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [],
+      "text_refs": [
+        "LanceBattleAfterText",
+        "LanceBattleIntroText",
+        "LancesRoomMaryInterviewText",
+        "LancesRoomMaryNoInterviewText",
+        "LancesRoomMaryOhNoOakText",
+        "LancesRoomNoisyText",
+        "LancesRoomOakCongratulationsText"
+      ],
+      "movement_refs": [
+        "LancesRoomMovementData_LanceLeadsPlayerToHallOfFame",
+        "LancesRoomMovementData_LancePositionsSelfToGuidePlayerAway",
+        "LancesRoomMovementData_MaryInterviewChampion",
+        "LancesRoomMovementData_MaryRunsBackAndForth",
+        "LancesRoomMovementData_MaryRushesIn",
+        "LancesRoomMovementData_MaryTriesToFollow",
+        "LancesRoomMovementData_MaryYieldsToOak",
+        "LancesRoomMovementData_OakWalksIn",
+        "LancesRoomMovementData_PlayerExits"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LancesRoom_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  4, 23, KARENS_ROOM, 3",
+        "warp_event  5, 23, KARENS_ROOM, 4",
+        "warp_event  4,  1, HALL_OF_FAME, 1",
+        "warp_event  5,  1, HALL_OF_FAME, 2",
+        "def_coord_events",
+        "coord_event  4,  5, SCENE_LANCESROOM_APPROACH_LANCE, Script_ApproachLanceFromLeft",
+        "coord_event  5,  5, SCENE_LANCESROOM_APPROACH_LANCE, Script_ApproachLanceFromRight",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  5,  3, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LancesRoomLanceScript, -1",
+        "object_event  4,  7, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LANCES_ROOM_OAK_AND_MARY",
+        "object_event  4,  7, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LANCES_ROOM_OAK_AND_MARY"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "23",
+            "KARENS_ROOM",
+            "3"
+          ],
+          "raw": "warp_event  4, 23, KARENS_ROOM, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "23",
+            "KARENS_ROOM",
+            "4"
+          ],
+          "raw": "warp_event  5, 23, KARENS_ROOM, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "1",
+            "HALL_OF_FAME",
+            "1"
+          ],
+          "raw": "warp_event  4,  1, HALL_OF_FAME, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "1",
+            "HALL_OF_FAME",
+            "2"
+          ],
+          "raw": "warp_event  5,  1, HALL_OF_FAME, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "4",
+            "5",
+            "SCENE_LANCESROOM_APPROACH_LANCE",
+            "Script_ApproachLanceFromLeft"
+          ],
+          "raw": "coord_event  4,  5, SCENE_LANCESROOM_APPROACH_LANCE, Script_ApproachLanceFromLeft"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "5",
+            "5",
+            "SCENE_LANCESROOM_APPROACH_LANCE",
+            "Script_ApproachLanceFromRight"
+          ],
+          "raw": "coord_event  5,  5, SCENE_LANCESROOM_APPROACH_LANCE, Script_ApproachLanceFromRight"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "3",
+            "SPRITE_LANCE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "LancesRoomLanceScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  3, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LancesRoomLanceScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "7",
+            "SPRITE_TEACHER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_LANCES_ROOM_OAK_AND_MARY"
+          ],
+          "raw": "object_event  4,  7, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LANCES_ROOM_OAK_AND_MARY"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "7",
+            "SPRITE_OAK",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_LANCES_ROOM_OAK_AND_MARY"
+          ],
+          "raw": "object_event  4,  7, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LANCES_ROOM_OAK_AND_MARY"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "LanceBattleIntroText": {
+      "raw_lines": [
+        "text \"LANCE: I've been\"",
+        "line \"waiting for you.\"",
+        "para \"<PLAY_G>!\"",
+        "para \"I knew that you,\"",
+        "line \"with your skills,\"",
+        "para \"would eventually\"",
+        "line \"reach me here.\"",
+        "para \"There's no need\"",
+        "line \"for words now.\"",
+        "para \"We will battle to\"",
+        "line \"determine who is\"",
+        "para \"the stronger of\"",
+        "line \"the two of us.\"",
+        "para \"As the most power-\"",
+        "line \"ful trainer and as\"",
+        "para \"the #MON LEAGUE\"",
+        "line \"CHAMPION\u2026\"",
+        "para \"I, LANCE the drag-\"",
+        "line \"on master, accept\"",
+        "cont \"your challenge!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "LANCE: I've been"
+        },
+        {
+          "command": "line",
+          "value": "waiting for you."
+        },
+        {
+          "command": "para",
+          "value": "<PLAY_G>!"
+        },
+        {
+          "command": "para",
+          "value": "I knew that you,"
+        },
+        {
+          "command": "line",
+          "value": "with your skills,"
+        },
+        {
+          "command": "para",
+          "value": "would eventually"
+        },
+        {
+          "command": "line",
+          "value": "reach me here."
+        },
+        {
+          "command": "para",
+          "value": "There's no need"
+        },
+        {
+          "command": "line",
+          "value": "for words now."
+        },
+        {
+          "command": "para",
+          "value": "We will battle to"
+        },
+        {
+          "command": "line",
+          "value": "determine who is"
+        },
+        {
+          "command": "para",
+          "value": "the stronger of"
+        },
+        {
+          "command": "line",
+          "value": "the two of us."
+        },
+        {
+          "command": "para",
+          "value": "As the most power-"
+        },
+        {
+          "command": "line",
+          "value": "ful trainer and as"
+        },
+        {
+          "command": "para",
+          "value": "the #MON LEAGUE"
+        },
+        {
+          "command": "line",
+          "value": "CHAMPION\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I, LANCE the drag-"
+        },
+        {
+          "command": "line",
+          "value": "on master, accept"
+        },
+        {
+          "command": "cont",
+          "value": "your challenge!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LanceBattleWinText": {
+      "raw_lines": [
+        "text \"\u2026It's over.\"",
+        "para \"But it's an odd\"",
+        "line \"feeling.\"",
+        "para \"I'm not angry that\"",
+        "line \"I lost. In fact, I\"",
+        "cont \"feel happy.\"",
+        "para \"Happy that I\"",
+        "line \"witnessed the rise\"",
+        "para \"of a great new\"",
+        "line \"CHAMPION!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026It's over."
+        },
+        {
+          "command": "para",
+          "value": "But it's an odd"
+        },
+        {
+          "command": "line",
+          "value": "feeling."
+        },
+        {
+          "command": "para",
+          "value": "I'm not angry that"
+        },
+        {
+          "command": "line",
+          "value": "I lost. In fact, I"
+        },
+        {
+          "command": "cont",
+          "value": "feel happy."
+        },
+        {
+          "command": "para",
+          "value": "Happy that I"
+        },
+        {
+          "command": "line",
+          "value": "witnessed the rise"
+        },
+        {
+          "command": "para",
+          "value": "of a great new"
+        },
+        {
+          "command": "line",
+          "value": "CHAMPION!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LanceBattleAfterText": {
+      "raw_lines": [
+        "text \"\u2026Whew.\"",
+        "para \"You have become\"",
+        "line \"truly powerful,\"",
+        "cont \"<PLAY_G>.\"",
+        "para \"Your #MON have\"",
+        "line \"responded to your\"",
+        "para \"strong and up-\"",
+        "line \"standing nature.\"",
+        "para \"As a trainer, you\"",
+        "line \"will continue to\"",
+        "para \"grow strong with\"",
+        "line \"your #MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026Whew."
+        },
+        {
+          "command": "para",
+          "value": "You have become"
+        },
+        {
+          "command": "line",
+          "value": "truly powerful,"
+        },
+        {
+          "command": "cont",
+          "value": "<PLAY_G>."
+        },
+        {
+          "command": "para",
+          "value": "Your #MON have"
+        },
+        {
+          "command": "line",
+          "value": "responded to your"
+        },
+        {
+          "command": "para",
+          "value": "strong and up-"
+        },
+        {
+          "command": "line",
+          "value": "standing nature."
+        },
+        {
+          "command": "para",
+          "value": "As a trainer, you"
+        },
+        {
+          "command": "line",
+          "value": "will continue to"
+        },
+        {
+          "command": "para",
+          "value": "grow strong with"
+        },
+        {
+          "command": "line",
+          "value": "your #MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LancesRoomMaryOhNoOakText": {
+      "raw_lines": [
+        "text \"MARY: Oh, no!\"",
+        "line \"It's all over!\"",
+        "para \"PROF.OAK, if you\"",
+        "line \"weren't so slow\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MARY: Oh, no!"
+        },
+        {
+          "command": "line",
+          "value": "It's all over!"
+        },
+        {
+          "command": "para",
+          "value": "PROF.OAK, if you"
+        },
+        {
+          "command": "line",
+          "value": "weren't so slow\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LancesRoomOakCongratulationsText": {
+      "raw_lines": [
+        "text \"PROF.OAK: Ah,\"",
+        "line \"<PLAY_G>!\"",
+        "para \"It's been a long\"",
+        "line \"while.\"",
+        "para \"You certainly look\"",
+        "line \"more impressive.\"",
+        "para \"Your conquest of\"",
+        "line \"the LEAGUE is just\"",
+        "cont \"fantastic!\"",
+        "para \"Your dedication,\"",
+        "line \"trust and love for\"",
+        "para \"your #MON made\"",
+        "line \"this happen.\"",
+        "para \"Your #MON were\"",
+        "line \"outstanding too.\"",
+        "para \"Because they be-\"",
+        "line \"lieved in you as a\"",
+        "para \"trainer, they per-\"",
+        "line \"severed.\"",
+        "para \"Congratulations,\"",
+        "line \"<PLAY_G>!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "PROF.OAK: Ah,"
+        },
+        {
+          "command": "line",
+          "value": "<PLAY_G>!"
+        },
+        {
+          "command": "para",
+          "value": "It's been a long"
+        },
+        {
+          "command": "line",
+          "value": "while."
+        },
+        {
+          "command": "para",
+          "value": "You certainly look"
+        },
+        {
+          "command": "line",
+          "value": "more impressive."
+        },
+        {
+          "command": "para",
+          "value": "Your conquest of"
+        },
+        {
+          "command": "line",
+          "value": "the LEAGUE is just"
+        },
+        {
+          "command": "cont",
+          "value": "fantastic!"
+        },
+        {
+          "command": "para",
+          "value": "Your dedication,"
+        },
+        {
+          "command": "line",
+          "value": "trust and love for"
+        },
+        {
+          "command": "para",
+          "value": "your #MON made"
+        },
+        {
+          "command": "line",
+          "value": "this happen."
+        },
+        {
+          "command": "para",
+          "value": "Your #MON were"
+        },
+        {
+          "command": "line",
+          "value": "outstanding too."
+        },
+        {
+          "command": "para",
+          "value": "Because they be-"
+        },
+        {
+          "command": "line",
+          "value": "lieved in you as a"
+        },
+        {
+          "command": "para",
+          "value": "trainer, they per-"
+        },
+        {
+          "command": "line",
+          "value": "severed."
+        },
+        {
+          "command": "para",
+          "value": "Congratulations,"
+        },
+        {
+          "command": "line",
+          "value": "<PLAY_G>!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LancesRoomMaryInterviewText": {
+      "raw_lines": [
+        "text \"MARY: Let's inter-\"",
+        "line \"view the brand new\"",
+        "cont \"CHAMPION!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MARY: Let's inter-"
+        },
+        {
+          "command": "line",
+          "value": "view the brand new"
+        },
+        {
+          "command": "cont",
+          "value": "CHAMPION!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LancesRoomNoisyText": {
+      "raw_lines": [
+        "text \"LANCE: This is\"",
+        "line \"getting to be a\"",
+        "cont \"bit too noisy\u2026\"",
+        "para \"<PLAY_G>, could you\"",
+        "line \"come with me?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "LANCE: This is"
+        },
+        {
+          "command": "line",
+          "value": "getting to be a"
+        },
+        {
+          "command": "cont",
+          "value": "bit too noisy\u2026"
+        },
+        {
+          "command": "para",
+          "value": "<PLAY_G>, could you"
+        },
+        {
+          "command": "line",
+          "value": "come with me?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LancesRoomMaryNoInterviewText": {
+      "raw_lines": [
+        "text \"MARY: Oh, wait!\"",
+        "line \"We haven't done\"",
+        "cont \"the interview!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MARY: Oh, wait!"
+        },
+        {
+          "command": "line",
+          "value": "We haven't done"
+        },
+        {
+          "command": "cont",
+          "value": "the interview!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "LancesRoom_EnterMovement": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_ApproachLanceFromLeft": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "turn_head RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MovementData_ApproachLanceFromRight": {
+      "raw_lines": [
+        "step UP",
+        "step LEFT",
+        "step UP",
+        "turn_head RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "LancesRoomMovementData_MaryRushesIn": {
+      "raw_lines": [
+        "big_step UP",
+        "big_step UP",
+        "big_step UP",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "LancesRoomMovementData_OakWalksIn": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "LancesRoomMovementData_MaryYieldsToOak": {
+      "raw_lines": [
+        "step LEFT",
+        "turn_head RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "LancesRoomMovementData_MaryInterviewChampion": {
+      "raw_lines": [
+        "big_step UP",
+        "turn_head RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "LancesRoomMovementData_LancePositionsSelfToGuidePlayerAway": {
+      "raw_lines": [
+        "step UP",
+        "step LEFT",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "LancesRoomMovementData_LanceLeadsPlayerToHallOfFame": {
+      "raw_lines": [
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "LancesRoomMovementData_PlayerExits": {
+      "raw_lines": [
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "LancesRoomMovementData_MaryTriesToFollow": {
+      "raw_lines": [
+        "step UP",
+        "step RIGHT",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "LancesRoomMovementData_MaryRunsBackAndForth": {
+      "raw_lines": [
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "LancesRoom_MapScripts": {
+      "label_refs": [
+        "LancesRoomLockDoorScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LancesRoomLockDoorScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LancesRoomNoopScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LancesRoomDoorsCallback": {
+      "label_refs": [
+        "LancesRoomDoorsCallback.KeepEntranceOpen"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LancesRoomDoorsCallback.KeepEntranceOpen": {
+      "label_refs": [
+        "LancesRoomDoorsCallback.KeepExitClosed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LancesRoomDoorsCallback.KeepExitClosed": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LancesRoomDoorLocksBehindYouScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "LancesRoom_EnterMovement"
+      ],
+      "scene_refs": [
+        "SCENE_LANCESROOM_APPROACH_LANCE"
+      ],
+      "std_calls": []
+    },
+    "Script_ApproachLanceFromLeft": {
+      "label_refs": [
+        "LancesRoomLanceScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_ApproachLanceFromLeft"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Script_ApproachLanceFromRight": {
+      "label_refs": [
+        "LancesRoomLanceScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MovementData_ApproachLanceFromRight"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LancesRoomLanceScript": {
+      "label_refs": [],
+      "text_refs": [
+        "LanceBattleAfterText",
+        "LanceBattleIntroText",
+        "LancesRoomMaryInterviewText",
+        "LancesRoomMaryNoInterviewText",
+        "LancesRoomMaryOhNoOakText",
+        "LancesRoomNoisyText",
+        "LancesRoomOakCongratulationsText"
+      ],
+      "movement_refs": [
+        "LancesRoomMovementData_LanceLeadsPlayerToHallOfFame",
+        "LancesRoomMovementData_LancePositionsSelfToGuidePlayerAway",
+        "LancesRoomMovementData_MaryInterviewChampion",
+        "LancesRoomMovementData_MaryRunsBackAndForth",
+        "LancesRoomMovementData_MaryRushesIn",
+        "LancesRoomMovementData_MaryTriesToFollow",
+        "LancesRoomMovementData_MaryYieldsToOak",
+        "LancesRoomMovementData_OakWalksIn",
+        "LancesRoomMovementData_PlayerExits"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LancesRoom_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
+    "warp_events": 4,
+    "coord_events": 2,
+    "bg_events": 0,
+    "object_events": 3
+  }
+}

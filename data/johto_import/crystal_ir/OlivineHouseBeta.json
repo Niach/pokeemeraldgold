@@ -1,0 +1,490 @@
+{
+  "crystal_map": "OlivineHouseBeta",
+  "map_id": "OLIVINE_HOUSE_BETA",
+  "group": "OLIVINE",
+  "group_index": 1,
+  "map_index": 4,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_OLIVINE_CITY",
+  "music": "MUSIC_VIOLET_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/House1.blk",
+  "source_asm": "maps/OlivineHouseBeta.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "OLIVINE_CITY",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "OLIVINE_CITY",
+        "dest_warp_id": 4
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 0,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "OlivineHouseBetaBookshelf1"
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "OlivineHouseBetaBookshelf2"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 3,
+        "sprite": "SPRITE_TEACHER",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "OlivineHouseBetaTeacherScript",
+        "flag": -1
+      },
+      {
+        "x": 6,
+        "y": 4,
+        "sprite": "SPRITE_RHYDON",
+        "movement": "SPRITEMOVEDATA_WALK_UP_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 2,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "OlivineHouseBetaRhydonScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "OLIVINEHOUSEBETA_TEACHER",
+    "OLIVINEHOUSEBETA_RHYDON"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "OlivineHouseBeta_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "OlivineHouseBetaTeacherScript",
+      "label_refs": [
+        "OlivineHouseBetaTeacherScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineHouseBetaTeacherScript": {
+      "raw_lines": [
+        "jumptextfaceplayer OlivineHouseBetaTeacherText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "OlivineHouseBetaTeacherText"
+          ],
+          "raw": "jumptextfaceplayer OlivineHouseBetaTeacherText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "OlivineHouseBetaTeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineHouseBetaRhydonScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext OlivineHouseBetaRhydonText",
+        "cry RHYDON",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "OlivineHouseBetaRhydonText"
+          ],
+          "raw": "writetext OlivineHouseBetaRhydonText"
+        },
+        {
+          "command": "cry",
+          "args": [
+            "RHYDON"
+          ],
+          "raw": "cry RHYDON"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "OlivineHouseBetaRhydonText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineHouseBetaBookshelf1": {
+      "raw_lines": [
+        "jumpstd PictureBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PictureBookshelfScript"
+          ],
+          "raw": "jumpstd PictureBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "OlivineHouseBetaBookshelf2": {
+      "raw_lines": [
+        "jumpstd MagazineBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "MagazineBookshelfScript"
+          ],
+          "raw": "jumpstd MagazineBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "OlivineHouseBeta_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, OLIVINE_CITY, 4",
+        "warp_event  3,  7, OLIVINE_CITY, 4",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, OlivineHouseBetaBookshelf1",
+        "bg_event  1,  1, BGEVENT_READ, OlivineHouseBetaBookshelf2",
+        "def_object_events",
+        "object_event  2,  3, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineHouseBetaTeacherScript, -1",
+        "object_event  6,  4, SPRITE_RHYDON, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineHouseBetaRhydonScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "OLIVINE_CITY",
+            "4"
+          ],
+          "raw": "warp_event  2,  7, OLIVINE_CITY, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "OLIVINE_CITY",
+            "4"
+          ],
+          "raw": "warp_event  3,  7, OLIVINE_CITY, 4"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "OlivineHouseBetaBookshelf1"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, OlivineHouseBetaBookshelf1"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "OlivineHouseBetaBookshelf2"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, OlivineHouseBetaBookshelf2"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_TEACHER",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "OlivineHouseBetaTeacherScript",
+            "-1"
+          ],
+          "raw": "object_event  2,  3, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineHouseBetaTeacherScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "4",
+            "SPRITE_RHYDON",
+            "SPRITEMOVEDATA_WALK_UP_DOWN",
+            "0",
+            "2",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "OlivineHouseBetaRhydonScript",
+            "-1"
+          ],
+          "raw": "object_event  6,  4, SPRITE_RHYDON, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineHouseBetaRhydonScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "OlivineHouseBetaTeacherText": {
+      "raw_lines": [
+        "text \"When my #MON\"",
+        "line \"got sick, the\"",
+        "para \"PHARMACIST in\"",
+        "line \"ECRUTEAK made some\"",
+        "cont \"medicine for me.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "When my #MON"
+        },
+        {
+          "command": "line",
+          "value": "got sick, the"
+        },
+        {
+          "command": "para",
+          "value": "PHARMACIST in"
+        },
+        {
+          "command": "line",
+          "value": "ECRUTEAK made some"
+        },
+        {
+          "command": "cont",
+          "value": "medicine for me."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "OlivineHouseBetaRhydonText": {
+      "raw_lines": [
+        "text \"RHYDON: Gugooh!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "RHYDON: Gugooh!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "MagazineBookshelfScript",
+    "PictureBookshelfScript"
+  ],
+  "dependencies": {
+    "OlivineHouseBeta_MapScripts": {
+      "label_refs": [
+        "OlivineHouseBetaTeacherScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineHouseBetaTeacherScript": {
+      "label_refs": [],
+      "text_refs": [
+        "OlivineHouseBetaTeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineHouseBetaRhydonScript": {
+      "label_refs": [],
+      "text_refs": [
+        "OlivineHouseBetaRhydonText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineHouseBetaBookshelf1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "OlivineHouseBetaBookshelf2": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "OlivineHouseBeta_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 2
+  }
+}

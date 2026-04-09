@@ -37,6 +37,22 @@
     }
   ],
   "events": {
+    "scene_scripts": [
+      {
+        "script": "Route29Noop1Scene",
+        "scene_id": "SCENE_ROUTE29_NOOP"
+      },
+      {
+        "script": "Route29Noop2Scene",
+        "scene_id": "SCENE_ROUTE29_CATCH_TUTORIAL"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "Route29TuscanyCallback"
+      }
+    ],
     "warp_events": [
       {
         "x": 27,
@@ -81,6 +97,11 @@
         "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "CatchingTutorialDudeScript",
         "flag": -1
       },
@@ -91,6 +112,11 @@
         "movement": "SPRITEMOVEDATA_WALK_UP_DOWN",
         "movement_range_x": 0,
         "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "Route29YoungsterScript",
         "flag": -1
       },
@@ -101,6 +127,11 @@
         "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
         "movement_range_x": 1,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "Route29TeacherScript",
         "flag": -1
       },
@@ -111,6 +142,11 @@
         "movement": "SPRITEMOVEDATA_STILL",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "Route29FruitTree",
         "flag": -1
       },
@@ -121,6 +157,11 @@
         "movement": "SPRITEMOVEDATA_STANDING_UP",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "Route29FisherScript",
         "flag": -1
       },
@@ -131,6 +172,11 @@
         "movement": "SPRITEMOVEDATA_STANDING_DOWN",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "Route29CooltrainerMScript",
         "flag": -1
       },
@@ -141,8 +187,13 @@
         "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_SCRIPT",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "TuscanyScript",
+        "flag": "EVENT_ROUTE_29_TUSCANY_OF_TUESDAY"
       },
       {
         "x": 48,
@@ -151,12 +202,2962 @@
         "movement": "SPRITEMOVEDATA_STILL",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_ITEMBALL",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "Route29Potion",
+        "flag": "EVENT_ROUTE_29_POTION"
       }
     ]
   },
+  "object_consts": [
+    "ROUTE29_COOLTRAINER_M1",
+    "ROUTE29_YOUNGSTER",
+    "ROUTE29_TEACHER1",
+    "ROUTE29_FRUIT_TREE",
+    "ROUTE29_FISHER",
+    "ROUTE29_COOLTRAINER_M2",
+    "ROUTE29_TUSCANY",
+    "ROUTE29_POKE_BALL"
+  ],
+  "scene_ids": [
+    "SCENE_ROUTE29_CATCH_TUTORIAL",
+    "SCENE_ROUTE29_NOOP"
+  ],
+  "scripts": {
+    "Route29_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script Route29Noop1Scene, SCENE_ROUTE29_NOOP",
+        "scene_script Route29Noop2Scene, SCENE_ROUTE29_CATCH_TUTORIAL",
+        "def_callbacks",
+        "callback MAPCALLBACK_OBJECTS, Route29TuscanyCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "Route29Noop1Scene",
+            "SCENE_ROUTE29_NOOP"
+          ],
+          "raw": "scene_script Route29Noop1Scene, SCENE_ROUTE29_NOOP"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "Route29Noop2Scene",
+            "SCENE_ROUTE29_CATCH_TUTORIAL"
+          ],
+          "raw": "scene_script Route29Noop2Scene, SCENE_ROUTE29_CATCH_TUTORIAL"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "Route29TuscanyCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, Route29TuscanyCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "Route29Noop1Scene",
+      "label_refs": [
+        "Route29Noop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29Noop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29Noop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29TuscanyCallback": {
+      "raw_lines": [
+        "checkflag ENGINE_ZEPHYRBADGE",
+        "iftrue .DoesTuscanyAppear"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_ZEPHYRBADGE"
+          ],
+          "raw": "checkflag ENGINE_ZEPHYRBADGE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route29TuscanyCallback.DoesTuscanyAppear"
+          ],
+          "raw": "iftrue .DoesTuscanyAppear"
+        }
+      ],
+      "first_command": "checkflag",
+      "fallthrough_label": "Route29TuscanyCallback.TuscanyDisappears",
+      "label_refs": [
+        "Route29TuscanyCallback.DoesTuscanyAppear",
+        "Route29TuscanyCallback.TuscanyDisappears"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29TuscanyCallback.TuscanyDisappears": {
+      "raw_lines": [
+        "disappear ROUTE29_TUSCANY",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "disappear",
+          "args": [
+            "ROUTE29_TUSCANY"
+          ],
+          "raw": "disappear ROUTE29_TUSCANY"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "disappear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29TuscanyCallback.DoesTuscanyAppear": {
+      "raw_lines": [
+        "readvar VAR_WEEKDAY",
+        "ifnotequal TUESDAY, .TuscanyDisappears",
+        "appear ROUTE29_TUSCANY",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifnotequal",
+          "args": [
+            "TUESDAY",
+            "Route29TuscanyCallback.TuscanyDisappears"
+          ],
+          "raw": "ifnotequal TUESDAY, .TuscanyDisappears"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE29_TUSCANY"
+          ],
+          "raw": "appear ROUTE29_TUSCANY"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "readvar",
+      "label_refs": [
+        "Route29TuscanyCallback.TuscanyDisappears"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29Tutorial1": {
+      "raw_lines": [
+        "turnobject ROUTE29_COOLTRAINER_M1, UP",
+        "showemote EMOTE_SHOCK, ROUTE29_COOLTRAINER_M1, 15",
+        "applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData1a",
+        "turnobject PLAYER, LEFT",
+        "setevent EVENT_DUDE_TALKED_TO_YOU",
+        "opentext",
+        "writetext CatchingTutorialIntroText",
+        "yesorno",
+        "iffalse Script_RefusedTutorial1",
+        "closetext",
+        "follow ROUTE29_COOLTRAINER_M1, PLAYER",
+        "applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData1b",
+        "stopfollow",
+        "loadwildmon RATTATA, 5",
+        "catchtutorial BATTLETYPE_TUTORIAL",
+        "turnobject ROUTE29_COOLTRAINER_M1, UP",
+        "opentext",
+        "writetext CatchingTutorialDebriefText",
+        "waitbutton",
+        "closetext",
+        "setscene SCENE_ROUTE29_NOOP",
+        "setevent EVENT_LEARNED_TO_CATCH_POKEMON",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "ROUTE29_COOLTRAINER_M1",
+            "UP"
+          ],
+          "raw": "turnobject ROUTE29_COOLTRAINER_M1, UP"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "ROUTE29_COOLTRAINER_M1",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, ROUTE29_COOLTRAINER_M1, 15"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE29_COOLTRAINER_M1",
+            "DudeMovementData1a"
+          ],
+          "raw": "applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData1a"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYER, LEFT"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_DUDE_TALKED_TO_YOU"
+          ],
+          "raw": "setevent EVENT_DUDE_TALKED_TO_YOU"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CatchingTutorialIntroText"
+          ],
+          "raw": "writetext CatchingTutorialIntroText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Script_RefusedTutorial1"
+          ],
+          "raw": "iffalse Script_RefusedTutorial1"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "follow",
+          "args": [
+            "ROUTE29_COOLTRAINER_M1",
+            "PLAYER"
+          ],
+          "raw": "follow ROUTE29_COOLTRAINER_M1, PLAYER"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE29_COOLTRAINER_M1",
+            "DudeMovementData1b"
+          ],
+          "raw": "applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData1b"
+        },
+        {
+          "command": "stopfollow",
+          "args": [],
+          "raw": "stopfollow"
+        },
+        {
+          "command": "loadwildmon",
+          "args": [
+            "RATTATA",
+            "5"
+          ],
+          "raw": "loadwildmon RATTATA, 5"
+        },
+        {
+          "command": "catchtutorial",
+          "args": [
+            "BATTLETYPE_TUTORIAL"
+          ],
+          "raw": "catchtutorial BATTLETYPE_TUTORIAL"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "ROUTE29_COOLTRAINER_M1",
+            "UP"
+          ],
+          "raw": "turnobject ROUTE29_COOLTRAINER_M1, UP"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CatchingTutorialDebriefText"
+          ],
+          "raw": "writetext CatchingTutorialDebriefText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_ROUTE29_NOOP"
+          ],
+          "raw": "setscene SCENE_ROUTE29_NOOP"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_LEARNED_TO_CATCH_POKEMON"
+          ],
+          "raw": "setevent EVENT_LEARNED_TO_CATCH_POKEMON"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [
+        "Script_RefusedTutorial1"
+      ],
+      "text_refs": [
+        "CatchingTutorialDebriefText",
+        "CatchingTutorialIntroText"
+      ],
+      "movement_refs": [
+        "DudeMovementData1a",
+        "DudeMovementData1b"
+      ],
+      "scene_refs": [
+        "SCENE_ROUTE29_NOOP"
+      ],
+      "std_calls": []
+    },
+    "Route29Tutorial2": {
+      "raw_lines": [
+        "turnobject ROUTE29_COOLTRAINER_M1, UP",
+        "showemote EMOTE_SHOCK, ROUTE29_COOLTRAINER_M1, 15",
+        "applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData2a",
+        "turnobject PLAYER, LEFT",
+        "setevent EVENT_DUDE_TALKED_TO_YOU",
+        "opentext",
+        "writetext CatchingTutorialIntroText",
+        "yesorno",
+        "iffalse Script_RefusedTutorial2",
+        "closetext",
+        "follow ROUTE29_COOLTRAINER_M1, PLAYER",
+        "applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData2b",
+        "stopfollow",
+        "loadwildmon RATTATA, 5",
+        "catchtutorial BATTLETYPE_TUTORIAL",
+        "turnobject ROUTE29_COOLTRAINER_M1, UP",
+        "opentext",
+        "writetext CatchingTutorialDebriefText",
+        "waitbutton",
+        "closetext",
+        "setscene SCENE_ROUTE29_NOOP",
+        "setevent EVENT_LEARNED_TO_CATCH_POKEMON",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "ROUTE29_COOLTRAINER_M1",
+            "UP"
+          ],
+          "raw": "turnobject ROUTE29_COOLTRAINER_M1, UP"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "ROUTE29_COOLTRAINER_M1",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, ROUTE29_COOLTRAINER_M1, 15"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE29_COOLTRAINER_M1",
+            "DudeMovementData2a"
+          ],
+          "raw": "applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData2a"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYER, LEFT"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_DUDE_TALKED_TO_YOU"
+          ],
+          "raw": "setevent EVENT_DUDE_TALKED_TO_YOU"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CatchingTutorialIntroText"
+          ],
+          "raw": "writetext CatchingTutorialIntroText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Script_RefusedTutorial2"
+          ],
+          "raw": "iffalse Script_RefusedTutorial2"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "follow",
+          "args": [
+            "ROUTE29_COOLTRAINER_M1",
+            "PLAYER"
+          ],
+          "raw": "follow ROUTE29_COOLTRAINER_M1, PLAYER"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE29_COOLTRAINER_M1",
+            "DudeMovementData2b"
+          ],
+          "raw": "applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData2b"
+        },
+        {
+          "command": "stopfollow",
+          "args": [],
+          "raw": "stopfollow"
+        },
+        {
+          "command": "loadwildmon",
+          "args": [
+            "RATTATA",
+            "5"
+          ],
+          "raw": "loadwildmon RATTATA, 5"
+        },
+        {
+          "command": "catchtutorial",
+          "args": [
+            "BATTLETYPE_TUTORIAL"
+          ],
+          "raw": "catchtutorial BATTLETYPE_TUTORIAL"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "ROUTE29_COOLTRAINER_M1",
+            "UP"
+          ],
+          "raw": "turnobject ROUTE29_COOLTRAINER_M1, UP"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CatchingTutorialDebriefText"
+          ],
+          "raw": "writetext CatchingTutorialDebriefText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_ROUTE29_NOOP"
+          ],
+          "raw": "setscene SCENE_ROUTE29_NOOP"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_LEARNED_TO_CATCH_POKEMON"
+          ],
+          "raw": "setevent EVENT_LEARNED_TO_CATCH_POKEMON"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [
+        "Script_RefusedTutorial2"
+      ],
+      "text_refs": [
+        "CatchingTutorialDebriefText",
+        "CatchingTutorialIntroText"
+      ],
+      "movement_refs": [
+        "DudeMovementData2a",
+        "DudeMovementData2b"
+      ],
+      "scene_refs": [
+        "SCENE_ROUTE29_NOOP"
+      ],
+      "std_calls": []
+    },
+    "Script_RefusedTutorial1": {
+      "raw_lines": [
+        "writetext CatchingTutorialDeclinedText",
+        "waitbutton",
+        "closetext",
+        "applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData1b",
+        "setscene SCENE_ROUTE29_NOOP",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "CatchingTutorialDeclinedText"
+          ],
+          "raw": "writetext CatchingTutorialDeclinedText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE29_COOLTRAINER_M1",
+            "DudeMovementData1b"
+          ],
+          "raw": "applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData1b"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_ROUTE29_NOOP"
+          ],
+          "raw": "setscene SCENE_ROUTE29_NOOP"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "CatchingTutorialDeclinedText"
+      ],
+      "movement_refs": [
+        "DudeMovementData1b"
+      ],
+      "scene_refs": [
+        "SCENE_ROUTE29_NOOP"
+      ],
+      "std_calls": []
+    },
+    "Script_RefusedTutorial2": {
+      "raw_lines": [
+        "writetext CatchingTutorialDeclinedText",
+        "waitbutton",
+        "closetext",
+        "applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData2b",
+        "setscene SCENE_ROUTE29_NOOP",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "CatchingTutorialDeclinedText"
+          ],
+          "raw": "writetext CatchingTutorialDeclinedText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE29_COOLTRAINER_M1",
+            "DudeMovementData2b"
+          ],
+          "raw": "applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData2b"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_ROUTE29_NOOP"
+          ],
+          "raw": "setscene SCENE_ROUTE29_NOOP"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "CatchingTutorialDeclinedText"
+      ],
+      "movement_refs": [
+        "DudeMovementData2b"
+      ],
+      "scene_refs": [
+        "SCENE_ROUTE29_NOOP"
+      ],
+      "std_calls": []
+    },
+    "CatchingTutorialDudeScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "readvar VAR_BOXSPACE",
+        "ifequal 0, .BoxFull",
+        "checkevent EVENT_LEARNED_TO_CATCH_POKEMON",
+        "iftrue .BoxFull",
+        "checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM",
+        "iffalse .BoxFull",
+        "writetext CatchingTutorialRepeatText",
+        "yesorno",
+        "iffalse .Declined",
+        "closetext",
+        "loadwildmon RATTATA, 5",
+        "catchtutorial BATTLETYPE_TUTORIAL",
+        "opentext",
+        "writetext CatchingTutorialDebriefText",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_LEARNED_TO_CATCH_POKEMON",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_BOXSPACE"
+          ],
+          "raw": "readvar VAR_BOXSPACE"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "0",
+            "CatchingTutorialDudeScript.BoxFull"
+          ],
+          "raw": "ifequal 0, .BoxFull"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_LEARNED_TO_CATCH_POKEMON"
+          ],
+          "raw": "checkevent EVENT_LEARNED_TO_CATCH_POKEMON"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CatchingTutorialDudeScript.BoxFull"
+          ],
+          "raw": "iftrue .BoxFull"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GAVE_MYSTERY_EGG_TO_ELM"
+          ],
+          "raw": "checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "CatchingTutorialDudeScript.BoxFull"
+          ],
+          "raw": "iffalse .BoxFull"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CatchingTutorialRepeatText"
+          ],
+          "raw": "writetext CatchingTutorialRepeatText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "CatchingTutorialDudeScript.Declined"
+          ],
+          "raw": "iffalse .Declined"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "loadwildmon",
+          "args": [
+            "RATTATA",
+            "5"
+          ],
+          "raw": "loadwildmon RATTATA, 5"
+        },
+        {
+          "command": "catchtutorial",
+          "args": [
+            "BATTLETYPE_TUTORIAL"
+          ],
+          "raw": "catchtutorial BATTLETYPE_TUTORIAL"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CatchingTutorialDebriefText"
+          ],
+          "raw": "writetext CatchingTutorialDebriefText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_LEARNED_TO_CATCH_POKEMON"
+          ],
+          "raw": "setevent EVENT_LEARNED_TO_CATCH_POKEMON"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "CatchingTutorialDudeScript.BoxFull",
+        "CatchingTutorialDudeScript.Declined"
+      ],
+      "text_refs": [
+        "CatchingTutorialDebriefText",
+        "CatchingTutorialRepeatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CatchingTutorialDudeScript.BoxFull": {
+      "raw_lines": [
+        "writetext CatchingTutorialBoxFullText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "CatchingTutorialBoxFullText"
+          ],
+          "raw": "writetext CatchingTutorialBoxFullText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "CatchingTutorialBoxFullText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CatchingTutorialDudeScript.Declined": {
+      "raw_lines": [
+        "writetext CatchingTutorialDeclinedText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "CatchingTutorialDeclinedText"
+          ],
+          "raw": "writetext CatchingTutorialDeclinedText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "CatchingTutorialDeclinedText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29YoungsterScript": {
+      "raw_lines": [
+        "jumptextfaceplayer Route29YoungsterText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Route29YoungsterText"
+          ],
+          "raw": "jumptextfaceplayer Route29YoungsterText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Route29YoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29TeacherScript": {
+      "raw_lines": [
+        "jumptextfaceplayer Route29TeacherText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Route29TeacherText"
+          ],
+          "raw": "jumptextfaceplayer Route29TeacherText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Route29TeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29FisherScript": {
+      "raw_lines": [
+        "jumptextfaceplayer Route29FisherText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Route29FisherText"
+          ],
+          "raw": "jumptextfaceplayer Route29FisherText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Route29FisherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29CooltrainerMScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checktime DAY",
+        "iftrue .day_morn",
+        "checktime NITE",
+        "iftrue .nite"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checktime",
+          "args": [
+            "DAY"
+          ],
+          "raw": "checktime DAY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route29CooltrainerMScript.day_morn"
+          ],
+          "raw": "iftrue .day_morn"
+        },
+        {
+          "command": "checktime",
+          "args": [
+            "NITE"
+          ],
+          "raw": "checktime NITE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route29CooltrainerMScript.nite"
+          ],
+          "raw": "iftrue .nite"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "Route29CooltrainerMScript.day_morn",
+      "label_refs": [
+        "Route29CooltrainerMScript.day_morn",
+        "Route29CooltrainerMScript.nite"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29CooltrainerMScript.day_morn": {
+      "raw_lines": [
+        "writetext Route29CooltrainerMText_WaitingForNight",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route29CooltrainerMText_WaitingForNight"
+          ],
+          "raw": "writetext Route29CooltrainerMText_WaitingForNight"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route29CooltrainerMText_WaitingForNight"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29CooltrainerMScript.nite": {
+      "raw_lines": [
+        "writetext Route29CooltrainerMText_WaitingForMorning",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route29CooltrainerMText_WaitingForMorning"
+          ],
+          "raw": "writetext Route29CooltrainerMText_WaitingForMorning"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route29CooltrainerMText_WaitingForMorning"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TuscanyScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_PINK_BOW_FROM_TUSCANY",
+        "iftrue TuscanyTuesdayScript",
+        "readvar VAR_WEEKDAY",
+        "ifnotequal TUESDAY, TuscanyNotTuesdayScript",
+        "checkevent EVENT_MET_TUSCANY_OF_TUESDAY",
+        "iftrue .MetTuscany",
+        "writetext MeetTuscanyText",
+        "promptbutton",
+        "setevent EVENT_MET_TUSCANY_OF_TUESDAY"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_PINK_BOW_FROM_TUSCANY"
+          ],
+          "raw": "checkevent EVENT_GOT_PINK_BOW_FROM_TUSCANY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TuscanyTuesdayScript"
+          ],
+          "raw": "iftrue TuscanyTuesdayScript"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifnotequal",
+          "args": [
+            "TUESDAY",
+            "TuscanyNotTuesdayScript"
+          ],
+          "raw": "ifnotequal TUESDAY, TuscanyNotTuesdayScript"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_MET_TUSCANY_OF_TUESDAY"
+          ],
+          "raw": "checkevent EVENT_MET_TUSCANY_OF_TUESDAY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TuscanyScript.MetTuscany"
+          ],
+          "raw": "iftrue .MetTuscany"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MeetTuscanyText"
+          ],
+          "raw": "writetext MeetTuscanyText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_MET_TUSCANY_OF_TUESDAY"
+          ],
+          "raw": "setevent EVENT_MET_TUSCANY_OF_TUESDAY"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "TuscanyScript.MetTuscany",
+      "label_refs": [
+        "TuscanyNotTuesdayScript",
+        "TuscanyScript.MetTuscany",
+        "TuscanyTuesdayScript"
+      ],
+      "text_refs": [
+        "MeetTuscanyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TuscanyScript.MetTuscany": {
+      "raw_lines": [
+        "writetext TuscanyGivesGiftText",
+        "promptbutton",
+        "verbosegiveitem PINK_BOW",
+        "iffalse TuscanyDoneScript",
+        "setevent EVENT_GOT_PINK_BOW_FROM_TUSCANY",
+        "writetext TuscanyGaveGiftText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "TuscanyGivesGiftText"
+          ],
+          "raw": "writetext TuscanyGivesGiftText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "PINK_BOW"
+          ],
+          "raw": "verbosegiveitem PINK_BOW"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "TuscanyDoneScript"
+          ],
+          "raw": "iffalse TuscanyDoneScript"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_PINK_BOW_FROM_TUSCANY"
+          ],
+          "raw": "setevent EVENT_GOT_PINK_BOW_FROM_TUSCANY"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "TuscanyGaveGiftText"
+          ],
+          "raw": "writetext TuscanyGaveGiftText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "TuscanyDoneScript"
+      ],
+      "text_refs": [
+        "TuscanyGaveGiftText",
+        "TuscanyGivesGiftText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TuscanyTuesdayScript": {
+      "raw_lines": [
+        "writetext TuscanyTuesdayText",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "TuscanyTuesdayText"
+          ],
+          "raw": "writetext TuscanyTuesdayText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "TuscanyDoneScript",
+      "label_refs": [
+        "TuscanyDoneScript"
+      ],
+      "text_refs": [
+        "TuscanyTuesdayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TuscanyDoneScript": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TuscanyNotTuesdayScript": {
+      "raw_lines": [
+        "writetext TuscanyNotTuesdayText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "TuscanyNotTuesdayText"
+          ],
+          "raw": "writetext TuscanyNotTuesdayText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "TuscanyNotTuesdayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29Sign1": {
+      "raw_lines": [
+        "jumptext Route29Sign1Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "Route29Sign1Text"
+          ],
+          "raw": "jumptext Route29Sign1Text"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "Route29Sign1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29Sign2": {
+      "raw_lines": [
+        "jumptext Route29Sign2Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "Route29Sign2Text"
+          ],
+          "raw": "jumptext Route29Sign2Text"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "Route29Sign2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29FruitTree": {
+      "raw_lines": [
+        "fruittree FRUITTREE_ROUTE_29"
+      ],
+      "commands": [
+        {
+          "command": "fruittree",
+          "args": [
+            "FRUITTREE_ROUTE_29"
+          ],
+          "raw": "fruittree FRUITTREE_ROUTE_29"
+        }
+      ],
+      "first_command": "fruittree",
+      "fallthrough_label": "Route29Potion",
+      "label_refs": [
+        "Route29Potion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29Potion": {
+      "raw_lines": [
+        "itemball POTION"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "POTION"
+          ],
+          "raw": "itemball POTION"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "Route29_MapEvents",
+      "label_refs": [
+        "Route29_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 27,  1, ROUTE_29_ROUTE_46_GATE, 3",
+        "def_coord_events",
+        "coord_event 53,  8, SCENE_ROUTE29_CATCH_TUTORIAL, Route29Tutorial1",
+        "coord_event 53,  9, SCENE_ROUTE29_CATCH_TUTORIAL, Route29Tutorial2",
+        "def_bg_events",
+        "bg_event 51,  7, BGEVENT_READ, Route29Sign1",
+        "bg_event  3,  5, BGEVENT_READ, Route29Sign2",
+        "def_object_events",
+        "object_event 50, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CatchingTutorialDudeScript, -1",
+        "object_event 27, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29YoungsterScript, -1",
+        "object_event 15, 11, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29TeacherScript, -1",
+        "object_event 12,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route29FruitTree, -1",
+        "object_event 25,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route29FisherScript, -1",
+        "object_event 13,  4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route29CooltrainerMScript, -1",
+        "object_event 29, 12, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TuscanyScript, EVENT_ROUTE_29_TUSCANY_OF_TUESDAY",
+        "object_event 48,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route29Potion, EVENT_ROUTE_29_POTION"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "27",
+            "1",
+            "ROUTE_29_ROUTE_46_GATE",
+            "3"
+          ],
+          "raw": "warp_event 27,  1, ROUTE_29_ROUTE_46_GATE, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "53",
+            "8",
+            "SCENE_ROUTE29_CATCH_TUTORIAL",
+            "Route29Tutorial1"
+          ],
+          "raw": "coord_event 53,  8, SCENE_ROUTE29_CATCH_TUTORIAL, Route29Tutorial1"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "53",
+            "9",
+            "SCENE_ROUTE29_CATCH_TUTORIAL",
+            "Route29Tutorial2"
+          ],
+          "raw": "coord_event 53,  9, SCENE_ROUTE29_CATCH_TUTORIAL, Route29Tutorial2"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "51",
+            "7",
+            "BGEVENT_READ",
+            "Route29Sign1"
+          ],
+          "raw": "bg_event 51,  7, BGEVENT_READ, Route29Sign1"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "5",
+            "BGEVENT_READ",
+            "Route29Sign2"
+          ],
+          "raw": "bg_event  3,  5, BGEVENT_READ, Route29Sign2"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "50",
+            "12",
+            "SPRITE_COOLTRAINER_M",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CatchingTutorialDudeScript",
+            "-1"
+          ],
+          "raw": "object_event 50, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CatchingTutorialDudeScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "27",
+            "16",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_WALK_UP_DOWN",
+            "0",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route29YoungsterScript",
+            "-1"
+          ],
+          "raw": "object_event 27, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29YoungsterScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "15",
+            "11",
+            "SPRITE_TEACHER",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route29TeacherScript",
+            "-1"
+          ],
+          "raw": "object_event 15, 11, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29TeacherScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "12",
+            "2",
+            "SPRITE_FRUIT_TREE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route29FruitTree",
+            "-1"
+          ],
+          "raw": "object_event 12,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route29FruitTree, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "25",
+            "3",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route29FisherScript",
+            "-1"
+          ],
+          "raw": "object_event 25,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route29FisherScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "13",
+            "4",
+            "SPRITE_COOLTRAINER_M",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route29CooltrainerMScript",
+            "-1"
+          ],
+          "raw": "object_event 13,  4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route29CooltrainerMScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "29",
+            "12",
+            "SPRITE_TEACHER",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "TuscanyScript",
+            "EVENT_ROUTE_29_TUSCANY_OF_TUESDAY"
+          ],
+          "raw": "object_event 29, 12, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TuscanyScript, EVENT_ROUTE_29_TUSCANY_OF_TUESDAY"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "48",
+            "2",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "Route29Potion",
+            "EVENT_ROUTE_29_POTION"
+          ],
+          "raw": "object_event 48,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route29Potion, EVENT_ROUTE_29_POTION"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "CatchingTutorialBoxFullText": {
+      "raw_lines": [
+        "text \"#MON hide in\"",
+        "line \"the grass. Who\"",
+        "para \"knows when they'll\"",
+        "line \"pop out\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#MON hide in"
+        },
+        {
+          "command": "line",
+          "value": "the grass. Who"
+        },
+        {
+          "command": "para",
+          "value": "knows when they'll"
+        },
+        {
+          "command": "line",
+          "value": "pop out\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CatchingTutorialIntroText": {
+      "raw_lines": [
+        "text \"I've seen you a\"",
+        "line \"couple times. How\"",
+        "para \"many #MON have\"",
+        "line \"you caught?\"",
+        "para \"Would you like me\"",
+        "line \"to show you how to\"",
+        "cont \"catch #MON?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I've seen you a"
+        },
+        {
+          "command": "line",
+          "value": "couple times. How"
+        },
+        {
+          "command": "para",
+          "value": "many #MON have"
+        },
+        {
+          "command": "line",
+          "value": "you caught?"
+        },
+        {
+          "command": "para",
+          "value": "Would you like me"
+        },
+        {
+          "command": "line",
+          "value": "to show you how to"
+        },
+        {
+          "command": "cont",
+          "value": "catch #MON?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CatchingTutorialDebriefText": {
+      "raw_lines": [
+        "text \"That's how you do\"",
+        "line \"it.\"",
+        "para \"If you weaken them\"",
+        "line \"first, #MON are\"",
+        "cont \"easier to catch.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "That's how you do"
+        },
+        {
+          "command": "line",
+          "value": "it."
+        },
+        {
+          "command": "para",
+          "value": "If you weaken them"
+        },
+        {
+          "command": "line",
+          "value": "first, #MON are"
+        },
+        {
+          "command": "cont",
+          "value": "easier to catch."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CatchingTutorialDeclinedText": {
+      "raw_lines": [
+        "text \"Oh. Fine, then.\"",
+        "para \"Anyway, if you\"",
+        "line \"want to catch\"",
+        "para \"#MON, you have\"",
+        "line \"to walk a lot.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh. Fine, then."
+        },
+        {
+          "command": "para",
+          "value": "Anyway, if you"
+        },
+        {
+          "command": "line",
+          "value": "want to catch"
+        },
+        {
+          "command": "para",
+          "value": "#MON, you have"
+        },
+        {
+          "command": "line",
+          "value": "to walk a lot."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CatchingTutorialRepeatText": {
+      "raw_lines": [
+        "text \"Huh? You want me\"",
+        "line \"to show you how to\"",
+        "cont \"catch #MON?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Huh? You want me"
+        },
+        {
+          "command": "line",
+          "value": "to show you how to"
+        },
+        {
+          "command": "cont",
+          "value": "catch #MON?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route29YoungsterText": {
+      "raw_lines": [
+        "text \"Yo. How are your\"",
+        "line \"#MON?\"",
+        "para \"If they're weak\"",
+        "line \"and not ready for\"",
+        "para \"battle, keep out\"",
+        "line \"of the grass.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Yo. How are your"
+        },
+        {
+          "command": "line",
+          "value": "#MON?"
+        },
+        {
+          "command": "para",
+          "value": "If they're weak"
+        },
+        {
+          "command": "line",
+          "value": "and not ready for"
+        },
+        {
+          "command": "para",
+          "value": "battle, keep out"
+        },
+        {
+          "command": "line",
+          "value": "of the grass."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route29TeacherText": {
+      "raw_lines": [
+        "text \"See those ledges?\"",
+        "line \"It's scary to jump\"",
+        "cont \"off them.\"",
+        "para \"But you can go to\"",
+        "line \"NEW BARK without\"",
+        "para \"walking through\"",
+        "line \"the grass.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "See those ledges?"
+        },
+        {
+          "command": "line",
+          "value": "It's scary to jump"
+        },
+        {
+          "command": "cont",
+          "value": "off them."
+        },
+        {
+          "command": "para",
+          "value": "But you can go to"
+        },
+        {
+          "command": "line",
+          "value": "NEW BARK without"
+        },
+        {
+          "command": "para",
+          "value": "walking through"
+        },
+        {
+          "command": "line",
+          "value": "the grass."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route29FisherText": {
+      "raw_lines": [
+        "text \"I wanted to take a\"",
+        "line \"break, so I saved\"",
+        "para \"to record my\"",
+        "line \"progress.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I wanted to take a"
+        },
+        {
+          "command": "line",
+          "value": "break, so I saved"
+        },
+        {
+          "command": "para",
+          "value": "to record my"
+        },
+        {
+          "command": "line",
+          "value": "progress."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route29CooltrainerMText_WaitingForDay": {
+      "raw_lines": [
+        "text \"I'm waiting for\"",
+        "line \"#MON that\"",
+        "para \"appear only in the\"",
+        "line \"daytime.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm waiting for"
+        },
+        {
+          "command": "line",
+          "value": "#MON that"
+        },
+        {
+          "command": "para",
+          "value": "appear only in the"
+        },
+        {
+          "command": "line",
+          "value": "daytime."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route29CooltrainerMText_WaitingForNight": {
+      "raw_lines": [
+        "text \"I'm waiting for\"",
+        "line \"#MON that\"",
+        "para \"appear only at\"",
+        "line \"night.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm waiting for"
+        },
+        {
+          "command": "line",
+          "value": "#MON that"
+        },
+        {
+          "command": "para",
+          "value": "appear only at"
+        },
+        {
+          "command": "line",
+          "value": "night."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route29CooltrainerMText_WaitingForMorning": {
+      "raw_lines": [
+        "text \"I'm waiting for\"",
+        "line \"#MON that\"",
+        "para \"appear only in the\"",
+        "line \"morning.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm waiting for"
+        },
+        {
+          "command": "line",
+          "value": "#MON that"
+        },
+        {
+          "command": "para",
+          "value": "appear only in the"
+        },
+        {
+          "command": "line",
+          "value": "morning."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MeetTuscanyText": {
+      "raw_lines": [
+        "text \"TUSCANY: I do be-\"",
+        "line \"lieve that this is\"",
+        "para \"the first time\"",
+        "line \"we've met?\"",
+        "para \"Please allow me to\"",
+        "line \"introduce myself.\"",
+        "para \"I am TUSCANY of\"",
+        "line \"Tuesday.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "TUSCANY: I do be-"
+        },
+        {
+          "command": "line",
+          "value": "lieve that this is"
+        },
+        {
+          "command": "para",
+          "value": "the first time"
+        },
+        {
+          "command": "line",
+          "value": "we've met?"
+        },
+        {
+          "command": "para",
+          "value": "Please allow me to"
+        },
+        {
+          "command": "line",
+          "value": "introduce myself."
+        },
+        {
+          "command": "para",
+          "value": "I am TUSCANY of"
+        },
+        {
+          "command": "line",
+          "value": "Tuesday."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TuscanyGivesGiftText": {
+      "raw_lines": [
+        "text \"By way of intro-\"",
+        "line \"duction, please\"",
+        "para \"accept this gift,\"",
+        "line \"a PINK BOW.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "By way of intro-"
+        },
+        {
+          "command": "line",
+          "value": "duction, please"
+        },
+        {
+          "command": "para",
+          "value": "accept this gift,"
+        },
+        {
+          "command": "line",
+          "value": "a PINK BOW."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TuscanyGaveGiftText": {
+      "raw_lines": [
+        "text \"TUSCANY: Wouldn't\"",
+        "line \"you agree that it\"",
+        "cont \"is most adorable?\"",
+        "para \"It strengthens\"",
+        "line \"normal-type moves.\"",
+        "para \"I am certain it\"",
+        "line \"will be of use.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "TUSCANY: Wouldn't"
+        },
+        {
+          "command": "line",
+          "value": "you agree that it"
+        },
+        {
+          "command": "cont",
+          "value": "is most adorable?"
+        },
+        {
+          "command": "para",
+          "value": "It strengthens"
+        },
+        {
+          "command": "line",
+          "value": "normal-type moves."
+        },
+        {
+          "command": "para",
+          "value": "I am certain it"
+        },
+        {
+          "command": "line",
+          "value": "will be of use."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TuscanyTuesdayText": {
+      "raw_lines": [
+        "text \"TUSCANY: Have you\"",
+        "line \"met MONICA, my\"",
+        "cont \"older sister?\"",
+        "para \"Or my younger\"",
+        "line \"brother, WESLEY?\"",
+        "para \"I am the second of\"",
+        "line \"seven children.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "TUSCANY: Have you"
+        },
+        {
+          "command": "line",
+          "value": "met MONICA, my"
+        },
+        {
+          "command": "cont",
+          "value": "older sister?"
+        },
+        {
+          "command": "para",
+          "value": "Or my younger"
+        },
+        {
+          "command": "line",
+          "value": "brother, WESLEY?"
+        },
+        {
+          "command": "para",
+          "value": "I am the second of"
+        },
+        {
+          "command": "line",
+          "value": "seven children."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TuscanyNotTuesdayText": {
+      "raw_lines": [
+        "text \"TUSCANY: Today is\"",
+        "line \"not Tuesday. That\"",
+        "cont \"is unfortunate\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "TUSCANY: Today is"
+        },
+        {
+          "command": "line",
+          "value": "not Tuesday. That"
+        },
+        {
+          "command": "cont",
+          "value": "is unfortunate\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route29Sign1Text": {
+      "raw_lines": [
+        "text \"ROUTE 29\"",
+        "para \"CHERRYGROVE CITY -\"",
+        "line \"NEW BARK TOWN\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ROUTE 29"
+        },
+        {
+          "command": "para",
+          "value": "CHERRYGROVE CITY -"
+        },
+        {
+          "command": "line",
+          "value": "NEW BARK TOWN"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route29Sign2Text": {
+      "raw_lines": [
+        "text \"ROUTE 29\"",
+        "para \"CHERRYGROVE CITY -\"",
+        "line \"NEW BARK TOWN\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ROUTE 29"
+        },
+        {
+          "command": "para",
+          "value": "CHERRYGROVE CITY -"
+        },
+        {
+          "command": "line",
+          "value": "NEW BARK TOWN"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "DudeMovementData1a": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step RIGHT",
+        "step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "DudeMovementData2a": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step UP",
+        "step RIGHT",
+        "step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "DudeMovementData1b": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "DudeMovementData2b": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "Route29_MapScripts": {
+      "label_refs": [
+        "Route29Noop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29Noop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29Noop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29TuscanyCallback": {
+      "label_refs": [
+        "Route29TuscanyCallback.DoesTuscanyAppear",
+        "Route29TuscanyCallback.TuscanyDisappears"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29TuscanyCallback.TuscanyDisappears": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29TuscanyCallback.DoesTuscanyAppear": {
+      "label_refs": [
+        "Route29TuscanyCallback.TuscanyDisappears"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29Tutorial1": {
+      "label_refs": [
+        "Script_RefusedTutorial1"
+      ],
+      "text_refs": [
+        "CatchingTutorialDebriefText",
+        "CatchingTutorialIntroText"
+      ],
+      "movement_refs": [
+        "DudeMovementData1a",
+        "DudeMovementData1b"
+      ],
+      "scene_refs": [
+        "SCENE_ROUTE29_NOOP"
+      ],
+      "std_calls": []
+    },
+    "Route29Tutorial2": {
+      "label_refs": [
+        "Script_RefusedTutorial2"
+      ],
+      "text_refs": [
+        "CatchingTutorialDebriefText",
+        "CatchingTutorialIntroText"
+      ],
+      "movement_refs": [
+        "DudeMovementData2a",
+        "DudeMovementData2b"
+      ],
+      "scene_refs": [
+        "SCENE_ROUTE29_NOOP"
+      ],
+      "std_calls": []
+    },
+    "Script_RefusedTutorial1": {
+      "label_refs": [],
+      "text_refs": [
+        "CatchingTutorialDeclinedText"
+      ],
+      "movement_refs": [
+        "DudeMovementData1b"
+      ],
+      "scene_refs": [
+        "SCENE_ROUTE29_NOOP"
+      ],
+      "std_calls": []
+    },
+    "Script_RefusedTutorial2": {
+      "label_refs": [],
+      "text_refs": [
+        "CatchingTutorialDeclinedText"
+      ],
+      "movement_refs": [
+        "DudeMovementData2b"
+      ],
+      "scene_refs": [
+        "SCENE_ROUTE29_NOOP"
+      ],
+      "std_calls": []
+    },
+    "CatchingTutorialDudeScript": {
+      "label_refs": [
+        "CatchingTutorialDudeScript.BoxFull",
+        "CatchingTutorialDudeScript.Declined"
+      ],
+      "text_refs": [
+        "CatchingTutorialDebriefText",
+        "CatchingTutorialRepeatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CatchingTutorialDudeScript.BoxFull": {
+      "label_refs": [],
+      "text_refs": [
+        "CatchingTutorialBoxFullText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CatchingTutorialDudeScript.Declined": {
+      "label_refs": [],
+      "text_refs": [
+        "CatchingTutorialDeclinedText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29YoungsterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "Route29YoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29TeacherScript": {
+      "label_refs": [],
+      "text_refs": [
+        "Route29TeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29FisherScript": {
+      "label_refs": [],
+      "text_refs": [
+        "Route29FisherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29CooltrainerMScript": {
+      "label_refs": [
+        "Route29CooltrainerMScript.day_morn",
+        "Route29CooltrainerMScript.nite"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29CooltrainerMScript.day_morn": {
+      "label_refs": [],
+      "text_refs": [
+        "Route29CooltrainerMText_WaitingForNight"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29CooltrainerMScript.nite": {
+      "label_refs": [],
+      "text_refs": [
+        "Route29CooltrainerMText_WaitingForMorning"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TuscanyScript": {
+      "label_refs": [
+        "TuscanyNotTuesdayScript",
+        "TuscanyScript.MetTuscany",
+        "TuscanyTuesdayScript"
+      ],
+      "text_refs": [
+        "MeetTuscanyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TuscanyScript.MetTuscany": {
+      "label_refs": [
+        "TuscanyDoneScript"
+      ],
+      "text_refs": [
+        "TuscanyGaveGiftText",
+        "TuscanyGivesGiftText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TuscanyTuesdayScript": {
+      "label_refs": [
+        "TuscanyDoneScript"
+      ],
+      "text_refs": [
+        "TuscanyTuesdayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TuscanyDoneScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TuscanyNotTuesdayScript": {
+      "label_refs": [],
+      "text_refs": [
+        "TuscanyNotTuesdayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29Sign1": {
+      "label_refs": [],
+      "text_refs": [
+        "Route29Sign1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29Sign2": {
+      "label_refs": [],
+      "text_refs": [
+        "Route29Sign2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29FruitTree": {
+      "label_refs": [
+        "Route29Potion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29Potion": {
+      "label_refs": [
+        "Route29_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route29_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "day_time"
+  ],
   "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
     "warp_events": 1,
     "coord_events": 2,
     "bg_events": 2,

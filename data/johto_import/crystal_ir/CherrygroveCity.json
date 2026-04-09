@@ -31,6 +31,22 @@
     }
   ],
   "events": {
+    "scene_scripts": [
+      {
+        "script": "CherrygroveCityNoop1Scene",
+        "scene_id": "SCENE_CHERRYGROVECITY_NOOP"
+      },
+      {
+        "script": "CherrygroveCityNoop2Scene",
+        "scene_id": "SCENE_CHERRYGROVECITY_MEET_RIVAL"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "CherrygroveCityFlypointCallback"
+      }
+    ],
     "warp_events": [
       {
         "x": 23,
@@ -111,8 +127,13 @@
         "movement": "SPRITEMOVEDATA_STANDING_DOWN",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_SCRIPT",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CherrygroveCityGuideGent",
+        "flag": "EVENT_GUIDE_GENT_IN_HIS_HOUSE"
       },
       {
         "x": 39,
@@ -121,8 +142,13 @@
         "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_SCRIPT",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_RIVAL_CHERRYGROVE_CITY"
       },
       {
         "x": 27,
@@ -131,6 +157,11 @@
         "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
         "movement_range_x": 1,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "CherrygroveTeacherScript",
         "flag": -1
       },
@@ -141,6 +172,11 @@
         "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
         "movement_range_x": 1,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "CherrygroveYoungsterScript",
         "flag": -1
       },
@@ -151,12 +187,3742 @@
         "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "MysticWaterGuy",
         "flag": -1
       }
     ]
   },
+  "object_consts": [
+    "CHERRYGROVECITY_GRAMPS",
+    "CHERRYGROVECITY_RIVAL",
+    "CHERRYGROVECITY_TEACHER",
+    "CHERRYGROVECITY_YOUNGSTER",
+    "CHERRYGROVECITY_FISHER"
+  ],
+  "scene_ids": [
+    "SCENE_CHERRYGROVECITY_MEET_RIVAL",
+    "SCENE_CHERRYGROVECITY_NOOP"
+  ],
+  "scripts": {
+    "CherrygroveCity_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script CherrygroveCityNoop1Scene, SCENE_CHERRYGROVECITY_NOOP",
+        "scene_script CherrygroveCityNoop2Scene, SCENE_CHERRYGROVECITY_MEET_RIVAL",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, CherrygroveCityFlypointCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "CherrygroveCityNoop1Scene",
+            "SCENE_CHERRYGROVECITY_NOOP"
+          ],
+          "raw": "scene_script CherrygroveCityNoop1Scene, SCENE_CHERRYGROVECITY_NOOP"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "CherrygroveCityNoop2Scene",
+            "SCENE_CHERRYGROVECITY_MEET_RIVAL"
+          ],
+          "raw": "scene_script CherrygroveCityNoop2Scene, SCENE_CHERRYGROVECITY_MEET_RIVAL"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "CherrygroveCityFlypointCallback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, CherrygroveCityFlypointCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "CherrygroveCityNoop1Scene",
+      "label_refs": [
+        "CherrygroveCityNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveCityNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveCityNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveCityFlypointCallback": {
+      "raw_lines": [
+        "setflag ENGINE_FLYPOINT_CHERRYGROVE",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_FLYPOINT_CHERRYGROVE"
+          ],
+          "raw": "setflag ENGINE_FLYPOINT_CHERRYGROVE"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "setflag",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveCityGuideGent": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext GuideGentIntroText",
+        "yesorno",
+        "iffalse .No",
+        "sjump .Yes"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GuideGentIntroText"
+          ],
+          "raw": "writetext GuideGentIntroText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "CherrygroveCityGuideGent.No"
+          ],
+          "raw": "iffalse .No"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "CherrygroveCityGuideGent.Yes"
+          ],
+          "raw": "sjump .Yes"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "CherrygroveCityGuideGent.No",
+        "CherrygroveCityGuideGent.Yes"
+      ],
+      "text_refs": [
+        "GuideGentIntroText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveCityGuideGent.Yes": {
+      "raw_lines": [
+        "writetext GuideGentTourText1",
+        "waitbutton",
+        "closetext",
+        "playmusic MUSIC_SHOW_ME_AROUND",
+        "follow CHERRYGROVECITY_GRAMPS, PLAYER",
+        "applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement1",
+        "opentext",
+        "writetext GuideGentPokecenterText",
+        "waitbutton",
+        "closetext",
+        "applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement2",
+        "turnobject PLAYER, UP",
+        "opentext",
+        "writetext GuideGentMartText",
+        "waitbutton",
+        "closetext",
+        "applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement3",
+        "turnobject PLAYER, UP",
+        "opentext",
+        "writetext GuideGentRoute30Text",
+        "waitbutton",
+        "closetext",
+        "applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement4",
+        "turnobject PLAYER, LEFT",
+        "opentext",
+        "writetext GuideGentSeaText",
+        "waitbutton",
+        "closetext",
+        "applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement5",
+        "turnobject PLAYER, UP",
+        "pause 60",
+        "turnobject CHERRYGROVECITY_GRAMPS, LEFT",
+        "turnobject PLAYER, RIGHT",
+        "opentext",
+        "writetext GuideGentGiftText",
+        "promptbutton",
+        "getstring STRING_BUFFER_4, .mapcardname",
+        "scall .JumpstdReceiveItem",
+        "setflag ENGINE_MAP_CARD",
+        "writetext GotMapCardText",
+        "promptbutton",
+        "writetext GuideGentPokegearText",
+        "waitbutton",
+        "closetext",
+        "stopfollow",
+        "special RestartMapMusic",
+        "turnobject PLAYER, UP",
+        "applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement6",
+        "playsound SFX_ENTER_DOOR",
+        "disappear CHERRYGROVECITY_GRAMPS",
+        "clearevent EVENT_GUIDE_GENT_VISIBLE_IN_CHERRYGROVE",
+        "waitsfx",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GuideGentTourText1"
+          ],
+          "raw": "writetext GuideGentTourText1"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_SHOW_ME_AROUND"
+          ],
+          "raw": "playmusic MUSIC_SHOW_ME_AROUND"
+        },
+        {
+          "command": "follow",
+          "args": [
+            "CHERRYGROVECITY_GRAMPS",
+            "PLAYER"
+          ],
+          "raw": "follow CHERRYGROVECITY_GRAMPS, PLAYER"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "CHERRYGROVECITY_GRAMPS",
+            "GuideGentMovement1"
+          ],
+          "raw": "applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement1"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GuideGentPokecenterText"
+          ],
+          "raw": "writetext GuideGentPokecenterText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "CHERRYGROVECITY_GRAMPS",
+            "GuideGentMovement2"
+          ],
+          "raw": "applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement2"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "UP"
+          ],
+          "raw": "turnobject PLAYER, UP"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GuideGentMartText"
+          ],
+          "raw": "writetext GuideGentMartText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "CHERRYGROVECITY_GRAMPS",
+            "GuideGentMovement3"
+          ],
+          "raw": "applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement3"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "UP"
+          ],
+          "raw": "turnobject PLAYER, UP"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GuideGentRoute30Text"
+          ],
+          "raw": "writetext GuideGentRoute30Text"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "CHERRYGROVECITY_GRAMPS",
+            "GuideGentMovement4"
+          ],
+          "raw": "applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement4"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYER, LEFT"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GuideGentSeaText"
+          ],
+          "raw": "writetext GuideGentSeaText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "CHERRYGROVECITY_GRAMPS",
+            "GuideGentMovement5"
+          ],
+          "raw": "applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement5"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "UP"
+          ],
+          "raw": "turnobject PLAYER, UP"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "60"
+          ],
+          "raw": "pause 60"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "CHERRYGROVECITY_GRAMPS",
+            "LEFT"
+          ],
+          "raw": "turnobject CHERRYGROVECITY_GRAMPS, LEFT"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GuideGentGiftText"
+          ],
+          "raw": "writetext GuideGentGiftText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "getstring",
+          "args": [
+            "STRING_BUFFER_4",
+            "CherrygroveCityGuideGent.mapcardname"
+          ],
+          "raw": "getstring STRING_BUFFER_4, .mapcardname"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "CherrygroveCityGuideGent.JumpstdReceiveItem"
+          ],
+          "raw": "scall .JumpstdReceiveItem"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_MAP_CARD"
+          ],
+          "raw": "setflag ENGINE_MAP_CARD"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GotMapCardText"
+          ],
+          "raw": "writetext GotMapCardText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GuideGentPokegearText"
+          ],
+          "raw": "writetext GuideGentPokegearText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "stopfollow",
+          "args": [],
+          "raw": "stopfollow"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "UP"
+          ],
+          "raw": "turnobject PLAYER, UP"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "CHERRYGROVECITY_GRAMPS",
+            "GuideGentMovement6"
+          ],
+          "raw": "applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement6"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "CHERRYGROVECITY_GRAMPS"
+          ],
+          "raw": "disappear CHERRYGROVECITY_GRAMPS"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_GUIDE_GENT_VISIBLE_IN_CHERRYGROVE"
+          ],
+          "raw": "clearevent EVENT_GUIDE_GENT_VISIBLE_IN_CHERRYGROVE"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "CherrygroveCityGuideGent.JumpstdReceiveItem"
+      ],
+      "text_refs": [
+        "GotMapCardText",
+        "GuideGentGiftText",
+        "GuideGentMartText",
+        "GuideGentPokecenterText",
+        "GuideGentPokegearText",
+        "GuideGentRoute30Text",
+        "GuideGentSeaText",
+        "GuideGentTourText1"
+      ],
+      "movement_refs": [
+        "GuideGentMovement1",
+        "GuideGentMovement2",
+        "GuideGentMovement3",
+        "GuideGentMovement4",
+        "GuideGentMovement5",
+        "GuideGentMovement6"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveCityGuideGent.JumpstdReceiveItem": {
+      "raw_lines": [
+        "jumpstd ReceiveItemScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "ReceiveItemScript"
+          ],
+          "raw": "jumpstd ReceiveItemScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "ReceiveItemScript"
+      ]
+    },
+    "CherrygroveCityGuideGent.mapcardname": {
+      "raw_lines": [
+        "db \"MAP CARD@\""
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "\"MAP CARD@\""
+          ],
+          "raw": "db \"MAP CARD@\""
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "CherrygroveCityGuideGent.No",
+      "label_refs": [
+        "CherrygroveCityGuideGent.No"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveCityGuideGent.No": {
+      "raw_lines": [
+        "writetext GuideGentNoText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GuideGentNoText"
+          ],
+          "raw": "writetext GuideGentNoText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GuideGentNoText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveRivalSceneSouth": {
+      "raw_lines": [
+        "moveobject CHERRYGROVECITY_RIVAL, 39, 7"
+      ],
+      "commands": [
+        {
+          "command": "moveobject",
+          "args": [
+            "CHERRYGROVECITY_RIVAL",
+            "39",
+            "7"
+          ],
+          "raw": "moveobject CHERRYGROVECITY_RIVAL, 39, 7"
+        }
+      ],
+      "first_command": "moveobject",
+      "fallthrough_label": "CherrygroveRivalSceneNorth",
+      "label_refs": [
+        "CherrygroveRivalSceneNorth"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveRivalSceneNorth": {
+      "raw_lines": [
+        "turnobject PLAYER, RIGHT",
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "special FadeOutMusic",
+        "pause 15",
+        "appear CHERRYGROVECITY_RIVAL",
+        "applymovement CHERRYGROVECITY_RIVAL, CherrygroveCity_RivalWalksToYou",
+        "turnobject PLAYER, RIGHT",
+        "playmusic MUSIC_RIVAL_ENCOUNTER",
+        "opentext",
+        "writetext CherrygroveRivalText_Seen",
+        "waitbutton",
+        "closetext",
+        "checkevent EVENT_GOT_TOTODILE_FROM_ELM",
+        "iftrue .Totodile",
+        "checkevent EVENT_GOT_CHIKORITA_FROM_ELM",
+        "iftrue .Chikorita",
+        "winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText",
+        "setlasttalked CHERRYGROVECITY_RIVAL",
+        "loadtrainer RIVAL1, RIVAL1_1_TOTODILE",
+        "loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmap",
+        "iftrue .AfterVictorious",
+        "sjump .AfterYourDefeat"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "CHERRYGROVECITY_RIVAL"
+          ],
+          "raw": "appear CHERRYGROVECITY_RIVAL"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "CHERRYGROVECITY_RIVAL",
+            "CherrygroveCity_RivalWalksToYou"
+          ],
+          "raw": "applymovement CHERRYGROVECITY_RIVAL, CherrygroveCity_RivalWalksToYou"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_ENCOUNTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_ENCOUNTER"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CherrygroveRivalText_Seen"
+          ],
+          "raw": "writetext CherrygroveRivalText_Seen"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TOTODILE_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_TOTODILE_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CherrygroveRivalSceneNorth.Totodile"
+          ],
+          "raw": "iftrue .Totodile"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_CHIKORITA_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_CHIKORITA_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CherrygroveRivalSceneNorth.Chikorita"
+          ],
+          "raw": "iftrue .Chikorita"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "RivalCherrygroveWinText",
+            "RivalCherrygroveLossText"
+          ],
+          "raw": "winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "CHERRYGROVECITY_RIVAL"
+          ],
+          "raw": "setlasttalked CHERRYGROVECITY_RIVAL"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "RIVAL1",
+            "RIVAL1_1_TOTODILE"
+          ],
+          "raw": "loadtrainer RIVAL1, RIVAL1_1_TOTODILE"
+        },
+        {
+          "command": "loadvar",
+          "args": [
+            "VAR_BATTLETYPE",
+            "BATTLETYPE_CANLOSE"
+          ],
+          "raw": "loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmap",
+          "args": [],
+          "raw": "reloadmap"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CherrygroveRivalSceneNorth.AfterVictorious"
+          ],
+          "raw": "iftrue .AfterVictorious"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "CherrygroveRivalSceneNorth.AfterYourDefeat"
+          ],
+          "raw": "sjump .AfterYourDefeat"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [
+        "CherrygroveRivalSceneNorth.AfterVictorious",
+        "CherrygroveRivalSceneNorth.AfterYourDefeat",
+        "CherrygroveRivalSceneNorth.Chikorita",
+        "CherrygroveRivalSceneNorth.Totodile"
+      ],
+      "text_refs": [
+        "CherrygroveRivalText_Seen"
+      ],
+      "movement_refs": [
+        "CherrygroveCity_RivalWalksToYou"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveRivalSceneNorth.Totodile": {
+      "raw_lines": [
+        "winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText",
+        "setlasttalked CHERRYGROVECITY_RIVAL",
+        "loadtrainer RIVAL1, RIVAL1_1_CHIKORITA",
+        "loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmap",
+        "iftrue .AfterVictorious",
+        "sjump .AfterYourDefeat"
+      ],
+      "commands": [
+        {
+          "command": "winlosstext",
+          "args": [
+            "RivalCherrygroveWinText",
+            "RivalCherrygroveLossText"
+          ],
+          "raw": "winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "CHERRYGROVECITY_RIVAL"
+          ],
+          "raw": "setlasttalked CHERRYGROVECITY_RIVAL"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "RIVAL1",
+            "RIVAL1_1_CHIKORITA"
+          ],
+          "raw": "loadtrainer RIVAL1, RIVAL1_1_CHIKORITA"
+        },
+        {
+          "command": "loadvar",
+          "args": [
+            "VAR_BATTLETYPE",
+            "BATTLETYPE_CANLOSE"
+          ],
+          "raw": "loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmap",
+          "args": [],
+          "raw": "reloadmap"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CherrygroveRivalSceneNorth.AfterVictorious"
+          ],
+          "raw": "iftrue .AfterVictorious"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "CherrygroveRivalSceneNorth.AfterYourDefeat"
+          ],
+          "raw": "sjump .AfterYourDefeat"
+        }
+      ],
+      "first_command": "winlosstext",
+      "label_refs": [
+        "CherrygroveRivalSceneNorth.AfterVictorious",
+        "CherrygroveRivalSceneNorth.AfterYourDefeat"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveRivalSceneNorth.Chikorita": {
+      "raw_lines": [
+        "winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText",
+        "setlasttalked CHERRYGROVECITY_RIVAL",
+        "loadtrainer RIVAL1, RIVAL1_1_CYNDAQUIL",
+        "loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmap",
+        "iftrue .AfterVictorious",
+        "sjump .AfterYourDefeat"
+      ],
+      "commands": [
+        {
+          "command": "winlosstext",
+          "args": [
+            "RivalCherrygroveWinText",
+            "RivalCherrygroveLossText"
+          ],
+          "raw": "winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "CHERRYGROVECITY_RIVAL"
+          ],
+          "raw": "setlasttalked CHERRYGROVECITY_RIVAL"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "RIVAL1",
+            "RIVAL1_1_CYNDAQUIL"
+          ],
+          "raw": "loadtrainer RIVAL1, RIVAL1_1_CYNDAQUIL"
+        },
+        {
+          "command": "loadvar",
+          "args": [
+            "VAR_BATTLETYPE",
+            "BATTLETYPE_CANLOSE"
+          ],
+          "raw": "loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmap",
+          "args": [],
+          "raw": "reloadmap"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CherrygroveRivalSceneNorth.AfterVictorious"
+          ],
+          "raw": "iftrue .AfterVictorious"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "CherrygroveRivalSceneNorth.AfterYourDefeat"
+          ],
+          "raw": "sjump .AfterYourDefeat"
+        }
+      ],
+      "first_command": "winlosstext",
+      "label_refs": [
+        "CherrygroveRivalSceneNorth.AfterVictorious",
+        "CherrygroveRivalSceneNorth.AfterYourDefeat"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveRivalSceneNorth.AfterVictorious": {
+      "raw_lines": [
+        "playmusic MUSIC_RIVAL_AFTER",
+        "opentext",
+        "writetext CherrygroveRivalText_YouWon",
+        "waitbutton",
+        "closetext",
+        "sjump .FinishRival"
+      ],
+      "commands": [
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_AFTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_AFTER"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CherrygroveRivalText_YouWon"
+          ],
+          "raw": "writetext CherrygroveRivalText_YouWon"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "CherrygroveRivalSceneNorth.FinishRival"
+          ],
+          "raw": "sjump .FinishRival"
+        }
+      ],
+      "first_command": "playmusic",
+      "label_refs": [
+        "CherrygroveRivalSceneNorth.FinishRival"
+      ],
+      "text_refs": [
+        "CherrygroveRivalText_YouWon"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveRivalSceneNorth.AfterYourDefeat": {
+      "raw_lines": [
+        "playmusic MUSIC_RIVAL_AFTER",
+        "opentext",
+        "writetext CherrygroveRivalText_YouLost",
+        "waitbutton",
+        "closetext"
+      ],
+      "commands": [
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_AFTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_AFTER"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CherrygroveRivalText_YouLost"
+          ],
+          "raw": "writetext CherrygroveRivalText_YouLost"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        }
+      ],
+      "first_command": "playmusic",
+      "fallthrough_label": "CherrygroveRivalSceneNorth.FinishRival",
+      "label_refs": [
+        "CherrygroveRivalSceneNorth.FinishRival"
+      ],
+      "text_refs": [
+        "CherrygroveRivalText_YouLost"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveRivalSceneNorth.FinishRival": {
+      "raw_lines": [
+        "playsound SFX_TACKLE",
+        "applymovement PLAYER, CherrygroveCity_RivalPushesYouOutOfTheWay",
+        "turnobject PLAYER, LEFT",
+        "applymovement CHERRYGROVECITY_RIVAL, CherrygroveCity_RivalExitsStageLeft",
+        "disappear CHERRYGROVECITY_RIVAL",
+        "setscene SCENE_CHERRYGROVECITY_NOOP",
+        "special HealParty",
+        "playmapmusic",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_TACKLE"
+          ],
+          "raw": "playsound SFX_TACKLE"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "CherrygroveCity_RivalPushesYouOutOfTheWay"
+          ],
+          "raw": "applymovement PLAYER, CherrygroveCity_RivalPushesYouOutOfTheWay"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYER, LEFT"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "CHERRYGROVECITY_RIVAL",
+            "CherrygroveCity_RivalExitsStageLeft"
+          ],
+          "raw": "applymovement CHERRYGROVECITY_RIVAL, CherrygroveCity_RivalExitsStageLeft"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "CHERRYGROVECITY_RIVAL"
+          ],
+          "raw": "disappear CHERRYGROVECITY_RIVAL"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_CHERRYGROVECITY_NOOP"
+          ],
+          "raw": "setscene SCENE_CHERRYGROVECITY_NOOP"
+        },
+        {
+          "command": "special",
+          "args": [
+            "HealParty"
+          ],
+          "raw": "special HealParty"
+        },
+        {
+          "command": "playmapmusic",
+          "args": [],
+          "raw": "playmapmusic"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playsound",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "CherrygroveCity_RivalExitsStageLeft",
+        "CherrygroveCity_RivalPushesYouOutOfTheWay"
+      ],
+      "scene_refs": [
+        "SCENE_CHERRYGROVECITY_NOOP"
+      ],
+      "std_calls": []
+    },
+    "CherrygroveTeacherScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkflag ENGINE_MAP_CARD",
+        "iftrue .HaveMapCard",
+        "writetext CherrygroveTeacherText_NoMapCard",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_MAP_CARD"
+          ],
+          "raw": "checkflag ENGINE_MAP_CARD"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CherrygroveTeacherScript.HaveMapCard"
+          ],
+          "raw": "iftrue .HaveMapCard"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CherrygroveTeacherText_NoMapCard"
+          ],
+          "raw": "writetext CherrygroveTeacherText_NoMapCard"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "CherrygroveTeacherScript.HaveMapCard"
+      ],
+      "text_refs": [
+        "CherrygroveTeacherText_NoMapCard"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveTeacherScript.HaveMapCard": {
+      "raw_lines": [
+        "writetext CherrygroveTeacherText_HaveMapCard",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "CherrygroveTeacherText_HaveMapCard"
+          ],
+          "raw": "writetext CherrygroveTeacherText_HaveMapCard"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "CherrygroveTeacherText_HaveMapCard"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveYoungsterScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkflag ENGINE_POKEDEX",
+        "iftrue .HavePokedex",
+        "writetext CherrygroveYoungsterText_NoPokedex",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_POKEDEX"
+          ],
+          "raw": "checkflag ENGINE_POKEDEX"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CherrygroveYoungsterScript.HavePokedex"
+          ],
+          "raw": "iftrue .HavePokedex"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CherrygroveYoungsterText_NoPokedex"
+          ],
+          "raw": "writetext CherrygroveYoungsterText_NoPokedex"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "CherrygroveYoungsterScript.HavePokedex"
+      ],
+      "text_refs": [
+        "CherrygroveYoungsterText_NoPokedex"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveYoungsterScript.HavePokedex": {
+      "raw_lines": [
+        "writetext CherrygroveYoungsterText_HavePokedex",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "CherrygroveYoungsterText_HavePokedex"
+          ],
+          "raw": "writetext CherrygroveYoungsterText_HavePokedex"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "CherrygroveYoungsterText_HavePokedex"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MysticWaterGuy": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_MYSTIC_WATER_IN_CHERRYGROVE",
+        "iftrue .After",
+        "writetext MysticWaterGuyTextBefore",
+        "promptbutton",
+        "verbosegiveitem MYSTIC_WATER",
+        "iffalse .Exit",
+        "setevent EVENT_GOT_MYSTIC_WATER_IN_CHERRYGROVE"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_MYSTIC_WATER_IN_CHERRYGROVE"
+          ],
+          "raw": "checkevent EVENT_GOT_MYSTIC_WATER_IN_CHERRYGROVE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MysticWaterGuy.After"
+          ],
+          "raw": "iftrue .After"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MysticWaterGuyTextBefore"
+          ],
+          "raw": "writetext MysticWaterGuyTextBefore"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "MYSTIC_WATER"
+          ],
+          "raw": "verbosegiveitem MYSTIC_WATER"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "MysticWaterGuy.Exit"
+          ],
+          "raw": "iffalse .Exit"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_MYSTIC_WATER_IN_CHERRYGROVE"
+          ],
+          "raw": "setevent EVENT_GOT_MYSTIC_WATER_IN_CHERRYGROVE"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "MysticWaterGuy.After",
+      "label_refs": [
+        "MysticWaterGuy.After",
+        "MysticWaterGuy.Exit"
+      ],
+      "text_refs": [
+        "MysticWaterGuyTextBefore"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MysticWaterGuy.After": {
+      "raw_lines": [
+        "writetext MysticWaterGuyTextAfter",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "MysticWaterGuyTextAfter"
+          ],
+          "raw": "writetext MysticWaterGuyTextAfter"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "MysticWaterGuy.Exit",
+      "label_refs": [
+        "MysticWaterGuy.Exit"
+      ],
+      "text_refs": [
+        "MysticWaterGuyTextAfter"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MysticWaterGuy.Exit": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveCitySign": {
+      "raw_lines": [
+        "jumptext CherrygroveCitySignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "CherrygroveCitySignText"
+          ],
+          "raw": "jumptext CherrygroveCitySignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "CherrygroveCitySignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GuideGentsHouseSign": {
+      "raw_lines": [
+        "jumptext GuideGentsHouseSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "GuideGentsHouseSignText"
+          ],
+          "raw": "jumptext GuideGentsHouseSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "GuideGentsHouseSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveCityPokecenterSign": {
+      "raw_lines": [
+        "jumpstd PokecenterSignScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PokecenterSignScript"
+          ],
+          "raw": "jumpstd PokecenterSignScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterSignScript"
+      ]
+    },
+    "CherrygroveCityMartSign": {
+      "raw_lines": [
+        "jumpstd MartSignScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "MartSignScript"
+          ],
+          "raw": "jumpstd MartSignScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MartSignScript"
+      ]
+    },
+    "CherrygroveCity_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 23,  3, CHERRYGROVE_MART, 2",
+        "warp_event 29,  3, CHERRYGROVE_POKECENTER_1F, 1",
+        "warp_event 17,  7, CHERRYGROVE_GYM_SPEECH_HOUSE, 1",
+        "warp_event 25,  9, GUIDE_GENTS_HOUSE, 1",
+        "warp_event 31, 11, CHERRYGROVE_EVOLUTION_SPEECH_HOUSE, 1",
+        "def_coord_events",
+        "coord_event 33,  6, SCENE_CHERRYGROVECITY_MEET_RIVAL, CherrygroveRivalSceneNorth",
+        "coord_event 33,  7, SCENE_CHERRYGROVECITY_MEET_RIVAL, CherrygroveRivalSceneSouth",
+        "def_bg_events",
+        "bg_event 30,  8, BGEVENT_READ, CherrygroveCitySign",
+        "bg_event 23,  9, BGEVENT_READ, GuideGentsHouseSign",
+        "bg_event 24,  3, BGEVENT_READ, CherrygroveCityMartSign",
+        "bg_event 30,  3, BGEVENT_READ, CherrygroveCityPokecenterSign",
+        "def_object_events",
+        "object_event 32,  6, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveCityGuideGent, EVENT_GUIDE_GENT_IN_HIS_HOUSE",
+        "object_event 39,  6, SPRITE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_CHERRYGROVE_CITY",
+        "object_event 27, 12, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CherrygroveTeacherScript, -1",
+        "object_event 23,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveYoungsterScript, -1",
+        "object_event  7, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MysticWaterGuy, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "23",
+            "3",
+            "CHERRYGROVE_MART",
+            "2"
+          ],
+          "raw": "warp_event 23,  3, CHERRYGROVE_MART, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "29",
+            "3",
+            "CHERRYGROVE_POKECENTER_1F",
+            "1"
+          ],
+          "raw": "warp_event 29,  3, CHERRYGROVE_POKECENTER_1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "7",
+            "CHERRYGROVE_GYM_SPEECH_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event 17,  7, CHERRYGROVE_GYM_SPEECH_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "25",
+            "9",
+            "GUIDE_GENTS_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event 25,  9, GUIDE_GENTS_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "31",
+            "11",
+            "CHERRYGROVE_EVOLUTION_SPEECH_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event 31, 11, CHERRYGROVE_EVOLUTION_SPEECH_HOUSE, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "33",
+            "6",
+            "SCENE_CHERRYGROVECITY_MEET_RIVAL",
+            "CherrygroveRivalSceneNorth"
+          ],
+          "raw": "coord_event 33,  6, SCENE_CHERRYGROVECITY_MEET_RIVAL, CherrygroveRivalSceneNorth"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "33",
+            "7",
+            "SCENE_CHERRYGROVECITY_MEET_RIVAL",
+            "CherrygroveRivalSceneSouth"
+          ],
+          "raw": "coord_event 33,  7, SCENE_CHERRYGROVECITY_MEET_RIVAL, CherrygroveRivalSceneSouth"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "30",
+            "8",
+            "BGEVENT_READ",
+            "CherrygroveCitySign"
+          ],
+          "raw": "bg_event 30,  8, BGEVENT_READ, CherrygroveCitySign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "23",
+            "9",
+            "BGEVENT_READ",
+            "GuideGentsHouseSign"
+          ],
+          "raw": "bg_event 23,  9, BGEVENT_READ, GuideGentsHouseSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "24",
+            "3",
+            "BGEVENT_READ",
+            "CherrygroveCityMartSign"
+          ],
+          "raw": "bg_event 24,  3, BGEVENT_READ, CherrygroveCityMartSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "30",
+            "3",
+            "BGEVENT_READ",
+            "CherrygroveCityPokecenterSign"
+          ],
+          "raw": "bg_event 30,  3, BGEVENT_READ, CherrygroveCityPokecenterSign"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "32",
+            "6",
+            "SPRITE_GRAMPS",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CherrygroveCityGuideGent",
+            "EVENT_GUIDE_GENT_IN_HIS_HOUSE"
+          ],
+          "raw": "object_event 32,  6, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveCityGuideGent, EVENT_GUIDE_GENT_IN_HIS_HOUSE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "39",
+            "6",
+            "SPRITE_RIVAL",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_RIVAL_CHERRYGROVE_CITY"
+          ],
+          "raw": "object_event 39,  6, SPRITE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_CHERRYGROVE_CITY"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "27",
+            "12",
+            "SPRITE_TEACHER",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CherrygroveTeacherScript",
+            "-1"
+          ],
+          "raw": "object_event 27, 12, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CherrygroveTeacherScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "23",
+            "7",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CherrygroveYoungsterScript",
+            "-1"
+          ],
+          "raw": "object_event 23,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveYoungsterScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "12",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MysticWaterGuy",
+            "-1"
+          ],
+          "raw": "object_event  7, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MysticWaterGuy, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "GuideGentIntroText": {
+      "raw_lines": [
+        "text \"You're a rookie\"",
+        "line \"trainer, aren't\"",
+        "cont \"you? I can tell!\"",
+        "para \"That's OK! Every-\"",
+        "line \"one is a rookie\"",
+        "cont \"at some point!\"",
+        "para \"If you'd like, I\"",
+        "line \"can teach you a\"",
+        "cont \"few things.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You're a rookie"
+        },
+        {
+          "command": "line",
+          "value": "trainer, aren't"
+        },
+        {
+          "command": "cont",
+          "value": "you? I can tell!"
+        },
+        {
+          "command": "para",
+          "value": "That's OK! Every-"
+        },
+        {
+          "command": "line",
+          "value": "one is a rookie"
+        },
+        {
+          "command": "cont",
+          "value": "at some point!"
+        },
+        {
+          "command": "para",
+          "value": "If you'd like, I"
+        },
+        {
+          "command": "line",
+          "value": "can teach you a"
+        },
+        {
+          "command": "cont",
+          "value": "few things."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GuideGentTourText1": {
+      "raw_lines": [
+        "text \"OK, then!\"",
+        "line \"Follow me!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OK, then!"
+        },
+        {
+          "command": "line",
+          "value": "Follow me!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GuideGentPokecenterText": {
+      "raw_lines": [
+        "text \"This is a #MON\"",
+        "line \"CENTER. They heal\"",
+        "para \"your #MON in no\"",
+        "line \"time at all.\"",
+        "para \"You'll be relying\"",
+        "line \"on them a lot, so\"",
+        "para \"you better learn\"",
+        "line \"about them.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This is a #MON"
+        },
+        {
+          "command": "line",
+          "value": "CENTER. They heal"
+        },
+        {
+          "command": "para",
+          "value": "your #MON in no"
+        },
+        {
+          "command": "line",
+          "value": "time at all."
+        },
+        {
+          "command": "para",
+          "value": "You'll be relying"
+        },
+        {
+          "command": "line",
+          "value": "on them a lot, so"
+        },
+        {
+          "command": "para",
+          "value": "you better learn"
+        },
+        {
+          "command": "line",
+          "value": "about them."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GuideGentMartText": {
+      "raw_lines": [
+        "text \"This is a #MON\"",
+        "line \"MART.\"",
+        "para \"They sell BALLS\"",
+        "line \"for catching wild\"",
+        "para \"#MON and other\"",
+        "line \"useful items.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This is a #MON"
+        },
+        {
+          "command": "line",
+          "value": "MART."
+        },
+        {
+          "command": "para",
+          "value": "They sell BALLS"
+        },
+        {
+          "command": "line",
+          "value": "for catching wild"
+        },
+        {
+          "command": "para",
+          "value": "#MON and other"
+        },
+        {
+          "command": "line",
+          "value": "useful items."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GuideGentRoute30Text": {
+      "raw_lines": [
+        "text \"ROUTE 30 is out\"",
+        "line \"this way.\"",
+        "para \"Trainers will be\"",
+        "line \"battling their\"",
+        "para \"prized #MON\"",
+        "line \"there.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ROUTE 30 is out"
+        },
+        {
+          "command": "line",
+          "value": "this way."
+        },
+        {
+          "command": "para",
+          "value": "Trainers will be"
+        },
+        {
+          "command": "line",
+          "value": "battling their"
+        },
+        {
+          "command": "para",
+          "value": "prized #MON"
+        },
+        {
+          "command": "line",
+          "value": "there."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GuideGentSeaText": {
+      "raw_lines": [
+        "text \"This is the sea,\"",
+        "line \"as you can see.\"",
+        "para \"Some #MON are\"",
+        "line \"found only in\"",
+        "cont \"water.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This is the sea,"
+        },
+        {
+          "command": "line",
+          "value": "as you can see."
+        },
+        {
+          "command": "para",
+          "value": "Some #MON are"
+        },
+        {
+          "command": "line",
+          "value": "found only in"
+        },
+        {
+          "command": "cont",
+          "value": "water."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GuideGentGiftText": {
+      "raw_lines": [
+        "text \"Here\u2026\"",
+        "para \"It's my house!\"",
+        "line \"Thanks for your\"",
+        "cont \"company.\"",
+        "para \"Let me give you a\"",
+        "line \"small gift.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Here\u2026"
+        },
+        {
+          "command": "para",
+          "value": "It's my house!"
+        },
+        {
+          "command": "line",
+          "value": "Thanks for your"
+        },
+        {
+          "command": "cont",
+          "value": "company."
+        },
+        {
+          "command": "para",
+          "value": "Let me give you a"
+        },
+        {
+          "command": "line",
+          "value": "small gift."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GotMapCardText": {
+      "raw_lines": [
+        "text \"<PLAYER>'s #GEAR\"",
+        "line \"now has a MAP!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER>'s #GEAR"
+        },
+        {
+          "command": "line",
+          "value": "now has a MAP!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GuideGentPokegearText": {
+      "raw_lines": [
+        "text \"#GEAR becomes\"",
+        "line \"more useful as you\"",
+        "cont \"add CARDS.\"",
+        "para \"I wish you luck on\"",
+        "line \"your journey!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#GEAR becomes"
+        },
+        {
+          "command": "line",
+          "value": "more useful as you"
+        },
+        {
+          "command": "cont",
+          "value": "add CARDS."
+        },
+        {
+          "command": "para",
+          "value": "I wish you luck on"
+        },
+        {
+          "command": "line",
+          "value": "your journey!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GuideGentNoText": {
+      "raw_lines": [
+        "text \"Oh\u2026 It's something\"",
+        "line \"I enjoy doing\u2026\"",
+        "para \"Fine. Come see me\"",
+        "line \"when you like.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh\u2026 It's something"
+        },
+        {
+          "command": "line",
+          "value": "I enjoy doing\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Fine. Come see me"
+        },
+        {
+          "command": "line",
+          "value": "when you like."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CherrygroveRivalText_Seen": {
+      "raw_lines": [
+        "text \"<\u2026\u2026> <\u2026\u2026> <\u2026\u2026>\"",
+        "para \"You got a #MON\"",
+        "line \"at the LAB.\"",
+        "para \"What a waste.\"",
+        "line \"A wimp like you.\"",
+        "para \"<\u2026\u2026> <\u2026\u2026> <\u2026\u2026>\"",
+        "para \"Don't you get what\"",
+        "line \"I'm saying?\"",
+        "para \"Well, I too, have\"",
+        "line \"a good #MON.\"",
+        "para \"I'll show you\"",
+        "line \"what I mean!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<\u2026\u2026> <\u2026\u2026> <\u2026\u2026>"
+        },
+        {
+          "command": "para",
+          "value": "You got a #MON"
+        },
+        {
+          "command": "line",
+          "value": "at the LAB."
+        },
+        {
+          "command": "para",
+          "value": "What a waste."
+        },
+        {
+          "command": "line",
+          "value": "A wimp like you."
+        },
+        {
+          "command": "para",
+          "value": "<\u2026\u2026> <\u2026\u2026> <\u2026\u2026>"
+        },
+        {
+          "command": "para",
+          "value": "Don't you get what"
+        },
+        {
+          "command": "line",
+          "value": "I'm saying?"
+        },
+        {
+          "command": "para",
+          "value": "Well, I too, have"
+        },
+        {
+          "command": "line",
+          "value": "a good #MON."
+        },
+        {
+          "command": "para",
+          "value": "I'll show you"
+        },
+        {
+          "command": "line",
+          "value": "what I mean!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RivalCherrygroveWinText": {
+      "raw_lines": [
+        "text \"Humph. Are you\"",
+        "line \"happy you won?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Humph. Are you"
+        },
+        {
+          "command": "line",
+          "value": "happy you won?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CherrygroveRivalText_YouLost": {
+      "raw_lines": [
+        "text \"<\u2026\u2026> <\u2026\u2026> <\u2026\u2026>\"",
+        "para \"My name's ???.\"",
+        "para \"I'm going to be\"",
+        "line \"the world's great-\"",
+        "cont \"est #MON\"",
+        "cont \"trainer.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<\u2026\u2026> <\u2026\u2026> <\u2026\u2026>"
+        },
+        {
+          "command": "para",
+          "value": "My name's ???."
+        },
+        {
+          "command": "para",
+          "value": "I'm going to be"
+        },
+        {
+          "command": "line",
+          "value": "the world's great-"
+        },
+        {
+          "command": "cont",
+          "value": "est #MON"
+        },
+        {
+          "command": "cont",
+          "value": "trainer."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RivalCherrygroveLossText": {
+      "raw_lines": [
+        "text \"Humph. That was a\"",
+        "line \"waste of time.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Humph. That was a"
+        },
+        {
+          "command": "line",
+          "value": "waste of time."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CherrygroveRivalText_YouWon": {
+      "raw_lines": [
+        "text \"<\u2026\u2026> <\u2026\u2026> <\u2026\u2026>\"",
+        "para \"My name's ???.\"",
+        "para \"I'm going to be\"",
+        "line \"the world's great-\"",
+        "cont \"est #MON\"",
+        "cont \"trainer.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<\u2026\u2026> <\u2026\u2026> <\u2026\u2026>"
+        },
+        {
+          "command": "para",
+          "value": "My name's ???."
+        },
+        {
+          "command": "para",
+          "value": "I'm going to be"
+        },
+        {
+          "command": "line",
+          "value": "the world's great-"
+        },
+        {
+          "command": "cont",
+          "value": "est #MON"
+        },
+        {
+          "command": "cont",
+          "value": "trainer."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CherrygroveTeacherText_NoMapCard": {
+      "raw_lines": [
+        "text \"Did you talk to\"",
+        "line \"the old man by the\"",
+        "cont \"#MON CENTER?\"",
+        "para \"He'll put a MAP of\"",
+        "line \"JOHTO on your\"",
+        "cont \"#GEAR.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Did you talk to"
+        },
+        {
+          "command": "line",
+          "value": "the old man by the"
+        },
+        {
+          "command": "cont",
+          "value": "#MON CENTER?"
+        },
+        {
+          "command": "para",
+          "value": "He'll put a MAP of"
+        },
+        {
+          "command": "line",
+          "value": "JOHTO on your"
+        },
+        {
+          "command": "cont",
+          "value": "#GEAR."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CherrygroveTeacherText_HaveMapCard": {
+      "raw_lines": [
+        "text \"When you're with\"",
+        "line \"#MON, going\"",
+        "cont \"anywhere is fun.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "When you're with"
+        },
+        {
+          "command": "line",
+          "value": "#MON, going"
+        },
+        {
+          "command": "cont",
+          "value": "anywhere is fun."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CherrygroveYoungsterText_NoPokedex": {
+      "raw_lines": [
+        "text \"MR.#MON's house\"",
+        "line \"is still farther\"",
+        "cont \"up ahead.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MR.#MON's house"
+        },
+        {
+          "command": "line",
+          "value": "is still farther"
+        },
+        {
+          "command": "cont",
+          "value": "up ahead."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CherrygroveYoungsterText_HavePokedex": {
+      "raw_lines": [
+        "text \"I battled the\"",
+        "line \"trainers on the\"",
+        "cont \"road.\"",
+        "para \"My #MON lost.\"",
+        "line \"They're a mess! I\"",
+        "para \"must take them to\"",
+        "line \"a #MON CENTER.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I battled the"
+        },
+        {
+          "command": "line",
+          "value": "trainers on the"
+        },
+        {
+          "command": "cont",
+          "value": "road."
+        },
+        {
+          "command": "para",
+          "value": "My #MON lost."
+        },
+        {
+          "command": "line",
+          "value": "They're a mess! I"
+        },
+        {
+          "command": "para",
+          "value": "must take them to"
+        },
+        {
+          "command": "line",
+          "value": "a #MON CENTER."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MysticWaterGuyTextBefore": {
+      "raw_lines": [
+        "text \"A #MON I caught\"",
+        "line \"had an item.\"",
+        "para \"I think it's\"",
+        "line \"MYSTIC WATER.\"",
+        "para \"I don't need it,\"",
+        "line \"so do you want it?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A #MON I caught"
+        },
+        {
+          "command": "line",
+          "value": "had an item."
+        },
+        {
+          "command": "para",
+          "value": "I think it's"
+        },
+        {
+          "command": "line",
+          "value": "MYSTIC WATER."
+        },
+        {
+          "command": "para",
+          "value": "I don't need it,"
+        },
+        {
+          "command": "line",
+          "value": "so do you want it?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MysticWaterGuyTextAfter": {
+      "raw_lines": [
+        "text \"Back to fishing\"",
+        "line \"for me, then.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Back to fishing"
+        },
+        {
+          "command": "line",
+          "value": "for me, then."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CherrygroveCitySignText": {
+      "raw_lines": [
+        "text \"CHERRYGROVE CITY\"",
+        "para \"The City of Cute,\"",
+        "line \"Fragrant Flowers\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "CHERRYGROVE CITY"
+        },
+        {
+          "command": "para",
+          "value": "The City of Cute,"
+        },
+        {
+          "command": "line",
+          "value": "Fragrant Flowers"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GuideGentsHouseSignText": {
+      "raw_lines": [
+        "text \"GUIDE GENT'S HOUSE\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "GUIDE GENT'S HOUSE"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "GuideGentMovement1": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step UP",
+        "step LEFT",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "GuideGentMovement2": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "GuideGentMovement3": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "GuideGentMovement4": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step DOWN",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step DOWN",
+        "turn_head LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "GuideGentMovement5": {
+      "raw_lines": [
+        "step DOWN",
+        "step DOWN",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step DOWN",
+        "step DOWN",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "GuideGentMovement6": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "CherrygroveCity_RivalWalksToYou": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "CherrygroveCity_RivalPushesYouOutOfTheWay": {
+      "raw_lines": [
+        "big_step DOWN",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "CherrygroveCity_UnusedMovementData": {
+      "raw_lines": [
+        "step LEFT",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "CherrygroveCity_RivalExitsStageLeft": {
+      "raw_lines": [
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step LEFT",
+        "big_step UP",
+        "big_step UP",
+        "big_step LEFT",
+        "big_step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "MartSignScript",
+    "PokecenterSignScript",
+    "ReceiveItemScript"
+  ],
+  "dependencies": {
+    "CherrygroveCity_MapScripts": {
+      "label_refs": [
+        "CherrygroveCityNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveCityNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveCityNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveCityFlypointCallback": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveCityGuideGent": {
+      "label_refs": [
+        "CherrygroveCityGuideGent.No",
+        "CherrygroveCityGuideGent.Yes"
+      ],
+      "text_refs": [
+        "GuideGentIntroText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveCityGuideGent.Yes": {
+      "label_refs": [
+        "CherrygroveCityGuideGent.JumpstdReceiveItem"
+      ],
+      "text_refs": [
+        "GotMapCardText",
+        "GuideGentGiftText",
+        "GuideGentMartText",
+        "GuideGentPokecenterText",
+        "GuideGentPokegearText",
+        "GuideGentRoute30Text",
+        "GuideGentSeaText",
+        "GuideGentTourText1"
+      ],
+      "movement_refs": [
+        "GuideGentMovement1",
+        "GuideGentMovement2",
+        "GuideGentMovement3",
+        "GuideGentMovement4",
+        "GuideGentMovement5",
+        "GuideGentMovement6"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveCityGuideGent.JumpstdReceiveItem": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "ReceiveItemScript"
+      ]
+    },
+    "CherrygroveCityGuideGent.mapcardname": {
+      "label_refs": [
+        "CherrygroveCityGuideGent.No"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveCityGuideGent.No": {
+      "label_refs": [],
+      "text_refs": [
+        "GuideGentNoText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveRivalSceneSouth": {
+      "label_refs": [
+        "CherrygroveRivalSceneNorth"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveRivalSceneNorth": {
+      "label_refs": [
+        "CherrygroveRivalSceneNorth.AfterVictorious",
+        "CherrygroveRivalSceneNorth.AfterYourDefeat",
+        "CherrygroveRivalSceneNorth.Chikorita",
+        "CherrygroveRivalSceneNorth.Totodile"
+      ],
+      "text_refs": [
+        "CherrygroveRivalText_Seen"
+      ],
+      "movement_refs": [
+        "CherrygroveCity_RivalWalksToYou"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveRivalSceneNorth.Totodile": {
+      "label_refs": [
+        "CherrygroveRivalSceneNorth.AfterVictorious",
+        "CherrygroveRivalSceneNorth.AfterYourDefeat"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveRivalSceneNorth.Chikorita": {
+      "label_refs": [
+        "CherrygroveRivalSceneNorth.AfterVictorious",
+        "CherrygroveRivalSceneNorth.AfterYourDefeat"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveRivalSceneNorth.AfterVictorious": {
+      "label_refs": [
+        "CherrygroveRivalSceneNorth.FinishRival"
+      ],
+      "text_refs": [
+        "CherrygroveRivalText_YouWon"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveRivalSceneNorth.AfterYourDefeat": {
+      "label_refs": [
+        "CherrygroveRivalSceneNorth.FinishRival"
+      ],
+      "text_refs": [
+        "CherrygroveRivalText_YouLost"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveRivalSceneNorth.FinishRival": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "CherrygroveCity_RivalExitsStageLeft",
+        "CherrygroveCity_RivalPushesYouOutOfTheWay"
+      ],
+      "scene_refs": [
+        "SCENE_CHERRYGROVECITY_NOOP"
+      ],
+      "std_calls": []
+    },
+    "CherrygroveTeacherScript": {
+      "label_refs": [
+        "CherrygroveTeacherScript.HaveMapCard"
+      ],
+      "text_refs": [
+        "CherrygroveTeacherText_NoMapCard"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveTeacherScript.HaveMapCard": {
+      "label_refs": [],
+      "text_refs": [
+        "CherrygroveTeacherText_HaveMapCard"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveYoungsterScript": {
+      "label_refs": [
+        "CherrygroveYoungsterScript.HavePokedex"
+      ],
+      "text_refs": [
+        "CherrygroveYoungsterText_NoPokedex"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveYoungsterScript.HavePokedex": {
+      "label_refs": [],
+      "text_refs": [
+        "CherrygroveYoungsterText_HavePokedex"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MysticWaterGuy": {
+      "label_refs": [
+        "MysticWaterGuy.After",
+        "MysticWaterGuy.Exit"
+      ],
+      "text_refs": [
+        "MysticWaterGuyTextBefore"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MysticWaterGuy.After": {
+      "label_refs": [
+        "MysticWaterGuy.Exit"
+      ],
+      "text_refs": [
+        "MysticWaterGuyTextAfter"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MysticWaterGuy.Exit": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveCitySign": {
+      "label_refs": [],
+      "text_refs": [
+        "CherrygroveCitySignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GuideGentsHouseSign": {
+      "label_refs": [],
+      "text_refs": [
+        "GuideGentsHouseSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveCityPokecenterSign": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterSignScript"
+      ]
+    },
+    "CherrygroveCityMartSign": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MartSignScript"
+      ]
+    },
+    "CherrygroveCity_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear"
+  ],
   "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
     "warp_events": 5,
     "coord_events": 2,
     "bg_events": 4,

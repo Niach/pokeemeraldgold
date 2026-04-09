@@ -981,6 +981,26 @@ struct ExternalEventFlags
 
 } __attribute__((packed));/*size = 0x15*/
 
+enum
+{
+    JOHTO_BEDROOM_DECOR_CONSOLE,
+    JOHTO_BEDROOM_DECOR_DOLL_1,
+    JOHTO_BEDROOM_DECOR_DOLL_2,
+    JOHTO_BEDROOM_DECOR_BIG_DOLL,
+};
+
+#define JOHTO_PORT_SCENE_SLOT_COUNT 128
+#define JOHTO_PORT_SAVE_RESERVED_SIZE (0x180 - JOHTO_PORT_SCENE_SLOT_COUNT - 1 - 1 - (PLAYER_NAME_LENGTH + 1))
+
+struct JohtoPortSave
+{
+    u8 sceneStates[JOHTO_PORT_SCENE_SLOT_COUNT];
+    u8 bedroomDecorationFlags;
+    u8 substituteFlags;
+    u8 rivalName[PLAYER_NAME_LENGTH + 1];
+    u8 reserved[JOHTO_PORT_SAVE_RESERVED_SIZE];
+};
+
 struct SaveBlock1
 {
     /*0x00*/ struct Coords16 pos;
@@ -1064,7 +1084,7 @@ struct SaveBlock1
     /*0x31DC*/ struct Roamer roamer;
     /*0x31F8*/ struct EnigmaBerry enigmaBerry;
     /*0x322C*/ struct MysteryGiftSave mysteryGift;
-    /*0x3598*/ u8 unused_3598[0x180];
+    /*0x3598*/ struct JohtoPortSave johtoPort;
     /*0x3718*/ u32 trainerHillTimes[NUM_TRAINER_HILL_MODES];
     /*0x3728*/ struct RamScript ramScript;
     /*0x3B14*/ struct RecordMixingGift recordMixingGift;

@@ -1,0 +1,2442 @@
+{
+  "crystal_map": "VioletCity",
+  "map_id": "VIOLET_CITY",
+  "group": "VIOLET",
+  "group_index": 10,
+  "map_index": 5,
+  "tileset": "TILESET_JOHTO",
+  "environment": "TOWN",
+  "landmark": "LANDMARK_VIOLET_CITY",
+  "music": "MUSIC_VIOLET_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_AUTO",
+  "fishgroup": "FISHGROUP_POND",
+  "width_blocks": 20,
+  "height_blocks": 18,
+  "border_block": "05",
+  "blk_path": "maps/VioletCity.blk",
+  "source_asm": "maps/VioletCity.asm",
+  "connections": [
+    {
+      "direction": "south",
+      "map": "Route32",
+      "target_map_id": "ROUTE_32",
+      "offset": 0
+    },
+    {
+      "direction": "west",
+      "map": "Route36",
+      "target_map_id": "ROUTE_36",
+      "offset": 0
+    },
+    {
+      "direction": "east",
+      "map": "Route31",
+      "target_map_id": "ROUTE_31",
+      "offset": 9
+    }
+  ],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "VioletCityFlypointCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 9,
+        "y": 17,
+        "dest_map": "VIOLET_MART",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 18,
+        "y": 17,
+        "dest_map": "VIOLET_GYM",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 30,
+        "y": 17,
+        "dest_map": "EARLS_POKEMON_ACADEMY",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 3,
+        "y": 15,
+        "dest_map": "VIOLET_NICKNAME_SPEECH_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 31,
+        "y": 25,
+        "dest_map": "VIOLET_POKECENTER_1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 21,
+        "y": 29,
+        "dest_map": "VIOLET_KYLES_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 23,
+        "y": 5,
+        "dest_map": "SPROUT_TOWER_1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 39,
+        "y": 24,
+        "dest_map": "ROUTE_31_VIOLET_GATE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 39,
+        "y": 25,
+        "dest_map": "ROUTE_31_VIOLET_GATE",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 24,
+        "y": 20,
+        "kind": "BGEVENT_READ",
+        "script": "VioletCitySign"
+      },
+      {
+        "x": 15,
+        "y": 17,
+        "kind": "BGEVENT_READ",
+        "script": "VioletGymSign"
+      },
+      {
+        "x": 24,
+        "y": 8,
+        "kind": "BGEVENT_READ",
+        "script": "SproutTowerSign"
+      },
+      {
+        "x": 27,
+        "y": 17,
+        "kind": "BGEVENT_READ",
+        "script": "EarlsPokemonAcademySign"
+      },
+      {
+        "x": 32,
+        "y": 25,
+        "kind": "BGEVENT_READ",
+        "script": "VioletCityPokecenterSign"
+      },
+      {
+        "x": 10,
+        "y": 17,
+        "kind": "BGEVENT_READ",
+        "script": "VioletCityMartSign"
+      },
+      {
+        "x": 37,
+        "y": 14,
+        "kind": "BGEVENT_ITEM",
+        "script": "VioletCityHiddenHyperPotion"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 13,
+        "y": 16,
+        "sprite": "SPRITE_FISHER",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "VioletCityEarlScript",
+        "flag": "EVENT_VIOLET_CITY_EARL"
+      },
+      {
+        "x": 28,
+        "y": 28,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 2,
+        "movement_range_y": 2,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "VioletCityLassScript",
+        "flag": -1
+      },
+      {
+        "x": 24,
+        "y": 14,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 2,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "VioletCitySuperNerdScript",
+        "flag": -1
+      },
+      {
+        "x": 17,
+        "y": 20,
+        "sprite": "SPRITE_GRAMPS",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "VioletCityGrampsScript",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 18,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "VioletCityYoungsterScript",
+        "flag": -1
+      },
+      {
+        "x": 14,
+        "y": 29,
+        "sprite": "SPRITE_FRUIT_TREE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "VioletCityFruitTree",
+        "flag": -1
+      },
+      {
+        "x": 4,
+        "y": 1,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "VioletCityPPUp",
+        "flag": "EVENT_VIOLET_CITY_PP_UP"
+      },
+      {
+        "x": 35,
+        "y": 5,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "VioletCityRareCandy",
+        "flag": "EVENT_VIOLET_CITY_RARE_CANDY"
+      }
+    ]
+  },
+  "object_consts": [
+    "VIOLETCITY_EARL",
+    "VIOLETCITY_LASS",
+    "VIOLETCITY_SUPER_NERD",
+    "VIOLETCITY_GRAMPS",
+    "VIOLETCITY_YOUNGSTER",
+    "VIOLETCITY_FRUIT_TREE",
+    "VIOLETCITY_POKE_BALL1",
+    "VIOLETCITY_POKE_BALL2"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "VioletCity_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, VioletCityFlypointCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "VioletCityFlypointCallback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, VioletCityFlypointCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "VioletCityFlypointCallback",
+      "label_refs": [
+        "VioletCityFlypointCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityFlypointCallback": {
+      "raw_lines": [
+        "setflag ENGINE_FLYPOINT_VIOLET",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_FLYPOINT_VIOLET"
+          ],
+          "raw": "setflag ENGINE_FLYPOINT_VIOLET"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "setflag",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityEarlScript": {
+      "raw_lines": [
+        "applymovement VIOLETCITY_EARL, VioletCitySpinningEarl_MovementData",
+        "faceplayer",
+        "opentext",
+        "writetext Text_EarlAsksIfYouBeatFalkner",
+        "yesorno",
+        "iffalse .FollowEarl",
+        "sjump .PointlessJump"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "VIOLETCITY_EARL",
+            "VioletCitySpinningEarl_MovementData"
+          ],
+          "raw": "applymovement VIOLETCITY_EARL, VioletCitySpinningEarl_MovementData"
+        },
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_EarlAsksIfYouBeatFalkner"
+          ],
+          "raw": "writetext Text_EarlAsksIfYouBeatFalkner"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "VioletCityEarlScript.FollowEarl"
+          ],
+          "raw": "iffalse .FollowEarl"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "VioletCityEarlScript.PointlessJump"
+          ],
+          "raw": "sjump .PointlessJump"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [
+        "VioletCityEarlScript.FollowEarl",
+        "VioletCityEarlScript.PointlessJump"
+      ],
+      "text_refs": [
+        "Text_EarlAsksIfYouBeatFalkner"
+      ],
+      "movement_refs": [
+        "VioletCitySpinningEarl_MovementData"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityEarlScript.PointlessJump": {
+      "raw_lines": [
+        "writetext Text_VeryNiceIndeed",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Text_VeryNiceIndeed"
+          ],
+          "raw": "writetext Text_VeryNiceIndeed"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Text_VeryNiceIndeed"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityEarlScript.FollowEarl": {
+      "raw_lines": [
+        "writetext Text_FollowEarl",
+        "waitbutton",
+        "closetext",
+        "playmusic MUSIC_SHOW_ME_AROUND",
+        "follow VIOLETCITY_EARL, PLAYER",
+        "applymovement VIOLETCITY_EARL, VioletCityFollowEarl_MovementData",
+        "turnobject PLAYER, UP",
+        "applymovement VIOLETCITY_EARL, VioletCitySpinningEarl_MovementData",
+        "stopfollow",
+        "special RestartMapMusic",
+        "opentext",
+        "writetext Text_HereTeacherIAm",
+        "waitbutton",
+        "closetext",
+        "applymovement VIOLETCITY_EARL, VioletCitySpinningEarl_MovementData",
+        "applymovement VIOLETCITY_EARL, VioletCityFinishFollowEarl_MovementData",
+        "playsound SFX_ENTER_DOOR",
+        "disappear VIOLETCITY_EARL",
+        "clearevent EVENT_EARLS_ACADEMY_EARL",
+        "waitsfx",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Text_FollowEarl"
+          ],
+          "raw": "writetext Text_FollowEarl"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_SHOW_ME_AROUND"
+          ],
+          "raw": "playmusic MUSIC_SHOW_ME_AROUND"
+        },
+        {
+          "command": "follow",
+          "args": [
+            "VIOLETCITY_EARL",
+            "PLAYER"
+          ],
+          "raw": "follow VIOLETCITY_EARL, PLAYER"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "VIOLETCITY_EARL",
+            "VioletCityFollowEarl_MovementData"
+          ],
+          "raw": "applymovement VIOLETCITY_EARL, VioletCityFollowEarl_MovementData"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "UP"
+          ],
+          "raw": "turnobject PLAYER, UP"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "VIOLETCITY_EARL",
+            "VioletCitySpinningEarl_MovementData"
+          ],
+          "raw": "applymovement VIOLETCITY_EARL, VioletCitySpinningEarl_MovementData"
+        },
+        {
+          "command": "stopfollow",
+          "args": [],
+          "raw": "stopfollow"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_HereTeacherIAm"
+          ],
+          "raw": "writetext Text_HereTeacherIAm"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "VIOLETCITY_EARL",
+            "VioletCitySpinningEarl_MovementData"
+          ],
+          "raw": "applymovement VIOLETCITY_EARL, VioletCitySpinningEarl_MovementData"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "VIOLETCITY_EARL",
+            "VioletCityFinishFollowEarl_MovementData"
+          ],
+          "raw": "applymovement VIOLETCITY_EARL, VioletCityFinishFollowEarl_MovementData"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "VIOLETCITY_EARL"
+          ],
+          "raw": "disappear VIOLETCITY_EARL"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_EARLS_ACADEMY_EARL"
+          ],
+          "raw": "clearevent EVENT_EARLS_ACADEMY_EARL"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Text_FollowEarl",
+        "Text_HereTeacherIAm"
+      ],
+      "movement_refs": [
+        "VioletCityFinishFollowEarl_MovementData",
+        "VioletCityFollowEarl_MovementData",
+        "VioletCitySpinningEarl_MovementData"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityLassScript": {
+      "raw_lines": [
+        "jumptextfaceplayer VioletCityLassText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "VioletCityLassText"
+          ],
+          "raw": "jumptextfaceplayer VioletCityLassText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "VioletCityLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCitySuperNerdScript": {
+      "raw_lines": [
+        "jumptextfaceplayer VioletCitySuperNerdText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "VioletCitySuperNerdText"
+          ],
+          "raw": "jumptextfaceplayer VioletCitySuperNerdText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "VioletCitySuperNerdText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityGrampsScript": {
+      "raw_lines": [
+        "jumptextfaceplayer VioletCityGrampsText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "VioletCityGrampsText"
+          ],
+          "raw": "jumptextfaceplayer VioletCityGrampsText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "VioletCityGrampsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityYoungsterScript": {
+      "raw_lines": [
+        "jumptextfaceplayer VioletCityYoungsterText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "VioletCityYoungsterText"
+          ],
+          "raw": "jumptextfaceplayer VioletCityYoungsterText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "VioletCityYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCitySign": {
+      "raw_lines": [
+        "jumptext VioletCitySignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "VioletCitySignText"
+          ],
+          "raw": "jumptext VioletCitySignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "VioletCitySignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletGymSign": {
+      "raw_lines": [
+        "jumptext VioletGymSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "VioletGymSignText"
+          ],
+          "raw": "jumptext VioletGymSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "VioletGymSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTowerSign": {
+      "raw_lines": [
+        "jumptext SproutTowerSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "SproutTowerSignText"
+          ],
+          "raw": "jumptext SproutTowerSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "SproutTowerSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EarlsPokemonAcademySign": {
+      "raw_lines": [
+        "jumptext EarlsPokemonAcademySignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "EarlsPokemonAcademySignText"
+          ],
+          "raw": "jumptext EarlsPokemonAcademySignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "EarlsPokemonAcademySignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityPokecenterSign": {
+      "raw_lines": [
+        "jumpstd PokecenterSignScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PokecenterSignScript"
+          ],
+          "raw": "jumpstd PokecenterSignScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterSignScript"
+      ]
+    },
+    "VioletCityMartSign": {
+      "raw_lines": [
+        "jumpstd MartSignScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "MartSignScript"
+          ],
+          "raw": "jumpstd MartSignScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MartSignScript"
+      ]
+    },
+    "VioletCityPPUp": {
+      "raw_lines": [
+        "itemball PP_UP"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "PP_UP"
+          ],
+          "raw": "itemball PP_UP"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "VioletCityRareCandy",
+      "label_refs": [
+        "VioletCityRareCandy"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityRareCandy": {
+      "raw_lines": [
+        "itemball RARE_CANDY"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "RARE_CANDY"
+          ],
+          "raw": "itemball RARE_CANDY"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "VioletCityFruitTree",
+      "label_refs": [
+        "VioletCityFruitTree"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityFruitTree": {
+      "raw_lines": [
+        "fruittree FRUITTREE_VIOLET_CITY"
+      ],
+      "commands": [
+        {
+          "command": "fruittree",
+          "args": [
+            "FRUITTREE_VIOLET_CITY"
+          ],
+          "raw": "fruittree FRUITTREE_VIOLET_CITY"
+        }
+      ],
+      "first_command": "fruittree",
+      "fallthrough_label": "VioletCityHiddenHyperPotion",
+      "label_refs": [
+        "VioletCityHiddenHyperPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityHiddenHyperPotion": {
+      "raw_lines": [
+        "hiddenitem HYPER_POTION, EVENT_VIOLET_CITY_HIDDEN_HYPER_POTION"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "HYPER_POTION",
+            "EVENT_VIOLET_CITY_HIDDEN_HYPER_POTION"
+          ],
+          "raw": "hiddenitem HYPER_POTION, EVENT_VIOLET_CITY_HIDDEN_HYPER_POTION"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "VioletCity_MapEvents",
+      "label_refs": [
+        "VioletCity_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCity_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  9, 17, VIOLET_MART, 2",
+        "warp_event 18, 17, VIOLET_GYM, 1",
+        "warp_event 30, 17, EARLS_POKEMON_ACADEMY, 1",
+        "warp_event  3, 15, VIOLET_NICKNAME_SPEECH_HOUSE, 1",
+        "warp_event 31, 25, VIOLET_POKECENTER_1F, 1",
+        "warp_event 21, 29, VIOLET_KYLES_HOUSE, 1",
+        "warp_event 23,  5, SPROUT_TOWER_1F, 1",
+        "warp_event 39, 24, ROUTE_31_VIOLET_GATE, 1",
+        "warp_event 39, 25, ROUTE_31_VIOLET_GATE, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event 24, 20, BGEVENT_READ, VioletCitySign",
+        "bg_event 15, 17, BGEVENT_READ, VioletGymSign",
+        "bg_event 24,  8, BGEVENT_READ, SproutTowerSign",
+        "bg_event 27, 17, BGEVENT_READ, EarlsPokemonAcademySign",
+        "bg_event 32, 25, BGEVENT_READ, VioletCityPokecenterSign",
+        "bg_event 10, 17, BGEVENT_READ, VioletCityMartSign",
+        "bg_event 37, 14, BGEVENT_ITEM, VioletCityHiddenHyperPotion",
+        "def_object_events",
+        "object_event 13, 16, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityEarlScript, EVENT_VIOLET_CITY_EARL",
+        "object_event 28, 28, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityLassScript, -1",
+        "object_event 24, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletCitySuperNerdScript, -1",
+        "object_event 17, 20, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityGrampsScript, -1",
+        "object_event  5, 18, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityYoungsterScript, -1",
+        "object_event 14, 29, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1",
+        "object_event  4,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityPPUp, EVENT_VIOLET_CITY_PP_UP",
+        "object_event 35,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityRareCandy, EVENT_VIOLET_CITY_RARE_CANDY"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "17",
+            "VIOLET_MART",
+            "2"
+          ],
+          "raw": "warp_event  9, 17, VIOLET_MART, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "18",
+            "17",
+            "VIOLET_GYM",
+            "1"
+          ],
+          "raw": "warp_event 18, 17, VIOLET_GYM, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "30",
+            "17",
+            "EARLS_POKEMON_ACADEMY",
+            "1"
+          ],
+          "raw": "warp_event 30, 17, EARLS_POKEMON_ACADEMY, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "15",
+            "VIOLET_NICKNAME_SPEECH_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event  3, 15, VIOLET_NICKNAME_SPEECH_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "31",
+            "25",
+            "VIOLET_POKECENTER_1F",
+            "1"
+          ],
+          "raw": "warp_event 31, 25, VIOLET_POKECENTER_1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "21",
+            "29",
+            "VIOLET_KYLES_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event 21, 29, VIOLET_KYLES_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "23",
+            "5",
+            "SPROUT_TOWER_1F",
+            "1"
+          ],
+          "raw": "warp_event 23,  5, SPROUT_TOWER_1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "39",
+            "24",
+            "ROUTE_31_VIOLET_GATE",
+            "1"
+          ],
+          "raw": "warp_event 39, 24, ROUTE_31_VIOLET_GATE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "39",
+            "25",
+            "ROUTE_31_VIOLET_GATE",
+            "2"
+          ],
+          "raw": "warp_event 39, 25, ROUTE_31_VIOLET_GATE, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "24",
+            "20",
+            "BGEVENT_READ",
+            "VioletCitySign"
+          ],
+          "raw": "bg_event 24, 20, BGEVENT_READ, VioletCitySign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "15",
+            "17",
+            "BGEVENT_READ",
+            "VioletGymSign"
+          ],
+          "raw": "bg_event 15, 17, BGEVENT_READ, VioletGymSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "24",
+            "8",
+            "BGEVENT_READ",
+            "SproutTowerSign"
+          ],
+          "raw": "bg_event 24,  8, BGEVENT_READ, SproutTowerSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "27",
+            "17",
+            "BGEVENT_READ",
+            "EarlsPokemonAcademySign"
+          ],
+          "raw": "bg_event 27, 17, BGEVENT_READ, EarlsPokemonAcademySign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "32",
+            "25",
+            "BGEVENT_READ",
+            "VioletCityPokecenterSign"
+          ],
+          "raw": "bg_event 32, 25, BGEVENT_READ, VioletCityPokecenterSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "10",
+            "17",
+            "BGEVENT_READ",
+            "VioletCityMartSign"
+          ],
+          "raw": "bg_event 10, 17, BGEVENT_READ, VioletCityMartSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "37",
+            "14",
+            "BGEVENT_ITEM",
+            "VioletCityHiddenHyperPotion"
+          ],
+          "raw": "bg_event 37, 14, BGEVENT_ITEM, VioletCityHiddenHyperPotion"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "13",
+            "16",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "VioletCityEarlScript",
+            "EVENT_VIOLET_CITY_EARL"
+          ],
+          "raw": "object_event 13, 16, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityEarlScript, EVENT_VIOLET_CITY_EARL"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "28",
+            "28",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_WANDER",
+            "2",
+            "2",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "VioletCityLassScript",
+            "-1"
+          ],
+          "raw": "object_event 28, 28, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityLassScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "24",
+            "14",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "2",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "VioletCitySuperNerdScript",
+            "-1"
+          ],
+          "raw": "object_event 24, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletCitySuperNerdScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "17",
+            "20",
+            "SPRITE_GRAMPS",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "VioletCityGrampsScript",
+            "-1"
+          ],
+          "raw": "object_event 17, 20, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityGrampsScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "18",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "VioletCityYoungsterScript",
+            "-1"
+          ],
+          "raw": "object_event  5, 18, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityYoungsterScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "14",
+            "29",
+            "SPRITE_FRUIT_TREE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "VioletCityFruitTree",
+            "-1"
+          ],
+          "raw": "object_event 14, 29, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "1",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "VioletCityPPUp",
+            "EVENT_VIOLET_CITY_PP_UP"
+          ],
+          "raw": "object_event  4,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityPPUp, EVENT_VIOLET_CITY_PP_UP"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "35",
+            "5",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "VioletCityRareCandy",
+            "EVENT_VIOLET_CITY_RARE_CANDY"
+          ],
+          "raw": "object_event 35,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityRareCandy, EVENT_VIOLET_CITY_RARE_CANDY"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "Text_EarlAsksIfYouBeatFalkner": {
+      "raw_lines": [
+        "text \"Hello!\"",
+        "line \"You are trainer?\"",
+        "para \"Battle GYM LEADER,\"",
+        "line \"win you did?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hello!"
+        },
+        {
+          "command": "line",
+          "value": "You are trainer?"
+        },
+        {
+          "command": "para",
+          "value": "Battle GYM LEADER,"
+        },
+        {
+          "command": "line",
+          "value": "win you did?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_VeryNiceIndeed": {
+      "raw_lines": [
+        "text \"Ooh, la la!\"",
+        "line \"Very indeed nice!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ooh, la la!"
+        },
+        {
+          "command": "line",
+          "value": "Very indeed nice!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_FollowEarl": {
+      "raw_lines": [
+        "text \"Is that so? Then\"",
+        "line \"study shall you!\"",
+        "cont \"Follow me!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Is that so? Then"
+        },
+        {
+          "command": "line",
+          "value": "study shall you!"
+        },
+        {
+          "command": "cont",
+          "value": "Follow me!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_HereTeacherIAm": {
+      "raw_lines": [
+        "text \"Here, teacher I\"",
+        "line \"am. Good it is\"",
+        "cont \"you study here!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Here, teacher I"
+        },
+        {
+          "command": "line",
+          "value": "am. Good it is"
+        },
+        {
+          "command": "cont",
+          "value": "you study here!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "VioletCityLassText": {
+      "raw_lines": [
+        "text \"Ghosts are rumored\"",
+        "line \"to appear in\"",
+        "cont \"SPROUT TOWER.\"",
+        "para \"They said normal-\"",
+        "line \"type #MON moves\"",
+        "para \"had no effect on\"",
+        "line \"ghosts.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ghosts are rumored"
+        },
+        {
+          "command": "line",
+          "value": "to appear in"
+        },
+        {
+          "command": "cont",
+          "value": "SPROUT TOWER."
+        },
+        {
+          "command": "para",
+          "value": "They said normal-"
+        },
+        {
+          "command": "line",
+          "value": "type #MON moves"
+        },
+        {
+          "command": "para",
+          "value": "had no effect on"
+        },
+        {
+          "command": "line",
+          "value": "ghosts."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "VioletCitySuperNerdText": {
+      "raw_lines": [
+        "text \"Hey, you're a\"",
+        "line \"#MON trainer?\"",
+        "para \"If you beat the\"",
+        "line \"GYM LEADER here,\"",
+        "para \"you'll be ready\"",
+        "line \"for prime time!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hey, you're a"
+        },
+        {
+          "command": "line",
+          "value": "#MON trainer?"
+        },
+        {
+          "command": "para",
+          "value": "If you beat the"
+        },
+        {
+          "command": "line",
+          "value": "GYM LEADER here,"
+        },
+        {
+          "command": "para",
+          "value": "you'll be ready"
+        },
+        {
+          "command": "line",
+          "value": "for prime time!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "VioletCityGrampsText": {
+      "raw_lines": [
+        "text \"FALKNER, from the\"",
+        "line \"VIOLET #MON\"",
+        "para \"GYM, is a fine\"",
+        "line \"trainer!\"",
+        "para \"He inherited his\"",
+        "line \"father's gym and\"",
+        "para \"has done a great\"",
+        "line \"job with it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "FALKNER, from the"
+        },
+        {
+          "command": "line",
+          "value": "VIOLET #MON"
+        },
+        {
+          "command": "para",
+          "value": "GYM, is a fine"
+        },
+        {
+          "command": "line",
+          "value": "trainer!"
+        },
+        {
+          "command": "para",
+          "value": "He inherited his"
+        },
+        {
+          "command": "line",
+          "value": "father's gym and"
+        },
+        {
+          "command": "para",
+          "value": "has done a great"
+        },
+        {
+          "command": "line",
+          "value": "job with it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "VioletCityYoungsterText": {
+      "raw_lines": [
+        "text \"I saw a wiggly\"",
+        "line \"tree up ahead!\"",
+        "para \"If you touch it,\"",
+        "line \"it squirms and\"",
+        "cont \"dances! Cool!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I saw a wiggly"
+        },
+        {
+          "command": "line",
+          "value": "tree up ahead!"
+        },
+        {
+          "command": "para",
+          "value": "If you touch it,"
+        },
+        {
+          "command": "line",
+          "value": "it squirms and"
+        },
+        {
+          "command": "cont",
+          "value": "dances! Cool!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "VioletCitySignText": {
+      "raw_lines": [
+        "text \"VIOLET CITY\"",
+        "para \"The City of\"",
+        "line \"Nostalgic Scents\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "VIOLET CITY"
+        },
+        {
+          "command": "para",
+          "value": "The City of"
+        },
+        {
+          "command": "line",
+          "value": "Nostalgic Scents"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "VioletGymSignText": {
+      "raw_lines": [
+        "text \"VIOLET CITY\"",
+        "line \"#MON GYM\"",
+        "cont \"LEADER: FALKNER\"",
+        "para \"The Elegant Master\"",
+        "line \"of Flying #MON\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "VIOLET CITY"
+        },
+        {
+          "command": "line",
+          "value": "#MON GYM"
+        },
+        {
+          "command": "cont",
+          "value": "LEADER: FALKNER"
+        },
+        {
+          "command": "para",
+          "value": "The Elegant Master"
+        },
+        {
+          "command": "line",
+          "value": "of Flying #MON"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SproutTowerSignText": {
+      "raw_lines": [
+        "text \"SPROUT TOWER\"",
+        "para \"Experience the\"",
+        "line \"Way of #MON\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "SPROUT TOWER"
+        },
+        {
+          "command": "para",
+          "value": "Experience the"
+        },
+        {
+          "command": "line",
+          "value": "Way of #MON"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EarlsPokemonAcademySignText": {
+      "raw_lines": [
+        "text \"EARL'S #MON\"",
+        "line \"ACADEMY\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "EARL'S #MON"
+        },
+        {
+          "command": "line",
+          "value": "ACADEMY"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "VioletCityFollowEarl_MovementData": {
+      "raw_lines": [
+        "big_step DOWN",
+        "big_step DOWN",
+        "turn_head DOWN",
+        "turn_head LEFT",
+        "turn_head UP",
+        "turn_head RIGHT",
+        "turn_head DOWN",
+        "turn_head LEFT",
+        "turn_head UP",
+        "turn_head RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "turn_head RIGHT",
+        "turn_head DOWN",
+        "turn_head LEFT",
+        "turn_head UP",
+        "turn_head RIGHT",
+        "turn_head DOWN",
+        "turn_head LEFT",
+        "turn_head UP",
+        "turn_head RIGHT",
+        "turn_head DOWN",
+        "big_step DOWN",
+        "turn_head DOWN",
+        "turn_head LEFT",
+        "turn_head UP",
+        "turn_head RIGHT",
+        "turn_head DOWN",
+        "turn_head LEFT",
+        "turn_head UP",
+        "turn_head RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "big_step RIGHT",
+        "turn_head RIGHT",
+        "turn_head DOWN",
+        "turn_head LEFT",
+        "turn_head UP",
+        "turn_head RIGHT",
+        "turn_head DOWN",
+        "turn_head LEFT",
+        "turn_head UP",
+        "big_step UP",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "VioletCityFinishFollowEarl_MovementData": {
+      "raw_lines": [
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "VioletCitySpinningEarl_MovementData": {
+      "raw_lines": [
+        "turn_head DOWN",
+        "turn_head LEFT",
+        "turn_head UP",
+        "turn_head RIGHT",
+        "turn_head DOWN",
+        "turn_head LEFT",
+        "turn_head UP",
+        "turn_head RIGHT",
+        "turn_head DOWN",
+        "turn_head LEFT",
+        "turn_head UP",
+        "turn_head RIGHT",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "MartSignScript",
+    "PokecenterSignScript"
+  ],
+  "dependencies": {
+    "VioletCity_MapScripts": {
+      "label_refs": [
+        "VioletCityFlypointCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityFlypointCallback": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityEarlScript": {
+      "label_refs": [
+        "VioletCityEarlScript.FollowEarl",
+        "VioletCityEarlScript.PointlessJump"
+      ],
+      "text_refs": [
+        "Text_EarlAsksIfYouBeatFalkner"
+      ],
+      "movement_refs": [
+        "VioletCitySpinningEarl_MovementData"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityEarlScript.PointlessJump": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_VeryNiceIndeed"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityEarlScript.FollowEarl": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_FollowEarl",
+        "Text_HereTeacherIAm"
+      ],
+      "movement_refs": [
+        "VioletCityFinishFollowEarl_MovementData",
+        "VioletCityFollowEarl_MovementData",
+        "VioletCitySpinningEarl_MovementData"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityLassScript": {
+      "label_refs": [],
+      "text_refs": [
+        "VioletCityLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCitySuperNerdScript": {
+      "label_refs": [],
+      "text_refs": [
+        "VioletCitySuperNerdText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityGrampsScript": {
+      "label_refs": [],
+      "text_refs": [
+        "VioletCityGrampsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityYoungsterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "VioletCityYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCitySign": {
+      "label_refs": [],
+      "text_refs": [
+        "VioletCitySignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletGymSign": {
+      "label_refs": [],
+      "text_refs": [
+        "VioletGymSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTowerSign": {
+      "label_refs": [],
+      "text_refs": [
+        "SproutTowerSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "EarlsPokemonAcademySign": {
+      "label_refs": [],
+      "text_refs": [
+        "EarlsPokemonAcademySignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityPokecenterSign": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterSignScript"
+      ]
+    },
+    "VioletCityMartSign": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MartSignScript"
+      ]
+    },
+    "VioletCityPPUp": {
+      "label_refs": [
+        "VioletCityRareCandy"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityRareCandy": {
+      "label_refs": [
+        "VioletCityFruitTree"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityFruitTree": {
+      "label_refs": [
+        "VioletCityHiddenHyperPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCityHiddenHyperPotion": {
+      "label_refs": [
+        "VioletCity_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletCity_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 1,
+    "warp_events": 9,
+    "coord_events": 0,
+    "bg_events": 7,
+    "object_events": 8
+  }
+}

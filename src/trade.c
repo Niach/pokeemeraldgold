@@ -22,6 +22,7 @@
 #include "mystery_gift.h"
 #include "mystery_gift_menu.h"
 #include "overworld.h"
+#include "official_link_compat.h"
 #include "palette.h"
 #include "party_menu.h"
 #include "pokeball.h"
@@ -2399,6 +2400,10 @@ static u32 CanTradeSelectedMon(struct Pokemon *playerParty, int partyCount, int 
         species[i] = GetMonData(&playerParty[i], MON_DATA_SPECIES);
     }
 
+    partner = &gLinkPlayers[GetMultiplayerId() ^ 1];
+    if (!IsRetailSafeTradeMon(&playerParty[monIdx], partner->version & 0xFF))
+        return CANT_TRADE_INVALID_MON;
+
     // Cant trade Eggs or non-Hoenn mons if player doesn't have National Dex
     if (!IsNationalPokedexEnabled())
     {
@@ -2409,7 +2414,6 @@ static u32 CanTradeSelectedMon(struct Pokemon *playerParty, int partyCount, int 
             return CANT_TRADE_NATIONAL;
     }
 
-    partner = &gLinkPlayers[GetMultiplayerId() ^ 1];
     if ((partner->version & 0xFF) != VERSION_RUBY &&
         (partner->version & 0xFF) != VERSION_SAPPHIRE)
     {

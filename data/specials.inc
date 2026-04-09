@@ -38,6 +38,8 @@ gSpecials::
 	def_special RecordMixingPlayerSpotTriggered
 	def_special TryBattleLinkup
 	def_special TryTradeLinkup
+	def_special CheckOfficialLinkCompatibility
+	def_special BufferOfficialLinkCompatibilityMessage
 	def_special TryRecordMixLinkup
 	def_special ValidateMixingGameLanguage
 	def_special CloseLink
@@ -535,3 +537,9 @@ gSpecials::
 	def_special RemoveRecordsWindow
 	def_special CloseDeptStoreElevatorWindow
 	def_special TrySetBattleTowerLinkType
+	def_special BufferJohtoRivalName
+	def_special DoJohtoRivalNamingScreen
+	def_special SyncJohtoPlayersHouse2FDecorations
+	def_special GetJohtoUnownCount
+	def_special BufferCurrentLandmarkName
+	def_special GetJohtoWeekday

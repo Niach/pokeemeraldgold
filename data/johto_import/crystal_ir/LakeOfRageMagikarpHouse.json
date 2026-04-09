@@ -1,0 +1,1416 @@
+{
+  "crystal_map": "LakeOfRageMagikarpHouse",
+  "map_id": "LAKE_OF_RAGE_MAGIKARP_HOUSE",
+  "group": "LAKE_OF_RAGE",
+  "group_index": 9,
+  "map_index": 2,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_LAKE_OF_RAGE",
+  "music": "MUSIC_LAKE_OF_RAGE",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/House1.blk",
+  "source_asm": "maps/LakeOfRageMagikarpHouse.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "LAKE_OF_RAGE",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "LAKE_OF_RAGE",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 0,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "MagikarpHouseBookshelf"
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "MagikarpHouseBookshelf"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 3,
+        "sprite": "SPRITE_FISHING_GURU",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MagikarpLengthRaterScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "LAKEOFRAGEMAGIKARPHOUSE_FISHING_GURU"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "LakeOfRageMagikarpHouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "MagikarpLengthRaterScript",
+      "label_refs": [
+        "MagikarpLengthRaterScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpLengthRaterScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_LAKE_OF_RAGE_ELIXIR_ON_STANDBY",
+        "iftrue .GetReward",
+        "checkevent EVENT_LAKE_OF_RAGE_ASKED_FOR_MAGIKARP",
+        "iftrue .AskedForMagikarp",
+        "checkevent EVENT_CLEARED_ROCKET_HIDEOUT",
+        "iftrue .ClearedRocketHideout",
+        "checkevent EVENT_LAKE_OF_RAGE_EXPLAINED_WEIRD_MAGIKARP",
+        "iftrue .ExplainedHistory",
+        "writetext MagikarpLengthRaterText_LakeOfRageHistory",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_LAKE_OF_RAGE_EXPLAINED_WEIRD_MAGIKARP",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_LAKE_OF_RAGE_ELIXIR_ON_STANDBY"
+          ],
+          "raw": "checkevent EVENT_LAKE_OF_RAGE_ELIXIR_ON_STANDBY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MagikarpLengthRaterScript.GetReward"
+          ],
+          "raw": "iftrue .GetReward"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_LAKE_OF_RAGE_ASKED_FOR_MAGIKARP"
+          ],
+          "raw": "checkevent EVENT_LAKE_OF_RAGE_ASKED_FOR_MAGIKARP"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MagikarpLengthRaterScript.AskedForMagikarp"
+          ],
+          "raw": "iftrue .AskedForMagikarp"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_ROCKET_HIDEOUT"
+          ],
+          "raw": "checkevent EVENT_CLEARED_ROCKET_HIDEOUT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MagikarpLengthRaterScript.ClearedRocketHideout"
+          ],
+          "raw": "iftrue .ClearedRocketHideout"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_LAKE_OF_RAGE_EXPLAINED_WEIRD_MAGIKARP"
+          ],
+          "raw": "checkevent EVENT_LAKE_OF_RAGE_EXPLAINED_WEIRD_MAGIKARP"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MagikarpLengthRaterScript.ExplainedHistory"
+          ],
+          "raw": "iftrue .ExplainedHistory"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MagikarpLengthRaterText_LakeOfRageHistory"
+          ],
+          "raw": "writetext MagikarpLengthRaterText_LakeOfRageHistory"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_LAKE_OF_RAGE_EXPLAINED_WEIRD_MAGIKARP"
+          ],
+          "raw": "setevent EVENT_LAKE_OF_RAGE_EXPLAINED_WEIRD_MAGIKARP"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "MagikarpLengthRaterScript.AskedForMagikarp",
+        "MagikarpLengthRaterScript.ClearedRocketHideout",
+        "MagikarpLengthRaterScript.ExplainedHistory",
+        "MagikarpLengthRaterScript.GetReward"
+      ],
+      "text_refs": [
+        "MagikarpLengthRaterText_LakeOfRageHistory"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpLengthRaterScript.ExplainedHistory": {
+      "raw_lines": [
+        "writetext MagikarpLengthRaterText_MenInBlack",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "MagikarpLengthRaterText_MenInBlack"
+          ],
+          "raw": "writetext MagikarpLengthRaterText_MenInBlack"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "MagikarpLengthRaterText_MenInBlack"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpLengthRaterScript.ClearedRocketHideout": {
+      "raw_lines": [
+        "writetext MagikarpLengthRaterText_WorldsLargestMagikarp",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_LAKE_OF_RAGE_ASKED_FOR_MAGIKARP",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "MagikarpLengthRaterText_WorldsLargestMagikarp"
+          ],
+          "raw": "writetext MagikarpLengthRaterText_WorldsLargestMagikarp"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_LAKE_OF_RAGE_ASKED_FOR_MAGIKARP"
+          ],
+          "raw": "setevent EVENT_LAKE_OF_RAGE_ASKED_FOR_MAGIKARP"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "MagikarpLengthRaterText_WorldsLargestMagikarp"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpLengthRaterScript.AskedForMagikarp": {
+      "raw_lines": [
+        "setval MAGIKARP",
+        "special FindPartyMonThatSpecies",
+        "iffalse .ClearedRocketHideout",
+        "writetext MagikarpLengthRaterText_YouHaveAMagikarp",
+        "waitbutton",
+        "special CheckMagikarpLength",
+        "ifequal MAGIKARPLENGTH_NOT_MAGIKARP, .NotMagikarp",
+        "ifequal MAGIKARPLENGTH_REFUSED, .Refused",
+        "ifequal MAGIKARPLENGTH_TOO_SHORT, .TooShort",
+        "sjump .GetReward"
+      ],
+      "commands": [
+        {
+          "command": "setval",
+          "args": [
+            "MAGIKARP"
+          ],
+          "raw": "setval MAGIKARP"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FindPartyMonThatSpecies"
+          ],
+          "raw": "special FindPartyMonThatSpecies"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "MagikarpLengthRaterScript.ClearedRocketHideout"
+          ],
+          "raw": "iffalse .ClearedRocketHideout"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MagikarpLengthRaterText_YouHaveAMagikarp"
+          ],
+          "raw": "writetext MagikarpLengthRaterText_YouHaveAMagikarp"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "special",
+          "args": [
+            "CheckMagikarpLength"
+          ],
+          "raw": "special CheckMagikarpLength"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "MAGIKARPLENGTH_NOT_MAGIKARP",
+            "MagikarpLengthRaterScript.NotMagikarp"
+          ],
+          "raw": "ifequal MAGIKARPLENGTH_NOT_MAGIKARP, .NotMagikarp"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "MAGIKARPLENGTH_REFUSED",
+            "MagikarpLengthRaterScript.Refused"
+          ],
+          "raw": "ifequal MAGIKARPLENGTH_REFUSED, .Refused"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "MAGIKARPLENGTH_TOO_SHORT",
+            "MagikarpLengthRaterScript.TooShort"
+          ],
+          "raw": "ifequal MAGIKARPLENGTH_TOO_SHORT, .TooShort"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "MagikarpLengthRaterScript.GetReward"
+          ],
+          "raw": "sjump .GetReward"
+        }
+      ],
+      "first_command": "setval",
+      "label_refs": [
+        "MagikarpLengthRaterScript.ClearedRocketHideout",
+        "MagikarpLengthRaterScript.GetReward",
+        "MagikarpLengthRaterScript.NotMagikarp",
+        "MagikarpLengthRaterScript.Refused",
+        "MagikarpLengthRaterScript.TooShort"
+      ],
+      "text_refs": [
+        "MagikarpLengthRaterText_YouHaveAMagikarp"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpLengthRaterScript.GetReward": {
+      "raw_lines": [
+        "writetext MagikarpLengthRaterText_Memento",
+        "promptbutton",
+        "verbosegiveitem ELIXER",
+        "iffalse .NoRoom",
+        "writetext MagikarpLengthRaterText_Bonus",
+        "waitbutton",
+        "closetext",
+        "clearevent EVENT_LAKE_OF_RAGE_ELIXIR_ON_STANDBY",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "MagikarpLengthRaterText_Memento"
+          ],
+          "raw": "writetext MagikarpLengthRaterText_Memento"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "ELIXER"
+          ],
+          "raw": "verbosegiveitem ELIXER"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "MagikarpLengthRaterScript.NoRoom"
+          ],
+          "raw": "iffalse .NoRoom"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MagikarpLengthRaterText_Bonus"
+          ],
+          "raw": "writetext MagikarpLengthRaterText_Bonus"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_LAKE_OF_RAGE_ELIXIR_ON_STANDBY"
+          ],
+          "raw": "clearevent EVENT_LAKE_OF_RAGE_ELIXIR_ON_STANDBY"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "MagikarpLengthRaterScript.NoRoom"
+      ],
+      "text_refs": [
+        "MagikarpLengthRaterText_Bonus",
+        "MagikarpLengthRaterText_Memento"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpLengthRaterScript.NoRoom": {
+      "raw_lines": [
+        "closetext",
+        "setevent EVENT_LAKE_OF_RAGE_ELIXIR_ON_STANDBY",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_LAKE_OF_RAGE_ELIXIR_ON_STANDBY"
+          ],
+          "raw": "setevent EVENT_LAKE_OF_RAGE_ELIXIR_ON_STANDBY"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpLengthRaterScript.TooShort": {
+      "raw_lines": [
+        "writetext MagikarpLengthRaterText_TooShort",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "MagikarpLengthRaterText_TooShort"
+          ],
+          "raw": "writetext MagikarpLengthRaterText_TooShort"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "MagikarpLengthRaterText_TooShort"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpLengthRaterScript.NotMagikarp": {
+      "raw_lines": [
+        "writetext MagikarpLengthRaterText_NotMagikarp",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "MagikarpLengthRaterText_NotMagikarp"
+          ],
+          "raw": "writetext MagikarpLengthRaterText_NotMagikarp"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "MagikarpLengthRaterText_NotMagikarp"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpLengthRaterScript.Refused": {
+      "raw_lines": [
+        "writetext MagikarpLengthRaterText_Refused",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "MagikarpLengthRaterText_Refused"
+          ],
+          "raw": "writetext MagikarpLengthRaterText_Refused"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "MagikarpLengthRaterText_Refused"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageMagikarpHouseUnusedRecordSign": {
+      "raw_lines": [
+        "jumptext LakeOfRageMagikarpHouseUnusedRecordText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "LakeOfRageMagikarpHouseUnusedRecordText"
+          ],
+          "raw": "jumptext LakeOfRageMagikarpHouseUnusedRecordText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "LakeOfRageMagikarpHouseUnusedRecordText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpHouseBookshelf": {
+      "raw_lines": [
+        "jumpstd DifficultBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "DifficultBookshelfScript"
+          ],
+          "raw": "jumpstd DifficultBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "DifficultBookshelfScript"
+      ]
+    },
+    "LakeOfRageMagikarpHouseUnusedDummyText": {
+      "raw_lines": [
+        "text_end"
+      ],
+      "commands": [
+        {
+          "command": "text_end",
+          "args": [],
+          "raw": "text_end"
+        }
+      ],
+      "first_command": "text_end",
+      "fallthrough_label": "LakeOfRageMagikarpHouse_MapEvents",
+      "label_refs": [
+        "LakeOfRageMagikarpHouse_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageMagikarpHouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, LAKE_OF_RAGE, 2",
+        "warp_event  3,  7, LAKE_OF_RAGE, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, MagikarpHouseBookshelf",
+        "bg_event  1,  1, BGEVENT_READ, MagikarpHouseBookshelf",
+        "def_object_events",
+        "object_event  2,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MagikarpLengthRaterScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "LAKE_OF_RAGE",
+            "2"
+          ],
+          "raw": "warp_event  2,  7, LAKE_OF_RAGE, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "LAKE_OF_RAGE",
+            "2"
+          ],
+          "raw": "warp_event  3,  7, LAKE_OF_RAGE, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "MagikarpHouseBookshelf"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, MagikarpHouseBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "MagikarpHouseBookshelf"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, MagikarpHouseBookshelf"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_FISHING_GURU",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MagikarpLengthRaterScript",
+            "-1"
+          ],
+          "raw": "object_event  2,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MagikarpLengthRaterScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "MagikarpLengthRaterText_LakeOfRageHistory": {
+      "raw_lines": [
+        "text \"LAKE OF RAGE is\"",
+        "line \"actually a crater\"",
+        "para \"made by rampaging\"",
+        "line \"GYARADOS.\"",
+        "para \"The crater filled\"",
+        "line \"up with rainwater\"",
+        "para \"and the LAKE was\"",
+        "line \"formed.\"",
+        "para \"That's the story\"",
+        "line \"passed on from my\"",
+        "para \"Grandpa's great-\"",
+        "line \"great-grandpa.\"",
+        "para \"It used to be that\"",
+        "line \"you could catch\"",
+        "para \"lively MAGIKARP\"",
+        "line \"there, but\u2026\"",
+        "para \"I don't understand\"",
+        "line \"what's happening.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "LAKE OF RAGE is"
+        },
+        {
+          "command": "line",
+          "value": "actually a crater"
+        },
+        {
+          "command": "para",
+          "value": "made by rampaging"
+        },
+        {
+          "command": "line",
+          "value": "GYARADOS."
+        },
+        {
+          "command": "para",
+          "value": "The crater filled"
+        },
+        {
+          "command": "line",
+          "value": "up with rainwater"
+        },
+        {
+          "command": "para",
+          "value": "and the LAKE was"
+        },
+        {
+          "command": "line",
+          "value": "formed."
+        },
+        {
+          "command": "para",
+          "value": "That's the story"
+        },
+        {
+          "command": "line",
+          "value": "passed on from my"
+        },
+        {
+          "command": "para",
+          "value": "Grandpa's great-"
+        },
+        {
+          "command": "line",
+          "value": "great-grandpa."
+        },
+        {
+          "command": "para",
+          "value": "It used to be that"
+        },
+        {
+          "command": "line",
+          "value": "you could catch"
+        },
+        {
+          "command": "para",
+          "value": "lively MAGIKARP"
+        },
+        {
+          "command": "line",
+          "value": "there, but\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I don't understand"
+        },
+        {
+          "command": "line",
+          "value": "what's happening."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MagikarpLengthRaterText_MenInBlack": {
+      "raw_lines": [
+        "text \"The LAKE hasn't\"",
+        "line \"been normal since\"",
+        "para \"those men wearing\"",
+        "line \"black arrived.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The LAKE hasn't"
+        },
+        {
+          "command": "line",
+          "value": "been normal since"
+        },
+        {
+          "command": "para",
+          "value": "those men wearing"
+        },
+        {
+          "command": "line",
+          "value": "black arrived."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MagikarpLengthRaterText_WorldsLargestMagikarp": {
+      "raw_lines": [
+        "text \"LAKE OF RAGE is\"",
+        "line \"back to normal.\"",
+        "para \"The MAGIKARP have\"",
+        "line \"returned.\"",
+        "para \"I may yet realize\"",
+        "line \"my dream of see-\"",
+        "cont \"ing the world's\"",
+        "cont \"largest MAGIKARP.\"",
+        "para \"Do you have a ROD?\"",
+        "line \"Please help me if\"",
+        "cont \"you do.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "LAKE OF RAGE is"
+        },
+        {
+          "command": "line",
+          "value": "back to normal."
+        },
+        {
+          "command": "para",
+          "value": "The MAGIKARP have"
+        },
+        {
+          "command": "line",
+          "value": "returned."
+        },
+        {
+          "command": "para",
+          "value": "I may yet realize"
+        },
+        {
+          "command": "line",
+          "value": "my dream of see-"
+        },
+        {
+          "command": "cont",
+          "value": "ing the world's"
+        },
+        {
+          "command": "cont",
+          "value": "largest MAGIKARP."
+        },
+        {
+          "command": "para",
+          "value": "Do you have a ROD?"
+        },
+        {
+          "command": "line",
+          "value": "Please help me if"
+        },
+        {
+          "command": "cont",
+          "value": "you do."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MagikarpLengthRaterText_YouHaveAMagikarp": {
+      "raw_lines": [
+        "text \"Ah, you have a\"",
+        "line \"MAGIKARP! Let's\"",
+        "para \"see how big that\"",
+        "line \"baby is.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ah, you have a"
+        },
+        {
+          "command": "line",
+          "value": "MAGIKARP! Let's"
+        },
+        {
+          "command": "para",
+          "value": "see how big that"
+        },
+        {
+          "command": "line",
+          "value": "baby is."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MagikarpLengthRaterText_Memento": {
+      "raw_lines": [
+        "text \"Wow! This one is\"",
+        "line \"outstanding!\"",
+        "para \"I tip my hat to\"",
+        "line \"you!\"",
+        "para \"Take this as a\"",
+        "line \"memento!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Wow! This one is"
+        },
+        {
+          "command": "line",
+          "value": "outstanding!"
+        },
+        {
+          "command": "para",
+          "value": "I tip my hat to"
+        },
+        {
+          "command": "line",
+          "value": "you!"
+        },
+        {
+          "command": "para",
+          "value": "Take this as a"
+        },
+        {
+          "command": "line",
+          "value": "memento!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MagikarpLengthRaterText_Bonus": {
+      "raw_lines": [
+        "text \"The record is the\"",
+        "line \"important thing.\"",
+        "para \"Think of that as\"",
+        "line \"a bonus!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The record is the"
+        },
+        {
+          "command": "line",
+          "value": "important thing."
+        },
+        {
+          "command": "para",
+          "value": "Think of that as"
+        },
+        {
+          "command": "line",
+          "value": "a bonus!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MagikarpLengthRaterText_TooShort": {
+      "raw_lines": [
+        "text \"Wow! This one is\"",
+        "line \"outstanding!\"",
+        "para \"\u2026I wish I could\"",
+        "line \"say that, but I've\"",
+        "para \"seen a bigger one\"",
+        "line \"before.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Wow! This one is"
+        },
+        {
+          "command": "line",
+          "value": "outstanding!"
+        },
+        {
+          "command": "para",
+          "value": "\u2026I wish I could"
+        },
+        {
+          "command": "line",
+          "value": "say that, but I've"
+        },
+        {
+          "command": "para",
+          "value": "seen a bigger one"
+        },
+        {
+          "command": "line",
+          "value": "before."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MagikarpLengthRaterText_NotMagikarp": {
+      "raw_lines": [
+        "text \"What? That's not a\"",
+        "line \"MAGIKARP!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What? That's not a"
+        },
+        {
+          "command": "line",
+          "value": "MAGIKARP!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MagikarpLengthRaterText_Refused": {
+      "raw_lines": [
+        "text \"Oh\u2026 So you didn't\"",
+        "line \"get one good\"",
+        "para \"enough to show me?\"",
+        "line \"Maybe next time.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh\u2026 So you didn't"
+        },
+        {
+          "command": "line",
+          "value": "get one good"
+        },
+        {
+          "command": "para",
+          "value": "enough to show me?"
+        },
+        {
+          "command": "line",
+          "value": "Maybe next time."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LakeOfRageMagikarpHouseUnusedRecordText": {
+      "raw_lines": [
+        "text \"CURRENT RECORD\"",
+        "para \"@\"",
+        "text_ram wStringBuffer3",
+        "text \" caught by\"",
+        "line \"@\"",
+        "text_ram wStringBuffer4",
+        "text_end"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "CURRENT RECORD"
+        },
+        {
+          "command": "para",
+          "value": "@"
+        },
+        {
+          "command": "text_ram",
+          "value": "wStringBuffer3"
+        },
+        {
+          "command": "text",
+          "value": " caught by"
+        },
+        {
+          "command": "line",
+          "value": "@"
+        },
+        {
+          "command": "text_ram",
+          "value": "wStringBuffer4"
+        },
+        {
+          "command": "text_end",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "DifficultBookshelfScript"
+  ],
+  "dependencies": {
+    "LakeOfRageMagikarpHouse_MapScripts": {
+      "label_refs": [
+        "MagikarpLengthRaterScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpLengthRaterScript": {
+      "label_refs": [
+        "MagikarpLengthRaterScript.AskedForMagikarp",
+        "MagikarpLengthRaterScript.ClearedRocketHideout",
+        "MagikarpLengthRaterScript.ExplainedHistory",
+        "MagikarpLengthRaterScript.GetReward"
+      ],
+      "text_refs": [
+        "MagikarpLengthRaterText_LakeOfRageHistory"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpLengthRaterScript.ExplainedHistory": {
+      "label_refs": [],
+      "text_refs": [
+        "MagikarpLengthRaterText_MenInBlack"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpLengthRaterScript.ClearedRocketHideout": {
+      "label_refs": [],
+      "text_refs": [
+        "MagikarpLengthRaterText_WorldsLargestMagikarp"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpLengthRaterScript.AskedForMagikarp": {
+      "label_refs": [
+        "MagikarpLengthRaterScript.ClearedRocketHideout",
+        "MagikarpLengthRaterScript.GetReward",
+        "MagikarpLengthRaterScript.NotMagikarp",
+        "MagikarpLengthRaterScript.Refused",
+        "MagikarpLengthRaterScript.TooShort"
+      ],
+      "text_refs": [
+        "MagikarpLengthRaterText_YouHaveAMagikarp"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpLengthRaterScript.GetReward": {
+      "label_refs": [
+        "MagikarpLengthRaterScript.NoRoom"
+      ],
+      "text_refs": [
+        "MagikarpLengthRaterText_Bonus",
+        "MagikarpLengthRaterText_Memento"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpLengthRaterScript.NoRoom": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpLengthRaterScript.TooShort": {
+      "label_refs": [],
+      "text_refs": [
+        "MagikarpLengthRaterText_TooShort"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpLengthRaterScript.NotMagikarp": {
+      "label_refs": [],
+      "text_refs": [
+        "MagikarpLengthRaterText_NotMagikarp"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpLengthRaterScript.Refused": {
+      "label_refs": [],
+      "text_refs": [
+        "MagikarpLengthRaterText_Refused"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageMagikarpHouseUnusedRecordSign": {
+      "label_refs": [],
+      "text_refs": [
+        "LakeOfRageMagikarpHouseUnusedRecordText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MagikarpHouseBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "DifficultBookshelfScript"
+      ]
+    },
+    "LakeOfRageMagikarpHouseUnusedDummyText": {
+      "label_refs": [
+        "LakeOfRageMagikarpHouse_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "LakeOfRageMagikarpHouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 1
+  }
+}

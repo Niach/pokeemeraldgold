@@ -54,7 +54,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ElmsLab_EventScript_CyndaquilBall",
-      "flag": "0"
+      "flag": "FLAG_HIDE_ELMS_LAB_CYNDAQUIL_BALL"
     },
     {
       "local_id": "LOCALID_ELMS_LAB_TOTODILE_BALL",
@@ -68,7 +68,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ElmsLab_EventScript_TotodileBall",
-      "flag": "0"
+      "flag": "FLAG_HIDE_ELMS_LAB_TOTODILE_BALL"
     },
     {
       "local_id": "LOCALID_ELMS_LAB_CHIKORITA_BALL",
@@ -82,7 +82,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ElmsLab_EventScript_ChikoritaBall",
-      "flag": "0"
+      "flag": "FLAG_HIDE_ELMS_LAB_CHIKORITA_BALL"
     },
     {
       "local_id": "LOCALID_ELMS_LAB_OFFICER",
@@ -96,7 +96,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ElmsLab_EventScript_Officer",
-      "flag": "0"
+      "flag": "FLAG_HIDE_ELMS_LAB_OFFICER"
     }
   ],
   "warp_events": [
@@ -115,14 +115,33 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 5,
+      "elevation": 3,
+      "var": "VAR_JOHTO_INTRO_STATE",
+      "var_value": "5",
+      "script": "ElmsLab_EventScript_OfficerSceneWest"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 5,
+      "elevation": 3,
+      "var": "VAR_JOHTO_INTRO_STATE",
+      "var_value": "5",
+      "script": "ElmsLab_EventScript_OfficerSceneEast"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
       "x": 2,
       "y": 1,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ElmsLab_EventScript_Machine"
     },
     {
@@ -242,7 +261,7 @@
       "x": 3,
       "y": 5,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_SOUTH",
       "script": "ElmsLab_EventScript_Window"
     }
   ]

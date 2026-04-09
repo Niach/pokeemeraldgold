@@ -1,0 +1,1364 @@
+{
+  "crystal_map": "ManiasHouse",
+  "map_id": "MANIAS_HOUSE",
+  "group": "CIANWOOD",
+  "group_index": 22,
+  "map_index": 4,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_CIANWOOD_CITY",
+  "music": "MUSIC_ECRUTEAK_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/House1.blk",
+  "source_asm": "maps/ManiasHouse.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "CIANWOOD_CITY",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "CIANWOOD_CITY",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 4,
+        "sprite": "SPRITE_ROCKER",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ManiaScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "MANIASHOUSE_ROCKER"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "ManiasHouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "ManiaScript",
+      "label_refs": [
+        "ManiaScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM",
+        "iftrue .default_postevent",
+        "checkevent EVENT_GOT_SHUCKIE",
+        "iftrue .alreadyhaveshuckie",
+        "writetext ManiaText_AskLookAfterShuckle",
+        "yesorno",
+        "iffalse .refusetotakeshuckie",
+        "special GiveShuckle",
+        "iffalse .partyfull",
+        "writetext ManiaText_TakeCareOfShuckle",
+        "promptbutton",
+        "waitsfx",
+        "writetext ManiaText_GotShuckle",
+        "playsound SFX_KEY_ITEM",
+        "waitsfx",
+        "closetext",
+        "setevent EVENT_GOT_SHUCKIE",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM"
+          ],
+          "raw": "checkevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "ManiaScript.default_postevent"
+          ],
+          "raw": "iftrue .default_postevent"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_SHUCKIE"
+          ],
+          "raw": "checkevent EVENT_GOT_SHUCKIE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "ManiaScript.alreadyhaveshuckie"
+          ],
+          "raw": "iftrue .alreadyhaveshuckie"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ManiaText_AskLookAfterShuckle"
+          ],
+          "raw": "writetext ManiaText_AskLookAfterShuckle"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "ManiaScript.refusetotakeshuckie"
+          ],
+          "raw": "iffalse .refusetotakeshuckie"
+        },
+        {
+          "command": "special",
+          "args": [
+            "GiveShuckle"
+          ],
+          "raw": "special GiveShuckle"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "ManiaScript.partyfull"
+          ],
+          "raw": "iffalse .partyfull"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ManiaText_TakeCareOfShuckle"
+          ],
+          "raw": "writetext ManiaText_TakeCareOfShuckle"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ManiaText_GotShuckle"
+          ],
+          "raw": "writetext ManiaText_GotShuckle"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_KEY_ITEM"
+          ],
+          "raw": "playsound SFX_KEY_ITEM"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_SHUCKIE"
+          ],
+          "raw": "setevent EVENT_GOT_SHUCKIE"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "ManiaScript.alreadyhaveshuckie",
+        "ManiaScript.default_postevent",
+        "ManiaScript.partyfull",
+        "ManiaScript.refusetotakeshuckie"
+      ],
+      "text_refs": [
+        "ManiaText_AskLookAfterShuckle",
+        "ManiaText_GotShuckle",
+        "ManiaText_TakeCareOfShuckle"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript.alreadyhaveshuckie": {
+      "raw_lines": [
+        "checkflag ENGINE_GOT_SHUCKIE_TODAY",
+        "iffalse .returnshuckie",
+        "writetext ManiaText_TakeCareOfShuckle",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_GOT_SHUCKIE_TODAY"
+          ],
+          "raw": "checkflag ENGINE_GOT_SHUCKIE_TODAY"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "ManiaScript.returnshuckie"
+          ],
+          "raw": "iffalse .returnshuckie"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ManiaText_TakeCareOfShuckle"
+          ],
+          "raw": "writetext ManiaText_TakeCareOfShuckle"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "ManiaScript.returnshuckie"
+      ],
+      "text_refs": [
+        "ManiaText_TakeCareOfShuckle"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript.partyfull": {
+      "raw_lines": [
+        "writetext ManiaText_PartyFull",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "ManiaText_PartyFull"
+          ],
+          "raw": "writetext ManiaText_PartyFull"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "ManiaText_PartyFull"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript.refusetotakeshuckie": {
+      "raw_lines": [
+        "writetext ManiaText_IfHeComesBack",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "ManiaText_IfHeComesBack"
+          ],
+          "raw": "writetext ManiaText_IfHeComesBack"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "ManiaText_IfHeComesBack"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript.returnshuckie": {
+      "raw_lines": [
+        "writetext ManiaText_CanIHaveMyMonBack",
+        "yesorno",
+        "iffalse .refused",
+        "special ReturnShuckie",
+        "ifequal SHUCKIE_WRONG_MON, .wrong",
+        "ifequal SHUCKIE_REFUSED, .refused",
+        "ifequal SHUCKIE_HAPPY, .superhappy",
+        "ifequal SHUCKIE_FAINTED, .default_postevent",
+        "writetext ManiaText_ThankYou",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "ManiaText_CanIHaveMyMonBack"
+          ],
+          "raw": "writetext ManiaText_CanIHaveMyMonBack"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "ManiaScript.refused"
+          ],
+          "raw": "iffalse .refused"
+        },
+        {
+          "command": "special",
+          "args": [
+            "ReturnShuckie"
+          ],
+          "raw": "special ReturnShuckie"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SHUCKIE_WRONG_MON",
+            "ManiaScript.wrong"
+          ],
+          "raw": "ifequal SHUCKIE_WRONG_MON, .wrong"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SHUCKIE_REFUSED",
+            "ManiaScript.refused"
+          ],
+          "raw": "ifequal SHUCKIE_REFUSED, .refused"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SHUCKIE_HAPPY",
+            "ManiaScript.superhappy"
+          ],
+          "raw": "ifequal SHUCKIE_HAPPY, .superhappy"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SHUCKIE_FAINTED",
+            "ManiaScript.default_postevent"
+          ],
+          "raw": "ifequal SHUCKIE_FAINTED, .default_postevent"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ManiaText_ThankYou"
+          ],
+          "raw": "writetext ManiaText_ThankYou"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM"
+          ],
+          "raw": "setevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "ManiaScript.default_postevent",
+        "ManiaScript.refused",
+        "ManiaScript.superhappy",
+        "ManiaScript.wrong"
+      ],
+      "text_refs": [
+        "ManiaText_CanIHaveMyMonBack",
+        "ManiaText_ThankYou"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript.wrong": {
+      "raw_lines": [
+        "writetext ManiaText_ShuckleNotThere",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "ManiaText_ShuckleNotThere"
+          ],
+          "raw": "writetext ManiaText_ShuckleNotThere"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "ManiaText_ShuckleNotThere"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript.superhappy": {
+      "raw_lines": [
+        "writetext ManiaText_ShuckleLikesYou",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "ManiaText_ShuckleLikesYou"
+          ],
+          "raw": "writetext ManiaText_ShuckleLikesYou"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM"
+          ],
+          "raw": "setevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "ManiaText_ShuckleLikesYou"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript.refused": {
+      "raw_lines": [
+        "writetext ManiaText_SameAsBeingRobbed",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "ManiaText_SameAsBeingRobbed"
+          ],
+          "raw": "writetext ManiaText_SameAsBeingRobbed"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "ManiaText_SameAsBeingRobbed"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript.nothingleft": {
+      "raw_lines": [
+        "writetext ManiaText_ShuckleIsYourLastMon",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "ManiaText_ShuckleIsYourLastMon"
+          ],
+          "raw": "writetext ManiaText_ShuckleIsYourLastMon"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "ManiaText_ShuckleIsYourLastMon"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript.default_postevent": {
+      "raw_lines": [
+        "writetext ManiaText_HappinessSpeech",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "ManiaText_HappinessSpeech"
+          ],
+          "raw": "writetext ManiaText_HappinessSpeech"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "ManiaText_HappinessSpeech"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiasHouseUnusedBookshelf": {
+      "raw_lines": [
+        "jumpstd PictureBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PictureBookshelfScript"
+          ],
+          "raw": "jumpstd PictureBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "ManiasHouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, CIANWOOD_CITY, 1",
+        "warp_event  3,  7, CIANWOOD_CITY, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  2,  4, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ManiaScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "CIANWOOD_CITY",
+            "1"
+          ],
+          "raw": "warp_event  2,  7, CIANWOOD_CITY, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "CIANWOOD_CITY",
+            "1"
+          ],
+          "raw": "warp_event  3,  7, CIANWOOD_CITY, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "4",
+            "SPRITE_ROCKER",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ManiaScript",
+            "-1"
+          ],
+          "raw": "object_event  2,  4, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ManiaScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "ManiaText_AskLookAfterShuckle": {
+      "raw_lines": [
+        "text \"I, I'm in shock!\"",
+        "para \"A guy about your\"",
+        "line \"age with piercing\"",
+        "para \"eyes and long hair\"",
+        "line \"came in.\"",
+        "para \"He scared me into\"",
+        "line \"giving him my\"",
+        "cont \"prized #MON!\"",
+        "para \"I still have one\"",
+        "line \"left, but what if\"",
+        "cont \"he comes back?\"",
+        "para \"You look strong.\"",
+        "line \"Could you look\"",
+        "para \"after my #MON\"",
+        "line \"for a while?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I, I'm in shock!"
+        },
+        {
+          "command": "para",
+          "value": "A guy about your"
+        },
+        {
+          "command": "line",
+          "value": "age with piercing"
+        },
+        {
+          "command": "para",
+          "value": "eyes and long hair"
+        },
+        {
+          "command": "line",
+          "value": "came in."
+        },
+        {
+          "command": "para",
+          "value": "He scared me into"
+        },
+        {
+          "command": "line",
+          "value": "giving him my"
+        },
+        {
+          "command": "cont",
+          "value": "prized #MON!"
+        },
+        {
+          "command": "para",
+          "value": "I still have one"
+        },
+        {
+          "command": "line",
+          "value": "left, but what if"
+        },
+        {
+          "command": "cont",
+          "value": "he comes back?"
+        },
+        {
+          "command": "para",
+          "value": "You look strong."
+        },
+        {
+          "command": "line",
+          "value": "Could you look"
+        },
+        {
+          "command": "para",
+          "value": "after my #MON"
+        },
+        {
+          "command": "line",
+          "value": "for a while?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ManiaText_TakeCareOfShuckle": {
+      "raw_lines": [
+        "text \"Oh, thank you!\"",
+        "para \"Take good care of\"",
+        "line \"it, please!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, thank you!"
+        },
+        {
+          "command": "para",
+          "value": "Take good care of"
+        },
+        {
+          "command": "line",
+          "value": "it, please!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ManiaText_GotShuckle": {
+      "raw_lines": [
+        "text \"<PLAYER> received a\"",
+        "line \"#MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received a"
+        },
+        {
+          "command": "line",
+          "value": "#MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ManiaText_PartyFull": {
+      "raw_lines": [
+        "text \"Your #MON party\"",
+        "line \"is full.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Your #MON party"
+        },
+        {
+          "command": "line",
+          "value": "is full."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ManiaText_IfHeComesBack": {
+      "raw_lines": [
+        "text \"Oh, no\u2026 What'll\"",
+        "line \"I do if he comes\"",
+        "cont \"back?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, no\u2026 What'll"
+        },
+        {
+          "command": "line",
+          "value": "I do if he comes"
+        },
+        {
+          "command": "cont",
+          "value": "back?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ManiaText_CanIHaveMyMonBack": {
+      "raw_lines": [
+        "text \"Hi! How's my #-\"",
+        "line \"MON?\"",
+        "para \"I think I'm safe\"",
+        "line \"now, so may I have\"",
+        "cont \"it back?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hi! How's my #-"
+        },
+        {
+          "command": "line",
+          "value": "MON?"
+        },
+        {
+          "command": "para",
+          "value": "I think I'm safe"
+        },
+        {
+          "command": "line",
+          "value": "now, so may I have"
+        },
+        {
+          "command": "cont",
+          "value": "it back?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ManiaText_ThankYou": {
+      "raw_lines": [
+        "text \"Thank you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Thank you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ManiaText_ShuckleNotThere": {
+      "raw_lines": [
+        "text \"Hey, you don't\"",
+        "line \"have my #MON\"",
+        "cont \"with you.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hey, you don't"
+        },
+        {
+          "command": "line",
+          "value": "have my #MON"
+        },
+        {
+          "command": "cont",
+          "value": "with you."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ManiaText_ShuckleLikesYou": {
+      "raw_lines": [
+        "text \"My #MON has\"",
+        "line \"come to like you.\"",
+        "para \"All right, you\"",
+        "line \"should keep it.\"",
+        "para \"But promise to\"",
+        "line \"be good to it!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My #MON has"
+        },
+        {
+          "command": "line",
+          "value": "come to like you."
+        },
+        {
+          "command": "para",
+          "value": "All right, you"
+        },
+        {
+          "command": "line",
+          "value": "should keep it."
+        },
+        {
+          "command": "para",
+          "value": "But promise to"
+        },
+        {
+          "command": "line",
+          "value": "be good to it!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ManiaText_SameAsBeingRobbed": {
+      "raw_lines": [
+        "text \"Oh, no, no\u2026 That's\"",
+        "line \"the same as being\"",
+        "cont \"robbed.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, no, no\u2026 That's"
+        },
+        {
+          "command": "line",
+          "value": "the same as being"
+        },
+        {
+          "command": "cont",
+          "value": "robbed."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ManiaText_HappinessSpeech": {
+      "raw_lines": [
+        "text \"For #MON, hap-\"",
+        "line \"piness is being\"",
+        "para \"with a person who\"",
+        "line \"treats them well.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "For #MON, hap-"
+        },
+        {
+          "command": "line",
+          "value": "piness is being"
+        },
+        {
+          "command": "para",
+          "value": "with a person who"
+        },
+        {
+          "command": "line",
+          "value": "treats them well."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ManiaText_ShuckleIsYourLastMon": {
+      "raw_lines": [
+        "text \"If I take my #-\"",
+        "line \"MON back, what are\"",
+        "para \"you going to use\"",
+        "line \"in battle?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If I take my #-"
+        },
+        {
+          "command": "line",
+          "value": "MON back, what are"
+        },
+        {
+          "command": "para",
+          "value": "you going to use"
+        },
+        {
+          "command": "line",
+          "value": "in battle?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "PictureBookshelfScript"
+  ],
+  "dependencies": {
+    "ManiasHouse_MapScripts": {
+      "label_refs": [
+        "ManiaScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript": {
+      "label_refs": [
+        "ManiaScript.alreadyhaveshuckie",
+        "ManiaScript.default_postevent",
+        "ManiaScript.partyfull",
+        "ManiaScript.refusetotakeshuckie"
+      ],
+      "text_refs": [
+        "ManiaText_AskLookAfterShuckle",
+        "ManiaText_GotShuckle",
+        "ManiaText_TakeCareOfShuckle"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript.alreadyhaveshuckie": {
+      "label_refs": [
+        "ManiaScript.returnshuckie"
+      ],
+      "text_refs": [
+        "ManiaText_TakeCareOfShuckle"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript.partyfull": {
+      "label_refs": [],
+      "text_refs": [
+        "ManiaText_PartyFull"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript.refusetotakeshuckie": {
+      "label_refs": [],
+      "text_refs": [
+        "ManiaText_IfHeComesBack"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript.returnshuckie": {
+      "label_refs": [
+        "ManiaScript.default_postevent",
+        "ManiaScript.refused",
+        "ManiaScript.superhappy",
+        "ManiaScript.wrong"
+      ],
+      "text_refs": [
+        "ManiaText_CanIHaveMyMonBack",
+        "ManiaText_ThankYou"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript.wrong": {
+      "label_refs": [],
+      "text_refs": [
+        "ManiaText_ShuckleNotThere"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript.superhappy": {
+      "label_refs": [],
+      "text_refs": [
+        "ManiaText_ShuckleLikesYou"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript.refused": {
+      "label_refs": [],
+      "text_refs": [
+        "ManiaText_SameAsBeingRobbed"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript.nothingleft": {
+      "label_refs": [],
+      "text_refs": [
+        "ManiaText_ShuckleIsYourLastMon"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiaScript.default_postevent": {
+      "label_refs": [],
+      "text_refs": [
+        "ManiaText_HappinessSpeech"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ManiasHouseUnusedBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "ManiasHouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 1
+  }
+}

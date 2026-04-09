@@ -1,0 +1,1691 @@
+{
+  "crystal_map": "MahoganyMart1F",
+  "map_id": "MAHOGANY_MART_1F",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 48,
+  "tileset": "TILESET_TRADITIONAL_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_MAHOGANY_TOWN",
+  "music": "MUSIC_MAHOGANY_MART",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/GiftShop.blk",
+  "source_asm": "maps/MahoganyMart1F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "MahoganyMart1FNoopScene",
+        "scene_id": "SCENE_MAHOGANYMART1F_NOOP"
+      },
+      {
+        "script": "MahoganyMart1FLanceUncoversStairsScene",
+        "scene_id": "SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_TILES",
+        "script": "MahoganyMart1FStaircaseCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "MAHOGANY_TOWN",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "dest_map": "MAHOGANY_TOWN",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 7,
+        "y": 3,
+        "dest_map": "TEAM_ROCKET_BASE_B1F",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 4,
+        "y": 3,
+        "sprite": "SPRITE_PHARMACIST",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MahoganyMart1FPharmacistScript",
+        "flag": "EVENT_TEAM_ROCKET_BASE_POPULATION"
+      },
+      {
+        "x": 1,
+        "y": 6,
+        "sprite": "SPRITE_BLACK_BELT",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MahoganyMart1FBlackBeltScript",
+        "flag": "EVENT_TEAM_ROCKET_BASE_POPULATION"
+      },
+      {
+        "x": 4,
+        "y": 6,
+        "sprite": "SPRITE_LANCE",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE"
+      },
+      {
+        "x": 3,
+        "y": 6,
+        "sprite": "SPRITE_DRAGON",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE"
+      },
+      {
+        "x": 1,
+        "y": 3,
+        "sprite": "SPRITE_GRANNY",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MahoganyMart1FGrannyScript",
+        "flag": "EVENT_MAHOGANY_MART_OWNERS"
+      }
+    ]
+  },
+  "object_consts": [
+    "MAHOGANYMART1F_PHARMACIST",
+    "MAHOGANYMART1F_BLACK_BELT",
+    "MAHOGANYMART1F_LANCE",
+    "MAHOGANYMART1F_DRAGONITE",
+    "MAHOGANYMART1F_GRANNY"
+  ],
+  "scene_ids": [
+    "SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS",
+    "SCENE_MAHOGANYMART1F_NOOP"
+  ],
+  "scripts": {
+    "MahoganyMart1F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script MahoganyMart1FNoopScene,                SCENE_MAHOGANYMART1F_NOOP",
+        "scene_script MahoganyMart1FLanceUncoversStairsScene, SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS",
+        "def_callbacks",
+        "callback MAPCALLBACK_TILES, MahoganyMart1FStaircaseCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "MahoganyMart1FNoopScene",
+            "SCENE_MAHOGANYMART1F_NOOP"
+          ],
+          "raw": "scene_script MahoganyMart1FNoopScene,                SCENE_MAHOGANYMART1F_NOOP"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "MahoganyMart1FLanceUncoversStairsScene",
+            "SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS"
+          ],
+          "raw": "scene_script MahoganyMart1FLanceUncoversStairsScene, SCENE_MAHOGANYMART1F_LANCE_UNCOVERS_STAIRS"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_TILES",
+            "MahoganyMart1FStaircaseCallback"
+          ],
+          "raw": "callback MAPCALLBACK_TILES, MahoganyMart1FStaircaseCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "MahoganyMart1FNoopScene",
+      "label_refs": [
+        "MahoganyMart1FNoopScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1FNoopScene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1FLanceUncoversStairsScene": {
+      "raw_lines": [
+        "sdefer MahoganyMart1FLanceUncoversStaircaseScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "sdefer",
+          "args": [
+            "MahoganyMart1FLanceUncoversStaircaseScript"
+          ],
+          "raw": "sdefer MahoganyMart1FLanceUncoversStaircaseScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "sdefer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1FStaircaseCallback": {
+      "raw_lines": [
+        "checkevent EVENT_UNCOVERED_STAIRCASE_IN_MAHOGANY_MART",
+        "iftrue .ShowStairs",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_UNCOVERED_STAIRCASE_IN_MAHOGANY_MART"
+          ],
+          "raw": "checkevent EVENT_UNCOVERED_STAIRCASE_IN_MAHOGANY_MART"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MahoganyMart1FStaircaseCallback.ShowStairs"
+          ],
+          "raw": "iftrue .ShowStairs"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "MahoganyMart1FStaircaseCallback.ShowStairs"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1FStaircaseCallback.ShowStairs": {
+      "raw_lines": [
+        "changeblock 6, 2, $1e",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "changeblock",
+          "args": [
+            "6",
+            "2",
+            "$1e"
+          ],
+          "raw": "changeblock 6, 2, $1e"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "changeblock",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1FPharmacistScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_DECIDED_TO_HELP_LANCE",
+        "iftrue .LanceEntered",
+        "pokemart MARTTYPE_STANDARD, MART_MAHOGANY_1",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_DECIDED_TO_HELP_LANCE"
+          ],
+          "raw": "checkevent EVENT_DECIDED_TO_HELP_LANCE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MahoganyMart1FPharmacistScript.LanceEntered"
+          ],
+          "raw": "iftrue .LanceEntered"
+        },
+        {
+          "command": "pokemart",
+          "args": [
+            "MARTTYPE_STANDARD",
+            "MART_MAHOGANY_1"
+          ],
+          "raw": "pokemart MARTTYPE_STANDARD, MART_MAHOGANY_1"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "MahoganyMart1FPharmacistScript.LanceEntered"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1FPharmacistScript.LanceEntered": {
+      "raw_lines": [
+        "writetext MahoganyMart1FPharmacistText_LanceEntered",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "MahoganyMart1FPharmacistText_LanceEntered"
+          ],
+          "raw": "writetext MahoganyMart1FPharmacistText_LanceEntered"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyMart1FPharmacistText_LanceEntered"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1FBlackBeltScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_DECIDED_TO_HELP_LANCE",
+        "iftrue .LanceEntered",
+        "writetext MahoganyMart1FBlackBeltText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_DECIDED_TO_HELP_LANCE"
+          ],
+          "raw": "checkevent EVENT_DECIDED_TO_HELP_LANCE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MahoganyMart1FBlackBeltScript.LanceEntered"
+          ],
+          "raw": "iftrue .LanceEntered"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MahoganyMart1FBlackBeltText"
+          ],
+          "raw": "writetext MahoganyMart1FBlackBeltText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "MahoganyMart1FBlackBeltScript.LanceEntered"
+      ],
+      "text_refs": [
+        "MahoganyMart1FBlackBeltText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1FBlackBeltScript.LanceEntered": {
+      "raw_lines": [
+        "writetext MahoganyMart1FBlackBeltText_LanceEntered",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "MahoganyMart1FBlackBeltText_LanceEntered"
+          ],
+          "raw": "writetext MahoganyMart1FBlackBeltText_LanceEntered"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyMart1FBlackBeltText_LanceEntered"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1FLanceUncoversStaircaseScript": {
+      "raw_lines": [
+        "pause 15",
+        "opentext",
+        "writetext MahoganyMart1FLanceDragoniteHyperBeamText",
+        "pause 15",
+        "closetext",
+        "playsound SFX_TACKLE",
+        "applymovement MAHOGANYMART1F_DRAGONITE, MahoganyMart1FDragoniteTackleMovement",
+        "applymovement MAHOGANYMART1F_BLACK_BELT, MahoganyMart1FBlackBeltKnockedBackMovement",
+        "pause 15",
+        "disappear MAHOGANYMART1F_DRAGONITE",
+        "pause 15",
+        "applymovement MAHOGANYMART1F_LANCE, MahoganyMart1FLanceApproachPlayerMovement",
+        "opentext",
+        "writetext MahoganyMart1FLanceRadioText",
+        "waitbutton",
+        "closetext",
+        "follow MAHOGANYMART1F_LANCE, PLAYER",
+        "applymovement MAHOGANYMART1F_LANCE, MahoganyMart1FLanceApproachPharmacistMovement",
+        "applymovement MAHOGANYMART1F_PHARMACIST, MahoganyMart1FPharmacistShovedAsideMovement",
+        "applymovement MAHOGANYMART1F_LANCE, MahoganyMart1FLanceApproachHiddenStairsMovement",
+        "stopfollow",
+        "opentext",
+        "writetext MahoganyMart1FLanceStairsText",
+        "waitbutton",
+        "showemote EMOTE_SHOCK, MAHOGANYMART1F_PHARMACIST, 10",
+        "playsound SFX_FAINT",
+        "changeblock 6, 2, $1e",
+        "refreshmap",
+        "closetext",
+        "setevent EVENT_UNCOVERED_STAIRCASE_IN_MAHOGANY_MART",
+        "turnobject MAHOGANYMART1F_LANCE, LEFT",
+        "opentext",
+        "writetext MahoganyMart1FLanceSplitUpText",
+        "waitbutton",
+        "closetext",
+        "applymovement MAHOGANYMART1F_LANCE, MahoganyMart1FLanceGoDownStairsMovement",
+        "playsound SFX_EXIT_BUILDING",
+        "disappear MAHOGANYMART1F_LANCE",
+        "setscene SCENE_MAHOGANYMART1F_NOOP",
+        "waitsfx",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MahoganyMart1FLanceDragoniteHyperBeamText"
+          ],
+          "raw": "writetext MahoganyMart1FLanceDragoniteHyperBeamText"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_TACKLE"
+          ],
+          "raw": "playsound SFX_TACKLE"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "MAHOGANYMART1F_DRAGONITE",
+            "MahoganyMart1FDragoniteTackleMovement"
+          ],
+          "raw": "applymovement MAHOGANYMART1F_DRAGONITE, MahoganyMart1FDragoniteTackleMovement"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "MAHOGANYMART1F_BLACK_BELT",
+            "MahoganyMart1FBlackBeltKnockedBackMovement"
+          ],
+          "raw": "applymovement MAHOGANYMART1F_BLACK_BELT, MahoganyMart1FBlackBeltKnockedBackMovement"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "MAHOGANYMART1F_DRAGONITE"
+          ],
+          "raw": "disappear MAHOGANYMART1F_DRAGONITE"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "MAHOGANYMART1F_LANCE",
+            "MahoganyMart1FLanceApproachPlayerMovement"
+          ],
+          "raw": "applymovement MAHOGANYMART1F_LANCE, MahoganyMart1FLanceApproachPlayerMovement"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MahoganyMart1FLanceRadioText"
+          ],
+          "raw": "writetext MahoganyMart1FLanceRadioText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "follow",
+          "args": [
+            "MAHOGANYMART1F_LANCE",
+            "PLAYER"
+          ],
+          "raw": "follow MAHOGANYMART1F_LANCE, PLAYER"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "MAHOGANYMART1F_LANCE",
+            "MahoganyMart1FLanceApproachPharmacistMovement"
+          ],
+          "raw": "applymovement MAHOGANYMART1F_LANCE, MahoganyMart1FLanceApproachPharmacistMovement"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "MAHOGANYMART1F_PHARMACIST",
+            "MahoganyMart1FPharmacistShovedAsideMovement"
+          ],
+          "raw": "applymovement MAHOGANYMART1F_PHARMACIST, MahoganyMart1FPharmacistShovedAsideMovement"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "MAHOGANYMART1F_LANCE",
+            "MahoganyMart1FLanceApproachHiddenStairsMovement"
+          ],
+          "raw": "applymovement MAHOGANYMART1F_LANCE, MahoganyMart1FLanceApproachHiddenStairsMovement"
+        },
+        {
+          "command": "stopfollow",
+          "args": [],
+          "raw": "stopfollow"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MahoganyMart1FLanceStairsText"
+          ],
+          "raw": "writetext MahoganyMart1FLanceStairsText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "MAHOGANYMART1F_PHARMACIST",
+            "10"
+          ],
+          "raw": "showemote EMOTE_SHOCK, MAHOGANYMART1F_PHARMACIST, 10"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_FAINT"
+          ],
+          "raw": "playsound SFX_FAINT"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "6",
+            "2",
+            "$1e"
+          ],
+          "raw": "changeblock 6, 2, $1e"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_UNCOVERED_STAIRCASE_IN_MAHOGANY_MART"
+          ],
+          "raw": "setevent EVENT_UNCOVERED_STAIRCASE_IN_MAHOGANY_MART"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "MAHOGANYMART1F_LANCE",
+            "LEFT"
+          ],
+          "raw": "turnobject MAHOGANYMART1F_LANCE, LEFT"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MahoganyMart1FLanceSplitUpText"
+          ],
+          "raw": "writetext MahoganyMart1FLanceSplitUpText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "MAHOGANYMART1F_LANCE",
+            "MahoganyMart1FLanceGoDownStairsMovement"
+          ],
+          "raw": "applymovement MAHOGANYMART1F_LANCE, MahoganyMart1FLanceGoDownStairsMovement"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "MAHOGANYMART1F_LANCE"
+          ],
+          "raw": "disappear MAHOGANYMART1F_LANCE"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_MAHOGANYMART1F_NOOP"
+          ],
+          "raw": "setscene SCENE_MAHOGANYMART1F_NOOP"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "pause",
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyMart1FLanceDragoniteHyperBeamText",
+        "MahoganyMart1FLanceRadioText",
+        "MahoganyMart1FLanceSplitUpText",
+        "MahoganyMart1FLanceStairsText"
+      ],
+      "movement_refs": [
+        "MahoganyMart1FBlackBeltKnockedBackMovement",
+        "MahoganyMart1FDragoniteTackleMovement",
+        "MahoganyMart1FLanceApproachHiddenStairsMovement",
+        "MahoganyMart1FLanceApproachPharmacistMovement",
+        "MahoganyMart1FLanceApproachPlayerMovement",
+        "MahoganyMart1FLanceGoDownStairsMovement",
+        "MahoganyMart1FPharmacistShovedAsideMovement"
+      ],
+      "scene_refs": [
+        "SCENE_MAHOGANYMART1F_NOOP"
+      ],
+      "std_calls": []
+    },
+    "MahoganyMart1FGrannyScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "pokemart MARTTYPE_STANDARD, MART_MAHOGANY_2",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "pokemart",
+          "args": [
+            "MARTTYPE_STANDARD",
+            "MART_MAHOGANY_2"
+          ],
+          "raw": "pokemart MARTTYPE_STANDARD, MART_MAHOGANY_2"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  7, MAHOGANY_TOWN, 1",
+        "warp_event  4,  7, MAHOGANY_TOWN, 1",
+        "warp_event  7,  3, TEAM_ROCKET_BASE_B1F, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  4,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMart1FPharmacistScript, EVENT_TEAM_ROCKET_BASE_POPULATION",
+        "object_event  1,  6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMart1FBlackBeltScript, EVENT_TEAM_ROCKET_BASE_POPULATION",
+        "object_event  4,  6, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE",
+        "object_event  3,  6, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE",
+        "object_event  1,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMart1FGrannyScript, EVENT_MAHOGANY_MART_OWNERS"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "MAHOGANY_TOWN",
+            "1"
+          ],
+          "raw": "warp_event  3,  7, MAHOGANY_TOWN, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "MAHOGANY_TOWN",
+            "1"
+          ],
+          "raw": "warp_event  4,  7, MAHOGANY_TOWN, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "7",
+            "3",
+            "TEAM_ROCKET_BASE_B1F",
+            "1"
+          ],
+          "raw": "warp_event  7,  3, TEAM_ROCKET_BASE_B1F, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "3",
+            "SPRITE_PHARMACIST",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MahoganyMart1FPharmacistScript",
+            "EVENT_TEAM_ROCKET_BASE_POPULATION"
+          ],
+          "raw": "object_event  4,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMart1FPharmacistScript, EVENT_TEAM_ROCKET_BASE_POPULATION"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "6",
+            "SPRITE_BLACK_BELT",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MahoganyMart1FBlackBeltScript",
+            "EVENT_TEAM_ROCKET_BASE_POPULATION"
+          ],
+          "raw": "object_event  1,  6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMart1FBlackBeltScript, EVENT_TEAM_ROCKET_BASE_POPULATION"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "6",
+            "SPRITE_LANCE",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE"
+          ],
+          "raw": "object_event  4,  6, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "6",
+            "SPRITE_DRAGON",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE"
+          ],
+          "raw": "object_event  3,  6, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MAHOGANY_MART_LANCE_AND_DRAGONITE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "3",
+            "SPRITE_GRANNY",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MahoganyMart1FGrannyScript",
+            "EVENT_MAHOGANY_MART_OWNERS"
+          ],
+          "raw": "object_event  1,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMart1FGrannyScript, EVENT_MAHOGANY_MART_OWNERS"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "MahoganyMart1FRageCandyBarText": {
+      "raw_lines": [
+        "text \"Hello, kiddo!\"",
+        "para \"How would you like\"",
+        "line \"some RAGECANDYBAR?\"",
+        "para \"It's the thing to\"",
+        "line \"eat in MAHOGANY!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hello, kiddo!"
+        },
+        {
+          "command": "para",
+          "value": "How would you like"
+        },
+        {
+          "command": "line",
+          "value": "some RAGECANDYBAR?"
+        },
+        {
+          "command": "para",
+          "value": "It's the thing to"
+        },
+        {
+          "command": "line",
+          "value": "eat in MAHOGANY!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MahoganyMart1FPharmacistText_LanceEntered": {
+      "raw_lines": [
+        "text \"Arrgh\u2026 You found\"",
+        "line \"the secret stair-\"",
+        "cont \"way\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Arrgh\u2026 You found"
+        },
+        {
+          "command": "line",
+          "value": "the secret stair-"
+        },
+        {
+          "command": "cont",
+          "value": "way\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MahoganyMart1FBlackBeltText": {
+      "raw_lines": [
+        "text \"Heheh! The experi-\"",
+        "line \"ment worked like a\"",
+        "cont \"charm.\"",
+        "para \"MAGIKARP are just\"",
+        "line \"worthless, but\"",
+        "para \"GYARADOS are big\"",
+        "line \"moneymakers.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Heheh! The experi-"
+        },
+        {
+          "command": "line",
+          "value": "ment worked like a"
+        },
+        {
+          "command": "cont",
+          "value": "charm."
+        },
+        {
+          "command": "para",
+          "value": "MAGIKARP are just"
+        },
+        {
+          "command": "line",
+          "value": "worthless, but"
+        },
+        {
+          "command": "para",
+          "value": "GYARADOS are big"
+        },
+        {
+          "command": "line",
+          "value": "moneymakers."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MahoganyMart1FBlackBeltText_LanceEntered": {
+      "raw_lines": [
+        "text \"Urrgh\u2026\"",
+        "para \"That guy's dragon\"",
+        "line \"#MON are tough\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Urrgh\u2026"
+        },
+        {
+          "command": "para",
+          "value": "That guy's dragon"
+        },
+        {
+          "command": "line",
+          "value": "#MON are tough\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MahoganyMart1FLanceDragoniteHyperBeamText": {
+      "raw_lines": [
+        "text \"LANCE: DRAGONITE,\"",
+        "line \"HYPER BEAM.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "LANCE: DRAGONITE,"
+        },
+        {
+          "command": "line",
+          "value": "HYPER BEAM."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MahoganyMart1FLanceRadioText": {
+      "raw_lines": [
+        "text \"What took you,\"",
+        "line \"<PLAY_G>?\"",
+        "para \"Just as I thought,\"",
+        "line \"that strange radio\"",
+        "para \"signal is coming\"",
+        "line \"from here.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What took you,"
+        },
+        {
+          "command": "line",
+          "value": "<PLAY_G>?"
+        },
+        {
+          "command": "para",
+          "value": "Just as I thought,"
+        },
+        {
+          "command": "line",
+          "value": "that strange radio"
+        },
+        {
+          "command": "para",
+          "value": "signal is coming"
+        },
+        {
+          "command": "line",
+          "value": "from here."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MahoganyMart1FLanceStairsText": {
+      "raw_lines": [
+        "text \"The stairs are\"",
+        "line \"right here.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The stairs are"
+        },
+        {
+          "command": "line",
+          "value": "right here."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MahoganyMart1FLanceSplitUpText": {
+      "raw_lines": [
+        "text \"LANCE: <PLAY_G>, we\"",
+        "line \"should split up to\"",
+        "para \"check this place.\"",
+        "line \"I'll go first.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "LANCE: <PLAY_G>, we"
+        },
+        {
+          "command": "line",
+          "value": "should split up to"
+        },
+        {
+          "command": "para",
+          "value": "check this place."
+        },
+        {
+          "command": "line",
+          "value": "I'll go first."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "MahoganyMart1FDragoniteTackleMovement": {
+      "raw_lines": [
+        "fix_facing",
+        "big_step LEFT",
+        "big_step RIGHT",
+        "remove_fixed_facing",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "fix_facing",
+          "args": []
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "remove_fixed_facing",
+          "args": []
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MahoganyMart1FBlackBeltKnockedBackMovement": {
+      "raw_lines": [
+        "fix_facing",
+        "big_step LEFT",
+        "remove_fixed_facing",
+        "turn_head DOWN",
+        "turn_head LEFT",
+        "turn_head UP",
+        "turn_head RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "fix_facing",
+          "args": []
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "remove_fixed_facing",
+          "args": []
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MahoganyMart1FPharmacistShovedAsideMovement": {
+      "raw_lines": [
+        "fix_facing",
+        "big_step LEFT",
+        "remove_fixed_facing",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "fix_facing",
+          "args": []
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "remove_fixed_facing",
+          "args": []
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MahoganyMart1FLanceApproachPlayerMovement": {
+      "raw_lines": [
+        "slow_step LEFT",
+        "turn_head DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "slow_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MahoganyMart1FLanceApproachPharmacistMovement": {
+      "raw_lines": [
+        "slow_step RIGHT",
+        "slow_step UP",
+        "slow_step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "slow_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MahoganyMart1FLanceApproachHiddenStairsMovement": {
+      "raw_lines": [
+        "slow_step UP",
+        "slow_step RIGHT",
+        "slow_step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "slow_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "slow_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MahoganyMart1FLanceGoDownStairsMovement": {
+      "raw_lines": [
+        "slow_step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "slow_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "MahoganyMart1F_MapScripts": {
+      "label_refs": [
+        "MahoganyMart1FNoopScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1FNoopScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1FLanceUncoversStairsScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1FStaircaseCallback": {
+      "label_refs": [
+        "MahoganyMart1FStaircaseCallback.ShowStairs"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1FStaircaseCallback.ShowStairs": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1FPharmacistScript": {
+      "label_refs": [
+        "MahoganyMart1FPharmacistScript.LanceEntered"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1FPharmacistScript.LanceEntered": {
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyMart1FPharmacistText_LanceEntered"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1FBlackBeltScript": {
+      "label_refs": [
+        "MahoganyMart1FBlackBeltScript.LanceEntered"
+      ],
+      "text_refs": [
+        "MahoganyMart1FBlackBeltText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1FBlackBeltScript.LanceEntered": {
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyMart1FBlackBeltText_LanceEntered"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1FLanceUncoversStaircaseScript": {
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyMart1FLanceDragoniteHyperBeamText",
+        "MahoganyMart1FLanceRadioText",
+        "MahoganyMart1FLanceSplitUpText",
+        "MahoganyMart1FLanceStairsText"
+      ],
+      "movement_refs": [
+        "MahoganyMart1FBlackBeltKnockedBackMovement",
+        "MahoganyMart1FDragoniteTackleMovement",
+        "MahoganyMart1FLanceApproachHiddenStairsMovement",
+        "MahoganyMart1FLanceApproachPharmacistMovement",
+        "MahoganyMart1FLanceApproachPlayerMovement",
+        "MahoganyMart1FLanceGoDownStairsMovement",
+        "MahoganyMart1FPharmacistShovedAsideMovement"
+      ],
+      "scene_refs": [
+        "SCENE_MAHOGANYMART1F_NOOP"
+      ],
+      "std_calls": []
+    },
+    "MahoganyMart1FGrannyScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyMart1F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
+    "warp_events": 3,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 5
+  }
+}

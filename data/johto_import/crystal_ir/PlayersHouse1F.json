@@ -18,6 +18,17 @@
   "source_asm": "maps/PlayersHouse1F.asm",
   "connections": [],
   "events": {
+    "scene_scripts": [
+      {
+        "script": "PlayersHouse1FNoop1Scene",
+        "scene_id": "SCENE_PLAYERSHOUSE1F_MEET_MOM"
+      },
+      {
+        "script": "PlayersHouse1FNoop2Scene",
+        "scene_id": "SCENE_PLAYERSHOUSE1F_NOOP"
+      }
+    ],
+    "callbacks": [],
     "warp_events": [
       {
         "x": 6,
@@ -86,8 +97,13 @@
         "movement": "SPRITEMOVEDATA_STANDING_LEFT",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_SCRIPT",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MomScript",
+        "flag": "EVENT_PLAYERS_HOUSE_MOM_1"
       },
       {
         "x": 2,
@@ -96,8 +112,13 @@
         "movement": "SPRITEMOVEDATA_STANDING_UP",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_SCRIPT",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": "MORN",
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MomScript",
+        "flag": "EVENT_PLAYERS_HOUSE_MOM_2"
       },
       {
         "x": 7,
@@ -106,8 +127,13 @@
         "movement": "SPRITEMOVEDATA_STANDING_LEFT",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_SCRIPT",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": "DAY",
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MomScript",
+        "flag": "EVENT_PLAYERS_HOUSE_MOM_2"
       },
       {
         "x": 0,
@@ -116,8 +142,13 @@
         "movement": "SPRITEMOVEDATA_STANDING_UP",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_SCRIPT",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": "NITE",
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MomScript",
+        "flag": "EVENT_PLAYERS_HOUSE_MOM_2"
       },
       {
         "x": 4,
@@ -126,12 +157,2802 @@
         "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_SCRIPT",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "NeighborScript",
+        "flag": "EVENT_PLAYERS_HOUSE_1F_NEIGHBOR"
       }
     ]
   },
+  "object_consts": [
+    "PLAYERSHOUSE1F_MOM1",
+    "PLAYERSHOUSE1F_MOM2",
+    "PLAYERSHOUSE1F_MOM3",
+    "PLAYERSHOUSE1F_MOM4",
+    "PLAYERSHOUSE1F_POKEFAN_F"
+  ],
+  "scene_ids": [
+    "SCENE_PLAYERSHOUSE1F_MEET_MOM",
+    "SCENE_PLAYERSHOUSE1F_NOOP"
+  ],
+  "scripts": {
+    "PlayersHouse1F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script PlayersHouse1FNoop1Scene, SCENE_PLAYERSHOUSE1F_MEET_MOM",
+        "scene_script PlayersHouse1FNoop2Scene, SCENE_PLAYERSHOUSE1F_NOOP",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "PlayersHouse1FNoop1Scene",
+            "SCENE_PLAYERSHOUSE1F_MEET_MOM"
+          ],
+          "raw": "scene_script PlayersHouse1FNoop1Scene, SCENE_PLAYERSHOUSE1F_MEET_MOM"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "PlayersHouse1FNoop2Scene",
+            "SCENE_PLAYERSHOUSE1F_NOOP"
+          ],
+          "raw": "scene_script PlayersHouse1FNoop2Scene, SCENE_PLAYERSHOUSE1F_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "PlayersHouse1FNoop1Scene",
+      "label_refs": [
+        "PlayersHouse1FNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse1FNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse1FNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomLeftScript": {
+      "raw_lines": [
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        }
+      ],
+      "first_command": "setevent",
+      "fallthrough_label": "MeetMomRightScript",
+      "label_refs": [
+        "MeetMomRightScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomRightScript": {
+      "raw_lines": [
+        "playmusic MUSIC_MOM",
+        "showemote EMOTE_SHOCK, PLAYERSHOUSE1F_MOM1, 15",
+        "turnobject PLAYER, LEFT",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iffalse .OnRight",
+        "applymovement PLAYERSHOUSE1F_MOM1, MomTurnsTowardPlayerMovement",
+        "sjump MeetMomScript"
+      ],
+      "commands": [
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_MOM"
+          ],
+          "raw": "playmusic MUSIC_MOM"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYERSHOUSE1F_MOM1",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYERSHOUSE1F_MOM1, 15"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYER, LEFT"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "MeetMomRightScript.OnRight"
+          ],
+          "raw": "iffalse .OnRight"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYERSHOUSE1F_MOM1",
+            "MomTurnsTowardPlayerMovement"
+          ],
+          "raw": "applymovement PLAYERSHOUSE1F_MOM1, MomTurnsTowardPlayerMovement"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "MeetMomScript"
+          ],
+          "raw": "sjump MeetMomScript"
+        }
+      ],
+      "first_command": "playmusic",
+      "label_refs": [
+        "MeetMomRightScript.OnRight",
+        "MeetMomScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MomTurnsTowardPlayerMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomRightScript.OnRight": {
+      "raw_lines": [
+        "applymovement PLAYERSHOUSE1F_MOM1, MomWalksToPlayerMovement"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYERSHOUSE1F_MOM1",
+            "MomWalksToPlayerMovement"
+          ],
+          "raw": "applymovement PLAYERSHOUSE1F_MOM1, MomWalksToPlayerMovement"
+        }
+      ],
+      "first_command": "applymovement",
+      "fallthrough_label": "MeetMomScript",
+      "label_refs": [
+        "MeetMomScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MomWalksToPlayerMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext ElmsLookingForYouText",
+        "promptbutton",
+        "getstring STRING_BUFFER_4, PokegearName",
+        "scall PlayersHouse1FReceiveItemStd",
+        "setflag ENGINE_POKEGEAR",
+        "setflag ENGINE_PHONE_CARD",
+        "addcellnum PHONE_MOM",
+        "setscene SCENE_PLAYERSHOUSE1F_NOOP",
+        "setevent EVENT_PLAYERS_HOUSE_MOM_1",
+        "clearevent EVENT_PLAYERS_HOUSE_MOM_2",
+        "writetext MomGivesPokegearText",
+        "promptbutton",
+        "special SetDayOfWeek"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ElmsLookingForYouText"
+          ],
+          "raw": "writetext ElmsLookingForYouText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "getstring",
+          "args": [
+            "STRING_BUFFER_4",
+            "PokegearName"
+          ],
+          "raw": "getstring STRING_BUFFER_4, PokegearName"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "PlayersHouse1FReceiveItemStd"
+          ],
+          "raw": "scall PlayersHouse1FReceiveItemStd"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_POKEGEAR"
+          ],
+          "raw": "setflag ENGINE_POKEGEAR"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_PHONE_CARD"
+          ],
+          "raw": "setflag ENGINE_PHONE_CARD"
+        },
+        {
+          "command": "addcellnum",
+          "args": [
+            "PHONE_MOM"
+          ],
+          "raw": "addcellnum PHONE_MOM"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_PLAYERSHOUSE1F_NOOP"
+          ],
+          "raw": "setscene SCENE_PLAYERSHOUSE1F_NOOP"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_PLAYERS_HOUSE_MOM_1"
+          ],
+          "raw": "setevent EVENT_PLAYERS_HOUSE_MOM_1"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_PLAYERS_HOUSE_MOM_2"
+          ],
+          "raw": "clearevent EVENT_PLAYERS_HOUSE_MOM_2"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "MomGivesPokegearText"
+          ],
+          "raw": "writetext MomGivesPokegearText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "special",
+          "args": [
+            "SetDayOfWeek"
+          ],
+          "raw": "special SetDayOfWeek"
+        }
+      ],
+      "first_command": "opentext",
+      "fallthrough_label": "MeetMomScript.SetDayOfWeek",
+      "label_refs": [
+        "MeetMomScript.SetDayOfWeek",
+        "PlayersHouse1FReceiveItemStd"
+      ],
+      "text_refs": [
+        "ElmsLookingForYouText",
+        "MomGivesPokegearText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_PLAYERSHOUSE1F_NOOP"
+      ],
+      "std_calls": []
+    },
+    "MeetMomScript.SetDayOfWeek": {
+      "raw_lines": [
+        "writetext IsItDSTText",
+        "yesorno",
+        "iffalse .WrongDay",
+        "special InitialSetDSTFlag",
+        "yesorno",
+        "iffalse .SetDayOfWeek",
+        "sjump .DayOfWeekDone"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "IsItDSTText"
+          ],
+          "raw": "writetext IsItDSTText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "MeetMomScript.WrongDay"
+          ],
+          "raw": "iffalse .WrongDay"
+        },
+        {
+          "command": "special",
+          "args": [
+            "InitialSetDSTFlag"
+          ],
+          "raw": "special InitialSetDSTFlag"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "MeetMomScript.SetDayOfWeek"
+          ],
+          "raw": "iffalse .SetDayOfWeek"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "MeetMomScript.DayOfWeekDone"
+          ],
+          "raw": "sjump .DayOfWeekDone"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "MeetMomScript.DayOfWeekDone",
+        "MeetMomScript.SetDayOfWeek",
+        "MeetMomScript.WrongDay"
+      ],
+      "text_refs": [
+        "IsItDSTText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomScript.WrongDay": {
+      "raw_lines": [
+        "special InitialClearDSTFlag",
+        "yesorno",
+        "iffalse .SetDayOfWeek"
+      ],
+      "commands": [
+        {
+          "command": "special",
+          "args": [
+            "InitialClearDSTFlag"
+          ],
+          "raw": "special InitialClearDSTFlag"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "MeetMomScript.SetDayOfWeek"
+          ],
+          "raw": "iffalse .SetDayOfWeek"
+        }
+      ],
+      "first_command": "special",
+      "fallthrough_label": "MeetMomScript.DayOfWeekDone",
+      "label_refs": [
+        "MeetMomScript.DayOfWeekDone",
+        "MeetMomScript.SetDayOfWeek"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomScript.DayOfWeekDone": {
+      "raw_lines": [
+        "writetext ComeHomeForDSTText",
+        "yesorno",
+        "iffalse .ExplainPhone",
+        "sjump .KnowPhone"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "ComeHomeForDSTText"
+          ],
+          "raw": "writetext ComeHomeForDSTText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "MeetMomScript.ExplainPhone"
+          ],
+          "raw": "iffalse .ExplainPhone"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "MeetMomScript.KnowPhone"
+          ],
+          "raw": "sjump .KnowPhone"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "MeetMomScript.ExplainPhone",
+        "MeetMomScript.KnowPhone"
+      ],
+      "text_refs": [
+        "ComeHomeForDSTText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomScript.KnowPhone": {
+      "raw_lines": [
+        "writetext KnowTheInstructionsText",
+        "promptbutton",
+        "sjump .FinishPhone"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "KnowTheInstructionsText"
+          ],
+          "raw": "writetext KnowTheInstructionsText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "MeetMomScript.FinishPhone"
+          ],
+          "raw": "sjump .FinishPhone"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "MeetMomScript.FinishPhone"
+      ],
+      "text_refs": [
+        "KnowTheInstructionsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomScript.ExplainPhone": {
+      "raw_lines": [
+        "writetext DontKnowTheInstructionsText",
+        "promptbutton",
+        "sjump .FinishPhone"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "DontKnowTheInstructionsText"
+          ],
+          "raw": "writetext DontKnowTheInstructionsText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "MeetMomScript.FinishPhone"
+          ],
+          "raw": "sjump .FinishPhone"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "MeetMomScript.FinishPhone"
+      ],
+      "text_refs": [
+        "DontKnowTheInstructionsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomScript.FinishPhone": {
+      "raw_lines": [
+        "writetext InstructionsNextText",
+        "waitbutton",
+        "closetext",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iftrue .FromRight",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2",
+        "iffalse .FromLeft",
+        "sjump .Finish"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "InstructionsNextText"
+          ],
+          "raw": "writetext InstructionsNextText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MeetMomScript.FromRight"
+          ],
+          "raw": "iftrue .FromRight"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "MeetMomScript.FromLeft"
+          ],
+          "raw": "iffalse .FromLeft"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "MeetMomScript.Finish"
+          ],
+          "raw": "sjump .Finish"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "MeetMomScript.Finish",
+        "MeetMomScript.FromLeft",
+        "MeetMomScript.FromRight"
+      ],
+      "text_refs": [
+        "InstructionsNextText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomScript.FromRight": {
+      "raw_lines": [
+        "applymovement PLAYERSHOUSE1F_MOM1, MomTurnsBackMovement",
+        "sjump .Finish"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYERSHOUSE1F_MOM1",
+            "MomTurnsBackMovement"
+          ],
+          "raw": "applymovement PLAYERSHOUSE1F_MOM1, MomTurnsBackMovement"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "MeetMomScript.Finish"
+          ],
+          "raw": "sjump .Finish"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [
+        "MeetMomScript.Finish"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MomTurnsBackMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomScript.FromLeft": {
+      "raw_lines": [
+        "applymovement PLAYERSHOUSE1F_MOM1, MomWalksBackMovement",
+        "sjump .Finish"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYERSHOUSE1F_MOM1",
+            "MomWalksBackMovement"
+          ],
+          "raw": "applymovement PLAYERSHOUSE1F_MOM1, MomWalksBackMovement"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "MeetMomScript.Finish"
+          ],
+          "raw": "sjump .Finish"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [
+        "MeetMomScript.Finish"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MomWalksBackMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomScript.Finish": {
+      "raw_lines": [
+        "special RestartMapMusic",
+        "turnobject PLAYERSHOUSE1F_MOM1, LEFT",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYERSHOUSE1F_MOM1",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYERSHOUSE1F_MOM1, LEFT"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "special",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomTalkedScript": {
+      "raw_lines": [
+        "playmusic MUSIC_MOM",
+        "sjump MeetMomScript"
+      ],
+      "commands": [
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_MOM"
+          ],
+          "raw": "playmusic MUSIC_MOM"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "MeetMomScript"
+          ],
+          "raw": "sjump MeetMomScript"
+        }
+      ],
+      "first_command": "playmusic",
+      "label_refs": [
+        "MeetMomScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PokegearName": {
+      "raw_lines": [
+        "db \"#GEAR@\""
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "\"#GEAR@\""
+          ],
+          "raw": "db \"#GEAR@\""
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "PlayersHouse1FReceiveItemStd",
+      "label_refs": [
+        "PlayersHouse1FReceiveItemStd"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse1FReceiveItemStd": {
+      "raw_lines": [
+        "jumpstd ReceiveItemScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "ReceiveItemScript"
+          ],
+          "raw": "jumpstd ReceiveItemScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "ReceiveItemScript"
+      ]
+    },
+    "MomScript": {
+      "raw_lines": [
+        "faceplayer",
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2",
+        "checkscene",
+        "iffalse MeetMomTalkedScript",
+        "opentext",
+        "checkevent EVENT_FIRST_TIME_BANKING_WITH_MOM",
+        "iftrue .FirstTimeBanking",
+        "checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST",
+        "iftrue .BankOfMom",
+        "checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM",
+        "iftrue .GaveMysteryEgg",
+        "checkevent EVENT_GOT_A_POKEMON_FROM_ELM",
+        "iftrue .GotAPokemon",
+        "writetext HurryUpElmIsWaitingText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+        },
+        {
+          "command": "checkscene",
+          "args": [],
+          "raw": "checkscene"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "MeetMomTalkedScript"
+          ],
+          "raw": "iffalse MeetMomTalkedScript"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_FIRST_TIME_BANKING_WITH_MOM"
+          ],
+          "raw": "checkevent EVENT_FIRST_TIME_BANKING_WITH_MOM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MomScript.FirstTimeBanking"
+          ],
+          "raw": "iftrue .FirstTimeBanking"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST"
+          ],
+          "raw": "checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MomScript.BankOfMom"
+          ],
+          "raw": "iftrue .BankOfMom"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GAVE_MYSTERY_EGG_TO_ELM"
+          ],
+          "raw": "checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MomScript.GaveMysteryEgg"
+          ],
+          "raw": "iftrue .GaveMysteryEgg"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_A_POKEMON_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_A_POKEMON_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "MomScript.GotAPokemon"
+          ],
+          "raw": "iftrue .GotAPokemon"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "HurryUpElmIsWaitingText"
+          ],
+          "raw": "writetext HurryUpElmIsWaitingText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "MeetMomTalkedScript",
+        "MomScript.BankOfMom",
+        "MomScript.FirstTimeBanking",
+        "MomScript.GaveMysteryEgg",
+        "MomScript.GotAPokemon"
+      ],
+      "text_refs": [
+        "HurryUpElmIsWaitingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MomScript.GotAPokemon": {
+      "raw_lines": [
+        "writetext SoWhatWasProfElmsErrandText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "SoWhatWasProfElmsErrandText"
+          ],
+          "raw": "writetext SoWhatWasProfElmsErrandText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "SoWhatWasProfElmsErrandText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MomScript.FirstTimeBanking": {
+      "raw_lines": [
+        "writetext ImBehindYouText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "ImBehindYouText"
+          ],
+          "raw": "writetext ImBehindYouText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "ImBehindYouText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MomScript.GaveMysteryEgg": {
+      "raw_lines": [
+        "setevent EVENT_FIRST_TIME_BANKING_WITH_MOM"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_FIRST_TIME_BANKING_WITH_MOM"
+          ],
+          "raw": "setevent EVENT_FIRST_TIME_BANKING_WITH_MOM"
+        }
+      ],
+      "first_command": "setevent",
+      "fallthrough_label": "MomScript.BankOfMom",
+      "label_refs": [
+        "MomScript.BankOfMom"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MomScript.BankOfMom": {
+      "raw_lines": [
+        "setevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST",
+        "special BankOfMom",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST"
+          ],
+          "raw": "setevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST"
+        },
+        {
+          "command": "special",
+          "args": [
+            "BankOfMom"
+          ],
+          "raw": "special BankOfMom"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "setevent",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NeighborScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checktime MORN",
+        "iftrue .MornScript",
+        "checktime DAY",
+        "iftrue .DayScript",
+        "checktime NITE",
+        "iftrue .NiteScript"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checktime",
+          "args": [
+            "MORN"
+          ],
+          "raw": "checktime MORN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "NeighborScript.MornScript"
+          ],
+          "raw": "iftrue .MornScript"
+        },
+        {
+          "command": "checktime",
+          "args": [
+            "DAY"
+          ],
+          "raw": "checktime DAY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "NeighborScript.DayScript"
+          ],
+          "raw": "iftrue .DayScript"
+        },
+        {
+          "command": "checktime",
+          "args": [
+            "NITE"
+          ],
+          "raw": "checktime NITE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "NeighborScript.NiteScript"
+          ],
+          "raw": "iftrue .NiteScript"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "NeighborScript.MornScript",
+      "label_refs": [
+        "NeighborScript.DayScript",
+        "NeighborScript.MornScript",
+        "NeighborScript.NiteScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NeighborScript.MornScript": {
+      "raw_lines": [
+        "writetext NeighborMornIntroText",
+        "promptbutton",
+        "sjump .Main"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "NeighborMornIntroText"
+          ],
+          "raw": "writetext NeighborMornIntroText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "NeighborScript.Main"
+          ],
+          "raw": "sjump .Main"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "NeighborScript.Main"
+      ],
+      "text_refs": [
+        "NeighborMornIntroText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NeighborScript.DayScript": {
+      "raw_lines": [
+        "writetext NeighborDayIntroText",
+        "promptbutton",
+        "sjump .Main"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "NeighborDayIntroText"
+          ],
+          "raw": "writetext NeighborDayIntroText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "NeighborScript.Main"
+          ],
+          "raw": "sjump .Main"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "NeighborScript.Main"
+      ],
+      "text_refs": [
+        "NeighborDayIntroText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NeighborScript.NiteScript": {
+      "raw_lines": [
+        "writetext NeighborNiteIntroText",
+        "promptbutton",
+        "sjump .Main"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "NeighborNiteIntroText"
+          ],
+          "raw": "writetext NeighborNiteIntroText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "NeighborScript.Main"
+          ],
+          "raw": "sjump .Main"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "NeighborScript.Main"
+      ],
+      "text_refs": [
+        "NeighborNiteIntroText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NeighborScript.Main": {
+      "raw_lines": [
+        "writetext NeighborText",
+        "waitbutton",
+        "closetext",
+        "turnobject PLAYERSHOUSE1F_POKEFAN_F, RIGHT",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "NeighborText"
+          ],
+          "raw": "writetext NeighborText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYERSHOUSE1F_POKEFAN_F",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYERSHOUSE1F_POKEFAN_F, RIGHT"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "NeighborText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse1FTVScript": {
+      "raw_lines": [
+        "jumptext PlayersHouse1FTVText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "PlayersHouse1FTVText"
+          ],
+          "raw": "jumptext PlayersHouse1FTVText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "PlayersHouse1FTVText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse1FStoveScript": {
+      "raw_lines": [
+        "jumptext PlayersHouse1FStoveText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "PlayersHouse1FStoveText"
+          ],
+          "raw": "jumptext PlayersHouse1FStoveText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "PlayersHouse1FStoveText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse1FSinkScript": {
+      "raw_lines": [
+        "jumptext PlayersHouse1FSinkText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "PlayersHouse1FSinkText"
+          ],
+          "raw": "jumptext PlayersHouse1FSinkText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "PlayersHouse1FSinkText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse1FFridgeScript": {
+      "raw_lines": [
+        "jumptext PlayersHouse1FFridgeText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "PlayersHouse1FFridgeText"
+          ],
+          "raw": "jumptext PlayersHouse1FFridgeText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "PlayersHouse1FFridgeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse1F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  6,  7, NEW_BARK_TOWN, 2",
+        "warp_event  7,  7, NEW_BARK_TOWN, 2",
+        "warp_event  9,  0, PLAYERS_HOUSE_2F, 1",
+        "def_coord_events",
+        "coord_event  8,  4, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomLeftScript",
+        "coord_event  9,  4, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomRightScript",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, PlayersHouse1FStoveScript",
+        "bg_event  1,  1, BGEVENT_READ, PlayersHouse1FSinkScript",
+        "bg_event  2,  1, BGEVENT_READ, PlayersHouse1FFridgeScript",
+        "bg_event  4,  1, BGEVENT_READ, PlayersHouse1FTVScript",
+        "def_object_events",
+        "object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1",
+        "object_event  2,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2",
+        "object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2",
+        "object_event  0,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2",
+        "object_event  4,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "6",
+            "7",
+            "NEW_BARK_TOWN",
+            "2"
+          ],
+          "raw": "warp_event  6,  7, NEW_BARK_TOWN, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "7",
+            "7",
+            "NEW_BARK_TOWN",
+            "2"
+          ],
+          "raw": "warp_event  7,  7, NEW_BARK_TOWN, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "0",
+            "PLAYERS_HOUSE_2F",
+            "1"
+          ],
+          "raw": "warp_event  9,  0, PLAYERS_HOUSE_2F, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "8",
+            "4",
+            "SCENE_PLAYERSHOUSE1F_MEET_MOM",
+            "MeetMomLeftScript"
+          ],
+          "raw": "coord_event  8,  4, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomLeftScript"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "9",
+            "4",
+            "SCENE_PLAYERSHOUSE1F_MEET_MOM",
+            "MeetMomRightScript"
+          ],
+          "raw": "coord_event  9,  4, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomRightScript"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "PlayersHouse1FStoveScript"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, PlayersHouse1FStoveScript"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "PlayersHouse1FSinkScript"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, PlayersHouse1FSinkScript"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "2",
+            "1",
+            "BGEVENT_READ",
+            "PlayersHouse1FFridgeScript"
+          ],
+          "raw": "bg_event  2,  1, BGEVENT_READ, PlayersHouse1FFridgeScript"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "4",
+            "1",
+            "BGEVENT_READ",
+            "PlayersHouse1FTVScript"
+          ],
+          "raw": "bg_event  4,  1, BGEVENT_READ, PlayersHouse1FTVScript"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "4",
+            "SPRITE_MOM",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MomScript",
+            "EVENT_PLAYERS_HOUSE_MOM_1"
+          ],
+          "raw": "object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "2",
+            "SPRITE_MOM",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "MORN",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MomScript",
+            "EVENT_PLAYERS_HOUSE_MOM_2"
+          ],
+          "raw": "object_event  2,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "4",
+            "SPRITE_MOM",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "DAY",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MomScript",
+            "EVENT_PLAYERS_HOUSE_MOM_2"
+          ],
+          "raw": "object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "0",
+            "2",
+            "SPRITE_MOM",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "NITE",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MomScript",
+            "EVENT_PLAYERS_HOUSE_MOM_2"
+          ],
+          "raw": "object_event  0,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "4",
+            "SPRITE_POKEFAN_F",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "NeighborScript",
+            "EVENT_PLAYERS_HOUSE_1F_NEIGHBOR"
+          ],
+          "raw": "object_event  4,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "ElmsLookingForYouText": {
+      "raw_lines": [
+        "text \"Oh, <PLAYER>\u2026! Our\"",
+        "line \"neighbor, PROF.\"",
+        "para \"ELM, was looking\"",
+        "line \"for you.\"",
+        "para \"He said he wanted\"",
+        "line \"you to do some-\"",
+        "cont \"thing for him.\"",
+        "para \"Oh! I almost for-\"",
+        "line \"got! Your #MON\"",
+        "para \"GEAR is back from\"",
+        "line \"the repair shop.\"",
+        "para \"Here you go!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, <PLAYER>\u2026! Our"
+        },
+        {
+          "command": "line",
+          "value": "neighbor, PROF."
+        },
+        {
+          "command": "para",
+          "value": "ELM, was looking"
+        },
+        {
+          "command": "line",
+          "value": "for you."
+        },
+        {
+          "command": "para",
+          "value": "He said he wanted"
+        },
+        {
+          "command": "line",
+          "value": "you to do some-"
+        },
+        {
+          "command": "cont",
+          "value": "thing for him."
+        },
+        {
+          "command": "para",
+          "value": "Oh! I almost for-"
+        },
+        {
+          "command": "line",
+          "value": "got! Your #MON"
+        },
+        {
+          "command": "para",
+          "value": "GEAR is back from"
+        },
+        {
+          "command": "line",
+          "value": "the repair shop."
+        },
+        {
+          "command": "para",
+          "value": "Here you go!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MomGivesPokegearText": {
+      "raw_lines": [
+        "text \"#MON GEAR, or\"",
+        "line \"just #GEAR.\"",
+        "para \"It's essential if\"",
+        "line \"you want to be a\"",
+        "cont \"good trainer.\"",
+        "para \"Oh, the day of the\"",
+        "line \"week isn't set.\"",
+        "para \"You mustn't forget\"",
+        "line \"that!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#MON GEAR, or"
+        },
+        {
+          "command": "line",
+          "value": "just #GEAR."
+        },
+        {
+          "command": "para",
+          "value": "It's essential if"
+        },
+        {
+          "command": "line",
+          "value": "you want to be a"
+        },
+        {
+          "command": "cont",
+          "value": "good trainer."
+        },
+        {
+          "command": "para",
+          "value": "Oh, the day of the"
+        },
+        {
+          "command": "line",
+          "value": "week isn't set."
+        },
+        {
+          "command": "para",
+          "value": "You mustn't forget"
+        },
+        {
+          "command": "line",
+          "value": "that!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "IsItDSTText": {
+      "raw_lines": [
+        "text \"Is it Daylight\"",
+        "line \"Saving Time now?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Is it Daylight"
+        },
+        {
+          "command": "line",
+          "value": "Saving Time now?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ComeHomeForDSTText": {
+      "raw_lines": [
+        "text \"Come home to\"",
+        "line \"adjust your clock\"",
+        "para \"for Daylight\"",
+        "line \"Saving Time.\"",
+        "para \"By the way, do you\"",
+        "line \"know how to use\"",
+        "cont \"the PHONE?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Come home to"
+        },
+        {
+          "command": "line",
+          "value": "adjust your clock"
+        },
+        {
+          "command": "para",
+          "value": "for Daylight"
+        },
+        {
+          "command": "line",
+          "value": "Saving Time."
+        },
+        {
+          "command": "para",
+          "value": "By the way, do you"
+        },
+        {
+          "command": "line",
+          "value": "know how to use"
+        },
+        {
+          "command": "cont",
+          "value": "the PHONE?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KnowTheInstructionsText": {
+      "raw_lines": [
+        "text \"Don't you just\"",
+        "line \"turn the #GEAR\"",
+        "para \"on and select the\"",
+        "line \"PHONE icon?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Don't you just"
+        },
+        {
+          "command": "line",
+          "value": "turn the #GEAR"
+        },
+        {
+          "command": "para",
+          "value": "on and select the"
+        },
+        {
+          "command": "line",
+          "value": "PHONE icon?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DontKnowTheInstructionsText": {
+      "raw_lines": [
+        "text \"I'll read the\"",
+        "line \"instructions.\"",
+        "para \"Turn the #GEAR\"",
+        "line \"on and select the\"",
+        "cont \"PHONE icon.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'll read the"
+        },
+        {
+          "command": "line",
+          "value": "instructions."
+        },
+        {
+          "command": "para",
+          "value": "Turn the #GEAR"
+        },
+        {
+          "command": "line",
+          "value": "on and select the"
+        },
+        {
+          "command": "cont",
+          "value": "PHONE icon."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "InstructionsNextText": {
+      "raw_lines": [
+        "text \"Phone numbers are\"",
+        "line \"stored in memory.\"",
+        "para \"Just choose a name\"",
+        "line \"you want to call.\"",
+        "para \"Gee, isn't that\"",
+        "line \"convenient?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Phone numbers are"
+        },
+        {
+          "command": "line",
+          "value": "stored in memory."
+        },
+        {
+          "command": "para",
+          "value": "Just choose a name"
+        },
+        {
+          "command": "line",
+          "value": "you want to call."
+        },
+        {
+          "command": "para",
+          "value": "Gee, isn't that"
+        },
+        {
+          "command": "line",
+          "value": "convenient?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "HurryUpElmIsWaitingText": {
+      "raw_lines": [
+        "text \"PROF.ELM is wait-\"",
+        "line \"ing for you.\"",
+        "para \"Hurry up, baby!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "PROF.ELM is wait-"
+        },
+        {
+          "command": "line",
+          "value": "ing for you."
+        },
+        {
+          "command": "para",
+          "value": "Hurry up, baby!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SoWhatWasProfElmsErrandText": {
+      "raw_lines": [
+        "text \"So, what was PROF.\"",
+        "line \"ELM's errand?\"",
+        "para \"\u2026\"",
+        "para \"That does sound\"",
+        "line \"challenging.\"",
+        "para \"But, you should be\"",
+        "line \"proud that people\"",
+        "cont \"rely on you.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "So, what was PROF."
+        },
+        {
+          "command": "line",
+          "value": "ELM's errand?"
+        },
+        {
+          "command": "para",
+          "value": "\u2026"
+        },
+        {
+          "command": "para",
+          "value": "That does sound"
+        },
+        {
+          "command": "line",
+          "value": "challenging."
+        },
+        {
+          "command": "para",
+          "value": "But, you should be"
+        },
+        {
+          "command": "line",
+          "value": "proud that people"
+        },
+        {
+          "command": "cont",
+          "value": "rely on you."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ImBehindYouText": {
+      "raw_lines": [
+        "text \"<PLAYER>, do it!\"",
+        "para \"I'm behind you all\"",
+        "line \"the way!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER>, do it!"
+        },
+        {
+          "command": "para",
+          "value": "I'm behind you all"
+        },
+        {
+          "command": "line",
+          "value": "the way!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "NeighborMornIntroText": {
+      "raw_lines": [
+        "text \"Good morning,\"",
+        "line \"<PLAY_G>!\"",
+        "para \"I'm visiting!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Good morning,"
+        },
+        {
+          "command": "line",
+          "value": "<PLAY_G>!"
+        },
+        {
+          "command": "para",
+          "value": "I'm visiting!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "NeighborDayIntroText": {
+      "raw_lines": [
+        "text \"Hello, <PLAY_G>!\"",
+        "line \"I'm visiting!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hello, <PLAY_G>!"
+        },
+        {
+          "command": "line",
+          "value": "I'm visiting!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "NeighborNiteIntroText": {
+      "raw_lines": [
+        "text \"Good evening,\"",
+        "line \"<PLAY_G>!\"",
+        "para \"I'm visiting!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Good evening,"
+        },
+        {
+          "command": "line",
+          "value": "<PLAY_G>!"
+        },
+        {
+          "command": "para",
+          "value": "I'm visiting!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "NeighborText": {
+      "raw_lines": [
+        "text \"<PLAY_G>, have you\"",
+        "line \"heard?\"",
+        "para \"My daughter is\"",
+        "line \"adamant about\"",
+        "para \"becoming PROF.\"",
+        "line \"ELM's assistant.\"",
+        "para \"She really loves\"",
+        "line \"#MON!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAY_G>, have you"
+        },
+        {
+          "command": "line",
+          "value": "heard?"
+        },
+        {
+          "command": "para",
+          "value": "My daughter is"
+        },
+        {
+          "command": "line",
+          "value": "adamant about"
+        },
+        {
+          "command": "para",
+          "value": "becoming PROF."
+        },
+        {
+          "command": "line",
+          "value": "ELM's assistant."
+        },
+        {
+          "command": "para",
+          "value": "She really loves"
+        },
+        {
+          "command": "line",
+          "value": "#MON!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PlayersHouse1FStoveText": {
+      "raw_lines": [
+        "text \"Mom's specialty!\"",
+        "para \"CINNABAR VOLCANO\"",
+        "line \"BURGER!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Mom's specialty!"
+        },
+        {
+          "command": "para",
+          "value": "CINNABAR VOLCANO"
+        },
+        {
+          "command": "line",
+          "value": "BURGER!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PlayersHouse1FSinkText": {
+      "raw_lines": [
+        "text \"The sink is spot-\"",
+        "line \"less. Mom likes it\"",
+        "cont \"clean.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The sink is spot-"
+        },
+        {
+          "command": "line",
+          "value": "less. Mom likes it"
+        },
+        {
+          "command": "cont",
+          "value": "clean."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PlayersHouse1FFridgeText": {
+      "raw_lines": [
+        "text \"Let's see what's\"",
+        "line \"in the fridge\u2026\"",
+        "para \"FRESH WATER and\"",
+        "line \"tasty LEMONADE!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Let's see what's"
+        },
+        {
+          "command": "line",
+          "value": "in the fridge\u2026"
+        },
+        {
+          "command": "para",
+          "value": "FRESH WATER and"
+        },
+        {
+          "command": "line",
+          "value": "tasty LEMONADE!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PlayersHouse1FTVText": {
+      "raw_lines": [
+        "text \"There's a movie on\"",
+        "line \"TV: Stars dot the\"",
+        "para \"sky as two boys\"",
+        "line \"ride on a train\u2026\"",
+        "para \"I'd better get\"",
+        "line \"rolling too!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "There's a movie on"
+        },
+        {
+          "command": "line",
+          "value": "TV: Stars dot the"
+        },
+        {
+          "command": "para",
+          "value": "sky as two boys"
+        },
+        {
+          "command": "line",
+          "value": "ride on a train\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I'd better get"
+        },
+        {
+          "command": "line",
+          "value": "rolling too!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "MomTurnsTowardPlayerMovement": {
+      "raw_lines": [
+        "turn_head RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "turn_head",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MomWalksToPlayerMovement": {
+      "raw_lines": [
+        "slow_step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "slow_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MomTurnsBackMovement": {
+      "raw_lines": [
+        "turn_head LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "MomWalksBackMovement": {
+      "raw_lines": [
+        "slow_step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "slow_step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "ReceiveItemScript"
+  ],
+  "dependencies": {
+    "PlayersHouse1F_MapScripts": {
+      "label_refs": [
+        "PlayersHouse1FNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse1FNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse1FNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomLeftScript": {
+      "label_refs": [
+        "MeetMomRightScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomRightScript": {
+      "label_refs": [
+        "MeetMomRightScript.OnRight",
+        "MeetMomScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MomTurnsTowardPlayerMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomRightScript.OnRight": {
+      "label_refs": [
+        "MeetMomScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MomWalksToPlayerMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomScript": {
+      "label_refs": [
+        "MeetMomScript.SetDayOfWeek",
+        "PlayersHouse1FReceiveItemStd"
+      ],
+      "text_refs": [
+        "ElmsLookingForYouText",
+        "MomGivesPokegearText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_PLAYERSHOUSE1F_NOOP"
+      ],
+      "std_calls": []
+    },
+    "MeetMomScript.SetDayOfWeek": {
+      "label_refs": [
+        "MeetMomScript.DayOfWeekDone",
+        "MeetMomScript.SetDayOfWeek",
+        "MeetMomScript.WrongDay"
+      ],
+      "text_refs": [
+        "IsItDSTText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomScript.WrongDay": {
+      "label_refs": [
+        "MeetMomScript.DayOfWeekDone",
+        "MeetMomScript.SetDayOfWeek"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomScript.DayOfWeekDone": {
+      "label_refs": [
+        "MeetMomScript.ExplainPhone",
+        "MeetMomScript.KnowPhone"
+      ],
+      "text_refs": [
+        "ComeHomeForDSTText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomScript.KnowPhone": {
+      "label_refs": [
+        "MeetMomScript.FinishPhone"
+      ],
+      "text_refs": [
+        "KnowTheInstructionsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomScript.ExplainPhone": {
+      "label_refs": [
+        "MeetMomScript.FinishPhone"
+      ],
+      "text_refs": [
+        "DontKnowTheInstructionsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomScript.FinishPhone": {
+      "label_refs": [
+        "MeetMomScript.Finish",
+        "MeetMomScript.FromLeft",
+        "MeetMomScript.FromRight"
+      ],
+      "text_refs": [
+        "InstructionsNextText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomScript.FromRight": {
+      "label_refs": [
+        "MeetMomScript.Finish"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MomTurnsBackMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomScript.FromLeft": {
+      "label_refs": [
+        "MeetMomScript.Finish"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "MomWalksBackMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomScript.Finish": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MeetMomTalkedScript": {
+      "label_refs": [
+        "MeetMomScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PokegearName": {
+      "label_refs": [
+        "PlayersHouse1FReceiveItemStd"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse1FReceiveItemStd": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "ReceiveItemScript"
+      ]
+    },
+    "MomScript": {
+      "label_refs": [
+        "MeetMomTalkedScript",
+        "MomScript.BankOfMom",
+        "MomScript.FirstTimeBanking",
+        "MomScript.GaveMysteryEgg",
+        "MomScript.GotAPokemon"
+      ],
+      "text_refs": [
+        "HurryUpElmIsWaitingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MomScript.GotAPokemon": {
+      "label_refs": [],
+      "text_refs": [
+        "SoWhatWasProfElmsErrandText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MomScript.FirstTimeBanking": {
+      "label_refs": [],
+      "text_refs": [
+        "ImBehindYouText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MomScript.GaveMysteryEgg": {
+      "label_refs": [
+        "MomScript.BankOfMom"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MomScript.BankOfMom": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NeighborScript": {
+      "label_refs": [
+        "NeighborScript.DayScript",
+        "NeighborScript.MornScript",
+        "NeighborScript.NiteScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NeighborScript.MornScript": {
+      "label_refs": [
+        "NeighborScript.Main"
+      ],
+      "text_refs": [
+        "NeighborMornIntroText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NeighborScript.DayScript": {
+      "label_refs": [
+        "NeighborScript.Main"
+      ],
+      "text_refs": [
+        "NeighborDayIntroText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NeighborScript.NiteScript": {
+      "label_refs": [
+        "NeighborScript.Main"
+      ],
+      "text_refs": [
+        "NeighborNiteIntroText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "NeighborScript.Main": {
+      "label_refs": [],
+      "text_refs": [
+        "NeighborText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse1FTVScript": {
+      "label_refs": [],
+      "text_refs": [
+        "PlayersHouse1FTVText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse1FStoveScript": {
+      "label_refs": [],
+      "text_refs": [
+        "PlayersHouse1FStoveText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse1FSinkScript": {
+      "label_refs": [],
+      "text_refs": [
+        "PlayersHouse1FSinkText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse1FFridgeScript": {
+      "label_refs": [],
+      "text_refs": [
+        "PlayersHouse1FFridgeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PlayersHouse1F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear",
+    "day_time"
+  ],
   "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 0,
     "warp_events": 3,
     "coord_events": 2,
     "bg_events": 4,

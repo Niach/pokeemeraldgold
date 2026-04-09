@@ -1,0 +1,480 @@
+{
+  "crystal_map": "BlackthornMart",
+  "map_id": "BLACKTHORN_MART",
+  "group": "BLACKTHORN",
+  "group_index": 5,
+  "map_index": 5,
+  "tileset": "TILESET_MART",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_BLACKTHORN_CITY",
+  "music": "MUSIC_AZALEA_TOWN",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 6,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/Mart.blk",
+  "source_asm": "maps/BlackthornMart.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "BLACKTHORN_CITY",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "BLACKTHORN_CITY",
+        "dest_warp_id": 4
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 1,
+        "y": 3,
+        "sprite": "SPRITE_CLERK",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornMartClerkScript",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 6,
+        "sprite": "SPRITE_COOLTRAINER_M",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 2,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornMartCooltrainerMScript",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 2,
+        "sprite": "SPRITE_BLACK_BELT",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornMartBlackBeltScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "BLACKTHORNMART_CLERK",
+    "BLACKTHORNMART_COOLTRAINER_M",
+    "BLACKTHORNMART_BLACK_BELT"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "BlackthornMart_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "BlackthornMartClerkScript",
+      "label_refs": [
+        "BlackthornMartClerkScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornMartClerkScript": {
+      "raw_lines": [
+        "opentext",
+        "pokemart MARTTYPE_STANDARD, MART_BLACKTHORN",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "pokemart",
+          "args": [
+            "MARTTYPE_STANDARD",
+            "MART_BLACKTHORN"
+          ],
+          "raw": "pokemart MARTTYPE_STANDARD, MART_BLACKTHORN"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornMartCooltrainerMScript": {
+      "raw_lines": [
+        "jumptextfaceplayer BlackthornMartCooltrainerMText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "BlackthornMartCooltrainerMText"
+          ],
+          "raw": "jumptextfaceplayer BlackthornMartCooltrainerMText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornMartCooltrainerMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornMartBlackBeltScript": {
+      "raw_lines": [
+        "jumptextfaceplayer BlackthornMartBlackBeltText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "BlackthornMartBlackBeltText"
+          ],
+          "raw": "jumptextfaceplayer BlackthornMartBlackBeltText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornMartBlackBeltText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornMart_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, BLACKTHORN_CITY, 4",
+        "warp_event  3,  7, BLACKTHORN_CITY, 4",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornMartClerkScript, -1",
+        "object_event  7,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornMartCooltrainerMScript, -1",
+        "object_event  5,  2, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornMartBlackBeltScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "BLACKTHORN_CITY",
+            "4"
+          ],
+          "raw": "warp_event  2,  7, BLACKTHORN_CITY, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "BLACKTHORN_CITY",
+            "4"
+          ],
+          "raw": "warp_event  3,  7, BLACKTHORN_CITY, 4"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "3",
+            "SPRITE_CLERK",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornMartClerkScript",
+            "-1"
+          ],
+          "raw": "object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornMartClerkScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "6",
+            "SPRITE_COOLTRAINER_M",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "2",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornMartCooltrainerMScript",
+            "-1"
+          ],
+          "raw": "object_event  7,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornMartCooltrainerMScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "2",
+            "SPRITE_BLACK_BELT",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornMartBlackBeltScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  2, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornMartBlackBeltScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "BlackthornMartCooltrainerMText": {
+      "raw_lines": [
+        "text \"You can't buy MAX\"",
+        "line \"REVIVE, but it\"",
+        "para \"fully restores a\"",
+        "line \"fainted #MON.\"",
+        "para \"Beware--it won't\"",
+        "line \"restore PP, the\"",
+        "para \"POWER POINTS\"",
+        "line \"needed for moves.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You can't buy MAX"
+        },
+        {
+          "command": "line",
+          "value": "REVIVE, but it"
+        },
+        {
+          "command": "para",
+          "value": "fully restores a"
+        },
+        {
+          "command": "line",
+          "value": "fainted #MON."
+        },
+        {
+          "command": "para",
+          "value": "Beware--it won't"
+        },
+        {
+          "command": "line",
+          "value": "restore PP, the"
+        },
+        {
+          "command": "para",
+          "value": "POWER POINTS"
+        },
+        {
+          "command": "line",
+          "value": "needed for moves."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackthornMartBlackBeltText": {
+      "raw_lines": [
+        "text \"MAX REPEL keeps\"",
+        "line \"weak #MON away\"",
+        "cont \"from you.\"",
+        "para \"It's the longest\"",
+        "line \"lasting of the\"",
+        "cont \"REPEL sprays.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MAX REPEL keeps"
+        },
+        {
+          "command": "line",
+          "value": "weak #MON away"
+        },
+        {
+          "command": "cont",
+          "value": "from you."
+        },
+        {
+          "command": "para",
+          "value": "It's the longest"
+        },
+        {
+          "command": "line",
+          "value": "lasting of the"
+        },
+        {
+          "command": "cont",
+          "value": "REPEL sprays."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "BlackthornMart_MapScripts": {
+      "label_refs": [
+        "BlackthornMartClerkScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornMartClerkScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornMartCooltrainerMScript": {
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornMartCooltrainerMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornMartBlackBeltScript": {
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornMartBlackBeltText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornMart_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 3
+  }
+}

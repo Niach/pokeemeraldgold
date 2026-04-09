@@ -1,0 +1,570 @@
+{
+  "crystal_map": "RuinsOfAlphKabutoItemRoom",
+  "map_id": "RUINS_OF_ALPH_KABUTO_ITEM_ROOM",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 30,
+  "tileset": "TILESET_RUINS_OF_ALPH",
+  "environment": "DUNGEON",
+  "landmark": "LANDMARK_RUINS_OF_ALPH",
+  "music": "MUSIC_UNION_CAVE",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 5,
+  "border_block": "00",
+  "blk_path": "maps/RuinsOfAlphItemRoom.blk",
+  "source_asm": "maps/RuinsOfAlphKabutoItemRoom.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 9,
+        "dest_map": "RUINS_OF_ALPH_KABUTO_CHAMBER",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 4,
+        "y": 9,
+        "dest_map": "RUINS_OF_ALPH_KABUTO_CHAMBER",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 3,
+        "y": 1,
+        "dest_map": "RUINS_OF_ALPH_KABUTO_WORD_ROOM",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 4,
+        "y": 1,
+        "dest_map": "RUINS_OF_ALPH_KABUTO_WORD_ROOM",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 2,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "RuinsOfAlphKabutoItemRoomAncientReplica"
+      },
+      {
+        "x": 5,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "RuinsOfAlphKabutoItemRoomAncientReplica"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 6,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "RuinsOfAlphKabutoItemRoomBerry",
+        "flag": "EVENT_PICKED_UP_BERRY_FROM_KABUTO_ITEM_ROOM"
+      },
+      {
+        "x": 5,
+        "y": 6,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "RuinsOfAlphKabutoItemRoomPsncureberry",
+        "flag": "EVENT_PICKED_UP_PSNCUREBERRY_FROM_KABUTO_ITEM_ROOM"
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "RuinsOfAlphKabutoItemRoomHealPowder",
+        "flag": "EVENT_PICKED_UP_HEAL_POWDER_FROM_KABUTO_ITEM_ROOM"
+      },
+      {
+        "x": 5,
+        "y": 4,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "RuinsOfAlphKabutoItemRoomEnergypowder",
+        "flag": "EVENT_PICKED_UP_ENERGYPOWDER_FROM_KABUTO_ITEM_ROOM"
+      }
+    ]
+  },
+  "object_consts": [
+    "RUINSOFALPHKABUTOITEMROOM_POKE_BALL1",
+    "RUINSOFALPHKABUTOITEMROOM_POKE_BALL2",
+    "RUINSOFALPHKABUTOITEMROOM_POKE_BALL3",
+    "RUINSOFALPHKABUTOITEMROOM_POKE_BALL4"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "RuinsOfAlphKabutoItemRoom_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "RuinsOfAlphKabutoItemRoomBerry",
+      "label_refs": [
+        "RuinsOfAlphKabutoItemRoomBerry"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphKabutoItemRoomBerry": {
+      "raw_lines": [
+        "itemball BERRY"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "BERRY"
+          ],
+          "raw": "itemball BERRY"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "RuinsOfAlphKabutoItemRoomPsncureberry",
+      "label_refs": [
+        "RuinsOfAlphKabutoItemRoomPsncureberry"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphKabutoItemRoomPsncureberry": {
+      "raw_lines": [
+        "itemball PSNCUREBERRY"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "PSNCUREBERRY"
+          ],
+          "raw": "itemball PSNCUREBERRY"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "RuinsOfAlphKabutoItemRoomHealPowder",
+      "label_refs": [
+        "RuinsOfAlphKabutoItemRoomHealPowder"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphKabutoItemRoomHealPowder": {
+      "raw_lines": [
+        "itemball HEAL_POWDER"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "HEAL_POWDER"
+          ],
+          "raw": "itemball HEAL_POWDER"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "RuinsOfAlphKabutoItemRoomEnergypowder",
+      "label_refs": [
+        "RuinsOfAlphKabutoItemRoomEnergypowder"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphKabutoItemRoomEnergypowder": {
+      "raw_lines": [
+        "itemball ENERGYPOWDER"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "ENERGYPOWDER"
+          ],
+          "raw": "itemball ENERGYPOWDER"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "RuinsOfAlphKabutoItemRoomAncientReplica",
+      "label_refs": [
+        "RuinsOfAlphKabutoItemRoomAncientReplica"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphKabutoItemRoomAncientReplica": {
+      "raw_lines": [
+        "jumptext RuinsOfAlphKabutoItemRoomAncientReplicaText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "RuinsOfAlphKabutoItemRoomAncientReplicaText"
+          ],
+          "raw": "jumptext RuinsOfAlphKabutoItemRoomAncientReplicaText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphKabutoItemRoomAncientReplicaText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphKabutoItemRoom_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  9, RUINS_OF_ALPH_KABUTO_CHAMBER, 5",
+        "warp_event  4,  9, RUINS_OF_ALPH_KABUTO_CHAMBER, 5",
+        "warp_event  3,  1, RUINS_OF_ALPH_KABUTO_WORD_ROOM, 1",
+        "warp_event  4,  1, RUINS_OF_ALPH_KABUTO_WORD_ROOM, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  2,  1, BGEVENT_READ, RuinsOfAlphKabutoItemRoomAncientReplica",
+        "bg_event  5,  1, BGEVENT_READ, RuinsOfAlphKabutoItemRoomAncientReplica",
+        "def_object_events",
+        "object_event  2,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphKabutoItemRoomBerry, EVENT_PICKED_UP_BERRY_FROM_KABUTO_ITEM_ROOM",
+        "object_event  5,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphKabutoItemRoomPsncureberry, EVENT_PICKED_UP_PSNCUREBERRY_FROM_KABUTO_ITEM_ROOM",
+        "object_event  2,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphKabutoItemRoomHealPowder, EVENT_PICKED_UP_HEAL_POWDER_FROM_KABUTO_ITEM_ROOM",
+        "object_event  5,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphKabutoItemRoomEnergypowder, EVENT_PICKED_UP_ENERGYPOWDER_FROM_KABUTO_ITEM_ROOM"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "9",
+            "RUINS_OF_ALPH_KABUTO_CHAMBER",
+            "5"
+          ],
+          "raw": "warp_event  3,  9, RUINS_OF_ALPH_KABUTO_CHAMBER, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "9",
+            "RUINS_OF_ALPH_KABUTO_CHAMBER",
+            "5"
+          ],
+          "raw": "warp_event  4,  9, RUINS_OF_ALPH_KABUTO_CHAMBER, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "1",
+            "RUINS_OF_ALPH_KABUTO_WORD_ROOM",
+            "1"
+          ],
+          "raw": "warp_event  3,  1, RUINS_OF_ALPH_KABUTO_WORD_ROOM, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "1",
+            "RUINS_OF_ALPH_KABUTO_WORD_ROOM",
+            "2"
+          ],
+          "raw": "warp_event  4,  1, RUINS_OF_ALPH_KABUTO_WORD_ROOM, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "2",
+            "1",
+            "BGEVENT_READ",
+            "RuinsOfAlphKabutoItemRoomAncientReplica"
+          ],
+          "raw": "bg_event  2,  1, BGEVENT_READ, RuinsOfAlphKabutoItemRoomAncientReplica"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "5",
+            "1",
+            "BGEVENT_READ",
+            "RuinsOfAlphKabutoItemRoomAncientReplica"
+          ],
+          "raw": "bg_event  5,  1, BGEVENT_READ, RuinsOfAlphKabutoItemRoomAncientReplica"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "6",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "RuinsOfAlphKabutoItemRoomBerry",
+            "EVENT_PICKED_UP_BERRY_FROM_KABUTO_ITEM_ROOM"
+          ],
+          "raw": "object_event  2,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphKabutoItemRoomBerry, EVENT_PICKED_UP_BERRY_FROM_KABUTO_ITEM_ROOM"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "6",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "RuinsOfAlphKabutoItemRoomPsncureberry",
+            "EVENT_PICKED_UP_PSNCUREBERRY_FROM_KABUTO_ITEM_ROOM"
+          ],
+          "raw": "object_event  5,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphKabutoItemRoomPsncureberry, EVENT_PICKED_UP_PSNCUREBERRY_FROM_KABUTO_ITEM_ROOM"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "4",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "RuinsOfAlphKabutoItemRoomHealPowder",
+            "EVENT_PICKED_UP_HEAL_POWDER_FROM_KABUTO_ITEM_ROOM"
+          ],
+          "raw": "object_event  2,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphKabutoItemRoomHealPowder, EVENT_PICKED_UP_HEAL_POWDER_FROM_KABUTO_ITEM_ROOM"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "4",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "RuinsOfAlphKabutoItemRoomEnergypowder",
+            "EVENT_PICKED_UP_ENERGYPOWDER_FROM_KABUTO_ITEM_ROOM"
+          ],
+          "raw": "object_event  5,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphKabutoItemRoomEnergypowder, EVENT_PICKED_UP_ENERGYPOWDER_FROM_KABUTO_ITEM_ROOM"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "RuinsOfAlphKabutoItemRoomAncientReplicaText": {
+      "raw_lines": [
+        "text \"It's a replica of\"",
+        "line \"an ancient #-\"",
+        "cont \"MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's a replica of"
+        },
+        {
+          "command": "line",
+          "value": "an ancient #-"
+        },
+        {
+          "command": "cont",
+          "value": "MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "RuinsOfAlphKabutoItemRoom_MapScripts": {
+      "label_refs": [
+        "RuinsOfAlphKabutoItemRoomBerry"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphKabutoItemRoomBerry": {
+      "label_refs": [
+        "RuinsOfAlphKabutoItemRoomPsncureberry"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphKabutoItemRoomPsncureberry": {
+      "label_refs": [
+        "RuinsOfAlphKabutoItemRoomHealPowder"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphKabutoItemRoomHealPowder": {
+      "label_refs": [
+        "RuinsOfAlphKabutoItemRoomEnergypowder"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphKabutoItemRoomEnergypowder": {
+      "label_refs": [
+        "RuinsOfAlphKabutoItemRoomAncientReplica"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphKabutoItemRoomAncientReplica": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphKabutoItemRoomAncientReplicaText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphKabutoItemRoom_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 4,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 4
+  }
+}

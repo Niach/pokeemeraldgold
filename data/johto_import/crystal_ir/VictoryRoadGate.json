@@ -1,0 +1,972 @@
+{
+  "crystal_map": "VictoryRoadGate",
+  "map_id": "VICTORY_ROAD_GATE",
+  "group": "VIRIDIAN",
+  "group_index": 23,
+  "map_index": 13,
+  "tileset": "TILESET_GATE",
+  "environment": "GATE",
+  "landmark": "LANDMARK_ROUTE_26",
+  "music": "MUSIC_INDIGO_PLATEAU",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 10,
+  "height_blocks": 9,
+  "border_block": "00",
+  "blk_path": "maps/VictoryRoadGate.blk",
+  "source_asm": "maps/VictoryRoadGate.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "VictoryRoadGateNoop1Scene",
+        "scene_id": "SCENE_VICTORYROADGATE_BADGE_CHECK"
+      },
+      {
+        "script": "VictoryRoadGateNoop2Scene",
+        "scene_id": "SCENE_VICTORYROADGATE_NOOP"
+      }
+    ],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 17,
+        "y": 7,
+        "dest_map": "ROUTE_22",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 18,
+        "y": 7,
+        "dest_map": "ROUTE_22",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 9,
+        "y": 17,
+        "dest_map": "ROUTE_26",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 10,
+        "y": 17,
+        "dest_map": "ROUTE_26",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 9,
+        "y": 0,
+        "dest_map": "VICTORY_ROAD",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 10,
+        "y": 0,
+        "dest_map": "VICTORY_ROAD",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 1,
+        "y": 7,
+        "dest_map": "ROUTE_28",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "ROUTE_28",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 10,
+        "y": 11,
+        "scene": "SCENE_VICTORYROADGATE_BADGE_CHECK",
+        "script": "VictoryRoadGateBadgeCheckScript"
+      }
+    ],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 8,
+        "y": 11,
+        "sprite": "SPRITE_OFFICER",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "VictoryRoadGateOfficerScript",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 5,
+        "sprite": "SPRITE_BLACK_BELT",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "VictoryRoadGateLeftBlackBeltScript",
+        "flag": "EVENT_OPENED_MT_SILVER"
+      },
+      {
+        "x": 12,
+        "y": 5,
+        "sprite": "SPRITE_BLACK_BELT",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "VictoryRoadGateRightBlackBeltScript",
+        "flag": "EVENT_FOUGHT_SNORLAX"
+      }
+    ]
+  },
+  "object_consts": [
+    "VICTORYROADGATE_OFFICER",
+    "VICTORYROADGATE_BLACK_BELT1",
+    "VICTORYROADGATE_BLACK_BELT2"
+  ],
+  "scene_ids": [
+    "SCENE_VICTORYROADGATE_BADGE_CHECK",
+    "SCENE_VICTORYROADGATE_NOOP"
+  ],
+  "scripts": {
+    "VictoryRoadGate_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script VictoryRoadGateNoop1Scene, SCENE_VICTORYROADGATE_BADGE_CHECK",
+        "scene_script VictoryRoadGateNoop2Scene, SCENE_VICTORYROADGATE_NOOP",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "VictoryRoadGateNoop1Scene",
+            "SCENE_VICTORYROADGATE_BADGE_CHECK"
+          ],
+          "raw": "scene_script VictoryRoadGateNoop1Scene, SCENE_VICTORYROADGATE_BADGE_CHECK"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "VictoryRoadGateNoop2Scene",
+            "SCENE_VICTORYROADGATE_NOOP"
+          ],
+          "raw": "scene_script VictoryRoadGateNoop2Scene, SCENE_VICTORYROADGATE_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "VictoryRoadGateNoop1Scene",
+      "label_refs": [
+        "VictoryRoadGateNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadGateNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadGateNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadGateBadgeCheckScript": {
+      "raw_lines": [
+        "turnobject PLAYER, LEFT",
+        "sjump _VictoryRoadGateBadgeCheckScript"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYER, LEFT"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "_VictoryRoadGateBadgeCheckScript"
+          ],
+          "raw": "sjump _VictoryRoadGateBadgeCheckScript"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [
+        "_VictoryRoadGateBadgeCheckScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadGateOfficerScript": {
+      "raw_lines": [
+        "faceplayer"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "_VictoryRoadGateBadgeCheckScript",
+      "label_refs": [
+        "_VictoryRoadGateBadgeCheckScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "_VictoryRoadGateBadgeCheckScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext VictoryRoadGateOfficerText",
+        "promptbutton",
+        "readvar VAR_BADGES",
+        "ifgreater NUM_JOHTO_BADGES - 1, .AllEightBadges",
+        "writetext VictoryRoadGateNotEnoughBadgesText",
+        "waitbutton",
+        "closetext",
+        "applymovement PLAYER, VictoryRoadGateStepDownMovement",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "VictoryRoadGateOfficerText"
+          ],
+          "raw": "writetext VictoryRoadGateOfficerText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_BADGES"
+          ],
+          "raw": "readvar VAR_BADGES"
+        },
+        {
+          "command": "ifgreater",
+          "args": [
+            "NUM_JOHTO_BADGES - 1",
+            "_VictoryRoadGateBadgeCheckScript.AllEightBadges"
+          ],
+          "raw": "ifgreater NUM_JOHTO_BADGES - 1, .AllEightBadges"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "VictoryRoadGateNotEnoughBadgesText"
+          ],
+          "raw": "writetext VictoryRoadGateNotEnoughBadgesText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "VictoryRoadGateStepDownMovement"
+          ],
+          "raw": "applymovement PLAYER, VictoryRoadGateStepDownMovement"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "_VictoryRoadGateBadgeCheckScript.AllEightBadges"
+      ],
+      "text_refs": [
+        "VictoryRoadGateNotEnoughBadgesText",
+        "VictoryRoadGateOfficerText"
+      ],
+      "movement_refs": [
+        "VictoryRoadGateStepDownMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "_VictoryRoadGateBadgeCheckScript.AllEightBadges": {
+      "raw_lines": [
+        "writetext VictoryRoadGateEightBadgesText",
+        "waitbutton",
+        "closetext",
+        "setscene SCENE_VICTORYROADGATE_NOOP",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "VictoryRoadGateEightBadgesText"
+          ],
+          "raw": "writetext VictoryRoadGateEightBadgesText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_VICTORYROADGATE_NOOP"
+          ],
+          "raw": "setscene SCENE_VICTORYROADGATE_NOOP"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "VictoryRoadGateEightBadgesText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_VICTORYROADGATE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "VictoryRoadGateLeftBlackBeltScript": {
+      "raw_lines": [
+        "jumptextfaceplayer VictoryRoadGateLeftBlackBeltText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "VictoryRoadGateLeftBlackBeltText"
+          ],
+          "raw": "jumptextfaceplayer VictoryRoadGateLeftBlackBeltText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "VictoryRoadGateLeftBlackBeltText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadGateRightBlackBeltScript": {
+      "raw_lines": [
+        "jumptextfaceplayer VictoryRoadGateRightBlackBeltText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "VictoryRoadGateRightBlackBeltText"
+          ],
+          "raw": "jumptextfaceplayer VictoryRoadGateRightBlackBeltText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "VictoryRoadGateRightBlackBeltText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadGate_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 17,  7, ROUTE_22, 1",
+        "warp_event 18,  7, ROUTE_22, 1",
+        "warp_event  9, 17, ROUTE_26, 1",
+        "warp_event 10, 17, ROUTE_26, 1",
+        "warp_event  9,  0, VICTORY_ROAD, 1",
+        "warp_event 10,  0, VICTORY_ROAD, 1",
+        "warp_event  1,  7, ROUTE_28, 2",
+        "warp_event  2,  7, ROUTE_28, 2",
+        "def_coord_events",
+        "coord_event 10, 11, SCENE_VICTORYROADGATE_BADGE_CHECK, VictoryRoadGateBadgeCheckScript",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  8, 11, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateOfficerScript, -1",
+        "object_event  7,  5, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateLeftBlackBeltScript, EVENT_OPENED_MT_SILVER",
+        "object_event 12,  5, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateRightBlackBeltScript, EVENT_FOUGHT_SNORLAX"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "7",
+            "ROUTE_22",
+            "1"
+          ],
+          "raw": "warp_event 17,  7, ROUTE_22, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "18",
+            "7",
+            "ROUTE_22",
+            "1"
+          ],
+          "raw": "warp_event 18,  7, ROUTE_22, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "17",
+            "ROUTE_26",
+            "1"
+          ],
+          "raw": "warp_event  9, 17, ROUTE_26, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "10",
+            "17",
+            "ROUTE_26",
+            "1"
+          ],
+          "raw": "warp_event 10, 17, ROUTE_26, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "0",
+            "VICTORY_ROAD",
+            "1"
+          ],
+          "raw": "warp_event  9,  0, VICTORY_ROAD, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "10",
+            "0",
+            "VICTORY_ROAD",
+            "1"
+          ],
+          "raw": "warp_event 10,  0, VICTORY_ROAD, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "1",
+            "7",
+            "ROUTE_28",
+            "2"
+          ],
+          "raw": "warp_event  1,  7, ROUTE_28, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "ROUTE_28",
+            "2"
+          ],
+          "raw": "warp_event  2,  7, ROUTE_28, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "10",
+            "11",
+            "SCENE_VICTORYROADGATE_BADGE_CHECK",
+            "VictoryRoadGateBadgeCheckScript"
+          ],
+          "raw": "coord_event 10, 11, SCENE_VICTORYROADGATE_BADGE_CHECK, VictoryRoadGateBadgeCheckScript"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "11",
+            "SPRITE_OFFICER",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "VictoryRoadGateOfficerScript",
+            "-1"
+          ],
+          "raw": "object_event  8, 11, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateOfficerScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "5",
+            "SPRITE_BLACK_BELT",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "VictoryRoadGateLeftBlackBeltScript",
+            "EVENT_OPENED_MT_SILVER"
+          ],
+          "raw": "object_event  7,  5, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateLeftBlackBeltScript, EVENT_OPENED_MT_SILVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "12",
+            "5",
+            "SPRITE_BLACK_BELT",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "VictoryRoadGateRightBlackBeltScript",
+            "EVENT_FOUGHT_SNORLAX"
+          ],
+          "raw": "object_event 12,  5, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateRightBlackBeltScript, EVENT_FOUGHT_SNORLAX"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "VictoryRoadGateOfficerText": {
+      "raw_lines": [
+        "text \"Only trainers who\"",
+        "line \"have proven them-\"",
+        "cont \"selves may pass.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Only trainers who"
+        },
+        {
+          "command": "line",
+          "value": "have proven them-"
+        },
+        {
+          "command": "cont",
+          "value": "selves may pass."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "VictoryRoadGateNotEnoughBadgesText": {
+      "raw_lines": [
+        "text \"You don't have all\"",
+        "line \"the GYM BADGES of\"",
+        "cont \"JOHTO.\"",
+        "para \"I'm sorry, but I\"",
+        "line \"can't let you go\"",
+        "cont \"through.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You don't have all"
+        },
+        {
+          "command": "line",
+          "value": "the GYM BADGES of"
+        },
+        {
+          "command": "cont",
+          "value": "JOHTO."
+        },
+        {
+          "command": "para",
+          "value": "I'm sorry, but I"
+        },
+        {
+          "command": "line",
+          "value": "can't let you go"
+        },
+        {
+          "command": "cont",
+          "value": "through."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "VictoryRoadGateEightBadgesText": {
+      "raw_lines": [
+        "text \"Oh! The eight\"",
+        "line \"BADGES of JOHTO!\"",
+        "para \"Please, go right\"",
+        "line \"on through!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh! The eight"
+        },
+        {
+          "command": "line",
+          "value": "BADGES of JOHTO!"
+        },
+        {
+          "command": "para",
+          "value": "Please, go right"
+        },
+        {
+          "command": "line",
+          "value": "on through!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "VictoryRoadGateLeftBlackBeltText": {
+      "raw_lines": [
+        "text \"This way leads to\"",
+        "line \"MT.SILVER.\"",
+        "para \"You'll see scary-\"",
+        "line \"strong #MON out\"",
+        "cont \"there.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This way leads to"
+        },
+        {
+          "command": "line",
+          "value": "MT.SILVER."
+        },
+        {
+          "command": "para",
+          "value": "You'll see scary-"
+        },
+        {
+          "command": "line",
+          "value": "strong #MON out"
+        },
+        {
+          "command": "cont",
+          "value": "there."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "VictoryRoadGateRightBlackBeltText": {
+      "raw_lines": [
+        "text \"Off to the #MON\"",
+        "line \"LEAGUE, are you?\"",
+        "para \"The ELITE FOUR are\"",
+        "line \"so strong it's\"",
+        "para \"scary, and they're\"",
+        "line \"ready for you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Off to the #MON"
+        },
+        {
+          "command": "line",
+          "value": "LEAGUE, are you?"
+        },
+        {
+          "command": "para",
+          "value": "The ELITE FOUR are"
+        },
+        {
+          "command": "line",
+          "value": "so strong it's"
+        },
+        {
+          "command": "para",
+          "value": "scary, and they're"
+        },
+        {
+          "command": "line",
+          "value": "ready for you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "VictoryRoadGateStepDownMovement": {
+      "raw_lines": [
+        "step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "VictoryRoadGate_MapScripts": {
+      "label_refs": [
+        "VictoryRoadGateNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadGateNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadGateNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadGateBadgeCheckScript": {
+      "label_refs": [
+        "_VictoryRoadGateBadgeCheckScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadGateOfficerScript": {
+      "label_refs": [
+        "_VictoryRoadGateBadgeCheckScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "_VictoryRoadGateBadgeCheckScript": {
+      "label_refs": [
+        "_VictoryRoadGateBadgeCheckScript.AllEightBadges"
+      ],
+      "text_refs": [
+        "VictoryRoadGateNotEnoughBadgesText",
+        "VictoryRoadGateOfficerText"
+      ],
+      "movement_refs": [
+        "VictoryRoadGateStepDownMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "_VictoryRoadGateBadgeCheckScript.AllEightBadges": {
+      "label_refs": [],
+      "text_refs": [
+        "VictoryRoadGateEightBadgesText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_VICTORYROADGATE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "VictoryRoadGateLeftBlackBeltScript": {
+      "label_refs": [],
+      "text_refs": [
+        "VictoryRoadGateLeftBlackBeltText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadGateRightBlackBeltScript": {
+      "label_refs": [],
+      "text_refs": [
+        "VictoryRoadGateRightBlackBeltText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadGate_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 0,
+    "warp_events": 8,
+    "coord_events": 1,
+    "bg_events": 0,
+    "object_events": 3
+  }
+}

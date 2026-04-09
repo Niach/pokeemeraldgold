@@ -1,0 +1,829 @@
+{
+  "crystal_map": "HallOfFame",
+  "map_id": "HALL_OF_FAME",
+  "group": "INDIGO",
+  "group_index": 16,
+  "map_index": 8,
+  "tileset": "TILESET_ICE_PATH",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_INDIGO_PLATEAU",
+  "music": "MUSIC_NEW_BARK_TOWN",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 7,
+  "border_block": "00",
+  "blk_path": "maps/HallOfFame.blk",
+  "source_asm": "maps/HallOfFame.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "HallOfFameEnterScene",
+        "scene_id": "SCENE_HALLOFFAME_ENTER"
+      },
+      {
+        "script": "HallOfFameNoopScene",
+        "scene_id": "SCENE_HALLOFFAME_NOOP"
+      }
+    ],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 4,
+        "y": 13,
+        "dest_map": "LANCES_ROOM",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 5,
+        "y": 13,
+        "dest_map": "LANCES_ROOM",
+        "dest_warp_id": 4
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 4,
+        "y": 12,
+        "sprite": "SPRITE_LANCE",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "HALLOFFAME_LANCE"
+  ],
+  "scene_ids": [
+    "SCENE_HALLOFFAME_ENTER",
+    "SCENE_HALLOFFAME_NOOP",
+    "SCENE_SPROUTTOWER3F_NOOP"
+  ],
+  "scripts": {
+    "HallOfFame_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script HallOfFameEnterScene, SCENE_HALLOFFAME_ENTER",
+        "scene_script HallOfFameNoopScene,  SCENE_HALLOFFAME_NOOP",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "HallOfFameEnterScene",
+            "SCENE_HALLOFFAME_ENTER"
+          ],
+          "raw": "scene_script HallOfFameEnterScene, SCENE_HALLOFFAME_ENTER"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "HallOfFameNoopScene",
+            "SCENE_HALLOFFAME_NOOP"
+          ],
+          "raw": "scene_script HallOfFameNoopScene,  SCENE_HALLOFFAME_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "HallOfFameEnterScene",
+      "label_refs": [
+        "HallOfFameEnterScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "HallOfFameEnterScene": {
+      "raw_lines": [
+        "sdefer HallOfFameEnterScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "sdefer",
+          "args": [
+            "HallOfFameEnterScript"
+          ],
+          "raw": "sdefer HallOfFameEnterScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "sdefer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "HallOfFameNoopScene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "HallOfFameEnterScript": {
+      "raw_lines": [
+        "follow HALLOFFAME_LANCE, PLAYER",
+        "applymovement HALLOFFAME_LANCE, HallOfFame_WalkUpWithLance",
+        "stopfollow",
+        "turnobject PLAYER, RIGHT",
+        "opentext",
+        "writetext HallOfFame_LanceText",
+        "waitbutton",
+        "closetext",
+        "turnobject HALLOFFAME_LANCE, UP",
+        "applymovement PLAYER, HallOfFame_SlowlyApproachMachine",
+        "setscene SCENE_HALLOFFAME_NOOP",
+        "pause 15",
+        "setval HEALMACHINE_HALL_OF_FAME",
+        "special HealMachineAnim",
+        "setevent EVENT_BEAT_ELITE_FOUR",
+        "setevent EVENT_TELEPORT_GUY",
+        "setevent EVENT_RIVAL_SPROUT_TOWER",
+        "clearevent EVENT_RED_IN_MT_SILVER",
+        "setevent EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME",
+        "clearevent EVENT_OLIVINE_PORT_SPRITES_AFTER_HALL_OF_FAME",
+        "setmapscene SPROUT_TOWER_3F, SCENE_SPROUTTOWER3F_NOOP",
+        "special HealParty",
+        "checkevent EVENT_GOT_SS_TICKET_FROM_ELM",
+        "iftrue .SkipPhoneCall",
+        "specialphonecall SPECIALCALL_SSTICKET"
+      ],
+      "commands": [
+        {
+          "command": "follow",
+          "args": [
+            "HALLOFFAME_LANCE",
+            "PLAYER"
+          ],
+          "raw": "follow HALLOFFAME_LANCE, PLAYER"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "HALLOFFAME_LANCE",
+            "HallOfFame_WalkUpWithLance"
+          ],
+          "raw": "applymovement HALLOFFAME_LANCE, HallOfFame_WalkUpWithLance"
+        },
+        {
+          "command": "stopfollow",
+          "args": [],
+          "raw": "stopfollow"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "HallOfFame_LanceText"
+          ],
+          "raw": "writetext HallOfFame_LanceText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "HALLOFFAME_LANCE",
+            "UP"
+          ],
+          "raw": "turnobject HALLOFFAME_LANCE, UP"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "HallOfFame_SlowlyApproachMachine"
+          ],
+          "raw": "applymovement PLAYER, HallOfFame_SlowlyApproachMachine"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_HALLOFFAME_NOOP"
+          ],
+          "raw": "setscene SCENE_HALLOFFAME_NOOP"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "setval",
+          "args": [
+            "HEALMACHINE_HALL_OF_FAME"
+          ],
+          "raw": "setval HEALMACHINE_HALL_OF_FAME"
+        },
+        {
+          "command": "special",
+          "args": [
+            "HealMachineAnim"
+          ],
+          "raw": "special HealMachineAnim"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_ELITE_FOUR"
+          ],
+          "raw": "setevent EVENT_BEAT_ELITE_FOUR"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TELEPORT_GUY"
+          ],
+          "raw": "setevent EVENT_TELEPORT_GUY"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_RIVAL_SPROUT_TOWER"
+          ],
+          "raw": "setevent EVENT_RIVAL_SPROUT_TOWER"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_RED_IN_MT_SILVER"
+          ],
+          "raw": "clearevent EVENT_RED_IN_MT_SILVER"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME"
+          ],
+          "raw": "setevent EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_OLIVINE_PORT_SPRITES_AFTER_HALL_OF_FAME"
+          ],
+          "raw": "clearevent EVENT_OLIVINE_PORT_SPRITES_AFTER_HALL_OF_FAME"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "SPROUT_TOWER_3F",
+            "SCENE_SPROUTTOWER3F_NOOP"
+          ],
+          "raw": "setmapscene SPROUT_TOWER_3F, SCENE_SPROUTTOWER3F_NOOP"
+        },
+        {
+          "command": "special",
+          "args": [
+            "HealParty"
+          ],
+          "raw": "special HealParty"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_SS_TICKET_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_SS_TICKET_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "HallOfFameEnterScript.SkipPhoneCall"
+          ],
+          "raw": "iftrue .SkipPhoneCall"
+        },
+        {
+          "command": "specialphonecall",
+          "args": [
+            "SPECIALCALL_SSTICKET"
+          ],
+          "raw": "specialphonecall SPECIALCALL_SSTICKET"
+        }
+      ],
+      "first_command": "follow",
+      "fallthrough_label": "HallOfFameEnterScript.SkipPhoneCall",
+      "label_refs": [
+        "HallOfFameEnterScript.SkipPhoneCall"
+      ],
+      "text_refs": [
+        "HallOfFame_LanceText"
+      ],
+      "movement_refs": [
+        "HallOfFame_SlowlyApproachMachine",
+        "HallOfFame_WalkUpWithLance"
+      ],
+      "scene_refs": [
+        "SCENE_HALLOFFAME_NOOP",
+        "SCENE_SPROUTTOWER3F_NOOP"
+      ],
+      "std_calls": []
+    },
+    "HallOfFameEnterScript.SkipPhoneCall": {
+      "raw_lines": [
+        "halloffame",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "halloffame",
+          "args": [],
+          "raw": "halloffame"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "halloffame",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "HallOfFame_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  4, 13, LANCES_ROOM, 3",
+        "warp_event  5, 13, LANCES_ROOM, 4",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  4, 12, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "13",
+            "LANCES_ROOM",
+            "3"
+          ],
+          "raw": "warp_event  4, 13, LANCES_ROOM, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "13",
+            "LANCES_ROOM",
+            "4"
+          ],
+          "raw": "warp_event  5, 13, LANCES_ROOM, 4"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "12",
+            "SPRITE_LANCE",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "-1"
+          ],
+          "raw": "object_event  4, 12, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "HallOfFame_LanceText": {
+      "raw_lines": [
+        "text \"LANCE: It's been a\"",
+        "line \"long time since I\"",
+        "cont \"last came here.\"",
+        "para \"This is where we\"",
+        "line \"honor the LEAGUE\"",
+        "para \"CHAMPIONS for all\"",
+        "line \"eternity.\"",
+        "para \"Their courageous\"",
+        "line \"#MON are also\"",
+        "cont \"inducted.\"",
+        "para \"Here today, we\"",
+        "line \"witnessed the rise\"",
+        "para \"of a new LEAGUE\"",
+        "line \"CHAMPION--a\"",
+        "para \"trainer who feels\"",
+        "line \"compassion for,\"",
+        "para \"and trust toward,\"",
+        "line \"all #MON.\"",
+        "para \"A trainer who\"",
+        "line \"succeeded through\"",
+        "para \"perseverance and\"",
+        "line \"determination.\"",
+        "para \"The new LEAGUE\"",
+        "line \"CHAMPION who has\"",
+        "para \"all the makings\"",
+        "line \"of greatness!\"",
+        "para \"<PLAY_G>, allow me\"",
+        "line \"to register you\"",
+        "para \"and your partners\"",
+        "line \"as CHAMPIONS!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "LANCE: It's been a"
+        },
+        {
+          "command": "line",
+          "value": "long time since I"
+        },
+        {
+          "command": "cont",
+          "value": "last came here."
+        },
+        {
+          "command": "para",
+          "value": "This is where we"
+        },
+        {
+          "command": "line",
+          "value": "honor the LEAGUE"
+        },
+        {
+          "command": "para",
+          "value": "CHAMPIONS for all"
+        },
+        {
+          "command": "line",
+          "value": "eternity."
+        },
+        {
+          "command": "para",
+          "value": "Their courageous"
+        },
+        {
+          "command": "line",
+          "value": "#MON are also"
+        },
+        {
+          "command": "cont",
+          "value": "inducted."
+        },
+        {
+          "command": "para",
+          "value": "Here today, we"
+        },
+        {
+          "command": "line",
+          "value": "witnessed the rise"
+        },
+        {
+          "command": "para",
+          "value": "of a new LEAGUE"
+        },
+        {
+          "command": "line",
+          "value": "CHAMPION--a"
+        },
+        {
+          "command": "para",
+          "value": "trainer who feels"
+        },
+        {
+          "command": "line",
+          "value": "compassion for,"
+        },
+        {
+          "command": "para",
+          "value": "and trust toward,"
+        },
+        {
+          "command": "line",
+          "value": "all #MON."
+        },
+        {
+          "command": "para",
+          "value": "A trainer who"
+        },
+        {
+          "command": "line",
+          "value": "succeeded through"
+        },
+        {
+          "command": "para",
+          "value": "perseverance and"
+        },
+        {
+          "command": "line",
+          "value": "determination."
+        },
+        {
+          "command": "para",
+          "value": "The new LEAGUE"
+        },
+        {
+          "command": "line",
+          "value": "CHAMPION who has"
+        },
+        {
+          "command": "para",
+          "value": "all the makings"
+        },
+        {
+          "command": "line",
+          "value": "of greatness!"
+        },
+        {
+          "command": "para",
+          "value": "<PLAY_G>, allow me"
+        },
+        {
+          "command": "line",
+          "value": "to register you"
+        },
+        {
+          "command": "para",
+          "value": "and your partners"
+        },
+        {
+          "command": "line",
+          "value": "as CHAMPIONS!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "HallOfFame_WalkUpWithLance": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step RIGHT",
+        "turn_head LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "HallOfFame_SlowlyApproachMachine": {
+      "raw_lines": [
+        "slow_step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "slow_step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "HallOfFame_MapScripts": {
+      "label_refs": [
+        "HallOfFameEnterScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "HallOfFameEnterScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "HallOfFameNoopScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "HallOfFameEnterScript": {
+      "label_refs": [
+        "HallOfFameEnterScript.SkipPhoneCall"
+      ],
+      "text_refs": [
+        "HallOfFame_LanceText"
+      ],
+      "movement_refs": [
+        "HallOfFame_SlowlyApproachMachine",
+        "HallOfFame_WalkUpWithLance"
+      ],
+      "scene_refs": [
+        "SCENE_HALLOFFAME_NOOP",
+        "SCENE_SPROUTTOWER3F_NOOP"
+      ],
+      "std_calls": []
+    },
+    "HallOfFameEnterScript.SkipPhoneCall": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "HallOfFame_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear"
+  ],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 1
+  }
+}

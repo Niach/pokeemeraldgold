@@ -1,0 +1,643 @@
+{
+  "crystal_map": "OlivineGoodRodHouse",
+  "map_id": "OLIVINE_GOOD_ROD_HOUSE",
+  "group": "OLIVINE",
+  "group_index": 1,
+  "map_index": 6,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_OLIVINE_CITY",
+  "music": "MUSIC_VIOLET_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/House1.blk",
+  "source_asm": "maps/OlivineGoodRodHouse.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "OLIVINE_CITY",
+        "dest_warp_id": 6
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "OLIVINE_CITY",
+        "dest_warp_id": 6
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 3,
+        "sprite": "SPRITE_FISHING_GURU",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoodRodGuru",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "OLIVINEGOODRODHOUSE_FISHING_GURU"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "OlivineGoodRodHouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "GoodRodGuru",
+      "label_refs": [
+        "GoodRodGuru"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoodRodGuru": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_GOOD_ROD",
+        "iftrue .AlreadyGotItem",
+        "writetext OfferGoodRodText",
+        "yesorno",
+        "iffalse .DontWantIt",
+        "writetext GiveGoodRodText",
+        "promptbutton",
+        "verbosegiveitem GOOD_ROD",
+        "writetext GaveGoodRodText",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_GOT_GOOD_ROD",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_GOOD_ROD"
+          ],
+          "raw": "checkevent EVENT_GOT_GOOD_ROD"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoodRodGuru.AlreadyGotItem"
+          ],
+          "raw": "iftrue .AlreadyGotItem"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "OfferGoodRodText"
+          ],
+          "raw": "writetext OfferGoodRodText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoodRodGuru.DontWantIt"
+          ],
+          "raw": "iffalse .DontWantIt"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GiveGoodRodText"
+          ],
+          "raw": "writetext GiveGoodRodText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "GOOD_ROD"
+          ],
+          "raw": "verbosegiveitem GOOD_ROD"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GaveGoodRodText"
+          ],
+          "raw": "writetext GaveGoodRodText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_GOOD_ROD"
+          ],
+          "raw": "setevent EVENT_GOT_GOOD_ROD"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "GoodRodGuru.AlreadyGotItem",
+        "GoodRodGuru.DontWantIt"
+      ],
+      "text_refs": [
+        "GaveGoodRodText",
+        "GiveGoodRodText",
+        "OfferGoodRodText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoodRodGuru.DontWantIt": {
+      "raw_lines": [
+        "writetext DontWantGoodRodText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "DontWantGoodRodText"
+          ],
+          "raw": "writetext DontWantGoodRodText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "DontWantGoodRodText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoodRodGuru.AlreadyGotItem": {
+      "raw_lines": [
+        "writetext HaveGoodRodText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "HaveGoodRodText"
+          ],
+          "raw": "writetext HaveGoodRodText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "HaveGoodRodText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoodRodHouseBookshelf": {
+      "raw_lines": [
+        "jumpstd PictureBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PictureBookshelfScript"
+          ],
+          "raw": "jumpstd PictureBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "OlivineGoodRodHouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, OLIVINE_CITY, 6",
+        "warp_event  3,  7, OLIVINE_CITY, 6",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  2,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoodRodGuru, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "OLIVINE_CITY",
+            "6"
+          ],
+          "raw": "warp_event  2,  7, OLIVINE_CITY, 6"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "OLIVINE_CITY",
+            "6"
+          ],
+          "raw": "warp_event  3,  7, OLIVINE_CITY, 6"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_FISHING_GURU",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoodRodGuru",
+            "-1"
+          ],
+          "raw": "object_event  2,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoodRodGuru, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "OfferGoodRodText": {
+      "raw_lines": [
+        "text \"OLIVINE is on the\"",
+        "line \"sea!\"",
+        "para \"And if it's on the\"",
+        "line \"sea, there are\"",
+        "cont \"bound to be fish!\"",
+        "para \"I've fished here\"",
+        "line \"for 30 years.\"",
+        "para \"Would you like to\"",
+        "line \"face the sea and\"",
+        "cont \"fish?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OLIVINE is on the"
+        },
+        {
+          "command": "line",
+          "value": "sea!"
+        },
+        {
+          "command": "para",
+          "value": "And if it's on the"
+        },
+        {
+          "command": "line",
+          "value": "sea, there are"
+        },
+        {
+          "command": "cont",
+          "value": "bound to be fish!"
+        },
+        {
+          "command": "para",
+          "value": "I've fished here"
+        },
+        {
+          "command": "line",
+          "value": "for 30 years."
+        },
+        {
+          "command": "para",
+          "value": "Would you like to"
+        },
+        {
+          "command": "line",
+          "value": "face the sea and"
+        },
+        {
+          "command": "cont",
+          "value": "fish?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GiveGoodRodText": {
+      "raw_lines": [
+        "text \"Ah, hahah!\"",
+        "line \"We have ourselves\"",
+        "cont \"a new angler!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ah, hahah!"
+        },
+        {
+          "command": "line",
+          "value": "We have ourselves"
+        },
+        {
+          "command": "cont",
+          "value": "a new angler!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GaveGoodRodText": {
+      "raw_lines": [
+        "text \"Fish aren't found\"",
+        "line \"in the sea alone.\"",
+        "para \"They go wherever\"",
+        "line \"there is water.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Fish aren't found"
+        },
+        {
+          "command": "line",
+          "value": "in the sea alone."
+        },
+        {
+          "command": "para",
+          "value": "They go wherever"
+        },
+        {
+          "command": "line",
+          "value": "there is water."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DontWantGoodRodText": {
+      "raw_lines": [
+        "text \"Whaaat? You don't\"",
+        "line \"like to fish!?\"",
+        "cont \"Incomprehensible!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Whaaat? You don't"
+        },
+        {
+          "command": "line",
+          "value": "like to fish!?"
+        },
+        {
+          "command": "cont",
+          "value": "Incomprehensible!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "HaveGoodRodText": {
+      "raw_lines": [
+        "text \"How are things?\"",
+        "line \"Land the big one?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "How are things?"
+        },
+        {
+          "command": "line",
+          "value": "Land the big one?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "PictureBookshelfScript"
+  ],
+  "dependencies": {
+    "OlivineGoodRodHouse_MapScripts": {
+      "label_refs": [
+        "GoodRodGuru"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoodRodGuru": {
+      "label_refs": [
+        "GoodRodGuru.AlreadyGotItem",
+        "GoodRodGuru.DontWantIt"
+      ],
+      "text_refs": [
+        "GaveGoodRodText",
+        "GiveGoodRodText",
+        "OfferGoodRodText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoodRodGuru.DontWantIt": {
+      "label_refs": [],
+      "text_refs": [
+        "DontWantGoodRodText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoodRodGuru.AlreadyGotItem": {
+      "label_refs": [],
+      "text_refs": [
+        "HaveGoodRodText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoodRodHouseBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "OlivineGoodRodHouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 1
+  }
+}

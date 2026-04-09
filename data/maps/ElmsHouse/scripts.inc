@@ -2,11 +2,17 @@ ElmsHouse_MapScripts::
 	.byte 0
 
 ElmsHouse_EventScript_Wife::
-	msgbox ElmsHouse_Text_Wife, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox ElmsHouse_Text_Wife, MSGBOX_DEFAULT
+	release
 	end
 
 ElmsHouse_EventScript_Son::
-	msgbox ElmsHouse_Text_Son, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox ElmsHouse_Text_Son, MSGBOX_DEFAULT
+	release
 	end
 
 ElmsHouse_EventScript_PC::

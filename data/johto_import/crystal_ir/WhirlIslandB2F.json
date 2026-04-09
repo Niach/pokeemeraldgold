@@ -1,0 +1,409 @@
+{
+  "crystal_map": "WhirlIslandB2F",
+  "map_id": "WHIRL_ISLAND_B2F",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 72,
+  "tileset": "TILESET_DARK_CAVE",
+  "environment": "CAVE",
+  "landmark": "LANDMARK_WHIRL_ISLANDS",
+  "music": "MUSIC_UNION_CAVE",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DARK",
+  "fishgroup": "FISHGROUP_WHIRL_ISLANDS",
+  "width_blocks": 10,
+  "height_blocks": 18,
+  "border_block": "2E",
+  "blk_path": "maps/WhirlIslandB2F.blk",
+  "source_asm": "maps/WhirlIslandB2F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 11,
+        "y": 5,
+        "dest_map": "WHIRL_ISLAND_B1F",
+        "dest_warp_id": 7
+      },
+      {
+        "x": 7,
+        "y": 11,
+        "dest_map": "WHIRL_ISLAND_B1F",
+        "dest_warp_id": 8
+      },
+      {
+        "x": 7,
+        "y": 25,
+        "dest_map": "WHIRL_ISLAND_LUGIA_CHAMBER",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 13,
+        "y": 31,
+        "dest_map": "WHIRL_ISLAND_SW",
+        "dest_warp_id": 5
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 10,
+        "y": 11,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "WhirlIslandB2FFullRestore",
+        "flag": "EVENT_WHIRL_ISLAND_B2F_FULL_RESTORE"
+      },
+      {
+        "x": 6,
+        "y": 4,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "WhirlIslandB2FMaxRevive",
+        "flag": "EVENT_WHIRL_ISLAND_B2F_MAX_REVIVE"
+      },
+      {
+        "x": 5,
+        "y": 12,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "WhirlIslandB2FMaxElixer",
+        "flag": "EVENT_WHIRL_ISLAND_B2F_MAX_ELIXER"
+      }
+    ]
+  },
+  "object_consts": [
+    "WHIRLISLANDB2F_POKE_BALL1",
+    "WHIRLISLANDB2F_POKE_BALL2",
+    "WHIRLISLANDB2F_POKE_BALL3"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "WhirlIslandB2F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "WhirlIslandB2FFullRestore",
+      "label_refs": [
+        "WhirlIslandB2FFullRestore"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WhirlIslandB2FFullRestore": {
+      "raw_lines": [
+        "itemball FULL_RESTORE"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "FULL_RESTORE"
+          ],
+          "raw": "itemball FULL_RESTORE"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "WhirlIslandB2FMaxRevive",
+      "label_refs": [
+        "WhirlIslandB2FMaxRevive"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WhirlIslandB2FMaxRevive": {
+      "raw_lines": [
+        "itemball MAX_REVIVE"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "MAX_REVIVE"
+          ],
+          "raw": "itemball MAX_REVIVE"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "WhirlIslandB2FMaxElixer",
+      "label_refs": [
+        "WhirlIslandB2FMaxElixer"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WhirlIslandB2FMaxElixer": {
+      "raw_lines": [
+        "itemball MAX_ELIXER"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "MAX_ELIXER"
+          ],
+          "raw": "itemball MAX_ELIXER"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "WhirlIslandB2F_MapEvents",
+      "label_refs": [
+        "WhirlIslandB2F_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WhirlIslandB2F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 11,  5, WHIRL_ISLAND_B1F, 7",
+        "warp_event  7, 11, WHIRL_ISLAND_B1F, 8",
+        "warp_event  7, 25, WHIRL_ISLAND_LUGIA_CHAMBER, 1",
+        "warp_event 13, 31, WHIRL_ISLAND_SW, 5",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event 10, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, WhirlIslandB2FFullRestore, EVENT_WHIRL_ISLAND_B2F_FULL_RESTORE",
+        "object_event  6,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, WhirlIslandB2FMaxRevive, EVENT_WHIRL_ISLAND_B2F_MAX_REVIVE",
+        "object_event  5, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, WhirlIslandB2FMaxElixer, EVENT_WHIRL_ISLAND_B2F_MAX_ELIXER"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "11",
+            "5",
+            "WHIRL_ISLAND_B1F",
+            "7"
+          ],
+          "raw": "warp_event 11,  5, WHIRL_ISLAND_B1F, 7"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "7",
+            "11",
+            "WHIRL_ISLAND_B1F",
+            "8"
+          ],
+          "raw": "warp_event  7, 11, WHIRL_ISLAND_B1F, 8"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "7",
+            "25",
+            "WHIRL_ISLAND_LUGIA_CHAMBER",
+            "1"
+          ],
+          "raw": "warp_event  7, 25, WHIRL_ISLAND_LUGIA_CHAMBER, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "13",
+            "31",
+            "WHIRL_ISLAND_SW",
+            "5"
+          ],
+          "raw": "warp_event 13, 31, WHIRL_ISLAND_SW, 5"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "10",
+            "11",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "WhirlIslandB2FFullRestore",
+            "EVENT_WHIRL_ISLAND_B2F_FULL_RESTORE"
+          ],
+          "raw": "object_event 10, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, WhirlIslandB2FFullRestore, EVENT_WHIRL_ISLAND_B2F_FULL_RESTORE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "4",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "WhirlIslandB2FMaxRevive",
+            "EVENT_WHIRL_ISLAND_B2F_MAX_REVIVE"
+          ],
+          "raw": "object_event  6,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, WhirlIslandB2FMaxRevive, EVENT_WHIRL_ISLAND_B2F_MAX_REVIVE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "12",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "WhirlIslandB2FMaxElixer",
+            "EVENT_WHIRL_ISLAND_B2F_MAX_ELIXER"
+          ],
+          "raw": "object_event  5, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, WhirlIslandB2FMaxElixer, EVENT_WHIRL_ISLAND_B2F_MAX_ELIXER"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {},
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "WhirlIslandB2F_MapScripts": {
+      "label_refs": [
+        "WhirlIslandB2FFullRestore"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WhirlIslandB2FFullRestore": {
+      "label_refs": [
+        "WhirlIslandB2FMaxRevive"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WhirlIslandB2FMaxRevive": {
+      "label_refs": [
+        "WhirlIslandB2FMaxElixer"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WhirlIslandB2FMaxElixer": {
+      "label_refs": [
+        "WhirlIslandB2F_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WhirlIslandB2F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 4,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 3
+  }
+}

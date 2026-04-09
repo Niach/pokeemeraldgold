@@ -1,0 +1,582 @@
+{
+  "crystal_map": "MahoganyPokecenter1F",
+  "map_id": "MAHOGANY_POKECENTER_1F",
+  "group": "MAHOGANY",
+  "group_index": 2,
+  "map_index": 3,
+  "tileset": "TILESET_POKECENTER",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_MAHOGANY_TOWN",
+  "music": "MUSIC_POKEMON_CENTER",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/Pokecenter1F.blk",
+  "source_asm": "maps/MahoganyPokecenter1F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "MAHOGANY_TOWN",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "dest_map": "MAHOGANY_TOWN",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 0,
+        "y": 7,
+        "dest_map": "POKECENTER_2F",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 3,
+        "y": 1,
+        "sprite": "SPRITE_NURSE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MahoganyPokecenter1FNurseScript",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 2,
+        "sprite": "SPRITE_POKEFAN_M",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MahoganyPokecenter1FPokefanMScript",
+        "flag": -1
+      },
+      {
+        "x": 1,
+        "y": 3,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MahoganyPokecenter1FYoungsterScript",
+        "flag": -1
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "sprite": "SPRITE_COOLTRAINER_F",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MahoganyPokecenter1FCooltrainerFScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "MAHOGANYPOKECENTER1F_NURSE",
+    "MAHOGANYPOKECENTER1F_POKEFAN_M",
+    "MAHOGANYPOKECENTER1F_YOUNGSTER",
+    "MAHOGANYPOKECENTER1F_COOLTRAINER_F"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "MahoganyPokecenter1F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "MahoganyPokecenter1FNurseScript",
+      "label_refs": [
+        "MahoganyPokecenter1FNurseScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyPokecenter1FNurseScript": {
+      "raw_lines": [
+        "jumpstd PokecenterNurseScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PokecenterNurseScript"
+          ],
+          "raw": "jumpstd PokecenterNurseScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterNurseScript"
+      ]
+    },
+    "MahoganyPokecenter1FPokefanMScript": {
+      "raw_lines": [
+        "jumptextfaceplayer MahoganyPokecenter1FPokefanMText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "MahoganyPokecenter1FPokefanMText"
+          ],
+          "raw": "jumptextfaceplayer MahoganyPokecenter1FPokefanMText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyPokecenter1FPokefanMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyPokecenter1FYoungsterScript": {
+      "raw_lines": [
+        "jumptextfaceplayer MahoganyPokecenter1FYoungsterText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "MahoganyPokecenter1FYoungsterText"
+          ],
+          "raw": "jumptextfaceplayer MahoganyPokecenter1FYoungsterText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyPokecenter1FYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyPokecenter1FCooltrainerFScript": {
+      "raw_lines": [
+        "jumptextfaceplayer MahoganyPokecenter1FCooltrainerFText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "MahoganyPokecenter1FCooltrainerFText"
+          ],
+          "raw": "jumptextfaceplayer MahoganyPokecenter1FCooltrainerFText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyPokecenter1FCooltrainerFText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyPokecenter1F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  7, MAHOGANY_TOWN, 4",
+        "warp_event  4,  7, MAHOGANY_TOWN, 4",
+        "warp_event  0,  7, POKECENTER_2F, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FNurseScript, -1",
+        "object_event  7,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FPokefanMScript, -1",
+        "object_event  1,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FYoungsterScript, -1",
+        "object_event  2,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FCooltrainerFScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "MAHOGANY_TOWN",
+            "4"
+          ],
+          "raw": "warp_event  3,  7, MAHOGANY_TOWN, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "MAHOGANY_TOWN",
+            "4"
+          ],
+          "raw": "warp_event  4,  7, MAHOGANY_TOWN, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "7",
+            "POKECENTER_2F",
+            "1"
+          ],
+          "raw": "warp_event  0,  7, POKECENTER_2F, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "1",
+            "SPRITE_NURSE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MahoganyPokecenter1FNurseScript",
+            "-1"
+          ],
+          "raw": "object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FNurseScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "2",
+            "SPRITE_POKEFAN_M",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MahoganyPokecenter1FPokefanMScript",
+            "-1"
+          ],
+          "raw": "object_event  7,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FPokefanMScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "3",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MahoganyPokecenter1FYoungsterScript",
+            "-1"
+          ],
+          "raw": "object_event  1,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FYoungsterScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MahoganyPokecenter1FCooltrainerFScript",
+            "-1"
+          ],
+          "raw": "object_event  2,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FCooltrainerFScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "MahoganyPokecenter1FPokefanMText": {
+      "raw_lines": [
+        "text \"What's this? TEAM\"",
+        "line \"ROCKET has come\"",
+        "cont \"back?\"",
+        "para \"I saw some men in\"",
+        "line \"black at LAKE OF\"",
+        "cont \"RAGE\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What's this? TEAM"
+        },
+        {
+          "command": "line",
+          "value": "ROCKET has come"
+        },
+        {
+          "command": "cont",
+          "value": "back?"
+        },
+        {
+          "command": "para",
+          "value": "I saw some men in"
+        },
+        {
+          "command": "line",
+          "value": "black at LAKE OF"
+        },
+        {
+          "command": "cont",
+          "value": "RAGE\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MahoganyPokecenter1FYoungsterText": {
+      "raw_lines": [
+        "text \"I stop my #MON\"",
+        "line \"from evolving too\"",
+        "cont \"early.\"",
+        "para \"I make them learn\"",
+        "line \"certain moves be-\"",
+        "cont \"fore I let them\"",
+        "cont \"evolve.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I stop my #MON"
+        },
+        {
+          "command": "line",
+          "value": "from evolving too"
+        },
+        {
+          "command": "cont",
+          "value": "early."
+        },
+        {
+          "command": "para",
+          "value": "I make them learn"
+        },
+        {
+          "command": "line",
+          "value": "certain moves be-"
+        },
+        {
+          "command": "cont",
+          "value": "fore I let them"
+        },
+        {
+          "command": "cont",
+          "value": "evolve."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "MahoganyPokecenter1FCooltrainerFText": {
+      "raw_lines": [
+        "text \"#MON do become\"",
+        "line \"stronger when they\"",
+        "para \"evolve, but they\"",
+        "line \"also learn moves\"",
+        "cont \"more slowly.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#MON do become"
+        },
+        {
+          "command": "line",
+          "value": "stronger when they"
+        },
+        {
+          "command": "para",
+          "value": "evolve, but they"
+        },
+        {
+          "command": "line",
+          "value": "also learn moves"
+        },
+        {
+          "command": "cont",
+          "value": "more slowly."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "PokecenterNurseScript"
+  ],
+  "dependencies": {
+    "MahoganyPokecenter1F_MapScripts": {
+      "label_refs": [
+        "MahoganyPokecenter1FNurseScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyPokecenter1FNurseScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterNurseScript"
+      ]
+    },
+    "MahoganyPokecenter1FPokefanMScript": {
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyPokecenter1FPokefanMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyPokecenter1FYoungsterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyPokecenter1FYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyPokecenter1FCooltrainerFScript": {
+      "label_refs": [],
+      "text_refs": [
+        "MahoganyPokecenter1FCooltrainerFText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MahoganyPokecenter1F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 3,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 4
+  }
+}

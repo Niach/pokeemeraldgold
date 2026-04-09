@@ -1,0 +1,552 @@
+{
+  "crystal_map": "OlivinePokecenter1F",
+  "map_id": "OLIVINE_POKECENTER_1F",
+  "group": "OLIVINE",
+  "group_index": 1,
+  "map_index": 1,
+  "tileset": "TILESET_POKECENTER",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_OLIVINE_CITY",
+  "music": "MUSIC_POKEMON_CENTER",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/Pokecenter1F.blk",
+  "source_asm": "maps/OlivinePokecenter1F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "OLIVINE_CITY",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "dest_map": "OLIVINE_CITY",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 0,
+        "y": 7,
+        "dest_map": "POKECENTER_2F",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 3,
+        "y": 1,
+        "sprite": "SPRITE_NURSE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "OlivinePokecenter1FNurseScript",
+        "flag": -1
+      },
+      {
+        "x": 8,
+        "y": 4,
+        "sprite": "SPRITE_FISHING_GURU",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "OlivinePokecenter1FFishingGuruScript",
+        "flag": -1
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "sprite": "SPRITE_FISHER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "OlivinePokecenter1FFisherScript",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 1,
+        "sprite": "SPRITE_TEACHER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "OlivinePokecenter1FTeacherScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "OLIVINEPOKECENTER1F_NURSE",
+    "OLIVINEPOKECENTER1F_FISHING_GURU",
+    "OLIVINEPOKECENTER1F_FISHER",
+    "OLIVINEPOKECENTER1F_TEACHER"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "OlivinePokecenter1F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "OlivinePokecenter1FNurseScript",
+      "label_refs": [
+        "OlivinePokecenter1FNurseScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivinePokecenter1FNurseScript": {
+      "raw_lines": [
+        "jumpstd PokecenterNurseScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PokecenterNurseScript"
+          ],
+          "raw": "jumpstd PokecenterNurseScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterNurseScript"
+      ]
+    },
+    "OlivinePokecenter1FFishingGuruScript": {
+      "raw_lines": [
+        "jumpstd HappinessCheckScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "HappinessCheckScript"
+          ],
+          "raw": "jumpstd HappinessCheckScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "HappinessCheckScript"
+      ]
+    },
+    "OlivinePokecenter1FFisherScript": {
+      "raw_lines": [
+        "jumptextfaceplayer OlivinePokecenter1FFisherText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "OlivinePokecenter1FFisherText"
+          ],
+          "raw": "jumptextfaceplayer OlivinePokecenter1FFisherText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "OlivinePokecenter1FFisherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivinePokecenter1FTeacherScript": {
+      "raw_lines": [
+        "jumptextfaceplayer OlivinePokecenter1FTeacherText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "OlivinePokecenter1FTeacherText"
+          ],
+          "raw": "jumptextfaceplayer OlivinePokecenter1FTeacherText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "OlivinePokecenter1FTeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivinePokecenter1F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  7, OLIVINE_CITY, 1",
+        "warp_event  4,  7, OLIVINE_CITY, 1",
+        "warp_event  0,  7, POKECENTER_2F, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FNurseScript, -1",
+        "object_event  8,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FFishingGuruScript, -1",
+        "object_event  2,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FFisherScript, -1",
+        "object_event  7,  1, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FTeacherScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "OLIVINE_CITY",
+            "1"
+          ],
+          "raw": "warp_event  3,  7, OLIVINE_CITY, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "OLIVINE_CITY",
+            "1"
+          ],
+          "raw": "warp_event  4,  7, OLIVINE_CITY, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "7",
+            "POKECENTER_2F",
+            "1"
+          ],
+          "raw": "warp_event  0,  7, POKECENTER_2F, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "1",
+            "SPRITE_NURSE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "OlivinePokecenter1FNurseScript",
+            "-1"
+          ],
+          "raw": "object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FNurseScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "4",
+            "SPRITE_FISHING_GURU",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "OlivinePokecenter1FFishingGuruScript",
+            "-1"
+          ],
+          "raw": "object_event  8,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FFishingGuruScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "OlivinePokecenter1FFisherScript",
+            "-1"
+          ],
+          "raw": "object_event  2,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FFisherScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "1",
+            "SPRITE_TEACHER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "OlivinePokecenter1FTeacherScript",
+            "-1"
+          ],
+          "raw": "object_event  7,  1, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePokecenter1FTeacherScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "OlivinePokecenter1FFisherText": {
+      "raw_lines": [
+        "text \"The SAILOR in the\"",
+        "line \"OLIVINE CAFE next\"",
+        "para \"door is really\"",
+        "line \"generous.\"",
+        "para \"He taught my\"",
+        "line \"#MON STRENGTH.\"",
+        "para \"Now it can move\"",
+        "line \"big boulders.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The SAILOR in the"
+        },
+        {
+          "command": "line",
+          "value": "OLIVINE CAFE next"
+        },
+        {
+          "command": "para",
+          "value": "door is really"
+        },
+        {
+          "command": "line",
+          "value": "generous."
+        },
+        {
+          "command": "para",
+          "value": "He taught my"
+        },
+        {
+          "command": "line",
+          "value": "#MON STRENGTH."
+        },
+        {
+          "command": "para",
+          "value": "Now it can move"
+        },
+        {
+          "command": "line",
+          "value": "big boulders."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "OlivinePokecenter1FTeacherText": {
+      "raw_lines": [
+        "text \"There's a person\"",
+        "line \"in CIANWOOD CITY\"",
+        "cont \"across the sea.\"",
+        "para \"I heard him brag-\"",
+        "line \"ging about his\"",
+        "cont \"rare #MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "There's a person"
+        },
+        {
+          "command": "line",
+          "value": "in CIANWOOD CITY"
+        },
+        {
+          "command": "cont",
+          "value": "across the sea."
+        },
+        {
+          "command": "para",
+          "value": "I heard him brag-"
+        },
+        {
+          "command": "line",
+          "value": "ging about his"
+        },
+        {
+          "command": "cont",
+          "value": "rare #MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "HappinessCheckScript",
+    "PokecenterNurseScript"
+  ],
+  "dependencies": {
+    "OlivinePokecenter1F_MapScripts": {
+      "label_refs": [
+        "OlivinePokecenter1FNurseScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivinePokecenter1FNurseScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterNurseScript"
+      ]
+    },
+    "OlivinePokecenter1FFishingGuruScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "HappinessCheckScript"
+      ]
+    },
+    "OlivinePokecenter1FFisherScript": {
+      "label_refs": [],
+      "text_refs": [
+        "OlivinePokecenter1FFisherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivinePokecenter1FTeacherScript": {
+      "label_refs": [],
+      "text_refs": [
+        "OlivinePokecenter1FTeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivinePokecenter1F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 3,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 4
+  }
+}

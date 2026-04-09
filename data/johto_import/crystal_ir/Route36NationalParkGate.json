@@ -1,0 +1,6154 @@
+{
+  "crystal_map": "Route36NationalParkGate",
+  "map_id": "ROUTE_36_NATIONAL_PARK_GATE",
+  "group": "VIOLET",
+  "group_index": 10,
+  "map_index": 17,
+  "tileset": "TILESET_GATE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_ROUTE_36",
+  "music": "MUSIC_GOLDENROD_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/Route36NationalParkGate.blk",
+  "source_asm": "maps/Route36NationalParkGate.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "Route36NationalParkGateNoop1Scene",
+        "scene_id": "SCENE_ROUTE36NATIONALPARKGATE_NOOP"
+      },
+      {
+        "script": "Route36NationalParkGateNoop2Scene",
+        "scene_id": "SCENE_ROUTE36NATIONALPARKGATE_UNUSED"
+      },
+      {
+        "script": "Route36NationalParkGateLeaveContestEarlyScene",
+        "scene_id": "SCENE_ROUTE36NATIONALPARKGATE_LEAVE_CONTEST_EARLY"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "Route36NationalParkGateCheckIfContestRunningCallback"
+      },
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "Route36NationalParkGateCheckIfContestAvailableCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 0,
+        "y": 4,
+        "dest_map": "NATIONAL_PARK",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 0,
+        "y": 5,
+        "dest_map": "NATIONAL_PARK",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 9,
+        "y": 4,
+        "dest_map": "ROUTE_36",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 9,
+        "y": 5,
+        "dest_map": "ROUTE_36",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 6,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "BugCatchingContestExplanationSign"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 0,
+        "y": 3,
+        "sprite": "SPRITE_OFFICER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route36OfficerScriptContest",
+        "flag": "EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY"
+      },
+      {
+        "x": 2,
+        "y": 5,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BugCatchingContestant1BScript",
+        "flag": "EVENT_BUG_CATCHING_CONTESTANT_1B"
+      },
+      {
+        "x": 4,
+        "y": 5,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BugCatchingContestant2BScript",
+        "flag": "EVENT_BUG_CATCHING_CONTESTANT_2B"
+      },
+      {
+        "x": 2,
+        "y": 6,
+        "sprite": "SPRITE_ROCKER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BugCatchingContestant3BScript",
+        "flag": "EVENT_BUG_CATCHING_CONTESTANT_3B"
+      },
+      {
+        "x": 6,
+        "y": 5,
+        "sprite": "SPRITE_POKEFAN_M",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BugCatchingContestant4BScript",
+        "flag": "EVENT_BUG_CATCHING_CONTESTANT_4B"
+      },
+      {
+        "x": 2,
+        "y": 7,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BugCatchingContestant5BScript",
+        "flag": "EVENT_BUG_CATCHING_CONTESTANT_5B"
+      },
+      {
+        "x": 5,
+        "y": 6,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BugCatchingContestant6BScript",
+        "flag": "EVENT_BUG_CATCHING_CONTESTANT_6B"
+      },
+      {
+        "x": 3,
+        "y": 6,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BugCatchingContestant7BScript",
+        "flag": "EVENT_BUG_CATCHING_CONTESTANT_7B"
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BugCatchingContestant8BScript",
+        "flag": "EVENT_BUG_CATCHING_CONTESTANT_8B"
+      },
+      {
+        "x": 6,
+        "y": 7,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BugCatchingContestant9BScript",
+        "flag": "EVENT_BUG_CATCHING_CONTESTANT_9B"
+      },
+      {
+        "x": 6,
+        "y": 6,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BugCatchingContestant10BScript",
+        "flag": "EVENT_BUG_CATCHING_CONTESTANT_10B"
+      },
+      {
+        "x": 3,
+        "y": 2,
+        "sprite": "SPRITE_OFFICER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route36NationalParkGateOfficerScript",
+        "flag": "EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY"
+      }
+    ]
+  },
+  "object_consts": [
+    "ROUTE36NATIONALPARKGATE_OFFICER1",
+    "ROUTE36NATIONALPARKGATE_YOUNGSTER1",
+    "ROUTE36NATIONALPARKGATE_YOUNGSTER2",
+    "ROUTE36NATIONALPARKGATE_ROCKER",
+    "ROUTE36NATIONALPARKGATE_POKEFAN_M",
+    "ROUTE36NATIONALPARKGATE_YOUNGSTER3",
+    "ROUTE36NATIONALPARKGATE_YOUNGSTER4",
+    "ROUTE36NATIONALPARKGATE_LASS",
+    "ROUTE36NATIONALPARKGATE_YOUNGSTER5",
+    "ROUTE36NATIONALPARKGATE_YOUNGSTER6",
+    "ROUTE36NATIONALPARKGATE_YOUNGSTER7",
+    "ROUTE36NATIONALPARKGATE_OFFICER2"
+  ],
+  "scene_ids": [
+    "SCENE_ROUTE36NATIONALPARKGATE_LEAVE_CONTEST_EARLY",
+    "SCENE_ROUTE36NATIONALPARKGATE_NOOP",
+    "SCENE_ROUTE36NATIONALPARKGATE_UNUSED"
+  ],
+  "scripts": {
+    "Route36NationalParkGate_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script Route36NationalParkGateNoop1Scene,             SCENE_ROUTE36NATIONALPARKGATE_NOOP",
+        "scene_script Route36NationalParkGateNoop2Scene,             SCENE_ROUTE36NATIONALPARKGATE_UNUSED",
+        "scene_script Route36NationalParkGateLeaveContestEarlyScene, SCENE_ROUTE36NATIONALPARKGATE_LEAVE_CONTEST_EARLY",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, Route36NationalParkGateCheckIfContestRunningCallback",
+        "callback MAPCALLBACK_OBJECTS, Route36NationalParkGateCheckIfContestAvailableCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "Route36NationalParkGateNoop1Scene",
+            "SCENE_ROUTE36NATIONALPARKGATE_NOOP"
+          ],
+          "raw": "scene_script Route36NationalParkGateNoop1Scene,             SCENE_ROUTE36NATIONALPARKGATE_NOOP"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "Route36NationalParkGateNoop2Scene",
+            "SCENE_ROUTE36NATIONALPARKGATE_UNUSED"
+          ],
+          "raw": "scene_script Route36NationalParkGateNoop2Scene,             SCENE_ROUTE36NATIONALPARKGATE_UNUSED"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "Route36NationalParkGateLeaveContestEarlyScene",
+            "SCENE_ROUTE36NATIONALPARKGATE_LEAVE_CONTEST_EARLY"
+          ],
+          "raw": "scene_script Route36NationalParkGateLeaveContestEarlyScene, SCENE_ROUTE36NATIONALPARKGATE_LEAVE_CONTEST_EARLY"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "Route36NationalParkGateCheckIfContestRunningCallback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, Route36NationalParkGateCheckIfContestRunningCallback"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "Route36NationalParkGateCheckIfContestAvailableCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, Route36NationalParkGateCheckIfContestAvailableCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "Route36NationalParkGateNoop1Scene",
+      "label_refs": [
+        "Route36NationalParkGateNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeaveContestEarlyScene": {
+      "raw_lines": [
+        "sdefer Route36NationalParkGateLeavingContestEarlyScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "sdefer",
+          "args": [
+            "Route36NationalParkGateLeavingContestEarlyScript"
+          ],
+          "raw": "sdefer Route36NationalParkGateLeavingContestEarlyScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "sdefer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateCheckIfContestRunningCallback": {
+      "raw_lines": [
+        "checkflag ENGINE_BUG_CONTEST_TIMER",
+        "iftrue .BugContestIsRunning",
+        "setscene SCENE_ROUTE36NATIONALPARKGATE_NOOP",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_BUG_CONTEST_TIMER"
+          ],
+          "raw": "checkflag ENGINE_BUG_CONTEST_TIMER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36NationalParkGateCheckIfContestRunningCallback.BugContestIsRunning"
+          ],
+          "raw": "iftrue .BugContestIsRunning"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_ROUTE36NATIONALPARKGATE_NOOP"
+          ],
+          "raw": "setscene SCENE_ROUTE36NATIONALPARKGATE_NOOP"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "Route36NationalParkGateCheckIfContestRunningCallback.BugContestIsRunning"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_ROUTE36NATIONALPARKGATE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "Route36NationalParkGateCheckIfContestRunningCallback.BugContestIsRunning": {
+      "raw_lines": [
+        "setscene SCENE_ROUTE36NATIONALPARKGATE_LEAVE_CONTEST_EARLY",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_ROUTE36NATIONALPARKGATE_LEAVE_CONTEST_EARLY"
+          ],
+          "raw": "setscene SCENE_ROUTE36NATIONALPARKGATE_LEAVE_CONTEST_EARLY"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "setscene",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_ROUTE36NATIONALPARKGATE_LEAVE_CONTEST_EARLY"
+      ],
+      "std_calls": []
+    },
+    "Route36NationalParkGateCheckIfContestAvailableCallback": {
+      "raw_lines": [
+        "checkevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE",
+        "iftrue .Return",
+        "readvar VAR_WEEKDAY",
+        "ifequal TUESDAY, .SetContestOfficer",
+        "ifequal THURSDAY, .SetContestOfficer",
+        "ifequal SATURDAY, .SetContestOfficer",
+        "checkflag ENGINE_BUG_CONTEST_TIMER",
+        "iftrue .SetContestOfficer",
+        "disappear ROUTE36NATIONALPARKGATE_OFFICER1",
+        "appear ROUTE36NATIONALPARKGATE_OFFICER2",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE"
+          ],
+          "raw": "checkevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36NationalParkGateCheckIfContestAvailableCallback.Return"
+          ],
+          "raw": "iftrue .Return"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "TUESDAY",
+            "Route36NationalParkGateCheckIfContestAvailableCallback.SetContestOfficer"
+          ],
+          "raw": "ifequal TUESDAY, .SetContestOfficer"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "THURSDAY",
+            "Route36NationalParkGateCheckIfContestAvailableCallback.SetContestOfficer"
+          ],
+          "raw": "ifequal THURSDAY, .SetContestOfficer"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SATURDAY",
+            "Route36NationalParkGateCheckIfContestAvailableCallback.SetContestOfficer"
+          ],
+          "raw": "ifequal SATURDAY, .SetContestOfficer"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_BUG_CONTEST_TIMER"
+          ],
+          "raw": "checkflag ENGINE_BUG_CONTEST_TIMER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36NationalParkGateCheckIfContestAvailableCallback.SetContestOfficer"
+          ],
+          "raw": "iftrue .SetContestOfficer"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ROUTE36NATIONALPARKGATE_OFFICER1"
+          ],
+          "raw": "disappear ROUTE36NATIONALPARKGATE_OFFICER1"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE36NATIONALPARKGATE_OFFICER2"
+          ],
+          "raw": "appear ROUTE36NATIONALPARKGATE_OFFICER2"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "Route36NationalParkGateCheckIfContestAvailableCallback.Return",
+        "Route36NationalParkGateCheckIfContestAvailableCallback.SetContestOfficer"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateCheckIfContestAvailableCallback.SetContestOfficer": {
+      "raw_lines": [
+        "appear ROUTE36NATIONALPARKGATE_OFFICER1",
+        "disappear ROUTE36NATIONALPARKGATE_OFFICER2"
+      ],
+      "commands": [
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE36NATIONALPARKGATE_OFFICER1"
+          ],
+          "raw": "appear ROUTE36NATIONALPARKGATE_OFFICER1"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ROUTE36NATIONALPARKGATE_OFFICER2"
+          ],
+          "raw": "disappear ROUTE36NATIONALPARKGATE_OFFICER2"
+        }
+      ],
+      "first_command": "appear",
+      "fallthrough_label": "Route36NationalParkGateCheckIfContestAvailableCallback.Return",
+      "label_refs": [
+        "Route36NationalParkGateCheckIfContestAvailableCallback.Return"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateCheckIfContestAvailableCallback.Return": {
+      "raw_lines": [
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "endcallback",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript": {
+      "raw_lines": [
+        "turnobject PLAYER, UP",
+        "opentext",
+        "readvar VAR_CONTESTMINUTES",
+        "addval 1",
+        "getnum STRING_BUFFER_3",
+        "writetext Route36NationalParkGateOfficer1WantToFinishText",
+        "yesorno",
+        "iffalse .GoBackToContest",
+        "writetext Route36NationalParkGateOfficer1WaitHereForAnnouncementText",
+        "waitbutton",
+        "closetext",
+        "special FadeOutToBlack",
+        "special ReloadSpritesNoPalettes",
+        "scall .CopyContestants",
+        "disappear ROUTE36NATIONALPARKGATE_OFFICER1",
+        "appear ROUTE36NATIONALPARKGATE_OFFICER2",
+        "applymovement PLAYER, Route36NationalParkGatePlayerWaitWithContestantsMovement",
+        "pause 15",
+        "special FadeInFromBlack",
+        "jumpstd BugContestResultsScript"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "UP"
+          ],
+          "raw": "turnobject PLAYER, UP"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_CONTESTMINUTES"
+          ],
+          "raw": "readvar VAR_CONTESTMINUTES"
+        },
+        {
+          "command": "addval",
+          "args": [
+            "1"
+          ],
+          "raw": "addval 1"
+        },
+        {
+          "command": "getnum",
+          "args": [
+            "STRING_BUFFER_3"
+          ],
+          "raw": "getnum STRING_BUFFER_3"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1WantToFinishText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1WantToFinishText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Route36NationalParkGateLeavingContestEarlyScript.GoBackToContest"
+          ],
+          "raw": "iffalse .GoBackToContest"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1WaitHereForAnnouncementText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1WaitHereForAnnouncementText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutToBlack"
+          ],
+          "raw": "special FadeOutToBlack"
+        },
+        {
+          "command": "special",
+          "args": [
+            "ReloadSpritesNoPalettes"
+          ],
+          "raw": "special ReloadSpritesNoPalettes"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "Route36NationalParkGateLeavingContestEarlyScript.CopyContestants"
+          ],
+          "raw": "scall .CopyContestants"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "ROUTE36NATIONALPARKGATE_OFFICER1"
+          ],
+          "raw": "disappear ROUTE36NATIONALPARKGATE_OFFICER1"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE36NATIONALPARKGATE_OFFICER2"
+          ],
+          "raw": "appear ROUTE36NATIONALPARKGATE_OFFICER2"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "Route36NationalParkGatePlayerWaitWithContestantsMovement"
+          ],
+          "raw": "applymovement PLAYER, Route36NationalParkGatePlayerWaitWithContestantsMovement"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeInFromBlack"
+          ],
+          "raw": "special FadeInFromBlack"
+        },
+        {
+          "command": "jumpstd",
+          "args": [
+            "BugContestResultsScript"
+          ],
+          "raw": "jumpstd BugContestResultsScript"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.CopyContestants",
+        "Route36NationalParkGateLeavingContestEarlyScript.GoBackToContest"
+      ],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1WaitHereForAnnouncementText",
+        "Route36NationalParkGateOfficer1WantToFinishText"
+      ],
+      "movement_refs": [
+        "Route36NationalParkGatePlayerWaitWithContestantsMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": [
+        "BugContestResultsScript"
+      ]
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.GoBackToContest": {
+      "raw_lines": [
+        "writetext Route36NationalParkGateOfficer1OkGoFinishText",
+        "waitbutton",
+        "closetext",
+        "turnobject PLAYER, LEFT",
+        "playsound SFX_EXIT_BUILDING",
+        "special FadeOutToWhite",
+        "waitsfx",
+        "warpfacing LEFT, NATIONAL_PARK_BUG_CONTEST, 33, 18",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1OkGoFinishText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1OkGoFinishText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYER, LEFT"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutToWhite"
+          ],
+          "raw": "special FadeOutToWhite"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "warpfacing",
+          "args": [
+            "LEFT",
+            "NATIONAL_PARK_BUG_CONTEST",
+            "33",
+            "18"
+          ],
+          "raw": "warpfacing LEFT, NATIONAL_PARK_BUG_CONTEST, 33, 18"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1OkGoFinishText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.CopyContestants": {
+      "raw_lines": [
+        "checkevent EVENT_BUG_CATCHING_CONTESTANT_1A",
+        "iftrue .Not1",
+        "appear ROUTE36NATIONALPARKGATE_YOUNGSTER1"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BUG_CATCHING_CONTESTANT_1A"
+          ],
+          "raw": "checkevent EVENT_BUG_CATCHING_CONTESTANT_1A"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36NationalParkGateLeavingContestEarlyScript.Not1"
+          ],
+          "raw": "iftrue .Not1"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE36NATIONALPARKGATE_YOUNGSTER1"
+          ],
+          "raw": "appear ROUTE36NATIONALPARKGATE_YOUNGSTER1"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "Route36NationalParkGateLeavingContestEarlyScript.Not1",
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not1": {
+      "raw_lines": [
+        "checkevent EVENT_BUG_CATCHING_CONTESTANT_2A",
+        "iftrue .Not2",
+        "appear ROUTE36NATIONALPARKGATE_YOUNGSTER2"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BUG_CATCHING_CONTESTANT_2A"
+          ],
+          "raw": "checkevent EVENT_BUG_CATCHING_CONTESTANT_2A"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36NationalParkGateLeavingContestEarlyScript.Not2"
+          ],
+          "raw": "iftrue .Not2"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE36NATIONALPARKGATE_YOUNGSTER2"
+          ],
+          "raw": "appear ROUTE36NATIONALPARKGATE_YOUNGSTER2"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "Route36NationalParkGateLeavingContestEarlyScript.Not2",
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not2": {
+      "raw_lines": [
+        "checkevent EVENT_BUG_CATCHING_CONTESTANT_3A",
+        "iftrue .Not3",
+        "appear ROUTE36NATIONALPARKGATE_ROCKER"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BUG_CATCHING_CONTESTANT_3A"
+          ],
+          "raw": "checkevent EVENT_BUG_CATCHING_CONTESTANT_3A"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36NationalParkGateLeavingContestEarlyScript.Not3"
+          ],
+          "raw": "iftrue .Not3"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE36NATIONALPARKGATE_ROCKER"
+          ],
+          "raw": "appear ROUTE36NATIONALPARKGATE_ROCKER"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "Route36NationalParkGateLeavingContestEarlyScript.Not3",
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not3"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not3": {
+      "raw_lines": [
+        "checkevent EVENT_BUG_CATCHING_CONTESTANT_4A",
+        "iftrue .Not4",
+        "appear ROUTE36NATIONALPARKGATE_POKEFAN_M"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BUG_CATCHING_CONTESTANT_4A"
+          ],
+          "raw": "checkevent EVENT_BUG_CATCHING_CONTESTANT_4A"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36NationalParkGateLeavingContestEarlyScript.Not4"
+          ],
+          "raw": "iftrue .Not4"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE36NATIONALPARKGATE_POKEFAN_M"
+          ],
+          "raw": "appear ROUTE36NATIONALPARKGATE_POKEFAN_M"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "Route36NationalParkGateLeavingContestEarlyScript.Not4",
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not4"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not4": {
+      "raw_lines": [
+        "checkevent EVENT_BUG_CATCHING_CONTESTANT_5A",
+        "iftrue .Not5",
+        "appear ROUTE36NATIONALPARKGATE_YOUNGSTER3"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BUG_CATCHING_CONTESTANT_5A"
+          ],
+          "raw": "checkevent EVENT_BUG_CATCHING_CONTESTANT_5A"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36NationalParkGateLeavingContestEarlyScript.Not5"
+          ],
+          "raw": "iftrue .Not5"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE36NATIONALPARKGATE_YOUNGSTER3"
+          ],
+          "raw": "appear ROUTE36NATIONALPARKGATE_YOUNGSTER3"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "Route36NationalParkGateLeavingContestEarlyScript.Not5",
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not5"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not5": {
+      "raw_lines": [
+        "checkevent EVENT_BUG_CATCHING_CONTESTANT_6A",
+        "iftrue .Not6",
+        "appear ROUTE36NATIONALPARKGATE_YOUNGSTER4"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BUG_CATCHING_CONTESTANT_6A"
+          ],
+          "raw": "checkevent EVENT_BUG_CATCHING_CONTESTANT_6A"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36NationalParkGateLeavingContestEarlyScript.Not6"
+          ],
+          "raw": "iftrue .Not6"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE36NATIONALPARKGATE_YOUNGSTER4"
+          ],
+          "raw": "appear ROUTE36NATIONALPARKGATE_YOUNGSTER4"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "Route36NationalParkGateLeavingContestEarlyScript.Not6",
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not6"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not6": {
+      "raw_lines": [
+        "checkevent EVENT_BUG_CATCHING_CONTESTANT_7A",
+        "iftrue .Not7",
+        "appear ROUTE36NATIONALPARKGATE_LASS"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BUG_CATCHING_CONTESTANT_7A"
+          ],
+          "raw": "checkevent EVENT_BUG_CATCHING_CONTESTANT_7A"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36NationalParkGateLeavingContestEarlyScript.Not7"
+          ],
+          "raw": "iftrue .Not7"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE36NATIONALPARKGATE_LASS"
+          ],
+          "raw": "appear ROUTE36NATIONALPARKGATE_LASS"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "Route36NationalParkGateLeavingContestEarlyScript.Not7",
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not7"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not7": {
+      "raw_lines": [
+        "checkevent EVENT_BUG_CATCHING_CONTESTANT_8A",
+        "iftrue .Not8",
+        "appear ROUTE36NATIONALPARKGATE_YOUNGSTER5"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BUG_CATCHING_CONTESTANT_8A"
+          ],
+          "raw": "checkevent EVENT_BUG_CATCHING_CONTESTANT_8A"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36NationalParkGateLeavingContestEarlyScript.Not8"
+          ],
+          "raw": "iftrue .Not8"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE36NATIONALPARKGATE_YOUNGSTER5"
+          ],
+          "raw": "appear ROUTE36NATIONALPARKGATE_YOUNGSTER5"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "Route36NationalParkGateLeavingContestEarlyScript.Not8",
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not8"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not8": {
+      "raw_lines": [
+        "checkevent EVENT_BUG_CATCHING_CONTESTANT_9A",
+        "iftrue .Not9",
+        "appear ROUTE36NATIONALPARKGATE_YOUNGSTER6"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BUG_CATCHING_CONTESTANT_9A"
+          ],
+          "raw": "checkevent EVENT_BUG_CATCHING_CONTESTANT_9A"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36NationalParkGateLeavingContestEarlyScript.Not9"
+          ],
+          "raw": "iftrue .Not9"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE36NATIONALPARKGATE_YOUNGSTER6"
+          ],
+          "raw": "appear ROUTE36NATIONALPARKGATE_YOUNGSTER6"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "Route36NationalParkGateLeavingContestEarlyScript.Not9",
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not9"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not9": {
+      "raw_lines": [
+        "checkevent EVENT_BUG_CATCHING_CONTESTANT_10A",
+        "iftrue .Not10",
+        "appear ROUTE36NATIONALPARKGATE_YOUNGSTER7"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BUG_CATCHING_CONTESTANT_10A"
+          ],
+          "raw": "checkevent EVENT_BUG_CATCHING_CONTESTANT_10A"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36NationalParkGateLeavingContestEarlyScript.Not10"
+          ],
+          "raw": "iftrue .Not10"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "ROUTE36NATIONALPARKGATE_YOUNGSTER7"
+          ],
+          "raw": "appear ROUTE36NATIONALPARKGATE_YOUNGSTER7"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "Route36NationalParkGateLeavingContestEarlyScript.Not10",
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not10"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not10": {
+      "raw_lines": [
+        "special UpdateSprites",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "special",
+          "args": [
+            "UpdateSprites"
+          ],
+          "raw": "special UpdateSprites"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "special",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36OfficerScriptContest": {
+      "raw_lines": [
+        "readvar VAR_WEEKDAY",
+        "ifequal SUNDAY, _ContestNotOn",
+        "ifequal MONDAY, _ContestNotOn",
+        "ifequal WEDNESDAY, _ContestNotOn",
+        "ifequal FRIDAY, _ContestNotOn",
+        "faceplayer",
+        "opentext",
+        "checkflag ENGINE_DAILY_BUG_CONTEST",
+        "iftrue Route36Officer_ContestHasConcluded",
+        "scall Route36ParkGate_DayToText",
+        "writetext Route36NationalParkGateOfficer1AskToParticipateText",
+        "yesorno",
+        "iffalse .DecidedNotToJoinContest",
+        "readvar VAR_PARTYCOUNT",
+        "ifgreater 1, .LeaveMonsWithOfficer",
+        "special ContestDropOffMons",
+        "clearevent EVENT_LEFT_MONS_WITH_CONTEST_OFFICER"
+      ],
+      "commands": [
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SUNDAY",
+            "_ContestNotOn"
+          ],
+          "raw": "ifequal SUNDAY, _ContestNotOn"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "MONDAY",
+            "_ContestNotOn"
+          ],
+          "raw": "ifequal MONDAY, _ContestNotOn"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "WEDNESDAY",
+            "_ContestNotOn"
+          ],
+          "raw": "ifequal WEDNESDAY, _ContestNotOn"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "FRIDAY",
+            "_ContestNotOn"
+          ],
+          "raw": "ifequal FRIDAY, _ContestNotOn"
+        },
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_DAILY_BUG_CONTEST"
+          ],
+          "raw": "checkflag ENGINE_DAILY_BUG_CONTEST"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36Officer_ContestHasConcluded"
+          ],
+          "raw": "iftrue Route36Officer_ContestHasConcluded"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "Route36ParkGate_DayToText"
+          ],
+          "raw": "scall Route36ParkGate_DayToText"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1AskToParticipateText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1AskToParticipateText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Route36OfficerScriptContest.DecidedNotToJoinContest"
+          ],
+          "raw": "iffalse .DecidedNotToJoinContest"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_PARTYCOUNT"
+          ],
+          "raw": "readvar VAR_PARTYCOUNT"
+        },
+        {
+          "command": "ifgreater",
+          "args": [
+            "1",
+            "Route36OfficerScriptContest.LeaveMonsWithOfficer"
+          ],
+          "raw": "ifgreater 1, .LeaveMonsWithOfficer"
+        },
+        {
+          "command": "special",
+          "args": [
+            "ContestDropOffMons"
+          ],
+          "raw": "special ContestDropOffMons"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_LEFT_MONS_WITH_CONTEST_OFFICER"
+          ],
+          "raw": "clearevent EVENT_LEFT_MONS_WITH_CONTEST_OFFICER"
+        }
+      ],
+      "first_command": "readvar",
+      "fallthrough_label": "Route36OfficerScriptContest.ResumeStartingContest",
+      "label_refs": [
+        "Route36OfficerScriptContest.DecidedNotToJoinContest",
+        "Route36OfficerScriptContest.LeaveMonsWithOfficer",
+        "Route36OfficerScriptContest.ResumeStartingContest",
+        "Route36Officer_ContestHasConcluded",
+        "Route36ParkGate_DayToText",
+        "_ContestNotOn"
+      ],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1AskToParticipateText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36OfficerScriptContest.ResumeStartingContest": {
+      "raw_lines": [
+        "setflag ENGINE_BUG_CONTEST_TIMER",
+        "special PlayMapMusic",
+        "writetext Route36NationalParkGateOfficer1GiveParkBallsText",
+        "promptbutton",
+        "waitsfx",
+        "writetext Route36NationalParkGatePlayerReceivedParkBallsText",
+        "playsound SFX_ITEM",
+        "waitsfx",
+        "writetext Route36NationalParkGateOfficer1ExplainsRulesText",
+        "waitbutton",
+        "closetext",
+        "setflag ENGINE_BUG_CONTEST_TIMER",
+        "special GiveParkBalls",
+        "turnobject PLAYER, LEFT",
+        "playsound SFX_EXIT_BUILDING",
+        "special FadeOutToWhite",
+        "waitsfx",
+        "special SelectRandomBugContestContestants",
+        "warpfacing LEFT, NATIONAL_PARK_BUG_CONTEST, 33, 18",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_BUG_CONTEST_TIMER"
+          ],
+          "raw": "setflag ENGINE_BUG_CONTEST_TIMER"
+        },
+        {
+          "command": "special",
+          "args": [
+            "PlayMapMusic"
+          ],
+          "raw": "special PlayMapMusic"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1GiveParkBallsText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1GiveParkBallsText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGatePlayerReceivedParkBallsText"
+          ],
+          "raw": "writetext Route36NationalParkGatePlayerReceivedParkBallsText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ITEM"
+          ],
+          "raw": "playsound SFX_ITEM"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1ExplainsRulesText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1ExplainsRulesText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_BUG_CONTEST_TIMER"
+          ],
+          "raw": "setflag ENGINE_BUG_CONTEST_TIMER"
+        },
+        {
+          "command": "special",
+          "args": [
+            "GiveParkBalls"
+          ],
+          "raw": "special GiveParkBalls"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "LEFT"
+          ],
+          "raw": "turnobject PLAYER, LEFT"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutToWhite"
+          ],
+          "raw": "special FadeOutToWhite"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "special",
+          "args": [
+            "SelectRandomBugContestContestants"
+          ],
+          "raw": "special SelectRandomBugContestContestants"
+        },
+        {
+          "command": "warpfacing",
+          "args": [
+            "LEFT",
+            "NATIONAL_PARK_BUG_CONTEST",
+            "33",
+            "18"
+          ],
+          "raw": "warpfacing LEFT, NATIONAL_PARK_BUG_CONTEST, 33, 18"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "setflag",
+      "label_refs": [],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1ExplainsRulesText",
+        "Route36NationalParkGateOfficer1GiveParkBallsText",
+        "Route36NationalParkGatePlayerReceivedParkBallsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36OfficerScriptContest.LeaveMonsWithOfficer": {
+      "raw_lines": [
+        "readvar VAR_PARTYCOUNT",
+        "ifless PARTY_LENGTH, .ContinueLeavingMons",
+        "readvar VAR_BOXSPACE",
+        "ifequal 0, .BoxFull"
+      ],
+      "commands": [
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_PARTYCOUNT"
+          ],
+          "raw": "readvar VAR_PARTYCOUNT"
+        },
+        {
+          "command": "ifless",
+          "args": [
+            "PARTY_LENGTH",
+            "Route36OfficerScriptContest.ContinueLeavingMons"
+          ],
+          "raw": "ifless PARTY_LENGTH, .ContinueLeavingMons"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_BOXSPACE"
+          ],
+          "raw": "readvar VAR_BOXSPACE"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "0",
+            "Route36OfficerScriptContest.BoxFull"
+          ],
+          "raw": "ifequal 0, .BoxFull"
+        }
+      ],
+      "first_command": "readvar",
+      "fallthrough_label": "Route36OfficerScriptContest.ContinueLeavingMons",
+      "label_refs": [
+        "Route36OfficerScriptContest.BoxFull",
+        "Route36OfficerScriptContest.ContinueLeavingMons"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36OfficerScriptContest.ContinueLeavingMons": {
+      "raw_lines": [
+        "special CheckFirstMonIsEgg",
+        "ifequal TRUE, .FirstMonIsEgg",
+        "writetext Route36NationalParkGateOfficer1AskToUseFirstMonText",
+        "yesorno",
+        "iffalse .RefusedToLeaveMons",
+        "special ContestDropOffMons",
+        "iftrue .FirstMonIsFainted",
+        "setevent EVENT_LEFT_MONS_WITH_CONTEST_OFFICER",
+        "writetext Route36NationalParkGateOfficer1WellHoldYourMonText",
+        "promptbutton",
+        "writetext Route36NationalParkGatePlayersMonLeftWithHelperText",
+        "playsound SFX_GOT_SAFARI_BALLS",
+        "waitsfx",
+        "promptbutton",
+        "sjump .ResumeStartingContest"
+      ],
+      "commands": [
+        {
+          "command": "special",
+          "args": [
+            "CheckFirstMonIsEgg"
+          ],
+          "raw": "special CheckFirstMonIsEgg"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "TRUE",
+            "Route36OfficerScriptContest.FirstMonIsEgg"
+          ],
+          "raw": "ifequal TRUE, .FirstMonIsEgg"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1AskToUseFirstMonText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1AskToUseFirstMonText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Route36OfficerScriptContest.RefusedToLeaveMons"
+          ],
+          "raw": "iffalse .RefusedToLeaveMons"
+        },
+        {
+          "command": "special",
+          "args": [
+            "ContestDropOffMons"
+          ],
+          "raw": "special ContestDropOffMons"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36OfficerScriptContest.FirstMonIsFainted"
+          ],
+          "raw": "iftrue .FirstMonIsFainted"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_LEFT_MONS_WITH_CONTEST_OFFICER"
+          ],
+          "raw": "setevent EVENT_LEFT_MONS_WITH_CONTEST_OFFICER"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1WellHoldYourMonText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1WellHoldYourMonText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGatePlayersMonLeftWithHelperText"
+          ],
+          "raw": "writetext Route36NationalParkGatePlayersMonLeftWithHelperText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_GOT_SAFARI_BALLS"
+          ],
+          "raw": "playsound SFX_GOT_SAFARI_BALLS"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Route36OfficerScriptContest.ResumeStartingContest"
+          ],
+          "raw": "sjump .ResumeStartingContest"
+        }
+      ],
+      "first_command": "special",
+      "label_refs": [
+        "Route36OfficerScriptContest.FirstMonIsEgg",
+        "Route36OfficerScriptContest.FirstMonIsFainted",
+        "Route36OfficerScriptContest.RefusedToLeaveMons",
+        "Route36OfficerScriptContest.ResumeStartingContest"
+      ],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1AskToUseFirstMonText",
+        "Route36NationalParkGateOfficer1WellHoldYourMonText",
+        "Route36NationalParkGatePlayersMonLeftWithHelperText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36OfficerScriptContest.DecidedNotToJoinContest": {
+      "raw_lines": [
+        "writetext Route36NationalParkGateOfficer1TakePartInFutureText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1TakePartInFutureText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1TakePartInFutureText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1TakePartInFutureText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36OfficerScriptContest.RefusedToLeaveMons": {
+      "raw_lines": [
+        "writetext Route36NationalParkGateOfficer1ChooseMonAndComeBackText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1ChooseMonAndComeBackText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1ChooseMonAndComeBackText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1ChooseMonAndComeBackText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36OfficerScriptContest.FirstMonIsFainted": {
+      "raw_lines": [
+        "writetext Route36NationalParkGateOfficer1FirstMonCantBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1FirstMonCantBattleText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1FirstMonCantBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1FirstMonCantBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36OfficerScriptContest.BoxFull": {
+      "raw_lines": [
+        "writetext Route36NationalParkGateOfficer1MakeRoomText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1MakeRoomText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1MakeRoomText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1MakeRoomText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36OfficerScriptContest.FirstMonIsEgg": {
+      "raw_lines": [
+        "writetext Route36NationalParkGateOfficer1EggAsFirstMonText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1EggAsFirstMonText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1EggAsFirstMonText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1EggAsFirstMonText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36Officer_ContestHasConcluded": {
+      "raw_lines": [
+        "checkevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE",
+        "iftrue .Sunstone",
+        "checkevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE",
+        "iftrue .Everstone",
+        "checkevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY",
+        "iftrue .GoldBerry",
+        "checkevent EVENT_CONTEST_OFFICER_HAS_BERRY",
+        "iftrue .Berry",
+        "writetext Route36NationalParkGateOfficer1ContestIsOverText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CONTEST_OFFICER_HAS_SUN_STONE"
+          ],
+          "raw": "checkevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36Officer_ContestHasConcluded.Sunstone"
+          ],
+          "raw": "iftrue .Sunstone"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CONTEST_OFFICER_HAS_EVERSTONE"
+          ],
+          "raw": "checkevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36Officer_ContestHasConcluded.Everstone"
+          ],
+          "raw": "iftrue .Everstone"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY"
+          ],
+          "raw": "checkevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36Officer_ContestHasConcluded.GoldBerry"
+          ],
+          "raw": "iftrue .GoldBerry"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CONTEST_OFFICER_HAS_BERRY"
+          ],
+          "raw": "checkevent EVENT_CONTEST_OFFICER_HAS_BERRY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36Officer_ContestHasConcluded.Berry"
+          ],
+          "raw": "iftrue .Berry"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1ContestIsOverText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1ContestIsOverText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "Route36Officer_ContestHasConcluded.Berry",
+        "Route36Officer_ContestHasConcluded.Everstone",
+        "Route36Officer_ContestHasConcluded.GoldBerry",
+        "Route36Officer_ContestHasConcluded.Sunstone"
+      ],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1ContestIsOverText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36Officer_ContestHasConcluded.Sunstone": {
+      "raw_lines": [
+        "writetext Route36NationalParkGateOfficer1HeresThePrizeText",
+        "promptbutton",
+        "verbosegiveitem SUN_STONE",
+        "iffalse .BagFull",
+        "clearevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1HeresThePrizeText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1HeresThePrizeText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "SUN_STONE"
+          ],
+          "raw": "verbosegiveitem SUN_STONE"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Route36Officer_ContestHasConcluded.BagFull"
+          ],
+          "raw": "iffalse .BagFull"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_CONTEST_OFFICER_HAS_SUN_STONE"
+          ],
+          "raw": "clearevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "Route36Officer_ContestHasConcluded.BagFull"
+      ],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1HeresThePrizeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36Officer_ContestHasConcluded.Everstone": {
+      "raw_lines": [
+        "writetext Route36NationalParkGateOfficer1HeresThePrizeText",
+        "promptbutton",
+        "verbosegiveitem EVERSTONE",
+        "iffalse .BagFull",
+        "clearevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1HeresThePrizeText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1HeresThePrizeText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "EVERSTONE"
+          ],
+          "raw": "verbosegiveitem EVERSTONE"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Route36Officer_ContestHasConcluded.BagFull"
+          ],
+          "raw": "iffalse .BagFull"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_CONTEST_OFFICER_HAS_EVERSTONE"
+          ],
+          "raw": "clearevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "Route36Officer_ContestHasConcluded.BagFull"
+      ],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1HeresThePrizeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36Officer_ContestHasConcluded.GoldBerry": {
+      "raw_lines": [
+        "writetext Route36NationalParkGateOfficer1HeresThePrizeText",
+        "promptbutton",
+        "verbosegiveitem GOLD_BERRY",
+        "iffalse .BagFull",
+        "clearevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1HeresThePrizeText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1HeresThePrizeText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "GOLD_BERRY"
+          ],
+          "raw": "verbosegiveitem GOLD_BERRY"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Route36Officer_ContestHasConcluded.BagFull"
+          ],
+          "raw": "iffalse .BagFull"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY"
+          ],
+          "raw": "clearevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "Route36Officer_ContestHasConcluded.BagFull"
+      ],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1HeresThePrizeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36Officer_ContestHasConcluded.Berry": {
+      "raw_lines": [
+        "writetext Route36NationalParkGateOfficer1HeresThePrizeText",
+        "promptbutton",
+        "verbosegiveitem BERRY",
+        "iffalse .BagFull",
+        "clearevent EVENT_CONTEST_OFFICER_HAS_BERRY",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1HeresThePrizeText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1HeresThePrizeText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "BERRY"
+          ],
+          "raw": "verbosegiveitem BERRY"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Route36Officer_ContestHasConcluded.BagFull"
+          ],
+          "raw": "iffalse .BagFull"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_CONTEST_OFFICER_HAS_BERRY"
+          ],
+          "raw": "clearevent EVENT_CONTEST_OFFICER_HAS_BERRY"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "Route36Officer_ContestHasConcluded.BagFull"
+      ],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1HeresThePrizeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36Officer_ContestHasConcluded.BagFull": {
+      "raw_lines": [
+        "writetext Route36NationalParkGateOfficer1WellHoldPrizeText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1WellHoldPrizeText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1WellHoldPrizeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1WellHoldPrizeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "_ContestNotOn": {
+      "raw_lines": [
+        "jumptextfaceplayer Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText"
+          ],
+          "raw": "jumptextfaceplayer Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateOfficerScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkflag ENGINE_DAILY_BUG_CONTEST",
+        "iftrue Route36Officer_ContestHasConcluded",
+        "writetext Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_DAILY_BUG_CONTEST"
+          ],
+          "raw": "checkflag ENGINE_DAILY_BUG_CONTEST"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route36Officer_ContestHasConcluded"
+          ],
+          "raw": "iftrue Route36Officer_ContestHasConcluded"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText"
+          ],
+          "raw": "writetext Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "Route36Officer_ContestHasConcluded"
+      ],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36ParkGate_DayToText": {
+      "raw_lines": [
+        "jumpstd DayToTextScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "DayToTextScript"
+          ],
+          "raw": "jumpstd DayToTextScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "DayToTextScript"
+      ]
+    },
+    "BugCatchingContestant1BScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iffalse .StillCompeting",
+        "writetext BugCatchingContestant1BText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "BugCatchingContestant1BScript.StillCompeting"
+          ],
+          "raw": "iffalse .StillCompeting"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant1BText"
+          ],
+          "raw": "writetext BugCatchingContestant1BText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "BugCatchingContestant1BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant1BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant1BScript.StillCompeting": {
+      "raw_lines": [
+        "writetext BugCatchingContestant1BStillCompetingText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant1BStillCompetingText"
+          ],
+          "raw": "writetext BugCatchingContestant1BStillCompetingText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant1BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant2BScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iffalse .StillCompeting",
+        "writetext BugCatchingContestant2BText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "BugCatchingContestant2BScript.StillCompeting"
+          ],
+          "raw": "iffalse .StillCompeting"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant2BText"
+          ],
+          "raw": "writetext BugCatchingContestant2BText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "BugCatchingContestant2BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant2BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant2BScript.StillCompeting": {
+      "raw_lines": [
+        "writetext BugCatchingContestant2BStillCompetingText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant2BStillCompetingText"
+          ],
+          "raw": "writetext BugCatchingContestant2BStillCompetingText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant2BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant3BScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iffalse .StillCompeting",
+        "writetext BugCatchingContestant3BText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "BugCatchingContestant3BScript.StillCompeting"
+          ],
+          "raw": "iffalse .StillCompeting"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant3BText"
+          ],
+          "raw": "writetext BugCatchingContestant3BText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "BugCatchingContestant3BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant3BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant3BScript.StillCompeting": {
+      "raw_lines": [
+        "writetext BugCatchingContestant3BStillCompetingText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant3BStillCompetingText"
+          ],
+          "raw": "writetext BugCatchingContestant3BStillCompetingText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant3BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant4BScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iffalse .StillCompeting",
+        "writetext BugCatchingContestant4BText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "BugCatchingContestant4BScript.StillCompeting"
+          ],
+          "raw": "iffalse .StillCompeting"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant4BText"
+          ],
+          "raw": "writetext BugCatchingContestant4BText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "BugCatchingContestant4BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant4BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant4BScript.StillCompeting": {
+      "raw_lines": [
+        "writetext BugCatchingContestant4BStillCompetingText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant4BStillCompetingText"
+          ],
+          "raw": "writetext BugCatchingContestant4BStillCompetingText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant4BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant5BScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iffalse .StillCompeting",
+        "writetext BugCatchingContestant5BText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "BugCatchingContestant5BScript.StillCompeting"
+          ],
+          "raw": "iffalse .StillCompeting"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant5BText"
+          ],
+          "raw": "writetext BugCatchingContestant5BText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "BugCatchingContestant5BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant5BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant5BScript.StillCompeting": {
+      "raw_lines": [
+        "writetext BugCatchingContestant5BStillCompetingText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant5BStillCompetingText"
+          ],
+          "raw": "writetext BugCatchingContestant5BStillCompetingText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant5BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant6BScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iffalse .StillCompeting",
+        "writetext BugCatchingContestant6BText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "BugCatchingContestant6BScript.StillCompeting"
+          ],
+          "raw": "iffalse .StillCompeting"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant6BText"
+          ],
+          "raw": "writetext BugCatchingContestant6BText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "BugCatchingContestant6BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant6BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant6BScript.StillCompeting": {
+      "raw_lines": [
+        "writetext BugCatchingContestant6BStillCompetingText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant6BStillCompetingText"
+          ],
+          "raw": "writetext BugCatchingContestant6BStillCompetingText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant6BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant7BScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iffalse .StillCompeting",
+        "writetext BugCatchingContestant7BText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "BugCatchingContestant7BScript.StillCompeting"
+          ],
+          "raw": "iffalse .StillCompeting"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant7BText"
+          ],
+          "raw": "writetext BugCatchingContestant7BText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "BugCatchingContestant7BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant7BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant7BScript.StillCompeting": {
+      "raw_lines": [
+        "writetext BugCatchingContestant7BStillCompetingText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant7BStillCompetingText"
+          ],
+          "raw": "writetext BugCatchingContestant7BStillCompetingText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant7BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant8BScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iffalse .StillCompeting",
+        "writetext BugCatchingContestant8BText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "BugCatchingContestant8BScript.StillCompeting"
+          ],
+          "raw": "iffalse .StillCompeting"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant8BText"
+          ],
+          "raw": "writetext BugCatchingContestant8BText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "BugCatchingContestant8BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant8BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant8BScript.StillCompeting": {
+      "raw_lines": [
+        "writetext BugCatchingContestant8BStillCompetingText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant8BStillCompetingText"
+          ],
+          "raw": "writetext BugCatchingContestant8BStillCompetingText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant8BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant9BScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iffalse .StillCompeting",
+        "writetext BugCatchingContestant9BText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "BugCatchingContestant9BScript.StillCompeting"
+          ],
+          "raw": "iffalse .StillCompeting"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant9BText"
+          ],
+          "raw": "writetext BugCatchingContestant9BText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "BugCatchingContestant9BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant9BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant9BScript.StillCompeting": {
+      "raw_lines": [
+        "writetext BugCatchingContestant9BStillCompetingText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant9BStillCompetingText"
+          ],
+          "raw": "writetext BugCatchingContestant9BStillCompetingText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant9BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant10BScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iffalse .StillCompeting",
+        "writetext BugCatchingContestant10BText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "BugCatchingContestant10BScript.StillCompeting"
+          ],
+          "raw": "iffalse .StillCompeting"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant10BText"
+          ],
+          "raw": "writetext BugCatchingContestant10BText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "BugCatchingContestant10BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant10BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant10BScript.StillCompeting": {
+      "raw_lines": [
+        "writetext BugCatchingContestant10BStillCompetingText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatchingContestant10BStillCompetingText"
+          ],
+          "raw": "writetext BugCatchingContestant10BStillCompetingText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant10BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UnusedBugCatchingContestExplanationSign": {
+      "raw_lines": [
+        "jumptext UnusedBugCatchingContestExplanationText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "UnusedBugCatchingContestExplanationText"
+          ],
+          "raw": "jumptext UnusedBugCatchingContestExplanationText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "UnusedBugCatchingContestExplanationText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGate_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  0,  4, NATIONAL_PARK, 1",
+        "warp_event  0,  5, NATIONAL_PARK, 2",
+        "warp_event  9,  4, ROUTE_36, 1",
+        "warp_event  9,  5, ROUTE_36, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  6,  0, BGEVENT_READ, BugCatchingContestExplanationSign",
+        "def_object_events",
+        "object_event  0,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route36OfficerScriptContest, EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY",
+        "object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant1BScript, EVENT_BUG_CATCHING_CONTESTANT_1B",
+        "object_event  4,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant2BScript, EVENT_BUG_CATCHING_CONTESTANT_2B",
+        "object_event  2,  6, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant3BScript, EVENT_BUG_CATCHING_CONTESTANT_3B",
+        "object_event  6,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant4BScript, EVENT_BUG_CATCHING_CONTESTANT_4B",
+        "object_event  2,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant5BScript, EVENT_BUG_CATCHING_CONTESTANT_5B",
+        "object_event  5,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant6BScript, EVENT_BUG_CATCHING_CONTESTANT_6B",
+        "object_event  3,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant7BScript, EVENT_BUG_CATCHING_CONTESTANT_7B",
+        "object_event  4,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant8BScript, EVENT_BUG_CATCHING_CONTESTANT_8B",
+        "object_event  6,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant9BScript, EVENT_BUG_CATCHING_CONTESTANT_9B",
+        "object_event  6,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant10BScript, EVENT_BUG_CATCHING_CONTESTANT_10B",
+        "object_event  3,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route36NationalParkGateOfficerScript, EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "4",
+            "NATIONAL_PARK",
+            "1"
+          ],
+          "raw": "warp_event  0,  4, NATIONAL_PARK, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "5",
+            "NATIONAL_PARK",
+            "2"
+          ],
+          "raw": "warp_event  0,  5, NATIONAL_PARK, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "4",
+            "ROUTE_36",
+            "1"
+          ],
+          "raw": "warp_event  9,  4, ROUTE_36, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "5",
+            "ROUTE_36",
+            "2"
+          ],
+          "raw": "warp_event  9,  5, ROUTE_36, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "6",
+            "0",
+            "BGEVENT_READ",
+            "BugCatchingContestExplanationSign"
+          ],
+          "raw": "bg_event  6,  0, BGEVENT_READ, BugCatchingContestExplanationSign"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "0",
+            "3",
+            "SPRITE_OFFICER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route36OfficerScriptContest",
+            "EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY"
+          ],
+          "raw": "object_event  0,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route36OfficerScriptContest, EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "5",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BugCatchingContestant1BScript",
+            "EVENT_BUG_CATCHING_CONTESTANT_1B"
+          ],
+          "raw": "object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant1BScript, EVENT_BUG_CATCHING_CONTESTANT_1B"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "5",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BugCatchingContestant2BScript",
+            "EVENT_BUG_CATCHING_CONTESTANT_2B"
+          ],
+          "raw": "object_event  4,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant2BScript, EVENT_BUG_CATCHING_CONTESTANT_2B"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "6",
+            "SPRITE_ROCKER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BugCatchingContestant3BScript",
+            "EVENT_BUG_CATCHING_CONTESTANT_3B"
+          ],
+          "raw": "object_event  2,  6, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant3BScript, EVENT_BUG_CATCHING_CONTESTANT_3B"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "5",
+            "SPRITE_POKEFAN_M",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BugCatchingContestant4BScript",
+            "EVENT_BUG_CATCHING_CONTESTANT_4B"
+          ],
+          "raw": "object_event  6,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant4BScript, EVENT_BUG_CATCHING_CONTESTANT_4B"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "7",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BugCatchingContestant5BScript",
+            "EVENT_BUG_CATCHING_CONTESTANT_5B"
+          ],
+          "raw": "object_event  2,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant5BScript, EVENT_BUG_CATCHING_CONTESTANT_5B"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "6",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BugCatchingContestant6BScript",
+            "EVENT_BUG_CATCHING_CONTESTANT_6B"
+          ],
+          "raw": "object_event  5,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant6BScript, EVENT_BUG_CATCHING_CONTESTANT_6B"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "6",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BugCatchingContestant7BScript",
+            "EVENT_BUG_CATCHING_CONTESTANT_7B"
+          ],
+          "raw": "object_event  3,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant7BScript, EVENT_BUG_CATCHING_CONTESTANT_7B"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "7",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BugCatchingContestant8BScript",
+            "EVENT_BUG_CATCHING_CONTESTANT_8B"
+          ],
+          "raw": "object_event  4,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant8BScript, EVENT_BUG_CATCHING_CONTESTANT_8B"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "7",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BugCatchingContestant9BScript",
+            "EVENT_BUG_CATCHING_CONTESTANT_9B"
+          ],
+          "raw": "object_event  6,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant9BScript, EVENT_BUG_CATCHING_CONTESTANT_9B"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "6",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BugCatchingContestant10BScript",
+            "EVENT_BUG_CATCHING_CONTESTANT_10B"
+          ],
+          "raw": "object_event  6,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant10BScript, EVENT_BUG_CATCHING_CONTESTANT_10B"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "2",
+            "SPRITE_OFFICER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route36NationalParkGateOfficerScript",
+            "EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY"
+          ],
+          "raw": "object_event  3,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route36NationalParkGateOfficerScript, EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "Route36NationalParkGateOfficer1AskToParticipateText": {
+      "raw_lines": [
+        "text \"Today's @\"",
+        "text_ram wStringBuffer3",
+        "text \".\"",
+        "line \"That means the\"",
+        "para \"Bug-Catching Con-\"",
+        "line \"test is on today.\"",
+        "para \"The rules are sim-\"",
+        "line \"ple.\"",
+        "para \"Using one of your\"",
+        "line \"#MON, catch a\"",
+        "para \"bug #MON to be\"",
+        "line \"judged.\"",
+        "para \"Would you like to\"",
+        "line \"give it a try?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Today's @"
+        },
+        {
+          "command": "text_ram",
+          "value": "wStringBuffer3"
+        },
+        {
+          "command": "text",
+          "value": "."
+        },
+        {
+          "command": "line",
+          "value": "That means the"
+        },
+        {
+          "command": "para",
+          "value": "Bug-Catching Con-"
+        },
+        {
+          "command": "line",
+          "value": "test is on today."
+        },
+        {
+          "command": "para",
+          "value": "The rules are sim-"
+        },
+        {
+          "command": "line",
+          "value": "ple."
+        },
+        {
+          "command": "para",
+          "value": "Using one of your"
+        },
+        {
+          "command": "line",
+          "value": "#MON, catch a"
+        },
+        {
+          "command": "para",
+          "value": "bug #MON to be"
+        },
+        {
+          "command": "line",
+          "value": "judged."
+        },
+        {
+          "command": "para",
+          "value": "Would you like to"
+        },
+        {
+          "command": "line",
+          "value": "give it a try?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36NationalParkGateOfficer1GiveParkBallsText": {
+      "raw_lines": [
+        "text \"Here are the PARK\"",
+        "line \"BALLS for the\"",
+        "cont \"Contest.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Here are the PARK"
+        },
+        {
+          "command": "line",
+          "value": "BALLS for the"
+        },
+        {
+          "command": "cont",
+          "value": "Contest."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36NationalParkGatePlayerReceivedParkBallsText": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"{d:BUG_CONTEST_BALLS} PARK BALLS.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "{d:BUG_CONTEST_BALLS} PARK BALLS."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36NationalParkGateOfficer1ExplainsRulesText": {
+      "raw_lines": [
+        "text \"The person who\"",
+        "line \"gets the strong-\"",
+        "cont \"est bug #MON\"",
+        "cont \"is the winner.\"",
+        "para \"You have {d:BUG_CONTEST_MINUTES}\"",
+        "line \"minutes.\"",
+        "para \"If you run out of\"",
+        "line \"PARK BALLS, you're\"",
+        "cont \"done.\"",
+        "para \"You can keep the\"",
+        "line \"last #MON you\"",
+        "cont \"catch as your own.\"",
+        "para \"Go out and catch\"",
+        "line \"the strongest bug\"",
+        "para \"#MON you can\"",
+        "line \"find!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The person who"
+        },
+        {
+          "command": "line",
+          "value": "gets the strong-"
+        },
+        {
+          "command": "cont",
+          "value": "est bug #MON"
+        },
+        {
+          "command": "cont",
+          "value": "is the winner."
+        },
+        {
+          "command": "para",
+          "value": "You have {d:BUG_CONTEST_MINUTES}"
+        },
+        {
+          "command": "line",
+          "value": "minutes."
+        },
+        {
+          "command": "para",
+          "value": "If you run out of"
+        },
+        {
+          "command": "line",
+          "value": "PARK BALLS, you're"
+        },
+        {
+          "command": "cont",
+          "value": "done."
+        },
+        {
+          "command": "para",
+          "value": "You can keep the"
+        },
+        {
+          "command": "line",
+          "value": "last #MON you"
+        },
+        {
+          "command": "cont",
+          "value": "catch as your own."
+        },
+        {
+          "command": "para",
+          "value": "Go out and catch"
+        },
+        {
+          "command": "line",
+          "value": "the strongest bug"
+        },
+        {
+          "command": "para",
+          "value": "#MON you can"
+        },
+        {
+          "command": "line",
+          "value": "find!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36NationalParkGateOfficer1AskToUseFirstMonText": {
+      "raw_lines": [
+        "text \"Uh-oh\u2026\"",
+        "para \"You have more than\"",
+        "line \"one #MON.\"",
+        "para \"You'll have to use\"",
+        "line \"@\"",
+        "text_ram wStringBuffer3",
+        "text \", the\"",
+        "para \"first #MON in\"",
+        "line \"your party.\"",
+        "para \"Is that OK with\"",
+        "line \"you?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Uh-oh\u2026"
+        },
+        {
+          "command": "para",
+          "value": "You have more than"
+        },
+        {
+          "command": "line",
+          "value": "one #MON."
+        },
+        {
+          "command": "para",
+          "value": "You'll have to use"
+        },
+        {
+          "command": "line",
+          "value": "@"
+        },
+        {
+          "command": "text_ram",
+          "value": "wStringBuffer3"
+        },
+        {
+          "command": "text",
+          "value": ", the"
+        },
+        {
+          "command": "para",
+          "value": "first #MON in"
+        },
+        {
+          "command": "line",
+          "value": "your party."
+        },
+        {
+          "command": "para",
+          "value": "Is that OK with"
+        },
+        {
+          "command": "line",
+          "value": "you?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36NationalParkGateOfficer1WellHoldYourMonText": {
+      "raw_lines": [
+        "text \"Fine, we'll hold\"",
+        "line \"your other #MON\"",
+        "cont \"while you compete.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Fine, we'll hold"
+        },
+        {
+          "command": "line",
+          "value": "your other #MON"
+        },
+        {
+          "command": "cont",
+          "value": "while you compete."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36NationalParkGatePlayersMonLeftWithHelperText": {
+      "raw_lines": [
+        "text \"<PLAYER>'s #MON\"",
+        "line \"were left with the\"",
+        "cont \"CONTEST HELPER.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER>'s #MON"
+        },
+        {
+          "command": "line",
+          "value": "were left with the"
+        },
+        {
+          "command": "cont",
+          "value": "CONTEST HELPER."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36NationalParkGateOfficer1ChooseMonAndComeBackText": {
+      "raw_lines": [
+        "text \"Please choose the\"",
+        "line \"#MON to be used\"",
+        "para \"in the Contest,\"",
+        "line \"then come see me.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Please choose the"
+        },
+        {
+          "command": "line",
+          "value": "#MON to be used"
+        },
+        {
+          "command": "para",
+          "value": "in the Contest,"
+        },
+        {
+          "command": "line",
+          "value": "then come see me."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36NationalParkGateOfficer1TakePartInFutureText": {
+      "raw_lines": [
+        "text \"OK. We hope you'll\"",
+        "line \"take part in the\"",
+        "cont \"future.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OK. We hope you'll"
+        },
+        {
+          "command": "line",
+          "value": "take part in the"
+        },
+        {
+          "command": "cont",
+          "value": "future."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36NationalParkGateOfficer1FirstMonCantBattleText": {
+      "raw_lines": [
+        "text \"Uh-oh\u2026\"",
+        "line \"The first #MON\"",
+        "para \"in your party\"",
+        "line \"can't battle.\"",
+        "para \"Please switch it\"",
+        "line \"with the #MON\"",
+        "para \"you want to use,\"",
+        "line \"then come see me.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Uh-oh\u2026"
+        },
+        {
+          "command": "line",
+          "value": "The first #MON"
+        },
+        {
+          "command": "para",
+          "value": "in your party"
+        },
+        {
+          "command": "line",
+          "value": "can't battle."
+        },
+        {
+          "command": "para",
+          "value": "Please switch it"
+        },
+        {
+          "command": "line",
+          "value": "with the #MON"
+        },
+        {
+          "command": "para",
+          "value": "you want to use,"
+        },
+        {
+          "command": "line",
+          "value": "then come see me."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36NationalParkGateOfficer1MakeRoomText": {
+      "raw_lines": [
+        "text \"Uh-oh\u2026\"",
+        "line \"Both your party\"",
+        "para \"and your PC BOX\"",
+        "line \"are full.\"",
+        "para \"You have no room\"",
+        "line \"to put the bug\"",
+        "cont \"#MON you catch.\"",
+        "para \"Please make room\"",
+        "line \"in your party or\"",
+        "para \"your PC BOX, then\"",
+        "line \"come see me.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Uh-oh\u2026"
+        },
+        {
+          "command": "line",
+          "value": "Both your party"
+        },
+        {
+          "command": "para",
+          "value": "and your PC BOX"
+        },
+        {
+          "command": "line",
+          "value": "are full."
+        },
+        {
+          "command": "para",
+          "value": "You have no room"
+        },
+        {
+          "command": "line",
+          "value": "to put the bug"
+        },
+        {
+          "command": "cont",
+          "value": "#MON you catch."
+        },
+        {
+          "command": "para",
+          "value": "Please make room"
+        },
+        {
+          "command": "line",
+          "value": "in your party or"
+        },
+        {
+          "command": "para",
+          "value": "your PC BOX, then"
+        },
+        {
+          "command": "line",
+          "value": "come see me."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36NationalParkGateOfficer1EggAsFirstMonText": {
+      "raw_lines": [
+        "text \"Uh-oh\u2026\"",
+        "line \"You have an EGG as\"",
+        "para \"the first #MON\"",
+        "line \"in your party.\"",
+        "para \"Please switch it\"",
+        "line \"with the #MON\"",
+        "para \"you want to use,\"",
+        "line \"then come see me.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Uh-oh\u2026"
+        },
+        {
+          "command": "line",
+          "value": "You have an EGG as"
+        },
+        {
+          "command": "para",
+          "value": "the first #MON"
+        },
+        {
+          "command": "line",
+          "value": "in your party."
+        },
+        {
+          "command": "para",
+          "value": "Please switch it"
+        },
+        {
+          "command": "line",
+          "value": "with the #MON"
+        },
+        {
+          "command": "para",
+          "value": "you want to use,"
+        },
+        {
+          "command": "line",
+          "value": "then come see me."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36NationalParkGateOfficer1WantToFinishText": {
+      "raw_lines": [
+        "text \"You still have @\"",
+        "text_ram wStringBuffer3",
+        "text_start",
+        "line \"minute(s) left.\"",
+        "para \"Do you want to\"",
+        "line \"finish now?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You still have @"
+        },
+        {
+          "command": "text_ram",
+          "value": "wStringBuffer3"
+        },
+        {
+          "command": "text_start",
+          "value": ""
+        },
+        {
+          "command": "line",
+          "value": "minute(s) left."
+        },
+        {
+          "command": "para",
+          "value": "Do you want to"
+        },
+        {
+          "command": "line",
+          "value": "finish now?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36NationalParkGateOfficer1WaitHereForAnnouncementText": {
+      "raw_lines": [
+        "text \"OK. Please wait\"",
+        "line \"here for the\"",
+        "para \"announcement of\"",
+        "line \"the winners.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OK. Please wait"
+        },
+        {
+          "command": "line",
+          "value": "here for the"
+        },
+        {
+          "command": "para",
+          "value": "announcement of"
+        },
+        {
+          "command": "line",
+          "value": "the winners."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36NationalParkGateOfficer1OkGoFinishText": {
+      "raw_lines": [
+        "text \"OK. Please go back\"",
+        "line \"outside and finish\"",
+        "cont \"up.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OK. Please go back"
+        },
+        {
+          "command": "line",
+          "value": "outside and finish"
+        },
+        {
+          "command": "cont",
+          "value": "up."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36NationalParkGateOfficer1ContestIsOverText": {
+      "raw_lines": [
+        "text \"Today's Contest is\"",
+        "line \"over. We hope you\"",
+        "para \"will participate\"",
+        "line \"in the future.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Today's Contest is"
+        },
+        {
+          "command": "line",
+          "value": "over. We hope you"
+        },
+        {
+          "command": "para",
+          "value": "will participate"
+        },
+        {
+          "command": "line",
+          "value": "in the future."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText": {
+      "raw_lines": [
+        "text \"Some #MON can\"",
+        "line \"only be seen in\"",
+        "cont \"the PARK.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Some #MON can"
+        },
+        {
+          "command": "line",
+          "value": "only be seen in"
+        },
+        {
+          "command": "cont",
+          "value": "the PARK."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant1BText": {
+      "raw_lines": [
+        "text \"DON: Wow, you beat\"",
+        "line \"me. You're pretty\"",
+        "cont \"good.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "DON: Wow, you beat"
+        },
+        {
+          "command": "line",
+          "value": "me. You're pretty"
+        },
+        {
+          "command": "cont",
+          "value": "good."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant1BStillCompetingText": {
+      "raw_lines": [
+        "text \"DON: Luck plays a\"",
+        "line \"big part in this.\"",
+        "para \"You never know\"",
+        "line \"what #MON will\"",
+        "cont \"appear.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "DON: Luck plays a"
+        },
+        {
+          "command": "line",
+          "value": "big part in this."
+        },
+        {
+          "command": "para",
+          "value": "You never know"
+        },
+        {
+          "command": "line",
+          "value": "what #MON will"
+        },
+        {
+          "command": "cont",
+          "value": "appear."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant2BText": {
+      "raw_lines": [
+        "text \"ED: I envy you.\"",
+        "line \"I just couldn't\"",
+        "cont \"do it this time.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ED: I envy you."
+        },
+        {
+          "command": "line",
+          "value": "I just couldn't"
+        },
+        {
+          "command": "cont",
+          "value": "do it this time."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant2BStillCompetingText": {
+      "raw_lines": [
+        "text \"ED: Maybe you win\"",
+        "line \"with big #MON?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ED: Maybe you win"
+        },
+        {
+          "command": "line",
+          "value": "with big #MON?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant3BText": {
+      "raw_lines": [
+        "text \"NICK: Well done!\"",
+        "line \"I'm going to raise\"",
+        "cont \"my #MON better.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "NICK: Well done!"
+        },
+        {
+          "command": "line",
+          "value": "I'm going to raise"
+        },
+        {
+          "command": "cont",
+          "value": "my #MON better."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant3BStillCompetingText": {
+      "raw_lines": [
+        "text \"NICK: Maybe you\"",
+        "line \"get a higher score\"",
+        "para \"for a #MON of\"",
+        "line \"an unusual color.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "NICK: Maybe you"
+        },
+        {
+          "command": "line",
+          "value": "get a higher score"
+        },
+        {
+          "command": "para",
+          "value": "for a #MON of"
+        },
+        {
+          "command": "line",
+          "value": "an unusual color."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant4BText": {
+      "raw_lines": [
+        "text \"WILLIAM: You're\"",
+        "line \"the winner? What\"",
+        "cont \"did you catch?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "WILLIAM: You're"
+        },
+        {
+          "command": "line",
+          "value": "the winner? What"
+        },
+        {
+          "command": "cont",
+          "value": "did you catch?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant4BStillCompetingText": {
+      "raw_lines": [
+        "text \"WILLIAM: Well, I'm\"",
+        "line \"satisfied because\"",
+        "para \"I caught a #MON\"",
+        "line \"that I wanted.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "WILLIAM: Well, I'm"
+        },
+        {
+          "command": "line",
+          "value": "satisfied because"
+        },
+        {
+          "command": "para",
+          "value": "I caught a #MON"
+        },
+        {
+          "command": "line",
+          "value": "that I wanted."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant5BText": {
+      "raw_lines": [
+        "text \"BENNY: Congrats!\"",
+        "line \"You have earned my\"",
+        "cont \"respect!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "BENNY: Congrats!"
+        },
+        {
+          "command": "line",
+          "value": "You have earned my"
+        },
+        {
+          "command": "cont",
+          "value": "respect!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant5BStillCompetingText": {
+      "raw_lines": [
+        "text \"BENNY: I caught a\"",
+        "line \"SCYTHER before,\"",
+        "cont \"but I didn't win.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "BENNY: I caught a"
+        },
+        {
+          "command": "line",
+          "value": "SCYTHER before,"
+        },
+        {
+          "command": "cont",
+          "value": "but I didn't win."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant6BText": {
+      "raw_lines": [
+        "text \"BARRY: That #-\"",
+        "line \"MON you caught\u2026\"",
+        "cont \"it's awesome!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "BARRY: That #-"
+        },
+        {
+          "command": "line",
+          "value": "MON you caught\u2026"
+        },
+        {
+          "command": "cont",
+          "value": "it's awesome!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant6BStillCompetingText": {
+      "raw_lines": [
+        "text \"BARRY: It's easier\"",
+        "line \"to win if you get\"",
+        "para \"a high-level bug\"",
+        "line \"#MON.\"",
+        "para \"But I think they\"",
+        "line \"also consider some\"",
+        "cont \"other points.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "BARRY: It's easier"
+        },
+        {
+          "command": "line",
+          "value": "to win if you get"
+        },
+        {
+          "command": "para",
+          "value": "a high-level bug"
+        },
+        {
+          "command": "line",
+          "value": "#MON."
+        },
+        {
+          "command": "para",
+          "value": "But I think they"
+        },
+        {
+          "command": "line",
+          "value": "also consider some"
+        },
+        {
+          "command": "cont",
+          "value": "other points."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant7BText": {
+      "raw_lines": [
+        "text \"CINDY: You won?\"",
+        "line \"That's great!\"",
+        "para \"Do you feel like\"",
+        "line \"looking for bug\"",
+        "cont \"#MON with me?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "CINDY: You won?"
+        },
+        {
+          "command": "line",
+          "value": "That's great!"
+        },
+        {
+          "command": "para",
+          "value": "Do you feel like"
+        },
+        {
+          "command": "line",
+          "value": "looking for bug"
+        },
+        {
+          "command": "cont",
+          "value": "#MON with me?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant7BStillCompetingText": {
+      "raw_lines": [
+        "text \"CINDY: I really\"",
+        "line \"love bug #MON!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "CINDY: I really"
+        },
+        {
+          "command": "line",
+          "value": "love bug #MON!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant8BText": {
+      "raw_lines": [
+        "text \"JOSH: I\u2026 I can't\"",
+        "line \"believe I lost at\"",
+        "cont \"bug-catching\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "JOSH: I\u2026 I can't"
+        },
+        {
+          "command": "line",
+          "value": "believe I lost at"
+        },
+        {
+          "command": "cont",
+          "value": "bug-catching\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant8BStillCompetingText": {
+      "raw_lines": [
+        "text \"JOSH: I heard that\"",
+        "line \"somebody won with\"",
+        "cont \"a CATERPIE!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "JOSH: I heard that"
+        },
+        {
+          "command": "line",
+          "value": "somebody won with"
+        },
+        {
+          "command": "cont",
+          "value": "a CATERPIE!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant9BText": {
+      "raw_lines": [
+        "text \"SAMUEL: Next time,\"",
+        "line \"I'm going to win.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "SAMUEL: Next time,"
+        },
+        {
+          "command": "line",
+          "value": "I'm going to win."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant9BStillCompetingText": {
+      "raw_lines": [
+        "text \"SAMUEL: Darn.\"",
+        "line \"I thought I would\"",
+        "cont \"score higher\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "SAMUEL: Darn."
+        },
+        {
+          "command": "line",
+          "value": "I thought I would"
+        },
+        {
+          "command": "cont",
+          "value": "score higher\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant10BText": {
+      "raw_lines": [
+        "text \"KIPP: Could you\"",
+        "line \"give me some tips?\"",
+        "para \"I want to study\"",
+        "line \"your style.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "KIPP: Could you"
+        },
+        {
+          "command": "line",
+          "value": "give me some tips?"
+        },
+        {
+          "command": "para",
+          "value": "I want to study"
+        },
+        {
+          "command": "line",
+          "value": "your style."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatchingContestant10BStillCompetingText": {
+      "raw_lines": [
+        "text \"KIPP: I study a\"",
+        "line \"lot, but that's\"",
+        "para \"not good enough to\"",
+        "line \"win.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "KIPP: I study a"
+        },
+        {
+          "command": "line",
+          "value": "lot, but that's"
+        },
+        {
+          "command": "para",
+          "value": "not good enough to"
+        },
+        {
+          "command": "line",
+          "value": "win."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "UnusedSilphScope2Text": {
+      "raw_lines": [
+        "text \"I hear there's a\"",
+        "line \"#MON that looks\"",
+        "cont \"just like a tree.\"",
+        "para \"You can reveal its\"",
+        "line \"identity using a\"",
+        "cont \"SILPHSCOPE 2.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I hear there's a"
+        },
+        {
+          "command": "line",
+          "value": "#MON that looks"
+        },
+        {
+          "command": "cont",
+          "value": "just like a tree."
+        },
+        {
+          "command": "para",
+          "value": "You can reveal its"
+        },
+        {
+          "command": "line",
+          "value": "identity using a"
+        },
+        {
+          "command": "cont",
+          "value": "SILPHSCOPE 2."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "UnusedBugCatchingContestExplanationText": {
+      "raw_lines": [
+        "text \"The Bug-Catching\"",
+        "line \"Contest is held on\"",
+        "para \"Tuesday, Thursday\"",
+        "line \"and Saturday.\"",
+        "para \"Not only do you\"",
+        "line \"earn a prize just\"",
+        "para \"for participating,\"",
+        "line \"you also get to\"",
+        "para \"keep the bug\"",
+        "line \"#MON you may\"",
+        "para \"have at the end of\"",
+        "line \"the contest.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The Bug-Catching"
+        },
+        {
+          "command": "line",
+          "value": "Contest is held on"
+        },
+        {
+          "command": "para",
+          "value": "Tuesday, Thursday"
+        },
+        {
+          "command": "line",
+          "value": "and Saturday."
+        },
+        {
+          "command": "para",
+          "value": "Not only do you"
+        },
+        {
+          "command": "line",
+          "value": "earn a prize just"
+        },
+        {
+          "command": "para",
+          "value": "for participating,"
+        },
+        {
+          "command": "line",
+          "value": "you also get to"
+        },
+        {
+          "command": "para",
+          "value": "keep the bug"
+        },
+        {
+          "command": "line",
+          "value": "#MON you may"
+        },
+        {
+          "command": "para",
+          "value": "have at the end of"
+        },
+        {
+          "command": "line",
+          "value": "the contest."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36NationalParkGateOfficer1WellHoldPrizeText": {
+      "raw_lines": [
+        "text \"Uh-oh\u2026 Your PACK\"",
+        "line \"is full.\"",
+        "para \"We'll hold on to\"",
+        "line \"your prize, but\"",
+        "cont \"only for today.\"",
+        "para \"Please make room,\"",
+        "line \"then come see me.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Uh-oh\u2026 Your PACK"
+        },
+        {
+          "command": "line",
+          "value": "is full."
+        },
+        {
+          "command": "para",
+          "value": "We'll hold on to"
+        },
+        {
+          "command": "line",
+          "value": "your prize, but"
+        },
+        {
+          "command": "cont",
+          "value": "only for today."
+        },
+        {
+          "command": "para",
+          "value": "Please make room,"
+        },
+        {
+          "command": "line",
+          "value": "then come see me."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36NationalParkGateOfficer1HeresThePrizeText": {
+      "raw_lines": [
+        "text \"<PLAYER>?\"",
+        "para \"Here's the prize\"",
+        "line \"we were holding\"",
+        "cont \"for you.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER>?"
+        },
+        {
+          "command": "para",
+          "value": "Here's the prize"
+        },
+        {
+          "command": "line",
+          "value": "we were holding"
+        },
+        {
+          "command": "cont",
+          "value": "for you."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "Route36NationalParkGatePlayerWaitWithContestantsMovement": {
+      "raw_lines": [
+        "big_step DOWN",
+        "big_step RIGHT",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "BugContestResultsScript",
+    "DayToTextScript"
+  ],
+  "dependencies": {
+    "Route36NationalParkGate_MapScripts": {
+      "label_refs": [
+        "Route36NationalParkGateNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeaveContestEarlyScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateCheckIfContestRunningCallback": {
+      "label_refs": [
+        "Route36NationalParkGateCheckIfContestRunningCallback.BugContestIsRunning"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_ROUTE36NATIONALPARKGATE_NOOP"
+      ],
+      "std_calls": []
+    },
+    "Route36NationalParkGateCheckIfContestRunningCallback.BugContestIsRunning": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_ROUTE36NATIONALPARKGATE_LEAVE_CONTEST_EARLY"
+      ],
+      "std_calls": []
+    },
+    "Route36NationalParkGateCheckIfContestAvailableCallback": {
+      "label_refs": [
+        "Route36NationalParkGateCheckIfContestAvailableCallback.Return",
+        "Route36NationalParkGateCheckIfContestAvailableCallback.SetContestOfficer"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateCheckIfContestAvailableCallback.SetContestOfficer": {
+      "label_refs": [
+        "Route36NationalParkGateCheckIfContestAvailableCallback.Return"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateCheckIfContestAvailableCallback.Return": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript": {
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.CopyContestants",
+        "Route36NationalParkGateLeavingContestEarlyScript.GoBackToContest"
+      ],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1WaitHereForAnnouncementText",
+        "Route36NationalParkGateOfficer1WantToFinishText"
+      ],
+      "movement_refs": [
+        "Route36NationalParkGatePlayerWaitWithContestantsMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": [
+        "BugContestResultsScript"
+      ]
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.GoBackToContest": {
+      "label_refs": [],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1OkGoFinishText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.CopyContestants": {
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not1": {
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not2": {
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not3"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not3": {
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not4"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not4": {
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not5"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not5": {
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not6"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not6": {
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not7"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not7": {
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not8"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not8": {
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not9"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not9": {
+      "label_refs": [
+        "Route36NationalParkGateLeavingContestEarlyScript.Not10"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateLeavingContestEarlyScript.Not10": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36OfficerScriptContest": {
+      "label_refs": [
+        "Route36OfficerScriptContest.DecidedNotToJoinContest",
+        "Route36OfficerScriptContest.LeaveMonsWithOfficer",
+        "Route36OfficerScriptContest.ResumeStartingContest",
+        "Route36Officer_ContestHasConcluded",
+        "Route36ParkGate_DayToText",
+        "_ContestNotOn"
+      ],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1AskToParticipateText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36OfficerScriptContest.ResumeStartingContest": {
+      "label_refs": [],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1ExplainsRulesText",
+        "Route36NationalParkGateOfficer1GiveParkBallsText",
+        "Route36NationalParkGatePlayerReceivedParkBallsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36OfficerScriptContest.LeaveMonsWithOfficer": {
+      "label_refs": [
+        "Route36OfficerScriptContest.BoxFull",
+        "Route36OfficerScriptContest.ContinueLeavingMons"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36OfficerScriptContest.ContinueLeavingMons": {
+      "label_refs": [
+        "Route36OfficerScriptContest.FirstMonIsEgg",
+        "Route36OfficerScriptContest.FirstMonIsFainted",
+        "Route36OfficerScriptContest.RefusedToLeaveMons",
+        "Route36OfficerScriptContest.ResumeStartingContest"
+      ],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1AskToUseFirstMonText",
+        "Route36NationalParkGateOfficer1WellHoldYourMonText",
+        "Route36NationalParkGatePlayersMonLeftWithHelperText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36OfficerScriptContest.DecidedNotToJoinContest": {
+      "label_refs": [],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1TakePartInFutureText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36OfficerScriptContest.RefusedToLeaveMons": {
+      "label_refs": [],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1ChooseMonAndComeBackText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36OfficerScriptContest.FirstMonIsFainted": {
+      "label_refs": [],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1FirstMonCantBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36OfficerScriptContest.BoxFull": {
+      "label_refs": [],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1MakeRoomText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36OfficerScriptContest.FirstMonIsEgg": {
+      "label_refs": [],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1EggAsFirstMonText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36Officer_ContestHasConcluded": {
+      "label_refs": [
+        "Route36Officer_ContestHasConcluded.Berry",
+        "Route36Officer_ContestHasConcluded.Everstone",
+        "Route36Officer_ContestHasConcluded.GoldBerry",
+        "Route36Officer_ContestHasConcluded.Sunstone"
+      ],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1ContestIsOverText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36Officer_ContestHasConcluded.Sunstone": {
+      "label_refs": [
+        "Route36Officer_ContestHasConcluded.BagFull"
+      ],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1HeresThePrizeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36Officer_ContestHasConcluded.Everstone": {
+      "label_refs": [
+        "Route36Officer_ContestHasConcluded.BagFull"
+      ],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1HeresThePrizeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36Officer_ContestHasConcluded.GoldBerry": {
+      "label_refs": [
+        "Route36Officer_ContestHasConcluded.BagFull"
+      ],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1HeresThePrizeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36Officer_ContestHasConcluded.Berry": {
+      "label_refs": [
+        "Route36Officer_ContestHasConcluded.BagFull"
+      ],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1HeresThePrizeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36Officer_ContestHasConcluded.BagFull": {
+      "label_refs": [],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1WellHoldPrizeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "_ContestNotOn": {
+      "label_refs": [],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGateOfficerScript": {
+      "label_refs": [
+        "Route36Officer_ContestHasConcluded"
+      ],
+      "text_refs": [
+        "Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36ParkGate_DayToText": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "DayToTextScript"
+      ]
+    },
+    "BugCatchingContestant1BScript": {
+      "label_refs": [
+        "BugCatchingContestant1BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant1BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant1BScript.StillCompeting": {
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant1BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant2BScript": {
+      "label_refs": [
+        "BugCatchingContestant2BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant2BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant2BScript.StillCompeting": {
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant2BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant3BScript": {
+      "label_refs": [
+        "BugCatchingContestant3BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant3BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant3BScript.StillCompeting": {
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant3BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant4BScript": {
+      "label_refs": [
+        "BugCatchingContestant4BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant4BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant4BScript.StillCompeting": {
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant4BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant5BScript": {
+      "label_refs": [
+        "BugCatchingContestant5BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant5BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant5BScript.StillCompeting": {
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant5BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant6BScript": {
+      "label_refs": [
+        "BugCatchingContestant6BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant6BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant6BScript.StillCompeting": {
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant6BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant7BScript": {
+      "label_refs": [
+        "BugCatchingContestant7BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant7BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant7BScript.StillCompeting": {
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant7BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant8BScript": {
+      "label_refs": [
+        "BugCatchingContestant8BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant8BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant8BScript.StillCompeting": {
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant8BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant9BScript": {
+      "label_refs": [
+        "BugCatchingContestant9BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant9BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant9BScript.StillCompeting": {
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant9BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant10BScript": {
+      "label_refs": [
+        "BugCatchingContestant10BScript.StillCompeting"
+      ],
+      "text_refs": [
+        "BugCatchingContestant10BText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BugCatchingContestant10BScript.StillCompeting": {
+      "label_refs": [],
+      "text_refs": [
+        "BugCatchingContestant10BStillCompetingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "UnusedBugCatchingContestExplanationSign": {
+      "label_refs": [],
+      "text_refs": [
+        "UnusedBugCatchingContestExplanationText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36NationalParkGate_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "day_time"
+  ],
+  "event_counts": {
+    "scene_scripts": 3,
+    "callbacks": 2,
+    "warp_events": 4,
+    "coord_events": 0,
+    "bg_events": 1,
+    "object_events": 12
+  }
+}

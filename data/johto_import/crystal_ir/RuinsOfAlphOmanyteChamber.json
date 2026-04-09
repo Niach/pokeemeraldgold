@@ -1,0 +1,1396 @@
+{
+  "crystal_map": "RuinsOfAlphOmanyteChamber",
+  "map_id": "RUINS_OF_ALPH_OMANYTE_CHAMBER",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 25,
+  "tileset": "TILESET_RUINS_OF_ALPH",
+  "environment": "DUNGEON",
+  "landmark": "LANDMARK_RUINS_OF_ALPH",
+  "music": "MUSIC_UNION_CAVE",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 5,
+  "border_block": "00",
+  "blk_path": "maps/RuinsOfAlphPuzzleChamber.blk",
+  "source_asm": "maps/RuinsOfAlphOmanyteChamber.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "RuinsOfAlphOmanyteChamberCheckWallScene",
+        "scene_id": "SCENE_RUINSOFALPHOMANYTECHAMBER_CHECK_WALL"
+      },
+      {
+        "script": "RuinsOfAlphOmanyteChamberNoopScene",
+        "scene_id": "SCENE_RUINSOFALPHOMANYTECHAMBER_NOOP"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_TILES",
+        "script": "RuinsOfAlphOmanyteChamberHiddenDoorsCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 9,
+        "dest_map": "RUINS_OF_ALPH_OUTSIDE",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 4,
+        "y": 9,
+        "dest_map": "RUINS_OF_ALPH_OUTSIDE",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 3,
+        "y": 3,
+        "dest_map": "RUINS_OF_ALPH_INNER_CHAMBER",
+        "dest_warp_id": 6
+      },
+      {
+        "x": 4,
+        "y": 3,
+        "dest_map": "RUINS_OF_ALPH_INNER_CHAMBER",
+        "dest_warp_id": 7
+      },
+      {
+        "x": 4,
+        "y": 0,
+        "dest_map": "RUINS_OF_ALPH_OMANYTE_ITEM_ROOM",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 2,
+        "y": 3,
+        "kind": "BGEVENT_READ",
+        "script": "RuinsOfAlphOmanyteChamberAncientReplica"
+      },
+      {
+        "x": 5,
+        "y": 3,
+        "kind": "BGEVENT_READ",
+        "script": "RuinsOfAlphOmanyteChamberAncientReplica"
+      },
+      {
+        "x": 3,
+        "y": 2,
+        "kind": "BGEVENT_UP",
+        "script": "RuinsOfAlphOmanyteChamberPuzzle"
+      },
+      {
+        "x": 4,
+        "y": 2,
+        "kind": "BGEVENT_UP",
+        "script": "RuinsOfAlphOmanyteChamberDescriptionSign"
+      },
+      {
+        "x": 3,
+        "y": 0,
+        "kind": "BGEVENT_UP",
+        "script": "RuinsOfAlphOmanyteChamberWallPatternLeft"
+      },
+      {
+        "x": 4,
+        "y": 0,
+        "kind": "BGEVENT_UP",
+        "script": "RuinsOfAlphOmanyteChamberWallPatternRight"
+      }
+    ],
+    "object_events": []
+  },
+  "object_consts": [],
+  "scene_ids": [
+    "SCENE_RUINSOFALPHINNERCHAMBER_STRANGE_PRESENCE",
+    "SCENE_RUINSOFALPHOMANYTECHAMBER_CHECK_WALL",
+    "SCENE_RUINSOFALPHOMANYTECHAMBER_NOOP"
+  ],
+  "scripts": {
+    "RuinsOfAlphOmanyteChamber_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script RuinsOfAlphOmanyteChamberCheckWallScene, SCENE_RUINSOFALPHOMANYTECHAMBER_CHECK_WALL",
+        "scene_script RuinsOfAlphOmanyteChamberNoopScene,      SCENE_RUINSOFALPHOMANYTECHAMBER_NOOP",
+        "def_callbacks",
+        "callback MAPCALLBACK_TILES, RuinsOfAlphOmanyteChamberHiddenDoorsCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "RuinsOfAlphOmanyteChamberCheckWallScene",
+            "SCENE_RUINSOFALPHOMANYTECHAMBER_CHECK_WALL"
+          ],
+          "raw": "scene_script RuinsOfAlphOmanyteChamberCheckWallScene, SCENE_RUINSOFALPHOMANYTECHAMBER_CHECK_WALL"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "RuinsOfAlphOmanyteChamberNoopScene",
+            "SCENE_RUINSOFALPHOMANYTECHAMBER_NOOP"
+          ],
+          "raw": "scene_script RuinsOfAlphOmanyteChamberNoopScene,      SCENE_RUINSOFALPHOMANYTECHAMBER_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_TILES",
+            "RuinsOfAlphOmanyteChamberHiddenDoorsCallback"
+          ],
+          "raw": "callback MAPCALLBACK_TILES, RuinsOfAlphOmanyteChamberHiddenDoorsCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "RuinsOfAlphOmanyteChamberCheckWallScene",
+      "label_refs": [
+        "RuinsOfAlphOmanyteChamberCheckWallScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberCheckWallScene": {
+      "raw_lines": [
+        "special OmanyteChamber",
+        "checkevent EVENT_WALL_OPENED_IN_OMANYTE_CHAMBER",
+        "iftrue .OpenWall",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "special",
+          "args": [
+            "OmanyteChamber"
+          ],
+          "raw": "special OmanyteChamber"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_WALL_OPENED_IN_OMANYTE_CHAMBER"
+          ],
+          "raw": "checkevent EVENT_WALL_OPENED_IN_OMANYTE_CHAMBER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RuinsOfAlphOmanyteChamberCheckWallScene.OpenWall"
+          ],
+          "raw": "iftrue .OpenWall"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "special",
+      "label_refs": [
+        "RuinsOfAlphOmanyteChamberCheckWallScene.OpenWall"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberCheckWallScene.OpenWall": {
+      "raw_lines": [
+        "sdefer RuinsOfAlphOmanyteChamberWallOpenScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "sdefer",
+          "args": [
+            "RuinsOfAlphOmanyteChamberWallOpenScript"
+          ],
+          "raw": "sdefer RuinsOfAlphOmanyteChamberWallOpenScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "sdefer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberNoopScene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberHiddenDoorsCallback": {
+      "raw_lines": [
+        "checkevent EVENT_WALL_OPENED_IN_OMANYTE_CHAMBER",
+        "iftrue .WallOpen",
+        "changeblock 4, 0, $2e"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_WALL_OPENED_IN_OMANYTE_CHAMBER"
+          ],
+          "raw": "checkevent EVENT_WALL_OPENED_IN_OMANYTE_CHAMBER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RuinsOfAlphOmanyteChamberHiddenDoorsCallback.WallOpen"
+          ],
+          "raw": "iftrue .WallOpen"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "0",
+            "$2e"
+          ],
+          "raw": "changeblock 4, 0, $2e"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "RuinsOfAlphOmanyteChamberHiddenDoorsCallback.WallOpen",
+      "label_refs": [
+        "RuinsOfAlphOmanyteChamberHiddenDoorsCallback.WallOpen"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberHiddenDoorsCallback.WallOpen": {
+      "raw_lines": [
+        "checkevent EVENT_SOLVED_OMANYTE_PUZZLE",
+        "iffalse .FloorClosed",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_SOLVED_OMANYTE_PUZZLE"
+          ],
+          "raw": "checkevent EVENT_SOLVED_OMANYTE_PUZZLE"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "RuinsOfAlphOmanyteChamberHiddenDoorsCallback.FloorClosed"
+          ],
+          "raw": "iffalse .FloorClosed"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "RuinsOfAlphOmanyteChamberHiddenDoorsCallback.FloorClosed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberHiddenDoorsCallback.FloorClosed": {
+      "raw_lines": [
+        "changeblock 2, 2, $01",
+        "changeblock 4, 2, $02",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "changeblock",
+          "args": [
+            "2",
+            "2",
+            "$01"
+          ],
+          "raw": "changeblock 2, 2, $01"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "2",
+            "$02"
+          ],
+          "raw": "changeblock 4, 2, $02"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "changeblock",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberWallOpenScript": {
+      "raw_lines": [
+        "pause 30",
+        "earthquake 30",
+        "showemote EMOTE_SHOCK, PLAYER, 20",
+        "pause 30",
+        "playsound SFX_STRENGTH",
+        "changeblock 4, 0, $30",
+        "refreshmap",
+        "earthquake 50",
+        "setscene SCENE_RUINSOFALPHOMANYTECHAMBER_NOOP",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "pause",
+          "args": [
+            "30"
+          ],
+          "raw": "pause 30"
+        },
+        {
+          "command": "earthquake",
+          "args": [
+            "30"
+          ],
+          "raw": "earthquake 30"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "20"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 20"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "30"
+          ],
+          "raw": "pause 30"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_STRENGTH"
+          ],
+          "raw": "playsound SFX_STRENGTH"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "0",
+            "$30"
+          ],
+          "raw": "changeblock 4, 0, $30"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "earthquake",
+          "args": [
+            "50"
+          ],
+          "raw": "earthquake 50"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_RUINSOFALPHOMANYTECHAMBER_NOOP"
+          ],
+          "raw": "setscene SCENE_RUINSOFALPHOMANYTECHAMBER_NOOP"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "pause",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_RUINSOFALPHOMANYTECHAMBER_NOOP"
+      ],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberPuzzle": {
+      "raw_lines": [
+        "reanchormap",
+        "setval UNOWNPUZZLE_OMANYTE",
+        "special UnownPuzzle",
+        "closetext",
+        "iftrue .PuzzleComplete",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "reanchormap",
+          "args": [],
+          "raw": "reanchormap"
+        },
+        {
+          "command": "setval",
+          "args": [
+            "UNOWNPUZZLE_OMANYTE"
+          ],
+          "raw": "setval UNOWNPUZZLE_OMANYTE"
+        },
+        {
+          "command": "special",
+          "args": [
+            "UnownPuzzle"
+          ],
+          "raw": "special UnownPuzzle"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RuinsOfAlphOmanyteChamberPuzzle.PuzzleComplete"
+          ],
+          "raw": "iftrue .PuzzleComplete"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "reanchormap",
+      "label_refs": [
+        "RuinsOfAlphOmanyteChamberPuzzle.PuzzleComplete"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberPuzzle.PuzzleComplete": {
+      "raw_lines": [
+        "setevent EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS",
+        "setevent EVENT_SOLVED_OMANYTE_PUZZLE",
+        "setflag ENGINE_UNLOCKED_UNOWNS_L_TO_R",
+        "setmapscene RUINS_OF_ALPH_INNER_CHAMBER, SCENE_RUINSOFALPHINNERCHAMBER_STRANGE_PRESENCE",
+        "earthquake 30",
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "changeblock 2, 2, $18",
+        "changeblock 4, 2, $19",
+        "refreshmap",
+        "playsound SFX_STRENGTH",
+        "earthquake 80",
+        "applymovement PLAYER, RuinsOfAlphOmanyteChamberSkyfallTopMovement",
+        "playsound SFX_KINESIS",
+        "waitsfx",
+        "pause 20",
+        "warpcheck",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS"
+          ],
+          "raw": "setevent EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_SOLVED_OMANYTE_PUZZLE"
+          ],
+          "raw": "setevent EVENT_SOLVED_OMANYTE_PUZZLE"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_UNLOCKED_UNOWNS_L_TO_R"
+          ],
+          "raw": "setflag ENGINE_UNLOCKED_UNOWNS_L_TO_R"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "RUINS_OF_ALPH_INNER_CHAMBER",
+            "SCENE_RUINSOFALPHINNERCHAMBER_STRANGE_PRESENCE"
+          ],
+          "raw": "setmapscene RUINS_OF_ALPH_INNER_CHAMBER, SCENE_RUINSOFALPHINNERCHAMBER_STRANGE_PRESENCE"
+        },
+        {
+          "command": "earthquake",
+          "args": [
+            "30"
+          ],
+          "raw": "earthquake 30"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "2",
+            "2",
+            "$18"
+          ],
+          "raw": "changeblock 2, 2, $18"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "2",
+            "$19"
+          ],
+          "raw": "changeblock 4, 2, $19"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_STRENGTH"
+          ],
+          "raw": "playsound SFX_STRENGTH"
+        },
+        {
+          "command": "earthquake",
+          "args": [
+            "80"
+          ],
+          "raw": "earthquake 80"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "RuinsOfAlphOmanyteChamberSkyfallTopMovement"
+          ],
+          "raw": "applymovement PLAYER, RuinsOfAlphOmanyteChamberSkyfallTopMovement"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_KINESIS"
+          ],
+          "raw": "playsound SFX_KINESIS"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "20"
+          ],
+          "raw": "pause 20"
+        },
+        {
+          "command": "warpcheck",
+          "args": [],
+          "raw": "warpcheck"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "setevent",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "RuinsOfAlphOmanyteChamberSkyfallTopMovement"
+      ],
+      "scene_refs": [
+        "SCENE_RUINSOFALPHINNERCHAMBER_STRANGE_PRESENCE"
+      ],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberAncientReplica": {
+      "raw_lines": [
+        "jumptext RuinsOfAlphOmanyteChamberAncientReplicaText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "RuinsOfAlphOmanyteChamberAncientReplicaText"
+          ],
+          "raw": "jumptext RuinsOfAlphOmanyteChamberAncientReplicaText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOmanyteChamberAncientReplicaText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberDescriptionSign": {
+      "raw_lines": [
+        "jumptext RuinsOfAlphOmanyteChamberDescriptionText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "RuinsOfAlphOmanyteChamberDescriptionText"
+          ],
+          "raw": "jumptext RuinsOfAlphOmanyteChamberDescriptionText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOmanyteChamberDescriptionText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberWallPatternLeft": {
+      "raw_lines": [
+        "opentext",
+        "writetext RuinsOfAlphOmanyteChamberWallPatternLeftText",
+        "setval UNOWNWORDS_WATER",
+        "special DisplayUnownWords",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphOmanyteChamberWallPatternLeftText"
+          ],
+          "raw": "writetext RuinsOfAlphOmanyteChamberWallPatternLeftText"
+        },
+        {
+          "command": "setval",
+          "args": [
+            "UNOWNWORDS_WATER"
+          ],
+          "raw": "setval UNOWNWORDS_WATER"
+        },
+        {
+          "command": "special",
+          "args": [
+            "DisplayUnownWords"
+          ],
+          "raw": "special DisplayUnownWords"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOmanyteChamberWallPatternLeftText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberWallPatternRight": {
+      "raw_lines": [
+        "checkevent EVENT_WALL_OPENED_IN_OMANYTE_CHAMBER",
+        "iftrue .WallOpen",
+        "opentext",
+        "writetext RuinsOfAlphOmanyteChamberWallPatternRightText",
+        "setval UNOWNWORDS_WATER",
+        "special DisplayUnownWords",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_WALL_OPENED_IN_OMANYTE_CHAMBER"
+          ],
+          "raw": "checkevent EVENT_WALL_OPENED_IN_OMANYTE_CHAMBER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RuinsOfAlphOmanyteChamberWallPatternRight.WallOpen"
+          ],
+          "raw": "iftrue .WallOpen"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphOmanyteChamberWallPatternRightText"
+          ],
+          "raw": "writetext RuinsOfAlphOmanyteChamberWallPatternRightText"
+        },
+        {
+          "command": "setval",
+          "args": [
+            "UNOWNWORDS_WATER"
+          ],
+          "raw": "setval UNOWNWORDS_WATER"
+        },
+        {
+          "command": "special",
+          "args": [
+            "DisplayUnownWords"
+          ],
+          "raw": "special DisplayUnownWords"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "RuinsOfAlphOmanyteChamberWallPatternRight.WallOpen"
+      ],
+      "text_refs": [
+        "RuinsOfAlphOmanyteChamberWallPatternRightText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberWallPatternRight.WallOpen": {
+      "raw_lines": [
+        "opentext",
+        "writetext RuinsOfAlphOmanyteChamberWallHoleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphOmanyteChamberWallHoleText"
+          ],
+          "raw": "writetext RuinsOfAlphOmanyteChamberWallHoleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOmanyteChamberWallHoleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberSkyfallTopMovement": {
+      "raw_lines": [
+        "skyfall_top",
+        "step_end"
+      ],
+      "commands": [
+        {
+          "command": "skyfall_top",
+          "args": [],
+          "raw": "skyfall_top"
+        },
+        {
+          "command": "step_end",
+          "args": [],
+          "raw": "step_end"
+        }
+      ],
+      "first_command": "skyfall_top",
+      "fallthrough_label": "RuinsOfAlphOmanyteChamber_MapEvents",
+      "label_refs": [
+        "RuinsOfAlphOmanyteChamber_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamber_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  9, RUINS_OF_ALPH_OUTSIDE, 3",
+        "warp_event  4,  9, RUINS_OF_ALPH_OUTSIDE, 3",
+        "warp_event  3,  3, RUINS_OF_ALPH_INNER_CHAMBER, 6",
+        "warp_event  4,  3, RUINS_OF_ALPH_INNER_CHAMBER, 7",
+        "warp_event  4,  0, RUINS_OF_ALPH_OMANYTE_ITEM_ROOM, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  2,  3, BGEVENT_READ, RuinsOfAlphOmanyteChamberAncientReplica",
+        "bg_event  5,  3, BGEVENT_READ, RuinsOfAlphOmanyteChamberAncientReplica",
+        "bg_event  3,  2, BGEVENT_UP, RuinsOfAlphOmanyteChamberPuzzle",
+        "bg_event  4,  2, BGEVENT_UP, RuinsOfAlphOmanyteChamberDescriptionSign",
+        "bg_event  3,  0, BGEVENT_UP, RuinsOfAlphOmanyteChamberWallPatternLeft",
+        "bg_event  4,  0, BGEVENT_UP, RuinsOfAlphOmanyteChamberWallPatternRight",
+        "def_object_events"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "9",
+            "RUINS_OF_ALPH_OUTSIDE",
+            "3"
+          ],
+          "raw": "warp_event  3,  9, RUINS_OF_ALPH_OUTSIDE, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "9",
+            "RUINS_OF_ALPH_OUTSIDE",
+            "3"
+          ],
+          "raw": "warp_event  4,  9, RUINS_OF_ALPH_OUTSIDE, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "3",
+            "RUINS_OF_ALPH_INNER_CHAMBER",
+            "6"
+          ],
+          "raw": "warp_event  3,  3, RUINS_OF_ALPH_INNER_CHAMBER, 6"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "3",
+            "RUINS_OF_ALPH_INNER_CHAMBER",
+            "7"
+          ],
+          "raw": "warp_event  4,  3, RUINS_OF_ALPH_INNER_CHAMBER, 7"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "0",
+            "RUINS_OF_ALPH_OMANYTE_ITEM_ROOM",
+            "1"
+          ],
+          "raw": "warp_event  4,  0, RUINS_OF_ALPH_OMANYTE_ITEM_ROOM, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "2",
+            "3",
+            "BGEVENT_READ",
+            "RuinsOfAlphOmanyteChamberAncientReplica"
+          ],
+          "raw": "bg_event  2,  3, BGEVENT_READ, RuinsOfAlphOmanyteChamberAncientReplica"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "5",
+            "3",
+            "BGEVENT_READ",
+            "RuinsOfAlphOmanyteChamberAncientReplica"
+          ],
+          "raw": "bg_event  5,  3, BGEVENT_READ, RuinsOfAlphOmanyteChamberAncientReplica"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "2",
+            "BGEVENT_UP",
+            "RuinsOfAlphOmanyteChamberPuzzle"
+          ],
+          "raw": "bg_event  3,  2, BGEVENT_UP, RuinsOfAlphOmanyteChamberPuzzle"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "4",
+            "2",
+            "BGEVENT_UP",
+            "RuinsOfAlphOmanyteChamberDescriptionSign"
+          ],
+          "raw": "bg_event  4,  2, BGEVENT_UP, RuinsOfAlphOmanyteChamberDescriptionSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "0",
+            "BGEVENT_UP",
+            "RuinsOfAlphOmanyteChamberWallPatternLeft"
+          ],
+          "raw": "bg_event  3,  0, BGEVENT_UP, RuinsOfAlphOmanyteChamberWallPatternLeft"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "4",
+            "0",
+            "BGEVENT_UP",
+            "RuinsOfAlphOmanyteChamberWallPatternRight"
+          ],
+          "raw": "bg_event  4,  0, BGEVENT_UP, RuinsOfAlphOmanyteChamberWallPatternRight"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "RuinsOfAlphOmanyteChamberWallPatternLeftText": {
+      "raw_lines": [
+        "text \"Patterns appeared\"",
+        "line \"on the walls\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Patterns appeared"
+        },
+        {
+          "command": "line",
+          "value": "on the walls\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphOmanyteChamberUnownText": {
+      "raw_lines": [
+        "text \"It's UNOWN text!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's UNOWN text!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphOmanyteChamberWallPatternRightText": {
+      "raw_lines": [
+        "text \"Patterns appeared\"",
+        "line \"on the walls\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Patterns appeared"
+        },
+        {
+          "command": "line",
+          "value": "on the walls\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphOmanyteChamberWallHoleText": {
+      "raw_lines": [
+        "text \"There's a big hole\"",
+        "line \"in the wall!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "There's a big hole"
+        },
+        {
+          "command": "line",
+          "value": "in the wall!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphOmanyteChamberAncientReplicaText": {
+      "raw_lines": [
+        "text \"It's a replica of\"",
+        "line \"an ancient #-\"",
+        "cont \"MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's a replica of"
+        },
+        {
+          "command": "line",
+          "value": "an ancient #-"
+        },
+        {
+          "command": "cont",
+          "value": "MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphOmanyteChamberDescriptionText": {
+      "raw_lines": [
+        "text \"This #MON\"",
+        "line \"drifted in the\"",
+        "para \"sea by twisting\"",
+        "line \"its ten tentacles.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This #MON"
+        },
+        {
+          "command": "line",
+          "value": "drifted in the"
+        },
+        {
+          "command": "para",
+          "value": "sea by twisting"
+        },
+        {
+          "command": "line",
+          "value": "its ten tentacles."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "RuinsOfAlphOmanyteChamber_MapScripts": {
+      "label_refs": [
+        "RuinsOfAlphOmanyteChamberCheckWallScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberCheckWallScene": {
+      "label_refs": [
+        "RuinsOfAlphOmanyteChamberCheckWallScene.OpenWall"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberCheckWallScene.OpenWall": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberNoopScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberHiddenDoorsCallback": {
+      "label_refs": [
+        "RuinsOfAlphOmanyteChamberHiddenDoorsCallback.WallOpen"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberHiddenDoorsCallback.WallOpen": {
+      "label_refs": [
+        "RuinsOfAlphOmanyteChamberHiddenDoorsCallback.FloorClosed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberHiddenDoorsCallback.FloorClosed": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberWallOpenScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_RUINSOFALPHOMANYTECHAMBER_NOOP"
+      ],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberPuzzle": {
+      "label_refs": [
+        "RuinsOfAlphOmanyteChamberPuzzle.PuzzleComplete"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberPuzzle.PuzzleComplete": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "RuinsOfAlphOmanyteChamberSkyfallTopMovement"
+      ],
+      "scene_refs": [
+        "SCENE_RUINSOFALPHINNERCHAMBER_STRANGE_PRESENCE"
+      ],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberAncientReplica": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOmanyteChamberAncientReplicaText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberDescriptionSign": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOmanyteChamberDescriptionText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberWallPatternLeft": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOmanyteChamberWallPatternLeftText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberWallPatternRight": {
+      "label_refs": [
+        "RuinsOfAlphOmanyteChamberWallPatternRight.WallOpen"
+      ],
+      "text_refs": [
+        "RuinsOfAlphOmanyteChamberWallPatternRightText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberWallPatternRight.WallOpen": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOmanyteChamberWallHoleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamberSkyfallTopMovement": {
+      "label_refs": [
+        "RuinsOfAlphOmanyteChamber_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteChamber_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
+    "warp_events": 5,
+    "coord_events": 0,
+    "bg_events": 6,
+    "object_events": 0
+  }
+}

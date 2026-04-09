@@ -103,6 +103,7 @@ gStdScripts::
 	.4byte Std_MsgboxPokenav           @ MSGBOX_POKENAV
 gStdScripts_End::
 
+	.include "data/scripts/johto_std.inc"
 	.include "data/maps/PetalburgCity/scripts.inc"
 	.include "data/maps/SlateportCity/scripts.inc"
 	.include "data/maps/MauvilleCity/scripts.inc"
@@ -120,6 +121,7 @@ gStdScripts_End::
 	.include "data/maps/ElmsLab/scripts.inc"
 	.include "data/maps/ElmsHouse/scripts.inc"
 	.include "data/maps/johto_auto_scripts.inc"
+	.include "data/maps/johto_generated_assets.inc"
 	.include "data/maps/OldaleTown/scripts.inc"
 	.include "data/maps/DewfordTown/scripts.inc"
 	.include "data/maps/LavaridgeTown/scripts.inc"

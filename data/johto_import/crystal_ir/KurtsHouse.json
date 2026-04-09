@@ -1,0 +1,5284 @@
+{
+  "crystal_map": "KurtsHouse",
+  "map_id": "KURTS_HOUSE",
+  "group": "AZALEA",
+  "group_index": 8,
+  "map_index": 4,
+  "tileset": "TILESET_TRADITIONAL_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_AZALEA_TOWN",
+  "music": "MUSIC_AZALEA_TOWN",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 8,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/KurtsHouse.blk",
+  "source_asm": "maps/KurtsHouse.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "KurtsHouseKurtCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "AZALEA_TOWN",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "dest_map": "AZALEA_TOWN",
+        "dest_warp_id": 4
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 6,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "KurtsHouseRadio"
+      },
+      {
+        "x": 8,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "KurtsHouseOakPhoto"
+      },
+      {
+        "x": 9,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "KurtsHouseOakPhoto"
+      },
+      {
+        "x": 5,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "KurtsHouseBookshelf"
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "KurtsHouseBookshelf"
+      },
+      {
+        "x": 3,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "KurtsHouseBookshelf"
+      },
+      {
+        "x": 4,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "KurtsHouseCelebiStatue"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 3,
+        "y": 2,
+        "sprite": "SPRITE_KURT",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Kurt1",
+        "flag": "EVENT_KURTS_HOUSE_KURT_1"
+      },
+      {
+        "x": 5,
+        "y": 3,
+        "sprite": "SPRITE_TWIN",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "KurtsGranddaughter1",
+        "flag": "EVENT_KURTS_HOUSE_GRANDDAUGHTER_1"
+      },
+      {
+        "x": 6,
+        "y": 3,
+        "sprite": "SPRITE_SLOWPOKE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "KurtsHouseSlowpoke",
+        "flag": "EVENT_KURTS_HOUSE_SLOWPOKE"
+      },
+      {
+        "x": 14,
+        "y": 3,
+        "sprite": "SPRITE_KURT",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Kurt2",
+        "flag": "EVENT_KURTS_HOUSE_KURT_2"
+      },
+      {
+        "x": 11,
+        "y": 4,
+        "sprite": "SPRITE_TWIN",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "KurtsGranddaughter2",
+        "flag": "EVENT_KURTS_HOUSE_GRANDDAUGHTER_2"
+      }
+    ]
+  },
+  "object_consts": [
+    "KURTSHOUSE_KURT1",
+    "KURTSHOUSE_TWIN1",
+    "KURTSHOUSE_SLOWPOKE",
+    "KURTSHOUSE_KURT2",
+    "KURTSHOUSE_TWIN2"
+  ],
+  "scene_ids": [
+    "SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL"
+  ],
+  "scripts": {
+    "KurtsHouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks",
+        "callback MAPCALLBACK_OBJECTS, KurtsHouseKurtCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "KurtsHouseKurtCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, KurtsHouseKurtCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "KurtsHouseKurtCallback",
+      "label_refs": [
+        "KurtsHouseKurtCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsHouseKurtCallback": {
+      "raw_lines": [
+        "checkevent EVENT_CLEARED_SLOWPOKE_WELL",
+        "iffalse .Done",
+        "checkevent EVENT_FOREST_IS_RESTLESS",
+        "iftrue .Done",
+        "checkflag ENGINE_KURT_MAKING_BALLS",
+        "iftrue .MakingBalls",
+        "disappear KURTSHOUSE_KURT2",
+        "appear KURTSHOUSE_KURT1",
+        "disappear KURTSHOUSE_TWIN2",
+        "appear KURTSHOUSE_TWIN1",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_SLOWPOKE_WELL"
+          ],
+          "raw": "checkevent EVENT_CLEARED_SLOWPOKE_WELL"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "KurtsHouseKurtCallback.Done"
+          ],
+          "raw": "iffalse .Done"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_FOREST_IS_RESTLESS"
+          ],
+          "raw": "checkevent EVENT_FOREST_IS_RESTLESS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KurtsHouseKurtCallback.Done"
+          ],
+          "raw": "iftrue .Done"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_KURT_MAKING_BALLS"
+          ],
+          "raw": "checkflag ENGINE_KURT_MAKING_BALLS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KurtsHouseKurtCallback.MakingBalls"
+          ],
+          "raw": "iftrue .MakingBalls"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "KURTSHOUSE_KURT2"
+          ],
+          "raw": "disappear KURTSHOUSE_KURT2"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "KURTSHOUSE_KURT1"
+          ],
+          "raw": "appear KURTSHOUSE_KURT1"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "KURTSHOUSE_TWIN2"
+          ],
+          "raw": "disappear KURTSHOUSE_TWIN2"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "KURTSHOUSE_TWIN1"
+          ],
+          "raw": "appear KURTSHOUSE_TWIN1"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "KurtsHouseKurtCallback.Done",
+        "KurtsHouseKurtCallback.MakingBalls"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsHouseKurtCallback.MakingBalls": {
+      "raw_lines": [
+        "disappear KURTSHOUSE_KURT1",
+        "appear KURTSHOUSE_KURT2",
+        "disappear KURTSHOUSE_TWIN1",
+        "appear KURTSHOUSE_TWIN2"
+      ],
+      "commands": [
+        {
+          "command": "disappear",
+          "args": [
+            "KURTSHOUSE_KURT1"
+          ],
+          "raw": "disappear KURTSHOUSE_KURT1"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "KURTSHOUSE_KURT2"
+          ],
+          "raw": "appear KURTSHOUSE_KURT2"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "KURTSHOUSE_TWIN1"
+          ],
+          "raw": "disappear KURTSHOUSE_TWIN1"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "KURTSHOUSE_TWIN2"
+          ],
+          "raw": "appear KURTSHOUSE_TWIN2"
+        }
+      ],
+      "first_command": "disappear",
+      "fallthrough_label": "KurtsHouseKurtCallback.Done",
+      "label_refs": [
+        "KurtsHouseKurtCallback.Done"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsHouseKurtCallback.Done": {
+      "raw_lines": [
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "endcallback",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_KURT_GAVE_YOU_LURE_BALL",
+        "iftrue .GotLureBall",
+        "checkevent EVENT_CLEARED_SLOWPOKE_WELL",
+        "iftrue .ClearedSlowpokeWell",
+        "writetext KurtsHouseKurtMakingBallsMustWaitText",
+        "waitbutton",
+        "closetext",
+        "special FadeOutMusic",
+        "setevent EVENT_AZALEA_TOWN_SLOWPOKETAIL_ROCKET",
+        "readvar VAR_FACING",
+        "ifequal UP, .RunAround",
+        "turnobject PLAYER, DOWN",
+        "playsound SFX_FLY",
+        "applymovement KURTSHOUSE_KURT1, KurtsHouseKurtExitHouseMovement",
+        "playsound SFX_EXIT_BUILDING",
+        "disappear KURTSHOUSE_KURT1",
+        "waitsfx",
+        "special RestartMapMusic",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_KURT_GAVE_YOU_LURE_BALL"
+          ],
+          "raw": "checkevent EVENT_KURT_GAVE_YOU_LURE_BALL"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.GotLureBall"
+          ],
+          "raw": "iftrue .GotLureBall"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_SLOWPOKE_WELL"
+          ],
+          "raw": "checkevent EVENT_CLEARED_SLOWPOKE_WELL"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.ClearedSlowpokeWell"
+          ],
+          "raw": "iftrue .ClearedSlowpokeWell"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtMakingBallsMustWaitText"
+          ],
+          "raw": "writetext KurtsHouseKurtMakingBallsMustWaitText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_AZALEA_TOWN_SLOWPOKETAIL_ROCKET"
+          ],
+          "raw": "setevent EVENT_AZALEA_TOWN_SLOWPOKETAIL_ROCKET"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_FACING"
+          ],
+          "raw": "readvar VAR_FACING"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "UP",
+            "Kurt1.RunAround"
+          ],
+          "raw": "ifequal UP, .RunAround"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_FLY"
+          ],
+          "raw": "playsound SFX_FLY"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "KURTSHOUSE_KURT1",
+            "KurtsHouseKurtExitHouseMovement"
+          ],
+          "raw": "applymovement KURTSHOUSE_KURT1, KurtsHouseKurtExitHouseMovement"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "KURTSHOUSE_KURT1"
+          ],
+          "raw": "disappear KURTSHOUSE_KURT1"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "Kurt1.ClearedSlowpokeWell",
+        "Kurt1.GotLureBall",
+        "Kurt1.RunAround"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtMakingBallsMustWaitText"
+      ],
+      "movement_refs": [
+        "KurtsHouseKurtExitHouseMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.RunAround": {
+      "raw_lines": [
+        "turnobject PLAYER, DOWN",
+        "playsound SFX_FLY",
+        "applymovement KURTSHOUSE_KURT1, KurtsHouseKurtGoAroundPlayerThenExitHouseMovement",
+        "playsound SFX_EXIT_BUILDING",
+        "disappear KURTSHOUSE_KURT1",
+        "waitsfx",
+        "special RestartMapMusic",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_FLY"
+          ],
+          "raw": "playsound SFX_FLY"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "KURTSHOUSE_KURT1",
+            "KurtsHouseKurtGoAroundPlayerThenExitHouseMovement"
+          ],
+          "raw": "applymovement KURTSHOUSE_KURT1, KurtsHouseKurtGoAroundPlayerThenExitHouseMovement"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "KURTSHOUSE_KURT1"
+          ],
+          "raw": "disappear KURTSHOUSE_KURT1"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "KurtsHouseKurtGoAroundPlayerThenExitHouseMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.ClearedSlowpokeWell": {
+      "raw_lines": [
+        "writetext KurtsHouseKurtHonoredToMakeBallsText",
+        "promptbutton",
+        "verbosegiveitem LURE_BALL",
+        "iffalse .NoRoomForBall",
+        "setevent EVENT_KURT_GAVE_YOU_LURE_BALL"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtHonoredToMakeBallsText"
+          ],
+          "raw": "writetext KurtsHouseKurtHonoredToMakeBallsText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "LURE_BALL"
+          ],
+          "raw": "verbosegiveitem LURE_BALL"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Kurt1.NoRoomForBall"
+          ],
+          "raw": "iffalse .NoRoomForBall"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_KURT_GAVE_YOU_LURE_BALL"
+          ],
+          "raw": "setevent EVENT_KURT_GAVE_YOU_LURE_BALL"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "Kurt1.GotLureBall",
+      "label_refs": [
+        "Kurt1.GotLureBall",
+        "Kurt1.NoRoomForBall"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtHonoredToMakeBallsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GotLureBall": {
+      "raw_lines": [
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iftrue .WaitForApricorns",
+        "checkevent EVENT_GAVE_KURT_RED_APRICORN",
+        "iftrue .GiveLevelBall",
+        "checkevent EVENT_GAVE_KURT_BLU_APRICORN",
+        "iftrue .GiveLureBall",
+        "checkevent EVENT_GAVE_KURT_YLW_APRICORN",
+        "iftrue .GiveMoonBall",
+        "checkevent EVENT_GAVE_KURT_GRN_APRICORN",
+        "iftrue .GiveFriendBall",
+        "checkevent EVENT_GAVE_KURT_WHT_APRICORN",
+        "iftrue .GiveFastBall",
+        "checkevent EVENT_GAVE_KURT_BLK_APRICORN",
+        "iftrue .GiveHeavyBall",
+        "checkevent EVENT_GAVE_KURT_PNK_APRICORN",
+        "iftrue .GiveLoveBall",
+        "checkevent EVENT_CAN_GIVE_GS_BALL_TO_KURT",
+        "iftrue .CanGiveGSBallToKurt"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.WaitForApricorns"
+          ],
+          "raw": "iftrue .WaitForApricorns"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GAVE_KURT_RED_APRICORN"
+          ],
+          "raw": "checkevent EVENT_GAVE_KURT_RED_APRICORN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.GiveLevelBall"
+          ],
+          "raw": "iftrue .GiveLevelBall"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GAVE_KURT_BLU_APRICORN"
+          ],
+          "raw": "checkevent EVENT_GAVE_KURT_BLU_APRICORN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.GiveLureBall"
+          ],
+          "raw": "iftrue .GiveLureBall"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GAVE_KURT_YLW_APRICORN"
+          ],
+          "raw": "checkevent EVENT_GAVE_KURT_YLW_APRICORN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.GiveMoonBall"
+          ],
+          "raw": "iftrue .GiveMoonBall"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GAVE_KURT_GRN_APRICORN"
+          ],
+          "raw": "checkevent EVENT_GAVE_KURT_GRN_APRICORN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.GiveFriendBall"
+          ],
+          "raw": "iftrue .GiveFriendBall"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GAVE_KURT_WHT_APRICORN"
+          ],
+          "raw": "checkevent EVENT_GAVE_KURT_WHT_APRICORN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.GiveFastBall"
+          ],
+          "raw": "iftrue .GiveFastBall"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GAVE_KURT_BLK_APRICORN"
+          ],
+          "raw": "checkevent EVENT_GAVE_KURT_BLK_APRICORN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.GiveHeavyBall"
+          ],
+          "raw": "iftrue .GiveHeavyBall"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GAVE_KURT_PNK_APRICORN"
+          ],
+          "raw": "checkevent EVENT_GAVE_KURT_PNK_APRICORN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.GiveLoveBall"
+          ],
+          "raw": "iftrue .GiveLoveBall"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CAN_GIVE_GS_BALL_TO_KURT"
+          ],
+          "raw": "checkevent EVENT_CAN_GIVE_GS_BALL_TO_KURT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.CanGiveGSBallToKurt"
+          ],
+          "raw": "iftrue .CanGiveGSBallToKurt"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "Kurt1.NoGSBall",
+      "label_refs": [
+        "Kurt1.CanGiveGSBallToKurt",
+        "Kurt1.GiveFastBall",
+        "Kurt1.GiveFriendBall",
+        "Kurt1.GiveHeavyBall",
+        "Kurt1.GiveLevelBall",
+        "Kurt1.GiveLoveBall",
+        "Kurt1.GiveLureBall",
+        "Kurt1.GiveMoonBall",
+        "Kurt1.NoGSBall",
+        "Kurt1.WaitForApricorns"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.NoGSBall": {
+      "raw_lines": [
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2",
+        "iftrue .CheckApricorns",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3",
+        "iftrue .CheckApricorns",
+        "writetext KurtsHouseKurtBallsFromApricornsText",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.CheckApricorns"
+          ],
+          "raw": "iftrue .CheckApricorns"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.CheckApricorns"
+          ],
+          "raw": "iftrue .CheckApricorns"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtBallsFromApricornsText"
+          ],
+          "raw": "writetext KurtsHouseKurtBallsFromApricornsText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "Kurt1.CheckApricorns",
+      "label_refs": [
+        "Kurt1.CheckApricorns"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtBallsFromApricornsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.CheckApricorns": {
+      "raw_lines": [
+        "checkitem RED_APRICORN",
+        "iftrue .AskApricorn",
+        "checkitem BLU_APRICORN",
+        "iftrue .AskApricorn",
+        "checkitem YLW_APRICORN",
+        "iftrue .AskApricorn",
+        "checkitem GRN_APRICORN",
+        "iftrue .AskApricorn",
+        "checkitem WHT_APRICORN",
+        "iftrue .AskApricorn",
+        "checkitem BLK_APRICORN",
+        "iftrue .AskApricorn",
+        "checkitem PNK_APRICORN",
+        "iftrue .AskApricorn",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2",
+        "iftrue .ThatTurnedOutGreat",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3",
+        "iftrue .IMakeBallsFromApricorns",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkitem",
+          "args": [
+            "RED_APRICORN"
+          ],
+          "raw": "checkitem RED_APRICORN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.AskApricorn"
+          ],
+          "raw": "iftrue .AskApricorn"
+        },
+        {
+          "command": "checkitem",
+          "args": [
+            "BLU_APRICORN"
+          ],
+          "raw": "checkitem BLU_APRICORN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.AskApricorn"
+          ],
+          "raw": "iftrue .AskApricorn"
+        },
+        {
+          "command": "checkitem",
+          "args": [
+            "YLW_APRICORN"
+          ],
+          "raw": "checkitem YLW_APRICORN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.AskApricorn"
+          ],
+          "raw": "iftrue .AskApricorn"
+        },
+        {
+          "command": "checkitem",
+          "args": [
+            "GRN_APRICORN"
+          ],
+          "raw": "checkitem GRN_APRICORN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.AskApricorn"
+          ],
+          "raw": "iftrue .AskApricorn"
+        },
+        {
+          "command": "checkitem",
+          "args": [
+            "WHT_APRICORN"
+          ],
+          "raw": "checkitem WHT_APRICORN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.AskApricorn"
+          ],
+          "raw": "iftrue .AskApricorn"
+        },
+        {
+          "command": "checkitem",
+          "args": [
+            "BLK_APRICORN"
+          ],
+          "raw": "checkitem BLK_APRICORN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.AskApricorn"
+          ],
+          "raw": "iftrue .AskApricorn"
+        },
+        {
+          "command": "checkitem",
+          "args": [
+            "PNK_APRICORN"
+          ],
+          "raw": "checkitem PNK_APRICORN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.AskApricorn"
+          ],
+          "raw": "iftrue .AskApricorn"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.ThatTurnedOutGreat"
+          ],
+          "raw": "iftrue .ThatTurnedOutGreat"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.IMakeBallsFromApricorns"
+          ],
+          "raw": "iftrue .IMakeBallsFromApricorns"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkitem",
+      "label_refs": [
+        "Kurt1.AskApricorn",
+        "Kurt1.IMakeBallsFromApricorns",
+        "Kurt1.ThatTurnedOutGreat"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.IMakeBallsFromApricorns": {
+      "raw_lines": [
+        "writetext KurtsHouseKurtBallsFromApricornsText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtBallsFromApricornsText"
+          ],
+          "raw": "writetext KurtsHouseKurtBallsFromApricornsText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "KurtsHouseKurtBallsFromApricornsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.AskApricorn": {
+      "raw_lines": [
+        "writetext KurtsHouseKurtAskYouHaveAnApricornText",
+        "promptbutton",
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3",
+        "special SelectApricornForKurt",
+        "ifequal FALSE, .Cancel",
+        "ifequal BLU_APRICORN, .Blu",
+        "ifequal YLW_APRICORN, .Ylw",
+        "ifequal GRN_APRICORN, .Grn",
+        "ifequal WHT_APRICORN, .Wht",
+        "ifequal BLK_APRICORN, .Blk",
+        "ifequal PNK_APRICORN, .Pnk",
+        "setevent EVENT_GAVE_KURT_RED_APRICORN",
+        "sjump .GaveKurtApricorns"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtAskYouHaveAnApricornText"
+          ],
+          "raw": "writetext KurtsHouseKurtAskYouHaveAnApricornText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3"
+        },
+        {
+          "command": "special",
+          "args": [
+            "SelectApricornForKurt"
+          ],
+          "raw": "special SelectApricornForKurt"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "FALSE",
+            "Kurt1.Cancel"
+          ],
+          "raw": "ifequal FALSE, .Cancel"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "BLU_APRICORN",
+            "Kurt1.Blu"
+          ],
+          "raw": "ifequal BLU_APRICORN, .Blu"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "YLW_APRICORN",
+            "Kurt1.Ylw"
+          ],
+          "raw": "ifequal YLW_APRICORN, .Ylw"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "GRN_APRICORN",
+            "Kurt1.Grn"
+          ],
+          "raw": "ifequal GRN_APRICORN, .Grn"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "WHT_APRICORN",
+            "Kurt1.Wht"
+          ],
+          "raw": "ifequal WHT_APRICORN, .Wht"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "BLK_APRICORN",
+            "Kurt1.Blk"
+          ],
+          "raw": "ifequal BLK_APRICORN, .Blk"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PNK_APRICORN",
+            "Kurt1.Pnk"
+          ],
+          "raw": "ifequal PNK_APRICORN, .Pnk"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GAVE_KURT_RED_APRICORN"
+          ],
+          "raw": "setevent EVENT_GAVE_KURT_RED_APRICORN"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Kurt1.GaveKurtApricorns"
+          ],
+          "raw": "sjump .GaveKurtApricorns"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "Kurt1.Blk",
+        "Kurt1.Blu",
+        "Kurt1.Cancel",
+        "Kurt1.GaveKurtApricorns",
+        "Kurt1.Grn",
+        "Kurt1.Pnk",
+        "Kurt1.Wht",
+        "Kurt1.Ylw"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtAskYouHaveAnApricornText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.Blu": {
+      "raw_lines": [
+        "setevent EVENT_GAVE_KURT_BLU_APRICORN",
+        "sjump .GaveKurtApricorns"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GAVE_KURT_BLU_APRICORN"
+          ],
+          "raw": "setevent EVENT_GAVE_KURT_BLU_APRICORN"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Kurt1.GaveKurtApricorns"
+          ],
+          "raw": "sjump .GaveKurtApricorns"
+        }
+      ],
+      "first_command": "setevent",
+      "label_refs": [
+        "Kurt1.GaveKurtApricorns"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.Ylw": {
+      "raw_lines": [
+        "setevent EVENT_GAVE_KURT_YLW_APRICORN",
+        "sjump .GaveKurtApricorns"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GAVE_KURT_YLW_APRICORN"
+          ],
+          "raw": "setevent EVENT_GAVE_KURT_YLW_APRICORN"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Kurt1.GaveKurtApricorns"
+          ],
+          "raw": "sjump .GaveKurtApricorns"
+        }
+      ],
+      "first_command": "setevent",
+      "label_refs": [
+        "Kurt1.GaveKurtApricorns"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.Grn": {
+      "raw_lines": [
+        "setevent EVENT_GAVE_KURT_GRN_APRICORN",
+        "sjump .GaveKurtApricorns"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GAVE_KURT_GRN_APRICORN"
+          ],
+          "raw": "setevent EVENT_GAVE_KURT_GRN_APRICORN"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Kurt1.GaveKurtApricorns"
+          ],
+          "raw": "sjump .GaveKurtApricorns"
+        }
+      ],
+      "first_command": "setevent",
+      "label_refs": [
+        "Kurt1.GaveKurtApricorns"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.Wht": {
+      "raw_lines": [
+        "setevent EVENT_GAVE_KURT_WHT_APRICORN",
+        "sjump .GaveKurtApricorns"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GAVE_KURT_WHT_APRICORN"
+          ],
+          "raw": "setevent EVENT_GAVE_KURT_WHT_APRICORN"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Kurt1.GaveKurtApricorns"
+          ],
+          "raw": "sjump .GaveKurtApricorns"
+        }
+      ],
+      "first_command": "setevent",
+      "label_refs": [
+        "Kurt1.GaveKurtApricorns"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.Blk": {
+      "raw_lines": [
+        "setevent EVENT_GAVE_KURT_BLK_APRICORN",
+        "sjump .GaveKurtApricorns"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GAVE_KURT_BLK_APRICORN"
+          ],
+          "raw": "setevent EVENT_GAVE_KURT_BLK_APRICORN"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Kurt1.GaveKurtApricorns"
+          ],
+          "raw": "sjump .GaveKurtApricorns"
+        }
+      ],
+      "first_command": "setevent",
+      "label_refs": [
+        "Kurt1.GaveKurtApricorns"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.Pnk": {
+      "raw_lines": [
+        "setevent EVENT_GAVE_KURT_PNK_APRICORN",
+        "sjump .GaveKurtApricorns"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GAVE_KURT_PNK_APRICORN"
+          ],
+          "raw": "setevent EVENT_GAVE_KURT_PNK_APRICORN"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Kurt1.GaveKurtApricorns"
+          ],
+          "raw": "sjump .GaveKurtApricorns"
+        }
+      ],
+      "first_command": "setevent",
+      "label_refs": [
+        "Kurt1.GaveKurtApricorns"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GaveKurtApricorns": {
+      "raw_lines": [
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "setflag ENGINE_KURT_MAKING_BALLS"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_KURT_MAKING_BALLS"
+          ],
+          "raw": "setflag ENGINE_KURT_MAKING_BALLS"
+        }
+      ],
+      "first_command": "setevent",
+      "fallthrough_label": "Kurt1.WaitForApricorns",
+      "label_refs": [
+        "Kurt1.WaitForApricorns"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.WaitForApricorns": {
+      "raw_lines": [
+        "writetext KurtsHouseKurtItWillTakeADayText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtItWillTakeADayText"
+          ],
+          "raw": "writetext KurtsHouseKurtItWillTakeADayText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "KurtsHouseKurtItWillTakeADayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.Cancel": {
+      "raw_lines": [
+        "writetext KurtsHouseKurtThatsALetdownText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtThatsALetdownText"
+          ],
+          "raw": "writetext KurtsHouseKurtThatsALetdownText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "KurtsHouseKurtThatsALetdownText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1._ThatTurnedOutGreat": {
+      "raw_lines": [
+        "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+      ],
+      "commands": [
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+          ],
+          "raw": "setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+        }
+      ],
+      "first_command": "setevent",
+      "fallthrough_label": "Kurt1.ThatTurnedOutGreat",
+      "label_refs": [
+        "Kurt1.ThatTurnedOutGreat"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.ThatTurnedOutGreat": {
+      "raw_lines": [
+        "writetext KurtsHouseKurtTurnedOutGreatText",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtTurnedOutGreatText"
+          ],
+          "raw": "writetext KurtsHouseKurtTurnedOutGreatText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "Kurt1.NoRoomForBall",
+      "label_refs": [
+        "Kurt1.NoRoomForBall"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtTurnedOutGreatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.NoRoomForBall": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GiveLevelBall": {
+      "raw_lines": [
+        "checkflag ENGINE_KURT_MAKING_BALLS",
+        "iftrue KurtMakingBallsScript",
+        "writetext KurtsHouseKurtJustFinishedYourBallText",
+        "promptbutton",
+        "verbosegiveitemvar LEVEL_BALL, VAR_KURT_APRICORNS",
+        "iffalse .NoRoomForBall",
+        "clearevent EVENT_GAVE_KURT_RED_APRICORN",
+        "sjump ._ThatTurnedOutGreat"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_KURT_MAKING_BALLS"
+          ],
+          "raw": "checkflag ENGINE_KURT_MAKING_BALLS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KurtMakingBallsScript"
+          ],
+          "raw": "iftrue KurtMakingBallsScript"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtJustFinishedYourBallText"
+          ],
+          "raw": "writetext KurtsHouseKurtJustFinishedYourBallText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitemvar",
+          "args": [
+            "LEVEL_BALL",
+            "VAR_KURT_APRICORNS"
+          ],
+          "raw": "verbosegiveitemvar LEVEL_BALL, VAR_KURT_APRICORNS"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Kurt1.NoRoomForBall"
+          ],
+          "raw": "iffalse .NoRoomForBall"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_GAVE_KURT_RED_APRICORN"
+          ],
+          "raw": "clearevent EVENT_GAVE_KURT_RED_APRICORN"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Kurt1._ThatTurnedOutGreat"
+          ],
+          "raw": "sjump ._ThatTurnedOutGreat"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "Kurt1.NoRoomForBall",
+        "Kurt1._ThatTurnedOutGreat",
+        "KurtMakingBallsScript"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtJustFinishedYourBallText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GiveLureBall": {
+      "raw_lines": [
+        "checkflag ENGINE_KURT_MAKING_BALLS",
+        "iftrue KurtMakingBallsScript",
+        "writetext KurtsHouseKurtJustFinishedYourBallText",
+        "promptbutton",
+        "verbosegiveitemvar LURE_BALL, VAR_KURT_APRICORNS",
+        "iffalse .NoRoomForBall",
+        "clearevent EVENT_GAVE_KURT_BLU_APRICORN",
+        "sjump ._ThatTurnedOutGreat"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_KURT_MAKING_BALLS"
+          ],
+          "raw": "checkflag ENGINE_KURT_MAKING_BALLS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KurtMakingBallsScript"
+          ],
+          "raw": "iftrue KurtMakingBallsScript"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtJustFinishedYourBallText"
+          ],
+          "raw": "writetext KurtsHouseKurtJustFinishedYourBallText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitemvar",
+          "args": [
+            "LURE_BALL",
+            "VAR_KURT_APRICORNS"
+          ],
+          "raw": "verbosegiveitemvar LURE_BALL, VAR_KURT_APRICORNS"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Kurt1.NoRoomForBall"
+          ],
+          "raw": "iffalse .NoRoomForBall"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_GAVE_KURT_BLU_APRICORN"
+          ],
+          "raw": "clearevent EVENT_GAVE_KURT_BLU_APRICORN"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Kurt1._ThatTurnedOutGreat"
+          ],
+          "raw": "sjump ._ThatTurnedOutGreat"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "Kurt1.NoRoomForBall",
+        "Kurt1._ThatTurnedOutGreat",
+        "KurtMakingBallsScript"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtJustFinishedYourBallText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GiveMoonBall": {
+      "raw_lines": [
+        "checkflag ENGINE_KURT_MAKING_BALLS",
+        "iftrue KurtMakingBallsScript",
+        "writetext KurtsHouseKurtJustFinishedYourBallText",
+        "promptbutton",
+        "verbosegiveitemvar MOON_BALL, VAR_KURT_APRICORNS",
+        "iffalse .NoRoomForBall",
+        "clearevent EVENT_GAVE_KURT_YLW_APRICORN",
+        "sjump ._ThatTurnedOutGreat"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_KURT_MAKING_BALLS"
+          ],
+          "raw": "checkflag ENGINE_KURT_MAKING_BALLS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KurtMakingBallsScript"
+          ],
+          "raw": "iftrue KurtMakingBallsScript"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtJustFinishedYourBallText"
+          ],
+          "raw": "writetext KurtsHouseKurtJustFinishedYourBallText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitemvar",
+          "args": [
+            "MOON_BALL",
+            "VAR_KURT_APRICORNS"
+          ],
+          "raw": "verbosegiveitemvar MOON_BALL, VAR_KURT_APRICORNS"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Kurt1.NoRoomForBall"
+          ],
+          "raw": "iffalse .NoRoomForBall"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_GAVE_KURT_YLW_APRICORN"
+          ],
+          "raw": "clearevent EVENT_GAVE_KURT_YLW_APRICORN"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Kurt1._ThatTurnedOutGreat"
+          ],
+          "raw": "sjump ._ThatTurnedOutGreat"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "Kurt1.NoRoomForBall",
+        "Kurt1._ThatTurnedOutGreat",
+        "KurtMakingBallsScript"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtJustFinishedYourBallText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GiveFriendBall": {
+      "raw_lines": [
+        "checkflag ENGINE_KURT_MAKING_BALLS",
+        "iftrue KurtMakingBallsScript",
+        "writetext KurtsHouseKurtJustFinishedYourBallText",
+        "promptbutton",
+        "verbosegiveitemvar FRIEND_BALL, VAR_KURT_APRICORNS",
+        "iffalse .NoRoomForBall",
+        "clearevent EVENT_GAVE_KURT_GRN_APRICORN",
+        "sjump ._ThatTurnedOutGreat"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_KURT_MAKING_BALLS"
+          ],
+          "raw": "checkflag ENGINE_KURT_MAKING_BALLS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KurtMakingBallsScript"
+          ],
+          "raw": "iftrue KurtMakingBallsScript"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtJustFinishedYourBallText"
+          ],
+          "raw": "writetext KurtsHouseKurtJustFinishedYourBallText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitemvar",
+          "args": [
+            "FRIEND_BALL",
+            "VAR_KURT_APRICORNS"
+          ],
+          "raw": "verbosegiveitemvar FRIEND_BALL, VAR_KURT_APRICORNS"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Kurt1.NoRoomForBall"
+          ],
+          "raw": "iffalse .NoRoomForBall"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_GAVE_KURT_GRN_APRICORN"
+          ],
+          "raw": "clearevent EVENT_GAVE_KURT_GRN_APRICORN"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Kurt1._ThatTurnedOutGreat"
+          ],
+          "raw": "sjump ._ThatTurnedOutGreat"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "Kurt1.NoRoomForBall",
+        "Kurt1._ThatTurnedOutGreat",
+        "KurtMakingBallsScript"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtJustFinishedYourBallText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GiveFastBall": {
+      "raw_lines": [
+        "checkflag ENGINE_KURT_MAKING_BALLS",
+        "iftrue KurtMakingBallsScript",
+        "writetext KurtsHouseKurtJustFinishedYourBallText",
+        "promptbutton",
+        "verbosegiveitemvar FAST_BALL, VAR_KURT_APRICORNS",
+        "iffalse .NoRoomForBall",
+        "clearevent EVENT_GAVE_KURT_WHT_APRICORN",
+        "sjump ._ThatTurnedOutGreat"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_KURT_MAKING_BALLS"
+          ],
+          "raw": "checkflag ENGINE_KURT_MAKING_BALLS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KurtMakingBallsScript"
+          ],
+          "raw": "iftrue KurtMakingBallsScript"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtJustFinishedYourBallText"
+          ],
+          "raw": "writetext KurtsHouseKurtJustFinishedYourBallText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitemvar",
+          "args": [
+            "FAST_BALL",
+            "VAR_KURT_APRICORNS"
+          ],
+          "raw": "verbosegiveitemvar FAST_BALL, VAR_KURT_APRICORNS"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Kurt1.NoRoomForBall"
+          ],
+          "raw": "iffalse .NoRoomForBall"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_GAVE_KURT_WHT_APRICORN"
+          ],
+          "raw": "clearevent EVENT_GAVE_KURT_WHT_APRICORN"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Kurt1._ThatTurnedOutGreat"
+          ],
+          "raw": "sjump ._ThatTurnedOutGreat"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "Kurt1.NoRoomForBall",
+        "Kurt1._ThatTurnedOutGreat",
+        "KurtMakingBallsScript"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtJustFinishedYourBallText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GiveHeavyBall": {
+      "raw_lines": [
+        "checkflag ENGINE_KURT_MAKING_BALLS",
+        "iftrue KurtMakingBallsScript",
+        "writetext KurtsHouseKurtJustFinishedYourBallText",
+        "promptbutton",
+        "verbosegiveitemvar HEAVY_BALL, VAR_KURT_APRICORNS",
+        "iffalse .NoRoomForBall",
+        "clearevent EVENT_GAVE_KURT_BLK_APRICORN",
+        "sjump ._ThatTurnedOutGreat"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_KURT_MAKING_BALLS"
+          ],
+          "raw": "checkflag ENGINE_KURT_MAKING_BALLS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KurtMakingBallsScript"
+          ],
+          "raw": "iftrue KurtMakingBallsScript"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtJustFinishedYourBallText"
+          ],
+          "raw": "writetext KurtsHouseKurtJustFinishedYourBallText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitemvar",
+          "args": [
+            "HEAVY_BALL",
+            "VAR_KURT_APRICORNS"
+          ],
+          "raw": "verbosegiveitemvar HEAVY_BALL, VAR_KURT_APRICORNS"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Kurt1.NoRoomForBall"
+          ],
+          "raw": "iffalse .NoRoomForBall"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_GAVE_KURT_BLK_APRICORN"
+          ],
+          "raw": "clearevent EVENT_GAVE_KURT_BLK_APRICORN"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Kurt1._ThatTurnedOutGreat"
+          ],
+          "raw": "sjump ._ThatTurnedOutGreat"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "Kurt1.NoRoomForBall",
+        "Kurt1._ThatTurnedOutGreat",
+        "KurtMakingBallsScript"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtJustFinishedYourBallText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GiveLoveBall": {
+      "raw_lines": [
+        "checkflag ENGINE_KURT_MAKING_BALLS",
+        "iftrue KurtMakingBallsScript",
+        "writetext KurtsHouseKurtJustFinishedYourBallText",
+        "promptbutton",
+        "verbosegiveitemvar LOVE_BALL, VAR_KURT_APRICORNS",
+        "iffalse .NoRoomForBall",
+        "clearevent EVENT_GAVE_KURT_PNK_APRICORN",
+        "sjump ._ThatTurnedOutGreat"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_KURT_MAKING_BALLS"
+          ],
+          "raw": "checkflag ENGINE_KURT_MAKING_BALLS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KurtMakingBallsScript"
+          ],
+          "raw": "iftrue KurtMakingBallsScript"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtJustFinishedYourBallText"
+          ],
+          "raw": "writetext KurtsHouseKurtJustFinishedYourBallText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitemvar",
+          "args": [
+            "LOVE_BALL",
+            "VAR_KURT_APRICORNS"
+          ],
+          "raw": "verbosegiveitemvar LOVE_BALL, VAR_KURT_APRICORNS"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Kurt1.NoRoomForBall"
+          ],
+          "raw": "iffalse .NoRoomForBall"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_GAVE_KURT_PNK_APRICORN"
+          ],
+          "raw": "clearevent EVENT_GAVE_KURT_PNK_APRICORN"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Kurt1._ThatTurnedOutGreat"
+          ],
+          "raw": "sjump ._ThatTurnedOutGreat"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "Kurt1.NoRoomForBall",
+        "Kurt1._ThatTurnedOutGreat",
+        "KurtMakingBallsScript"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtJustFinishedYourBallText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.CanGiveGSBallToKurt": {
+      "raw_lines": [
+        "checkevent EVENT_GAVE_GS_BALL_TO_KURT",
+        "iftrue .GaveGSBallToKurt",
+        "checkitem GS_BALL",
+        "iffalse .NoGSBall",
+        "writetext KurtsHouseKurtWhatIsThatText",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_GAVE_GS_BALL_TO_KURT",
+        "takeitem GS_BALL",
+        "setflag ENGINE_KURT_MAKING_BALLS",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GAVE_GS_BALL_TO_KURT"
+          ],
+          "raw": "checkevent EVENT_GAVE_GS_BALL_TO_KURT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Kurt1.GaveGSBallToKurt"
+          ],
+          "raw": "iftrue .GaveGSBallToKurt"
+        },
+        {
+          "command": "checkitem",
+          "args": [
+            "GS_BALL"
+          ],
+          "raw": "checkitem GS_BALL"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Kurt1.NoGSBall"
+          ],
+          "raw": "iffalse .NoGSBall"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtWhatIsThatText"
+          ],
+          "raw": "writetext KurtsHouseKurtWhatIsThatText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GAVE_GS_BALL_TO_KURT"
+          ],
+          "raw": "setevent EVENT_GAVE_GS_BALL_TO_KURT"
+        },
+        {
+          "command": "takeitem",
+          "args": [
+            "GS_BALL"
+          ],
+          "raw": "takeitem GS_BALL"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_KURT_MAKING_BALLS"
+          ],
+          "raw": "setflag ENGINE_KURT_MAKING_BALLS"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "Kurt1.GaveGSBallToKurt",
+        "Kurt1.NoGSBall"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtWhatIsThatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GaveGSBallToKurt": {
+      "raw_lines": [
+        "checkflag ENGINE_KURT_MAKING_BALLS",
+        "iffalse .NotMakingBalls",
+        "writetext KurtsHouseKurtImCheckingItNowText",
+        "waitbutton",
+        "writetext KurtsHouseKurtAhHaISeeText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_KURT_MAKING_BALLS"
+          ],
+          "raw": "checkflag ENGINE_KURT_MAKING_BALLS"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Kurt1.NotMakingBalls"
+          ],
+          "raw": "iffalse .NotMakingBalls"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtImCheckingItNowText"
+          ],
+          "raw": "writetext KurtsHouseKurtImCheckingItNowText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtAhHaISeeText"
+          ],
+          "raw": "writetext KurtsHouseKurtAhHaISeeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "Kurt1.NotMakingBalls"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtAhHaISeeText",
+        "KurtsHouseKurtImCheckingItNowText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.NotMakingBalls": {
+      "raw_lines": [
+        "writetext KurtsHouseKurtThisBallStartedToShakeText",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_FOREST_IS_RESTLESS",
+        "clearevent EVENT_CAN_GIVE_GS_BALL_TO_KURT",
+        "clearevent EVENT_GAVE_GS_BALL_TO_KURT",
+        "special FadeOutMusic",
+        "pause 20",
+        "showemote EMOTE_SHOCK, KURTSHOUSE_KURT1, 30",
+        "readvar VAR_FACING",
+        "ifequal UP, .GSBallRunAround",
+        "turnobject PLAYER, DOWN",
+        "playsound SFX_FLY",
+        "applymovement KURTSHOUSE_KURT1, KurtsHouseKurtExitHouseMovement",
+        "sjump .KurtHasLeftTheBuilding"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtThisBallStartedToShakeText"
+          ],
+          "raw": "writetext KurtsHouseKurtThisBallStartedToShakeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_FOREST_IS_RESTLESS"
+          ],
+          "raw": "setevent EVENT_FOREST_IS_RESTLESS"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_CAN_GIVE_GS_BALL_TO_KURT"
+          ],
+          "raw": "clearevent EVENT_CAN_GIVE_GS_BALL_TO_KURT"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_GAVE_GS_BALL_TO_KURT"
+          ],
+          "raw": "clearevent EVENT_GAVE_GS_BALL_TO_KURT"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "20"
+          ],
+          "raw": "pause 20"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "KURTSHOUSE_KURT1",
+            "30"
+          ],
+          "raw": "showemote EMOTE_SHOCK, KURTSHOUSE_KURT1, 30"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_FACING"
+          ],
+          "raw": "readvar VAR_FACING"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "UP",
+            "Kurt1.GSBallRunAround"
+          ],
+          "raw": "ifequal UP, .GSBallRunAround"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_FLY"
+          ],
+          "raw": "playsound SFX_FLY"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "KURTSHOUSE_KURT1",
+            "KurtsHouseKurtExitHouseMovement"
+          ],
+          "raw": "applymovement KURTSHOUSE_KURT1, KurtsHouseKurtExitHouseMovement"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "Kurt1.KurtHasLeftTheBuilding"
+          ],
+          "raw": "sjump .KurtHasLeftTheBuilding"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "Kurt1.GSBallRunAround",
+        "Kurt1.KurtHasLeftTheBuilding"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtThisBallStartedToShakeText"
+      ],
+      "movement_refs": [
+        "KurtsHouseKurtExitHouseMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GSBallRunAround": {
+      "raw_lines": [
+        "turnobject PLAYER, DOWN",
+        "playsound SFX_FLY",
+        "applymovement KURTSHOUSE_KURT1, KurtsHouseKurtGoAroundPlayerThenExitHouseMovement"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_FLY"
+          ],
+          "raw": "playsound SFX_FLY"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "KURTSHOUSE_KURT1",
+            "KurtsHouseKurtGoAroundPlayerThenExitHouseMovement"
+          ],
+          "raw": "applymovement KURTSHOUSE_KURT1, KurtsHouseKurtGoAroundPlayerThenExitHouseMovement"
+        }
+      ],
+      "first_command": "turnobject",
+      "fallthrough_label": "Kurt1.KurtHasLeftTheBuilding",
+      "label_refs": [
+        "Kurt1.KurtHasLeftTheBuilding"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "KurtsHouseKurtGoAroundPlayerThenExitHouseMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.KurtHasLeftTheBuilding": {
+      "raw_lines": [
+        "playsound SFX_EXIT_BUILDING",
+        "disappear KURTSHOUSE_KURT1",
+        "clearevent EVENT_AZALEA_TOWN_KURT",
+        "waitsfx",
+        "special RestartMapMusic",
+        "setmapscene AZALEA_TOWN, SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_EXIT_BUILDING"
+          ],
+          "raw": "playsound SFX_EXIT_BUILDING"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "KURTSHOUSE_KURT1"
+          ],
+          "raw": "disappear KURTSHOUSE_KURT1"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_AZALEA_TOWN_KURT"
+          ],
+          "raw": "clearevent EVENT_AZALEA_TOWN_KURT"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "AZALEA_TOWN",
+            "SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL"
+          ],
+          "raw": "setmapscene AZALEA_TOWN, SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playsound",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL"
+      ],
+      "std_calls": []
+    },
+    "Kurt2": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GAVE_GS_BALL_TO_KURT",
+        "iftrue KurtScript_ImCheckingItNow"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GAVE_GS_BALL_TO_KURT"
+          ],
+          "raw": "checkevent EVENT_GAVE_GS_BALL_TO_KURT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KurtScript_ImCheckingItNow"
+          ],
+          "raw": "iftrue KurtScript_ImCheckingItNow"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "KurtMakingBallsScript",
+      "label_refs": [
+        "KurtMakingBallsScript",
+        "KurtScript_ImCheckingItNow"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtMakingBallsScript": {
+      "raw_lines": [
+        "checkevent EVENT_BUGGING_KURT_TOO_MUCH",
+        "iffalse Script_FirstTimeBuggingKurt",
+        "writetext KurtsHouseKurtDontBotherMeText",
+        "waitbutton",
+        "closetext",
+        "turnobject KURTSHOUSE_KURT2, UP",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BUGGING_KURT_TOO_MUCH"
+          ],
+          "raw": "checkevent EVENT_BUGGING_KURT_TOO_MUCH"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Script_FirstTimeBuggingKurt"
+          ],
+          "raw": "iffalse Script_FirstTimeBuggingKurt"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtDontBotherMeText"
+          ],
+          "raw": "writetext KurtsHouseKurtDontBotherMeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "KURTSHOUSE_KURT2",
+            "UP"
+          ],
+          "raw": "turnobject KURTSHOUSE_KURT2, UP"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "Script_FirstTimeBuggingKurt"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtDontBotherMeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Script_FirstTimeBuggingKurt": {
+      "raw_lines": [
+        "writetext KurtsHouseKurtGranddaughterHelpingWorkFasterText",
+        "waitbutton",
+        "closetext",
+        "turnobject KURTSHOUSE_KURT2, UP",
+        "setevent EVENT_BUGGING_KURT_TOO_MUCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtGranddaughterHelpingWorkFasterText"
+          ],
+          "raw": "writetext KurtsHouseKurtGranddaughterHelpingWorkFasterText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "KURTSHOUSE_KURT2",
+            "UP"
+          ],
+          "raw": "turnobject KURTSHOUSE_KURT2, UP"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BUGGING_KURT_TOO_MUCH"
+          ],
+          "raw": "setevent EVENT_BUGGING_KURT_TOO_MUCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "KurtsHouseKurtGranddaughterHelpingWorkFasterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtScript_ImCheckingItNow": {
+      "raw_lines": [
+        "writetext KurtsHouseKurtImCheckingItNowText",
+        "waitbutton",
+        "turnobject KURTSHOUSE_KURT2, UP",
+        "writetext KurtsHouseKurtAhHaISeeText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtImCheckingItNowText"
+          ],
+          "raw": "writetext KurtsHouseKurtImCheckingItNowText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "KURTSHOUSE_KURT2",
+            "UP"
+          ],
+          "raw": "turnobject KURTSHOUSE_KURT2, UP"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseKurtAhHaISeeText"
+          ],
+          "raw": "writetext KurtsHouseKurtAhHaISeeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "KurtsHouseKurtAhHaISeeText",
+        "KurtsHouseKurtImCheckingItNowText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsGranddaughter1": {
+      "raw_lines": [
+        "faceplayer",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1",
+        "iftrue KurtsGranddaughter2Subscript",
+        "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2",
+        "iftrue KurtsGranddaughterFunScript",
+        "checkevent EVENT_FOREST_IS_RESTLESS",
+        "iftrue .Lonely",
+        "checkevent EVENT_FAST_SHIP_FIRST_TIME",
+        "iftrue .Dad",
+        "checkevent EVENT_CLEARED_SLOWPOKE_WELL",
+        "iftrue .SlowpokeBack",
+        "checkevent EVENT_AZALEA_TOWN_SLOWPOKETAIL_ROCKET",
+        "iftrue .Lonely",
+        "opentext",
+        "writetext KurtsGranddaughterSlowpokeGoneText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KurtsGranddaughter2Subscript"
+          ],
+          "raw": "iftrue KurtsGranddaughter2Subscript"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+          ],
+          "raw": "checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KurtsGranddaughterFunScript"
+          ],
+          "raw": "iftrue KurtsGranddaughterFunScript"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_FOREST_IS_RESTLESS"
+          ],
+          "raw": "checkevent EVENT_FOREST_IS_RESTLESS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KurtsGranddaughter1.Lonely"
+          ],
+          "raw": "iftrue .Lonely"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_FAST_SHIP_FIRST_TIME"
+          ],
+          "raw": "checkevent EVENT_FAST_SHIP_FIRST_TIME"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KurtsGranddaughter1.Dad"
+          ],
+          "raw": "iftrue .Dad"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_SLOWPOKE_WELL"
+          ],
+          "raw": "checkevent EVENT_CLEARED_SLOWPOKE_WELL"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KurtsGranddaughter1.SlowpokeBack"
+          ],
+          "raw": "iftrue .SlowpokeBack"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_AZALEA_TOWN_SLOWPOKETAIL_ROCKET"
+          ],
+          "raw": "checkevent EVENT_AZALEA_TOWN_SLOWPOKETAIL_ROCKET"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KurtsGranddaughter1.Lonely"
+          ],
+          "raw": "iftrue .Lonely"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsGranddaughterSlowpokeGoneText"
+          ],
+          "raw": "writetext KurtsGranddaughterSlowpokeGoneText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "KurtsGranddaughter1.Dad",
+        "KurtsGranddaughter1.Lonely",
+        "KurtsGranddaughter1.SlowpokeBack",
+        "KurtsGranddaughter2Subscript",
+        "KurtsGranddaughterFunScript"
+      ],
+      "text_refs": [
+        "KurtsGranddaughterSlowpokeGoneText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsGranddaughter1.SlowpokeBack": {
+      "raw_lines": [
+        "opentext",
+        "writetext KurtsGranddaughterSlowpokeBackText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsGranddaughterSlowpokeBackText"
+          ],
+          "raw": "writetext KurtsGranddaughterSlowpokeBackText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "KurtsGranddaughterSlowpokeBackText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsGranddaughter1.Lonely": {
+      "raw_lines": [
+        "opentext",
+        "writetext KurtsGranddaughterLonelyText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsGranddaughterLonelyText"
+          ],
+          "raw": "writetext KurtsGranddaughterLonelyText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "KurtsGranddaughterLonelyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsGranddaughter1.Dad": {
+      "raw_lines": [
+        "opentext",
+        "writetext KurtsGranddaughterDadText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsGranddaughterDadText"
+          ],
+          "raw": "writetext KurtsGranddaughterDadText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "KurtsGranddaughterDadText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsGranddaughter2": {
+      "raw_lines": [
+        "faceplayer"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "KurtsGranddaughter2Subscript",
+      "label_refs": [
+        "KurtsGranddaughter2Subscript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsGranddaughter2Subscript": {
+      "raw_lines": [
+        "opentext",
+        "checkevent EVENT_GAVE_GS_BALL_TO_KURT",
+        "iftrue .GSBall",
+        "writetext KurtsGranddaughterHelpText",
+        "waitbutton",
+        "closetext",
+        "turnobject KURTSHOUSE_TWIN2, RIGHT",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GAVE_GS_BALL_TO_KURT"
+          ],
+          "raw": "checkevent EVENT_GAVE_GS_BALL_TO_KURT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KurtsGranddaughter2Subscript.GSBall"
+          ],
+          "raw": "iftrue .GSBall"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsGranddaughterHelpText"
+          ],
+          "raw": "writetext KurtsGranddaughterHelpText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "KURTSHOUSE_TWIN2",
+            "RIGHT"
+          ],
+          "raw": "turnobject KURTSHOUSE_TWIN2, RIGHT"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "KurtsGranddaughter2Subscript.GSBall"
+      ],
+      "text_refs": [
+        "KurtsGranddaughterHelpText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsGranddaughter2Subscript.GSBall": {
+      "raw_lines": [
+        "writetext KurtsGranddaughterGSBallText",
+        "waitbutton",
+        "closetext",
+        "turnobject KURTSHOUSE_TWIN2, RIGHT",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsGranddaughterGSBallText"
+          ],
+          "raw": "writetext KurtsGranddaughterGSBallText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "KURTSHOUSE_TWIN2",
+            "RIGHT"
+          ],
+          "raw": "turnobject KURTSHOUSE_TWIN2, RIGHT"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "KurtsGranddaughterGSBallText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsGranddaughterFunScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext KurtsGranddaughterFunText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsGranddaughterFunText"
+          ],
+          "raw": "writetext KurtsGranddaughterFunText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "KurtsGranddaughterFunText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsHouseSlowpoke": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext KurtsHouseSlowpokeText",
+        "cry SLOWPOKE",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KurtsHouseSlowpokeText"
+          ],
+          "raw": "writetext KurtsHouseSlowpokeText"
+        },
+        {
+          "command": "cry",
+          "args": [
+            "SLOWPOKE"
+          ],
+          "raw": "cry SLOWPOKE"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "KurtsHouseSlowpokeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsHouseOakPhoto": {
+      "raw_lines": [
+        "jumptext KurtsHouseOakPhotoText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "KurtsHouseOakPhotoText"
+          ],
+          "raw": "jumptext KurtsHouseOakPhotoText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "KurtsHouseOakPhotoText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsHouseCelebiStatue": {
+      "raw_lines": [
+        "jumptext KurtsHouseCelebiStatueText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "KurtsHouseCelebiStatueText"
+          ],
+          "raw": "jumptext KurtsHouseCelebiStatueText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "KurtsHouseCelebiStatueText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsHouseBookshelf": {
+      "raw_lines": [
+        "jumpstd DifficultBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "DifficultBookshelfScript"
+          ],
+          "raw": "jumpstd DifficultBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "DifficultBookshelfScript"
+      ]
+    },
+    "KurtsHouseRadio": {
+      "raw_lines": [
+        "jumpstd Radio2Script"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "Radio2Script"
+          ],
+          "raw": "jumpstd Radio2Script"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "Radio2Script"
+      ]
+    },
+    "KurtsHouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  7, AZALEA_TOWN, 4",
+        "warp_event  4,  7, AZALEA_TOWN, 4",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  6,  1, BGEVENT_READ, KurtsHouseRadio",
+        "bg_event  8,  0, BGEVENT_READ, KurtsHouseOakPhoto",
+        "bg_event  9,  0, BGEVENT_READ, KurtsHouseOakPhoto",
+        "bg_event  5,  1, BGEVENT_READ, KurtsHouseBookshelf",
+        "bg_event  2,  1, BGEVENT_READ, KurtsHouseBookshelf",
+        "bg_event  3,  1, BGEVENT_READ, KurtsHouseBookshelf",
+        "bg_event  4,  1, BGEVENT_READ, KurtsHouseCelebiStatue",
+        "def_object_events",
+        "object_event  3,  2, SPRITE_KURT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Kurt1, EVENT_KURTS_HOUSE_KURT_1",
+        "object_event  5,  3, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, KurtsGranddaughter1, EVENT_KURTS_HOUSE_GRANDDAUGHTER_1",
+        "object_event  6,  3, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, KurtsHouseSlowpoke, EVENT_KURTS_HOUSE_SLOWPOKE",
+        "object_event 14,  3, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Kurt2, EVENT_KURTS_HOUSE_KURT_2",
+        "object_event 11,  4, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, KurtsGranddaughter2, EVENT_KURTS_HOUSE_GRANDDAUGHTER_2"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "AZALEA_TOWN",
+            "4"
+          ],
+          "raw": "warp_event  3,  7, AZALEA_TOWN, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "AZALEA_TOWN",
+            "4"
+          ],
+          "raw": "warp_event  4,  7, AZALEA_TOWN, 4"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "6",
+            "1",
+            "BGEVENT_READ",
+            "KurtsHouseRadio"
+          ],
+          "raw": "bg_event  6,  1, BGEVENT_READ, KurtsHouseRadio"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "8",
+            "0",
+            "BGEVENT_READ",
+            "KurtsHouseOakPhoto"
+          ],
+          "raw": "bg_event  8,  0, BGEVENT_READ, KurtsHouseOakPhoto"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "9",
+            "0",
+            "BGEVENT_READ",
+            "KurtsHouseOakPhoto"
+          ],
+          "raw": "bg_event  9,  0, BGEVENT_READ, KurtsHouseOakPhoto"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "5",
+            "1",
+            "BGEVENT_READ",
+            "KurtsHouseBookshelf"
+          ],
+          "raw": "bg_event  5,  1, BGEVENT_READ, KurtsHouseBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "2",
+            "1",
+            "BGEVENT_READ",
+            "KurtsHouseBookshelf"
+          ],
+          "raw": "bg_event  2,  1, BGEVENT_READ, KurtsHouseBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "1",
+            "BGEVENT_READ",
+            "KurtsHouseBookshelf"
+          ],
+          "raw": "bg_event  3,  1, BGEVENT_READ, KurtsHouseBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "4",
+            "1",
+            "BGEVENT_READ",
+            "KurtsHouseCelebiStatue"
+          ],
+          "raw": "bg_event  4,  1, BGEVENT_READ, KurtsHouseCelebiStatue"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "2",
+            "SPRITE_KURT",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Kurt1",
+            "EVENT_KURTS_HOUSE_KURT_1"
+          ],
+          "raw": "object_event  3,  2, SPRITE_KURT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Kurt1, EVENT_KURTS_HOUSE_KURT_1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "3",
+            "SPRITE_TWIN",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "KurtsGranddaughter1",
+            "EVENT_KURTS_HOUSE_GRANDDAUGHTER_1"
+          ],
+          "raw": "object_event  5,  3, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, KurtsGranddaughter1, EVENT_KURTS_HOUSE_GRANDDAUGHTER_1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "3",
+            "SPRITE_SLOWPOKE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "KurtsHouseSlowpoke",
+            "EVENT_KURTS_HOUSE_SLOWPOKE"
+          ],
+          "raw": "object_event  6,  3, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, KurtsHouseSlowpoke, EVENT_KURTS_HOUSE_SLOWPOKE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "14",
+            "3",
+            "SPRITE_KURT",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Kurt2",
+            "EVENT_KURTS_HOUSE_KURT_2"
+          ],
+          "raw": "object_event 14,  3, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Kurt2, EVENT_KURTS_HOUSE_KURT_2"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "11",
+            "4",
+            "SPRITE_TWIN",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "KurtsGranddaughter2",
+            "EVENT_KURTS_HOUSE_GRANDDAUGHTER_2"
+          ],
+          "raw": "object_event 11,  4, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, KurtsGranddaughter2, EVENT_KURTS_HOUSE_GRANDDAUGHTER_2"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "KurtsHouseKurtMakingBallsMustWaitText": {
+      "raw_lines": [
+        "text \"Hm? Who are you?\"",
+        "para \"<PLAYER>, eh? You\"",
+        "line \"want me to make\"",
+        "cont \"some BALLS?\"",
+        "para \"Sorry, but that'll\"",
+        "line \"have to wait.\"",
+        "para \"Do you know TEAM\"",
+        "line \"ROCKET? Ah, don't\"",
+        "para \"worry. I'll tell\"",
+        "line \"you anyhow.\"",
+        "para \"TEAM ROCKET's an\"",
+        "line \"evil gang that\"",
+        "para \"uses #MON for\"",
+        "line \"their dirty work.\"",
+        "para \"They're supposed\"",
+        "line \"to have disbanded\"",
+        "cont \"three years ago.\"",
+        "para \"Anyway, they're at\"",
+        "line \"the WELL, cutting\"",
+        "para \"off SLOWPOKETAILS\"",
+        "line \"for sale!\"",
+        "para \"So I'm going to\"",
+        "line \"go give them a\"",
+        "cont \"lesson in pain!\"",
+        "para \"Hang on, SLOWPOKE!\"",
+        "line \"Old KURT is on his\"",
+        "cont \"way!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hm? Who are you?"
+        },
+        {
+          "command": "para",
+          "value": "<PLAYER>, eh? You"
+        },
+        {
+          "command": "line",
+          "value": "want me to make"
+        },
+        {
+          "command": "cont",
+          "value": "some BALLS?"
+        },
+        {
+          "command": "para",
+          "value": "Sorry, but that'll"
+        },
+        {
+          "command": "line",
+          "value": "have to wait."
+        },
+        {
+          "command": "para",
+          "value": "Do you know TEAM"
+        },
+        {
+          "command": "line",
+          "value": "ROCKET? Ah, don't"
+        },
+        {
+          "command": "para",
+          "value": "worry. I'll tell"
+        },
+        {
+          "command": "line",
+          "value": "you anyhow."
+        },
+        {
+          "command": "para",
+          "value": "TEAM ROCKET's an"
+        },
+        {
+          "command": "line",
+          "value": "evil gang that"
+        },
+        {
+          "command": "para",
+          "value": "uses #MON for"
+        },
+        {
+          "command": "line",
+          "value": "their dirty work."
+        },
+        {
+          "command": "para",
+          "value": "They're supposed"
+        },
+        {
+          "command": "line",
+          "value": "to have disbanded"
+        },
+        {
+          "command": "cont",
+          "value": "three years ago."
+        },
+        {
+          "command": "para",
+          "value": "Anyway, they're at"
+        },
+        {
+          "command": "line",
+          "value": "the WELL, cutting"
+        },
+        {
+          "command": "para",
+          "value": "off SLOWPOKETAILS"
+        },
+        {
+          "command": "line",
+          "value": "for sale!"
+        },
+        {
+          "command": "para",
+          "value": "So I'm going to"
+        },
+        {
+          "command": "line",
+          "value": "go give them a"
+        },
+        {
+          "command": "cont",
+          "value": "lesson in pain!"
+        },
+        {
+          "command": "para",
+          "value": "Hang on, SLOWPOKE!"
+        },
+        {
+          "command": "line",
+          "value": "Old KURT is on his"
+        },
+        {
+          "command": "cont",
+          "value": "way!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsHouseKurtHonoredToMakeBallsText": {
+      "raw_lines": [
+        "text \"KURT: Hi, <PLAYER>!\"",
+        "para \"You handled your-\"",
+        "line \"self like a real\"",
+        "cont \"hero at the WELL.\"",
+        "para \"I like your style!\"",
+        "para \"I would be honored\"",
+        "line \"to make BALLS for\"",
+        "para \"a trainer like\"",
+        "line \"you.\"",
+        "para \"This is all I have\"",
+        "line \"now, but take it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "KURT: Hi, <PLAYER>!"
+        },
+        {
+          "command": "para",
+          "value": "You handled your-"
+        },
+        {
+          "command": "line",
+          "value": "self like a real"
+        },
+        {
+          "command": "cont",
+          "value": "hero at the WELL."
+        },
+        {
+          "command": "para",
+          "value": "I like your style!"
+        },
+        {
+          "command": "para",
+          "value": "I would be honored"
+        },
+        {
+          "command": "line",
+          "value": "to make BALLS for"
+        },
+        {
+          "command": "para",
+          "value": "a trainer like"
+        },
+        {
+          "command": "line",
+          "value": "you."
+        },
+        {
+          "command": "para",
+          "value": "This is all I have"
+        },
+        {
+          "command": "line",
+          "value": "now, but take it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsHouseKurtBallsFromApricornsText": {
+      "raw_lines": [
+        "text \"KURT: I make BALLS\"",
+        "line \"from APRICORNS.\"",
+        "para \"Collect them from\"",
+        "line \"trees and bring\"",
+        "cont \"'em to me.\"",
+        "para \"I'll make BALLS\"",
+        "line \"out of them.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "KURT: I make BALLS"
+        },
+        {
+          "command": "line",
+          "value": "from APRICORNS."
+        },
+        {
+          "command": "para",
+          "value": "Collect them from"
+        },
+        {
+          "command": "line",
+          "value": "trees and bring"
+        },
+        {
+          "command": "cont",
+          "value": "'em to me."
+        },
+        {
+          "command": "para",
+          "value": "I'll make BALLS"
+        },
+        {
+          "command": "line",
+          "value": "out of them."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsHouseKurtAskYouHaveAnApricornText": {
+      "raw_lines": [
+        "text \"KURT: You have an\"",
+        "line \"APRICORN for me?\"",
+        "para \"Fine! I'll turn it\"",
+        "line \"into a BALL.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "KURT: You have an"
+        },
+        {
+          "command": "line",
+          "value": "APRICORN for me?"
+        },
+        {
+          "command": "para",
+          "value": "Fine! I'll turn it"
+        },
+        {
+          "command": "line",
+          "value": "into a BALL."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsHouseKurtItWillTakeADayText": {
+      "raw_lines": [
+        "text \"KURT: It'll take a\"",
+        "line \"day to make you a\"",
+        "para \"BALL. Come back\"",
+        "line \"for it later.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "KURT: It'll take a"
+        },
+        {
+          "command": "line",
+          "value": "day to make you a"
+        },
+        {
+          "command": "para",
+          "value": "BALL. Come back"
+        },
+        {
+          "command": "line",
+          "value": "for it later."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsHouseKurtThatsALetdownText": {
+      "raw_lines": [
+        "text \"KURT: Oh\u2026\"",
+        "line \"That's a letdown.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "KURT: Oh\u2026"
+        },
+        {
+          "command": "line",
+          "value": "That's a letdown."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsHouseKurtDontBotherMeText": {
+      "raw_lines": [
+        "text \"KURT: I'm working!\"",
+        "line \"Don't bother me!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "KURT: I'm working!"
+        },
+        {
+          "command": "line",
+          "value": "Don't bother me!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsHouseKurtJustFinishedYourBallText": {
+      "raw_lines": [
+        "text \"KURT: Ah, <PLAYER>!\"",
+        "line \"I just finished\"",
+        "cont \"your BALL. Here!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "KURT: Ah, <PLAYER>!"
+        },
+        {
+          "command": "line",
+          "value": "I just finished"
+        },
+        {
+          "command": "cont",
+          "value": "your BALL. Here!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsHouseKurtTurnedOutGreatText": {
+      "raw_lines": [
+        "text \"KURT: That turned\"",
+        "line \"out great.\"",
+        "para \"Try catching\"",
+        "line \"#MON with it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "KURT: That turned"
+        },
+        {
+          "command": "line",
+          "value": "out great."
+        },
+        {
+          "command": "para",
+          "value": "Try catching"
+        },
+        {
+          "command": "line",
+          "value": "#MON with it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsHouseKurtGranddaughterHelpingWorkFasterText": {
+      "raw_lines": [
+        "text \"KURT: Now that my\"",
+        "line \"granddaughter is\"",
+        "para \"helping me, I can\"",
+        "line \"work much faster.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "KURT: Now that my"
+        },
+        {
+          "command": "line",
+          "value": "granddaughter is"
+        },
+        {
+          "command": "para",
+          "value": "helping me, I can"
+        },
+        {
+          "command": "line",
+          "value": "work much faster."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsHouseKurtWhatIsThatText": {
+      "raw_lines": [
+        "text \"Wh-what is that?\"",
+        "para \"I've never seen\"",
+        "line \"one before.\"",
+        "para \"It looks a lot\"",
+        "line \"like a # BALL,\"",
+        "para \"but it appears to\"",
+        "line \"be something else.\"",
+        "para \"Let me check it\"",
+        "line \"for you.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Wh-what is that?"
+        },
+        {
+          "command": "para",
+          "value": "I've never seen"
+        },
+        {
+          "command": "line",
+          "value": "one before."
+        },
+        {
+          "command": "para",
+          "value": "It looks a lot"
+        },
+        {
+          "command": "line",
+          "value": "like a # BALL,"
+        },
+        {
+          "command": "para",
+          "value": "but it appears to"
+        },
+        {
+          "command": "line",
+          "value": "be something else."
+        },
+        {
+          "command": "para",
+          "value": "Let me check it"
+        },
+        {
+          "command": "line",
+          "value": "for you."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsHouseKurtImCheckingItNowText": {
+      "raw_lines": [
+        "text \"I'm checking it\"",
+        "line \"now.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm checking it"
+        },
+        {
+          "command": "line",
+          "value": "now."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsHouseKurtAhHaISeeText": {
+      "raw_lines": [
+        "text \"Ah-ha! I see!\"",
+        "line \"So\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ah-ha! I see!"
+        },
+        {
+          "command": "line",
+          "value": "So\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsHouseKurtThisBallStartedToShakeText": {
+      "raw_lines": [
+        "text \"<PLAYER>!\"",
+        "para \"This BALL started\"",
+        "line \"to shake while I\"",
+        "cont \"was checking it.\"",
+        "para \"There must be\"",
+        "line \"something to this!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER>!"
+        },
+        {
+          "command": "para",
+          "value": "This BALL started"
+        },
+        {
+          "command": "line",
+          "value": "to shake while I"
+        },
+        {
+          "command": "cont",
+          "value": "was checking it."
+        },
+        {
+          "command": "para",
+          "value": "There must be"
+        },
+        {
+          "command": "line",
+          "value": "something to this!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsGranddaughterSlowpokeGoneText": {
+      "raw_lines": [
+        "text \"The SLOWPOKE are\"",
+        "line \"gone\u2026 Were they\"",
+        "para \"taken away by bad\"",
+        "line \"people?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The SLOWPOKE are"
+        },
+        {
+          "command": "line",
+          "value": "gone\u2026 Were they"
+        },
+        {
+          "command": "para",
+          "value": "taken away by bad"
+        },
+        {
+          "command": "line",
+          "value": "people?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsGranddaughterLonelyText": {
+      "raw_lines": [
+        "text \"Grandpa's gone\u2026\"",
+        "line \"I'm so lonely\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Grandpa's gone\u2026"
+        },
+        {
+          "command": "line",
+          "value": "I'm so lonely\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsGranddaughterSlowpokeBackText": {
+      "raw_lines": [
+        "text \"The SLOWPOKE my\"",
+        "line \"dad gave me came\"",
+        "para \"back! Its TAIL is\"",
+        "line \"growing back too!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The SLOWPOKE my"
+        },
+        {
+          "command": "line",
+          "value": "dad gave me came"
+        },
+        {
+          "command": "para",
+          "value": "back! Its TAIL is"
+        },
+        {
+          "command": "line",
+          "value": "growing back too!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsGranddaughterDadText": {
+      "raw_lines": [
+        "text \"Dad works at SILPH\"",
+        "line \"where he studies\"",
+        "cont \"# BALLS.\"",
+        "para \"I have to stay\"",
+        "line \"home with Grandpa\"",
+        "cont \"and SLOWPOKE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Dad works at SILPH"
+        },
+        {
+          "command": "line",
+          "value": "where he studies"
+        },
+        {
+          "command": "cont",
+          "value": "# BALLS."
+        },
+        {
+          "command": "para",
+          "value": "I have to stay"
+        },
+        {
+          "command": "line",
+          "value": "home with Grandpa"
+        },
+        {
+          "command": "cont",
+          "value": "and SLOWPOKE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsGranddaughterHelpText": {
+      "raw_lines": [
+        "text \"I get to help\"",
+        "line \"Grandpa now!\"",
+        "para \"We'll make good\"",
+        "line \"BALLS for you, so\"",
+        "cont \"please wait!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I get to help"
+        },
+        {
+          "command": "line",
+          "value": "Grandpa now!"
+        },
+        {
+          "command": "para",
+          "value": "We'll make good"
+        },
+        {
+          "command": "line",
+          "value": "BALLS for you, so"
+        },
+        {
+          "command": "cont",
+          "value": "please wait!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsGranddaughterFunText": {
+      "raw_lines": [
+        "text \"It's fun to make\"",
+        "line \"BALLS!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's fun to make"
+        },
+        {
+          "command": "line",
+          "value": "BALLS!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsGranddaughterGSBallText": {
+      "raw_lines": [
+        "text \"Grandpa's checking\"",
+        "line \"a BALL right now.\"",
+        "para \"So I'm waiting\"",
+        "line \"till he's done.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Grandpa's checking"
+        },
+        {
+          "command": "line",
+          "value": "a BALL right now."
+        },
+        {
+          "command": "para",
+          "value": "So I'm waiting"
+        },
+        {
+          "command": "line",
+          "value": "till he's done."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsHouseSlowpokeText": {
+      "raw_lines": [
+        "text \"SLOWPOKE: \u2026\"",
+        "line \"Yawn?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "SLOWPOKE: \u2026"
+        },
+        {
+          "command": "line",
+          "value": "Yawn?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsHouseOakPhotoText": {
+      "raw_lines": [
+        "text \"\u2026A young PROF.\"",
+        "line \"OAK?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026A young PROF."
+        },
+        {
+          "command": "line",
+          "value": "OAK?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KurtsHouseCelebiStatueText": {
+      "raw_lines": [
+        "text \"It's a statue of\"",
+        "line \"the forest's pro-\"",
+        "cont \"tector.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's a statue of"
+        },
+        {
+          "command": "line",
+          "value": "the forest's pro-"
+        },
+        {
+          "command": "cont",
+          "value": "tector."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "KurtsHouseKurtExitHouseMovement": {
+      "raw_lines": [
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "KurtsHouseKurtGoAroundPlayerThenExitHouseMovement": {
+      "raw_lines": [
+        "big_step RIGHT",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "big_step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "big_step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "big_step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "DifficultBookshelfScript",
+    "Radio2Script"
+  ],
+  "dependencies": {
+    "KurtsHouse_MapScripts": {
+      "label_refs": [
+        "KurtsHouseKurtCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsHouseKurtCallback": {
+      "label_refs": [
+        "KurtsHouseKurtCallback.Done",
+        "KurtsHouseKurtCallback.MakingBalls"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsHouseKurtCallback.MakingBalls": {
+      "label_refs": [
+        "KurtsHouseKurtCallback.Done"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsHouseKurtCallback.Done": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1": {
+      "label_refs": [
+        "Kurt1.ClearedSlowpokeWell",
+        "Kurt1.GotLureBall",
+        "Kurt1.RunAround"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtMakingBallsMustWaitText"
+      ],
+      "movement_refs": [
+        "KurtsHouseKurtExitHouseMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.RunAround": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "KurtsHouseKurtGoAroundPlayerThenExitHouseMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.ClearedSlowpokeWell": {
+      "label_refs": [
+        "Kurt1.GotLureBall",
+        "Kurt1.NoRoomForBall"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtHonoredToMakeBallsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GotLureBall": {
+      "label_refs": [
+        "Kurt1.CanGiveGSBallToKurt",
+        "Kurt1.GiveFastBall",
+        "Kurt1.GiveFriendBall",
+        "Kurt1.GiveHeavyBall",
+        "Kurt1.GiveLevelBall",
+        "Kurt1.GiveLoveBall",
+        "Kurt1.GiveLureBall",
+        "Kurt1.GiveMoonBall",
+        "Kurt1.NoGSBall",
+        "Kurt1.WaitForApricorns"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.NoGSBall": {
+      "label_refs": [
+        "Kurt1.CheckApricorns"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtBallsFromApricornsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.CheckApricorns": {
+      "label_refs": [
+        "Kurt1.AskApricorn",
+        "Kurt1.IMakeBallsFromApricorns",
+        "Kurt1.ThatTurnedOutGreat"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.IMakeBallsFromApricorns": {
+      "label_refs": [],
+      "text_refs": [
+        "KurtsHouseKurtBallsFromApricornsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.AskApricorn": {
+      "label_refs": [
+        "Kurt1.Blk",
+        "Kurt1.Blu",
+        "Kurt1.Cancel",
+        "Kurt1.GaveKurtApricorns",
+        "Kurt1.Grn",
+        "Kurt1.Pnk",
+        "Kurt1.Wht",
+        "Kurt1.Ylw"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtAskYouHaveAnApricornText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.Blu": {
+      "label_refs": [
+        "Kurt1.GaveKurtApricorns"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.Ylw": {
+      "label_refs": [
+        "Kurt1.GaveKurtApricorns"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.Grn": {
+      "label_refs": [
+        "Kurt1.GaveKurtApricorns"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.Wht": {
+      "label_refs": [
+        "Kurt1.GaveKurtApricorns"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.Blk": {
+      "label_refs": [
+        "Kurt1.GaveKurtApricorns"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.Pnk": {
+      "label_refs": [
+        "Kurt1.GaveKurtApricorns"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GaveKurtApricorns": {
+      "label_refs": [
+        "Kurt1.WaitForApricorns"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.WaitForApricorns": {
+      "label_refs": [],
+      "text_refs": [
+        "KurtsHouseKurtItWillTakeADayText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.Cancel": {
+      "label_refs": [],
+      "text_refs": [
+        "KurtsHouseKurtThatsALetdownText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1._ThatTurnedOutGreat": {
+      "label_refs": [
+        "Kurt1.ThatTurnedOutGreat"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.ThatTurnedOutGreat": {
+      "label_refs": [
+        "Kurt1.NoRoomForBall"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtTurnedOutGreatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.NoRoomForBall": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GiveLevelBall": {
+      "label_refs": [
+        "Kurt1.NoRoomForBall",
+        "Kurt1._ThatTurnedOutGreat",
+        "KurtMakingBallsScript"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtJustFinishedYourBallText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GiveLureBall": {
+      "label_refs": [
+        "Kurt1.NoRoomForBall",
+        "Kurt1._ThatTurnedOutGreat",
+        "KurtMakingBallsScript"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtJustFinishedYourBallText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GiveMoonBall": {
+      "label_refs": [
+        "Kurt1.NoRoomForBall",
+        "Kurt1._ThatTurnedOutGreat",
+        "KurtMakingBallsScript"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtJustFinishedYourBallText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GiveFriendBall": {
+      "label_refs": [
+        "Kurt1.NoRoomForBall",
+        "Kurt1._ThatTurnedOutGreat",
+        "KurtMakingBallsScript"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtJustFinishedYourBallText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GiveFastBall": {
+      "label_refs": [
+        "Kurt1.NoRoomForBall",
+        "Kurt1._ThatTurnedOutGreat",
+        "KurtMakingBallsScript"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtJustFinishedYourBallText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GiveHeavyBall": {
+      "label_refs": [
+        "Kurt1.NoRoomForBall",
+        "Kurt1._ThatTurnedOutGreat",
+        "KurtMakingBallsScript"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtJustFinishedYourBallText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GiveLoveBall": {
+      "label_refs": [
+        "Kurt1.NoRoomForBall",
+        "Kurt1._ThatTurnedOutGreat",
+        "KurtMakingBallsScript"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtJustFinishedYourBallText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.CanGiveGSBallToKurt": {
+      "label_refs": [
+        "Kurt1.GaveGSBallToKurt",
+        "Kurt1.NoGSBall"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtWhatIsThatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GaveGSBallToKurt": {
+      "label_refs": [
+        "Kurt1.NotMakingBalls"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtAhHaISeeText",
+        "KurtsHouseKurtImCheckingItNowText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.NotMakingBalls": {
+      "label_refs": [
+        "Kurt1.GSBallRunAround",
+        "Kurt1.KurtHasLeftTheBuilding"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtThisBallStartedToShakeText"
+      ],
+      "movement_refs": [
+        "KurtsHouseKurtExitHouseMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.GSBallRunAround": {
+      "label_refs": [
+        "Kurt1.KurtHasLeftTheBuilding"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "KurtsHouseKurtGoAroundPlayerThenExitHouseMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Kurt1.KurtHasLeftTheBuilding": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL"
+      ],
+      "std_calls": []
+    },
+    "Kurt2": {
+      "label_refs": [
+        "KurtMakingBallsScript",
+        "KurtScript_ImCheckingItNow"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtMakingBallsScript": {
+      "label_refs": [
+        "Script_FirstTimeBuggingKurt"
+      ],
+      "text_refs": [
+        "KurtsHouseKurtDontBotherMeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Script_FirstTimeBuggingKurt": {
+      "label_refs": [],
+      "text_refs": [
+        "KurtsHouseKurtGranddaughterHelpingWorkFasterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtScript_ImCheckingItNow": {
+      "label_refs": [],
+      "text_refs": [
+        "KurtsHouseKurtAhHaISeeText",
+        "KurtsHouseKurtImCheckingItNowText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsGranddaughter1": {
+      "label_refs": [
+        "KurtsGranddaughter1.Dad",
+        "KurtsGranddaughter1.Lonely",
+        "KurtsGranddaughter1.SlowpokeBack",
+        "KurtsGranddaughter2Subscript",
+        "KurtsGranddaughterFunScript"
+      ],
+      "text_refs": [
+        "KurtsGranddaughterSlowpokeGoneText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsGranddaughter1.SlowpokeBack": {
+      "label_refs": [],
+      "text_refs": [
+        "KurtsGranddaughterSlowpokeBackText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsGranddaughter1.Lonely": {
+      "label_refs": [],
+      "text_refs": [
+        "KurtsGranddaughterLonelyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsGranddaughter1.Dad": {
+      "label_refs": [],
+      "text_refs": [
+        "KurtsGranddaughterDadText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsGranddaughter2": {
+      "label_refs": [
+        "KurtsGranddaughter2Subscript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsGranddaughter2Subscript": {
+      "label_refs": [
+        "KurtsGranddaughter2Subscript.GSBall"
+      ],
+      "text_refs": [
+        "KurtsGranddaughterHelpText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsGranddaughter2Subscript.GSBall": {
+      "label_refs": [],
+      "text_refs": [
+        "KurtsGranddaughterGSBallText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsGranddaughterFunScript": {
+      "label_refs": [],
+      "text_refs": [
+        "KurtsGranddaughterFunText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsHouseSlowpoke": {
+      "label_refs": [],
+      "text_refs": [
+        "KurtsHouseSlowpokeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsHouseOakPhoto": {
+      "label_refs": [],
+      "text_refs": [
+        "KurtsHouseOakPhotoText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsHouseCelebiStatue": {
+      "label_refs": [],
+      "text_refs": [
+        "KurtsHouseCelebiStatueText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KurtsHouseBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "DifficultBookshelfScript"
+      ]
+    },
+    "KurtsHouseRadio": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "Radio2Script"
+      ]
+    },
+    "KurtsHouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 1,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 7,
+    "object_events": 5
+  }
+}

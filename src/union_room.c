@@ -27,6 +27,7 @@
 #include "mystery_gift.h"
 #include "mystery_gift_menu.h"
 #include "overworld.h"
+#include "official_link_compat.h"
 #include "palette.h"
 #include "party_menu.h"
 #include "pokemon_jump.h"
@@ -376,6 +377,13 @@ void TryBecomeLinkLeader(void)
 {
     u8 taskId;
     struct WirelessLink_Leader *data;
+
+    if (ShouldValidateOfficialLinkForLinkGroup(gSpecialVar_0x8004)
+     && !IsRetailSafePartyForOfficialLink())
+    {
+        gSpecialVar_Result = LINKUP_OFFICIAL_COMPAT_BLOCKED;
+        return;
+    }
 
     taskId = CreateTask(Task_TryBecomeLinkLeader, 0);
     sWirelessLinkMain.leader = data = (void *)(gTasks[taskId].data);
@@ -971,6 +979,13 @@ void TryJoinLinkGroup(void)
 {
     u8 taskId;
     struct WirelessLink_Group *data;
+
+    if (ShouldValidateOfficialLinkForLinkGroup(gSpecialVar_0x8004)
+     && !IsRetailSafePartyForOfficialLink())
+    {
+        gSpecialVar_Result = LINKUP_OFFICIAL_COMPAT_BLOCKED;
+        return;
+    }
 
     taskId = CreateTask(Task_TryJoinLinkGroup, 0);
     sWirelessLinkMain.group = data = (void *)(gTasks[taskId].data);

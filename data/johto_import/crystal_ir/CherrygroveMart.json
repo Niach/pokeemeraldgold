@@ -18,6 +18,8 @@
   "source_asm": "maps/CherrygroveMart.asm",
   "connections": [],
   "events": {
+    "scene_scripts": [],
+    "callbacks": [],
     "warp_events": [
       {
         "x": 2,
@@ -42,6 +44,11 @@
         "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "CherrygroveMartClerkScript",
         "flag": -1
       },
@@ -52,6 +59,11 @@
         "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
         "movement_range_x": 2,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "CherrygroveMartCooltrainerMScript",
         "flag": -1
       },
@@ -62,12 +74,584 @@
         "movement": "SPRITEMOVEDATA_STANDING_DOWN",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
         "script": "CherrygroveMartYoungsterScript",
         "flag": -1
       }
     ]
   },
+  "object_consts": [
+    "CHERRYGROVEMART_CLERK",
+    "CHERRYGROVEMART_COOLTRAINER_M",
+    "CHERRYGROVEMART_YOUNGSTER"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "CherrygroveMart_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "CherrygroveMartClerkScript",
+      "label_refs": [
+        "CherrygroveMartClerkScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveMartClerkScript": {
+      "raw_lines": [
+        "opentext",
+        "checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM",
+        "iftrue .PokeBallsInStock",
+        "pokemart MARTTYPE_STANDARD, MART_CHERRYGROVE",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GAVE_MYSTERY_EGG_TO_ELM"
+          ],
+          "raw": "checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CherrygroveMartClerkScript.PokeBallsInStock"
+          ],
+          "raw": "iftrue .PokeBallsInStock"
+        },
+        {
+          "command": "pokemart",
+          "args": [
+            "MARTTYPE_STANDARD",
+            "MART_CHERRYGROVE"
+          ],
+          "raw": "pokemart MARTTYPE_STANDARD, MART_CHERRYGROVE"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "CherrygroveMartClerkScript.PokeBallsInStock"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveMartClerkScript.PokeBallsInStock": {
+      "raw_lines": [
+        "pokemart MARTTYPE_STANDARD, MART_CHERRYGROVE_DEX",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "pokemart",
+          "args": [
+            "MARTTYPE_STANDARD",
+            "MART_CHERRYGROVE_DEX"
+          ],
+          "raw": "pokemart MARTTYPE_STANDARD, MART_CHERRYGROVE_DEX"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "pokemart",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveMartCooltrainerMScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM",
+        "iftrue .PokeBallsInStock",
+        "writetext CherrygroveMartCooltrainerMText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GAVE_MYSTERY_EGG_TO_ELM"
+          ],
+          "raw": "checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CherrygroveMartCooltrainerMScript.PokeBallsInStock"
+          ],
+          "raw": "iftrue .PokeBallsInStock"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CherrygroveMartCooltrainerMText"
+          ],
+          "raw": "writetext CherrygroveMartCooltrainerMText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "CherrygroveMartCooltrainerMScript.PokeBallsInStock"
+      ],
+      "text_refs": [
+        "CherrygroveMartCooltrainerMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveMartCooltrainerMScript.PokeBallsInStock": {
+      "raw_lines": [
+        "writetext CherrygroveMartCooltrainerMText_PokeBallsInStock",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "CherrygroveMartCooltrainerMText_PokeBallsInStock"
+          ],
+          "raw": "writetext CherrygroveMartCooltrainerMText_PokeBallsInStock"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "CherrygroveMartCooltrainerMText_PokeBallsInStock"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveMartYoungsterScript": {
+      "raw_lines": [
+        "jumptextfaceplayer CherrygroveMartYoungsterText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "CherrygroveMartYoungsterText"
+          ],
+          "raw": "jumptextfaceplayer CherrygroveMartYoungsterText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "CherrygroveMartYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveMart_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, CHERRYGROVE_CITY, 1",
+        "warp_event  3,  7, CHERRYGROVE_CITY, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveMartClerkScript, -1",
+        "object_event  7,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveMartCooltrainerMScript, -1",
+        "object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveMartYoungsterScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "CHERRYGROVE_CITY",
+            "1"
+          ],
+          "raw": "warp_event  2,  7, CHERRYGROVE_CITY, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "CHERRYGROVE_CITY",
+            "1"
+          ],
+          "raw": "warp_event  3,  7, CHERRYGROVE_CITY, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "3",
+            "SPRITE_CLERK",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CherrygroveMartClerkScript",
+            "-1"
+          ],
+          "raw": "object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveMartClerkScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "6",
+            "SPRITE_COOLTRAINER_M",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "2",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CherrygroveMartCooltrainerMScript",
+            "-1"
+          ],
+          "raw": "object_event  7,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveMartCooltrainerMScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "5",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CherrygroveMartYoungsterScript",
+            "-1"
+          ],
+          "raw": "object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveMartYoungsterScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "CherrygroveMartCooltrainerMText": {
+      "raw_lines": [
+        "text \"They're fresh out\"",
+        "line \"of # BALLS!\"",
+        "para \"When will they get\"",
+        "line \"more of them?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "They're fresh out"
+        },
+        {
+          "command": "line",
+          "value": "of # BALLS!"
+        },
+        {
+          "command": "para",
+          "value": "When will they get"
+        },
+        {
+          "command": "line",
+          "value": "more of them?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CherrygroveMartCooltrainerMText_PokeBallsInStock": {
+      "raw_lines": [
+        "text \"# BALLS are in\"",
+        "line \"stock! Now I can\"",
+        "cont \"catch #MON!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "# BALLS are in"
+        },
+        {
+          "command": "line",
+          "value": "stock! Now I can"
+        },
+        {
+          "command": "cont",
+          "value": "catch #MON!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CherrygroveMartYoungsterText": {
+      "raw_lines": [
+        "text \"When I was walking\"",
+        "line \"in the grass, a\"",
+        "para \"bug #MON poi-\"",
+        "line \"soned my #MON!\"",
+        "para \"I just kept going,\"",
+        "line \"but then my\"",
+        "cont \"#MON fainted.\"",
+        "para \"You should keep an\"",
+        "line \"ANTIDOTE with you.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "When I was walking"
+        },
+        {
+          "command": "line",
+          "value": "in the grass, a"
+        },
+        {
+          "command": "para",
+          "value": "bug #MON poi-"
+        },
+        {
+          "command": "line",
+          "value": "soned my #MON!"
+        },
+        {
+          "command": "para",
+          "value": "I just kept going,"
+        },
+        {
+          "command": "line",
+          "value": "but then my"
+        },
+        {
+          "command": "cont",
+          "value": "#MON fainted."
+        },
+        {
+          "command": "para",
+          "value": "You should keep an"
+        },
+        {
+          "command": "line",
+          "value": "ANTIDOTE with you."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "CherrygroveMart_MapScripts": {
+      "label_refs": [
+        "CherrygroveMartClerkScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveMartClerkScript": {
+      "label_refs": [
+        "CherrygroveMartClerkScript.PokeBallsInStock"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveMartClerkScript.PokeBallsInStock": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveMartCooltrainerMScript": {
+      "label_refs": [
+        "CherrygroveMartCooltrainerMScript.PokeBallsInStock"
+      ],
+      "text_refs": [
+        "CherrygroveMartCooltrainerMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveMartCooltrainerMScript.PokeBallsInStock": {
+      "label_refs": [],
+      "text_refs": [
+        "CherrygroveMartCooltrainerMText_PokeBallsInStock"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveMartYoungsterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "CherrygroveMartYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CherrygroveMart_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
   "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
     "warp_events": 2,
     "coord_events": 0,
     "bg_events": 0,

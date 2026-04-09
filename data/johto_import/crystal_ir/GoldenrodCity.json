@@ -1,0 +1,4624 @@
+{
+  "crystal_map": "GoldenrodCity",
+  "map_id": "GOLDENROD_CITY",
+  "group": "GOLDENROD",
+  "group_index": 11,
+  "map_index": 2,
+  "tileset": "TILESET_JOHTO_MODERN",
+  "environment": "TOWN",
+  "landmark": "LANDMARK_GOLDENROD_CITY",
+  "music": "MUSIC_GOLDENROD_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_AUTO",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 20,
+  "height_blocks": 18,
+  "border_block": "35",
+  "blk_path": "maps/GoldenrodCity.blk",
+  "source_asm": "maps/GoldenrodCity.asm",
+  "connections": [
+    {
+      "direction": "north",
+      "map": "Route35",
+      "target_map_id": "ROUTE_35",
+      "offset": 5
+    },
+    {
+      "direction": "south",
+      "map": "Route34",
+      "target_map_id": "ROUTE_34",
+      "offset": 5
+    }
+  ],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "GoldenrodCityFlypointAndFloriaCallback"
+      },
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "GoldenrodCityMoveTutorCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 24,
+        "y": 7,
+        "dest_map": "GOLDENROD_GYM",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 29,
+        "y": 29,
+        "dest_map": "GOLDENROD_BIKE_SHOP",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 31,
+        "y": 21,
+        "dest_map": "GOLDENROD_HAPPINESS_RATER",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 5,
+        "y": 25,
+        "dest_map": "BILLS_FAMILYS_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 9,
+        "y": 13,
+        "dest_map": "GOLDENROD_MAGNET_TRAIN_STATION",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 29,
+        "y": 5,
+        "dest_map": "GOLDENROD_FLOWER_SHOP",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 33,
+        "y": 9,
+        "dest_map": "GOLDENROD_PP_SPEECH_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 15,
+        "y": 7,
+        "dest_map": "GOLDENROD_NAME_RATER",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 24,
+        "y": 27,
+        "dest_map": "GOLDENROD_DEPT_STORE_1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 14,
+        "y": 21,
+        "dest_map": "GOLDENROD_GAME_CORNER",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 5,
+        "y": 15,
+        "dest_map": "RADIO_TOWER_1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 19,
+        "y": 1,
+        "dest_map": "ROUTE_35_GOLDENROD_GATE",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 9,
+        "y": 5,
+        "dest_map": "GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES",
+        "dest_warp_id": 8
+      },
+      {
+        "x": 11,
+        "y": 29,
+        "dest_map": "GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 15,
+        "y": 27,
+        "dest_map": "GOLDENROD_POKECENTER_1F",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 10,
+        "y": 14,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodCityStationSign"
+      },
+      {
+        "x": 4,
+        "y": 17,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodCityRadioTowerSign"
+      },
+      {
+        "x": 26,
+        "y": 27,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodDeptStoreSign"
+      },
+      {
+        "x": 26,
+        "y": 9,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodGymSign"
+      },
+      {
+        "x": 22,
+        "y": 18,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodCitySign"
+      },
+      {
+        "x": 28,
+        "y": 30,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodCityBikeShopSign"
+      },
+      {
+        "x": 16,
+        "y": 22,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodCityGameCornerSign"
+      },
+      {
+        "x": 12,
+        "y": 7,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodCityNameRaterSign"
+      },
+      {
+        "x": 8,
+        "y": 6,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodCityUndergroundSignNorth"
+      },
+      {
+        "x": 12,
+        "y": 30,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodCityUndergroundSignSouth"
+      },
+      {
+        "x": 16,
+        "y": 27,
+        "kind": "BGEVENT_UP",
+        "script": "GoldenrodCityPokecenterSign"
+      },
+      {
+        "x": 30,
+        "y": 6,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodCityFlowerShopSign"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 7,
+        "y": 18,
+        "sprite": "SPRITE_POKEFAN_M",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodCityPokefanMScript",
+        "flag": "EVENT_GOLDENROD_CITY_CIVILIANS"
+      },
+      {
+        "x": 30,
+        "y": 17,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodCityYoungster1Script",
+        "flag": "EVENT_GOLDENROD_CITY_CIVILIANS"
+      },
+      {
+        "x": 12,
+        "y": 16,
+        "sprite": "SPRITE_COOLTRAINER_F",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodCityCooltrainerF1Script",
+        "flag": "EVENT_GOLDENROD_CITY_CIVILIANS"
+      },
+      {
+        "x": 20,
+        "y": 26,
+        "sprite": "SPRITE_COOLTRAINER_F",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 2,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodCityCooltrainerF2Script",
+        "flag": "EVENT_GOLDENROD_CITY_CIVILIANS"
+      },
+      {
+        "x": 19,
+        "y": 17,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodCityYoungster2Script",
+        "flag": "EVENT_GOLDENROD_CITY_CIVILIANS"
+      },
+      {
+        "x": 17,
+        "y": 10,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 2,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodCityLassScript",
+        "flag": "EVENT_GOLDENROD_CITY_CIVILIANS"
+      },
+      {
+        "x": 11,
+        "y": 27,
+        "sprite": "SPRITE_GRAMPS",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodCityGrampsScript",
+        "flag": "EVENT_GOLDENROD_CITY_CIVILIANS"
+      },
+      {
+        "x": 4,
+        "y": 16,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodCityRocketScoutScript",
+        "flag": "EVENT_GOLDENROD_CITY_ROCKET_SCOUT"
+      },
+      {
+        "x": 28,
+        "y": 20,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodCityRocket1Script",
+        "flag": "EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 8,
+        "y": 15,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodCityRocket2Script",
+        "flag": "EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 16,
+        "y": 23,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodCityRocket3Script",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 29,
+        "y": 20,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodCityRocket4Script",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 29,
+        "y": 7,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodCityRocket5Script",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 31,
+        "y": 10,
+        "sprite": "SPRITE_ROCKET",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodCityRocket6Script",
+        "flag": "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+      },
+      {
+        "x": 12,
+        "y": 22,
+        "sprite": "SPRITE_POKEFAN_M",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "MoveTutorScript",
+        "flag": "EVENT_GOLDENROD_CITY_MOVE_TUTOR"
+      }
+    ]
+  },
+  "object_consts": [
+    "GOLDENRODCITY_POKEFAN_M1",
+    "GOLDENRODCITY_YOUNGSTER1",
+    "GOLDENRODCITY_COOLTRAINER_F1",
+    "GOLDENRODCITY_COOLTRAINER_F2",
+    "GOLDENRODCITY_YOUNGSTER2",
+    "GOLDENRODCITY_LASS",
+    "GOLDENRODCITY_GRAMPS",
+    "GOLDENRODCITY_ROCKETSCOUT",
+    "GOLDENRODCITY_ROCKET1",
+    "GOLDENRODCITY_ROCKET2",
+    "GOLDENRODCITY_ROCKET3",
+    "GOLDENRODCITY_ROCKET4",
+    "GOLDENRODCITY_ROCKET5",
+    "GOLDENRODCITY_ROCKET6",
+    "GOLDENRODCITY_MOVETUTOR"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "GoldenrodCity_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, GoldenrodCityFlypointAndFloriaCallback",
+        "callback MAPCALLBACK_OBJECTS, GoldenrodCityMoveTutorCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "GoldenrodCityFlypointAndFloriaCallback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, GoldenrodCityFlypointAndFloriaCallback"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "GoldenrodCityMoveTutorCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, GoldenrodCityMoveTutorCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "GoldenrodCityFlypointAndFloriaCallback",
+      "label_refs": [
+        "GoldenrodCityFlypointAndFloriaCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityFlypointAndFloriaCallback": {
+      "raw_lines": [
+        "setflag ENGINE_FLYPOINT_GOLDENROD",
+        "setflag ENGINE_REACHED_GOLDENROD",
+        "checkevent EVENT_MET_FLORIA",
+        "iftrue .FloriaDone",
+        "clearevent EVENT_FLORIA_AT_SUDOWOODO"
+      ],
+      "commands": [
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_FLYPOINT_GOLDENROD"
+          ],
+          "raw": "setflag ENGINE_FLYPOINT_GOLDENROD"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_REACHED_GOLDENROD"
+          ],
+          "raw": "setflag ENGINE_REACHED_GOLDENROD"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_MET_FLORIA"
+          ],
+          "raw": "checkevent EVENT_MET_FLORIA"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoldenrodCityFlypointAndFloriaCallback.FloriaDone"
+          ],
+          "raw": "iftrue .FloriaDone"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_FLORIA_AT_SUDOWOODO"
+          ],
+          "raw": "clearevent EVENT_FLORIA_AT_SUDOWOODO"
+        }
+      ],
+      "first_command": "setflag",
+      "fallthrough_label": "GoldenrodCityFlypointAndFloriaCallback.FloriaDone",
+      "label_refs": [
+        "GoldenrodCityFlypointAndFloriaCallback.FloriaDone"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityFlypointAndFloriaCallback.FloriaDone": {
+      "raw_lines": [
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "endcallback",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityMoveTutorCallback": {
+      "raw_lines": [
+        "checkevent EVENT_BEAT_ELITE_FOUR",
+        "iffalse .MoveTutorDone",
+        "checkitem COIN_CASE",
+        "iffalse .MoveTutorDisappear",
+        "readvar VAR_WEEKDAY",
+        "ifequal WEDNESDAY, .MoveTutorAppear",
+        "ifequal SATURDAY, .MoveTutorAppear"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_ELITE_FOUR"
+          ],
+          "raw": "checkevent EVENT_BEAT_ELITE_FOUR"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodCityMoveTutorCallback.MoveTutorDone"
+          ],
+          "raw": "iffalse .MoveTutorDone"
+        },
+        {
+          "command": "checkitem",
+          "args": [
+            "COIN_CASE"
+          ],
+          "raw": "checkitem COIN_CASE"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodCityMoveTutorCallback.MoveTutorDisappear"
+          ],
+          "raw": "iffalse .MoveTutorDisappear"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_WEEKDAY"
+          ],
+          "raw": "readvar VAR_WEEKDAY"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "WEDNESDAY",
+            "GoldenrodCityMoveTutorCallback.MoveTutorAppear"
+          ],
+          "raw": "ifequal WEDNESDAY, .MoveTutorAppear"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SATURDAY",
+            "GoldenrodCityMoveTutorCallback.MoveTutorAppear"
+          ],
+          "raw": "ifequal SATURDAY, .MoveTutorAppear"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "GoldenrodCityMoveTutorCallback.MoveTutorDisappear",
+      "label_refs": [
+        "GoldenrodCityMoveTutorCallback.MoveTutorAppear",
+        "GoldenrodCityMoveTutorCallback.MoveTutorDisappear",
+        "GoldenrodCityMoveTutorCallback.MoveTutorDone"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityMoveTutorCallback.MoveTutorDisappear": {
+      "raw_lines": [
+        "disappear GOLDENRODCITY_MOVETUTOR",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODCITY_MOVETUTOR"
+          ],
+          "raw": "disappear GOLDENRODCITY_MOVETUTOR"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "disappear",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityMoveTutorCallback.MoveTutorAppear": {
+      "raw_lines": [
+        "checkflag ENGINE_DAILY_MOVE_TUTOR",
+        "iftrue .MoveTutorDone",
+        "appear GOLDENRODCITY_MOVETUTOR"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_DAILY_MOVE_TUTOR"
+          ],
+          "raw": "checkflag ENGINE_DAILY_MOVE_TUTOR"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoldenrodCityMoveTutorCallback.MoveTutorDone"
+          ],
+          "raw": "iftrue .MoveTutorDone"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "GOLDENRODCITY_MOVETUTOR"
+          ],
+          "raw": "appear GOLDENRODCITY_MOVETUTOR"
+        }
+      ],
+      "first_command": "checkflag",
+      "fallthrough_label": "GoldenrodCityMoveTutorCallback.MoveTutorDone",
+      "label_refs": [
+        "GoldenrodCityMoveTutorCallback.MoveTutorDone"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityMoveTutorCallback.MoveTutorDone": {
+      "raw_lines": [
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "endcallback",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "writetext GoldenrodCityMoveTutorAskTeachAMoveText",
+        "yesorno",
+        "iffalse .Refused",
+        "special DisplayCoinCaseBalance",
+        "writetext GoldenrodCityMoveTutorAsk4000CoinsOkayText",
+        "yesorno",
+        "iffalse .Refused2",
+        "checkcoins 4000",
+        "ifequal HAVE_LESS, .NotEnoughMoney",
+        "writetext GoldenrodCityMoveTutorWhichMoveShouldITeachText",
+        "loadmenu .MoveMenuHeader",
+        "verticalmenu",
+        "closewindow",
+        "ifequal MOVETUTOR_FLAMETHROWER, .Flamethrower",
+        "ifequal MOVETUTOR_THUNDERBOLT, .Thunderbolt",
+        "ifequal MOVETUTOR_ICE_BEAM, .IceBeam",
+        "sjump .Incompatible"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodCityMoveTutorAskTeachAMoveText"
+          ],
+          "raw": "writetext GoldenrodCityMoveTutorAskTeachAMoveText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "MoveTutorScript.Refused"
+          ],
+          "raw": "iffalse .Refused"
+        },
+        {
+          "command": "special",
+          "args": [
+            "DisplayCoinCaseBalance"
+          ],
+          "raw": "special DisplayCoinCaseBalance"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodCityMoveTutorAsk4000CoinsOkayText"
+          ],
+          "raw": "writetext GoldenrodCityMoveTutorAsk4000CoinsOkayText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "MoveTutorScript.Refused2"
+          ],
+          "raw": "iffalse .Refused2"
+        },
+        {
+          "command": "checkcoins",
+          "args": [
+            "4000"
+          ],
+          "raw": "checkcoins 4000"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "HAVE_LESS",
+            "MoveTutorScript.NotEnoughMoney"
+          ],
+          "raw": "ifequal HAVE_LESS, .NotEnoughMoney"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodCityMoveTutorWhichMoveShouldITeachText"
+          ],
+          "raw": "writetext GoldenrodCityMoveTutorWhichMoveShouldITeachText"
+        },
+        {
+          "command": "loadmenu",
+          "args": [
+            "MoveTutorScript.MoveMenuHeader"
+          ],
+          "raw": "loadmenu .MoveMenuHeader"
+        },
+        {
+          "command": "verticalmenu",
+          "args": [],
+          "raw": "verticalmenu"
+        },
+        {
+          "command": "closewindow",
+          "args": [],
+          "raw": "closewindow"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "MOVETUTOR_FLAMETHROWER",
+            "MoveTutorScript.Flamethrower"
+          ],
+          "raw": "ifequal MOVETUTOR_FLAMETHROWER, .Flamethrower"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "MOVETUTOR_THUNDERBOLT",
+            "MoveTutorScript.Thunderbolt"
+          ],
+          "raw": "ifequal MOVETUTOR_THUNDERBOLT, .Thunderbolt"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "MOVETUTOR_ICE_BEAM",
+            "MoveTutorScript.IceBeam"
+          ],
+          "raw": "ifequal MOVETUTOR_ICE_BEAM, .IceBeam"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "MoveTutorScript.Incompatible"
+          ],
+          "raw": "sjump .Incompatible"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "MoveTutorScript.Flamethrower",
+        "MoveTutorScript.IceBeam",
+        "MoveTutorScript.Incompatible",
+        "MoveTutorScript.NotEnoughMoney",
+        "MoveTutorScript.Refused",
+        "MoveTutorScript.Refused2",
+        "MoveTutorScript.Thunderbolt"
+      ],
+      "text_refs": [
+        "GoldenrodCityMoveTutorAsk4000CoinsOkayText",
+        "GoldenrodCityMoveTutorAskTeachAMoveText",
+        "GoldenrodCityMoveTutorWhichMoveShouldITeachText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.Flamethrower": {
+      "raw_lines": [
+        "setval MOVETUTOR_FLAMETHROWER",
+        "writetext GoldenrodCityMoveTutorMoveText",
+        "special MoveTutor",
+        "ifequal FALSE, .TeachMove",
+        "sjump .Incompatible"
+      ],
+      "commands": [
+        {
+          "command": "setval",
+          "args": [
+            "MOVETUTOR_FLAMETHROWER"
+          ],
+          "raw": "setval MOVETUTOR_FLAMETHROWER"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodCityMoveTutorMoveText"
+          ],
+          "raw": "writetext GoldenrodCityMoveTutorMoveText"
+        },
+        {
+          "command": "special",
+          "args": [
+            "MoveTutor"
+          ],
+          "raw": "special MoveTutor"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "FALSE",
+            "MoveTutorScript.TeachMove"
+          ],
+          "raw": "ifequal FALSE, .TeachMove"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "MoveTutorScript.Incompatible"
+          ],
+          "raw": "sjump .Incompatible"
+        }
+      ],
+      "first_command": "setval",
+      "label_refs": [
+        "MoveTutorScript.Incompatible",
+        "MoveTutorScript.TeachMove"
+      ],
+      "text_refs": [
+        "GoldenrodCityMoveTutorMoveText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.Thunderbolt": {
+      "raw_lines": [
+        "setval MOVETUTOR_THUNDERBOLT",
+        "writetext GoldenrodCityMoveTutorMoveText",
+        "special MoveTutor",
+        "ifequal FALSE, .TeachMove",
+        "sjump .Incompatible"
+      ],
+      "commands": [
+        {
+          "command": "setval",
+          "args": [
+            "MOVETUTOR_THUNDERBOLT"
+          ],
+          "raw": "setval MOVETUTOR_THUNDERBOLT"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodCityMoveTutorMoveText"
+          ],
+          "raw": "writetext GoldenrodCityMoveTutorMoveText"
+        },
+        {
+          "command": "special",
+          "args": [
+            "MoveTutor"
+          ],
+          "raw": "special MoveTutor"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "FALSE",
+            "MoveTutorScript.TeachMove"
+          ],
+          "raw": "ifequal FALSE, .TeachMove"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "MoveTutorScript.Incompatible"
+          ],
+          "raw": "sjump .Incompatible"
+        }
+      ],
+      "first_command": "setval",
+      "label_refs": [
+        "MoveTutorScript.Incompatible",
+        "MoveTutorScript.TeachMove"
+      ],
+      "text_refs": [
+        "GoldenrodCityMoveTutorMoveText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.IceBeam": {
+      "raw_lines": [
+        "setval MOVETUTOR_ICE_BEAM",
+        "writetext GoldenrodCityMoveTutorMoveText",
+        "special MoveTutor",
+        "ifequal FALSE, .TeachMove",
+        "sjump .Incompatible"
+      ],
+      "commands": [
+        {
+          "command": "setval",
+          "args": [
+            "MOVETUTOR_ICE_BEAM"
+          ],
+          "raw": "setval MOVETUTOR_ICE_BEAM"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodCityMoveTutorMoveText"
+          ],
+          "raw": "writetext GoldenrodCityMoveTutorMoveText"
+        },
+        {
+          "command": "special",
+          "args": [
+            "MoveTutor"
+          ],
+          "raw": "special MoveTutor"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "FALSE",
+            "MoveTutorScript.TeachMove"
+          ],
+          "raw": "ifequal FALSE, .TeachMove"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "MoveTutorScript.Incompatible"
+          ],
+          "raw": "sjump .Incompatible"
+        }
+      ],
+      "first_command": "setval",
+      "label_refs": [
+        "MoveTutorScript.Incompatible",
+        "MoveTutorScript.TeachMove"
+      ],
+      "text_refs": [
+        "GoldenrodCityMoveTutorMoveText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.MoveMenuHeader": {
+      "raw_lines": [
+        "db MENU_BACKUP_TILES",
+        "menu_coords 0, 2, 15, TEXTBOX_Y - 1",
+        "dw .MenuData",
+        "db 1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "MENU_BACKUP_TILES"
+          ],
+          "raw": "db MENU_BACKUP_TILES"
+        },
+        {
+          "command": "menu_coords",
+          "args": [
+            "0",
+            "2",
+            "15",
+            "TEXTBOX_Y - 1"
+          ],
+          "raw": "menu_coords 0, 2, 15, TEXTBOX_Y - 1"
+        },
+        {
+          "command": "dw",
+          "args": [
+            "MoveTutorScript.MenuData"
+          ],
+          "raw": "dw .MenuData"
+        },
+        {
+          "command": "db",
+          "args": [
+            "1"
+          ],
+          "raw": "db 1"
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "MoveTutorScript.MenuData",
+      "label_refs": [
+        "MoveTutorScript.MenuData"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.MenuData": {
+      "raw_lines": [
+        "db STATICMENU_CURSOR",
+        "db 4",
+        "db \"FLAMETHROWER@\"",
+        "db \"THUNDERBOLT@\"",
+        "db \"ICE BEAM@\"",
+        "db \"CANCEL@\""
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "STATICMENU_CURSOR"
+          ],
+          "raw": "db STATICMENU_CURSOR"
+        },
+        {
+          "command": "db",
+          "args": [
+            "4"
+          ],
+          "raw": "db 4"
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"FLAMETHROWER@\""
+          ],
+          "raw": "db \"FLAMETHROWER@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"THUNDERBOLT@\""
+          ],
+          "raw": "db \"THUNDERBOLT@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"ICE BEAM@\""
+          ],
+          "raw": "db \"ICE BEAM@\""
+        },
+        {
+          "command": "db",
+          "args": [
+            "\"CANCEL@\""
+          ],
+          "raw": "db \"CANCEL@\""
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "MoveTutorScript.Refused",
+      "label_refs": [
+        "MoveTutorScript.Refused"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.Refused": {
+      "raw_lines": [
+        "writetext GoldenrodCityMoveTutorAwwButTheyreAmazingText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodCityMoveTutorAwwButTheyreAmazingText"
+          ],
+          "raw": "writetext GoldenrodCityMoveTutorAwwButTheyreAmazingText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityMoveTutorAwwButTheyreAmazingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.Refused2": {
+      "raw_lines": [
+        "writetext GoldenrodCityMoveTutorHmTooBadText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodCityMoveTutorHmTooBadText"
+          ],
+          "raw": "writetext GoldenrodCityMoveTutorHmTooBadText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityMoveTutorHmTooBadText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.TeachMove": {
+      "raw_lines": [
+        "writetext GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText",
+        "promptbutton",
+        "takecoins 4000",
+        "waitsfx",
+        "playsound SFX_TRANSACTION",
+        "special DisplayCoinCaseBalance",
+        "writetext GoldenrodCityMoveTutorFarewellKidText",
+        "waitbutton",
+        "closetext",
+        "readvar VAR_FACING",
+        "ifequal LEFT, .WalkAroundPlayer",
+        "applymovement GOLDENRODCITY_MOVETUTOR, GoldenrodCityMoveTutorEnterGameCornerMovement",
+        "sjump .GoInside"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText"
+          ],
+          "raw": "writetext GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "takecoins",
+          "args": [
+            "4000"
+          ],
+          "raw": "takecoins 4000"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_TRANSACTION"
+          ],
+          "raw": "playsound SFX_TRANSACTION"
+        },
+        {
+          "command": "special",
+          "args": [
+            "DisplayCoinCaseBalance"
+          ],
+          "raw": "special DisplayCoinCaseBalance"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodCityMoveTutorFarewellKidText"
+          ],
+          "raw": "writetext GoldenrodCityMoveTutorFarewellKidText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_FACING"
+          ],
+          "raw": "readvar VAR_FACING"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "LEFT",
+            "MoveTutorScript.WalkAroundPlayer"
+          ],
+          "raw": "ifequal LEFT, .WalkAroundPlayer"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "GOLDENRODCITY_MOVETUTOR",
+            "GoldenrodCityMoveTutorEnterGameCornerMovement"
+          ],
+          "raw": "applymovement GOLDENRODCITY_MOVETUTOR, GoldenrodCityMoveTutorEnterGameCornerMovement"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "MoveTutorScript.GoInside"
+          ],
+          "raw": "sjump .GoInside"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "MoveTutorScript.GoInside",
+        "MoveTutorScript.WalkAroundPlayer"
+      ],
+      "text_refs": [
+        "GoldenrodCityMoveTutorFarewellKidText",
+        "GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText"
+      ],
+      "movement_refs": [
+        "GoldenrodCityMoveTutorEnterGameCornerMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.WalkAroundPlayer": {
+      "raw_lines": [
+        "applymovement GOLDENRODCITY_MOVETUTOR, GoldenrodCityMoveTutorWalkAroundPlayerThenEnterGameCornerMovement"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "GOLDENRODCITY_MOVETUTOR",
+            "GoldenrodCityMoveTutorWalkAroundPlayerThenEnterGameCornerMovement"
+          ],
+          "raw": "applymovement GOLDENRODCITY_MOVETUTOR, GoldenrodCityMoveTutorWalkAroundPlayerThenEnterGameCornerMovement"
+        }
+      ],
+      "first_command": "applymovement",
+      "fallthrough_label": "MoveTutorScript.GoInside",
+      "label_refs": [
+        "MoveTutorScript.GoInside"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "GoldenrodCityMoveTutorWalkAroundPlayerThenEnterGameCornerMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.GoInside": {
+      "raw_lines": [
+        "playsound SFX_ENTER_DOOR",
+        "disappear GOLDENRODCITY_MOVETUTOR",
+        "clearevent EVENT_GOLDENROD_GAME_CORNER_MOVE_TUTOR",
+        "setflag ENGINE_DAILY_MOVE_TUTOR",
+        "waitsfx",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "GOLDENRODCITY_MOVETUTOR"
+          ],
+          "raw": "disappear GOLDENRODCITY_MOVETUTOR"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_GOLDENROD_GAME_CORNER_MOVE_TUTOR"
+          ],
+          "raw": "clearevent EVENT_GOLDENROD_GAME_CORNER_MOVE_TUTOR"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_DAILY_MOVE_TUTOR"
+          ],
+          "raw": "setflag ENGINE_DAILY_MOVE_TUTOR"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playsound",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.Incompatible": {
+      "raw_lines": [
+        "writetext GoldenrodCityMoveTutorBButText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodCityMoveTutorBButText"
+          ],
+          "raw": "writetext GoldenrodCityMoveTutorBButText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityMoveTutorBButText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.NotEnoughMoney": {
+      "raw_lines": [
+        "writetext GoldenrodCityMoveTutorYouDontHaveEnoughCoinsText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodCityMoveTutorYouDontHaveEnoughCoinsText"
+          ],
+          "raw": "writetext GoldenrodCityMoveTutorYouDontHaveEnoughCoinsText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityMoveTutorYouDontHaveEnoughCoinsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityPokefanMScript": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodCityPokefanMText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodCityPokefanMText"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodCityPokefanMText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityPokefanMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityYoungster1Script": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodCityYoungster1Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodCityYoungster1Text"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodCityYoungster1Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityYoungster1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityCooltrainerF1Script": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_CLEARED_RADIO_TOWER",
+        "iftrue .ClearedRadioTower",
+        "writetext GoldenrodCityCooltrainerF1Text",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_RADIO_TOWER"
+          ],
+          "raw": "checkevent EVENT_CLEARED_RADIO_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoldenrodCityCooltrainerF1Script.ClearedRadioTower"
+          ],
+          "raw": "iftrue .ClearedRadioTower"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodCityCooltrainerF1Text"
+          ],
+          "raw": "writetext GoldenrodCityCooltrainerF1Text"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "GoldenrodCityCooltrainerF1Script.ClearedRadioTower"
+      ],
+      "text_refs": [
+        "GoldenrodCityCooltrainerF1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityCooltrainerF1Script.ClearedRadioTower": {
+      "raw_lines": [
+        "writetext GoldenrodCityCooltrainerF1Text_ClearedRadioTower",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodCityCooltrainerF1Text_ClearedRadioTower"
+          ],
+          "raw": "writetext GoldenrodCityCooltrainerF1Text_ClearedRadioTower"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityCooltrainerF1Text_ClearedRadioTower"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityCooltrainerF2Script": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkflag ENGINE_RADIO_CARD",
+        "iftrue .GotRadioCard",
+        "writetext GoldenrodCityCooltrainerF2Text",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_RADIO_CARD"
+          ],
+          "raw": "checkflag ENGINE_RADIO_CARD"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoldenrodCityCooltrainerF2Script.GotRadioCard"
+          ],
+          "raw": "iftrue .GotRadioCard"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodCityCooltrainerF2Text"
+          ],
+          "raw": "writetext GoldenrodCityCooltrainerF2Text"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "GoldenrodCityCooltrainerF2Script.GotRadioCard"
+      ],
+      "text_refs": [
+        "GoldenrodCityCooltrainerF2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityCooltrainerF2Script.GotRadioCard": {
+      "raw_lines": [
+        "writetext GoldenrodCityCooltrainerF2Text_GotRadioCard",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodCityCooltrainerF2Text_GotRadioCard"
+          ],
+          "raw": "writetext GoldenrodCityCooltrainerF2Text_GotRadioCard"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityCooltrainerF2Text_GotRadioCard"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityYoungster2Script": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodCityYoungster2Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodCityYoungster2Text"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodCityYoungster2Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityYoungster2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityLassScript": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodCityLassText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodCityLassText"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodCityLassText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityGrampsScript": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodCityGrampsText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodCityGrampsText"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodCityGrampsText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityGrampsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityRocketScoutScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext GoldenrodCityRocketScoutText1",
+        "promptbutton",
+        "faceplayer",
+        "writetext GoldenrodCityRocketScoutText2",
+        "waitbutton",
+        "closetext",
+        "turnobject GOLDENRODCITY_ROCKETSCOUT, UP",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodCityRocketScoutText1"
+          ],
+          "raw": "writetext GoldenrodCityRocketScoutText1"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodCityRocketScoutText2"
+          ],
+          "raw": "writetext GoldenrodCityRocketScoutText2"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "GOLDENRODCITY_ROCKETSCOUT",
+            "UP"
+          ],
+          "raw": "turnobject GOLDENRODCITY_ROCKETSCOUT, UP"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityRocketScoutText1",
+        "GoldenrodCityRocketScoutText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityRocket1Script": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodCityRocket1Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodCityRocket1Text"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodCityRocket1Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityRocket1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityRocket2Script": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodCityRocket2Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodCityRocket2Text"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodCityRocket2Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityRocket2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityRocket3Script": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodCityRocket3Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodCityRocket3Text"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodCityRocket3Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityRocket3Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityRocket4Script": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodCityRocket4Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodCityRocket4Text"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodCityRocket4Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityRocket4Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityRocket5Script": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodCityRocket5Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodCityRocket5Text"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodCityRocket5Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityRocket5Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityRocket6Script": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodCityRocket6Text"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodCityRocket6Text"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodCityRocket6Text"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityRocket6Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityStationSign": {
+      "raw_lines": [
+        "jumptext GoldenrodCityStationSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "GoldenrodCityStationSignText"
+          ],
+          "raw": "jumptext GoldenrodCityStationSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityStationSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityRadioTowerSign": {
+      "raw_lines": [
+        "jumptext GoldenrodCityRadioTowerSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "GoldenrodCityRadioTowerSignText"
+          ],
+          "raw": "jumptext GoldenrodCityRadioTowerSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityRadioTowerSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStoreSign": {
+      "raw_lines": [
+        "jumptext GoldenrodDeptStoreSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "GoldenrodDeptStoreSignText"
+          ],
+          "raw": "jumptext GoldenrodDeptStoreSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodDeptStoreSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymSign": {
+      "raw_lines": [
+        "jumptext GoldenrodGymSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "GoldenrodGymSignText"
+          ],
+          "raw": "jumptext GoldenrodGymSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodGymSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCitySign": {
+      "raw_lines": [
+        "jumptext GoldenrodCitySignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "GoldenrodCitySignText"
+          ],
+          "raw": "jumptext GoldenrodCitySignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCitySignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityBikeShopSign": {
+      "raw_lines": [
+        "jumptext GoldenrodCityBikeShopSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "GoldenrodCityBikeShopSignText"
+          ],
+          "raw": "jumptext GoldenrodCityBikeShopSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityBikeShopSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityGameCornerSign": {
+      "raw_lines": [
+        "jumptext GoldenrodCityGameCornerSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "GoldenrodCityGameCornerSignText"
+          ],
+          "raw": "jumptext GoldenrodCityGameCornerSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityGameCornerSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityNameRaterSign": {
+      "raw_lines": [
+        "jumptext GoldenrodCityNameRaterSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "GoldenrodCityNameRaterSignText"
+          ],
+          "raw": "jumptext GoldenrodCityNameRaterSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityNameRaterSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityUndergroundSignNorth": {
+      "raw_lines": [
+        "jumptext GoldenrodCityUndergroundSignNorthText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "GoldenrodCityUndergroundSignNorthText"
+          ],
+          "raw": "jumptext GoldenrodCityUndergroundSignNorthText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityUndergroundSignNorthText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityUndergroundSignSouth": {
+      "raw_lines": [
+        "jumptext GoldenrodCityUndergroundSignSouthText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "GoldenrodCityUndergroundSignSouthText"
+          ],
+          "raw": "jumptext GoldenrodCityUndergroundSignSouthText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityUndergroundSignSouthText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityPokecenterSign": {
+      "raw_lines": [
+        "jumpstd PokecenterSignScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PokecenterSignScript"
+          ],
+          "raw": "jumpstd PokecenterSignScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterSignScript"
+      ]
+    },
+    "GoldenrodCityFlowerShopSign": {
+      "raw_lines": [
+        "jumptext GoldenrodCityFlowerShopSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "GoldenrodCityFlowerShopSignText"
+          ],
+          "raw": "jumptext GoldenrodCityFlowerShopSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityFlowerShopSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCity_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 24,  7, GOLDENROD_GYM, 1",
+        "warp_event 29, 29, GOLDENROD_BIKE_SHOP, 1",
+        "warp_event 31, 21, GOLDENROD_HAPPINESS_RATER, 1",
+        "warp_event  5, 25, BILLS_FAMILYS_HOUSE, 1",
+        "warp_event  9, 13, GOLDENROD_MAGNET_TRAIN_STATION, 2",
+        "warp_event 29,  5, GOLDENROD_FLOWER_SHOP, 1",
+        "warp_event 33,  9, GOLDENROD_PP_SPEECH_HOUSE, 1",
+        "warp_event 15,  7, GOLDENROD_NAME_RATER, 1",
+        "warp_event 24, 27, GOLDENROD_DEPT_STORE_1F, 1",
+        "warp_event 14, 21, GOLDENROD_GAME_CORNER, 1",
+        "warp_event  5, 15, RADIO_TOWER_1F, 1",
+        "warp_event 19,  1, ROUTE_35_GOLDENROD_GATE, 3",
+        "warp_event  9,  5, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 8",
+        "warp_event 11, 29, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 5",
+        "warp_event 15, 27, GOLDENROD_POKECENTER_1F, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event 10, 14, BGEVENT_READ, GoldenrodCityStationSign",
+        "bg_event  4, 17, BGEVENT_READ, GoldenrodCityRadioTowerSign",
+        "bg_event 26, 27, BGEVENT_READ, GoldenrodDeptStoreSign",
+        "bg_event 26,  9, BGEVENT_READ, GoldenrodGymSign",
+        "bg_event 22, 18, BGEVENT_READ, GoldenrodCitySign",
+        "bg_event 28, 30, BGEVENT_READ, GoldenrodCityBikeShopSign",
+        "bg_event 16, 22, BGEVENT_READ, GoldenrodCityGameCornerSign",
+        "bg_event 12,  7, BGEVENT_READ, GoldenrodCityNameRaterSign",
+        "bg_event  8,  6, BGEVENT_READ, GoldenrodCityUndergroundSignNorth",
+        "bg_event 12, 30, BGEVENT_READ, GoldenrodCityUndergroundSignSouth",
+        "bg_event 16, 27, BGEVENT_UP, GoldenrodCityPokecenterSign",
+        "bg_event 30,  6, BGEVENT_READ, GoldenrodCityFlowerShopSign",
+        "def_object_events",
+        "object_event  7, 18, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityPokefanMScript, EVENT_GOLDENROD_CITY_CIVILIANS",
+        "object_event 30, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityYoungster1Script, EVENT_GOLDENROD_CITY_CIVILIANS",
+        "object_event 12, 16, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodCityCooltrainerF1Script, EVENT_GOLDENROD_CITY_CIVILIANS",
+        "object_event 20, 26, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityCooltrainerF2Script, EVENT_GOLDENROD_CITY_CIVILIANS",
+        "object_event 19, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodCityYoungster2Script, EVENT_GOLDENROD_CITY_CIVILIANS",
+        "object_event 17, 10, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodCityLassScript, EVENT_GOLDENROD_CITY_CIVILIANS",
+        "object_event 11, 27, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityGrampsScript, EVENT_GOLDENROD_CITY_CIVILIANS",
+        "object_event  4, 16, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocketScoutScript, EVENT_GOLDENROD_CITY_ROCKET_SCOUT",
+        "object_event 28, 20, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket1Script, EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER",
+        "object_event  8, 15, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket2Script, EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER",
+        "object_event 16, 23, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket3Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER",
+        "object_event 29, 20, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket4Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER",
+        "object_event 29,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket5Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER",
+        "object_event 31, 10, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket6Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER",
+        "object_event 12, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MoveTutorScript, EVENT_GOLDENROD_CITY_MOVE_TUTOR"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "24",
+            "7",
+            "GOLDENROD_GYM",
+            "1"
+          ],
+          "raw": "warp_event 24,  7, GOLDENROD_GYM, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "29",
+            "29",
+            "GOLDENROD_BIKE_SHOP",
+            "1"
+          ],
+          "raw": "warp_event 29, 29, GOLDENROD_BIKE_SHOP, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "31",
+            "21",
+            "GOLDENROD_HAPPINESS_RATER",
+            "1"
+          ],
+          "raw": "warp_event 31, 21, GOLDENROD_HAPPINESS_RATER, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "25",
+            "BILLS_FAMILYS_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event  5, 25, BILLS_FAMILYS_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "13",
+            "GOLDENROD_MAGNET_TRAIN_STATION",
+            "2"
+          ],
+          "raw": "warp_event  9, 13, GOLDENROD_MAGNET_TRAIN_STATION, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "29",
+            "5",
+            "GOLDENROD_FLOWER_SHOP",
+            "1"
+          ],
+          "raw": "warp_event 29,  5, GOLDENROD_FLOWER_SHOP, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "33",
+            "9",
+            "GOLDENROD_PP_SPEECH_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event 33,  9, GOLDENROD_PP_SPEECH_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "15",
+            "7",
+            "GOLDENROD_NAME_RATER",
+            "1"
+          ],
+          "raw": "warp_event 15,  7, GOLDENROD_NAME_RATER, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "24",
+            "27",
+            "GOLDENROD_DEPT_STORE_1F",
+            "1"
+          ],
+          "raw": "warp_event 24, 27, GOLDENROD_DEPT_STORE_1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "14",
+            "21",
+            "GOLDENROD_GAME_CORNER",
+            "1"
+          ],
+          "raw": "warp_event 14, 21, GOLDENROD_GAME_CORNER, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "15",
+            "RADIO_TOWER_1F",
+            "1"
+          ],
+          "raw": "warp_event  5, 15, RADIO_TOWER_1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "19",
+            "1",
+            "ROUTE_35_GOLDENROD_GATE",
+            "3"
+          ],
+          "raw": "warp_event 19,  1, ROUTE_35_GOLDENROD_GATE, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "5",
+            "GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES",
+            "8"
+          ],
+          "raw": "warp_event  9,  5, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 8"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "11",
+            "29",
+            "GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES",
+            "5"
+          ],
+          "raw": "warp_event 11, 29, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "15",
+            "27",
+            "GOLDENROD_POKECENTER_1F",
+            "1"
+          ],
+          "raw": "warp_event 15, 27, GOLDENROD_POKECENTER_1F, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "10",
+            "14",
+            "BGEVENT_READ",
+            "GoldenrodCityStationSign"
+          ],
+          "raw": "bg_event 10, 14, BGEVENT_READ, GoldenrodCityStationSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "4",
+            "17",
+            "BGEVENT_READ",
+            "GoldenrodCityRadioTowerSign"
+          ],
+          "raw": "bg_event  4, 17, BGEVENT_READ, GoldenrodCityRadioTowerSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "26",
+            "27",
+            "BGEVENT_READ",
+            "GoldenrodDeptStoreSign"
+          ],
+          "raw": "bg_event 26, 27, BGEVENT_READ, GoldenrodDeptStoreSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "26",
+            "9",
+            "BGEVENT_READ",
+            "GoldenrodGymSign"
+          ],
+          "raw": "bg_event 26,  9, BGEVENT_READ, GoldenrodGymSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "22",
+            "18",
+            "BGEVENT_READ",
+            "GoldenrodCitySign"
+          ],
+          "raw": "bg_event 22, 18, BGEVENT_READ, GoldenrodCitySign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "28",
+            "30",
+            "BGEVENT_READ",
+            "GoldenrodCityBikeShopSign"
+          ],
+          "raw": "bg_event 28, 30, BGEVENT_READ, GoldenrodCityBikeShopSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "16",
+            "22",
+            "BGEVENT_READ",
+            "GoldenrodCityGameCornerSign"
+          ],
+          "raw": "bg_event 16, 22, BGEVENT_READ, GoldenrodCityGameCornerSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "12",
+            "7",
+            "BGEVENT_READ",
+            "GoldenrodCityNameRaterSign"
+          ],
+          "raw": "bg_event 12,  7, BGEVENT_READ, GoldenrodCityNameRaterSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "8",
+            "6",
+            "BGEVENT_READ",
+            "GoldenrodCityUndergroundSignNorth"
+          ],
+          "raw": "bg_event  8,  6, BGEVENT_READ, GoldenrodCityUndergroundSignNorth"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "12",
+            "30",
+            "BGEVENT_READ",
+            "GoldenrodCityUndergroundSignSouth"
+          ],
+          "raw": "bg_event 12, 30, BGEVENT_READ, GoldenrodCityUndergroundSignSouth"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "16",
+            "27",
+            "BGEVENT_UP",
+            "GoldenrodCityPokecenterSign"
+          ],
+          "raw": "bg_event 16, 27, BGEVENT_UP, GoldenrodCityPokecenterSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "30",
+            "6",
+            "BGEVENT_READ",
+            "GoldenrodCityFlowerShopSign"
+          ],
+          "raw": "bg_event 30,  6, BGEVENT_READ, GoldenrodCityFlowerShopSign"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "18",
+            "SPRITE_POKEFAN_M",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodCityPokefanMScript",
+            "EVENT_GOLDENROD_CITY_CIVILIANS"
+          ],
+          "raw": "object_event  7, 18, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityPokefanMScript, EVENT_GOLDENROD_CITY_CIVILIANS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "30",
+            "17",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodCityYoungster1Script",
+            "EVENT_GOLDENROD_CITY_CIVILIANS"
+          ],
+          "raw": "object_event 30, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityYoungster1Script, EVENT_GOLDENROD_CITY_CIVILIANS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "12",
+            "16",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodCityCooltrainerF1Script",
+            "EVENT_GOLDENROD_CITY_CIVILIANS"
+          ],
+          "raw": "object_event 12, 16, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodCityCooltrainerF1Script, EVENT_GOLDENROD_CITY_CIVILIANS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "20",
+            "26",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "2",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodCityCooltrainerF2Script",
+            "EVENT_GOLDENROD_CITY_CIVILIANS"
+          ],
+          "raw": "object_event 20, 26, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityCooltrainerF2Script, EVENT_GOLDENROD_CITY_CIVILIANS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "19",
+            "17",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodCityYoungster2Script",
+            "EVENT_GOLDENROD_CITY_CIVILIANS"
+          ],
+          "raw": "object_event 19, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodCityYoungster2Script, EVENT_GOLDENROD_CITY_CIVILIANS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "17",
+            "10",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "2",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodCityLassScript",
+            "EVENT_GOLDENROD_CITY_CIVILIANS"
+          ],
+          "raw": "object_event 17, 10, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodCityLassScript, EVENT_GOLDENROD_CITY_CIVILIANS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "11",
+            "27",
+            "SPRITE_GRAMPS",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodCityGrampsScript",
+            "EVENT_GOLDENROD_CITY_CIVILIANS"
+          ],
+          "raw": "object_event 11, 27, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityGrampsScript, EVENT_GOLDENROD_CITY_CIVILIANS"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "16",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodCityRocketScoutScript",
+            "EVENT_GOLDENROD_CITY_ROCKET_SCOUT"
+          ],
+          "raw": "object_event  4, 16, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocketScoutScript, EVENT_GOLDENROD_CITY_ROCKET_SCOUT"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "28",
+            "20",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodCityRocket1Script",
+            "EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event 28, 20, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket1Script, EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "15",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodCityRocket2Script",
+            "EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event  8, 15, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket2Script, EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "16",
+            "23",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodCityRocket3Script",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event 16, 23, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket3Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "29",
+            "20",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodCityRocket4Script",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event 29, 20, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket4Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "29",
+            "7",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodCityRocket5Script",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event 29,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket5Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "31",
+            "10",
+            "SPRITE_ROCKET",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodCityRocket6Script",
+            "EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+          ],
+          "raw": "object_event 31, 10, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket6Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "12",
+            "22",
+            "SPRITE_POKEFAN_M",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "MoveTutorScript",
+            "EVENT_GOLDENROD_CITY_MOVE_TUTOR"
+          ],
+          "raw": "object_event 12, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MoveTutorScript, EVENT_GOLDENROD_CITY_MOVE_TUTOR"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "GoldenrodCityPokefanMText": {
+      "raw_lines": [
+        "text \"They built the new\"",
+        "line \"RADIO TOWER to\"",
+        "para \"replace the old,\"",
+        "line \"creaky one.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "They built the new"
+        },
+        {
+          "command": "line",
+          "value": "RADIO TOWER to"
+        },
+        {
+          "command": "para",
+          "value": "replace the old,"
+        },
+        {
+          "command": "line",
+          "value": "creaky one."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityYoungster1Text": {
+      "raw_lines": [
+        "text \"I know there's a\"",
+        "line \"new BIKE SHOP, but\"",
+        "para \"I can't find it\"",
+        "line \"anywhere.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I know there's a"
+        },
+        {
+          "command": "line",
+          "value": "new BIKE SHOP, but"
+        },
+        {
+          "command": "para",
+          "value": "I can't find it"
+        },
+        {
+          "command": "line",
+          "value": "anywhere."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityCooltrainerF1Text": {
+      "raw_lines": [
+        "text \"Is that man in\"",
+        "line \"black dressed up\"",
+        "para \"like a TEAM ROCKET\"",
+        "line \"member? How silly!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Is that man in"
+        },
+        {
+          "command": "line",
+          "value": "black dressed up"
+        },
+        {
+          "command": "para",
+          "value": "like a TEAM ROCKET"
+        },
+        {
+          "command": "line",
+          "value": "member? How silly!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityCooltrainerF1Text_ClearedRadioTower": {
+      "raw_lines": [
+        "text \"Was that man in\"",
+        "line \"black really part\"",
+        "para \"of TEAM ROCKET? I\"",
+        "line \"can't believe it!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Was that man in"
+        },
+        {
+          "command": "line",
+          "value": "black really part"
+        },
+        {
+          "command": "para",
+          "value": "of TEAM ROCKET? I"
+        },
+        {
+          "command": "line",
+          "value": "can't believe it!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityCooltrainerF2Text": {
+      "raw_lines": [
+        "text \"The RADIO TOWER in\"",
+        "line \"GOLDENROD CITY is\"",
+        "cont \"a landmark.\"",
+        "para \"They're running a\"",
+        "line \"promotional cam- \"",
+        "cont \"paign right now.\"",
+        "para \"They'll modify\"",
+        "line \"your #GEAR,\"",
+        "para \"so it can also\"",
+        "line \"serve as a radio.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The RADIO TOWER in"
+        },
+        {
+          "command": "line",
+          "value": "GOLDENROD CITY is"
+        },
+        {
+          "command": "cont",
+          "value": "a landmark."
+        },
+        {
+          "command": "para",
+          "value": "They're running a"
+        },
+        {
+          "command": "line",
+          "value": "promotional cam- "
+        },
+        {
+          "command": "cont",
+          "value": "paign right now."
+        },
+        {
+          "command": "para",
+          "value": "They'll modify"
+        },
+        {
+          "command": "line",
+          "value": "your #GEAR,"
+        },
+        {
+          "command": "para",
+          "value": "so it can also"
+        },
+        {
+          "command": "line",
+          "value": "serve as a radio."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityCooltrainerF2Text_GotRadioCard": {
+      "raw_lines": [
+        "text \"Oh, your #GEAR\"",
+        "line \"works as a radio!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, your #GEAR"
+        },
+        {
+          "command": "line",
+          "value": "works as a radio!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityYoungster2Text": {
+      "raw_lines": [
+        "text \"E-he-he-he\u2026\"",
+        "para \"I got in trouble\"",
+        "line \"for playing in the\"",
+        "para \"basement of the\"",
+        "line \"DEPT.STORE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "E-he-he-he\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I got in trouble"
+        },
+        {
+          "command": "line",
+          "value": "for playing in the"
+        },
+        {
+          "command": "para",
+          "value": "basement of the"
+        },
+        {
+          "command": "line",
+          "value": "DEPT.STORE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityLassText": {
+      "raw_lines": [
+        "text \"The man at that\"",
+        "line \"house rates your\"",
+        "cont \"#MON names.\"",
+        "para \"He can even rename\"",
+        "line \"your #MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The man at that"
+        },
+        {
+          "command": "line",
+          "value": "house rates your"
+        },
+        {
+          "command": "cont",
+          "value": "#MON names."
+        },
+        {
+          "command": "para",
+          "value": "He can even rename"
+        },
+        {
+          "command": "line",
+          "value": "your #MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityGrampsText": {
+      "raw_lines": [
+        "text \"Whew! This is one\"",
+        "line \"big town. I don't\"",
+        "para \"know where any-\"",
+        "line \"thing is.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Whew! This is one"
+        },
+        {
+          "command": "line",
+          "value": "big town. I don't"
+        },
+        {
+          "command": "para",
+          "value": "know where any-"
+        },
+        {
+          "command": "line",
+          "value": "thing is."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityRocketScoutText1": {
+      "raw_lines": [
+        "text \"So this is the\"",
+        "line \"RADIO TOWER\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "So this is the"
+        },
+        {
+          "command": "line",
+          "value": "RADIO TOWER\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityRocketScoutText2": {
+      "raw_lines": [
+        "text \"What do you want,\"",
+        "line \"you pest? Scram!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What do you want,"
+        },
+        {
+          "command": "line",
+          "value": "you pest? Scram!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityRocket1Text": {
+      "raw_lines": [
+        "text \"Stay out of the\"",
+        "line \"way! Beat it!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Stay out of the"
+        },
+        {
+          "command": "line",
+          "value": "way! Beat it!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityRocket2Text": {
+      "raw_lines": [
+        "text \"Take over the\"",
+        "line \"RADIO TOWER\u2026\"",
+        "para \"What? It's none of\"",
+        "line \"your business!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Take over the"
+        },
+        {
+          "command": "line",
+          "value": "RADIO TOWER\u2026"
+        },
+        {
+          "command": "para",
+          "value": "What? It's none of"
+        },
+        {
+          "command": "line",
+          "value": "your business!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityRocket3Text": {
+      "raw_lines": [
+        "text \"#MON? They're\"",
+        "line \"nothing more than\"",
+        "para \"tools for making\"",
+        "line \"money!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#MON? They're"
+        },
+        {
+          "command": "line",
+          "value": "nothing more than"
+        },
+        {
+          "command": "para",
+          "value": "tools for making"
+        },
+        {
+          "command": "line",
+          "value": "money!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityRocket4Text": {
+      "raw_lines": [
+        "text \"Our dream will\"",
+        "line \"soon come true\u2026\"",
+        "para \"It was such a long\"",
+        "line \"struggle\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Our dream will"
+        },
+        {
+          "command": "line",
+          "value": "soon come true\u2026"
+        },
+        {
+          "command": "para",
+          "value": "It was such a long"
+        },
+        {
+          "command": "line",
+          "value": "struggle\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityRocket5Text": {
+      "raw_lines": [
+        "text \"Hey, brat! You\"",
+        "line \"don't belong here!\"",
+        "cont \"Get lost!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hey, brat! You"
+        },
+        {
+          "command": "line",
+          "value": "don't belong here!"
+        },
+        {
+          "command": "cont",
+          "value": "Get lost!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityRocket6Text": {
+      "raw_lines": [
+        "text \"Come taste the\"",
+        "line \"true terror of\"",
+        "cont \"TEAM ROCKET!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Come taste the"
+        },
+        {
+          "command": "line",
+          "value": "true terror of"
+        },
+        {
+          "command": "cont",
+          "value": "TEAM ROCKET!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityStationSignText": {
+      "raw_lines": [
+        "text \"GOLDENROD CITY\"",
+        "line \"STATION\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "GOLDENROD CITY"
+        },
+        {
+          "command": "line",
+          "value": "STATION"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityRadioTowerSignText": {
+      "raw_lines": [
+        "text \"GOLDENROD CITY\"",
+        "line \"RADIO TOWER\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "GOLDENROD CITY"
+        },
+        {
+          "command": "line",
+          "value": "RADIO TOWER"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodDeptStoreSignText": {
+      "raw_lines": [
+        "text \"Full Selection of\"",
+        "line \"#MON Goods!\"",
+        "para \"GOLDENROD CITY\"",
+        "line \"DEPT.STORE\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Full Selection of"
+        },
+        {
+          "command": "line",
+          "value": "#MON Goods!"
+        },
+        {
+          "command": "para",
+          "value": "GOLDENROD CITY"
+        },
+        {
+          "command": "line",
+          "value": "DEPT.STORE"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodGymSignText": {
+      "raw_lines": [
+        "text \"GOLDENROD CITY\"",
+        "line \"#MON GYM\"",
+        "cont \"LEADER: WHITNEY\"",
+        "para \"The Incredibly\"",
+        "line \"Pretty Girl!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "GOLDENROD CITY"
+        },
+        {
+          "command": "line",
+          "value": "#MON GYM"
+        },
+        {
+          "command": "cont",
+          "value": "LEADER: WHITNEY"
+        },
+        {
+          "command": "para",
+          "value": "The Incredibly"
+        },
+        {
+          "command": "line",
+          "value": "Pretty Girl!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCitySignText": {
+      "raw_lines": [
+        "text \"GOLDENROD CITY\"",
+        "para \"The Festive City\"",
+        "line \"of Opulent Charm\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "GOLDENROD CITY"
+        },
+        {
+          "command": "para",
+          "value": "The Festive City"
+        },
+        {
+          "command": "line",
+          "value": "of Opulent Charm"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityBikeShopSignText": {
+      "raw_lines": [
+        "text \"The World is a\"",
+        "line \"Cycle Path!\"",
+        "cont \"BIKE SHOP\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The World is a"
+        },
+        {
+          "command": "line",
+          "value": "Cycle Path!"
+        },
+        {
+          "command": "cont",
+          "value": "BIKE SHOP"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityGameCornerSignText": {
+      "raw_lines": [
+        "text \"Your Playground!\"",
+        "para \"GOLDENROD CITY\"",
+        "line \"GAME CORNER\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Your Playground!"
+        },
+        {
+          "command": "para",
+          "value": "GOLDENROD CITY"
+        },
+        {
+          "command": "line",
+          "value": "GAME CORNER"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityNameRaterSignText": {
+      "raw_lines": [
+        "text \"NAME RATER\"",
+        "para \"Get Your #MON\"",
+        "line \"Nicknames Rated\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "NAME RATER"
+        },
+        {
+          "command": "para",
+          "value": "Get Your #MON"
+        },
+        {
+          "command": "line",
+          "value": "Nicknames Rated"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityUndergroundSignNorthText": {
+      "raw_lines": [
+        "text \"UNDERGROUND\"",
+        "line \"ENTRANCE\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "UNDERGROUND"
+        },
+        {
+          "command": "line",
+          "value": "ENTRANCE"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityUndergroundSignSouthText": {
+      "raw_lines": [
+        "text \"UNDERGROUND\"",
+        "line \"ENTRANCE\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "UNDERGROUND"
+        },
+        {
+          "command": "line",
+          "value": "ENTRANCE"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityPokeComCenterSignText": {
+      "raw_lines": [
+        "text \"For Mobile Tips!\"",
+        "line \"#COM CENTER\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "For Mobile Tips!"
+        },
+        {
+          "command": "line",
+          "value": "#COM CENTER"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityFlowerShopSignText": {
+      "raw_lines": [
+        "text \"Blooming Beautiful\"",
+        "line \"FLOWER SHOP\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Blooming Beautiful"
+        },
+        {
+          "command": "line",
+          "value": "FLOWER SHOP"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityMoveTutorAskTeachAMoveText": {
+      "raw_lines": [
+        "text \"I can teach your\"",
+        "line \"#MON amazing\"",
+        "para \"moves if you'd\"",
+        "line \"like.\"",
+        "para \"Should I teach a\"",
+        "line \"new move?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I can teach your"
+        },
+        {
+          "command": "line",
+          "value": "#MON amazing"
+        },
+        {
+          "command": "para",
+          "value": "moves if you'd"
+        },
+        {
+          "command": "line",
+          "value": "like."
+        },
+        {
+          "command": "para",
+          "value": "Should I teach a"
+        },
+        {
+          "command": "line",
+          "value": "new move?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityMoveTutorAsk4000CoinsOkayText": {
+      "raw_lines": [
+        "text \"It will cost you\"",
+        "line \"4000 coins. Okay?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It will cost you"
+        },
+        {
+          "command": "line",
+          "value": "4000 coins. Okay?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityMoveTutorAwwButTheyreAmazingText": {
+      "raw_lines": [
+        "text \"Aww\u2026 But they're\"",
+        "line \"amazing\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Aww\u2026 But they're"
+        },
+        {
+          "command": "line",
+          "value": "amazing\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityMoveTutorWhichMoveShouldITeachText": {
+      "raw_lines": [
+        "text \"Wahahah! You won't\"",
+        "line \"regret it!\"",
+        "para \"Which move should\"",
+        "line \"I teach?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Wahahah! You won't"
+        },
+        {
+          "command": "line",
+          "value": "regret it!"
+        },
+        {
+          "command": "para",
+          "value": "Which move should"
+        },
+        {
+          "command": "line",
+          "value": "I teach?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityMoveTutorHmTooBadText": {
+      "raw_lines": [
+        "text \"Hm, too bad. I'll\"",
+        "line \"have to get some\"",
+        "cont \"cash from home\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hm, too bad. I'll"
+        },
+        {
+          "command": "line",
+          "value": "have to get some"
+        },
+        {
+          "command": "cont",
+          "value": "cash from home\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText": {
+      "raw_lines": [
+        "text \"If you understand\"",
+        "line \"what's so amazing\"",
+        "para \"about this move,\"",
+        "line \"you've made it as\"",
+        "cont \"a trainer.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If you understand"
+        },
+        {
+          "command": "line",
+          "value": "what's so amazing"
+        },
+        {
+          "command": "para",
+          "value": "about this move,"
+        },
+        {
+          "command": "line",
+          "value": "you've made it as"
+        },
+        {
+          "command": "cont",
+          "value": "a trainer."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityMoveTutorFarewellKidText": {
+      "raw_lines": [
+        "text \"Wahahah!\"",
+        "line \"Farewell, kid!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Wahahah!"
+        },
+        {
+          "command": "line",
+          "value": "Farewell, kid!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityMoveTutorBButText": {
+      "raw_lines": [
+        "text \"B-but\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "B-but\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityMoveTutorYouDontHaveEnoughCoinsText": {
+      "raw_lines": [
+        "text \"\u2026You don't have\"",
+        "line \"enough coins here\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026You don't have"
+        },
+        {
+          "command": "line",
+          "value": "enough coins here\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodCityMoveTutorMoveText": {
+      "raw_lines": [
+        "text_start",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text_start",
+          "value": ""
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "GoldenrodCityMoveTutorEnterGameCornerMovement": {
+      "raw_lines": [
+        "step RIGHT",
+        "step RIGHT",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "GoldenrodCityMoveTutorWalkAroundPlayerThenEnterGameCornerMovement": {
+      "raw_lines": [
+        "step DOWN",
+        "step RIGHT",
+        "step RIGHT",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "PokecenterSignScript"
+  ],
+  "dependencies": {
+    "GoldenrodCity_MapScripts": {
+      "label_refs": [
+        "GoldenrodCityFlypointAndFloriaCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityFlypointAndFloriaCallback": {
+      "label_refs": [
+        "GoldenrodCityFlypointAndFloriaCallback.FloriaDone"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityFlypointAndFloriaCallback.FloriaDone": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityMoveTutorCallback": {
+      "label_refs": [
+        "GoldenrodCityMoveTutorCallback.MoveTutorAppear",
+        "GoldenrodCityMoveTutorCallback.MoveTutorDisappear",
+        "GoldenrodCityMoveTutorCallback.MoveTutorDone"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityMoveTutorCallback.MoveTutorDisappear": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityMoveTutorCallback.MoveTutorAppear": {
+      "label_refs": [
+        "GoldenrodCityMoveTutorCallback.MoveTutorDone"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityMoveTutorCallback.MoveTutorDone": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript": {
+      "label_refs": [
+        "MoveTutorScript.Flamethrower",
+        "MoveTutorScript.IceBeam",
+        "MoveTutorScript.Incompatible",
+        "MoveTutorScript.NotEnoughMoney",
+        "MoveTutorScript.Refused",
+        "MoveTutorScript.Refused2",
+        "MoveTutorScript.Thunderbolt"
+      ],
+      "text_refs": [
+        "GoldenrodCityMoveTutorAsk4000CoinsOkayText",
+        "GoldenrodCityMoveTutorAskTeachAMoveText",
+        "GoldenrodCityMoveTutorWhichMoveShouldITeachText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.Flamethrower": {
+      "label_refs": [
+        "MoveTutorScript.Incompatible",
+        "MoveTutorScript.TeachMove"
+      ],
+      "text_refs": [
+        "GoldenrodCityMoveTutorMoveText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.Thunderbolt": {
+      "label_refs": [
+        "MoveTutorScript.Incompatible",
+        "MoveTutorScript.TeachMove"
+      ],
+      "text_refs": [
+        "GoldenrodCityMoveTutorMoveText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.IceBeam": {
+      "label_refs": [
+        "MoveTutorScript.Incompatible",
+        "MoveTutorScript.TeachMove"
+      ],
+      "text_refs": [
+        "GoldenrodCityMoveTutorMoveText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.MoveMenuHeader": {
+      "label_refs": [
+        "MoveTutorScript.MenuData"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.MenuData": {
+      "label_refs": [
+        "MoveTutorScript.Refused"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.Refused": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityMoveTutorAwwButTheyreAmazingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.Refused2": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityMoveTutorHmTooBadText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.TeachMove": {
+      "label_refs": [
+        "MoveTutorScript.GoInside",
+        "MoveTutorScript.WalkAroundPlayer"
+      ],
+      "text_refs": [
+        "GoldenrodCityMoveTutorFarewellKidText",
+        "GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText"
+      ],
+      "movement_refs": [
+        "GoldenrodCityMoveTutorEnterGameCornerMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.WalkAroundPlayer": {
+      "label_refs": [
+        "MoveTutorScript.GoInside"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "GoldenrodCityMoveTutorWalkAroundPlayerThenEnterGameCornerMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.GoInside": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.Incompatible": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityMoveTutorBButText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "MoveTutorScript.NotEnoughMoney": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityMoveTutorYouDontHaveEnoughCoinsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityPokefanMScript": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityPokefanMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityYoungster1Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityYoungster1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityCooltrainerF1Script": {
+      "label_refs": [
+        "GoldenrodCityCooltrainerF1Script.ClearedRadioTower"
+      ],
+      "text_refs": [
+        "GoldenrodCityCooltrainerF1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityCooltrainerF1Script.ClearedRadioTower": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityCooltrainerF1Text_ClearedRadioTower"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityCooltrainerF2Script": {
+      "label_refs": [
+        "GoldenrodCityCooltrainerF2Script.GotRadioCard"
+      ],
+      "text_refs": [
+        "GoldenrodCityCooltrainerF2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityCooltrainerF2Script.GotRadioCard": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityCooltrainerF2Text_GotRadioCard"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityYoungster2Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityYoungster2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityLassScript": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityGrampsScript": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityGrampsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityRocketScoutScript": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityRocketScoutText1",
+        "GoldenrodCityRocketScoutText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityRocket1Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityRocket1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityRocket2Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityRocket2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityRocket3Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityRocket3Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityRocket4Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityRocket4Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityRocket5Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityRocket5Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityRocket6Script": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityRocket6Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityStationSign": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityStationSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityRadioTowerSign": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityRadioTowerSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStoreSign": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodDeptStoreSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymSign": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodGymSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCitySign": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCitySignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityBikeShopSign": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityBikeShopSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityGameCornerSign": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityGameCornerSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityNameRaterSign": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityNameRaterSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityUndergroundSignNorth": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityUndergroundSignNorthText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityUndergroundSignSouth": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityUndergroundSignSouthText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCityPokecenterSign": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterSignScript"
+      ]
+    },
+    "GoldenrodCityFlowerShopSign": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodCityFlowerShopSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodCity_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear",
+    "radio",
+    "day_time"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 2,
+    "warp_events": 15,
+    "coord_events": 0,
+    "bg_events": 12,
+    "object_events": 15
+  }
+}

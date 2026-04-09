@@ -11,6 +11,7 @@ from johto_import_common import (
     LAYOUTS,
     ROOT,
     block_bytes_for_ir,
+    crystal_connection_offset_to_emerald,
     extract_crystal_ir,
     load_crystal_tilesets,
     load_import_manifest,
@@ -281,7 +282,7 @@ def validate_connections(entry, map_data, ir, target_map_index, errors):
     expected = [
         {
             "map": resolve_target_by_crystal_map(target_map_index, connection["map"])["map_id"],
-            "offset": connection["offset"],
+            "offset": crystal_connection_offset_to_emerald(connection["offset"]),
             "direction": CRYSTAL_TO_EMERALD_DIRECTION[connection["direction"]],
         }
         for connection in ir["connections"]

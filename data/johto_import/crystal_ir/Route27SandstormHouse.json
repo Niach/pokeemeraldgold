@@ -1,0 +1,760 @@
+{
+  "crystal_map": "Route27SandstormHouse",
+  "map_id": "ROUTE_27_SANDSTORM_HOUSE",
+  "group": "NEW_BARK",
+  "group_index": 24,
+  "map_index": 12,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_ROUTE_27",
+  "music": "MUSIC_AZALEA_TOWN",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/House1.blk",
+  "source_asm": "maps/Route27SandstormHouse.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "ROUTE_27",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "ROUTE_27",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 0,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "SandstormHouseBookshelf"
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "SandstormHouseBookshelf"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 4,
+        "sprite": "SPRITE_GRANNY",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "SandstormHouseWoman",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "ROUTE27SANDSTORMHOUSE_GRANNY"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "Route27SandstormHouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "SandstormHouseWoman",
+      "label_refs": [
+        "SandstormHouseWoman"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SandstormHouseWoman": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_TM37_SANDSTORM",
+        "iftrue .AlreadyGotItem",
+        "special GetFirstPokemonHappiness",
+        "writetext SandstormHouseWomanText1",
+        "promptbutton",
+        "ifgreater 150 - 1, .Loyal",
+        "sjump .Disloyal"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TM37_SANDSTORM"
+          ],
+          "raw": "checkevent EVENT_GOT_TM37_SANDSTORM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "SandstormHouseWoman.AlreadyGotItem"
+          ],
+          "raw": "iftrue .AlreadyGotItem"
+        },
+        {
+          "command": "special",
+          "args": [
+            "GetFirstPokemonHappiness"
+          ],
+          "raw": "special GetFirstPokemonHappiness"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SandstormHouseWomanText1"
+          ],
+          "raw": "writetext SandstormHouseWomanText1"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "ifgreater",
+          "args": [
+            "150 - 1",
+            "SandstormHouseWoman.Loyal"
+          ],
+          "raw": "ifgreater 150 - 1, .Loyal"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "SandstormHouseWoman.Disloyal"
+          ],
+          "raw": "sjump .Disloyal"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "SandstormHouseWoman.AlreadyGotItem",
+        "SandstormHouseWoman.Disloyal",
+        "SandstormHouseWoman.Loyal"
+      ],
+      "text_refs": [
+        "SandstormHouseWomanText1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SandstormHouseWoman.Loyal": {
+      "raw_lines": [
+        "writetext SandstormHouseWomanLoyalText",
+        "promptbutton",
+        "verbosegiveitem TM_SANDSTORM",
+        "iffalse .Done",
+        "setevent EVENT_GOT_TM37_SANDSTORM"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "SandstormHouseWomanLoyalText"
+          ],
+          "raw": "writetext SandstormHouseWomanLoyalText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "TM_SANDSTORM"
+          ],
+          "raw": "verbosegiveitem TM_SANDSTORM"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "SandstormHouseWoman.Done"
+          ],
+          "raw": "iffalse .Done"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_TM37_SANDSTORM"
+          ],
+          "raw": "setevent EVENT_GOT_TM37_SANDSTORM"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "SandstormHouseWoman.AlreadyGotItem",
+      "label_refs": [
+        "SandstormHouseWoman.AlreadyGotItem",
+        "SandstormHouseWoman.Done"
+      ],
+      "text_refs": [
+        "SandstormHouseWomanLoyalText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SandstormHouseWoman.AlreadyGotItem": {
+      "raw_lines": [
+        "writetext SandstormHouseSandstormDescription",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "SandstormHouseSandstormDescription"
+          ],
+          "raw": "writetext SandstormHouseSandstormDescription"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "SandstormHouseWoman.Done",
+      "label_refs": [
+        "SandstormHouseWoman.Done"
+      ],
+      "text_refs": [
+        "SandstormHouseSandstormDescription"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SandstormHouseWoman.Done": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SandstormHouseWoman.Disloyal": {
+      "raw_lines": [
+        "writetext SandstormHouseWomanDisloyalText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "SandstormHouseWomanDisloyalText"
+          ],
+          "raw": "writetext SandstormHouseWomanDisloyalText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "SandstormHouseWomanDisloyalText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SandstormHouseBookshelf": {
+      "raw_lines": [
+        "jumpstd MagazineBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "MagazineBookshelfScript"
+          ],
+          "raw": "jumpstd MagazineBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "Route27SandstormHouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, ROUTE_27, 1",
+        "warp_event  3,  7, ROUTE_27, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, SandstormHouseBookshelf",
+        "bg_event  1,  1, BGEVENT_READ, SandstormHouseBookshelf",
+        "def_object_events",
+        "object_event  2,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandstormHouseWoman, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "ROUTE_27",
+            "1"
+          ],
+          "raw": "warp_event  2,  7, ROUTE_27, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "ROUTE_27",
+            "1"
+          ],
+          "raw": "warp_event  3,  7, ROUTE_27, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "SandstormHouseBookshelf"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, SandstormHouseBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "SandstormHouseBookshelf"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, SandstormHouseBookshelf"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "4",
+            "SPRITE_GRANNY",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "SandstormHouseWoman",
+            "-1"
+          ],
+          "raw": "object_event  2,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandstormHouseWoman, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "SandstormHouseWomanText1": {
+      "raw_lines": [
+        "text \"Where are you off\"",
+        "line \"to with #MON?\"",
+        "para \"#MON LEAGUE?\"",
+        "para \"Are your #MON\"",
+        "line \"loyal enough for\"",
+        "cont \"you to win?\"",
+        "para \"Let me see\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Where are you off"
+        },
+        {
+          "command": "line",
+          "value": "to with #MON?"
+        },
+        {
+          "command": "para",
+          "value": "#MON LEAGUE?"
+        },
+        {
+          "command": "para",
+          "value": "Are your #MON"
+        },
+        {
+          "command": "line",
+          "value": "loyal enough for"
+        },
+        {
+          "command": "cont",
+          "value": "you to win?"
+        },
+        {
+          "command": "para",
+          "value": "Let me see\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SandstormHouseWomanLoyalText": {
+      "raw_lines": [
+        "text \"Ah! Your #MON\"",
+        "line \"trusts you very\"",
+        "cont \"much.\"",
+        "para \"It's nice to see a\"",
+        "line \"good trainer.\"",
+        "para \"Here. A gift for\"",
+        "line \"your journey.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ah! Your #MON"
+        },
+        {
+          "command": "line",
+          "value": "trusts you very"
+        },
+        {
+          "command": "cont",
+          "value": "much."
+        },
+        {
+          "command": "para",
+          "value": "It's nice to see a"
+        },
+        {
+          "command": "line",
+          "value": "good trainer."
+        },
+        {
+          "command": "para",
+          "value": "Here. A gift for"
+        },
+        {
+          "command": "line",
+          "value": "your journey."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SandstormHouseSandstormDescription": {
+      "raw_lines": [
+        "text \"TM37 happens to be\"",
+        "line \"SANDSTORM.\"",
+        "para \"It's a move that\"",
+        "line \"inflicts damage on\"",
+        "cont \"both battlers.\"",
+        "para \"It's for advanced\"",
+        "line \"trainers only.\"",
+        "para \"Use it if you\"",
+        "line \"dare. Good luck!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "TM37 happens to be"
+        },
+        {
+          "command": "line",
+          "value": "SANDSTORM."
+        },
+        {
+          "command": "para",
+          "value": "It's a move that"
+        },
+        {
+          "command": "line",
+          "value": "inflicts damage on"
+        },
+        {
+          "command": "cont",
+          "value": "both battlers."
+        },
+        {
+          "command": "para",
+          "value": "It's for advanced"
+        },
+        {
+          "command": "line",
+          "value": "trainers only."
+        },
+        {
+          "command": "para",
+          "value": "Use it if you"
+        },
+        {
+          "command": "line",
+          "value": "dare. Good luck!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SandstormHouseWomanDisloyalText": {
+      "raw_lines": [
+        "text \"If it doesn't come\"",
+        "line \"to trust you some\"",
+        "para \"more, it could be\"",
+        "line \"tough going.\"",
+        "para \"Trust is the tie\"",
+        "line \"that binds #MON\"",
+        "cont \"and trainers.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If it doesn't come"
+        },
+        {
+          "command": "line",
+          "value": "to trust you some"
+        },
+        {
+          "command": "para",
+          "value": "more, it could be"
+        },
+        {
+          "command": "line",
+          "value": "tough going."
+        },
+        {
+          "command": "para",
+          "value": "Trust is the tie"
+        },
+        {
+          "command": "line",
+          "value": "that binds #MON"
+        },
+        {
+          "command": "cont",
+          "value": "and trainers."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "MagazineBookshelfScript"
+  ],
+  "dependencies": {
+    "Route27SandstormHouse_MapScripts": {
+      "label_refs": [
+        "SandstormHouseWoman"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SandstormHouseWoman": {
+      "label_refs": [
+        "SandstormHouseWoman.AlreadyGotItem",
+        "SandstormHouseWoman.Disloyal",
+        "SandstormHouseWoman.Loyal"
+      ],
+      "text_refs": [
+        "SandstormHouseWomanText1"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SandstormHouseWoman.Loyal": {
+      "label_refs": [
+        "SandstormHouseWoman.AlreadyGotItem",
+        "SandstormHouseWoman.Done"
+      ],
+      "text_refs": [
+        "SandstormHouseWomanLoyalText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SandstormHouseWoman.AlreadyGotItem": {
+      "label_refs": [
+        "SandstormHouseWoman.Done"
+      ],
+      "text_refs": [
+        "SandstormHouseSandstormDescription"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SandstormHouseWoman.Done": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SandstormHouseWoman.Disloyal": {
+      "label_refs": [],
+      "text_refs": [
+        "SandstormHouseWomanDisloyalText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SandstormHouseBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "Route27SandstormHouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "day_time"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 1
+  }
+}

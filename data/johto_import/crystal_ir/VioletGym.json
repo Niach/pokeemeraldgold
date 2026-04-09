@@ -1,0 +1,1939 @@
+{
+  "crystal_map": "VioletGym",
+  "map_id": "VIOLET_GYM",
+  "group": "VIOLET",
+  "group_index": 10,
+  "map_index": 7,
+  "tileset": "TILESET_ELITE_FOUR_ROOM",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_VIOLET_CITY",
+  "music": "MUSIC_GYM",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 8,
+  "border_block": "00",
+  "blk_path": "maps/VioletGym.blk",
+  "source_asm": "maps/VioletGym.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 4,
+        "y": 15,
+        "dest_map": "VIOLET_CITY",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 5,
+        "y": 15,
+        "dest_map": "VIOLET_CITY",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 3,
+        "y": 13,
+        "kind": "BGEVENT_READ",
+        "script": "VioletGymStatue"
+      },
+      {
+        "x": 6,
+        "y": 13,
+        "kind": "BGEVENT_READ",
+        "script": "VioletGymStatue"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 5,
+        "y": 1,
+        "sprite": "SPRITE_FALKNER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "VioletGymFalknerScript",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 6,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 2,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerBirdKeeperRod",
+        "flag": -1
+      },
+      {
+        "x": 2,
+        "y": 10,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 2,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerBirdKeeperAbe",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 13,
+        "sprite": "SPRITE_GYM_GUIDE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "VioletGymGuideScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "VIOLETGYM_FALKNER",
+    "VIOLETGYM_YOUNGSTER1",
+    "VIOLETGYM_YOUNGSTER2",
+    "VIOLETGYM_GYM_GUIDE"
+  ],
+  "scene_ids": [
+    "SCENE_ELMSLAB_NOOP"
+  ],
+  "scripts": {
+    "VioletGym_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "VioletGymFalknerScript",
+      "label_refs": [
+        "VioletGymFalknerScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletGymFalknerScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_BEAT_FALKNER",
+        "iftrue .FightDone",
+        "writetext FalknerIntroText",
+        "waitbutton",
+        "closetext",
+        "winlosstext FalknerWinLossText, 0",
+        "loadtrainer FALKNER, FALKNER1",
+        "startbattle",
+        "reloadmapafterbattle",
+        "setevent EVENT_BEAT_FALKNER",
+        "opentext",
+        "writetext ReceivedZephyrBadgeText",
+        "playsound SFX_GET_BADGE",
+        "waitsfx",
+        "setflag ENGINE_ZEPHYRBADGE",
+        "readvar VAR_BADGES",
+        "scall VioletGymActivateRockets"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_FALKNER"
+          ],
+          "raw": "checkevent EVENT_BEAT_FALKNER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "VioletGymFalknerScript.FightDone"
+          ],
+          "raw": "iftrue .FightDone"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "FalknerIntroText"
+          ],
+          "raw": "writetext FalknerIntroText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "FalknerWinLossText",
+            "0"
+          ],
+          "raw": "winlosstext FalknerWinLossText, 0"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "FALKNER",
+            "FALKNER1"
+          ],
+          "raw": "loadtrainer FALKNER, FALKNER1"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_FALKNER"
+          ],
+          "raw": "setevent EVENT_BEAT_FALKNER"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ReceivedZephyrBadgeText"
+          ],
+          "raw": "writetext ReceivedZephyrBadgeText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_GET_BADGE"
+          ],
+          "raw": "playsound SFX_GET_BADGE"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_ZEPHYRBADGE"
+          ],
+          "raw": "setflag ENGINE_ZEPHYRBADGE"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_BADGES"
+          ],
+          "raw": "readvar VAR_BADGES"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "VioletGymActivateRockets"
+          ],
+          "raw": "scall VioletGymActivateRockets"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "VioletGymFalknerScript.FightDone",
+      "label_refs": [
+        "VioletGymActivateRockets",
+        "VioletGymFalknerScript.FightDone"
+      ],
+      "text_refs": [
+        "FalknerIntroText",
+        "ReceivedZephyrBadgeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletGymFalknerScript.FightDone": {
+      "raw_lines": [
+        "checkevent EVENT_GOT_TM31_MUD_SLAP",
+        "iftrue .SpeechAfterTM",
+        "setevent EVENT_BEAT_BIRD_KEEPER_ROD",
+        "setevent EVENT_BEAT_BIRD_KEEPER_ABE",
+        "setmapscene ELMS_LAB, SCENE_ELMSLAB_NOOP",
+        "specialphonecall SPECIALCALL_ASSISTANT",
+        "writetext FalknerZephyrBadgeText",
+        "promptbutton",
+        "verbosegiveitem TM_MUD_SLAP",
+        "iffalse .NoRoomForMudSlap",
+        "setevent EVENT_GOT_TM31_MUD_SLAP",
+        "writetext FalknerTMMudSlapText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TM31_MUD_SLAP"
+          ],
+          "raw": "checkevent EVENT_GOT_TM31_MUD_SLAP"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "VioletGymFalknerScript.SpeechAfterTM"
+          ],
+          "raw": "iftrue .SpeechAfterTM"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_BIRD_KEEPER_ROD"
+          ],
+          "raw": "setevent EVENT_BEAT_BIRD_KEEPER_ROD"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_BIRD_KEEPER_ABE"
+          ],
+          "raw": "setevent EVENT_BEAT_BIRD_KEEPER_ABE"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "ELMS_LAB",
+            "SCENE_ELMSLAB_NOOP"
+          ],
+          "raw": "setmapscene ELMS_LAB, SCENE_ELMSLAB_NOOP"
+        },
+        {
+          "command": "specialphonecall",
+          "args": [
+            "SPECIALCALL_ASSISTANT"
+          ],
+          "raw": "specialphonecall SPECIALCALL_ASSISTANT"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "FalknerZephyrBadgeText"
+          ],
+          "raw": "writetext FalknerZephyrBadgeText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "TM_MUD_SLAP"
+          ],
+          "raw": "verbosegiveitem TM_MUD_SLAP"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "VioletGymFalknerScript.NoRoomForMudSlap"
+          ],
+          "raw": "iffalse .NoRoomForMudSlap"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_TM31_MUD_SLAP"
+          ],
+          "raw": "setevent EVENT_GOT_TM31_MUD_SLAP"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "FalknerTMMudSlapText"
+          ],
+          "raw": "writetext FalknerTMMudSlapText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "VioletGymFalknerScript.NoRoomForMudSlap",
+        "VioletGymFalknerScript.SpeechAfterTM"
+      ],
+      "text_refs": [
+        "FalknerTMMudSlapText",
+        "FalknerZephyrBadgeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_ELMSLAB_NOOP"
+      ],
+      "std_calls": []
+    },
+    "VioletGymFalknerScript.SpeechAfterTM": {
+      "raw_lines": [
+        "writetext FalknerFightDoneText",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "FalknerFightDoneText"
+          ],
+          "raw": "writetext FalknerFightDoneText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "VioletGymFalknerScript.NoRoomForMudSlap",
+      "label_refs": [
+        "VioletGymFalknerScript.NoRoomForMudSlap"
+      ],
+      "text_refs": [
+        "FalknerFightDoneText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletGymFalknerScript.NoRoomForMudSlap": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletGymActivateRockets": {
+      "raw_lines": [
+        "ifequal 7, .RadioTowerRockets",
+        "ifequal 6, .GoldenrodRockets",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "ifequal",
+          "args": [
+            "7",
+            "VioletGymActivateRockets.RadioTowerRockets"
+          ],
+          "raw": "ifequal 7, .RadioTowerRockets"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "6",
+            "VioletGymActivateRockets.GoldenrodRockets"
+          ],
+          "raw": "ifequal 6, .GoldenrodRockets"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "ifequal",
+      "label_refs": [
+        "VioletGymActivateRockets.GoldenrodRockets",
+        "VioletGymActivateRockets.RadioTowerRockets"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletGymActivateRockets.GoldenrodRockets": {
+      "raw_lines": [
+        "jumpstd GoldenrodRocketsScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "GoldenrodRocketsScript"
+          ],
+          "raw": "jumpstd GoldenrodRocketsScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GoldenrodRocketsScript"
+      ]
+    },
+    "VioletGymActivateRockets.RadioTowerRockets": {
+      "raw_lines": [
+        "jumpstd RadioTowerRocketsScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RadioTowerRocketsScript"
+          ],
+          "raw": "jumpstd RadioTowerRocketsScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RadioTowerRocketsScript"
+      ]
+    },
+    "TrainerBirdKeeperRod": {
+      "raw_lines": [
+        "trainer BIRD_KEEPER, ROD, EVENT_BEAT_BIRD_KEEPER_ROD, BirdKeeperRodSeenText, BirdKeeperRodBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "BIRD_KEEPER",
+            "ROD",
+            "EVENT_BEAT_BIRD_KEEPER_ROD",
+            "BirdKeeperRodSeenText",
+            "BirdKeeperRodBeatenText",
+            "0",
+            "TrainerBirdKeeperRod.Script"
+          ],
+          "raw": "trainer BIRD_KEEPER, ROD, EVENT_BEAT_BIRD_KEEPER_ROD, BirdKeeperRodSeenText, BirdKeeperRodBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerBirdKeeperRod.Script",
+      "label_refs": [
+        "TrainerBirdKeeperRod.Script"
+      ],
+      "text_refs": [
+        "BirdKeeperRodBeatenText",
+        "BirdKeeperRodSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperRod.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext BirdKeeperRodAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BirdKeeperRodAfterBattleText"
+          ],
+          "raw": "writetext BirdKeeperRodAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "BirdKeeperRodAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperAbe": {
+      "raw_lines": [
+        "trainer BIRD_KEEPER, ABE, EVENT_BEAT_BIRD_KEEPER_ABE, BirdKeeperAbeSeenText, BirdKeeperAbeBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "BIRD_KEEPER",
+            "ABE",
+            "EVENT_BEAT_BIRD_KEEPER_ABE",
+            "BirdKeeperAbeSeenText",
+            "BirdKeeperAbeBeatenText",
+            "0",
+            "TrainerBirdKeeperAbe.Script"
+          ],
+          "raw": "trainer BIRD_KEEPER, ABE, EVENT_BEAT_BIRD_KEEPER_ABE, BirdKeeperAbeSeenText, BirdKeeperAbeBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerBirdKeeperAbe.Script",
+      "label_refs": [
+        "TrainerBirdKeeperAbe.Script"
+      ],
+      "text_refs": [
+        "BirdKeeperAbeBeatenText",
+        "BirdKeeperAbeSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperAbe.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext BirdKeeperAbeAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BirdKeeperAbeAfterBattleText"
+          ],
+          "raw": "writetext BirdKeeperAbeAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "BirdKeeperAbeAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletGymGuideScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_BEAT_FALKNER",
+        "iftrue .VioletGymGuideWinScript",
+        "writetext VioletGymGuideText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_FALKNER"
+          ],
+          "raw": "checkevent EVENT_BEAT_FALKNER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "VioletGymGuideScript.VioletGymGuideWinScript"
+          ],
+          "raw": "iftrue .VioletGymGuideWinScript"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "VioletGymGuideText"
+          ],
+          "raw": "writetext VioletGymGuideText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "VioletGymGuideScript.VioletGymGuideWinScript"
+      ],
+      "text_refs": [
+        "VioletGymGuideText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletGymGuideScript.VioletGymGuideWinScript": {
+      "raw_lines": [
+        "writetext VioletGymGuideWinText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "VioletGymGuideWinText"
+          ],
+          "raw": "writetext VioletGymGuideWinText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "VioletGymGuideWinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletGymStatue": {
+      "raw_lines": [
+        "checkflag ENGINE_ZEPHYRBADGE",
+        "iftrue .Beaten",
+        "jumpstd GymStatue1Script"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_ZEPHYRBADGE"
+          ],
+          "raw": "checkflag ENGINE_ZEPHYRBADGE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "VioletGymStatue.Beaten"
+          ],
+          "raw": "iftrue .Beaten"
+        },
+        {
+          "command": "jumpstd",
+          "args": [
+            "GymStatue1Script"
+          ],
+          "raw": "jumpstd GymStatue1Script"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "VioletGymStatue.Beaten"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue1Script"
+      ]
+    },
+    "VioletGymStatue.Beaten": {
+      "raw_lines": [
+        "gettrainername STRING_BUFFER_4, FALKNER, FALKNER1",
+        "jumpstd GymStatue2Script"
+      ],
+      "commands": [
+        {
+          "command": "gettrainername",
+          "args": [
+            "STRING_BUFFER_4",
+            "FALKNER",
+            "FALKNER1"
+          ],
+          "raw": "gettrainername STRING_BUFFER_4, FALKNER, FALKNER1"
+        },
+        {
+          "command": "jumpstd",
+          "args": [
+            "GymStatue2Script"
+          ],
+          "raw": "jumpstd GymStatue2Script"
+        }
+      ],
+      "first_command": "gettrainername",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue2Script"
+      ]
+    },
+    "VioletGym_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  4, 15, VIOLET_CITY, 2",
+        "warp_event  5, 15, VIOLET_CITY, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  3, 13, BGEVENT_READ, VioletGymStatue",
+        "bg_event  6, 13, BGEVENT_READ, VioletGymStatue",
+        "def_object_events",
+        "object_event  5,  1, SPRITE_FALKNER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymFalknerScript, -1",
+        "object_event  7,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperRod, -1",
+        "object_event  2, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperAbe, -1",
+        "object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletGymGuideScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "15",
+            "VIOLET_CITY",
+            "2"
+          ],
+          "raw": "warp_event  4, 15, VIOLET_CITY, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "15",
+            "VIOLET_CITY",
+            "2"
+          ],
+          "raw": "warp_event  5, 15, VIOLET_CITY, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "13",
+            "BGEVENT_READ",
+            "VioletGymStatue"
+          ],
+          "raw": "bg_event  3, 13, BGEVENT_READ, VioletGymStatue"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "6",
+            "13",
+            "BGEVENT_READ",
+            "VioletGymStatue"
+          ],
+          "raw": "bg_event  6, 13, BGEVENT_READ, VioletGymStatue"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "1",
+            "SPRITE_FALKNER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "VioletGymFalknerScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  1, SPRITE_FALKNER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymFalknerScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "6",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "2",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerBirdKeeperRod",
+            "-1"
+          ],
+          "raw": "object_event  7,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperRod, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "10",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "2",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerBirdKeeperAbe",
+            "-1"
+          ],
+          "raw": "object_event  2, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperAbe, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "13",
+            "SPRITE_GYM_GUIDE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "VioletGymGuideScript",
+            "-1"
+          ],
+          "raw": "object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletGymGuideScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "FalknerIntroText": {
+      "raw_lines": [
+        "text \"I'm FALKNER, the\"",
+        "line \"VIOLET #MON GYM\"",
+        "cont \"leader!\"",
+        "para \"People say you can\"",
+        "line \"clip flying-type\"",
+        "para \"#MON's wings\"",
+        "line \"with a jolt of\"",
+        "cont \"electricity\u2026\"",
+        "para \"I won't allow such\"",
+        "line \"insults to bird\"",
+        "cont \"#MON!\"",
+        "para \"I'll show you the\"",
+        "line \"real power of the\"",
+        "para \"magnificent bird\"",
+        "line \"#MON!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm FALKNER, the"
+        },
+        {
+          "command": "line",
+          "value": "VIOLET #MON GYM"
+        },
+        {
+          "command": "cont",
+          "value": "leader!"
+        },
+        {
+          "command": "para",
+          "value": "People say you can"
+        },
+        {
+          "command": "line",
+          "value": "clip flying-type"
+        },
+        {
+          "command": "para",
+          "value": "#MON's wings"
+        },
+        {
+          "command": "line",
+          "value": "with a jolt of"
+        },
+        {
+          "command": "cont",
+          "value": "electricity\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I won't allow such"
+        },
+        {
+          "command": "line",
+          "value": "insults to bird"
+        },
+        {
+          "command": "cont",
+          "value": "#MON!"
+        },
+        {
+          "command": "para",
+          "value": "I'll show you the"
+        },
+        {
+          "command": "line",
+          "value": "real power of the"
+        },
+        {
+          "command": "para",
+          "value": "magnificent bird"
+        },
+        {
+          "command": "line",
+          "value": "#MON!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FalknerWinLossText": {
+      "raw_lines": [
+        "text \"\u2026Darn! My dad's\"",
+        "line \"cherished bird\"",
+        "cont \"#MON\u2026\"",
+        "para \"All right.\"",
+        "line \"Take this.\"",
+        "para \"It's the official\"",
+        "line \"#MON LEAGUE\"",
+        "cont \"ZEPHYRBADGE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026Darn! My dad's"
+        },
+        {
+          "command": "line",
+          "value": "cherished bird"
+        },
+        {
+          "command": "cont",
+          "value": "#MON\u2026"
+        },
+        {
+          "command": "para",
+          "value": "All right."
+        },
+        {
+          "command": "line",
+          "value": "Take this."
+        },
+        {
+          "command": "para",
+          "value": "It's the official"
+        },
+        {
+          "command": "line",
+          "value": "#MON LEAGUE"
+        },
+        {
+          "command": "cont",
+          "value": "ZEPHYRBADGE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ReceivedZephyrBadgeText": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"ZEPHYRBADGE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "ZEPHYRBADGE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FalknerZephyrBadgeText": {
+      "raw_lines": [
+        "text \"ZEPHYRBADGE\"",
+        "line \"raises the attack\"",
+        "cont \"power of #MON.\"",
+        "para \"It also enables\"",
+        "line \"#MON to use\"",
+        "para \"FLASH, if they\"",
+        "line \"have it, anytime.\"",
+        "para \"Here--take this\"",
+        "line \"too.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ZEPHYRBADGE"
+        },
+        {
+          "command": "line",
+          "value": "raises the attack"
+        },
+        {
+          "command": "cont",
+          "value": "power of #MON."
+        },
+        {
+          "command": "para",
+          "value": "It also enables"
+        },
+        {
+          "command": "line",
+          "value": "#MON to use"
+        },
+        {
+          "command": "para",
+          "value": "FLASH, if they"
+        },
+        {
+          "command": "line",
+          "value": "have it, anytime."
+        },
+        {
+          "command": "para",
+          "value": "Here--take this"
+        },
+        {
+          "command": "line",
+          "value": "too."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FalknerTMMudSlapText": {
+      "raw_lines": [
+        "text \"By using a TM, a\"",
+        "line \"#MON will\"",
+        "para \"instantly learn a\"",
+        "line \"new move.\"",
+        "para \"Think before you\"",
+        "line \"act--a TM can be\"",
+        "cont \"used only once.\"",
+        "para \"TM31 contains\"",
+        "line \"MUD-SLAP.\"",
+        "para \"It reduces the\"",
+        "line \"enemy's accuracy\"",
+        "para \"while it causes\"",
+        "line \"damage.\"",
+        "para \"In other words, it\"",
+        "line \"is both defensive\"",
+        "cont \"and offensive.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "By using a TM, a"
+        },
+        {
+          "command": "line",
+          "value": "#MON will"
+        },
+        {
+          "command": "para",
+          "value": "instantly learn a"
+        },
+        {
+          "command": "line",
+          "value": "new move."
+        },
+        {
+          "command": "para",
+          "value": "Think before you"
+        },
+        {
+          "command": "line",
+          "value": "act--a TM can be"
+        },
+        {
+          "command": "cont",
+          "value": "used only once."
+        },
+        {
+          "command": "para",
+          "value": "TM31 contains"
+        },
+        {
+          "command": "line",
+          "value": "MUD-SLAP."
+        },
+        {
+          "command": "para",
+          "value": "It reduces the"
+        },
+        {
+          "command": "line",
+          "value": "enemy's accuracy"
+        },
+        {
+          "command": "para",
+          "value": "while it causes"
+        },
+        {
+          "command": "line",
+          "value": "damage."
+        },
+        {
+          "command": "para",
+          "value": "In other words, it"
+        },
+        {
+          "command": "line",
+          "value": "is both defensive"
+        },
+        {
+          "command": "cont",
+          "value": "and offensive."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FalknerFightDoneText": {
+      "raw_lines": [
+        "text \"There are #MON\"",
+        "line \"GYMS in cities and\"",
+        "cont \"towns ahead.\"",
+        "para \"You should test\"",
+        "line \"your skills at\"",
+        "cont \"these GYMS.\"",
+        "para \"I'm going to train\"",
+        "line \"harder to become\"",
+        "para \"the greatest bird\"",
+        "line \"master!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "There are #MON"
+        },
+        {
+          "command": "line",
+          "value": "GYMS in cities and"
+        },
+        {
+          "command": "cont",
+          "value": "towns ahead."
+        },
+        {
+          "command": "para",
+          "value": "You should test"
+        },
+        {
+          "command": "line",
+          "value": "your skills at"
+        },
+        {
+          "command": "cont",
+          "value": "these GYMS."
+        },
+        {
+          "command": "para",
+          "value": "I'm going to train"
+        },
+        {
+          "command": "line",
+          "value": "harder to become"
+        },
+        {
+          "command": "para",
+          "value": "the greatest bird"
+        },
+        {
+          "command": "line",
+          "value": "master!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BirdKeeperRodSeenText": {
+      "raw_lines": [
+        "text \"The keyword is\"",
+        "line \"guts!\"",
+        "para \"Those here are\"",
+        "line \"training night and\"",
+        "para \"day to become bird\"",
+        "line \"#MON masters.\"",
+        "para \"Come on!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The keyword is"
+        },
+        {
+          "command": "line",
+          "value": "guts!"
+        },
+        {
+          "command": "para",
+          "value": "Those here are"
+        },
+        {
+          "command": "line",
+          "value": "training night and"
+        },
+        {
+          "command": "para",
+          "value": "day to become bird"
+        },
+        {
+          "command": "line",
+          "value": "#MON masters."
+        },
+        {
+          "command": "para",
+          "value": "Come on!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BirdKeeperRodBeatenText": {
+      "raw_lines": [
+        "text \"Gaaah!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Gaaah!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BirdKeeperRodAfterBattleText": {
+      "raw_lines": [
+        "text \"FALKNER's skills\"",
+        "line \"are for real!\"",
+        "para \"Don't get cocky\"",
+        "line \"just because you\"",
+        "cont \"beat me!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "FALKNER's skills"
+        },
+        {
+          "command": "line",
+          "value": "are for real!"
+        },
+        {
+          "command": "para",
+          "value": "Don't get cocky"
+        },
+        {
+          "command": "line",
+          "value": "just because you"
+        },
+        {
+          "command": "cont",
+          "value": "beat me!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BirdKeeperAbeSeenText": {
+      "raw_lines": [
+        "text \"Let me see if you\"",
+        "line \"are good enough to\"",
+        "cont \"face FALKNER!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Let me see if you"
+        },
+        {
+          "command": "line",
+          "value": "are good enough to"
+        },
+        {
+          "command": "cont",
+          "value": "face FALKNER!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BirdKeeperAbeBeatenText": {
+      "raw_lines": [
+        "text \"This can't be\"",
+        "line \"true!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This can't be"
+        },
+        {
+          "command": "line",
+          "value": "true!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BirdKeeperAbeAfterBattleText": {
+      "raw_lines": [
+        "text \"This is pathetic,\"",
+        "line \"losing to some\"",
+        "cont \"rookie trainer\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This is pathetic,"
+        },
+        {
+          "command": "line",
+          "value": "losing to some"
+        },
+        {
+          "command": "cont",
+          "value": "rookie trainer\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "VioletGymGuideText": {
+      "raw_lines": [
+        "text \"Hey! I'm no train-\"",
+        "line \"er but I can give\"",
+        "cont \"some advice!\"",
+        "para \"Believe me!\"",
+        "line \"If you believe, a\"",
+        "para \"championship dream\"",
+        "line \"can come true.\"",
+        "para \"You believe?\"",
+        "line \"Then listen.\"",
+        "para \"The grass-type is\"",
+        "line \"weak against the\"",
+        "para \"flying-type. Keep\"",
+        "line \"this in mind.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hey! I'm no train-"
+        },
+        {
+          "command": "line",
+          "value": "er but I can give"
+        },
+        {
+          "command": "cont",
+          "value": "some advice!"
+        },
+        {
+          "command": "para",
+          "value": "Believe me!"
+        },
+        {
+          "command": "line",
+          "value": "If you believe, a"
+        },
+        {
+          "command": "para",
+          "value": "championship dream"
+        },
+        {
+          "command": "line",
+          "value": "can come true."
+        },
+        {
+          "command": "para",
+          "value": "You believe?"
+        },
+        {
+          "command": "line",
+          "value": "Then listen."
+        },
+        {
+          "command": "para",
+          "value": "The grass-type is"
+        },
+        {
+          "command": "line",
+          "value": "weak against the"
+        },
+        {
+          "command": "para",
+          "value": "flying-type. Keep"
+        },
+        {
+          "command": "line",
+          "value": "this in mind."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "VioletGymGuideWinText": {
+      "raw_lines": [
+        "text \"Nice battle! Keep\"",
+        "line \"it up, and you'll\"",
+        "para \"be the CHAMP in no\"",
+        "line \"time at all!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Nice battle! Keep"
+        },
+        {
+          "command": "line",
+          "value": "it up, and you'll"
+        },
+        {
+          "command": "para",
+          "value": "be the CHAMP in no"
+        },
+        {
+          "command": "line",
+          "value": "time at all!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "GoldenrodRocketsScript",
+    "GymStatue1Script",
+    "GymStatue2Script",
+    "RadioTowerRocketsScript"
+  ],
+  "dependencies": {
+    "VioletGym_MapScripts": {
+      "label_refs": [
+        "VioletGymFalknerScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletGymFalknerScript": {
+      "label_refs": [
+        "VioletGymActivateRockets",
+        "VioletGymFalknerScript.FightDone"
+      ],
+      "text_refs": [
+        "FalknerIntroText",
+        "ReceivedZephyrBadgeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletGymFalknerScript.FightDone": {
+      "label_refs": [
+        "VioletGymFalknerScript.NoRoomForMudSlap",
+        "VioletGymFalknerScript.SpeechAfterTM"
+      ],
+      "text_refs": [
+        "FalknerTMMudSlapText",
+        "FalknerZephyrBadgeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_ELMSLAB_NOOP"
+      ],
+      "std_calls": []
+    },
+    "VioletGymFalknerScript.SpeechAfterTM": {
+      "label_refs": [
+        "VioletGymFalknerScript.NoRoomForMudSlap"
+      ],
+      "text_refs": [
+        "FalknerFightDoneText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletGymFalknerScript.NoRoomForMudSlap": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletGymActivateRockets": {
+      "label_refs": [
+        "VioletGymActivateRockets.GoldenrodRockets",
+        "VioletGymActivateRockets.RadioTowerRockets"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletGymActivateRockets.GoldenrodRockets": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GoldenrodRocketsScript"
+      ]
+    },
+    "VioletGymActivateRockets.RadioTowerRockets": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RadioTowerRocketsScript"
+      ]
+    },
+    "TrainerBirdKeeperRod": {
+      "label_refs": [
+        "TrainerBirdKeeperRod.Script"
+      ],
+      "text_refs": [
+        "BirdKeeperRodBeatenText",
+        "BirdKeeperRodSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperRod.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "BirdKeeperRodAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperAbe": {
+      "label_refs": [
+        "TrainerBirdKeeperAbe.Script"
+      ],
+      "text_refs": [
+        "BirdKeeperAbeBeatenText",
+        "BirdKeeperAbeSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperAbe.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "BirdKeeperAbeAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletGymGuideScript": {
+      "label_refs": [
+        "VioletGymGuideScript.VioletGymGuideWinScript"
+      ],
+      "text_refs": [
+        "VioletGymGuideText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletGymGuideScript.VioletGymGuideWinScript": {
+      "label_refs": [],
+      "text_refs": [
+        "VioletGymGuideWinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VioletGymStatue": {
+      "label_refs": [
+        "VioletGymStatue.Beaten"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue1Script"
+      ]
+    },
+    "VioletGymStatue.Beaten": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue2Script"
+      ]
+    },
+    "VioletGym_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear",
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 4
+  }
+}

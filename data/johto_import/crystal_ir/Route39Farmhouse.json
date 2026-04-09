@@ -1,0 +1,1396 @@
+{
+  "crystal_map": "Route39Farmhouse",
+  "map_id": "ROUTE_39_FARMHOUSE",
+  "group": "OLIVINE",
+  "group_index": 1,
+  "map_index": 11,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_ROUTE_39",
+  "music": "MUSIC_ECRUTEAK_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/House1.blk",
+  "source_asm": "maps/Route39Farmhouse.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "ROUTE_39",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "ROUTE_39",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 0,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "FarmhouseBookshelf"
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "FarmhouseBookshelf"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 3,
+        "y": 2,
+        "sprite": "SPRITE_POKEFAN_M",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "PokefanM_DairyFarmer",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 4,
+        "sprite": "SPRITE_POKEFAN_F",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "PokefanF_SnoreFarmer",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "ROUTE39FARMHOUSE_POKEFAN_M",
+    "ROUTE39FARMHOUSE_POKEFAN_F"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "Route39Farmhouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "PokefanM_DairyFarmer",
+      "label_refs": [
+        "PokefanM_DairyFarmer"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PokefanM_DairyFarmer": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_HEALED_MOOMOO",
+        "iftrue FarmerMScript_SellMilk",
+        "writetext FarmerMText_SickCow",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_HEALED_MOOMOO"
+          ],
+          "raw": "checkevent EVENT_HEALED_MOOMOO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "FarmerMScript_SellMilk"
+          ],
+          "raw": "iftrue FarmerMScript_SellMilk"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "FarmerMText_SickCow"
+          ],
+          "raw": "writetext FarmerMText_SickCow"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO"
+          ],
+          "raw": "setevent EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "FarmerMScript_SellMilk"
+      ],
+      "text_refs": [
+        "FarmerMText_SickCow"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FarmerMScript_SellMilk": {
+      "raw_lines": [
+        "checkitem MOOMOO_MILK",
+        "iftrue FarmerMScript_Milking",
+        "writetext FarmerMText_BuyMilk",
+        "special PlaceMoneyTopRight",
+        "yesorno",
+        "iffalse FarmerMScript_NoSale",
+        "checkmoney YOUR_MONEY, ROUTE39FARMHOUSE_MILK_PRICE",
+        "ifequal HAVE_LESS, FarmerMScript_NoMoney",
+        "giveitem MOOMOO_MILK",
+        "iffalse FarmerMScript_NoRoom",
+        "takemoney YOUR_MONEY, ROUTE39FARMHOUSE_MILK_PRICE",
+        "special PlaceMoneyTopRight",
+        "waitsfx",
+        "playsound SFX_TRANSACTION",
+        "writetext FarmerMText_GotMilk",
+        "promptbutton",
+        "itemnotify",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkitem",
+          "args": [
+            "MOOMOO_MILK"
+          ],
+          "raw": "checkitem MOOMOO_MILK"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "FarmerMScript_Milking"
+          ],
+          "raw": "iftrue FarmerMScript_Milking"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "FarmerMText_BuyMilk"
+          ],
+          "raw": "writetext FarmerMText_BuyMilk"
+        },
+        {
+          "command": "special",
+          "args": [
+            "PlaceMoneyTopRight"
+          ],
+          "raw": "special PlaceMoneyTopRight"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "FarmerMScript_NoSale"
+          ],
+          "raw": "iffalse FarmerMScript_NoSale"
+        },
+        {
+          "command": "checkmoney",
+          "args": [
+            "YOUR_MONEY",
+            "ROUTE39FARMHOUSE_MILK_PRICE"
+          ],
+          "raw": "checkmoney YOUR_MONEY, ROUTE39FARMHOUSE_MILK_PRICE"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "HAVE_LESS",
+            "FarmerMScript_NoMoney"
+          ],
+          "raw": "ifequal HAVE_LESS, FarmerMScript_NoMoney"
+        },
+        {
+          "command": "giveitem",
+          "args": [
+            "MOOMOO_MILK"
+          ],
+          "raw": "giveitem MOOMOO_MILK"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "FarmerMScript_NoRoom"
+          ],
+          "raw": "iffalse FarmerMScript_NoRoom"
+        },
+        {
+          "command": "takemoney",
+          "args": [
+            "YOUR_MONEY",
+            "ROUTE39FARMHOUSE_MILK_PRICE"
+          ],
+          "raw": "takemoney YOUR_MONEY, ROUTE39FARMHOUSE_MILK_PRICE"
+        },
+        {
+          "command": "special",
+          "args": [
+            "PlaceMoneyTopRight"
+          ],
+          "raw": "special PlaceMoneyTopRight"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_TRANSACTION"
+          ],
+          "raw": "playsound SFX_TRANSACTION"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "FarmerMText_GotMilk"
+          ],
+          "raw": "writetext FarmerMText_GotMilk"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "itemnotify",
+          "args": [],
+          "raw": "itemnotify"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkitem",
+      "label_refs": [
+        "FarmerMScript_Milking",
+        "FarmerMScript_NoMoney",
+        "FarmerMScript_NoRoom",
+        "FarmerMScript_NoSale"
+      ],
+      "text_refs": [
+        "FarmerMText_BuyMilk",
+        "FarmerMText_GotMilk"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FarmerMScript_NoMoney": {
+      "raw_lines": [
+        "writetext FarmerMText_NoMoney",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "FarmerMText_NoMoney"
+          ],
+          "raw": "writetext FarmerMText_NoMoney"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "FarmerMText_NoMoney"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FarmerMScript_NoRoom": {
+      "raw_lines": [
+        "writetext FarmerMText_NoRoom",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "FarmerMText_NoRoom"
+          ],
+          "raw": "writetext FarmerMText_NoRoom"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "FarmerMText_NoRoom"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FarmerMScript_NoSale": {
+      "raw_lines": [
+        "writetext FarmerMText_NoSale",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "FarmerMText_NoSale"
+          ],
+          "raw": "writetext FarmerMText_NoSale"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "FarmerMText_NoSale"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FarmerMScript_Milking": {
+      "raw_lines": [
+        "writetext FarmerMText_Milking",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "FarmerMText_Milking"
+          ],
+          "raw": "writetext FarmerMText_Milking"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "FarmerMText_Milking"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PokefanF_SnoreFarmer": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_TM13_SNORE_FROM_MOOMOO_FARM",
+        "iftrue FarmerFScript_GotSnore",
+        "checkevent EVENT_HEALED_MOOMOO",
+        "iftrue FarmerFScript_GiveSnore",
+        "writetext FarmerFText_InTrouble",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TM13_SNORE_FROM_MOOMOO_FARM"
+          ],
+          "raw": "checkevent EVENT_GOT_TM13_SNORE_FROM_MOOMOO_FARM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "FarmerFScript_GotSnore"
+          ],
+          "raw": "iftrue FarmerFScript_GotSnore"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_HEALED_MOOMOO"
+          ],
+          "raw": "checkevent EVENT_HEALED_MOOMOO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "FarmerFScript_GiveSnore"
+          ],
+          "raw": "iftrue FarmerFScript_GiveSnore"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "FarmerFText_InTrouble"
+          ],
+          "raw": "writetext FarmerFText_InTrouble"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "FarmerFScript_GiveSnore",
+        "FarmerFScript_GotSnore"
+      ],
+      "text_refs": [
+        "FarmerFText_InTrouble"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FarmerFScript_GiveSnore": {
+      "raw_lines": [
+        "writetext FarmerFText_HealedMiltank",
+        "promptbutton",
+        "verbosegiveitem TM_SNORE",
+        "iffalse FarmerFScript_NoRoomForSnore",
+        "setevent EVENT_GOT_TM13_SNORE_FROM_MOOMOO_FARM"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "FarmerFText_HealedMiltank"
+          ],
+          "raw": "writetext FarmerFText_HealedMiltank"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "TM_SNORE"
+          ],
+          "raw": "verbosegiveitem TM_SNORE"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "FarmerFScript_NoRoomForSnore"
+          ],
+          "raw": "iffalse FarmerFScript_NoRoomForSnore"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_TM13_SNORE_FROM_MOOMOO_FARM"
+          ],
+          "raw": "setevent EVENT_GOT_TM13_SNORE_FROM_MOOMOO_FARM"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "FarmerFScript_GotSnore",
+      "label_refs": [
+        "FarmerFScript_GotSnore",
+        "FarmerFScript_NoRoomForSnore"
+      ],
+      "text_refs": [
+        "FarmerFText_HealedMiltank"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FarmerFScript_GotSnore": {
+      "raw_lines": [
+        "writetext FarmerFText_SnoreSpeech",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "FarmerFText_SnoreSpeech"
+          ],
+          "raw": "writetext FarmerFText_SnoreSpeech"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "FarmerFScript_NoRoomForSnore",
+      "label_refs": [
+        "FarmerFScript_NoRoomForSnore"
+      ],
+      "text_refs": [
+        "FarmerFText_SnoreSpeech"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FarmerFScript_NoRoomForSnore": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FarmhouseBookshelf": {
+      "raw_lines": [
+        "jumpstd PictureBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PictureBookshelfScript"
+          ],
+          "raw": "jumpstd PictureBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "Route39Farmhouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, ROUTE_39, 2",
+        "warp_event  3,  7, ROUTE_39, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, FarmhouseBookshelf",
+        "bg_event  1,  1, BGEVENT_READ, FarmhouseBookshelf",
+        "def_object_events",
+        "object_event  3,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PokefanM_DairyFarmer, -1",
+        "object_event  5,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PokefanF_SnoreFarmer, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "ROUTE_39",
+            "2"
+          ],
+          "raw": "warp_event  2,  7, ROUTE_39, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "ROUTE_39",
+            "2"
+          ],
+          "raw": "warp_event  3,  7, ROUTE_39, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "FarmhouseBookshelf"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, FarmhouseBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "FarmhouseBookshelf"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, FarmhouseBookshelf"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "2",
+            "SPRITE_POKEFAN_M",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "PokefanM_DairyFarmer",
+            "-1"
+          ],
+          "raw": "object_event  3,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PokefanM_DairyFarmer, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "4",
+            "SPRITE_POKEFAN_F",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "PokefanF_SnoreFarmer",
+            "-1"
+          ],
+          "raw": "object_event  5,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PokefanF_SnoreFarmer, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "FarmerMText_SickCow": {
+      "raw_lines": [
+        "text \"My MILTANK ain't\"",
+        "line \"givin' me milk\"",
+        "cont \"n'more.\"",
+        "para \"This here FARM's\"",
+        "line \"got famous milk.\"",
+        "para \"Most everyone\"",
+        "line \"wants a drink.\"",
+        "para \"It'll give me lots\"",
+        "line \"o' milk if'n I\"",
+        "para \"feed it lots o'\"",
+        "line \"BERRIES, I reckon.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My MILTANK ain't"
+        },
+        {
+          "command": "line",
+          "value": "givin' me milk"
+        },
+        {
+          "command": "cont",
+          "value": "n'more."
+        },
+        {
+          "command": "para",
+          "value": "This here FARM's"
+        },
+        {
+          "command": "line",
+          "value": "got famous milk."
+        },
+        {
+          "command": "para",
+          "value": "Most everyone"
+        },
+        {
+          "command": "line",
+          "value": "wants a drink."
+        },
+        {
+          "command": "para",
+          "value": "It'll give me lots"
+        },
+        {
+          "command": "line",
+          "value": "o' milk if'n I"
+        },
+        {
+          "command": "para",
+          "value": "feed it lots o'"
+        },
+        {
+          "command": "line",
+          "value": "BERRIES, I reckon."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FarmerMText_BuyMilk": {
+      "raw_lines": [
+        "text \"How'd you like my\"",
+        "line \"MOOMOO MILK?\"",
+        "para \"It's my pride and\"",
+        "line \"joy, there.\"",
+        "para \"Give it to #MON\"",
+        "line \"to restore HP!\"",
+        "para \"I'll give it to ya\"",
+        "line \"fer just \u00a5{d:ROUTE39FARMHOUSE_MILK_PRICE}.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "How'd you like my"
+        },
+        {
+          "command": "line",
+          "value": "MOOMOO MILK?"
+        },
+        {
+          "command": "para",
+          "value": "It's my pride and"
+        },
+        {
+          "command": "line",
+          "value": "joy, there."
+        },
+        {
+          "command": "para",
+          "value": "Give it to #MON"
+        },
+        {
+          "command": "line",
+          "value": "to restore HP!"
+        },
+        {
+          "command": "para",
+          "value": "I'll give it to ya"
+        },
+        {
+          "command": "line",
+          "value": "fer just \u00a5{d:ROUTE39FARMHOUSE_MILK_PRICE}."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FarmerMText_GotMilk": {
+      "raw_lines": [
+        "text \"Here ya go!\"",
+        "line \"Drink up'n enjoy!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Here ya go!"
+        },
+        {
+          "command": "line",
+          "value": "Drink up'n enjoy!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FarmerMText_NoMoney": {
+      "raw_lines": [
+        "text \"Sorry, there.\"",
+        "line \"No cash, no sale!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Sorry, there."
+        },
+        {
+          "command": "line",
+          "value": "No cash, no sale!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FarmerMText_NoRoom": {
+      "raw_lines": [
+        "text \"I reckon yer\"",
+        "line \"PACK's full.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I reckon yer"
+        },
+        {
+          "command": "line",
+          "value": "PACK's full."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FarmerMText_NoSale": {
+      "raw_lines": [
+        "text \"You don't want it?\"",
+        "line \"Come again, hear?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You don't want it?"
+        },
+        {
+          "command": "line",
+          "value": "Come again, hear?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FarmerMText_Milking": {
+      "raw_lines": [
+        "text \"I best go do my\"",
+        "line \"milkin'.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I best go do my"
+        },
+        {
+          "command": "line",
+          "value": "milkin'."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FarmerFText_InTrouble": {
+      "raw_lines": [
+        "text \"Our milk even goes\"",
+        "line \"out to KANTO.\"",
+        "para \"So if our own\"",
+        "line \"MILTANK won't give\"",
+        "para \"us any milk, we're\"",
+        "line \"in trouble.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Our milk even goes"
+        },
+        {
+          "command": "line",
+          "value": "out to KANTO."
+        },
+        {
+          "command": "para",
+          "value": "So if our own"
+        },
+        {
+          "command": "line",
+          "value": "MILTANK won't give"
+        },
+        {
+          "command": "para",
+          "value": "us any milk, we're"
+        },
+        {
+          "command": "line",
+          "value": "in trouble."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FarmerFText_HealedMiltank": {
+      "raw_lines": [
+        "text \"You fixed our\"",
+        "line \"MILTANK, hon. Now\"",
+        "para \"it gives MOOMOO\"",
+        "line \"MILK again.\"",
+        "para \"Here's somethin'\"",
+        "line \"fer your trouble.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You fixed our"
+        },
+        {
+          "command": "line",
+          "value": "MILTANK, hon. Now"
+        },
+        {
+          "command": "para",
+          "value": "it gives MOOMOO"
+        },
+        {
+          "command": "line",
+          "value": "MILK again."
+        },
+        {
+          "command": "para",
+          "value": "Here's somethin'"
+        },
+        {
+          "command": "line",
+          "value": "fer your trouble."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_ReceivedTM13": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"TM13.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "TM13."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "FarmerFText_SnoreSpeech": {
+      "raw_lines": [
+        "text \"That there's\"",
+        "line \"SNORE.\"",
+        "para \"It's a rare move\"",
+        "line \"that only works\"",
+        "para \"while the #MON\"",
+        "line \"is asleep.\"",
+        "para \"You best think how\"",
+        "line \"you ought to use\"",
+        "cont \"it, hon.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "That there's"
+        },
+        {
+          "command": "line",
+          "value": "SNORE."
+        },
+        {
+          "command": "para",
+          "value": "It's a rare move"
+        },
+        {
+          "command": "line",
+          "value": "that only works"
+        },
+        {
+          "command": "para",
+          "value": "while the #MON"
+        },
+        {
+          "command": "line",
+          "value": "is asleep."
+        },
+        {
+          "command": "para",
+          "value": "You best think how"
+        },
+        {
+          "command": "line",
+          "value": "you ought to use"
+        },
+        {
+          "command": "cont",
+          "value": "it, hon."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "PictureBookshelfScript"
+  ],
+  "dependencies": {
+    "Route39Farmhouse_MapScripts": {
+      "label_refs": [
+        "PokefanM_DairyFarmer"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PokefanM_DairyFarmer": {
+      "label_refs": [
+        "FarmerMScript_SellMilk"
+      ],
+      "text_refs": [
+        "FarmerMText_SickCow"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FarmerMScript_SellMilk": {
+      "label_refs": [
+        "FarmerMScript_Milking",
+        "FarmerMScript_NoMoney",
+        "FarmerMScript_NoRoom",
+        "FarmerMScript_NoSale"
+      ],
+      "text_refs": [
+        "FarmerMText_BuyMilk",
+        "FarmerMText_GotMilk"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FarmerMScript_NoMoney": {
+      "label_refs": [],
+      "text_refs": [
+        "FarmerMText_NoMoney"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FarmerMScript_NoRoom": {
+      "label_refs": [],
+      "text_refs": [
+        "FarmerMText_NoRoom"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FarmerMScript_NoSale": {
+      "label_refs": [],
+      "text_refs": [
+        "FarmerMText_NoSale"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FarmerMScript_Milking": {
+      "label_refs": [],
+      "text_refs": [
+        "FarmerMText_Milking"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "PokefanF_SnoreFarmer": {
+      "label_refs": [
+        "FarmerFScript_GiveSnore",
+        "FarmerFScript_GotSnore"
+      ],
+      "text_refs": [
+        "FarmerFText_InTrouble"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FarmerFScript_GiveSnore": {
+      "label_refs": [
+        "FarmerFScript_GotSnore",
+        "FarmerFScript_NoRoomForSnore"
+      ],
+      "text_refs": [
+        "FarmerFText_HealedMiltank"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FarmerFScript_GotSnore": {
+      "label_refs": [
+        "FarmerFScript_NoRoomForSnore"
+      ],
+      "text_refs": [
+        "FarmerFText_SnoreSpeech"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FarmerFScript_NoRoomForSnore": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FarmhouseBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "Route39Farmhouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 2
+  }
+}

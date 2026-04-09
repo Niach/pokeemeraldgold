@@ -1,0 +1,1047 @@
+{
+  "crystal_map": "KarensRoom",
+  "map_id": "KARENS_ROOM",
+  "group": "INDIGO",
+  "group_index": 16,
+  "map_index": 6,
+  "tileset": "TILESET_ELITE_FOUR_ROOM",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_INDIGO_PLATEAU",
+  "music": "MUSIC_INDIGO_PLATEAU",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 9,
+  "border_block": "00",
+  "blk_path": "maps/KarensRoom.blk",
+  "source_asm": "maps/KarensRoom.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "KarensRoomLockDoorScene",
+        "scene_id": "SCENE_KARENSROOM_LOCK_DOOR"
+      },
+      {
+        "script": "KarensRoomNoopScene",
+        "scene_id": "SCENE_KARENSROOM_NOOP"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_TILES",
+        "script": "KarensRoomDoorsCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 4,
+        "y": 17,
+        "dest_map": "BRUNOS_ROOM",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 5,
+        "y": 17,
+        "dest_map": "BRUNOS_ROOM",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 4,
+        "y": 2,
+        "dest_map": "LANCES_ROOM",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 5,
+        "y": 2,
+        "dest_map": "LANCES_ROOM",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 5,
+        "y": 7,
+        "sprite": "SPRITE_KAREN",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "KarenScript_Battle",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "KARENSROOM_KAREN"
+  ],
+  "scene_ids": [
+    "SCENE_KARENSROOM_LOCK_DOOR",
+    "SCENE_KARENSROOM_NOOP"
+  ],
+  "scripts": {
+    "KarensRoom_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script KarensRoomLockDoorScene, SCENE_KARENSROOM_LOCK_DOOR",
+        "scene_script KarensRoomNoopScene,     SCENE_KARENSROOM_NOOP",
+        "def_callbacks",
+        "callback MAPCALLBACK_TILES, KarensRoomDoorsCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "KarensRoomLockDoorScene",
+            "SCENE_KARENSROOM_LOCK_DOOR"
+          ],
+          "raw": "scene_script KarensRoomLockDoorScene, SCENE_KARENSROOM_LOCK_DOOR"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "KarensRoomNoopScene",
+            "SCENE_KARENSROOM_NOOP"
+          ],
+          "raw": "scene_script KarensRoomNoopScene,     SCENE_KARENSROOM_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_TILES",
+            "KarensRoomDoorsCallback"
+          ],
+          "raw": "callback MAPCALLBACK_TILES, KarensRoomDoorsCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "KarensRoomLockDoorScene",
+      "label_refs": [
+        "KarensRoomLockDoorScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KarensRoomLockDoorScene": {
+      "raw_lines": [
+        "sdefer KarensRoomDoorLocksBehindYouScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "sdefer",
+          "args": [
+            "KarensRoomDoorLocksBehindYouScript"
+          ],
+          "raw": "sdefer KarensRoomDoorLocksBehindYouScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "sdefer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KarensRoomNoopScene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KarensRoomDoorsCallback": {
+      "raw_lines": [
+        "checkevent EVENT_KARENS_ROOM_ENTRANCE_CLOSED",
+        "iffalse .KeepEntranceOpen",
+        "changeblock 4, 14, $2a"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_KARENS_ROOM_ENTRANCE_CLOSED"
+          ],
+          "raw": "checkevent EVENT_KARENS_ROOM_ENTRANCE_CLOSED"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "KarensRoomDoorsCallback.KeepEntranceOpen"
+          ],
+          "raw": "iffalse .KeepEntranceOpen"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "14",
+            "$2a"
+          ],
+          "raw": "changeblock 4, 14, $2a"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "KarensRoomDoorsCallback.KeepEntranceOpen",
+      "label_refs": [
+        "KarensRoomDoorsCallback.KeepEntranceOpen"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KarensRoomDoorsCallback.KeepEntranceOpen": {
+      "raw_lines": [
+        "checkevent EVENT_KARENS_ROOM_EXIT_OPEN",
+        "iffalse .KeepExitClosed",
+        "changeblock 4, 2, $16"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_KARENS_ROOM_EXIT_OPEN"
+          ],
+          "raw": "checkevent EVENT_KARENS_ROOM_EXIT_OPEN"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "KarensRoomDoorsCallback.KeepExitClosed"
+          ],
+          "raw": "iffalse .KeepExitClosed"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "2",
+            "$16"
+          ],
+          "raw": "changeblock 4, 2, $16"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "KarensRoomDoorsCallback.KeepExitClosed",
+      "label_refs": [
+        "KarensRoomDoorsCallback.KeepExitClosed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KarensRoomDoorsCallback.KeepExitClosed": {
+      "raw_lines": [
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "endcallback",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KarensRoomDoorLocksBehindYouScript": {
+      "raw_lines": [
+        "applymovement PLAYER, KarensRoom_EnterMovement",
+        "reanchormap $86",
+        "playsound SFX_STRENGTH",
+        "earthquake 80",
+        "changeblock 4, 14, $2a",
+        "refreshmap",
+        "closetext",
+        "setscene SCENE_KARENSROOM_NOOP",
+        "setevent EVENT_KARENS_ROOM_ENTRANCE_CLOSED",
+        "waitsfx",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "KarensRoom_EnterMovement"
+          ],
+          "raw": "applymovement PLAYER, KarensRoom_EnterMovement"
+        },
+        {
+          "command": "reanchormap",
+          "args": [
+            "$86"
+          ],
+          "raw": "reanchormap $86"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_STRENGTH"
+          ],
+          "raw": "playsound SFX_STRENGTH"
+        },
+        {
+          "command": "earthquake",
+          "args": [
+            "80"
+          ],
+          "raw": "earthquake 80"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "14",
+            "$2a"
+          ],
+          "raw": "changeblock 4, 14, $2a"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_KARENSROOM_NOOP"
+          ],
+          "raw": "setscene SCENE_KARENSROOM_NOOP"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_KARENS_ROOM_ENTRANCE_CLOSED"
+          ],
+          "raw": "setevent EVENT_KARENS_ROOM_ENTRANCE_CLOSED"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "KarensRoom_EnterMovement"
+      ],
+      "scene_refs": [
+        "SCENE_KARENSROOM_NOOP"
+      ],
+      "std_calls": []
+    },
+    "KarenScript_Battle": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_BEAT_ELITE_4_KAREN",
+        "iftrue KarenScript_AfterBattle",
+        "writetext KarenScript_KarenBeforeText",
+        "waitbutton",
+        "closetext",
+        "winlosstext KarenScript_KarenBeatenText, 0",
+        "loadtrainer KAREN, KAREN1",
+        "startbattle",
+        "reloadmapafterbattle",
+        "setevent EVENT_BEAT_ELITE_4_KAREN",
+        "opentext",
+        "writetext KarenScript_KarenDefeatText",
+        "waitbutton",
+        "closetext",
+        "playsound SFX_ENTER_DOOR",
+        "changeblock 4, 2, $16",
+        "refreshmap",
+        "closetext",
+        "setevent EVENT_KARENS_ROOM_EXIT_OPEN",
+        "waitsfx",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_ELITE_4_KAREN"
+          ],
+          "raw": "checkevent EVENT_BEAT_ELITE_4_KAREN"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "KarenScript_AfterBattle"
+          ],
+          "raw": "iftrue KarenScript_AfterBattle"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KarenScript_KarenBeforeText"
+          ],
+          "raw": "writetext KarenScript_KarenBeforeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "KarenScript_KarenBeatenText",
+            "0"
+          ],
+          "raw": "winlosstext KarenScript_KarenBeatenText, 0"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "KAREN",
+            "KAREN1"
+          ],
+          "raw": "loadtrainer KAREN, KAREN1"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_ELITE_4_KAREN"
+          ],
+          "raw": "setevent EVENT_BEAT_ELITE_4_KAREN"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "KarenScript_KarenDefeatText"
+          ],
+          "raw": "writetext KarenScript_KarenDefeatText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ENTER_DOOR"
+          ],
+          "raw": "playsound SFX_ENTER_DOOR"
+        },
+        {
+          "command": "changeblock",
+          "args": [
+            "4",
+            "2",
+            "$16"
+          ],
+          "raw": "changeblock 4, 2, $16"
+        },
+        {
+          "command": "refreshmap",
+          "args": [],
+          "raw": "refreshmap"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_KARENS_ROOM_EXIT_OPEN"
+          ],
+          "raw": "setevent EVENT_KARENS_ROOM_EXIT_OPEN"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "KarenScript_AfterBattle"
+      ],
+      "text_refs": [
+        "KarenScript_KarenBeforeText",
+        "KarenScript_KarenDefeatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KarenScript_AfterBattle": {
+      "raw_lines": [
+        "writetext KarenScript_KarenDefeatText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "KarenScript_KarenDefeatText"
+          ],
+          "raw": "writetext KarenScript_KarenDefeatText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "KarenScript_KarenDefeatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KarensRoom_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  4, 17, BRUNOS_ROOM, 3",
+        "warp_event  5, 17, BRUNOS_ROOM, 4",
+        "warp_event  4,  2, LANCES_ROOM, 1",
+        "warp_event  5,  2, LANCES_ROOM, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  5,  7, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, KarenScript_Battle, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "17",
+            "BRUNOS_ROOM",
+            "3"
+          ],
+          "raw": "warp_event  4, 17, BRUNOS_ROOM, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "17",
+            "BRUNOS_ROOM",
+            "4"
+          ],
+          "raw": "warp_event  5, 17, BRUNOS_ROOM, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "2",
+            "LANCES_ROOM",
+            "1"
+          ],
+          "raw": "warp_event  4,  2, LANCES_ROOM, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "2",
+            "LANCES_ROOM",
+            "2"
+          ],
+          "raw": "warp_event  5,  2, LANCES_ROOM, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "7",
+            "SPRITE_KAREN",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "KarenScript_Battle",
+            "-1"
+          ],
+          "raw": "object_event  5,  7, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, KarenScript_Battle, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "KarenScript_KarenBeforeText": {
+      "raw_lines": [
+        "text \"I am KAREN of the\"",
+        "line \"ELITE FOUR.\"",
+        "para \"You're <PLAYER>?\"",
+        "line \"How amusing.\"",
+        "para \"I love dark-type\"",
+        "line \"#MON.\"",
+        "para \"I find their wild,\"",
+        "line \"tough image to be\"",
+        "para \"so appealing. And\"",
+        "line \"they're so strong.\"",
+        "para \"Think you can take\"",
+        "line \"them? Just try to\"",
+        "cont \"entertain me.\"",
+        "para \"Let's go.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I am KAREN of the"
+        },
+        {
+          "command": "line",
+          "value": "ELITE FOUR."
+        },
+        {
+          "command": "para",
+          "value": "You're <PLAYER>?"
+        },
+        {
+          "command": "line",
+          "value": "How amusing."
+        },
+        {
+          "command": "para",
+          "value": "I love dark-type"
+        },
+        {
+          "command": "line",
+          "value": "#MON."
+        },
+        {
+          "command": "para",
+          "value": "I find their wild,"
+        },
+        {
+          "command": "line",
+          "value": "tough image to be"
+        },
+        {
+          "command": "para",
+          "value": "so appealing. And"
+        },
+        {
+          "command": "line",
+          "value": "they're so strong."
+        },
+        {
+          "command": "para",
+          "value": "Think you can take"
+        },
+        {
+          "command": "line",
+          "value": "them? Just try to"
+        },
+        {
+          "command": "cont",
+          "value": "entertain me."
+        },
+        {
+          "command": "para",
+          "value": "Let's go."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KarenScript_KarenBeatenText": {
+      "raw_lines": [
+        "text \"Well, aren't you\"",
+        "line \"good. I like that\"",
+        "cont \"in a trainer.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Well, aren't you"
+        },
+        {
+          "command": "line",
+          "value": "good. I like that"
+        },
+        {
+          "command": "cont",
+          "value": "in a trainer."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "KarenScript_KarenDefeatText": {
+      "raw_lines": [
+        "text \"Strong #MON.\"",
+        "para \"Weak #MON.\"",
+        "para \"That is only the\"",
+        "line \"selfish perception\"",
+        "cont \"of people.\"",
+        "para \"Truly skilled\"",
+        "line \"trainers should\"",
+        "para \"try to win with\"",
+        "line \"their favorites.\"",
+        "para \"I like your style.\"",
+        "line \"You understand\"",
+        "cont \"what's important.\"",
+        "para \"Go on--the CHAM-\"",
+        "line \"PION is waiting.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Strong #MON."
+        },
+        {
+          "command": "para",
+          "value": "Weak #MON."
+        },
+        {
+          "command": "para",
+          "value": "That is only the"
+        },
+        {
+          "command": "line",
+          "value": "selfish perception"
+        },
+        {
+          "command": "cont",
+          "value": "of people."
+        },
+        {
+          "command": "para",
+          "value": "Truly skilled"
+        },
+        {
+          "command": "line",
+          "value": "trainers should"
+        },
+        {
+          "command": "para",
+          "value": "try to win with"
+        },
+        {
+          "command": "line",
+          "value": "their favorites."
+        },
+        {
+          "command": "para",
+          "value": "I like your style."
+        },
+        {
+          "command": "line",
+          "value": "You understand"
+        },
+        {
+          "command": "cont",
+          "value": "what's important."
+        },
+        {
+          "command": "para",
+          "value": "Go on--the CHAM-"
+        },
+        {
+          "command": "line",
+          "value": "PION is waiting."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "KarensRoom_EnterMovement": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "KarensRoom_MapScripts": {
+      "label_refs": [
+        "KarensRoomLockDoorScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KarensRoomLockDoorScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KarensRoomNoopScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KarensRoomDoorsCallback": {
+      "label_refs": [
+        "KarensRoomDoorsCallback.KeepEntranceOpen"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KarensRoomDoorsCallback.KeepEntranceOpen": {
+      "label_refs": [
+        "KarensRoomDoorsCallback.KeepExitClosed"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KarensRoomDoorsCallback.KeepExitClosed": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KarensRoomDoorLocksBehindYouScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [
+        "KarensRoom_EnterMovement"
+      ],
+      "scene_refs": [
+        "SCENE_KARENSROOM_NOOP"
+      ],
+      "std_calls": []
+    },
+    "KarenScript_Battle": {
+      "label_refs": [
+        "KarenScript_AfterBattle"
+      ],
+      "text_refs": [
+        "KarenScript_KarenBeforeText",
+        "KarenScript_KarenDefeatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KarenScript_AfterBattle": {
+      "label_refs": [],
+      "text_refs": [
+        "KarenScript_KarenDefeatText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "KarensRoom_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
+    "warp_events": 4,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 1
+  }
+}

@@ -1,0 +1,2385 @@
+{
+  "crystal_map": "SproutTower3F",
+  "map_id": "SPROUT_TOWER_3F",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 3,
+  "tileset": "TILESET_TOWER",
+  "environment": "DUNGEON",
+  "landmark": "LANDMARK_SPROUT_TOWER",
+  "music": "MUSIC_SPROUT_TOWER",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 10,
+  "height_blocks": 8,
+  "border_block": "00",
+  "blk_path": "maps/SproutTower3F.blk",
+  "source_asm": "maps/SproutTower3F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "SproutTower3FNoop1Scene",
+        "scene_id": "SCENE_SPROUTTOWER3F_RIVAL_ENCOUNTER"
+      },
+      {
+        "script": "SproutTower3FNoop2Scene",
+        "scene_id": "SCENE_SPROUTTOWER3F_NOOP"
+      }
+    ],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 10,
+        "y": 14,
+        "dest_map": "SPROUT_TOWER_2F",
+        "dest_warp_id": 4
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 11,
+        "y": 9,
+        "scene": "SCENE_SPROUTTOWER3F_RIVAL_ENCOUNTER",
+        "script": "SproutTower3FRivalScene"
+      }
+    ],
+    "bg_events": [
+      {
+        "x": 8,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "SproutTower3FStatue"
+      },
+      {
+        "x": 11,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "SproutTower3FStatue"
+      },
+      {
+        "x": 9,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "SproutTower3FPainting"
+      },
+      {
+        "x": 10,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "SproutTower3FPainting"
+      },
+      {
+        "x": 5,
+        "y": 15,
+        "kind": "BGEVENT_READ",
+        "script": "SproutTower3FStatue"
+      },
+      {
+        "x": 14,
+        "y": 15,
+        "kind": "BGEVENT_READ",
+        "script": "SproutTower3FStatue"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 8,
+        "y": 13,
+        "sprite": "SPRITE_SAGE",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerSageJin",
+        "flag": -1
+      },
+      {
+        "x": 8,
+        "y": 8,
+        "sprite": "SPRITE_SAGE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 2,
+        "script": "TrainerSageTroy",
+        "flag": -1
+      },
+      {
+        "x": 10,
+        "y": 2,
+        "sprite": "SPRITE_SAGE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "SageLiScript",
+        "flag": -1
+      },
+      {
+        "x": 11,
+        "y": 11,
+        "sprite": "SPRITE_SAGE",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerSageNeal",
+        "flag": -1
+      },
+      {
+        "x": 6,
+        "y": 14,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "SproutTower3FPotion",
+        "flag": "EVENT_SPROUT_TOWER_3F_POTION"
+      },
+      {
+        "x": 14,
+        "y": 1,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "SproutTower3FEscapeRope",
+        "flag": "EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE"
+      },
+      {
+        "x": 10,
+        "y": 4,
+        "sprite": "SPRITE_RIVAL",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_RIVAL_SPROUT_TOWER"
+      }
+    ]
+  },
+  "object_consts": [
+    "SPROUTTOWER3F_SAGE1",
+    "SPROUTTOWER3F_SAGE2",
+    "SPROUTTOWER3F_SAGE3",
+    "SPROUTTOWER3F_SAGE4",
+    "SPROUTTOWER3F_POKE_BALL1",
+    "SPROUTTOWER3F_POKE_BALL2",
+    "SPROUTTOWER3F_RIVAL"
+  ],
+  "scene_ids": [
+    "SCENE_SPROUTTOWER3F_NOOP",
+    "SCENE_SPROUTTOWER3F_RIVAL_ENCOUNTER"
+  ],
+  "scripts": {
+    "SproutTower3F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script SproutTower3FNoop1Scene, SCENE_SPROUTTOWER3F_RIVAL_ENCOUNTER",
+        "scene_script SproutTower3FNoop2Scene, SCENE_SPROUTTOWER3F_NOOP",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "SproutTower3FNoop1Scene",
+            "SCENE_SPROUTTOWER3F_RIVAL_ENCOUNTER"
+          ],
+          "raw": "scene_script SproutTower3FNoop1Scene, SCENE_SPROUTTOWER3F_RIVAL_ENCOUNTER"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "SproutTower3FNoop2Scene",
+            "SCENE_SPROUTTOWER3F_NOOP"
+          ],
+          "raw": "scene_script SproutTower3FNoop2Scene, SCENE_SPROUTTOWER3F_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "SproutTower3FNoop1Scene",
+      "label_refs": [
+        "SproutTower3FNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower3FNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower3FNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower3FRivalScene": {
+      "raw_lines": [
+        "turnobject PLAYER, UP",
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "special FadeOutMusic",
+        "playsound SFX_TACKLE",
+        "playsound SFX_ELEVATOR",
+        "earthquake 79",
+        "pause 15",
+        "playsound SFX_TACKLE",
+        "playsound SFX_ELEVATOR",
+        "earthquake 79",
+        "applymovement PLAYER, SproutTower3FPlayerApproachesRivalMovement",
+        "applymovement SPROUTTOWER3F_RIVAL, SproutTower3FRivalApproachesElderMovement",
+        "opentext",
+        "writetext SproutTowerElderLecturesRivalText",
+        "waitbutton",
+        "closetext",
+        "showemote EMOTE_SHOCK, SPROUTTOWER3F_RIVAL, 15",
+        "turnobject SPROUTTOWER3F_RIVAL, DOWN",
+        "pause 15",
+        "applymovement SPROUTTOWER3F_RIVAL, SproutTower3FRivalLeavesElderMovement",
+        "playmusic MUSIC_RIVAL_ENCOUNTER",
+        "opentext",
+        "writetext SproutTowerRivalOnlyCareAboutStrongText",
+        "waitbutton",
+        "closetext",
+        "turnobject SPROUTTOWER3F_RIVAL, UP",
+        "opentext",
+        "writetext SproutTowerRivalUsedEscapeRopeText",
+        "pause 15",
+        "closetext",
+        "playsound SFX_WARP_TO",
+        "special FadeOutToBlack",
+        "special ReloadSpritesNoPalettes",
+        "disappear SPROUTTOWER3F_RIVAL",
+        "waitsfx",
+        "special FadeInFromBlack",
+        "setscene SCENE_SPROUTTOWER3F_NOOP",
+        "special RestartMapMusic",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "UP"
+          ],
+          "raw": "turnobject PLAYER, UP"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_TACKLE"
+          ],
+          "raw": "playsound SFX_TACKLE"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ELEVATOR"
+          ],
+          "raw": "playsound SFX_ELEVATOR"
+        },
+        {
+          "command": "earthquake",
+          "args": [
+            "79"
+          ],
+          "raw": "earthquake 79"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_TACKLE"
+          ],
+          "raw": "playsound SFX_TACKLE"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ELEVATOR"
+          ],
+          "raw": "playsound SFX_ELEVATOR"
+        },
+        {
+          "command": "earthquake",
+          "args": [
+            "79"
+          ],
+          "raw": "earthquake 79"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "PLAYER",
+            "SproutTower3FPlayerApproachesRivalMovement"
+          ],
+          "raw": "applymovement PLAYER, SproutTower3FPlayerApproachesRivalMovement"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "SPROUTTOWER3F_RIVAL",
+            "SproutTower3FRivalApproachesElderMovement"
+          ],
+          "raw": "applymovement SPROUTTOWER3F_RIVAL, SproutTower3FRivalApproachesElderMovement"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SproutTowerElderLecturesRivalText"
+          ],
+          "raw": "writetext SproutTowerElderLecturesRivalText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "SPROUTTOWER3F_RIVAL",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, SPROUTTOWER3F_RIVAL, 15"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "SPROUTTOWER3F_RIVAL",
+            "DOWN"
+          ],
+          "raw": "turnobject SPROUTTOWER3F_RIVAL, DOWN"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "SPROUTTOWER3F_RIVAL",
+            "SproutTower3FRivalLeavesElderMovement"
+          ],
+          "raw": "applymovement SPROUTTOWER3F_RIVAL, SproutTower3FRivalLeavesElderMovement"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_ENCOUNTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_ENCOUNTER"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SproutTowerRivalOnlyCareAboutStrongText"
+          ],
+          "raw": "writetext SproutTowerRivalOnlyCareAboutStrongText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "SPROUTTOWER3F_RIVAL",
+            "UP"
+          ],
+          "raw": "turnobject SPROUTTOWER3F_RIVAL, UP"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SproutTowerRivalUsedEscapeRopeText"
+          ],
+          "raw": "writetext SproutTowerRivalUsedEscapeRopeText"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_WARP_TO"
+          ],
+          "raw": "playsound SFX_WARP_TO"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutToBlack"
+          ],
+          "raw": "special FadeOutToBlack"
+        },
+        {
+          "command": "special",
+          "args": [
+            "ReloadSpritesNoPalettes"
+          ],
+          "raw": "special ReloadSpritesNoPalettes"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "SPROUTTOWER3F_RIVAL"
+          ],
+          "raw": "disappear SPROUTTOWER3F_RIVAL"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeInFromBlack"
+          ],
+          "raw": "special FadeInFromBlack"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_SPROUTTOWER3F_NOOP"
+          ],
+          "raw": "setscene SCENE_SPROUTTOWER3F_NOOP"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [],
+      "text_refs": [
+        "SproutTowerElderLecturesRivalText",
+        "SproutTowerRivalOnlyCareAboutStrongText",
+        "SproutTowerRivalUsedEscapeRopeText"
+      ],
+      "movement_refs": [
+        "SproutTower3FPlayerApproachesRivalMovement",
+        "SproutTower3FRivalApproachesElderMovement",
+        "SproutTower3FRivalLeavesElderMovement"
+      ],
+      "scene_refs": [
+        "SCENE_SPROUTTOWER3F_NOOP"
+      ],
+      "std_calls": []
+    },
+    "SageLiScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_HM05_FLASH",
+        "iftrue .GotFlash",
+        "writetext SageLiSeenText",
+        "waitbutton",
+        "closetext",
+        "winlosstext SageLiBeatenText, 0",
+        "loadtrainer SAGE, LI",
+        "startbattle",
+        "reloadmapafterbattle",
+        "opentext",
+        "writetext SageLiTakeThisFlashText",
+        "promptbutton",
+        "verbosegiveitem HM_FLASH",
+        "setevent EVENT_GOT_HM05_FLASH",
+        "setevent EVENT_BEAT_SAGE_LI",
+        "writetext SageLiFlashExplanationText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_HM05_FLASH"
+          ],
+          "raw": "checkevent EVENT_GOT_HM05_FLASH"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "SageLiScript.GotFlash"
+          ],
+          "raw": "iftrue .GotFlash"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SageLiSeenText"
+          ],
+          "raw": "writetext SageLiSeenText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "SageLiBeatenText",
+            "0"
+          ],
+          "raw": "winlosstext SageLiBeatenText, 0"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "SAGE",
+            "LI"
+          ],
+          "raw": "loadtrainer SAGE, LI"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SageLiTakeThisFlashText"
+          ],
+          "raw": "writetext SageLiTakeThisFlashText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "HM_FLASH"
+          ],
+          "raw": "verbosegiveitem HM_FLASH"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_HM05_FLASH"
+          ],
+          "raw": "setevent EVENT_GOT_HM05_FLASH"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_SAGE_LI"
+          ],
+          "raw": "setevent EVENT_BEAT_SAGE_LI"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SageLiFlashExplanationText"
+          ],
+          "raw": "writetext SageLiFlashExplanationText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "SageLiScript.GotFlash"
+      ],
+      "text_refs": [
+        "SageLiFlashExplanationText",
+        "SageLiSeenText",
+        "SageLiTakeThisFlashText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SageLiScript.GotFlash": {
+      "raw_lines": [
+        "writetext SageLiAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "SageLiAfterBattleText"
+          ],
+          "raw": "writetext SageLiAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "SageLiAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSageJin": {
+      "raw_lines": [
+        "trainer SAGE, JIN, EVENT_BEAT_SAGE_JIN, SageJinSeenText, SageJinBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "SAGE",
+            "JIN",
+            "EVENT_BEAT_SAGE_JIN",
+            "SageJinSeenText",
+            "SageJinBeatenText",
+            "0",
+            "TrainerSageJin.Script"
+          ],
+          "raw": "trainer SAGE, JIN, EVENT_BEAT_SAGE_JIN, SageJinSeenText, SageJinBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerSageJin.Script",
+      "label_refs": [
+        "TrainerSageJin.Script"
+      ],
+      "text_refs": [
+        "SageJinBeatenText",
+        "SageJinSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSageJin.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext SageJinAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SageJinAfterBattleText"
+          ],
+          "raw": "writetext SageJinAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "SageJinAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSageTroy": {
+      "raw_lines": [
+        "trainer SAGE, TROY, EVENT_BEAT_SAGE_TROY, SageTroySeenText, SageTroyBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "SAGE",
+            "TROY",
+            "EVENT_BEAT_SAGE_TROY",
+            "SageTroySeenText",
+            "SageTroyBeatenText",
+            "0",
+            "TrainerSageTroy.Script"
+          ],
+          "raw": "trainer SAGE, TROY, EVENT_BEAT_SAGE_TROY, SageTroySeenText, SageTroyBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerSageTroy.Script",
+      "label_refs": [
+        "TrainerSageTroy.Script"
+      ],
+      "text_refs": [
+        "SageTroyBeatenText",
+        "SageTroySeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSageTroy.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext SageTroyAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SageTroyAfterBattleText"
+          ],
+          "raw": "writetext SageTroyAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "SageTroyAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSageNeal": {
+      "raw_lines": [
+        "trainer SAGE, NEAL, EVENT_BEAT_SAGE_NEAL, SageNealSeenText, SageNealBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "SAGE",
+            "NEAL",
+            "EVENT_BEAT_SAGE_NEAL",
+            "SageNealSeenText",
+            "SageNealBeatenText",
+            "0",
+            "TrainerSageNeal.Script"
+          ],
+          "raw": "trainer SAGE, NEAL, EVENT_BEAT_SAGE_NEAL, SageNealSeenText, SageNealBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerSageNeal.Script",
+      "label_refs": [
+        "TrainerSageNeal.Script"
+      ],
+      "text_refs": [
+        "SageNealBeatenText",
+        "SageNealSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSageNeal.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext SageNealAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "SageNealAfterBattleText"
+          ],
+          "raw": "writetext SageNealAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "SageNealAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower3FPainting": {
+      "raw_lines": [
+        "jumptext SproutTower3FPaintingText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "SproutTower3FPaintingText"
+          ],
+          "raw": "jumptext SproutTower3FPaintingText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "SproutTower3FPaintingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower3FStatue": {
+      "raw_lines": [
+        "jumptext SproutTower3FStatueText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "SproutTower3FStatueText"
+          ],
+          "raw": "jumptext SproutTower3FStatueText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "SproutTower3FStatueText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower3FPotion": {
+      "raw_lines": [
+        "itemball POTION"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "POTION"
+          ],
+          "raw": "itemball POTION"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "SproutTower3FEscapeRope",
+      "label_refs": [
+        "SproutTower3FEscapeRope"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower3FEscapeRope": {
+      "raw_lines": [
+        "itemball ESCAPE_ROPE"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "ESCAPE_ROPE"
+          ],
+          "raw": "itemball ESCAPE_ROPE"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "SproutTower3F_MapEvents",
+      "label_refs": [
+        "SproutTower3F_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower3F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 10, 14, SPROUT_TOWER_2F, 4",
+        "def_coord_events",
+        "coord_event 11,  9, SCENE_SPROUTTOWER3F_RIVAL_ENCOUNTER, SproutTower3FRivalScene",
+        "def_bg_events",
+        "bg_event  8,  1, BGEVENT_READ, SproutTower3FStatue",
+        "bg_event 11,  1, BGEVENT_READ, SproutTower3FStatue",
+        "bg_event  9,  0, BGEVENT_READ, SproutTower3FPainting",
+        "bg_event 10,  0, BGEVENT_READ, SproutTower3FPainting",
+        "bg_event  5, 15, BGEVENT_READ, SproutTower3FStatue",
+        "bg_event 14, 15, BGEVENT_READ, SproutTower3FStatue",
+        "def_object_events",
+        "object_event  8, 13, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSageJin, -1",
+        "object_event  8,  8, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSageTroy, -1",
+        "object_event 10,  2, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SageLiScript, -1",
+        "object_event 11, 11, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSageNeal, -1",
+        "object_event  6, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SproutTower3FPotion, EVENT_SPROUT_TOWER_3F_POTION",
+        "object_event 14,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SproutTower3FEscapeRope, EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE",
+        "object_event 10,  4, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_SPROUT_TOWER"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "10",
+            "14",
+            "SPROUT_TOWER_2F",
+            "4"
+          ],
+          "raw": "warp_event 10, 14, SPROUT_TOWER_2F, 4"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "11",
+            "9",
+            "SCENE_SPROUTTOWER3F_RIVAL_ENCOUNTER",
+            "SproutTower3FRivalScene"
+          ],
+          "raw": "coord_event 11,  9, SCENE_SPROUTTOWER3F_RIVAL_ENCOUNTER, SproutTower3FRivalScene"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "8",
+            "1",
+            "BGEVENT_READ",
+            "SproutTower3FStatue"
+          ],
+          "raw": "bg_event  8,  1, BGEVENT_READ, SproutTower3FStatue"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "11",
+            "1",
+            "BGEVENT_READ",
+            "SproutTower3FStatue"
+          ],
+          "raw": "bg_event 11,  1, BGEVENT_READ, SproutTower3FStatue"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "9",
+            "0",
+            "BGEVENT_READ",
+            "SproutTower3FPainting"
+          ],
+          "raw": "bg_event  9,  0, BGEVENT_READ, SproutTower3FPainting"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "10",
+            "0",
+            "BGEVENT_READ",
+            "SproutTower3FPainting"
+          ],
+          "raw": "bg_event 10,  0, BGEVENT_READ, SproutTower3FPainting"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "5",
+            "15",
+            "BGEVENT_READ",
+            "SproutTower3FStatue"
+          ],
+          "raw": "bg_event  5, 15, BGEVENT_READ, SproutTower3FStatue"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "14",
+            "15",
+            "BGEVENT_READ",
+            "SproutTower3FStatue"
+          ],
+          "raw": "bg_event 14, 15, BGEVENT_READ, SproutTower3FStatue"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "13",
+            "SPRITE_SAGE",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerSageJin",
+            "-1"
+          ],
+          "raw": "object_event  8, 13, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSageJin, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "8",
+            "SPRITE_SAGE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "2",
+            "TrainerSageTroy",
+            "-1"
+          ],
+          "raw": "object_event  8,  8, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSageTroy, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "10",
+            "2",
+            "SPRITE_SAGE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "SageLiScript",
+            "-1"
+          ],
+          "raw": "object_event 10,  2, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SageLiScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "11",
+            "11",
+            "SPRITE_SAGE",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerSageNeal",
+            "-1"
+          ],
+          "raw": "object_event 11, 11, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSageNeal, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "14",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "SproutTower3FPotion",
+            "EVENT_SPROUT_TOWER_3F_POTION"
+          ],
+          "raw": "object_event  6, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SproutTower3FPotion, EVENT_SPROUT_TOWER_3F_POTION"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "14",
+            "1",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "SproutTower3FEscapeRope",
+            "EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE"
+          ],
+          "raw": "object_event 14,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SproutTower3FEscapeRope, EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "10",
+            "4",
+            "SPRITE_RIVAL",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_RIVAL_SPROUT_TOWER"
+          ],
+          "raw": "object_event 10,  4, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_SPROUT_TOWER"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "SproutTowerElderLecturesRivalText": {
+      "raw_lines": [
+        "text \"ELDER: You are in-\"",
+        "line \"deed skilled as a\"",
+        "cont \"trainer.\"",
+        "para \"As promised, here\"",
+        "line \"is your HM.\"",
+        "para \"But let me say\"",
+        "line \"this: You should\"",
+        "para \"treat your\"",
+        "line \"#MON better.\"",
+        "para \"The way you battle\"",
+        "line \"is far too harsh.\"",
+        "para \"#MON are not\"",
+        "line \"tools of war\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ELDER: You are in-"
+        },
+        {
+          "command": "line",
+          "value": "deed skilled as a"
+        },
+        {
+          "command": "cont",
+          "value": "trainer."
+        },
+        {
+          "command": "para",
+          "value": "As promised, here"
+        },
+        {
+          "command": "line",
+          "value": "is your HM."
+        },
+        {
+          "command": "para",
+          "value": "But let me say"
+        },
+        {
+          "command": "line",
+          "value": "this: You should"
+        },
+        {
+          "command": "para",
+          "value": "treat your"
+        },
+        {
+          "command": "line",
+          "value": "#MON better."
+        },
+        {
+          "command": "para",
+          "value": "The way you battle"
+        },
+        {
+          "command": "line",
+          "value": "is far too harsh."
+        },
+        {
+          "command": "para",
+          "value": "#MON are not"
+        },
+        {
+          "command": "line",
+          "value": "tools of war\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SproutTowerRivalOnlyCareAboutStrongText": {
+      "raw_lines": [
+        "text \"\u2026\"",
+        "line \"\u2026Humph!\"",
+        "para \"He claims to be\"",
+        "line \"the ELDER but\"",
+        "cont \"he's weak.\"",
+        "para \"It stands to\"",
+        "line \"reason.\"",
+        "para \"I'd never lose to\"",
+        "line \"fools who babble\"",
+        "para \"about being nice\"",
+        "line \"to #MON.\"",
+        "para \"I only care about\"",
+        "line \"strong #MON\"",
+        "cont \"that can win.\"",
+        "para \"I really couldn't\"",
+        "line \"care less about\"",
+        "cont \"weak #MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026"
+        },
+        {
+          "command": "line",
+          "value": "\u2026Humph!"
+        },
+        {
+          "command": "para",
+          "value": "He claims to be"
+        },
+        {
+          "command": "line",
+          "value": "the ELDER but"
+        },
+        {
+          "command": "cont",
+          "value": "he's weak."
+        },
+        {
+          "command": "para",
+          "value": "It stands to"
+        },
+        {
+          "command": "line",
+          "value": "reason."
+        },
+        {
+          "command": "para",
+          "value": "I'd never lose to"
+        },
+        {
+          "command": "line",
+          "value": "fools who babble"
+        },
+        {
+          "command": "para",
+          "value": "about being nice"
+        },
+        {
+          "command": "line",
+          "value": "to #MON."
+        },
+        {
+          "command": "para",
+          "value": "I only care about"
+        },
+        {
+          "command": "line",
+          "value": "strong #MON"
+        },
+        {
+          "command": "cont",
+          "value": "that can win."
+        },
+        {
+          "command": "para",
+          "value": "I really couldn't"
+        },
+        {
+          "command": "line",
+          "value": "care less about"
+        },
+        {
+          "command": "cont",
+          "value": "weak #MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SproutTowerRivalUsedEscapeRopeText": {
+      "raw_lines": [
+        "text \"<RIVAL> used an\"",
+        "line \"ESCAPE ROPE!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<RIVAL> used an"
+        },
+        {
+          "command": "line",
+          "value": "ESCAPE ROPE!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SageLiSeenText": {
+      "raw_lines": [
+        "text \"So good of you to\"",
+        "line \"come here!\"",
+        "para \"SPROUT TOWER is a\"",
+        "line \"place of training.\"",
+        "para \"People and #MON\"",
+        "line \"test their bonds\"",
+        "para \"to build a bright\"",
+        "line \"future together.\"",
+        "para \"I am the final\"",
+        "line \"test.\"",
+        "para \"Allow me to check\"",
+        "line \"the ties between\"",
+        "para \"your #MON and\"",
+        "line \"you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "So good of you to"
+        },
+        {
+          "command": "line",
+          "value": "come here!"
+        },
+        {
+          "command": "para",
+          "value": "SPROUT TOWER is a"
+        },
+        {
+          "command": "line",
+          "value": "place of training."
+        },
+        {
+          "command": "para",
+          "value": "People and #MON"
+        },
+        {
+          "command": "line",
+          "value": "test their bonds"
+        },
+        {
+          "command": "para",
+          "value": "to build a bright"
+        },
+        {
+          "command": "line",
+          "value": "future together."
+        },
+        {
+          "command": "para",
+          "value": "I am the final"
+        },
+        {
+          "command": "line",
+          "value": "test."
+        },
+        {
+          "command": "para",
+          "value": "Allow me to check"
+        },
+        {
+          "command": "line",
+          "value": "the ties between"
+        },
+        {
+          "command": "para",
+          "value": "your #MON and"
+        },
+        {
+          "command": "line",
+          "value": "you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SageLiBeatenText": {
+      "raw_lines": [
+        "text \"Ah, excellent!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ah, excellent!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SageLiTakeThisFlashText": {
+      "raw_lines": [
+        "text \"You and your #-\"",
+        "line \"MON should have\"",
+        "para \"no problem using\"",
+        "line \"this move.\"",
+        "para \"Take this FLASH\"",
+        "line \"HM.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You and your #-"
+        },
+        {
+          "command": "line",
+          "value": "MON should have"
+        },
+        {
+          "command": "para",
+          "value": "no problem using"
+        },
+        {
+          "command": "line",
+          "value": "this move."
+        },
+        {
+          "command": "para",
+          "value": "Take this FLASH"
+        },
+        {
+          "command": "line",
+          "value": "HM."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SageLiFlashExplanationText": {
+      "raw_lines": [
+        "text \"FLASH illuminates\"",
+        "line \"even the darkest\"",
+        "cont \"of all places.\"",
+        "para \"But to use it out\"",
+        "line \"of battle, you\"",
+        "para \"need the BADGE\"",
+        "line \"from VIOLET's GYM.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "FLASH illuminates"
+        },
+        {
+          "command": "line",
+          "value": "even the darkest"
+        },
+        {
+          "command": "cont",
+          "value": "of all places."
+        },
+        {
+          "command": "para",
+          "value": "But to use it out"
+        },
+        {
+          "command": "line",
+          "value": "of battle, you"
+        },
+        {
+          "command": "para",
+          "value": "need the BADGE"
+        },
+        {
+          "command": "line",
+          "value": "from VIOLET's GYM."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SageLiAfterBattleText": {
+      "raw_lines": [
+        "text \"I hope you learn\"",
+        "line \"and grow from your\"",
+        "cont \"journey.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I hope you learn"
+        },
+        {
+          "command": "line",
+          "value": "and grow from your"
+        },
+        {
+          "command": "cont",
+          "value": "journey."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SageJinSeenText": {
+      "raw_lines": [
+        "text \"I train to find\"",
+        "line \"enlightenment in\"",
+        "cont \"#MON!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I train to find"
+        },
+        {
+          "command": "line",
+          "value": "enlightenment in"
+        },
+        {
+          "command": "cont",
+          "value": "#MON!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SageJinBeatenText": {
+      "raw_lines": [
+        "text \"My training is\"",
+        "line \"incomplete\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My training is"
+        },
+        {
+          "command": "line",
+          "value": "incomplete\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SageJinAfterBattleText": {
+      "raw_lines": [
+        "text \"As #MON grow\"",
+        "line \"stronger, so does\"",
+        "cont \"the trainer.\"",
+        "para \"No, wait. As the\"",
+        "line \"trainer grows\"",
+        "para \"stronger, so do\"",
+        "line \"the #MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "As #MON grow"
+        },
+        {
+          "command": "line",
+          "value": "stronger, so does"
+        },
+        {
+          "command": "cont",
+          "value": "the trainer."
+        },
+        {
+          "command": "para",
+          "value": "No, wait. As the"
+        },
+        {
+          "command": "line",
+          "value": "trainer grows"
+        },
+        {
+          "command": "para",
+          "value": "stronger, so do"
+        },
+        {
+          "command": "line",
+          "value": "the #MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SageTroySeenText": {
+      "raw_lines": [
+        "text \"Let me see how\"",
+        "line \"much you trust\"",
+        "cont \"your #MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Let me see how"
+        },
+        {
+          "command": "line",
+          "value": "much you trust"
+        },
+        {
+          "command": "cont",
+          "value": "your #MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SageTroyBeatenText": {
+      "raw_lines": [
+        "text \"Yes, your trust is\"",
+        "line \"real!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Yes, your trust is"
+        },
+        {
+          "command": "line",
+          "value": "real!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SageTroyAfterBattleText": {
+      "raw_lines": [
+        "text \"It is not far to\"",
+        "line \"the ELDER.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It is not far to"
+        },
+        {
+          "command": "line",
+          "value": "the ELDER."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SageNealSeenText": {
+      "raw_lines": [
+        "text \"The ELDER's HM\"",
+        "line \"lights even pitch-\"",
+        "cont \"black darkness.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The ELDER's HM"
+        },
+        {
+          "command": "line",
+          "value": "lights even pitch-"
+        },
+        {
+          "command": "cont",
+          "value": "black darkness."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SageNealBeatenText": {
+      "raw_lines": [
+        "text \"It is my head that\"",
+        "line \"is bright!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It is my head that"
+        },
+        {
+          "command": "line",
+          "value": "is bright!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SageNealAfterBattleText": {
+      "raw_lines": [
+        "text \"Let there be light\"",
+        "line \"on your journey.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Let there be light"
+        },
+        {
+          "command": "line",
+          "value": "on your journey."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SproutTower3FPaintingText": {
+      "raw_lines": [
+        "text \"It's a powerful\"",
+        "line \"painting of a\"",
+        "cont \"BELLSPROUT.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's a powerful"
+        },
+        {
+          "command": "line",
+          "value": "painting of a"
+        },
+        {
+          "command": "cont",
+          "value": "BELLSPROUT."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "SproutTower3FStatueText": {
+      "raw_lines": [
+        "text \"A #MON statue\u2026\"",
+        "para \"It looks very\"",
+        "line \"distinguished.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A #MON statue\u2026"
+        },
+        {
+          "command": "para",
+          "value": "It looks very"
+        },
+        {
+          "command": "line",
+          "value": "distinguished."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "SproutTower3FPlayerApproachesRivalMovement": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "SproutTower3FRivalApproachesElderMovement": {
+      "raw_lines": [
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "SproutTower3FRivalLeavesElderMovement": {
+      "raw_lines": [
+        "step RIGHT",
+        "step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "SproutTower3F_MapScripts": {
+      "label_refs": [
+        "SproutTower3FNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower3FNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower3FNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower3FRivalScene": {
+      "label_refs": [],
+      "text_refs": [
+        "SproutTowerElderLecturesRivalText",
+        "SproutTowerRivalOnlyCareAboutStrongText",
+        "SproutTowerRivalUsedEscapeRopeText"
+      ],
+      "movement_refs": [
+        "SproutTower3FPlayerApproachesRivalMovement",
+        "SproutTower3FRivalApproachesElderMovement",
+        "SproutTower3FRivalLeavesElderMovement"
+      ],
+      "scene_refs": [
+        "SCENE_SPROUTTOWER3F_NOOP"
+      ],
+      "std_calls": []
+    },
+    "SageLiScript": {
+      "label_refs": [
+        "SageLiScript.GotFlash"
+      ],
+      "text_refs": [
+        "SageLiFlashExplanationText",
+        "SageLiSeenText",
+        "SageLiTakeThisFlashText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SageLiScript.GotFlash": {
+      "label_refs": [],
+      "text_refs": [
+        "SageLiAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSageJin": {
+      "label_refs": [
+        "TrainerSageJin.Script"
+      ],
+      "text_refs": [
+        "SageJinBeatenText",
+        "SageJinSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSageJin.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "SageJinAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSageTroy": {
+      "label_refs": [
+        "TrainerSageTroy.Script"
+      ],
+      "text_refs": [
+        "SageTroyBeatenText",
+        "SageTroySeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSageTroy.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "SageTroyAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSageNeal": {
+      "label_refs": [
+        "TrainerSageNeal.Script"
+      ],
+      "text_refs": [
+        "SageNealBeatenText",
+        "SageNealSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerSageNeal.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "SageNealAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower3FPainting": {
+      "label_refs": [],
+      "text_refs": [
+        "SproutTower3FPaintingText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower3FStatue": {
+      "label_refs": [],
+      "text_refs": [
+        "SproutTower3FStatueText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower3FPotion": {
+      "label_refs": [
+        "SproutTower3FEscapeRope"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower3FEscapeRope": {
+      "label_refs": [
+        "SproutTower3F_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "SproutTower3F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 0,
+    "warp_events": 1,
+    "coord_events": 1,
+    "bg_events": 6,
+    "object_events": 7
+  }
+}

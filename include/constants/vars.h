@@ -236,9 +236,9 @@
 #define VAR_SOOTOPOLIS_WALLACE_STATE                     0x40D8
 #define VAR_HAS_TALKED_TO_SEAFLOOR_CAVERN_ENTRANCE_GRUNT 0x40D9
 #define VAR_REGISTER_BIRCH_STATE                         0x40DA
-// 1 = bedroom spawn, 2 = spoke to Mom, 3 = spoke to Elm, 4 = reserved for starter/bootstrap follow-up
-#define VAR_JOHTO_INTRO_STATE                            0x40DB // New Bark / Elm bootstrap state
-#define VAR_UNUSED_0x40DC                                0x40DC // Unused Var
+// 1 = bedroom spawn, 2 = spoke to Mom, 3 = spoke to Elm, 4 = received starter, 5 = met Mr. Pokemon/Oak, 6 = returned egg to Elm
+#define VAR_JOHTO_INTRO_STATE                            0x40DB // 1 bedroom, 2 Mom, 3 Elm intro, 4 starter, 5 Mr. Pokemon, 6 rival named, 7 egg returned
+#define VAR_JOHTO_ROUTE29_SCENE_STATE                    0x40DC // Route 29 tutorial and west road scene state
 #define VAR_GIFT_PICHU_SLOT                              0x40DD
 #define VAR_GIFT_UNUSED_1                                0x40DE // Var is written to, but never read
 #define VAR_GIFT_UNUSED_2                                0x40DF // Var is written to, but never read
@@ -265,15 +265,15 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
-#define VAR_UNUSED_0x40F7                                0x40F7 // Unused Var
-#define VAR_UNUSED_0x40F8                                0x40F8 // Unused Var
-#define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
-#define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
-#define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
+#define VAR_JOHTO_CHERRYGROVE_SCENE_STATE                0x40F7 // Cherrygrove guide / rival scene state
+#define VAR_JOHTO_VIOLET_SCENE_STATE                     0x40F8 // Violet City / Sprout Tower story state
+#define VAR_JOHTO_AZALEA_SCENE_STATE                     0x40F9 // Azalea / Slowpoke Well story state
+#define VAR_JOHTO_GOLDENROD_SCENE_STATE                  0x40FA // Goldenrod City core and Rocket takeover state
+#define VAR_JOHTO_ECRUTEAK_SCENE_STATE                   0x40FB // Ecruteak / Burned Tower story state
+#define VAR_JOHTO_OLIVINE_CIANWOOD_SCENE_STATE           0x40FC // Lighthouse / Cianwood medicine state
+#define VAR_JOHTO_MAHOGANY_BLACKTHORN_SCENE_STATE        0x40FD // Mahogany, Ice Path, and Blackthorn story state
+#define VAR_JOHTO_ROUTE26_LEAGUE_SCENE_STATE             0x40FE // Route 26/27, Victory Road, and League approach state
+#define VAR_JOHTO_STARTER_SPECIES                        0x40FF // Persistent Johto starter species for rival/event logic
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)
@@ -324,5 +324,13 @@
 #define VAR_TEMP_FRONTIER_TUTOR_ID         VAR_TEMP_E
 
 #define VAR_TEMP_TRANSFERRED_SPECIES  VAR_TEMP_1
+
+#define SUNDAY   0
+#define MONDAY   1
+#define TUESDAY  2
+#define WEDNESDAY 3
+#define THURSDAY 4
+#define FRIDAY   5
+#define SATURDAY 6
 
 #endif // GUARD_CONSTANTS_VARS_H

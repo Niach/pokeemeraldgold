@@ -1,2 +1,56 @@
 CherrygroveMart_MapScripts::
 	.byte 0
+
+JohtoScript_CherrygroveMart_CherrygroveMartClerkScript::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	goto_if_set FLAG_SYS_POKEDEX_GET, JohtoScript_CherrygroveMart_CherrygroveMartClerkScript_PokeBallsInStock
+	pokemart JohtoScript_CherrygroveMart_CherrygroveMartClerkScript_Pokemart
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_CherrygroveMart_CherrygroveMartClerkScript_PokeBallsInStock:
+	pokemart JohtoScript_CherrygroveMart_CherrygroveMartClerkScript_PokemartDex
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+JohtoScript_CherrygroveMart_CherrygroveMartClerkScript_Pokemart:
+	.2byte ITEM_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_AWAKENING
+	pokemartlistend
+
+	.align 2
+JohtoScript_CherrygroveMart_CherrygroveMartClerkScript_PokemartDex:
+	.2byte ITEM_POKE_BALL
+	.2byte ITEM_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_AWAKENING
+	pokemartlistend
+
+JohtoScript_CherrygroveMart_CherrygroveMartCooltrainerMScript::
+	lock
+	faceplayer
+	goto_if_set FLAG_SYS_POKEDEX_GET, JohtoScript_CherrygroveMart_CherrygroveMartCooltrainerMScript_PokeBallsInStock
+	msgbox Crystal_CherrygroveMart_CherrygroveMartCooltrainerMText, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_CherrygroveMart_CherrygroveMartCooltrainerMScript_PokeBallsInStock:
+	msgbox Crystal_CherrygroveMart_CherrygroveMartCooltrainerMText_PokeBallsInStock, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_CherrygroveMart_CherrygroveMartYoungsterScript::
+	lock
+	faceplayer
+	msgbox Crystal_CherrygroveMart_CherrygroveMartYoungsterText, MSGBOX_DEFAULT
+	release
+	end

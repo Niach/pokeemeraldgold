@@ -2,11 +2,17 @@ PlayersNeighborsHouse_MapScripts::
 	.byte 0
 
 PlayersNeighborsHouse_EventScript_Daughter::
-	msgbox PlayersNeighborsHouse_Text_Daughter, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox PlayersNeighborsHouse_Text_Daughter, MSGBOX_DEFAULT
+	release
 	end
 
 PlayersNeighborsHouse_EventScript_Neighbor::
-	msgbox PlayersNeighborsHouse_Text_Neighbor, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox PlayersNeighborsHouse_Text_Neighbor, MSGBOX_DEFAULT
+	release
 	end
 
 PlayersNeighborsHouse_EventScript_Bookshelf::

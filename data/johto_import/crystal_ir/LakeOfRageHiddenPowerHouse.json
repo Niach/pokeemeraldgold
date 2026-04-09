@@ -1,0 +1,605 @@
+{
+  "crystal_map": "LakeOfRageHiddenPowerHouse",
+  "map_id": "LAKE_OF_RAGE_HIDDEN_POWER_HOUSE",
+  "group": "LAKE_OF_RAGE",
+  "group_index": 9,
+  "map_index": 1,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_LAKE_OF_RAGE",
+  "music": "MUSIC_LAKE_OF_RAGE",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/House1.blk",
+  "source_asm": "maps/LakeOfRageHiddenPowerHouse.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "LAKE_OF_RAGE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "LAKE_OF_RAGE",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 0,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "HiddenPowerHouseBookshelf"
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "HiddenPowerHouseBookshelf"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 3,
+        "sprite": "SPRITE_FISHER",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "HiddenPowerGuy",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "LAKEOFRAGEHIDDENPOWERHOUSE_FISHER"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "LakeOfRageHiddenPowerHouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "HiddenPowerGuy",
+      "label_refs": [
+        "HiddenPowerGuy"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "HiddenPowerGuy": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_TM10_HIDDEN_POWER",
+        "iftrue .AlreadyGotItem",
+        "writetext HiddenPowerGuyText1",
+        "promptbutton",
+        "verbosegiveitem TM_HIDDEN_POWER",
+        "iffalse .Done",
+        "setevent EVENT_GOT_TM10_HIDDEN_POWER",
+        "writetext HiddenPowerGuyText2",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TM10_HIDDEN_POWER"
+          ],
+          "raw": "checkevent EVENT_GOT_TM10_HIDDEN_POWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "HiddenPowerGuy.AlreadyGotItem"
+          ],
+          "raw": "iftrue .AlreadyGotItem"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "HiddenPowerGuyText1"
+          ],
+          "raw": "writetext HiddenPowerGuyText1"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "TM_HIDDEN_POWER"
+          ],
+          "raw": "verbosegiveitem TM_HIDDEN_POWER"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "HiddenPowerGuy.Done"
+          ],
+          "raw": "iffalse .Done"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_TM10_HIDDEN_POWER"
+          ],
+          "raw": "setevent EVENT_GOT_TM10_HIDDEN_POWER"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "HiddenPowerGuyText2"
+          ],
+          "raw": "writetext HiddenPowerGuyText2"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "HiddenPowerGuy.AlreadyGotItem",
+        "HiddenPowerGuy.Done"
+      ],
+      "text_refs": [
+        "HiddenPowerGuyText1",
+        "HiddenPowerGuyText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "HiddenPowerGuy.AlreadyGotItem": {
+      "raw_lines": [
+        "writetext HiddenPowerGuyText3",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "HiddenPowerGuyText3"
+          ],
+          "raw": "writetext HiddenPowerGuyText3"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "HiddenPowerGuy.Done",
+      "label_refs": [
+        "HiddenPowerGuy.Done"
+      ],
+      "text_refs": [
+        "HiddenPowerGuyText3"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "HiddenPowerGuy.Done": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "HiddenPowerHouseBookshelf": {
+      "raw_lines": [
+        "jumpstd DifficultBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "DifficultBookshelfScript"
+          ],
+          "raw": "jumpstd DifficultBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "DifficultBookshelfScript"
+      ]
+    },
+    "LakeOfRageHiddenPowerHouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, LAKE_OF_RAGE, 1",
+        "warp_event  3,  7, LAKE_OF_RAGE, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, HiddenPowerHouseBookshelf",
+        "bg_event  1,  1, BGEVENT_READ, HiddenPowerHouseBookshelf",
+        "def_object_events",
+        "object_event  2,  3, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, HiddenPowerGuy, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "LAKE_OF_RAGE",
+            "1"
+          ],
+          "raw": "warp_event  2,  7, LAKE_OF_RAGE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "LAKE_OF_RAGE",
+            "1"
+          ],
+          "raw": "warp_event  3,  7, LAKE_OF_RAGE, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "HiddenPowerHouseBookshelf"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, HiddenPowerHouseBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "HiddenPowerHouseBookshelf"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, HiddenPowerHouseBookshelf"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "HiddenPowerGuy",
+            "-1"
+          ],
+          "raw": "object_event  2,  3, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, HiddenPowerGuy, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "HiddenPowerGuyText1": {
+      "raw_lines": [
+        "text \"\u2026You have strayed\"",
+        "line \"far\u2026\"",
+        "para \"Here I have medi-\"",
+        "line \"tated. Inside me,\"",
+        "para \"a new power has\"",
+        "line \"been awakened.\"",
+        "para \"Let me share my\"",
+        "line \"power with your\"",
+        "para \"#MON.\"",
+        "line \"Take this, child.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026You have strayed"
+        },
+        {
+          "command": "line",
+          "value": "far\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Here I have medi-"
+        },
+        {
+          "command": "line",
+          "value": "tated. Inside me,"
+        },
+        {
+          "command": "para",
+          "value": "a new power has"
+        },
+        {
+          "command": "line",
+          "value": "been awakened."
+        },
+        {
+          "command": "para",
+          "value": "Let me share my"
+        },
+        {
+          "command": "line",
+          "value": "power with your"
+        },
+        {
+          "command": "para",
+          "value": "#MON."
+        },
+        {
+          "command": "line",
+          "value": "Take this, child."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "HiddenPowerGuyText2": {
+      "raw_lines": [
+        "text \"Do you see it? It\"",
+        "line \"is HIDDEN POWER!\"",
+        "para \"It draws out the\"",
+        "line \"power of #MON\"",
+        "cont \"for attacking.\"",
+        "para \"Remember this: its\"",
+        "line \"type and power de-\"",
+        "cont \"pend on the #-\"",
+        "cont \"MON using it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Do you see it? It"
+        },
+        {
+          "command": "line",
+          "value": "is HIDDEN POWER!"
+        },
+        {
+          "command": "para",
+          "value": "It draws out the"
+        },
+        {
+          "command": "line",
+          "value": "power of #MON"
+        },
+        {
+          "command": "cont",
+          "value": "for attacking."
+        },
+        {
+          "command": "para",
+          "value": "Remember this: its"
+        },
+        {
+          "command": "line",
+          "value": "type and power de-"
+        },
+        {
+          "command": "cont",
+          "value": "pend on the #-"
+        },
+        {
+          "command": "cont",
+          "value": "MON using it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "HiddenPowerGuyText3": {
+      "raw_lines": [
+        "text \"I am meditating\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I am meditating\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "DifficultBookshelfScript"
+  ],
+  "dependencies": {
+    "LakeOfRageHiddenPowerHouse_MapScripts": {
+      "label_refs": [
+        "HiddenPowerGuy"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "HiddenPowerGuy": {
+      "label_refs": [
+        "HiddenPowerGuy.AlreadyGotItem",
+        "HiddenPowerGuy.Done"
+      ],
+      "text_refs": [
+        "HiddenPowerGuyText1",
+        "HiddenPowerGuyText2"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "HiddenPowerGuy.AlreadyGotItem": {
+      "label_refs": [
+        "HiddenPowerGuy.Done"
+      ],
+      "text_refs": [
+        "HiddenPowerGuyText3"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "HiddenPowerGuy.Done": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "HiddenPowerHouseBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "DifficultBookshelfScript"
+      ]
+    },
+    "LakeOfRageHiddenPowerHouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 1
+  }
+}

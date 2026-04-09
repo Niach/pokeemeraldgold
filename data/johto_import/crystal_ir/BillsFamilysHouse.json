@@ -1,0 +1,1702 @@
+{
+  "crystal_map": "BillsFamilysHouse",
+  "map_id": "BILLS_FAMILYS_HOUSE",
+  "group": "GOLDENROD",
+  "group_index": 11,
+  "map_index": 6,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_GOLDENROD_CITY",
+  "music": "MUSIC_GOLDENROD_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/House1.blk",
+  "source_asm": "maps/BillsFamilysHouse.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 4
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 0,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "BillsHouseBookshelf2"
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "BillsHouseBookshelf1"
+      },
+      {
+        "x": 7,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "BillsHouseRadio"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 3,
+        "sprite": "SPRITE_BILL",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BillScript",
+        "flag": "EVENT_MET_BILL"
+      },
+      {
+        "x": 5,
+        "y": 3,
+        "sprite": "SPRITE_POKEFAN_F",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BillsMomScript",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 4,
+        "sprite": "SPRITE_TWIN",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BillsYoungerSisterScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "BILLSFAMILYSHOUSE_BILL",
+    "BILLSFAMILYSHOUSE_POKEFAN_F",
+    "BILLSFAMILYSHOUSE_TWIN"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "BillsFamilysHouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "BillScript",
+      "label_refs": [
+        "BillScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_EEVEE",
+        "iftrue .GotEevee",
+        "writetext BillTakeThisEeveeText",
+        "yesorno",
+        "iffalse .Refused",
+        "writetext BillImCountingOnYouText",
+        "promptbutton",
+        "waitsfx",
+        "readvar VAR_PARTYCOUNT",
+        "ifequal PARTY_LENGTH, .NoRoom",
+        "writetext ReceivedEeveeText",
+        "playsound SFX_CAUGHT_MON",
+        "waitsfx",
+        "givepoke EEVEE, 20",
+        "setevent EVENT_GOT_EEVEE",
+        "writetext BillEeveeMayEvolveText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_EEVEE"
+          ],
+          "raw": "checkevent EVENT_GOT_EEVEE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "BillScript.GotEevee"
+          ],
+          "raw": "iftrue .GotEevee"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BillTakeThisEeveeText"
+          ],
+          "raw": "writetext BillTakeThisEeveeText"
+        },
+        {
+          "command": "yesorno",
+          "args": [],
+          "raw": "yesorno"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "BillScript.Refused"
+          ],
+          "raw": "iffalse .Refused"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BillImCountingOnYouText"
+          ],
+          "raw": "writetext BillImCountingOnYouText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_PARTYCOUNT"
+          ],
+          "raw": "readvar VAR_PARTYCOUNT"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PARTY_LENGTH",
+            "BillScript.NoRoom"
+          ],
+          "raw": "ifequal PARTY_LENGTH, .NoRoom"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ReceivedEeveeText"
+          ],
+          "raw": "writetext ReceivedEeveeText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_CAUGHT_MON"
+          ],
+          "raw": "playsound SFX_CAUGHT_MON"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "givepoke",
+          "args": [
+            "EEVEE",
+            "20"
+          ],
+          "raw": "givepoke EEVEE, 20"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_EEVEE"
+          ],
+          "raw": "setevent EVENT_GOT_EEVEE"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BillEeveeMayEvolveText"
+          ],
+          "raw": "writetext BillEeveeMayEvolveText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "BillScript.GotEevee",
+        "BillScript.NoRoom",
+        "BillScript.Refused"
+      ],
+      "text_refs": [
+        "BillEeveeMayEvolveText",
+        "BillImCountingOnYouText",
+        "BillTakeThisEeveeText",
+        "ReceivedEeveeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillScript.NoRoom": {
+      "raw_lines": [
+        "writetext BillPartyFullText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BillPartyFullText"
+          ],
+          "raw": "writetext BillPartyFullText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BillPartyFullText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillScript.Refused": {
+      "raw_lines": [
+        "writetext BillNoEeveeText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BillNoEeveeText"
+          ],
+          "raw": "writetext BillNoEeveeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BillNoEeveeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillScript.GotEevee": {
+      "raw_lines": [
+        "writetext BillPopWontWorkText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BillPopWontWorkText"
+          ],
+          "raw": "writetext BillPopWontWorkText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BillPopWontWorkText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillsMomScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_MET_BILL",
+        "iffalse .HaventMetBill",
+        "writetext BillsMomText_BeforeEcruteak",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_MET_BILL"
+          ],
+          "raw": "checkevent EVENT_MET_BILL"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "BillsMomScript.HaventMetBill"
+          ],
+          "raw": "iffalse .HaventMetBill"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BillsMomText_BeforeEcruteak"
+          ],
+          "raw": "writetext BillsMomText_BeforeEcruteak"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "BillsMomScript.HaventMetBill"
+      ],
+      "text_refs": [
+        "BillsMomText_BeforeEcruteak"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillsMomScript.HaventMetBill": {
+      "raw_lines": [
+        "writetext BillsMomText_AfterEcruteak",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BillsMomText_AfterEcruteak"
+          ],
+          "raw": "writetext BillsMomText_AfterEcruteak"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BillsMomText_AfterEcruteak"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillsYoungerSisterScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkcellnum PHONE_BILL",
+        "iftrue .GotBillsNumber",
+        "writetext BillsYoungerSisterUsefulNumberText",
+        "askforphonenumber PHONE_BILL",
+        "ifequal PHONE_CONTACTS_FULL, .NoRoom",
+        "ifequal PHONE_CONTACT_REFUSED, .Refused",
+        "waitsfx",
+        "addcellnum PHONE_BILL",
+        "writetext RecordedBillsNumberText",
+        "playsound SFX_REGISTER_PHONE_NUMBER",
+        "waitsfx",
+        "promptbutton"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkcellnum",
+          "args": [
+            "PHONE_BILL"
+          ],
+          "raw": "checkcellnum PHONE_BILL"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "BillsYoungerSisterScript.GotBillsNumber"
+          ],
+          "raw": "iftrue .GotBillsNumber"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BillsYoungerSisterUsefulNumberText"
+          ],
+          "raw": "writetext BillsYoungerSisterUsefulNumberText"
+        },
+        {
+          "command": "askforphonenumber",
+          "args": [
+            "PHONE_BILL"
+          ],
+          "raw": "askforphonenumber PHONE_BILL"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PHONE_CONTACTS_FULL",
+            "BillsYoungerSisterScript.NoRoom"
+          ],
+          "raw": "ifequal PHONE_CONTACTS_FULL, .NoRoom"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PHONE_CONTACT_REFUSED",
+            "BillsYoungerSisterScript.Refused"
+          ],
+          "raw": "ifequal PHONE_CONTACT_REFUSED, .Refused"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "addcellnum",
+          "args": [
+            "PHONE_BILL"
+          ],
+          "raw": "addcellnum PHONE_BILL"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RecordedBillsNumberText"
+          ],
+          "raw": "writetext RecordedBillsNumberText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_REGISTER_PHONE_NUMBER"
+          ],
+          "raw": "playsound SFX_REGISTER_PHONE_NUMBER"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "BillsYoungerSisterScript.GotBillsNumber",
+      "label_refs": [
+        "BillsYoungerSisterScript.GotBillsNumber",
+        "BillsYoungerSisterScript.NoRoom",
+        "BillsYoungerSisterScript.Refused"
+      ],
+      "text_refs": [
+        "BillsYoungerSisterUsefulNumberText",
+        "RecordedBillsNumberText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillsYoungerSisterScript.GotBillsNumber": {
+      "raw_lines": [
+        "writetext BillsYoungerSisterStorageSystemText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BillsYoungerSisterStorageSystemText"
+          ],
+          "raw": "writetext BillsYoungerSisterStorageSystemText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BillsYoungerSisterStorageSystemText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillsYoungerSisterScript.Refused": {
+      "raw_lines": [
+        "writetext BillsYoungerSisterRefusedNumberText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BillsYoungerSisterRefusedNumberText"
+          ],
+          "raw": "writetext BillsYoungerSisterRefusedNumberText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "BillsYoungerSisterRefusedNumberText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillsYoungerSisterScript.NoRoom": {
+      "raw_lines": [
+        "writetext BillsYoungerSisterPhoneFullText",
+        "promptbutton",
+        "sjump .Refused"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BillsYoungerSisterPhoneFullText"
+          ],
+          "raw": "writetext BillsYoungerSisterPhoneFullText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "BillsYoungerSisterScript.Refused"
+          ],
+          "raw": "sjump .Refused"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "BillsYoungerSisterScript.Refused"
+      ],
+      "text_refs": [
+        "BillsYoungerSisterPhoneFullText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillsHouseBookshelf1": {
+      "raw_lines": [
+        "jumpstd PictureBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PictureBookshelfScript"
+          ],
+          "raw": "jumpstd PictureBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "BillsHouseBookshelf2": {
+      "raw_lines": [
+        "jumpstd MagazineBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "MagazineBookshelfScript"
+          ],
+          "raw": "jumpstd MagazineBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "BillsHouseRadio": {
+      "raw_lines": [
+        "jumpstd Radio2Script"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "Radio2Script"
+          ],
+          "raw": "jumpstd Radio2Script"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "Radio2Script"
+      ]
+    },
+    "BillsFamilysHouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, GOLDENROD_CITY, 4",
+        "warp_event  3,  7, GOLDENROD_CITY, 4",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, BillsHouseBookshelf2",
+        "bg_event  1,  1, BGEVENT_READ, BillsHouseBookshelf1",
+        "bg_event  7,  1, BGEVENT_READ, BillsHouseRadio",
+        "def_object_events",
+        "object_event  2,  3, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillScript, EVENT_MET_BILL",
+        "object_event  5,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillsMomScript, -1",
+        "object_event  5,  4, SPRITE_TWIN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BillsYoungerSisterScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "GOLDENROD_CITY",
+            "4"
+          ],
+          "raw": "warp_event  2,  7, GOLDENROD_CITY, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "GOLDENROD_CITY",
+            "4"
+          ],
+          "raw": "warp_event  3,  7, GOLDENROD_CITY, 4"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "BillsHouseBookshelf2"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, BillsHouseBookshelf2"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "BillsHouseBookshelf1"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, BillsHouseBookshelf1"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "7",
+            "1",
+            "BGEVENT_READ",
+            "BillsHouseRadio"
+          ],
+          "raw": "bg_event  7,  1, BGEVENT_READ, BillsHouseRadio"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_BILL",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BillScript",
+            "EVENT_MET_BILL"
+          ],
+          "raw": "object_event  2,  3, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillScript, EVENT_MET_BILL"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "3",
+            "SPRITE_POKEFAN_F",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BillsMomScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BillsMomScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "4",
+            "SPRITE_TWIN",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BillsYoungerSisterScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  4, SPRITE_TWIN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BillsYoungerSisterScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "BillTakeThisEeveeText": {
+      "raw_lines": [
+        "text \"BILL: Hi, <PLAYER>!\"",
+        "line \"Do us a favor and\"",
+        "cont \"take this EEVEE.\"",
+        "para \"It came over when\"",
+        "line \"I was adjusting\"",
+        "cont \"the TIME CAPSULE.\"",
+        "para \"Someone has to\"",
+        "line \"take care of it,\"",
+        "para \"but I don't like\"",
+        "line \"being outside.\"",
+        "para \"Can I count on you\"",
+        "line \"to play with it,\"",
+        "cont \"<PLAYER>?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "BILL: Hi, <PLAYER>!"
+        },
+        {
+          "command": "line",
+          "value": "Do us a favor and"
+        },
+        {
+          "command": "cont",
+          "value": "take this EEVEE."
+        },
+        {
+          "command": "para",
+          "value": "It came over when"
+        },
+        {
+          "command": "line",
+          "value": "I was adjusting"
+        },
+        {
+          "command": "cont",
+          "value": "the TIME CAPSULE."
+        },
+        {
+          "command": "para",
+          "value": "Someone has to"
+        },
+        {
+          "command": "line",
+          "value": "take care of it,"
+        },
+        {
+          "command": "para",
+          "value": "but I don't like"
+        },
+        {
+          "command": "line",
+          "value": "being outside."
+        },
+        {
+          "command": "para",
+          "value": "Can I count on you"
+        },
+        {
+          "command": "line",
+          "value": "to play with it,"
+        },
+        {
+          "command": "cont",
+          "value": "<PLAYER>?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BillImCountingOnYouText": {
+      "raw_lines": [
+        "text \"BILL: I knew you'd\"",
+        "line \"come through!\"",
+        "para \"Way to go! You're\"",
+        "line \"the real deal!\"",
+        "para \"OK, I'm counting\"",
+        "line \"on you.\"",
+        "para \"Take good care of\"",
+        "line \"it!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "BILL: I knew you'd"
+        },
+        {
+          "command": "line",
+          "value": "come through!"
+        },
+        {
+          "command": "para",
+          "value": "Way to go! You're"
+        },
+        {
+          "command": "line",
+          "value": "the real deal!"
+        },
+        {
+          "command": "para",
+          "value": "OK, I'm counting"
+        },
+        {
+          "command": "line",
+          "value": "on you."
+        },
+        {
+          "command": "para",
+          "value": "Take good care of"
+        },
+        {
+          "command": "line",
+          "value": "it!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ReceivedEeveeText": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"EEVEE!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "EEVEE!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BillEeveeMayEvolveText": {
+      "raw_lines": [
+        "text \"BILL: PROF.ELM\"",
+        "line \"claims EEVEE may\"",
+        "para \"evolve in new and\"",
+        "line \"unknown ways.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "BILL: PROF.ELM"
+        },
+        {
+          "command": "line",
+          "value": "claims EEVEE may"
+        },
+        {
+          "command": "para",
+          "value": "evolve in new and"
+        },
+        {
+          "command": "line",
+          "value": "unknown ways."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BillPartyFullText": {
+      "raw_lines": [
+        "text \"Whoa, wait. You\"",
+        "line \"can't carry any\"",
+        "cont \"more #MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Whoa, wait. You"
+        },
+        {
+          "command": "line",
+          "value": "can't carry any"
+        },
+        {
+          "command": "cont",
+          "value": "more #MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BillNoEeveeText": {
+      "raw_lines": [
+        "text \"Oh\u2026 Now what to\"",
+        "line \"do?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh\u2026 Now what to"
+        },
+        {
+          "command": "line",
+          "value": "do?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BillPopWontWorkText": {
+      "raw_lines": [
+        "text \"BILL: My pop, he\"",
+        "line \"won't work. All he\"",
+        "para \"does is goof off\"",
+        "line \"all day long.\"",
+        "para \"He's getting to be\"",
+        "line \"a real headache\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "BILL: My pop, he"
+        },
+        {
+          "command": "line",
+          "value": "won't work. All he"
+        },
+        {
+          "command": "para",
+          "value": "does is goof off"
+        },
+        {
+          "command": "line",
+          "value": "all day long."
+        },
+        {
+          "command": "para",
+          "value": "He's getting to be"
+        },
+        {
+          "command": "line",
+          "value": "a real headache\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BillsMomText_BeforeEcruteak": {
+      "raw_lines": [
+        "text \"Oh, you collect\"",
+        "line \"#MON? My son\"",
+        "cont \"BILL is an expert.\"",
+        "para \"He just got called\"",
+        "line \"to the #MON\"",
+        "para \"CENTER in ECRUTEAK\"",
+        "line \"CITY.\"",
+        "para \"My husband went\"",
+        "line \"off to the GAME\"",
+        "para \"CORNER without\"",
+        "line \"being called\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, you collect"
+        },
+        {
+          "command": "line",
+          "value": "#MON? My son"
+        },
+        {
+          "command": "cont",
+          "value": "BILL is an expert."
+        },
+        {
+          "command": "para",
+          "value": "He just got called"
+        },
+        {
+          "command": "line",
+          "value": "to the #MON"
+        },
+        {
+          "command": "para",
+          "value": "CENTER in ECRUTEAK"
+        },
+        {
+          "command": "line",
+          "value": "CITY."
+        },
+        {
+          "command": "para",
+          "value": "My husband went"
+        },
+        {
+          "command": "line",
+          "value": "off to the GAME"
+        },
+        {
+          "command": "para",
+          "value": "CORNER without"
+        },
+        {
+          "command": "line",
+          "value": "being called\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BillsMomText_AfterEcruteak": {
+      "raw_lines": [
+        "text \"My husband was\"",
+        "line \"once known as a\"",
+        "para \"#MANIAC.\"",
+        "line \"BILL must have\"",
+        "para \"taken after his\"",
+        "line \"father.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My husband was"
+        },
+        {
+          "command": "line",
+          "value": "once known as a"
+        },
+        {
+          "command": "para",
+          "value": "#MANIAC."
+        },
+        {
+          "command": "line",
+          "value": "BILL must have"
+        },
+        {
+          "command": "para",
+          "value": "taken after his"
+        },
+        {
+          "command": "line",
+          "value": "father."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BillsYoungerSisterUsefulNumberText": {
+      "raw_lines": [
+        "text \"Are you a trainer?\"",
+        "para \"I've got a useful\"",
+        "line \"phone number for\"",
+        "cont \"you.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Are you a trainer?"
+        },
+        {
+          "command": "para",
+          "value": "I've got a useful"
+        },
+        {
+          "command": "line",
+          "value": "phone number for"
+        },
+        {
+          "command": "cont",
+          "value": "you."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RecordedBillsNumberText": {
+      "raw_lines": [
+        "text \"<PLAYER> recorded\"",
+        "line \"BILL's number.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> recorded"
+        },
+        {
+          "command": "line",
+          "value": "BILL's number."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BillsYoungerSisterRefusedNumberText": {
+      "raw_lines": [
+        "text \"My brother made\"",
+        "line \"the PC #MON\"",
+        "cont \"storage system.\"",
+        "para \"I was going to\"",
+        "line \"give you BILL's\"",
+        "cont \"number\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My brother made"
+        },
+        {
+          "command": "line",
+          "value": "the PC #MON"
+        },
+        {
+          "command": "cont",
+          "value": "storage system."
+        },
+        {
+          "command": "para",
+          "value": "I was going to"
+        },
+        {
+          "command": "line",
+          "value": "give you BILL's"
+        },
+        {
+          "command": "cont",
+          "value": "number\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BillsYoungerSisterPhoneFullText": {
+      "raw_lines": [
+        "text \"You can't record\"",
+        "line \"any more numbers.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You can't record"
+        },
+        {
+          "command": "line",
+          "value": "any more numbers."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BillsYoungerSisterStorageSystemText": {
+      "raw_lines": [
+        "text \"My big brother\"",
+        "line \"BILL made the PC\"",
+        "para \"#MON storage\"",
+        "line \"system.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My big brother"
+        },
+        {
+          "command": "line",
+          "value": "BILL made the PC"
+        },
+        {
+          "command": "para",
+          "value": "#MON storage"
+        },
+        {
+          "command": "line",
+          "value": "system."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "MagazineBookshelfScript",
+    "PictureBookshelfScript",
+    "Radio2Script"
+  ],
+  "dependencies": {
+    "BillsFamilysHouse_MapScripts": {
+      "label_refs": [
+        "BillScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillScript": {
+      "label_refs": [
+        "BillScript.GotEevee",
+        "BillScript.NoRoom",
+        "BillScript.Refused"
+      ],
+      "text_refs": [
+        "BillEeveeMayEvolveText",
+        "BillImCountingOnYouText",
+        "BillTakeThisEeveeText",
+        "ReceivedEeveeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillScript.NoRoom": {
+      "label_refs": [],
+      "text_refs": [
+        "BillPartyFullText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillScript.Refused": {
+      "label_refs": [],
+      "text_refs": [
+        "BillNoEeveeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillScript.GotEevee": {
+      "label_refs": [],
+      "text_refs": [
+        "BillPopWontWorkText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillsMomScript": {
+      "label_refs": [
+        "BillsMomScript.HaventMetBill"
+      ],
+      "text_refs": [
+        "BillsMomText_BeforeEcruteak"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillsMomScript.HaventMetBill": {
+      "label_refs": [],
+      "text_refs": [
+        "BillsMomText_AfterEcruteak"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillsYoungerSisterScript": {
+      "label_refs": [
+        "BillsYoungerSisterScript.GotBillsNumber",
+        "BillsYoungerSisterScript.NoRoom",
+        "BillsYoungerSisterScript.Refused"
+      ],
+      "text_refs": [
+        "BillsYoungerSisterUsefulNumberText",
+        "RecordedBillsNumberText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillsYoungerSisterScript.GotBillsNumber": {
+      "label_refs": [],
+      "text_refs": [
+        "BillsYoungerSisterStorageSystemText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillsYoungerSisterScript.Refused": {
+      "label_refs": [],
+      "text_refs": [
+        "BillsYoungerSisterRefusedNumberText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillsYoungerSisterScript.NoRoom": {
+      "label_refs": [
+        "BillsYoungerSisterScript.Refused"
+      ],
+      "text_refs": [
+        "BillsYoungerSisterPhoneFullText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BillsHouseBookshelf1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "BillsHouseBookshelf2": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "BillsHouseRadio": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "Radio2Script"
+      ]
+    },
+    "BillsFamilysHouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear",
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 3,
+    "object_events": 3
+  }
+}

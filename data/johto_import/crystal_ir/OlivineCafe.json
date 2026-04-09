@@ -1,0 +1,656 @@
+{
+  "crystal_map": "OlivineCafe",
+  "map_id": "OLIVINE_CAFE",
+  "group": "OLIVINE",
+  "group_index": 1,
+  "map_index": 7,
+  "tileset": "TILESET_GAME_CORNER",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_OLIVINE_CITY",
+  "music": "MUSIC_VIOLET_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/OlivineCafe.blk",
+  "source_asm": "maps/OlivineCafe.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "OLIVINE_CITY",
+        "dest_warp_id": 7
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "OLIVINE_CITY",
+        "dest_warp_id": 7
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 4,
+        "y": 3,
+        "sprite": "SPRITE_SAILOR",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "OlivineCafeStrengthSailorScript",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 3,
+        "sprite": "SPRITE_FISHING_GURU",
+        "movement": "SPRITEMOVEDATA_WALK_UP_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "OlivineCafeFishingGuruScript",
+        "flag": -1
+      },
+      {
+        "x": 6,
+        "y": 6,
+        "sprite": "SPRITE_SAILOR",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "OlivineCafeSailorScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "OLIVINECAFE_SAILOR1",
+    "OLIVINECAFE_FISHING_GURU",
+    "OLIVINECAFE_SAILOR2"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "OlivineCafe_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "OlivineCafeStrengthSailorScript",
+      "label_refs": [
+        "OlivineCafeStrengthSailorScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCafeStrengthSailorScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_HM04_STRENGTH",
+        "iftrue .GotStrength",
+        "writetext OlivineCafeStrengthSailorText",
+        "promptbutton",
+        "verbosegiveitem HM_STRENGTH",
+        "setevent EVENT_GOT_HM04_STRENGTH"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_HM04_STRENGTH"
+          ],
+          "raw": "checkevent EVENT_GOT_HM04_STRENGTH"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "OlivineCafeStrengthSailorScript.GotStrength"
+          ],
+          "raw": "iftrue .GotStrength"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "OlivineCafeStrengthSailorText"
+          ],
+          "raw": "writetext OlivineCafeStrengthSailorText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "HM_STRENGTH"
+          ],
+          "raw": "verbosegiveitem HM_STRENGTH"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_HM04_STRENGTH"
+          ],
+          "raw": "setevent EVENT_GOT_HM04_STRENGTH"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "OlivineCafeStrengthSailorScript.GotStrength",
+      "label_refs": [
+        "OlivineCafeStrengthSailorScript.GotStrength"
+      ],
+      "text_refs": [
+        "OlivineCafeStrengthSailorText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCafeStrengthSailorScript.GotStrength": {
+      "raw_lines": [
+        "writetext OlivineCafeStrengthSailorText_GotStrength",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "OlivineCafeStrengthSailorText_GotStrength"
+          ],
+          "raw": "writetext OlivineCafeStrengthSailorText_GotStrength"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCafeStrengthSailorText_GotStrength"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCafeFishingGuruScript": {
+      "raw_lines": [
+        "jumptextfaceplayer OlivineCafeFishingGuruText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "OlivineCafeFishingGuruText"
+          ],
+          "raw": "jumptextfaceplayer OlivineCafeFishingGuruText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCafeFishingGuruText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCafeSailorScript": {
+      "raw_lines": [
+        "jumptextfaceplayer OlivineCafeSailorText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "OlivineCafeSailorText"
+          ],
+          "raw": "jumptextfaceplayer OlivineCafeSailorText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCafeSailorText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCafe_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, OLIVINE_CITY, 7",
+        "warp_event  3,  7, OLIVINE_CITY, 7",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  4,  3, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeStrengthSailorScript, -1",
+        "object_event  7,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeFishingGuruScript, -1",
+        "object_event  6,  6, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeSailorScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "OLIVINE_CITY",
+            "7"
+          ],
+          "raw": "warp_event  2,  7, OLIVINE_CITY, 7"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "OLIVINE_CITY",
+            "7"
+          ],
+          "raw": "warp_event  3,  7, OLIVINE_CITY, 7"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "3",
+            "SPRITE_SAILOR",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "OlivineCafeStrengthSailorScript",
+            "-1"
+          ],
+          "raw": "object_event  4,  3, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeStrengthSailorScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "3",
+            "SPRITE_FISHING_GURU",
+            "SPRITEMOVEDATA_WALK_UP_DOWN",
+            "0",
+            "1",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "OlivineCafeFishingGuruScript",
+            "-1"
+          ],
+          "raw": "object_event  7,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeFishingGuruScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "6",
+            "SPRITE_SAILOR",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "OlivineCafeSailorScript",
+            "-1"
+          ],
+          "raw": "object_event  6,  6, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeSailorScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "OlivineCafeStrengthSailorText": {
+      "raw_lines": [
+        "text \"Hah! Your #MON\"",
+        "line \"sure look like\"",
+        "cont \"lightweights!\"",
+        "para \"They don't have\"",
+        "line \"the power to move\"",
+        "cont \"boulders aside.\"",
+        "para \"Here, use this\"",
+        "line \"and teach them\"",
+        "cont \"STRENGTH!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hah! Your #MON"
+        },
+        {
+          "command": "line",
+          "value": "sure look like"
+        },
+        {
+          "command": "cont",
+          "value": "lightweights!"
+        },
+        {
+          "command": "para",
+          "value": "They don't have"
+        },
+        {
+          "command": "line",
+          "value": "the power to move"
+        },
+        {
+          "command": "cont",
+          "value": "boulders aside."
+        },
+        {
+          "command": "para",
+          "value": "Here, use this"
+        },
+        {
+          "command": "line",
+          "value": "and teach them"
+        },
+        {
+          "command": "cont",
+          "value": "STRENGTH!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "OlivineCafeStrengthSailorText_GotStrength": {
+      "raw_lines": [
+        "text \"On the sea, the\"",
+        "line \"only thing you can\"",
+        "para \"count on is your\"",
+        "line \"own good self!\"",
+        "para \"I'm so proud of my\"",
+        "line \"buff bod!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "On the sea, the"
+        },
+        {
+          "command": "line",
+          "value": "only thing you can"
+        },
+        {
+          "command": "para",
+          "value": "count on is your"
+        },
+        {
+          "command": "line",
+          "value": "own good self!"
+        },
+        {
+          "command": "para",
+          "value": "I'm so proud of my"
+        },
+        {
+          "command": "line",
+          "value": "buff bod!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "OlivineCafeFishingGuruText": {
+      "raw_lines": [
+        "text \"OLIVINE CAFE's\"",
+        "line \"menu is chock full\"",
+        "para \"of hearty fare for\"",
+        "line \"beefy SAILORS!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "OLIVINE CAFE's"
+        },
+        {
+          "command": "line",
+          "value": "menu is chock full"
+        },
+        {
+          "command": "para",
+          "value": "of hearty fare for"
+        },
+        {
+          "command": "line",
+          "value": "beefy SAILORS!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "OlivineCafeSailorText": {
+      "raw_lines": [
+        "text \"Whenever I roll\"",
+        "line \"into this town, I\"",
+        "para \"always visit the\"",
+        "line \"OLIVINE CAFE.\"",
+        "para \"Everything on the\"",
+        "line \"menu makes me feel\"",
+        "para \"stronger. I can't\"",
+        "line \"stop eating!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Whenever I roll"
+        },
+        {
+          "command": "line",
+          "value": "into this town, I"
+        },
+        {
+          "command": "para",
+          "value": "always visit the"
+        },
+        {
+          "command": "line",
+          "value": "OLIVINE CAFE."
+        },
+        {
+          "command": "para",
+          "value": "Everything on the"
+        },
+        {
+          "command": "line",
+          "value": "menu makes me feel"
+        },
+        {
+          "command": "para",
+          "value": "stronger. I can't"
+        },
+        {
+          "command": "line",
+          "value": "stop eating!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "OlivineCafe_MapScripts": {
+      "label_refs": [
+        "OlivineCafeStrengthSailorScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCafeStrengthSailorScript": {
+      "label_refs": [
+        "OlivineCafeStrengthSailorScript.GotStrength"
+      ],
+      "text_refs": [
+        "OlivineCafeStrengthSailorText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCafeStrengthSailorScript.GotStrength": {
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCafeStrengthSailorText_GotStrength"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCafeFishingGuruScript": {
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCafeFishingGuruText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCafeSailorScript": {
+      "label_refs": [],
+      "text_refs": [
+        "OlivineCafeSailorText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "OlivineCafe_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 3
+  }
+}

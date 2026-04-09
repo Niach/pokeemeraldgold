@@ -1,0 +1,893 @@
+{
+  "crystal_map": "GoldenrodDeptStore2F",
+  "map_id": "GOLDENROD_DEPT_STORE_2F",
+  "group": "GOLDENROD",
+  "group_index": 11,
+  "map_index": 12,
+  "tileset": "TILESET_MART",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_GOLDENROD_CITY",
+  "music": "MUSIC_GOLDENROD_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 8,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/DeptStore2F.blk",
+  "source_asm": "maps/GoldenrodDeptStore2F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 12,
+        "y": 0,
+        "dest_map": "GOLDENROD_DEPT_STORE_3F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 15,
+        "y": 0,
+        "dest_map": "GOLDENROD_DEPT_STORE_1F",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 2,
+        "y": 0,
+        "dest_map": "GOLDENROD_DEPT_STORE_ELEVATOR",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 14,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodDeptStore2FDirectory"
+      },
+      {
+        "x": 3,
+        "y": 0,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodDeptStore2FElevatorButton"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 13,
+        "y": 5,
+        "sprite": "SPRITE_CLERK",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodDeptStore2FClerk1Script",
+        "flag": -1
+      },
+      {
+        "x": 13,
+        "y": 6,
+        "sprite": "SPRITE_CLERK",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodDeptStore2FClerk2Script",
+        "flag": -1
+      },
+      {
+        "x": 9,
+        "y": 6,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_WALK_UP_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodDeptStore2FYoungsterScript",
+        "flag": -1
+      },
+      {
+        "x": 6,
+        "y": 2,
+        "sprite": "SPRITE_COOLTRAINER_F",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 2,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodDeptStore2FCooltrainerFScript",
+        "flag": -1
+      },
+      {
+        "x": 2,
+        "y": 6,
+        "sprite": "SPRITE_GENTLEMAN",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodDeptStore2FGentlemanScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "GOLDENRODDEPTSTORE2F_CLERK1",
+    "GOLDENRODDEPTSTORE2F_CLERK2",
+    "GOLDENRODDEPTSTORE2F_YOUNGSTER",
+    "GOLDENRODDEPTSTORE2F_COOLTRAINER_F",
+    "GOLDENRODDEPTSTORE2F_GENTLEMAN"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "GoldenrodDeptStore2F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "GoldenrodDeptStore2FClerk1Script",
+      "label_refs": [
+        "GoldenrodDeptStore2FClerk1Script"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore2FClerk1Script": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "pokemart MARTTYPE_STANDARD, MART_GOLDENROD_2F_1",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "pokemart",
+          "args": [
+            "MARTTYPE_STANDARD",
+            "MART_GOLDENROD_2F_1"
+          ],
+          "raw": "pokemart MARTTYPE_STANDARD, MART_GOLDENROD_2F_1"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore2FClerk2Script": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "pokemart MARTTYPE_STANDARD, MART_GOLDENROD_2F_2",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "pokemart",
+          "args": [
+            "MARTTYPE_STANDARD",
+            "MART_GOLDENROD_2F_2"
+          ],
+          "raw": "pokemart MARTTYPE_STANDARD, MART_GOLDENROD_2F_2"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore2FYoungsterScript": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodDeptStore2FYoungsterText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodDeptStore2FYoungsterText"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodDeptStore2FYoungsterText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodDeptStore2FYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore2FCooltrainerFScript": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodDeptStore2FCooltrainerFText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodDeptStore2FCooltrainerFText"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodDeptStore2FCooltrainerFText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodDeptStore2FCooltrainerFText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore2FGentlemanScript": {
+      "raw_lines": [
+        "jumptextfaceplayer GoldenrodDeptStore2FGentlemanText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "GoldenrodDeptStore2FGentlemanText"
+          ],
+          "raw": "jumptextfaceplayer GoldenrodDeptStore2FGentlemanText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodDeptStore2FGentlemanText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore2FDirectory": {
+      "raw_lines": [
+        "jumptext GoldenrodDeptStore2FDirectoryText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "GoldenrodDeptStore2FDirectoryText"
+          ],
+          "raw": "jumptext GoldenrodDeptStore2FDirectoryText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodDeptStore2FDirectoryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore2FElevatorButton": {
+      "raw_lines": [
+        "jumpstd ElevatorButtonScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "ElevatorButtonScript"
+          ],
+          "raw": "jumpstd ElevatorButtonScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "ElevatorButtonScript"
+      ]
+    },
+    "GoldenrodDeptStore2F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 12,  0, GOLDENROD_DEPT_STORE_3F, 1",
+        "warp_event 15,  0, GOLDENROD_DEPT_STORE_1F, 3",
+        "warp_event  2,  0, GOLDENROD_DEPT_STORE_ELEVATOR, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event 14,  0, BGEVENT_READ, GoldenrodDeptStore2FDirectory",
+        "bg_event  3,  0, BGEVENT_READ, GoldenrodDeptStore2FElevatorButton",
+        "def_object_events",
+        "object_event 13,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore2FClerk1Script, -1",
+        "object_event 13,  6, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore2FClerk2Script, -1",
+        "object_event  9,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore2FYoungsterScript, -1",
+        "object_event  6,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore2FCooltrainerFScript, -1",
+        "object_event  2,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore2FGentlemanScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "12",
+            "0",
+            "GOLDENROD_DEPT_STORE_3F",
+            "1"
+          ],
+          "raw": "warp_event 12,  0, GOLDENROD_DEPT_STORE_3F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "15",
+            "0",
+            "GOLDENROD_DEPT_STORE_1F",
+            "3"
+          ],
+          "raw": "warp_event 15,  0, GOLDENROD_DEPT_STORE_1F, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "0",
+            "GOLDENROD_DEPT_STORE_ELEVATOR",
+            "1"
+          ],
+          "raw": "warp_event  2,  0, GOLDENROD_DEPT_STORE_ELEVATOR, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "14",
+            "0",
+            "BGEVENT_READ",
+            "GoldenrodDeptStore2FDirectory"
+          ],
+          "raw": "bg_event 14,  0, BGEVENT_READ, GoldenrodDeptStore2FDirectory"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "0",
+            "BGEVENT_READ",
+            "GoldenrodDeptStore2FElevatorButton"
+          ],
+          "raw": "bg_event  3,  0, BGEVENT_READ, GoldenrodDeptStore2FElevatorButton"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "13",
+            "5",
+            "SPRITE_CLERK",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodDeptStore2FClerk1Script",
+            "-1"
+          ],
+          "raw": "object_event 13,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore2FClerk1Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "13",
+            "6",
+            "SPRITE_CLERK",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodDeptStore2FClerk2Script",
+            "-1"
+          ],
+          "raw": "object_event 13,  6, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore2FClerk2Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "6",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_WALK_UP_DOWN",
+            "0",
+            "1",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodDeptStore2FYoungsterScript",
+            "-1"
+          ],
+          "raw": "object_event  9,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore2FYoungsterScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "2",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "2",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodDeptStore2FCooltrainerFScript",
+            "-1"
+          ],
+          "raw": "object_event  6,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore2FCooltrainerFScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "6",
+            "SPRITE_GENTLEMAN",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodDeptStore2FGentlemanScript",
+            "-1"
+          ],
+          "raw": "object_event  2,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore2FGentlemanScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "GoldenrodDeptStore2FUnusedText1": {
+      "raw_lines": [
+        "text \"We intend to sell\"",
+        "line \"items for #MON\"",
+        "cont \"to hold.\"",
+        "para \"This is a free\"",
+        "line \"gift. Have a #-\"",
+        "cont \"MON hold it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We intend to sell"
+        },
+        {
+          "command": "line",
+          "value": "items for #MON"
+        },
+        {
+          "command": "cont",
+          "value": "to hold."
+        },
+        {
+          "command": "para",
+          "value": "This is a free"
+        },
+        {
+          "command": "line",
+          "value": "gift. Have a #-"
+        },
+        {
+          "command": "cont",
+          "value": "MON hold it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodDeptStore2FUnusedText2": {
+      "raw_lines": [
+        "text \"By giving #MON\"",
+        "line \"items to hold, I\"",
+        "para \"bet trainers will\"",
+        "line \"develop new battle\"",
+        "cont \"techniques.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "By giving #MON"
+        },
+        {
+          "command": "line",
+          "value": "items to hold, I"
+        },
+        {
+          "command": "para",
+          "value": "bet trainers will"
+        },
+        {
+          "command": "line",
+          "value": "develop new battle"
+        },
+        {
+          "command": "cont",
+          "value": "techniques."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodDeptStore2FYoungsterText": {
+      "raw_lines": [
+        "text \"#GEAR can store\"",
+        "line \"up to ten phone\"",
+        "cont \"numbers.\"",
+        "para \"It's hard to de-\"",
+        "line \"cide which numbers\"",
+        "cont \"to keep.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#GEAR can store"
+        },
+        {
+          "command": "line",
+          "value": "up to ten phone"
+        },
+        {
+          "command": "cont",
+          "value": "numbers."
+        },
+        {
+          "command": "para",
+          "value": "It's hard to de-"
+        },
+        {
+          "command": "line",
+          "value": "cide which numbers"
+        },
+        {
+          "command": "cont",
+          "value": "to keep."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodDeptStore2FCooltrainerFText": {
+      "raw_lines": [
+        "text \"I got my ABRA at\"",
+        "line \"the GAME CORNER.\"",
+        "para \"Now it's my best\"",
+        "line \"partner.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I got my ABRA at"
+        },
+        {
+          "command": "line",
+          "value": "the GAME CORNER."
+        },
+        {
+          "command": "para",
+          "value": "Now it's my best"
+        },
+        {
+          "command": "line",
+          "value": "partner."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodDeptStore2FGentlemanText": {
+      "raw_lines": [
+        "text \"This DEPT.STORE\"",
+        "line \"makes me realize\"",
+        "para \"that GOLDENROD is\"",
+        "line \"a big city.\"",
+        "para \"The selection here\"",
+        "line \"is unmatched any-\"",
+        "cont \"where else.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This DEPT.STORE"
+        },
+        {
+          "command": "line",
+          "value": "makes me realize"
+        },
+        {
+          "command": "para",
+          "value": "that GOLDENROD is"
+        },
+        {
+          "command": "line",
+          "value": "a big city."
+        },
+        {
+          "command": "para",
+          "value": "The selection here"
+        },
+        {
+          "command": "line",
+          "value": "is unmatched any-"
+        },
+        {
+          "command": "cont",
+          "value": "where else."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodDeptStore2FDirectoryText": {
+      "raw_lines": [
+        "text \"Your Travel\"",
+        "line \"Companion\"",
+        "para \"2F TRAINER'S\"",
+        "line \"   MARKET\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Your Travel"
+        },
+        {
+          "command": "line",
+          "value": "Companion"
+        },
+        {
+          "command": "para",
+          "value": "2F TRAINER'S"
+        },
+        {
+          "command": "line",
+          "value": "   MARKET"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "ElevatorButtonScript"
+  ],
+  "dependencies": {
+    "GoldenrodDeptStore2F_MapScripts": {
+      "label_refs": [
+        "GoldenrodDeptStore2FClerk1Script"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore2FClerk1Script": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore2FClerk2Script": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore2FYoungsterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodDeptStore2FYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore2FCooltrainerFScript": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodDeptStore2FCooltrainerFText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore2FGentlemanScript": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodDeptStore2FGentlemanText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore2FDirectory": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodDeptStore2FDirectoryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodDeptStore2FElevatorButton": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "ElevatorButtonScript"
+      ]
+    },
+    "GoldenrodDeptStore2F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 3,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 5
+  }
+}

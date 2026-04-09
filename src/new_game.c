@@ -41,6 +41,7 @@
 #include "secret_base.h"
 #include "player_pc.h"
 #include "field_specials.h"
+#include "johto_story.h"
 #include "berry_powder.h"
 #include "mystery_gift.h"
 #include "union_room_chat.h"
@@ -168,6 +169,17 @@ void NewGameInitData(void)
     ClearPokedexFlags();
     InitEventData();
     VarSet(VAR_JOHTO_INTRO_STATE, 1);
+    VarSet(VAR_JOHTO_ROUTE29_SCENE_STATE, 0);
+    VarSet(VAR_JOHTO_CHERRYGROVE_SCENE_STATE, 0);
+    VarSet(VAR_JOHTO_VIOLET_SCENE_STATE, 0);
+    VarSet(VAR_JOHTO_AZALEA_SCENE_STATE, 0);
+    VarSet(VAR_JOHTO_GOLDENROD_SCENE_STATE, 0);
+    VarSet(VAR_JOHTO_ECRUTEAK_SCENE_STATE, 0);
+    VarSet(VAR_JOHTO_OLIVINE_CIANWOOD_SCENE_STATE, 0);
+    VarSet(VAR_JOHTO_MAHOGANY_BLACKTHORN_SCENE_STATE, 0);
+    VarSet(VAR_JOHTO_ROUTE26_LEAGUE_SCENE_STATE, 0);
+    VarSet(VAR_JOHTO_STARTER_SPECIES, SPECIES_NONE);
+    ResetJohtoPortState();
     ClearTVShowData();
     ResetGabbyAndTy();
     ClearSecretBases();

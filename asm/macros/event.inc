@@ -627,6 +627,18 @@
 		.endif
 	.endm
 
+	@ Makes follower trail the leader using the overworld follow system on the current map.
+	.macro follow leaderLocalId:req, followerLocalId:req
+	.byte SCR_OP_FOLLOW
+	.2byte \leaderLocalId
+	.2byte \followerLocalId
+	.endm
+
+	@ Stops the active overworld follow pair, if any.
+	.macro stopfollow
+	.byte SCR_OP_STOPFOLLOW
+	.endm
+
 	@ Attempts to despawn the specified (localId) object on the specified map.
 	@ It also sets the object's visibility flag if it has one.
 	@ If no map is specified, then the current map is used.
@@ -1970,4 +1982,133 @@
 	setvar VAR_0x8005, \level
 	setvar VAR_0x8006, \item
 	special CreateEnemyEventMon
+	.endm
+
+	@ Crystal script compatibility helpers used by the Johto importer.
+	.macro opentext
+	.endm
+
+	.macro writetext text:req
+	message \text
+	.endm
+
+	.macro closetext
+	closemessage
+	.endm
+
+	.macro waitbutton
+	waitbuttonpress
+	.endm
+
+	.macro promptbutton
+	waitbuttonpress
+	closemessage
+	.endm
+
+	.macro yesorno
+	yesnobox 20, 8
+	.endm
+
+	.macro checkevent flag:req
+	checkflag \flag
+	.endm
+
+	.macro setevent flag:req
+	setflag \flag
+	.endm
+
+	.macro clearevent flag:req
+	clearflag \flag
+	.endm
+
+	.macro iftrue dest:req
+	goto_if TRUE, \dest
+	.endm
+
+	.macro iffalse dest:req
+	goto_if FALSE, \dest
+	.endm
+
+	.macro ifequal value:req, dest:req
+	compare_var_to_value VAR_RESULT, \value
+	goto_if 1, \dest
+	.endm
+
+	.macro ifnotequal value:req, dest:req
+	compare_var_to_value VAR_RESULT, \value
+	goto_if 5, \dest
+	.endm
+
+	.macro ifgreater value:req, dest:req
+	compare_var_to_value VAR_RESULT, \value
+	goto_if 2, \dest
+	.endm
+
+	.macro ifless value:req, dest:req
+	compare_var_to_value VAR_RESULT, \value
+	goto_if 0, \dest
+	.endm
+
+	.macro readvar var:req
+	.byte SCR_OP_COPYVAR
+	.2byte VAR_RESULT
+	.2byte \var
+	.endm
+
+	.macro verbosegiveitem item:req, amount=1
+	giveitem \item, \amount
+	.endm
+
+	.macro takeitem item:req, amount=1
+	removeitem \item, \amount
+	.endm
+
+	.macro playsound song:req
+	playse \song
+	.endm
+
+	.macro waitsfx
+	waitse
+	.endm
+
+	.macro playmusic song:req
+	playbgm \song, TRUE
+	.endm
+
+	.macro pause frames:req
+	delay \frames
+	.endm
+
+	.macro cry species:req
+	playmoncry \species, CRY_MODE_NORMAL
+	.endm
+
+	.macro appear localId:req
+	addobject \localId
+	.endm
+
+	.macro disappear localId:req
+	removeobject \localId
+	.endm
+
+	.macro moveobject localId:req, x:req, y:req
+	setobjectxy \localId, \x, \y
+	.endm
+
+	.macro setval value:req
+	.byte SCR_OP_SETVAR
+	.2byte VAR_0x8004
+	.2byte \value
+	.endm
+
+	.macro jump dest:req
+	goto \dest
+	.endm
+
+	.macro sjump dest:req
+	goto \dest
+	.endm
+
+	.macro scall dest:req
+	call \dest
 	.endm

@@ -1,0 +1,3545 @@
+{
+  "crystal_map": "Route31",
+  "map_id": "ROUTE_31",
+  "group": "CHERRYGROVE",
+  "group_index": 26,
+  "map_index": 2,
+  "tileset": "TILESET_JOHTO",
+  "environment": "ROUTE",
+  "landmark": "LANDMARK_ROUTE_31",
+  "music": "MUSIC_ROUTE_30",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_AUTO",
+  "fishgroup": "FISHGROUP_POND",
+  "width_blocks": 20,
+  "height_blocks": 9,
+  "border_block": "05",
+  "blk_path": "maps/Route31.blk",
+  "source_asm": "maps/Route31.asm",
+  "connections": [
+    {
+      "direction": "south",
+      "map": "Route30",
+      "target_map_id": "ROUTE_30",
+      "offset": 10
+    },
+    {
+      "direction": "west",
+      "map": "VioletCity",
+      "target_map_id": "VIOLET_CITY",
+      "offset": -9
+    }
+  ],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "Route31CheckMomCallCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 4,
+        "y": 6,
+        "dest_map": "ROUTE_31_VIOLET_GATE",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "dest_map": "ROUTE_31_VIOLET_GATE",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 34,
+        "y": 5,
+        "dest_map": "DARK_CAVE_VIOLET_ENTRANCE",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 7,
+        "y": 5,
+        "kind": "BGEVENT_READ",
+        "script": "Route31Sign"
+      },
+      {
+        "x": 31,
+        "y": 5,
+        "kind": "BGEVENT_READ",
+        "script": "DarkCaveSign"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 17,
+        "y": 7,
+        "sprite": "SPRITE_FISHER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route31MailRecipientScript",
+        "flag": -1
+      },
+      {
+        "x": 9,
+        "y": 5,
+        "sprite": "SPRITE_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route31YoungsterScript",
+        "flag": -1
+      },
+      {
+        "x": 21,
+        "y": 13,
+        "sprite": "SPRITE_BUG_CATCHER",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 5,
+        "script": "TrainerBugCatcherWade1",
+        "flag": -1
+      },
+      {
+        "x": 33,
+        "y": 8,
+        "sprite": "SPRITE_COOLTRAINER_M",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route31CooltrainerMScript",
+        "flag": -1
+      },
+      {
+        "x": 16,
+        "y": 7,
+        "sprite": "SPRITE_FRUIT_TREE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route31FruitTree",
+        "flag": -1
+      },
+      {
+        "x": 29,
+        "y": 5,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "Route31Potion",
+        "flag": "EVENT_ROUTE_31_POTION"
+      },
+      {
+        "x": 19,
+        "y": 15,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "Route31PokeBall",
+        "flag": "EVENT_ROUTE_31_POKE_BALL"
+      }
+    ]
+  },
+  "object_consts": [
+    "ROUTE31_FISHER",
+    "ROUTE31_YOUNGSTER",
+    "ROUTE31_BUG_CATCHER",
+    "ROUTE31_COOLTRAINER_M",
+    "ROUTE31_FRUIT_TREE",
+    "ROUTE31_POKE_BALL1",
+    "ROUTE31_POKE_BALL2"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "Route31_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, Route31CheckMomCallCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "Route31CheckMomCallCallback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, Route31CheckMomCallCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "Route31CheckMomCallCallback",
+      "label_refs": [
+        "Route31CheckMomCallCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31CheckMomCallCallback": {
+      "raw_lines": [
+        "checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST",
+        "iffalse .DoMomCall",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST"
+          ],
+          "raw": "checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Route31CheckMomCallCallback.DoMomCall"
+          ],
+          "raw": "iffalse .DoMomCall"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "Route31CheckMomCallCallback.DoMomCall"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31CheckMomCallCallback.DoMomCall": {
+      "raw_lines": [
+        "specialphonecall SPECIALCALL_WORRIED",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "specialphonecall",
+          "args": [
+            "SPECIALCALL_WORRIED"
+          ],
+          "raw": "specialphonecall SPECIALCALL_WORRIED"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "specialphonecall",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1": {
+      "raw_lines": [
+        "trainer BUG_CATCHER, WADE1, EVENT_BEAT_BUG_CATCHER_WADE, BugCatcherWade1SeenText, BugCatcherWade1BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "BUG_CATCHER",
+            "WADE1",
+            "EVENT_BEAT_BUG_CATCHER_WADE",
+            "BugCatcherWade1SeenText",
+            "BugCatcherWade1BeatenText",
+            "0",
+            "TrainerBugCatcherWade1.Script"
+          ],
+          "raw": "trainer BUG_CATCHER, WADE1, EVENT_BEAT_BUG_CATCHER_WADE, BugCatcherWade1SeenText, BugCatcherWade1BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerBugCatcherWade1.Script",
+      "label_refs": [
+        "TrainerBugCatcherWade1.Script"
+      ],
+      "text_refs": [
+        "BugCatcherWade1BeatenText",
+        "BugCatcherWade1SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Script": {
+      "raw_lines": [
+        "loadvar VAR_CALLERID, PHONE_BUG_CATCHER_WADE",
+        "endifjustbattled",
+        "opentext",
+        "checkflag ENGINE_WADE_READY_FOR_REMATCH",
+        "iftrue .WadeRematch",
+        "checkflag ENGINE_WADE_HAS_ITEM",
+        "iftrue .WadeItem",
+        "checkcellnum PHONE_BUG_CATCHER_WADE",
+        "iftrue .AcceptedNumberSTD",
+        "checkevent EVENT_WADE_ASKED_FOR_PHONE_NUMBER",
+        "iftrue .AskAgain",
+        "writetext BugCatcherWade1AfterText",
+        "waitbutton",
+        "setevent EVENT_WADE_ASKED_FOR_PHONE_NUMBER",
+        "scall .AskPhoneNumberSTD",
+        "sjump .Continue"
+      ],
+      "commands": [
+        {
+          "command": "loadvar",
+          "args": [
+            "VAR_CALLERID",
+            "PHONE_BUG_CATCHER_WADE"
+          ],
+          "raw": "loadvar VAR_CALLERID, PHONE_BUG_CATCHER_WADE"
+        },
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_WADE_READY_FOR_REMATCH"
+          ],
+          "raw": "checkflag ENGINE_WADE_READY_FOR_REMATCH"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerBugCatcherWade1.WadeRematch"
+          ],
+          "raw": "iftrue .WadeRematch"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_WADE_HAS_ITEM"
+          ],
+          "raw": "checkflag ENGINE_WADE_HAS_ITEM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerBugCatcherWade1.WadeItem"
+          ],
+          "raw": "iftrue .WadeItem"
+        },
+        {
+          "command": "checkcellnum",
+          "args": [
+            "PHONE_BUG_CATCHER_WADE"
+          ],
+          "raw": "checkcellnum PHONE_BUG_CATCHER_WADE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerBugCatcherWade1.AcceptedNumberSTD"
+          ],
+          "raw": "iftrue .AcceptedNumberSTD"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_WADE_ASKED_FOR_PHONE_NUMBER"
+          ],
+          "raw": "checkevent EVENT_WADE_ASKED_FOR_PHONE_NUMBER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerBugCatcherWade1.AskAgain"
+          ],
+          "raw": "iftrue .AskAgain"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatcherWade1AfterText"
+          ],
+          "raw": "writetext BugCatcherWade1AfterText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_WADE_ASKED_FOR_PHONE_NUMBER"
+          ],
+          "raw": "setevent EVENT_WADE_ASKED_FOR_PHONE_NUMBER"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "TrainerBugCatcherWade1.AskPhoneNumberSTD"
+          ],
+          "raw": "scall .AskPhoneNumberSTD"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerBugCatcherWade1.Continue"
+          ],
+          "raw": "sjump .Continue"
+        }
+      ],
+      "first_command": "loadvar",
+      "label_refs": [
+        "TrainerBugCatcherWade1.AcceptedNumberSTD",
+        "TrainerBugCatcherWade1.AskAgain",
+        "TrainerBugCatcherWade1.AskPhoneNumberSTD",
+        "TrainerBugCatcherWade1.Continue",
+        "TrainerBugCatcherWade1.WadeItem",
+        "TrainerBugCatcherWade1.WadeRematch"
+      ],
+      "text_refs": [
+        "BugCatcherWade1AfterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.AskAgain": {
+      "raw_lines": [
+        "scall .AskAgainSTD"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "TrainerBugCatcherWade1.AskAgainSTD"
+          ],
+          "raw": "scall .AskAgainSTD"
+        }
+      ],
+      "first_command": "scall",
+      "fallthrough_label": "TrainerBugCatcherWade1.Continue",
+      "label_refs": [
+        "TrainerBugCatcherWade1.AskAgainSTD",
+        "TrainerBugCatcherWade1.Continue"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Continue": {
+      "raw_lines": [
+        "askforphonenumber PHONE_BUG_CATCHER_WADE",
+        "ifequal PHONE_CONTACTS_FULL, .PhoneFullSTD",
+        "ifequal PHONE_CONTACT_REFUSED, .DeclinedNumberSTD",
+        "gettrainername STRING_BUFFER_3, BUG_CATCHER, WADE1",
+        "scall .RegisterNumberSTD",
+        "sjump .AcceptedNumberSTD"
+      ],
+      "commands": [
+        {
+          "command": "askforphonenumber",
+          "args": [
+            "PHONE_BUG_CATCHER_WADE"
+          ],
+          "raw": "askforphonenumber PHONE_BUG_CATCHER_WADE"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PHONE_CONTACTS_FULL",
+            "TrainerBugCatcherWade1.PhoneFullSTD"
+          ],
+          "raw": "ifequal PHONE_CONTACTS_FULL, .PhoneFullSTD"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PHONE_CONTACT_REFUSED",
+            "TrainerBugCatcherWade1.DeclinedNumberSTD"
+          ],
+          "raw": "ifequal PHONE_CONTACT_REFUSED, .DeclinedNumberSTD"
+        },
+        {
+          "command": "gettrainername",
+          "args": [
+            "STRING_BUFFER_3",
+            "BUG_CATCHER",
+            "WADE1"
+          ],
+          "raw": "gettrainername STRING_BUFFER_3, BUG_CATCHER, WADE1"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "TrainerBugCatcherWade1.RegisterNumberSTD"
+          ],
+          "raw": "scall .RegisterNumberSTD"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerBugCatcherWade1.AcceptedNumberSTD"
+          ],
+          "raw": "sjump .AcceptedNumberSTD"
+        }
+      ],
+      "first_command": "askforphonenumber",
+      "label_refs": [
+        "TrainerBugCatcherWade1.AcceptedNumberSTD",
+        "TrainerBugCatcherWade1.DeclinedNumberSTD",
+        "TrainerBugCatcherWade1.PhoneFullSTD",
+        "TrainerBugCatcherWade1.RegisterNumberSTD"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.WadeRematch": {
+      "raw_lines": [
+        "scall .RematchSTD",
+        "winlosstext BugCatcherWade1BeatenText, 0",
+        "readmem wWadeFightCount",
+        "ifequal 4, .Fight4",
+        "ifequal 3, .Fight3",
+        "ifequal 2, .Fight2",
+        "ifequal 1, .Fight1",
+        "ifequal 0, .LoadFight0"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "TrainerBugCatcherWade1.RematchSTD"
+          ],
+          "raw": "scall .RematchSTD"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "BugCatcherWade1BeatenText",
+            "0"
+          ],
+          "raw": "winlosstext BugCatcherWade1BeatenText, 0"
+        },
+        {
+          "command": "readmem",
+          "args": [
+            "wWadeFightCount"
+          ],
+          "raw": "readmem wWadeFightCount"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "4",
+            "TrainerBugCatcherWade1.Fight4"
+          ],
+          "raw": "ifequal 4, .Fight4"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "3",
+            "TrainerBugCatcherWade1.Fight3"
+          ],
+          "raw": "ifequal 3, .Fight3"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "TrainerBugCatcherWade1.Fight2"
+          ],
+          "raw": "ifequal 2, .Fight2"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "TrainerBugCatcherWade1.Fight1"
+          ],
+          "raw": "ifequal 1, .Fight1"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "0",
+            "TrainerBugCatcherWade1.LoadFight0"
+          ],
+          "raw": "ifequal 0, .LoadFight0"
+        }
+      ],
+      "first_command": "scall",
+      "fallthrough_label": "TrainerBugCatcherWade1.Fight4",
+      "label_refs": [
+        "TrainerBugCatcherWade1.Fight1",
+        "TrainerBugCatcherWade1.Fight2",
+        "TrainerBugCatcherWade1.Fight3",
+        "TrainerBugCatcherWade1.Fight4",
+        "TrainerBugCatcherWade1.LoadFight0",
+        "TrainerBugCatcherWade1.RematchSTD"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Fight4": {
+      "raw_lines": [
+        "checkevent EVENT_BEAT_ELITE_FOUR",
+        "iftrue .LoadFight4"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_ELITE_FOUR"
+          ],
+          "raw": "checkevent EVENT_BEAT_ELITE_FOUR"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerBugCatcherWade1.LoadFight4"
+          ],
+          "raw": "iftrue .LoadFight4"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerBugCatcherWade1.Fight3",
+      "label_refs": [
+        "TrainerBugCatcherWade1.Fight3",
+        "TrainerBugCatcherWade1.LoadFight4"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Fight3": {
+      "raw_lines": [
+        "checkevent EVENT_CLEARED_RADIO_TOWER",
+        "iftrue .LoadFight3"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_CLEARED_RADIO_TOWER"
+          ],
+          "raw": "checkevent EVENT_CLEARED_RADIO_TOWER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerBugCatcherWade1.LoadFight3"
+          ],
+          "raw": "iftrue .LoadFight3"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerBugCatcherWade1.Fight2",
+      "label_refs": [
+        "TrainerBugCatcherWade1.Fight2",
+        "TrainerBugCatcherWade1.LoadFight3"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Fight2": {
+      "raw_lines": [
+        "checkflag ENGINE_FLYPOINT_MAHOGANY",
+        "iftrue .LoadFight2"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_FLYPOINT_MAHOGANY"
+          ],
+          "raw": "checkflag ENGINE_FLYPOINT_MAHOGANY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerBugCatcherWade1.LoadFight2"
+          ],
+          "raw": "iftrue .LoadFight2"
+        }
+      ],
+      "first_command": "checkflag",
+      "fallthrough_label": "TrainerBugCatcherWade1.Fight1",
+      "label_refs": [
+        "TrainerBugCatcherWade1.Fight1",
+        "TrainerBugCatcherWade1.LoadFight2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Fight1": {
+      "raw_lines": [
+        "checkflag ENGINE_FLYPOINT_GOLDENROD",
+        "iftrue .LoadFight1"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_FLYPOINT_GOLDENROD"
+          ],
+          "raw": "checkflag ENGINE_FLYPOINT_GOLDENROD"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerBugCatcherWade1.LoadFight1"
+          ],
+          "raw": "iftrue .LoadFight1"
+        }
+      ],
+      "first_command": "checkflag",
+      "fallthrough_label": "TrainerBugCatcherWade1.LoadFight0",
+      "label_refs": [
+        "TrainerBugCatcherWade1.LoadFight0",
+        "TrainerBugCatcherWade1.LoadFight1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.LoadFight0": {
+      "raw_lines": [
+        "loadtrainer BUG_CATCHER, WADE1",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wWadeFightCount, 1",
+        "clearflag ENGINE_WADE_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "BUG_CATCHER",
+            "WADE1"
+          ],
+          "raw": "loadtrainer BUG_CATCHER, WADE1"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wWadeFightCount",
+            "1"
+          ],
+          "raw": "loadmem wWadeFightCount, 1"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_WADE_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_WADE_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.LoadFight1": {
+      "raw_lines": [
+        "loadtrainer BUG_CATCHER, WADE2",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wWadeFightCount, 2",
+        "clearflag ENGINE_WADE_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "BUG_CATCHER",
+            "WADE2"
+          ],
+          "raw": "loadtrainer BUG_CATCHER, WADE2"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wWadeFightCount",
+            "2"
+          ],
+          "raw": "loadmem wWadeFightCount, 2"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_WADE_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_WADE_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.LoadFight2": {
+      "raw_lines": [
+        "loadtrainer BUG_CATCHER, WADE3",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wWadeFightCount, 3",
+        "clearflag ENGINE_WADE_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "BUG_CATCHER",
+            "WADE3"
+          ],
+          "raw": "loadtrainer BUG_CATCHER, WADE3"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wWadeFightCount",
+            "3"
+          ],
+          "raw": "loadmem wWadeFightCount, 3"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_WADE_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_WADE_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.LoadFight3": {
+      "raw_lines": [
+        "loadtrainer BUG_CATCHER, WADE4",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wWadeFightCount, 4",
+        "clearflag ENGINE_WADE_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "BUG_CATCHER",
+            "WADE4"
+          ],
+          "raw": "loadtrainer BUG_CATCHER, WADE4"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wWadeFightCount",
+            "4"
+          ],
+          "raw": "loadmem wWadeFightCount, 4"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_WADE_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_WADE_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.LoadFight4": {
+      "raw_lines": [
+        "loadtrainer BUG_CATCHER, WADE5",
+        "startbattle",
+        "reloadmapafterbattle",
+        "clearflag ENGINE_WADE_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "BUG_CATCHER",
+            "WADE5"
+          ],
+          "raw": "loadtrainer BUG_CATCHER, WADE5"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_WADE_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_WADE_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.WadeItem": {
+      "raw_lines": [
+        "scall .ItemSTD",
+        "checkevent EVENT_WADE_HAS_BERRY",
+        "iftrue .Berry",
+        "checkevent EVENT_WADE_HAS_PSNCUREBERRY",
+        "iftrue .Psncureberry",
+        "checkevent EVENT_WADE_HAS_PRZCUREBERRY",
+        "iftrue .Przcureberry",
+        "checkevent EVENT_WADE_HAS_BITTER_BERRY",
+        "iftrue .BitterBerry"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "TrainerBugCatcherWade1.ItemSTD"
+          ],
+          "raw": "scall .ItemSTD"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_WADE_HAS_BERRY"
+          ],
+          "raw": "checkevent EVENT_WADE_HAS_BERRY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerBugCatcherWade1.Berry"
+          ],
+          "raw": "iftrue .Berry"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_WADE_HAS_PSNCUREBERRY"
+          ],
+          "raw": "checkevent EVENT_WADE_HAS_PSNCUREBERRY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerBugCatcherWade1.Psncureberry"
+          ],
+          "raw": "iftrue .Psncureberry"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_WADE_HAS_PRZCUREBERRY"
+          ],
+          "raw": "checkevent EVENT_WADE_HAS_PRZCUREBERRY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerBugCatcherWade1.Przcureberry"
+          ],
+          "raw": "iftrue .Przcureberry"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_WADE_HAS_BITTER_BERRY"
+          ],
+          "raw": "checkevent EVENT_WADE_HAS_BITTER_BERRY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerBugCatcherWade1.BitterBerry"
+          ],
+          "raw": "iftrue .BitterBerry"
+        }
+      ],
+      "first_command": "scall",
+      "fallthrough_label": "TrainerBugCatcherWade1.Berry",
+      "label_refs": [
+        "TrainerBugCatcherWade1.Berry",
+        "TrainerBugCatcherWade1.BitterBerry",
+        "TrainerBugCatcherWade1.ItemSTD",
+        "TrainerBugCatcherWade1.Przcureberry",
+        "TrainerBugCatcherWade1.Psncureberry"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Berry": {
+      "raw_lines": [
+        "verbosegiveitem BERRY",
+        "iffalse .PackFull",
+        "sjump .Done"
+      ],
+      "commands": [
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "BERRY"
+          ],
+          "raw": "verbosegiveitem BERRY"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "TrainerBugCatcherWade1.PackFull"
+          ],
+          "raw": "iffalse .PackFull"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerBugCatcherWade1.Done"
+          ],
+          "raw": "sjump .Done"
+        }
+      ],
+      "first_command": "verbosegiveitem",
+      "label_refs": [
+        "TrainerBugCatcherWade1.Done",
+        "TrainerBugCatcherWade1.PackFull"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Psncureberry": {
+      "raw_lines": [
+        "verbosegiveitem PSNCUREBERRY",
+        "iffalse .PackFull",
+        "sjump .Done"
+      ],
+      "commands": [
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "PSNCUREBERRY"
+          ],
+          "raw": "verbosegiveitem PSNCUREBERRY"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "TrainerBugCatcherWade1.PackFull"
+          ],
+          "raw": "iffalse .PackFull"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerBugCatcherWade1.Done"
+          ],
+          "raw": "sjump .Done"
+        }
+      ],
+      "first_command": "verbosegiveitem",
+      "label_refs": [
+        "TrainerBugCatcherWade1.Done",
+        "TrainerBugCatcherWade1.PackFull"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Przcureberry": {
+      "raw_lines": [
+        "verbosegiveitem PRZCUREBERRY",
+        "iffalse .PackFull",
+        "sjump .Done"
+      ],
+      "commands": [
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "PRZCUREBERRY"
+          ],
+          "raw": "verbosegiveitem PRZCUREBERRY"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "TrainerBugCatcherWade1.PackFull"
+          ],
+          "raw": "iffalse .PackFull"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerBugCatcherWade1.Done"
+          ],
+          "raw": "sjump .Done"
+        }
+      ],
+      "first_command": "verbosegiveitem",
+      "label_refs": [
+        "TrainerBugCatcherWade1.Done",
+        "TrainerBugCatcherWade1.PackFull"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.BitterBerry": {
+      "raw_lines": [
+        "verbosegiveitem BITTER_BERRY",
+        "iffalse .PackFull"
+      ],
+      "commands": [
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "BITTER_BERRY"
+          ],
+          "raw": "verbosegiveitem BITTER_BERRY"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "TrainerBugCatcherWade1.PackFull"
+          ],
+          "raw": "iffalse .PackFull"
+        }
+      ],
+      "first_command": "verbosegiveitem",
+      "fallthrough_label": "TrainerBugCatcherWade1.Done",
+      "label_refs": [
+        "TrainerBugCatcherWade1.Done",
+        "TrainerBugCatcherWade1.PackFull"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Done": {
+      "raw_lines": [
+        "clearflag ENGINE_WADE_HAS_ITEM",
+        "sjump .AcceptedNumberSTD"
+      ],
+      "commands": [
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_WADE_HAS_ITEM"
+          ],
+          "raw": "clearflag ENGINE_WADE_HAS_ITEM"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerBugCatcherWade1.AcceptedNumberSTD"
+          ],
+          "raw": "sjump .AcceptedNumberSTD"
+        }
+      ],
+      "first_command": "clearflag",
+      "label_refs": [
+        "TrainerBugCatcherWade1.AcceptedNumberSTD"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.PackFull": {
+      "raw_lines": [
+        "sjump .PackFullSTD"
+      ],
+      "commands": [
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerBugCatcherWade1.PackFullSTD"
+          ],
+          "raw": "sjump .PackFullSTD"
+        }
+      ],
+      "first_command": "sjump",
+      "label_refs": [
+        "TrainerBugCatcherWade1.PackFullSTD"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.AskPhoneNumberSTD": {
+      "raw_lines": [
+        "jumpstd AskNumber1MScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "AskNumber1MScript"
+          ],
+          "raw": "jumpstd AskNumber1MScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber1MScript"
+      ]
+    },
+    "TrainerBugCatcherWade1.AskAgainSTD": {
+      "raw_lines": [
+        "jumpstd AskNumber2MScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "AskNumber2MScript"
+          ],
+          "raw": "jumpstd AskNumber2MScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber2MScript"
+      ]
+    },
+    "TrainerBugCatcherWade1.RegisterNumberSTD": {
+      "raw_lines": [
+        "jumpstd RegisteredNumberMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RegisteredNumberMScript"
+          ],
+          "raw": "jumpstd RegisteredNumberMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RegisteredNumberMScript"
+      ]
+    },
+    "TrainerBugCatcherWade1.AcceptedNumberSTD": {
+      "raw_lines": [
+        "jumpstd NumberAcceptedMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "NumberAcceptedMScript"
+          ],
+          "raw": "jumpstd NumberAcceptedMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberAcceptedMScript"
+      ]
+    },
+    "TrainerBugCatcherWade1.DeclinedNumberSTD": {
+      "raw_lines": [
+        "jumpstd NumberDeclinedMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "NumberDeclinedMScript"
+          ],
+          "raw": "jumpstd NumberDeclinedMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberDeclinedMScript"
+      ]
+    },
+    "TrainerBugCatcherWade1.PhoneFullSTD": {
+      "raw_lines": [
+        "jumpstd PhoneFullMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PhoneFullMScript"
+          ],
+          "raw": "jumpstd PhoneFullMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PhoneFullMScript"
+      ]
+    },
+    "TrainerBugCatcherWade1.RematchSTD": {
+      "raw_lines": [
+        "jumpstd RematchMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RematchMScript"
+          ],
+          "raw": "jumpstd RematchMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchMScript"
+      ]
+    },
+    "TrainerBugCatcherWade1.ItemSTD": {
+      "raw_lines": [
+        "jumpstd GiftMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "GiftMScript"
+          ],
+          "raw": "jumpstd GiftMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GiftMScript"
+      ]
+    },
+    "TrainerBugCatcherWade1.PackFullSTD": {
+      "raw_lines": [
+        "jumpstd PackFullMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PackFullMScript"
+          ],
+          "raw": "jumpstd PackFullMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PackFullMScript"
+      ]
+    },
+    "Route31MailRecipientScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_TM50_NIGHTMARE",
+        "iftrue .DescribeNightmare",
+        "checkevent EVENT_GOT_KENYA",
+        "iftrue .TryGiveKenya",
+        "writetext Text_Route31SleepyMan",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TM50_NIGHTMARE"
+          ],
+          "raw": "checkevent EVENT_GOT_TM50_NIGHTMARE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route31MailRecipientScript.DescribeNightmare"
+          ],
+          "raw": "iftrue .DescribeNightmare"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_KENYA"
+          ],
+          "raw": "checkevent EVENT_GOT_KENYA"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "Route31MailRecipientScript.TryGiveKenya"
+          ],
+          "raw": "iftrue .TryGiveKenya"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_Route31SleepyMan"
+          ],
+          "raw": "writetext Text_Route31SleepyMan"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "Route31MailRecipientScript.DescribeNightmare",
+        "Route31MailRecipientScript.TryGiveKenya"
+      ],
+      "text_refs": [
+        "Text_Route31SleepyMan"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31MailRecipientScript.TryGiveKenya": {
+      "raw_lines": [
+        "writetext Text_Route31SleepyManGotMail",
+        "promptbutton",
+        "checkpokemail ReceivedSpearowMailText",
+        "ifequal POKEMAIL_WRONG_MAIL, .WrongMail",
+        "ifequal POKEMAIL_REFUSED, .Refused",
+        "ifequal POKEMAIL_NO_MAIL, .NoMail",
+        "ifequal POKEMAIL_LAST_MON, .LastMon",
+        "writetext Text_Route31HandOverMailMon",
+        "promptbutton",
+        "writetext Text_Route31ReadingMail",
+        "promptbutton",
+        "setevent EVENT_GAVE_KENYA",
+        "verbosegiveitem TM_NIGHTMARE",
+        "iffalse .NoRoomForItems",
+        "setevent EVENT_GOT_TM50_NIGHTMARE"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Text_Route31SleepyManGotMail"
+          ],
+          "raw": "writetext Text_Route31SleepyManGotMail"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "checkpokemail",
+          "args": [
+            "ReceivedSpearowMailText"
+          ],
+          "raw": "checkpokemail ReceivedSpearowMailText"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "POKEMAIL_WRONG_MAIL",
+            "Route31MailRecipientScript.WrongMail"
+          ],
+          "raw": "ifequal POKEMAIL_WRONG_MAIL, .WrongMail"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "POKEMAIL_REFUSED",
+            "Route31MailRecipientScript.Refused"
+          ],
+          "raw": "ifequal POKEMAIL_REFUSED, .Refused"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "POKEMAIL_NO_MAIL",
+            "Route31MailRecipientScript.NoMail"
+          ],
+          "raw": "ifequal POKEMAIL_NO_MAIL, .NoMail"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "POKEMAIL_LAST_MON",
+            "Route31MailRecipientScript.LastMon"
+          ],
+          "raw": "ifequal POKEMAIL_LAST_MON, .LastMon"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_Route31HandOverMailMon"
+          ],
+          "raw": "writetext Text_Route31HandOverMailMon"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_Route31ReadingMail"
+          ],
+          "raw": "writetext Text_Route31ReadingMail"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GAVE_KENYA"
+          ],
+          "raw": "setevent EVENT_GAVE_KENYA"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "TM_NIGHTMARE"
+          ],
+          "raw": "verbosegiveitem TM_NIGHTMARE"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "Route31MailRecipientScript.NoRoomForItems"
+          ],
+          "raw": "iffalse .NoRoomForItems"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_TM50_NIGHTMARE"
+          ],
+          "raw": "setevent EVENT_GOT_TM50_NIGHTMARE"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "Route31MailRecipientScript.DescribeNightmare",
+      "label_refs": [
+        "Route31MailRecipientScript.DescribeNightmare",
+        "Route31MailRecipientScript.LastMon",
+        "Route31MailRecipientScript.NoMail",
+        "Route31MailRecipientScript.NoRoomForItems",
+        "Route31MailRecipientScript.Refused",
+        "Route31MailRecipientScript.WrongMail"
+      ],
+      "text_refs": [
+        "Text_Route31HandOverMailMon",
+        "Text_Route31ReadingMail",
+        "Text_Route31SleepyManGotMail"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31MailRecipientScript.DescribeNightmare": {
+      "raw_lines": [
+        "writetext Text_Route31DescribeNightmare",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Text_Route31DescribeNightmare"
+          ],
+          "raw": "writetext Text_Route31DescribeNightmare"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "Route31MailRecipientScript.NoRoomForItems",
+      "label_refs": [
+        "Route31MailRecipientScript.NoRoomForItems"
+      ],
+      "text_refs": [
+        "Text_Route31DescribeNightmare"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31MailRecipientScript.NoRoomForItems": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31MailRecipientScript.WrongMail": {
+      "raw_lines": [
+        "writetext Text_Route31WrongMail",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Text_Route31WrongMail"
+          ],
+          "raw": "writetext Text_Route31WrongMail"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Text_Route31WrongMail"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31MailRecipientScript.NoMail": {
+      "raw_lines": [
+        "writetext Text_Route31MissingMail",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Text_Route31MissingMail"
+          ],
+          "raw": "writetext Text_Route31MissingMail"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Text_Route31MissingMail"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31MailRecipientScript.Refused": {
+      "raw_lines": [
+        "writetext Text_Route31DeclinedToHandOverMail",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Text_Route31DeclinedToHandOverMail"
+          ],
+          "raw": "writetext Text_Route31DeclinedToHandOverMail"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Text_Route31DeclinedToHandOverMail"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31MailRecipientScript.LastMon": {
+      "raw_lines": [
+        "writetext Text_Route31CantTakeLastMon",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "Text_Route31CantTakeLastMon"
+          ],
+          "raw": "writetext Text_Route31CantTakeLastMon"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "Text_Route31CantTakeLastMon"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ReceivedSpearowMailText": {
+      "raw_lines": [
+        "db   \"DARK CAVE leads\"",
+        "next \"to another road@\""
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "\"DARK CAVE leads\""
+          ],
+          "raw": "db   \"DARK CAVE leads\""
+        },
+        {
+          "command": "next",
+          "args": [
+            "\"to another road@\""
+          ],
+          "raw": "next \"to another road@\""
+        }
+      ],
+      "first_command": "db",
+      "fallthrough_label": "Route31YoungsterScript",
+      "label_refs": [
+        "Route31YoungsterScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31YoungsterScript": {
+      "raw_lines": [
+        "jumptextfaceplayer Route31YoungsterText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Route31YoungsterText"
+          ],
+          "raw": "jumptextfaceplayer Route31YoungsterText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Route31YoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31Sign": {
+      "raw_lines": [
+        "jumptext Route31SignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "Route31SignText"
+          ],
+          "raw": "jumptext Route31SignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "Route31SignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DarkCaveSign": {
+      "raw_lines": [
+        "jumptext DarkCaveSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "DarkCaveSignText"
+          ],
+          "raw": "jumptext DarkCaveSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "DarkCaveSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31CooltrainerMScript": {
+      "raw_lines": [
+        "jumptextfaceplayer Route31CooltrainerMText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Route31CooltrainerMText"
+          ],
+          "raw": "jumptextfaceplayer Route31CooltrainerMText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Route31CooltrainerMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31FruitTree": {
+      "raw_lines": [
+        "fruittree FRUITTREE_ROUTE_31"
+      ],
+      "commands": [
+        {
+          "command": "fruittree",
+          "args": [
+            "FRUITTREE_ROUTE_31"
+          ],
+          "raw": "fruittree FRUITTREE_ROUTE_31"
+        }
+      ],
+      "first_command": "fruittree",
+      "fallthrough_label": "Route31Potion",
+      "label_refs": [
+        "Route31Potion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31Potion": {
+      "raw_lines": [
+        "itemball POTION"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "POTION"
+          ],
+          "raw": "itemball POTION"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "Route31PokeBall",
+      "label_refs": [
+        "Route31PokeBall"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31PokeBall": {
+      "raw_lines": [
+        "itemball POKE_BALL"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "POKE_BALL"
+          ],
+          "raw": "itemball POKE_BALL"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "Route31_MapEvents",
+      "label_refs": [
+        "Route31_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  4,  6, ROUTE_31_VIOLET_GATE, 3",
+        "warp_event  4,  7, ROUTE_31_VIOLET_GATE, 4",
+        "warp_event 34,  5, DARK_CAVE_VIOLET_ENTRANCE, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  7,  5, BGEVENT_READ, Route31Sign",
+        "bg_event 31,  5, BGEVENT_READ, DarkCaveSign",
+        "def_object_events",
+        "object_event 17,  7, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31MailRecipientScript, -1",
+        "object_event  9,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31YoungsterScript, -1",
+        "object_event 21, 13, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerBugCatcherWade1, -1",
+        "object_event 33,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31CooltrainerMScript, -1",
+        "object_event 16,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31FruitTree, -1",
+        "object_event 29,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31Potion, EVENT_ROUTE_31_POTION",
+        "object_event 19, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31PokeBall, EVENT_ROUTE_31_POKE_BALL"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "6",
+            "ROUTE_31_VIOLET_GATE",
+            "3"
+          ],
+          "raw": "warp_event  4,  6, ROUTE_31_VIOLET_GATE, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "ROUTE_31_VIOLET_GATE",
+            "4"
+          ],
+          "raw": "warp_event  4,  7, ROUTE_31_VIOLET_GATE, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "34",
+            "5",
+            "DARK_CAVE_VIOLET_ENTRANCE",
+            "1"
+          ],
+          "raw": "warp_event 34,  5, DARK_CAVE_VIOLET_ENTRANCE, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "7",
+            "5",
+            "BGEVENT_READ",
+            "Route31Sign"
+          ],
+          "raw": "bg_event  7,  5, BGEVENT_READ, Route31Sign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "31",
+            "5",
+            "BGEVENT_READ",
+            "DarkCaveSign"
+          ],
+          "raw": "bg_event 31,  5, BGEVENT_READ, DarkCaveSign"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "17",
+            "7",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route31MailRecipientScript",
+            "-1"
+          ],
+          "raw": "object_event 17,  7, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31MailRecipientScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "5",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route31YoungsterScript",
+            "-1"
+          ],
+          "raw": "object_event  9,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31YoungsterScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "21",
+            "13",
+            "SPRITE_BUG_CATCHER",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_TRAINER",
+            "5",
+            "TrainerBugCatcherWade1",
+            "-1"
+          ],
+          "raw": "object_event 21, 13, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerBugCatcherWade1, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "33",
+            "8",
+            "SPRITE_COOLTRAINER_M",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "1",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route31CooltrainerMScript",
+            "-1"
+          ],
+          "raw": "object_event 33,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31CooltrainerMScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "16",
+            "7",
+            "SPRITE_FRUIT_TREE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route31FruitTree",
+            "-1"
+          ],
+          "raw": "object_event 16,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31FruitTree, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "29",
+            "5",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "Route31Potion",
+            "EVENT_ROUTE_31_POTION"
+          ],
+          "raw": "object_event 29,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31Potion, EVENT_ROUTE_31_POTION"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "19",
+            "15",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "Route31PokeBall",
+            "EVENT_ROUTE_31_POKE_BALL"
+          ],
+          "raw": "object_event 19, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31PokeBall, EVENT_ROUTE_31_POKE_BALL"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "Route31CooltrainerMText": {
+      "raw_lines": [
+        "text \"DARK CAVE\u2026\"",
+        "para \"If #MON could\"",
+        "line \"light it up, I'd\"",
+        "cont \"explore it.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "DARK CAVE\u2026"
+        },
+        {
+          "command": "para",
+          "value": "If #MON could"
+        },
+        {
+          "command": "line",
+          "value": "light it up, I'd"
+        },
+        {
+          "command": "cont",
+          "value": "explore it."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatcherWade1SeenText": {
+      "raw_lines": [
+        "text \"I caught a bunch\"",
+        "line \"of #MON. Let me\"",
+        "cont \"battle with you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I caught a bunch"
+        },
+        {
+          "command": "line",
+          "value": "of #MON. Let me"
+        },
+        {
+          "command": "cont",
+          "value": "battle with you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatcherWade1BeatenText": {
+      "raw_lines": [
+        "text \"Awwwww\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Awwwww\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatcherWade1AfterText": {
+      "raw_lines": [
+        "text \"You can catch\"",
+        "line \"#MON even if\"",
+        "para \"you have six with\"",
+        "line \"you.\"",
+        "para \"If you catch one,\"",
+        "line \"it'll go to your\"",
+        "cont \"BOX automatically.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You can catch"
+        },
+        {
+          "command": "line",
+          "value": "#MON even if"
+        },
+        {
+          "command": "para",
+          "value": "you have six with"
+        },
+        {
+          "command": "line",
+          "value": "you."
+        },
+        {
+          "command": "para",
+          "value": "If you catch one,"
+        },
+        {
+          "command": "line",
+          "value": "it'll go to your"
+        },
+        {
+          "command": "cont",
+          "value": "BOX automatically."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_Route31SleepyMan": {
+      "raw_lines": [
+        "text \"\u2026 Hnuurg\u2026 Huh?\"",
+        "para \"I walked too far\"",
+        "line \"today looking for\"",
+        "cont \"#MON.\"",
+        "para \"My feet hurt and\"",
+        "line \"I'm sleepy\u2026\"",
+        "para \"If I were a wild\"",
+        "line \"#MON, I'd be\"",
+        "cont \"easy to catch\u2026\"",
+        "para \"\u2026Zzzz\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026 Hnuurg\u2026 Huh?"
+        },
+        {
+          "command": "para",
+          "value": "I walked too far"
+        },
+        {
+          "command": "line",
+          "value": "today looking for"
+        },
+        {
+          "command": "cont",
+          "value": "#MON."
+        },
+        {
+          "command": "para",
+          "value": "My feet hurt and"
+        },
+        {
+          "command": "line",
+          "value": "I'm sleepy\u2026"
+        },
+        {
+          "command": "para",
+          "value": "If I were a wild"
+        },
+        {
+          "command": "line",
+          "value": "#MON, I'd be"
+        },
+        {
+          "command": "cont",
+          "value": "easy to catch\u2026"
+        },
+        {
+          "command": "para",
+          "value": "\u2026Zzzz\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_Route31SleepyManGotMail": {
+      "raw_lines": [
+        "text \"\u2026Zzzz\u2026 Huh?\"",
+        "para \"What's that? You\"",
+        "line \"have MAIL for me?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026Zzzz\u2026 Huh?"
+        },
+        {
+          "command": "para",
+          "value": "What's that? You"
+        },
+        {
+          "command": "line",
+          "value": "have MAIL for me?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_Route31HandOverMailMon": {
+      "raw_lines": [
+        "text \"<PLAYER> handed\"",
+        "line \"over the #MON\"",
+        "cont \"holding the MAIL.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> handed"
+        },
+        {
+          "command": "line",
+          "value": "over the #MON"
+        },
+        {
+          "command": "cont",
+          "value": "holding the MAIL."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_Route31ReadingMail": {
+      "raw_lines": [
+        "text \"Let's see\u2026\"",
+        "para \"\u2026DARK CAVE leads\"",
+        "line \"to another road\u2026\"",
+        "para \"That's good to\"",
+        "line \"know.\"",
+        "para \"Thanks for bring-\"",
+        "line \"ing this to me.\"",
+        "para \"My friend's a good\"",
+        "line \"guy, and you're\"",
+        "cont \"swell too!\"",
+        "para \"I'd like to do\"",
+        "line \"something good in\"",
+        "cont \"return too!\"",
+        "para \"I know! I want you\"",
+        "line \"to have this!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Let's see\u2026"
+        },
+        {
+          "command": "para",
+          "value": "\u2026DARK CAVE leads"
+        },
+        {
+          "command": "line",
+          "value": "to another road\u2026"
+        },
+        {
+          "command": "para",
+          "value": "That's good to"
+        },
+        {
+          "command": "line",
+          "value": "know."
+        },
+        {
+          "command": "para",
+          "value": "Thanks for bring-"
+        },
+        {
+          "command": "line",
+          "value": "ing this to me."
+        },
+        {
+          "command": "para",
+          "value": "My friend's a good"
+        },
+        {
+          "command": "line",
+          "value": "guy, and you're"
+        },
+        {
+          "command": "cont",
+          "value": "swell too!"
+        },
+        {
+          "command": "para",
+          "value": "I'd like to do"
+        },
+        {
+          "command": "line",
+          "value": "something good in"
+        },
+        {
+          "command": "cont",
+          "value": "return too!"
+        },
+        {
+          "command": "para",
+          "value": "I know! I want you"
+        },
+        {
+          "command": "line",
+          "value": "to have this!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_Route31DescribeNightmare": {
+      "raw_lines": [
+        "text \"TM50 is NIGHTMARE.\"",
+        "para \"It's a wicked move\"",
+        "line \"that steadily cuts\"",
+        "para \"the HP of a sleep-\"",
+        "line \"ing enemy.\"",
+        "para \"Ooooh\u2026\"",
+        "line \"That's scary\u2026\"",
+        "para \"I don't want to\"",
+        "line \"have bad dreams.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "TM50 is NIGHTMARE."
+        },
+        {
+          "command": "para",
+          "value": "It's a wicked move"
+        },
+        {
+          "command": "line",
+          "value": "that steadily cuts"
+        },
+        {
+          "command": "para",
+          "value": "the HP of a sleep-"
+        },
+        {
+          "command": "line",
+          "value": "ing enemy."
+        },
+        {
+          "command": "para",
+          "value": "Ooooh\u2026"
+        },
+        {
+          "command": "line",
+          "value": "That's scary\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I don't want to"
+        },
+        {
+          "command": "line",
+          "value": "have bad dreams."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_Route31WrongMail": {
+      "raw_lines": [
+        "text \"This MAIL isn't\"",
+        "line \"for me.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This MAIL isn't"
+        },
+        {
+          "command": "line",
+          "value": "for me."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_Route31MissingMail": {
+      "raw_lines": [
+        "text \"Why is this #-\"",
+        "line \"MON so special?\"",
+        "para \"It doesn't have\"",
+        "line \"any MAIL.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Why is this #-"
+        },
+        {
+          "command": "line",
+          "value": "MON so special?"
+        },
+        {
+          "command": "para",
+          "value": "It doesn't have"
+        },
+        {
+          "command": "line",
+          "value": "any MAIL."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_Route31DeclinedToHandOverMail": {
+      "raw_lines": [
+        "text \"What? You don't\"",
+        "line \"want anything?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "What? You don't"
+        },
+        {
+          "command": "line",
+          "value": "want anything?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_Route31CantTakeLastMon": {
+      "raw_lines": [
+        "text \"If I take that\"",
+        "line \"#MON from you,\"",
+        "para \"what are you going\"",
+        "line \"to use in battle?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If I take that"
+        },
+        {
+          "command": "line",
+          "value": "#MON from you,"
+        },
+        {
+          "command": "para",
+          "value": "what are you going"
+        },
+        {
+          "command": "line",
+          "value": "to use in battle?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route31YoungsterText": {
+      "raw_lines": [
+        "text \"I found a good\"",
+        "line \"#MON in DARK\"",
+        "cont \"CAVE.\"",
+        "para \"I'm going to raise\"",
+        "line \"it to take on\"",
+        "cont \"FALKNER.\"",
+        "para \"He's the leader of\"",
+        "line \"VIOLET CITY's GYM.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I found a good"
+        },
+        {
+          "command": "line",
+          "value": "#MON in DARK"
+        },
+        {
+          "command": "cont",
+          "value": "CAVE."
+        },
+        {
+          "command": "para",
+          "value": "I'm going to raise"
+        },
+        {
+          "command": "line",
+          "value": "it to take on"
+        },
+        {
+          "command": "cont",
+          "value": "FALKNER."
+        },
+        {
+          "command": "para",
+          "value": "He's the leader of"
+        },
+        {
+          "command": "line",
+          "value": "VIOLET CITY's GYM."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route31SignText": {
+      "raw_lines": [
+        "text \"ROUTE 31\"",
+        "para \"VIOLET CITY -\"",
+        "line \"CHERRYGROVE CITY\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ROUTE 31"
+        },
+        {
+          "command": "para",
+          "value": "VIOLET CITY -"
+        },
+        {
+          "command": "line",
+          "value": "CHERRYGROVE CITY"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "DarkCaveSignText": {
+      "raw_lines": [
+        "text \"DARK CAVE\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "DARK CAVE"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "AskNumber1MScript",
+    "AskNumber2MScript",
+    "GiftMScript",
+    "NumberAcceptedMScript",
+    "NumberDeclinedMScript",
+    "PackFullMScript",
+    "PhoneFullMScript",
+    "RegisteredNumberMScript",
+    "RematchMScript"
+  ],
+  "dependencies": {
+    "Route31_MapScripts": {
+      "label_refs": [
+        "Route31CheckMomCallCallback"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31CheckMomCallCallback": {
+      "label_refs": [
+        "Route31CheckMomCallCallback.DoMomCall"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31CheckMomCallCallback.DoMomCall": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1": {
+      "label_refs": [
+        "TrainerBugCatcherWade1.Script"
+      ],
+      "text_refs": [
+        "BugCatcherWade1BeatenText",
+        "BugCatcherWade1SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Script": {
+      "label_refs": [
+        "TrainerBugCatcherWade1.AcceptedNumberSTD",
+        "TrainerBugCatcherWade1.AskAgain",
+        "TrainerBugCatcherWade1.AskPhoneNumberSTD",
+        "TrainerBugCatcherWade1.Continue",
+        "TrainerBugCatcherWade1.WadeItem",
+        "TrainerBugCatcherWade1.WadeRematch"
+      ],
+      "text_refs": [
+        "BugCatcherWade1AfterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.AskAgain": {
+      "label_refs": [
+        "TrainerBugCatcherWade1.AskAgainSTD",
+        "TrainerBugCatcherWade1.Continue"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Continue": {
+      "label_refs": [
+        "TrainerBugCatcherWade1.AcceptedNumberSTD",
+        "TrainerBugCatcherWade1.DeclinedNumberSTD",
+        "TrainerBugCatcherWade1.PhoneFullSTD",
+        "TrainerBugCatcherWade1.RegisterNumberSTD"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.WadeRematch": {
+      "label_refs": [
+        "TrainerBugCatcherWade1.Fight1",
+        "TrainerBugCatcherWade1.Fight2",
+        "TrainerBugCatcherWade1.Fight3",
+        "TrainerBugCatcherWade1.Fight4",
+        "TrainerBugCatcherWade1.LoadFight0",
+        "TrainerBugCatcherWade1.RematchSTD"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Fight4": {
+      "label_refs": [
+        "TrainerBugCatcherWade1.Fight3",
+        "TrainerBugCatcherWade1.LoadFight4"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Fight3": {
+      "label_refs": [
+        "TrainerBugCatcherWade1.Fight2",
+        "TrainerBugCatcherWade1.LoadFight3"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Fight2": {
+      "label_refs": [
+        "TrainerBugCatcherWade1.Fight1",
+        "TrainerBugCatcherWade1.LoadFight2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Fight1": {
+      "label_refs": [
+        "TrainerBugCatcherWade1.LoadFight0",
+        "TrainerBugCatcherWade1.LoadFight1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.LoadFight0": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.LoadFight1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.LoadFight2": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.LoadFight3": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.LoadFight4": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.WadeItem": {
+      "label_refs": [
+        "TrainerBugCatcherWade1.Berry",
+        "TrainerBugCatcherWade1.BitterBerry",
+        "TrainerBugCatcherWade1.ItemSTD",
+        "TrainerBugCatcherWade1.Przcureberry",
+        "TrainerBugCatcherWade1.Psncureberry"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Berry": {
+      "label_refs": [
+        "TrainerBugCatcherWade1.Done",
+        "TrainerBugCatcherWade1.PackFull"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Psncureberry": {
+      "label_refs": [
+        "TrainerBugCatcherWade1.Done",
+        "TrainerBugCatcherWade1.PackFull"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Przcureberry": {
+      "label_refs": [
+        "TrainerBugCatcherWade1.Done",
+        "TrainerBugCatcherWade1.PackFull"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.BitterBerry": {
+      "label_refs": [
+        "TrainerBugCatcherWade1.Done",
+        "TrainerBugCatcherWade1.PackFull"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.Done": {
+      "label_refs": [
+        "TrainerBugCatcherWade1.AcceptedNumberSTD"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.PackFull": {
+      "label_refs": [
+        "TrainerBugCatcherWade1.PackFullSTD"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherWade1.AskPhoneNumberSTD": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber1MScript"
+      ]
+    },
+    "TrainerBugCatcherWade1.AskAgainSTD": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber2MScript"
+      ]
+    },
+    "TrainerBugCatcherWade1.RegisterNumberSTD": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RegisteredNumberMScript"
+      ]
+    },
+    "TrainerBugCatcherWade1.AcceptedNumberSTD": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberAcceptedMScript"
+      ]
+    },
+    "TrainerBugCatcherWade1.DeclinedNumberSTD": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberDeclinedMScript"
+      ]
+    },
+    "TrainerBugCatcherWade1.PhoneFullSTD": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PhoneFullMScript"
+      ]
+    },
+    "TrainerBugCatcherWade1.RematchSTD": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchMScript"
+      ]
+    },
+    "TrainerBugCatcherWade1.ItemSTD": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GiftMScript"
+      ]
+    },
+    "TrainerBugCatcherWade1.PackFullSTD": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PackFullMScript"
+      ]
+    },
+    "Route31MailRecipientScript": {
+      "label_refs": [
+        "Route31MailRecipientScript.DescribeNightmare",
+        "Route31MailRecipientScript.TryGiveKenya"
+      ],
+      "text_refs": [
+        "Text_Route31SleepyMan"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31MailRecipientScript.TryGiveKenya": {
+      "label_refs": [
+        "Route31MailRecipientScript.DescribeNightmare",
+        "Route31MailRecipientScript.LastMon",
+        "Route31MailRecipientScript.NoMail",
+        "Route31MailRecipientScript.NoRoomForItems",
+        "Route31MailRecipientScript.Refused",
+        "Route31MailRecipientScript.WrongMail"
+      ],
+      "text_refs": [
+        "Text_Route31HandOverMailMon",
+        "Text_Route31ReadingMail",
+        "Text_Route31SleepyManGotMail"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31MailRecipientScript.DescribeNightmare": {
+      "label_refs": [
+        "Route31MailRecipientScript.NoRoomForItems"
+      ],
+      "text_refs": [
+        "Text_Route31DescribeNightmare"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31MailRecipientScript.NoRoomForItems": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31MailRecipientScript.WrongMail": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_Route31WrongMail"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31MailRecipientScript.NoMail": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_Route31MissingMail"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31MailRecipientScript.Refused": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_Route31DeclinedToHandOverMail"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31MailRecipientScript.LastMon": {
+      "label_refs": [],
+      "text_refs": [
+        "Text_Route31CantTakeLastMon"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "ReceivedSpearowMailText": {
+      "label_refs": [
+        "Route31YoungsterScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31YoungsterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "Route31YoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31Sign": {
+      "label_refs": [],
+      "text_refs": [
+        "Route31SignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "DarkCaveSign": {
+      "label_refs": [],
+      "text_refs": [
+        "DarkCaveSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31CooltrainerMScript": {
+      "label_refs": [],
+      "text_refs": [
+        "Route31CooltrainerMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31FruitTree": {
+      "label_refs": [
+        "Route31Potion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31Potion": {
+      "label_refs": [
+        "Route31PokeBall"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31PokeBall": {
+      "label_refs": [
+        "Route31_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route31_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 1,
+    "warp_events": 3,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 7
+  }
+}

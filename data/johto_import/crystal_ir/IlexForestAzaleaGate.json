@@ -1,0 +1,402 @@
+{
+  "crystal_map": "IlexForestAzaleaGate",
+  "map_id": "ILEX_FOREST_AZALEA_GATE",
+  "group": "GOLDENROD",
+  "group_index": 11,
+  "map_index": 22,
+  "tileset": "TILESET_GATE",
+  "environment": "GATE",
+  "landmark": "LANDMARK_ROUTE_34",
+  "music": "MUSIC_ROUTE_36",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/EastWestGate.blk",
+  "source_asm": "maps/IlexForestAzaleaGate.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 0,
+        "y": 4,
+        "dest_map": "ILEX_FOREST",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 0,
+        "y": 5,
+        "dest_map": "ILEX_FOREST",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 9,
+        "y": 4,
+        "dest_map": "AZALEA_TOWN",
+        "dest_warp_id": 7
+      },
+      {
+        "x": 9,
+        "y": 5,
+        "dest_map": "AZALEA_TOWN",
+        "dest_warp_id": 8
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 5,
+        "y": 2,
+        "sprite": "SPRITE_OFFICER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "IlexForestAzaleaGateOfficerScript",
+        "flag": -1
+      },
+      {
+        "x": 1,
+        "y": 3,
+        "sprite": "SPRITE_GRANNY",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "IlexForestAzaleaGateGrannyScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "ILEXFORESTAZALEAGATE_OFFICER",
+    "ILEXFORESTAZALEAGATE_GRANNY"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "IlexForestAzaleaGate_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "IlexForestAzaleaGateOfficerScript",
+      "label_refs": [
+        "IlexForestAzaleaGateOfficerScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestAzaleaGateOfficerScript": {
+      "raw_lines": [
+        "jumptextfaceplayer IlexForestAzaleaGateOfficerText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "IlexForestAzaleaGateOfficerText"
+          ],
+          "raw": "jumptextfaceplayer IlexForestAzaleaGateOfficerText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "IlexForestAzaleaGateOfficerText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestAzaleaGateGrannyScript": {
+      "raw_lines": [
+        "jumptextfaceplayer IlexForestAzaleaGateGrannyText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "IlexForestAzaleaGateGrannyText"
+          ],
+          "raw": "jumptextfaceplayer IlexForestAzaleaGateGrannyText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "IlexForestAzaleaGateGrannyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestAzaleaGate_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  0,  4, ILEX_FOREST, 2",
+        "warp_event  0,  5, ILEX_FOREST, 3",
+        "warp_event  9,  4, AZALEA_TOWN, 7",
+        "warp_event  9,  5, AZALEA_TOWN, 8",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  5,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, IlexForestAzaleaGateOfficerScript, -1",
+        "object_event  1,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IlexForestAzaleaGateGrannyScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "4",
+            "ILEX_FOREST",
+            "2"
+          ],
+          "raw": "warp_event  0,  4, ILEX_FOREST, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "5",
+            "ILEX_FOREST",
+            "3"
+          ],
+          "raw": "warp_event  0,  5, ILEX_FOREST, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "4",
+            "AZALEA_TOWN",
+            "7"
+          ],
+          "raw": "warp_event  9,  4, AZALEA_TOWN, 7"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "5",
+            "AZALEA_TOWN",
+            "8"
+          ],
+          "raw": "warp_event  9,  5, AZALEA_TOWN, 8"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "2",
+            "SPRITE_OFFICER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "IlexForestAzaleaGateOfficerScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, IlexForestAzaleaGateOfficerScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "3",
+            "SPRITE_GRANNY",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "IlexForestAzaleaGateGrannyScript",
+            "-1"
+          ],
+          "raw": "object_event  1,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IlexForestAzaleaGateGrannyScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "IlexForestAzaleaGateOfficerText": {
+      "raw_lines": [
+        "text \"ILEX FOREST is\"",
+        "line \"big. Be careful!\"",
+        "cont \"Don't get lost.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "ILEX FOREST is"
+        },
+        {
+          "command": "line",
+          "value": "big. Be careful!"
+        },
+        {
+          "command": "cont",
+          "value": "Don't get lost."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "IlexForestAzaleaGateGrannyText": {
+      "raw_lines": [
+        "text \"The FOREST is\"",
+        "line \"watched over by\"",
+        "cont \"its protector.\"",
+        "para \"Stay out of\"",
+        "line \"mischief!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The FOREST is"
+        },
+        {
+          "command": "line",
+          "value": "watched over by"
+        },
+        {
+          "command": "cont",
+          "value": "its protector."
+        },
+        {
+          "command": "para",
+          "value": "Stay out of"
+        },
+        {
+          "command": "line",
+          "value": "mischief!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "IlexForestAzaleaGate_MapScripts": {
+      "label_refs": [
+        "IlexForestAzaleaGateOfficerScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestAzaleaGateOfficerScript": {
+      "label_refs": [],
+      "text_refs": [
+        "IlexForestAzaleaGateOfficerText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestAzaleaGateGrannyScript": {
+      "label_refs": [],
+      "text_refs": [
+        "IlexForestAzaleaGateGrannyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "IlexForestAzaleaGate_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 4,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 2
+  }
+}

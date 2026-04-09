@@ -1,0 +1,570 @@
+{
+  "crystal_map": "RuinsOfAlphOmanyteItemRoom",
+  "map_id": "RUINS_OF_ALPH_OMANYTE_ITEM_ROOM",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 31,
+  "tileset": "TILESET_RUINS_OF_ALPH",
+  "environment": "DUNGEON",
+  "landmark": "LANDMARK_RUINS_OF_ALPH",
+  "music": "MUSIC_UNION_CAVE",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 5,
+  "border_block": "00",
+  "blk_path": "maps/RuinsOfAlphItemRoom.blk",
+  "source_asm": "maps/RuinsOfAlphOmanyteItemRoom.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 9,
+        "dest_map": "RUINS_OF_ALPH_OMANYTE_CHAMBER",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 4,
+        "y": 9,
+        "dest_map": "RUINS_OF_ALPH_OMANYTE_CHAMBER",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 3,
+        "y": 1,
+        "dest_map": "RUINS_OF_ALPH_OMANYTE_WORD_ROOM",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 4,
+        "y": 1,
+        "dest_map": "RUINS_OF_ALPH_OMANYTE_WORD_ROOM",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 2,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "RuinsOfAlphOmanyteItemRoomAncientReplica"
+      },
+      {
+        "x": 5,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "RuinsOfAlphOmanyteItemRoomAncientReplica"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 6,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "RuinsOfAlphOmanyteItemRoomMysteryberry",
+        "flag": "EVENT_PICKED_UP_MYSTERYBERRY_FROM_OMANYTE_ITEM_ROOM"
+      },
+      {
+        "x": 5,
+        "y": 6,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "RuinsOfAlphOmanyteItemRoomMysticWater",
+        "flag": "EVENT_PICKED_UP_MYSTIC_WATER_FROM_OMANYTE_ITEM_ROOM"
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "RuinsOfAlphOmanyteItemRoomStardust",
+        "flag": "EVENT_PICKED_UP_STARDUST_FROM_OMANYTE_ITEM_ROOM"
+      },
+      {
+        "x": 5,
+        "y": 4,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "RuinsOfAlphOmanyteItemRoomStarPiece",
+        "flag": "EVENT_PICKED_UP_STAR_PIECE_FROM_OMANYTE_ITEM_ROOM"
+      }
+    ]
+  },
+  "object_consts": [
+    "RUINSOFALPHOMANYTEITEMROOM_POKE_BALL1",
+    "RUINSOFALPHOMANYTEITEMROOM_POKE_BALL2",
+    "RUINSOFALPHOMANYTEITEMROOM_POKE_BALL3",
+    "RUINSOFALPHOMANYTEITEMROOM_POKE_BALL4"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "RuinsOfAlphOmanyteItemRoom_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "RuinsOfAlphOmanyteItemRoomMysteryberry",
+      "label_refs": [
+        "RuinsOfAlphOmanyteItemRoomMysteryberry"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteItemRoomMysteryberry": {
+      "raw_lines": [
+        "itemball MYSTERYBERRY"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "MYSTERYBERRY"
+          ],
+          "raw": "itemball MYSTERYBERRY"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "RuinsOfAlphOmanyteItemRoomMysticWater",
+      "label_refs": [
+        "RuinsOfAlphOmanyteItemRoomMysticWater"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteItemRoomMysticWater": {
+      "raw_lines": [
+        "itemball MYSTIC_WATER"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "MYSTIC_WATER"
+          ],
+          "raw": "itemball MYSTIC_WATER"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "RuinsOfAlphOmanyteItemRoomStardust",
+      "label_refs": [
+        "RuinsOfAlphOmanyteItemRoomStardust"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteItemRoomStardust": {
+      "raw_lines": [
+        "itemball STARDUST"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "STARDUST"
+          ],
+          "raw": "itemball STARDUST"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "RuinsOfAlphOmanyteItemRoomStarPiece",
+      "label_refs": [
+        "RuinsOfAlphOmanyteItemRoomStarPiece"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteItemRoomStarPiece": {
+      "raw_lines": [
+        "itemball STAR_PIECE"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "STAR_PIECE"
+          ],
+          "raw": "itemball STAR_PIECE"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "RuinsOfAlphOmanyteItemRoomAncientReplica",
+      "label_refs": [
+        "RuinsOfAlphOmanyteItemRoomAncientReplica"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteItemRoomAncientReplica": {
+      "raw_lines": [
+        "jumptext RuinsOfAlphOmanyteItemRoomAncientReplicaText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "RuinsOfAlphOmanyteItemRoomAncientReplicaText"
+          ],
+          "raw": "jumptext RuinsOfAlphOmanyteItemRoomAncientReplicaText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOmanyteItemRoomAncientReplicaText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteItemRoom_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  9, RUINS_OF_ALPH_OMANYTE_CHAMBER, 5",
+        "warp_event  4,  9, RUINS_OF_ALPH_OMANYTE_CHAMBER, 5",
+        "warp_event  3,  1, RUINS_OF_ALPH_OMANYTE_WORD_ROOM, 1",
+        "warp_event  4,  1, RUINS_OF_ALPH_OMANYTE_WORD_ROOM, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  2,  1, BGEVENT_READ, RuinsOfAlphOmanyteItemRoomAncientReplica",
+        "bg_event  5,  1, BGEVENT_READ, RuinsOfAlphOmanyteItemRoomAncientReplica",
+        "def_object_events",
+        "object_event  2,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphOmanyteItemRoomMysteryberry, EVENT_PICKED_UP_MYSTERYBERRY_FROM_OMANYTE_ITEM_ROOM",
+        "object_event  5,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphOmanyteItemRoomMysticWater, EVENT_PICKED_UP_MYSTIC_WATER_FROM_OMANYTE_ITEM_ROOM",
+        "object_event  2,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphOmanyteItemRoomStardust, EVENT_PICKED_UP_STARDUST_FROM_OMANYTE_ITEM_ROOM",
+        "object_event  5,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphOmanyteItemRoomStarPiece, EVENT_PICKED_UP_STAR_PIECE_FROM_OMANYTE_ITEM_ROOM"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "9",
+            "RUINS_OF_ALPH_OMANYTE_CHAMBER",
+            "5"
+          ],
+          "raw": "warp_event  3,  9, RUINS_OF_ALPH_OMANYTE_CHAMBER, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "9",
+            "RUINS_OF_ALPH_OMANYTE_CHAMBER",
+            "5"
+          ],
+          "raw": "warp_event  4,  9, RUINS_OF_ALPH_OMANYTE_CHAMBER, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "1",
+            "RUINS_OF_ALPH_OMANYTE_WORD_ROOM",
+            "1"
+          ],
+          "raw": "warp_event  3,  1, RUINS_OF_ALPH_OMANYTE_WORD_ROOM, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "1",
+            "RUINS_OF_ALPH_OMANYTE_WORD_ROOM",
+            "2"
+          ],
+          "raw": "warp_event  4,  1, RUINS_OF_ALPH_OMANYTE_WORD_ROOM, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "2",
+            "1",
+            "BGEVENT_READ",
+            "RuinsOfAlphOmanyteItemRoomAncientReplica"
+          ],
+          "raw": "bg_event  2,  1, BGEVENT_READ, RuinsOfAlphOmanyteItemRoomAncientReplica"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "5",
+            "1",
+            "BGEVENT_READ",
+            "RuinsOfAlphOmanyteItemRoomAncientReplica"
+          ],
+          "raw": "bg_event  5,  1, BGEVENT_READ, RuinsOfAlphOmanyteItemRoomAncientReplica"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "6",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "RuinsOfAlphOmanyteItemRoomMysteryberry",
+            "EVENT_PICKED_UP_MYSTERYBERRY_FROM_OMANYTE_ITEM_ROOM"
+          ],
+          "raw": "object_event  2,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphOmanyteItemRoomMysteryberry, EVENT_PICKED_UP_MYSTERYBERRY_FROM_OMANYTE_ITEM_ROOM"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "6",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "RuinsOfAlphOmanyteItemRoomMysticWater",
+            "EVENT_PICKED_UP_MYSTIC_WATER_FROM_OMANYTE_ITEM_ROOM"
+          ],
+          "raw": "object_event  5,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphOmanyteItemRoomMysticWater, EVENT_PICKED_UP_MYSTIC_WATER_FROM_OMANYTE_ITEM_ROOM"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "4",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "RuinsOfAlphOmanyteItemRoomStardust",
+            "EVENT_PICKED_UP_STARDUST_FROM_OMANYTE_ITEM_ROOM"
+          ],
+          "raw": "object_event  2,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphOmanyteItemRoomStardust, EVENT_PICKED_UP_STARDUST_FROM_OMANYTE_ITEM_ROOM"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "4",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "RuinsOfAlphOmanyteItemRoomStarPiece",
+            "EVENT_PICKED_UP_STAR_PIECE_FROM_OMANYTE_ITEM_ROOM"
+          ],
+          "raw": "object_event  5,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphOmanyteItemRoomStarPiece, EVENT_PICKED_UP_STAR_PIECE_FROM_OMANYTE_ITEM_ROOM"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "RuinsOfAlphOmanyteItemRoomAncientReplicaText": {
+      "raw_lines": [
+        "text \"It's a replica of\"",
+        "line \"an ancient #-\"",
+        "cont \"MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's a replica of"
+        },
+        {
+          "command": "line",
+          "value": "an ancient #-"
+        },
+        {
+          "command": "cont",
+          "value": "MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "RuinsOfAlphOmanyteItemRoom_MapScripts": {
+      "label_refs": [
+        "RuinsOfAlphOmanyteItemRoomMysteryberry"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteItemRoomMysteryberry": {
+      "label_refs": [
+        "RuinsOfAlphOmanyteItemRoomMysticWater"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteItemRoomMysticWater": {
+      "label_refs": [
+        "RuinsOfAlphOmanyteItemRoomStardust"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteItemRoomStardust": {
+      "label_refs": [
+        "RuinsOfAlphOmanyteItemRoomStarPiece"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteItemRoomStarPiece": {
+      "label_refs": [
+        "RuinsOfAlphOmanyteItemRoomAncientReplica"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteItemRoomAncientReplica": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphOmanyteItemRoomAncientReplicaText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphOmanyteItemRoom_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 4,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 4
+  }
+}

@@ -1,0 +1,2758 @@
+{
+  "crystal_map": "GoldenrodGym",
+  "map_id": "GOLDENROD_GYM",
+  "group": "GOLDENROD",
+  "group_index": 11,
+  "map_index": 3,
+  "tileset": "TILESET_ELITE_FOUR_ROOM",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_GOLDENROD_CITY",
+  "music": "MUSIC_GYM",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 10,
+  "height_blocks": 9,
+  "border_block": "00",
+  "blk_path": "maps/GoldenrodGym.blk",
+  "source_asm": "maps/GoldenrodGym.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "GoldenrodGymNoop1Scene",
+        "scene_id": "SCENE_GOLDENRODGYM_NOOP"
+      },
+      {
+        "script": "GoldenrodGymNoop2Scene",
+        "scene_id": "SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING"
+      }
+    ],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 17,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 3,
+        "y": 17,
+        "dest_map": "GOLDENROD_CITY",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 8,
+        "y": 5,
+        "scene": "SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING",
+        "script": "WhitneyCriesScript"
+      }
+    ],
+    "bg_events": [
+      {
+        "x": 1,
+        "y": 15,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodGymStatue"
+      },
+      {
+        "x": 4,
+        "y": 15,
+        "kind": "BGEVENT_READ",
+        "script": "GoldenrodGymStatue"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 8,
+        "y": 3,
+        "sprite": "SPRITE_WHITNEY",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodGymWhitneyScript",
+        "flag": -1
+      },
+      {
+        "x": 9,
+        "y": 13,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 4,
+        "script": "TrainerLassCarrie",
+        "flag": -1
+      },
+      {
+        "x": 9,
+        "y": 6,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_STANDING_LEFT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerLassBridget",
+        "flag": -1
+      },
+      {
+        "x": 0,
+        "y": 2,
+        "sprite": "SPRITE_BEAUTY",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerBeautyVictoria",
+        "flag": -1
+      },
+      {
+        "x": 19,
+        "y": 5,
+        "sprite": "SPRITE_BEAUTY",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerBeautySamantha",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 15,
+        "sprite": "SPRITE_GYM_GUIDE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "GoldenrodGymGuideScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "GOLDENRODGYM_WHITNEY",
+    "GOLDENRODGYM_LASS1",
+    "GOLDENRODGYM_LASS2",
+    "GOLDENRODGYM_BEAUTY1",
+    "GOLDENRODGYM_BEAUTY2",
+    "GOLDENRODGYM_GYM_GUIDE"
+  ],
+  "scene_ids": [
+    "SCENE_GOLDENRODGYM_NOOP",
+    "SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING"
+  ],
+  "scripts": {
+    "GoldenrodGym_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script GoldenrodGymNoop1Scene, SCENE_GOLDENRODGYM_NOOP",
+        "scene_script GoldenrodGymNoop2Scene, SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "GoldenrodGymNoop1Scene",
+            "SCENE_GOLDENRODGYM_NOOP"
+          ],
+          "raw": "scene_script GoldenrodGymNoop1Scene, SCENE_GOLDENRODGYM_NOOP"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "GoldenrodGymNoop2Scene",
+            "SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING"
+          ],
+          "raw": "scene_script GoldenrodGymNoop2Scene, SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "GoldenrodGymNoop1Scene",
+      "label_refs": [
+        "GoldenrodGymNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymWhitneyScript": {
+      "raw_lines": [
+        "faceplayer",
+        "checkevent EVENT_BEAT_WHITNEY",
+        "iftrue .FightDone",
+        "opentext",
+        "writetext WhitneyBeforeText",
+        "waitbutton",
+        "closetext",
+        "winlosstext WhitneyShouldntBeSoSeriousText, 0",
+        "loadtrainer WHITNEY, WHITNEY1",
+        "startbattle",
+        "reloadmapafterbattle",
+        "setevent EVENT_BEAT_WHITNEY",
+        "setevent EVENT_MADE_WHITNEY_CRY",
+        "setscene SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING",
+        "setevent EVENT_BEAT_BEAUTY_VICTORIA",
+        "setevent EVENT_BEAT_BEAUTY_SAMANTHA",
+        "setevent EVENT_BEAT_LASS_CARRIE",
+        "setevent EVENT_BEAT_LASS_BRIDGET"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_WHITNEY"
+          ],
+          "raw": "checkevent EVENT_BEAT_WHITNEY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoldenrodGymWhitneyScript.FightDone"
+          ],
+          "raw": "iftrue .FightDone"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "WhitneyBeforeText"
+          ],
+          "raw": "writetext WhitneyBeforeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "WhitneyShouldntBeSoSeriousText",
+            "0"
+          ],
+          "raw": "winlosstext WhitneyShouldntBeSoSeriousText, 0"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "WHITNEY",
+            "WHITNEY1"
+          ],
+          "raw": "loadtrainer WHITNEY, WHITNEY1"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_WHITNEY"
+          ],
+          "raw": "setevent EVENT_BEAT_WHITNEY"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_MADE_WHITNEY_CRY"
+          ],
+          "raw": "setevent EVENT_MADE_WHITNEY_CRY"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING"
+          ],
+          "raw": "setscene SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_BEAUTY_VICTORIA"
+          ],
+          "raw": "setevent EVENT_BEAT_BEAUTY_VICTORIA"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_BEAUTY_SAMANTHA"
+          ],
+          "raw": "setevent EVENT_BEAT_BEAUTY_SAMANTHA"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_LASS_CARRIE"
+          ],
+          "raw": "setevent EVENT_BEAT_LASS_CARRIE"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_LASS_BRIDGET"
+          ],
+          "raw": "setevent EVENT_BEAT_LASS_BRIDGET"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "GoldenrodGymWhitneyScript.FightDone",
+      "label_refs": [
+        "GoldenrodGymWhitneyScript.FightDone"
+      ],
+      "text_refs": [
+        "WhitneyBeforeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING"
+      ],
+      "std_calls": []
+    },
+    "GoldenrodGymWhitneyScript.FightDone": {
+      "raw_lines": [
+        "opentext",
+        "checkevent EVENT_MADE_WHITNEY_CRY",
+        "iffalse .StoppedCrying",
+        "writetext WhitneyYouMeanieText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_MADE_WHITNEY_CRY"
+          ],
+          "raw": "checkevent EVENT_MADE_WHITNEY_CRY"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodGymWhitneyScript.StoppedCrying"
+          ],
+          "raw": "iffalse .StoppedCrying"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "WhitneyYouMeanieText"
+          ],
+          "raw": "writetext WhitneyYouMeanieText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [
+        "GoldenrodGymWhitneyScript.StoppedCrying"
+      ],
+      "text_refs": [
+        "WhitneyYouMeanieText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymWhitneyScript.StoppedCrying": {
+      "raw_lines": [
+        "checkevent EVENT_GOT_TM45_ATTRACT",
+        "iftrue .GotAttract",
+        "checkflag ENGINE_PLAINBADGE",
+        "iftrue .GotPlainBadge",
+        "writetext WhitneyWhatDoYouWantText",
+        "promptbutton",
+        "waitsfx",
+        "writetext PlayerReceivedPlainBadgeText",
+        "playsound SFX_GET_BADGE",
+        "waitsfx",
+        "setflag ENGINE_PLAINBADGE",
+        "readvar VAR_BADGES",
+        "scall GoldenrodGymActivateRockets"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TM45_ATTRACT"
+          ],
+          "raw": "checkevent EVENT_GOT_TM45_ATTRACT"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoldenrodGymWhitneyScript.GotAttract"
+          ],
+          "raw": "iftrue .GotAttract"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_PLAINBADGE"
+          ],
+          "raw": "checkflag ENGINE_PLAINBADGE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoldenrodGymWhitneyScript.GotPlainBadge"
+          ],
+          "raw": "iftrue .GotPlainBadge"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "WhitneyWhatDoYouWantText"
+          ],
+          "raw": "writetext WhitneyWhatDoYouWantText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PlayerReceivedPlainBadgeText"
+          ],
+          "raw": "writetext PlayerReceivedPlainBadgeText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_GET_BADGE"
+          ],
+          "raw": "playsound SFX_GET_BADGE"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_PLAINBADGE"
+          ],
+          "raw": "setflag ENGINE_PLAINBADGE"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_BADGES"
+          ],
+          "raw": "readvar VAR_BADGES"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "GoldenrodGymActivateRockets"
+          ],
+          "raw": "scall GoldenrodGymActivateRockets"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "GoldenrodGymWhitneyScript.GotPlainBadge",
+      "label_refs": [
+        "GoldenrodGymActivateRockets",
+        "GoldenrodGymWhitneyScript.GotAttract",
+        "GoldenrodGymWhitneyScript.GotPlainBadge"
+      ],
+      "text_refs": [
+        "PlayerReceivedPlainBadgeText",
+        "WhitneyWhatDoYouWantText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymWhitneyScript.GotPlainBadge": {
+      "raw_lines": [
+        "writetext WhitneyPlainBadgeText",
+        "promptbutton",
+        "verbosegiveitem TM_ATTRACT",
+        "iffalse .NoRoomForAttract",
+        "setevent EVENT_GOT_TM45_ATTRACT",
+        "writetext WhitneyAttractText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "WhitneyPlainBadgeText"
+          ],
+          "raw": "writetext WhitneyPlainBadgeText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "TM_ATTRACT"
+          ],
+          "raw": "verbosegiveitem TM_ATTRACT"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "GoldenrodGymWhitneyScript.NoRoomForAttract"
+          ],
+          "raw": "iffalse .NoRoomForAttract"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_TM45_ATTRACT"
+          ],
+          "raw": "setevent EVENT_GOT_TM45_ATTRACT"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "WhitneyAttractText"
+          ],
+          "raw": "writetext WhitneyAttractText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [
+        "GoldenrodGymWhitneyScript.NoRoomForAttract"
+      ],
+      "text_refs": [
+        "WhitneyAttractText",
+        "WhitneyPlainBadgeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymWhitneyScript.GotAttract": {
+      "raw_lines": [
+        "writetext WhitneyGoodCryText",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "WhitneyGoodCryText"
+          ],
+          "raw": "writetext WhitneyGoodCryText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "GoldenrodGymWhitneyScript.NoRoomForAttract",
+      "label_refs": [
+        "GoldenrodGymWhitneyScript.NoRoomForAttract"
+      ],
+      "text_refs": [
+        "WhitneyGoodCryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymWhitneyScript.NoRoomForAttract": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymActivateRockets": {
+      "raw_lines": [
+        "ifequal 7, .RadioTowerRockets",
+        "ifequal 6, .GoldenrodRockets",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "ifequal",
+          "args": [
+            "7",
+            "GoldenrodGymActivateRockets.RadioTowerRockets"
+          ],
+          "raw": "ifequal 7, .RadioTowerRockets"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "6",
+            "GoldenrodGymActivateRockets.GoldenrodRockets"
+          ],
+          "raw": "ifequal 6, .GoldenrodRockets"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "ifequal",
+      "label_refs": [
+        "GoldenrodGymActivateRockets.GoldenrodRockets",
+        "GoldenrodGymActivateRockets.RadioTowerRockets"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymActivateRockets.GoldenrodRockets": {
+      "raw_lines": [
+        "jumpstd GoldenrodRocketsScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "GoldenrodRocketsScript"
+          ],
+          "raw": "jumpstd GoldenrodRocketsScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GoldenrodRocketsScript"
+      ]
+    },
+    "GoldenrodGymActivateRockets.RadioTowerRockets": {
+      "raw_lines": [
+        "jumpstd RadioTowerRocketsScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RadioTowerRocketsScript"
+          ],
+          "raw": "jumpstd RadioTowerRocketsScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RadioTowerRocketsScript"
+      ]
+    },
+    "TrainerLassCarrie": {
+      "raw_lines": [
+        "trainer LASS, CARRIE, EVENT_BEAT_LASS_CARRIE, LassCarrieSeenText, LassCarrieBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "LASS",
+            "CARRIE",
+            "EVENT_BEAT_LASS_CARRIE",
+            "LassCarrieSeenText",
+            "LassCarrieBeatenText",
+            "0",
+            "TrainerLassCarrie.Script"
+          ],
+          "raw": "trainer LASS, CARRIE, EVENT_BEAT_LASS_CARRIE, LassCarrieSeenText, LassCarrieBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerLassCarrie.Script",
+      "label_refs": [
+        "TrainerLassCarrie.Script"
+      ],
+      "text_refs": [
+        "LassCarrieBeatenText",
+        "LassCarrieSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerLassCarrie.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext LassCarrieAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "LassCarrieAfterBattleText"
+          ],
+          "raw": "writetext LassCarrieAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "LassCarrieAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WhitneyCriesScript": {
+      "raw_lines": [
+        "showemote EMOTE_SHOCK, GOLDENRODGYM_LASS2, 15",
+        "applymovement GOLDENRODGYM_LASS2, BridgetWalksUpMovement",
+        "turnobject PLAYER, DOWN",
+        "opentext",
+        "writetext BridgetWhitneyCriesText",
+        "waitbutton",
+        "closetext",
+        "applymovement GOLDENRODGYM_LASS2, BridgetWalksAwayMovement",
+        "setscene SCENE_GOLDENRODGYM_NOOP",
+        "clearevent EVENT_MADE_WHITNEY_CRY",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "GOLDENRODGYM_LASS2",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, GOLDENRODGYM_LASS2, 15"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "GOLDENRODGYM_LASS2",
+            "BridgetWalksUpMovement"
+          ],
+          "raw": "applymovement GOLDENRODGYM_LASS2, BridgetWalksUpMovement"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BridgetWhitneyCriesText"
+          ],
+          "raw": "writetext BridgetWhitneyCriesText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "GOLDENRODGYM_LASS2",
+            "BridgetWalksAwayMovement"
+          ],
+          "raw": "applymovement GOLDENRODGYM_LASS2, BridgetWalksAwayMovement"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_GOLDENRODGYM_NOOP"
+          ],
+          "raw": "setscene SCENE_GOLDENRODGYM_NOOP"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_MADE_WHITNEY_CRY"
+          ],
+          "raw": "clearevent EVENT_MADE_WHITNEY_CRY"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "showemote",
+      "label_refs": [],
+      "text_refs": [
+        "BridgetWhitneyCriesText"
+      ],
+      "movement_refs": [
+        "BridgetWalksAwayMovement",
+        "BridgetWalksUpMovement"
+      ],
+      "scene_refs": [
+        "SCENE_GOLDENRODGYM_NOOP"
+      ],
+      "std_calls": []
+    },
+    "TrainerLassBridget": {
+      "raw_lines": [
+        "trainer LASS, BRIDGET, EVENT_BEAT_LASS_BRIDGET, LassBridgetSeenText, LassBridgetBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "LASS",
+            "BRIDGET",
+            "EVENT_BEAT_LASS_BRIDGET",
+            "LassBridgetSeenText",
+            "LassBridgetBeatenText",
+            "0",
+            "TrainerLassBridget.Script"
+          ],
+          "raw": "trainer LASS, BRIDGET, EVENT_BEAT_LASS_BRIDGET, LassBridgetSeenText, LassBridgetBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerLassBridget.Script",
+      "label_refs": [
+        "TrainerLassBridget.Script"
+      ],
+      "text_refs": [
+        "LassBridgetBeatenText",
+        "LassBridgetSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerLassBridget.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext LassBridgetAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "LassBridgetAfterBattleText"
+          ],
+          "raw": "writetext LassBridgetAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "LassBridgetAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBeautyVictoria": {
+      "raw_lines": [
+        "trainer BEAUTY, VICTORIA, EVENT_BEAT_BEAUTY_VICTORIA, BeautyVictoriaSeenText, BeautyVictoriaBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "BEAUTY",
+            "VICTORIA",
+            "EVENT_BEAT_BEAUTY_VICTORIA",
+            "BeautyVictoriaSeenText",
+            "BeautyVictoriaBeatenText",
+            "0",
+            "TrainerBeautyVictoria.Script"
+          ],
+          "raw": "trainer BEAUTY, VICTORIA, EVENT_BEAT_BEAUTY_VICTORIA, BeautyVictoriaSeenText, BeautyVictoriaBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerBeautyVictoria.Script",
+      "label_refs": [
+        "TrainerBeautyVictoria.Script"
+      ],
+      "text_refs": [
+        "BeautyVictoriaBeatenText",
+        "BeautyVictoriaSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBeautyVictoria.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext BeautyVictoriaAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BeautyVictoriaAfterBattleText"
+          ],
+          "raw": "writetext BeautyVictoriaAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "BeautyVictoriaAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBeautySamantha": {
+      "raw_lines": [
+        "trainer BEAUTY, SAMANTHA, EVENT_BEAT_BEAUTY_SAMANTHA, BeautySamanthaSeenText, BeautySamanthaBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "BEAUTY",
+            "SAMANTHA",
+            "EVENT_BEAT_BEAUTY_SAMANTHA",
+            "BeautySamanthaSeenText",
+            "BeautySamanthaBeatenText",
+            "0",
+            "TrainerBeautySamantha.Script"
+          ],
+          "raw": "trainer BEAUTY, SAMANTHA, EVENT_BEAT_BEAUTY_SAMANTHA, BeautySamanthaSeenText, BeautySamanthaBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerBeautySamantha.Script",
+      "label_refs": [
+        "TrainerBeautySamantha.Script"
+      ],
+      "text_refs": [
+        "BeautySamanthaBeatenText",
+        "BeautySamanthaSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBeautySamantha.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext BeautySamanthaAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BeautySamanthaAfterBattleText"
+          ],
+          "raw": "writetext BeautySamanthaAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "BeautySamanthaAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymGuideScript": {
+      "raw_lines": [
+        "faceplayer",
+        "checkevent EVENT_BEAT_WHITNEY",
+        "iftrue .GoldenrodGymGuideWinScript",
+        "opentext",
+        "writetext GoldenrodGymGuideText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_WHITNEY"
+          ],
+          "raw": "checkevent EVENT_BEAT_WHITNEY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoldenrodGymGuideScript.GoldenrodGymGuideWinScript"
+          ],
+          "raw": "iftrue .GoldenrodGymGuideWinScript"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodGymGuideText"
+          ],
+          "raw": "writetext GoldenrodGymGuideText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "GoldenrodGymGuideScript.GoldenrodGymGuideWinScript"
+      ],
+      "text_refs": [
+        "GoldenrodGymGuideText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymGuideScript.GoldenrodGymGuideWinScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext GoldenrodGymGuideWinText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "GoldenrodGymGuideWinText"
+          ],
+          "raw": "writetext GoldenrodGymGuideWinText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodGymGuideWinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymStatue": {
+      "raw_lines": [
+        "checkflag ENGINE_PLAINBADGE",
+        "iftrue .Beaten",
+        "jumpstd GymStatue1Script"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_PLAINBADGE"
+          ],
+          "raw": "checkflag ENGINE_PLAINBADGE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "GoldenrodGymStatue.Beaten"
+          ],
+          "raw": "iftrue .Beaten"
+        },
+        {
+          "command": "jumpstd",
+          "args": [
+            "GymStatue1Script"
+          ],
+          "raw": "jumpstd GymStatue1Script"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "GoldenrodGymStatue.Beaten"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue1Script"
+      ]
+    },
+    "GoldenrodGymStatue.Beaten": {
+      "raw_lines": [
+        "gettrainername STRING_BUFFER_4, WHITNEY, WHITNEY1",
+        "jumpstd GymStatue2Script"
+      ],
+      "commands": [
+        {
+          "command": "gettrainername",
+          "args": [
+            "STRING_BUFFER_4",
+            "WHITNEY",
+            "WHITNEY1"
+          ],
+          "raw": "gettrainername STRING_BUFFER_4, WHITNEY, WHITNEY1"
+        },
+        {
+          "command": "jumpstd",
+          "args": [
+            "GymStatue2Script"
+          ],
+          "raw": "jumpstd GymStatue2Script"
+        }
+      ],
+      "first_command": "gettrainername",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue2Script"
+      ]
+    },
+    "GoldenrodGym_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2, 17, GOLDENROD_CITY, 1",
+        "warp_event  3, 17, GOLDENROD_CITY, 1",
+        "def_coord_events",
+        "coord_event  8,  5, SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING, WhitneyCriesScript",
+        "def_bg_events",
+        "bg_event  1, 15, BGEVENT_READ, GoldenrodGymStatue",
+        "bg_event  4, 15, BGEVENT_READ, GoldenrodGymStatue",
+        "def_object_events",
+        "object_event  8,  3, SPRITE_WHITNEY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGymWhitneyScript, -1",
+        "object_event  9, 13, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerLassCarrie, -1",
+        "object_event  9,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassBridget, -1",
+        "object_event  0,  2, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyVictoria, -1",
+        "object_event 19,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautySamantha, -1",
+        "object_event  5, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGymGuideScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "17",
+            "GOLDENROD_CITY",
+            "1"
+          ],
+          "raw": "warp_event  2, 17, GOLDENROD_CITY, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "17",
+            "GOLDENROD_CITY",
+            "1"
+          ],
+          "raw": "warp_event  3, 17, GOLDENROD_CITY, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "8",
+            "5",
+            "SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING",
+            "WhitneyCriesScript"
+          ],
+          "raw": "coord_event  8,  5, SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING, WhitneyCriesScript"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "15",
+            "BGEVENT_READ",
+            "GoldenrodGymStatue"
+          ],
+          "raw": "bg_event  1, 15, BGEVENT_READ, GoldenrodGymStatue"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "4",
+            "15",
+            "BGEVENT_READ",
+            "GoldenrodGymStatue"
+          ],
+          "raw": "bg_event  4, 15, BGEVENT_READ, GoldenrodGymStatue"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "3",
+            "SPRITE_WHITNEY",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodGymWhitneyScript",
+            "-1"
+          ],
+          "raw": "object_event  8,  3, SPRITE_WHITNEY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGymWhitneyScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "13",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "4",
+            "TrainerLassCarrie",
+            "-1"
+          ],
+          "raw": "object_event  9, 13, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerLassCarrie, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "6",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerLassBridget",
+            "-1"
+          ],
+          "raw": "object_event  9,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassBridget, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "0",
+            "2",
+            "SPRITE_BEAUTY",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerBeautyVictoria",
+            "-1"
+          ],
+          "raw": "object_event  0,  2, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyVictoria, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "19",
+            "5",
+            "SPRITE_BEAUTY",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerBeautySamantha",
+            "-1"
+          ],
+          "raw": "object_event 19,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautySamantha, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "15",
+            "SPRITE_GYM_GUIDE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "GoldenrodGymGuideScript",
+            "-1"
+          ],
+          "raw": "object_event  5, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGymGuideScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "WhitneyBeforeText": {
+      "raw_lines": [
+        "text \"Hi! I'm WHITNEY!\"",
+        "para \"Everyone was into\"",
+        "line \"#MON, so I got\"",
+        "cont \"into it too!\"",
+        "para \"#MON are\"",
+        "line \"super-cute!\"",
+        "para \"You want to bat-\"",
+        "line \"tle? I'm warning\"",
+        "cont \"you--I'm good!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hi! I'm WHITNEY!"
+        },
+        {
+          "command": "para",
+          "value": "Everyone was into"
+        },
+        {
+          "command": "line",
+          "value": "#MON, so I got"
+        },
+        {
+          "command": "cont",
+          "value": "into it too!"
+        },
+        {
+          "command": "para",
+          "value": "#MON are"
+        },
+        {
+          "command": "line",
+          "value": "super-cute!"
+        },
+        {
+          "command": "para",
+          "value": "You want to bat-"
+        },
+        {
+          "command": "line",
+          "value": "tle? I'm warning"
+        },
+        {
+          "command": "cont",
+          "value": "you--I'm good!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "WhitneyShouldntBeSoSeriousText": {
+      "raw_lines": [
+        "text \"Sob\u2026\"",
+        "para \"\u2026Waaaaaaah!\"",
+        "line \"You're mean!\"",
+        "para \"You shouldn't be\"",
+        "line \"so serious! You\u2026\"",
+        "cont \"you child, you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Sob\u2026"
+        },
+        {
+          "command": "para",
+          "value": "\u2026Waaaaaaah!"
+        },
+        {
+          "command": "line",
+          "value": "You're mean!"
+        },
+        {
+          "command": "para",
+          "value": "You shouldn't be"
+        },
+        {
+          "command": "line",
+          "value": "so serious! You\u2026"
+        },
+        {
+          "command": "cont",
+          "value": "you child, you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "WhitneyYouMeanieText": {
+      "raw_lines": [
+        "text \"Waaaaah!\"",
+        "para \"Waaaaah!\"",
+        "para \"\u2026Snivel, hic\u2026\"",
+        "line \"\u2026You meanie!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Waaaaah!"
+        },
+        {
+          "command": "para",
+          "value": "Waaaaah!"
+        },
+        {
+          "command": "para",
+          "value": "\u2026Snivel, hic\u2026"
+        },
+        {
+          "command": "line",
+          "value": "\u2026You meanie!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "WhitneyWhatDoYouWantText": {
+      "raw_lines": [
+        "text \"\u2026Sniff\u2026\"",
+        "para \"What? What do you\"",
+        "line \"want? A BADGE?\"",
+        "para \"Oh, right.\"",
+        "line \"I forgot. Here's\"",
+        "cont \"PLAINBADGE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026Sniff\u2026"
+        },
+        {
+          "command": "para",
+          "value": "What? What do you"
+        },
+        {
+          "command": "line",
+          "value": "want? A BADGE?"
+        },
+        {
+          "command": "para",
+          "value": "Oh, right."
+        },
+        {
+          "command": "line",
+          "value": "I forgot. Here's"
+        },
+        {
+          "command": "cont",
+          "value": "PLAINBADGE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PlayerReceivedPlainBadgeText": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"PLAINBADGE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "PLAINBADGE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "WhitneyPlainBadgeText": {
+      "raw_lines": [
+        "text \"PLAINBADGE lets\"",
+        "line \"your #MON use\"",
+        "para \"STRENGTH outside\"",
+        "line \"of battle.\"",
+        "para \"It also boosts\"",
+        "line \"your #MON's\"",
+        "cont \"SPEED.\"",
+        "para \"Oh, you can have\"",
+        "line \"this too!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "PLAINBADGE lets"
+        },
+        {
+          "command": "line",
+          "value": "your #MON use"
+        },
+        {
+          "command": "para",
+          "value": "STRENGTH outside"
+        },
+        {
+          "command": "line",
+          "value": "of battle."
+        },
+        {
+          "command": "para",
+          "value": "It also boosts"
+        },
+        {
+          "command": "line",
+          "value": "your #MON's"
+        },
+        {
+          "command": "cont",
+          "value": "SPEED."
+        },
+        {
+          "command": "para",
+          "value": "Oh, you can have"
+        },
+        {
+          "command": "line",
+          "value": "this too!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "WhitneyAttractText": {
+      "raw_lines": [
+        "text \"It's ATTRACT!\"",
+        "line \"It makes full use\"",
+        "para \"of a #MON's\"",
+        "line \"charm.\"",
+        "para \"Isn't it just per-\"",
+        "line \"fect for a cutie\"",
+        "cont \"like me?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's ATTRACT!"
+        },
+        {
+          "command": "line",
+          "value": "It makes full use"
+        },
+        {
+          "command": "para",
+          "value": "of a #MON's"
+        },
+        {
+          "command": "line",
+          "value": "charm."
+        },
+        {
+          "command": "para",
+          "value": "Isn't it just per-"
+        },
+        {
+          "command": "line",
+          "value": "fect for a cutie"
+        },
+        {
+          "command": "cont",
+          "value": "like me?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "WhitneyGoodCryText": {
+      "raw_lines": [
+        "text \"Ah, that was a\"",
+        "line \"good cry!\"",
+        "para \"Come for a visit\"",
+        "line \"again! Bye-bye!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Ah, that was a"
+        },
+        {
+          "command": "line",
+          "value": "good cry!"
+        },
+        {
+          "command": "para",
+          "value": "Come for a visit"
+        },
+        {
+          "command": "line",
+          "value": "again! Bye-bye!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LassCarrieSeenText": {
+      "raw_lines": [
+        "text \"Don't let my\"",
+        "line \"#MON's cute\"",
+        "para \"looks fool you.\"",
+        "line \"They can whip you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Don't let my"
+        },
+        {
+          "command": "line",
+          "value": "#MON's cute"
+        },
+        {
+          "command": "para",
+          "value": "looks fool you."
+        },
+        {
+          "command": "line",
+          "value": "They can whip you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LassCarrieBeatenText": {
+      "raw_lines": [
+        "text \"Darn\u2026 I thought\"",
+        "line \"you were weak\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Darn\u2026 I thought"
+        },
+        {
+          "command": "line",
+          "value": "you were weak\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LassCarrieAfterBattleText": {
+      "raw_lines": [
+        "text \"Do my #MON\"",
+        "line \"think I'm cute?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Do my #MON"
+        },
+        {
+          "command": "line",
+          "value": "think I'm cute?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LassBridgetSeenText": {
+      "raw_lines": [
+        "text \"I like cute #-\"",
+        "line \"MON better than\"",
+        "cont \"strong #MON.\"",
+        "para \"But I have strong\"",
+        "line \"and cute #MON!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I like cute #-"
+        },
+        {
+          "command": "line",
+          "value": "MON better than"
+        },
+        {
+          "command": "cont",
+          "value": "strong #MON."
+        },
+        {
+          "command": "para",
+          "value": "But I have strong"
+        },
+        {
+          "command": "line",
+          "value": "and cute #MON!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LassBridgetBeatenText": {
+      "raw_lines": [
+        "text \"Oh, no, no, no!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, no, no, no!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "LassBridgetAfterBattleText": {
+      "raw_lines": [
+        "text \"I'm trying to beat\"",
+        "line \"WHITNEY, but\u2026\"",
+        "cont \"It's depressing.\"",
+        "para \"I'm okay! If I\"",
+        "line \"lose, I'll just\"",
+        "para \"try harder next\"",
+        "line \"time!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm trying to beat"
+        },
+        {
+          "command": "line",
+          "value": "WHITNEY, but\u2026"
+        },
+        {
+          "command": "cont",
+          "value": "It's depressing."
+        },
+        {
+          "command": "para",
+          "value": "I'm okay! If I"
+        },
+        {
+          "command": "line",
+          "value": "lose, I'll just"
+        },
+        {
+          "command": "para",
+          "value": "try harder next"
+        },
+        {
+          "command": "line",
+          "value": "time!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BridgetWhitneyCriesText": {
+      "raw_lines": [
+        "text \"Oh, no. You made\"",
+        "line \"WHITNEY cry.\"",
+        "para \"It's OK. She'll\"",
+        "line \"stop soon. She\"",
+        "para \"always cries when\"",
+        "line \"she loses.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, no. You made"
+        },
+        {
+          "command": "line",
+          "value": "WHITNEY cry."
+        },
+        {
+          "command": "para",
+          "value": "It's OK. She'll"
+        },
+        {
+          "command": "line",
+          "value": "stop soon. She"
+        },
+        {
+          "command": "para",
+          "value": "always cries when"
+        },
+        {
+          "command": "line",
+          "value": "she loses."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BeautyVictoriaSeenText": {
+      "raw_lines": [
+        "text \"Oh, you are a cute\"",
+        "line \"little trainer! \"",
+        "para \"I like you, but I\"",
+        "line \"won't hold back!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh, you are a cute"
+        },
+        {
+          "command": "line",
+          "value": "little trainer! "
+        },
+        {
+          "command": "para",
+          "value": "I like you, but I"
+        },
+        {
+          "command": "line",
+          "value": "won't hold back!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BeautyVictoriaBeatenText": {
+      "raw_lines": [
+        "text \"Let's see\u2026 Oops,\"",
+        "line \"it's over?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Let's see\u2026 Oops,"
+        },
+        {
+          "command": "line",
+          "value": "it's over?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BeautyVictoriaAfterBattleText": {
+      "raw_lines": [
+        "text \"Wow, you must be\"",
+        "line \"good to beat me!\"",
+        "cont \"Keep it up!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Wow, you must be"
+        },
+        {
+          "command": "line",
+          "value": "good to beat me!"
+        },
+        {
+          "command": "cont",
+          "value": "Keep it up!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BeautySamanthaSeenText": {
+      "raw_lines": [
+        "text \"Give it your best\"",
+        "line \"shot, or I'll take\"",
+        "cont \"you down!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Give it your best"
+        },
+        {
+          "command": "line",
+          "value": "shot, or I'll take"
+        },
+        {
+          "command": "cont",
+          "value": "you down!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BeautySamanthaBeatenText": {
+      "raw_lines": [
+        "text \"No! Oh, MEOWTH,\"",
+        "line \"I'm so sorry!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "No! Oh, MEOWTH,"
+        },
+        {
+          "command": "line",
+          "value": "I'm so sorry!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BeautySamanthaAfterBattleText": {
+      "raw_lines": [
+        "text \"I taught MEOWTH\"",
+        "line \"moves for taking\"",
+        "cont \"on any type\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I taught MEOWTH"
+        },
+        {
+          "command": "line",
+          "value": "moves for taking"
+        },
+        {
+          "command": "cont",
+          "value": "on any type\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodGymGuideText": {
+      "raw_lines": [
+        "text \"Yo! CHAMP in\"",
+        "line \"making!\"",
+        "para \"This GYM is home\"",
+        "line \"to normal-type\"",
+        "cont \"#MON trainers.\"",
+        "para \"I recommend you\"",
+        "line \"use fighting-type\"",
+        "cont \"#MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Yo! CHAMP in"
+        },
+        {
+          "command": "line",
+          "value": "making!"
+        },
+        {
+          "command": "para",
+          "value": "This GYM is home"
+        },
+        {
+          "command": "line",
+          "value": "to normal-type"
+        },
+        {
+          "command": "cont",
+          "value": "#MON trainers."
+        },
+        {
+          "command": "para",
+          "value": "I recommend you"
+        },
+        {
+          "command": "line",
+          "value": "use fighting-type"
+        },
+        {
+          "command": "cont",
+          "value": "#MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "GoldenrodGymGuideWinText": {
+      "raw_lines": [
+        "text \"You won? Great! I\"",
+        "line \"was busy admiring\"",
+        "cont \"the ladies here.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You won? Great! I"
+        },
+        {
+          "command": "line",
+          "value": "was busy admiring"
+        },
+        {
+          "command": "cont",
+          "value": "the ladies here."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "BridgetWalksUpMovement": {
+      "raw_lines": [
+        "step LEFT",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "BridgetWalksAwayMovement": {
+      "raw_lines": [
+        "step RIGHT",
+        "turn_head LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "GoldenrodRocketsScript",
+    "GymStatue1Script",
+    "GymStatue2Script",
+    "RadioTowerRocketsScript"
+  ],
+  "dependencies": {
+    "GoldenrodGym_MapScripts": {
+      "label_refs": [
+        "GoldenrodGymNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymWhitneyScript": {
+      "label_refs": [
+        "GoldenrodGymWhitneyScript.FightDone"
+      ],
+      "text_refs": [
+        "WhitneyBeforeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING"
+      ],
+      "std_calls": []
+    },
+    "GoldenrodGymWhitneyScript.FightDone": {
+      "label_refs": [
+        "GoldenrodGymWhitneyScript.StoppedCrying"
+      ],
+      "text_refs": [
+        "WhitneyYouMeanieText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymWhitneyScript.StoppedCrying": {
+      "label_refs": [
+        "GoldenrodGymActivateRockets",
+        "GoldenrodGymWhitneyScript.GotAttract",
+        "GoldenrodGymWhitneyScript.GotPlainBadge"
+      ],
+      "text_refs": [
+        "PlayerReceivedPlainBadgeText",
+        "WhitneyWhatDoYouWantText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymWhitneyScript.GotPlainBadge": {
+      "label_refs": [
+        "GoldenrodGymWhitneyScript.NoRoomForAttract"
+      ],
+      "text_refs": [
+        "WhitneyAttractText",
+        "WhitneyPlainBadgeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymWhitneyScript.GotAttract": {
+      "label_refs": [
+        "GoldenrodGymWhitneyScript.NoRoomForAttract"
+      ],
+      "text_refs": [
+        "WhitneyGoodCryText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymWhitneyScript.NoRoomForAttract": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymActivateRockets": {
+      "label_refs": [
+        "GoldenrodGymActivateRockets.GoldenrodRockets",
+        "GoldenrodGymActivateRockets.RadioTowerRockets"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymActivateRockets.GoldenrodRockets": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GoldenrodRocketsScript"
+      ]
+    },
+    "GoldenrodGymActivateRockets.RadioTowerRockets": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RadioTowerRocketsScript"
+      ]
+    },
+    "TrainerLassCarrie": {
+      "label_refs": [
+        "TrainerLassCarrie.Script"
+      ],
+      "text_refs": [
+        "LassCarrieBeatenText",
+        "LassCarrieSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerLassCarrie.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "LassCarrieAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "WhitneyCriesScript": {
+      "label_refs": [],
+      "text_refs": [
+        "BridgetWhitneyCriesText"
+      ],
+      "movement_refs": [
+        "BridgetWalksAwayMovement",
+        "BridgetWalksUpMovement"
+      ],
+      "scene_refs": [
+        "SCENE_GOLDENRODGYM_NOOP"
+      ],
+      "std_calls": []
+    },
+    "TrainerLassBridget": {
+      "label_refs": [
+        "TrainerLassBridget.Script"
+      ],
+      "text_refs": [
+        "LassBridgetBeatenText",
+        "LassBridgetSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerLassBridget.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "LassBridgetAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBeautyVictoria": {
+      "label_refs": [
+        "TrainerBeautyVictoria.Script"
+      ],
+      "text_refs": [
+        "BeautyVictoriaBeatenText",
+        "BeautyVictoriaSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBeautyVictoria.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "BeautyVictoriaAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBeautySamantha": {
+      "label_refs": [
+        "TrainerBeautySamantha.Script"
+      ],
+      "text_refs": [
+        "BeautySamanthaBeatenText",
+        "BeautySamanthaSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBeautySamantha.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "BeautySamanthaAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymGuideScript": {
+      "label_refs": [
+        "GoldenrodGymGuideScript.GoldenrodGymGuideWinScript"
+      ],
+      "text_refs": [
+        "GoldenrodGymGuideText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymGuideScript.GoldenrodGymGuideWinScript": {
+      "label_refs": [],
+      "text_refs": [
+        "GoldenrodGymGuideWinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "GoldenrodGymStatue": {
+      "label_refs": [
+        "GoldenrodGymStatue.Beaten"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue1Script"
+      ]
+    },
+    "GoldenrodGymStatue.Beaten": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue2Script"
+      ]
+    },
+    "GoldenrodGym_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 1,
+    "bg_events": 2,
+    "object_events": 6
+  }
+}

@@ -27,6 +27,7 @@
 #include "constants/field_effects.h"
 #include "constants/items.h"
 #include "constants/mauville_old_man.h"
+#include "constants/metatile_behaviors.h"
 #include "constants/trainer_types.h"
 #include "constants/union_room.h"
 
@@ -55,6 +56,36 @@ enum {
     JUMP_DISTANCE_IN_PLACE,
     JUMP_DISTANCE_NORMAL,
     JUMP_DISTANCE_FAR,
+};
+
+enum {
+    FOLLOW_MOVE_FACE,
+    FOLLOW_MOVE_WALK,
+    FOLLOW_MOVE_WALK_SLOW,
+    FOLLOW_MOVE_WALK_FAST,
+    FOLLOW_MOVE_WALK_FASTER,
+    FOLLOW_MOVE_SLIDE,
+    FOLLOW_MOVE_JUMP,
+    FOLLOW_MOVE_JUMP2,
+};
+
+#define FOLLOW_MOVEMENT_QUEUE_LENGTH 5
+
+struct QueuedFollowMovement
+{
+    u8 type;
+    u8 direction;
+};
+
+struct ObjectEventFollowState
+{
+    bool8 active;
+    u8 leaderObjectEventId;
+    u8 followerObjectEventId;
+    u8 followerOriginalMovementType;
+    bool8 followerMovementTypeOverridden;
+    u8 movementQueueLength;
+    struct QueuedFollowMovement movementQueue[FOLLOW_MOVEMENT_QUEUE_LENGTH];
 };
 
 // Sprite data used throughout
@@ -89,6 +120,7 @@ static u8 setup##_callback(struct ObjectEvent *objectEvent, struct Sprite *sprit
 static EWRAM_DATA u8 sCurrentReflectionType = 0;
 static EWRAM_DATA u16 sCurrentSpecialObjectPaletteTag = 0;
 static EWRAM_DATA struct LockedAnimObjectEvents *sLockedAnimObjectEvents = {0};
+static EWRAM_DATA struct ObjectEventFollowState sObjectEventFollow = {0};
 
 static void MoveCoordsInDirection(u32, s16 *, s16 *, s16, s16);
 static bool8 ObjectEventExecSingleMovementAction(struct ObjectEvent *, struct Sprite *);
@@ -176,6 +208,18 @@ static void DestroyLevitateMovementTask(u8);
 static bool8 NpcTakeStep(struct Sprite *);
 static bool8 IsElevationMismatchAt(u8, s16, s16);
 static bool8 AreElevationsCompatible(u8, u8);
+static u8 GetObjectEventIdFromPtr(const struct ObjectEvent *objectEvent);
+static bool8 IsObjectEventIdActive(u8 objectEventId);
+static void ClearObjectEventFollowState(void);
+static void SeedObjectEventFollowInitialStep(const struct ObjectEvent *leader, const struct ObjectEvent *follower);
+static bool8 NormalizeFollowMovementAction(u8 movementActionId, struct QueuedFollowMovement *movement);
+static void QueueObjectEventFollowMovement(const struct QueuedFollowMovement *movement);
+static bool8 PeekObjectEventFollowMovementAction(u8 *movementActionId);
+static void DequeueObjectEventFollowMovement(void);
+static u8 GetQueuedFollowMovementAction(const struct QueuedFollowMovement *movement);
+static void TryQueueLeaderFollowMovement(const struct ObjectEvent *objectEvent, u8 movementActionId);
+static void ValidateObjectEventFollow(void);
+static void TryStartFollowerQueuedMovement(struct ObjectEvent *objectEvent);
 
 static const struct SpriteFrameImage sPicTable_PechaBerryTree[];
 
@@ -193,6 +237,281 @@ const u8 gReflectionEffectPaletteMap[16] = {
         [PALSLOT_NPC_SPECIAL]            = PALSLOT_NPC_SPECIAL_REFLECTION,
         [PALSLOT_NPC_SPECIAL_REFLECTION] = PALSLOT_NPC_SPECIAL_REFLECTION
 };
+
+static u8 GetObjectEventIdFromPtr(const struct ObjectEvent *objectEvent)
+{
+    return (u8)(objectEvent - gObjectEvents);
+}
+
+static bool8 IsObjectEventIdActive(u8 objectEventId)
+{
+    return objectEventId < OBJECT_EVENTS_COUNT && gObjectEvents[objectEventId].active;
+}
+
+static void ClearObjectEventFollowState(void)
+{
+    sObjectEventFollow.active = FALSE;
+    sObjectEventFollow.leaderObjectEventId = OBJECT_EVENTS_COUNT;
+    sObjectEventFollow.followerObjectEventId = OBJECT_EVENTS_COUNT;
+    sObjectEventFollow.followerOriginalMovementType = MOVEMENT_TYPE_NONE;
+    sObjectEventFollow.followerMovementTypeOverridden = FALSE;
+    sObjectEventFollow.movementQueueLength = 0;
+}
+
+void StopObjectEventFollow(void)
+{
+    if (sObjectEventFollow.active
+     && sObjectEventFollow.followerMovementTypeOverridden
+     && IsObjectEventIdActive(sObjectEventFollow.followerObjectEventId))
+    {
+        SetTrainerMovementType(&gObjectEvents[sObjectEventFollow.followerObjectEventId], sObjectEventFollow.followerOriginalMovementType);
+    }
+
+    ClearObjectEventFollowState();
+}
+
+static void ValidateObjectEventFollow(void)
+{
+    if (!sObjectEventFollow.active)
+        return;
+
+    if (!IsObjectEventIdActive(sObjectEventFollow.leaderObjectEventId)
+     || !IsObjectEventIdActive(sObjectEventFollow.followerObjectEventId))
+    {
+        StopObjectEventFollow();
+    }
+}
+
+static void SeedObjectEventFollowInitialStep(const struct ObjectEvent *leader, const struct ObjectEvent *follower)
+{
+    struct QueuedFollowMovement movement = {
+        .type = FOLLOW_MOVE_WALK,
+        .direction = DIR_NONE,
+    };
+
+    if (leader->currentCoords.x > follower->currentCoords.x)
+        movement.direction = DIR_EAST;
+    else if (leader->currentCoords.x < follower->currentCoords.x)
+        movement.direction = DIR_WEST;
+    else if (leader->currentCoords.y > follower->currentCoords.y)
+        movement.direction = DIR_SOUTH;
+    else if (leader->currentCoords.y < follower->currentCoords.y)
+        movement.direction = DIR_NORTH;
+    else
+        return;
+
+    QueueObjectEventFollowMovement(&movement);
+}
+
+bool8 StartObjectEventFollow(u8 leaderLocalId, u8 followerLocalId, u8 mapNum, u8 mapGroup)
+{
+    u8 leaderObjectEventId;
+    u8 followerObjectEventId;
+    struct ObjectEvent *followerObjectEvent;
+
+    StopObjectEventFollow();
+
+    if (TryGetObjectEventIdByLocalIdAndMap(leaderLocalId, mapNum, mapGroup, &leaderObjectEventId)
+     || TryGetObjectEventIdByLocalIdAndMap(followerLocalId, mapNum, mapGroup, &followerObjectEventId)
+     || leaderObjectEventId == followerObjectEventId)
+    {
+        return FALSE;
+    }
+
+    sObjectEventFollow.active = TRUE;
+    sObjectEventFollow.leaderObjectEventId = leaderObjectEventId;
+    sObjectEventFollow.followerObjectEventId = followerObjectEventId;
+    sObjectEventFollow.movementQueueLength = 0;
+    followerObjectEvent = &gObjectEvents[followerObjectEventId];
+
+    if (!followerObjectEvent->isPlayer)
+    {
+        sObjectEventFollow.followerOriginalMovementType = followerObjectEvent->movementType;
+        sObjectEventFollow.followerMovementTypeOverridden = TRUE;
+        SetTrainerMovementType(followerObjectEvent, GetTrainerFacingDirectionMovementType(followerObjectEvent->facingDirection));
+    }
+
+    SeedObjectEventFollowInitialStep(&gObjectEvents[leaderObjectEventId], followerObjectEvent);
+    return TRUE;
+}
+
+static bool8 NormalizeFollowMovementAction(u8 movementActionId, struct QueuedFollowMovement *movement)
+{
+    u8 direction;
+
+    for (direction = DIR_NORTH; direction <= DIR_EAST; direction++)
+    {
+        if (movementActionId == GetFaceDirectionMovementAction(direction))
+        {
+            movement->type = FOLLOW_MOVE_FACE;
+            movement->direction = direction;
+            return TRUE;
+        }
+
+        if (movementActionId == GetWalkNormalMovementAction(direction))
+        {
+            movement->type = FOLLOW_MOVE_WALK;
+            movement->direction = direction;
+            return TRUE;
+        }
+
+        if (movementActionId == GetWalkSlowMovementAction(direction))
+        {
+            movement->type = FOLLOW_MOVE_WALK_SLOW;
+            movement->direction = direction;
+            return TRUE;
+        }
+
+        if (movementActionId == GetWalkFastMovementAction(direction)
+         || movementActionId == GetPlayerRunMovementAction(direction))
+        {
+            movement->type = FOLLOW_MOVE_WALK_FAST;
+            movement->direction = direction;
+            return TRUE;
+        }
+
+        if (movementActionId == GetWalkFasterMovementAction(direction))
+        {
+            movement->type = FOLLOW_MOVE_WALK_FASTER;
+            movement->direction = direction;
+            return TRUE;
+        }
+
+        if (movementActionId == GetSlideMovementAction(direction))
+        {
+            movement->type = FOLLOW_MOVE_SLIDE;
+            movement->direction = direction;
+            return TRUE;
+        }
+
+        if (movementActionId == GetJumpMovementAction(direction))
+        {
+            movement->type = FOLLOW_MOVE_JUMP;
+            movement->direction = direction;
+            return TRUE;
+        }
+
+        if (movementActionId == GetJump2MovementAction(direction))
+        {
+            movement->type = FOLLOW_MOVE_JUMP2;
+            movement->direction = direction;
+            return TRUE;
+        }
+    }
+
+    return FALSE;
+}
+
+static void QueueObjectEventFollowMovement(const struct QueuedFollowMovement *movement)
+{
+    if (!sObjectEventFollow.active || sObjectEventFollow.movementQueueLength >= FOLLOW_MOVEMENT_QUEUE_LENGTH)
+        return;
+
+    sObjectEventFollow.movementQueue[sObjectEventFollow.movementQueueLength] = *movement;
+    sObjectEventFollow.movementQueueLength++;
+}
+
+static u8 GetQueuedFollowMovementAction(const struct QueuedFollowMovement *movement)
+{
+    switch (movement->type)
+    {
+    case FOLLOW_MOVE_FACE:
+        return GetFaceDirectionMovementAction(movement->direction);
+    case FOLLOW_MOVE_WALK:
+        return GetWalkNormalMovementAction(movement->direction);
+    case FOLLOW_MOVE_WALK_SLOW:
+        return GetWalkSlowMovementAction(movement->direction);
+    case FOLLOW_MOVE_WALK_FAST:
+        return GetWalkFastMovementAction(movement->direction);
+    case FOLLOW_MOVE_WALK_FASTER:
+        return GetWalkFasterMovementAction(movement->direction);
+    case FOLLOW_MOVE_SLIDE:
+        return GetSlideMovementAction(movement->direction);
+    case FOLLOW_MOVE_JUMP:
+        return GetJumpMovementAction(movement->direction);
+    case FOLLOW_MOVE_JUMP2:
+        return GetJump2MovementAction(movement->direction);
+    default:
+        return MOVEMENT_ACTION_NONE;
+    }
+}
+
+static bool8 PeekObjectEventFollowMovementAction(u8 *movementActionId)
+{
+    if (!sObjectEventFollow.active || sObjectEventFollow.movementQueueLength == 0)
+        return FALSE;
+
+    *movementActionId = GetQueuedFollowMovementAction(&sObjectEventFollow.movementQueue[0]);
+    return (*movementActionId != MOVEMENT_ACTION_NONE);
+}
+
+static void DequeueObjectEventFollowMovement(void)
+{
+    u8 i;
+
+    if (sObjectEventFollow.movementQueueLength == 0)
+        return;
+
+    for (i = 1; i < sObjectEventFollow.movementQueueLength; i++)
+        sObjectEventFollow.movementQueue[i - 1] = sObjectEventFollow.movementQueue[i];
+
+    sObjectEventFollow.movementQueueLength--;
+}
+
+static void TryQueueLeaderFollowMovement(const struct ObjectEvent *objectEvent, u8 movementActionId)
+{
+    struct QueuedFollowMovement movement;
+
+    if (!sObjectEventFollow.active || GetObjectEventIdFromPtr(objectEvent) != sObjectEventFollow.leaderObjectEventId)
+        return;
+
+    if (NormalizeFollowMovementAction(movementActionId, &movement))
+        QueueObjectEventFollowMovement(&movement);
+}
+
+static void TryStartFollowerQueuedMovement(struct ObjectEvent *objectEvent)
+{
+    u8 movementActionId;
+
+    if (!sObjectEventFollow.active || GetObjectEventIdFromPtr(objectEvent) != sObjectEventFollow.followerObjectEventId)
+        return;
+
+    if (ObjectEventIsHeldMovementActive(objectEvent))
+    {
+        if (!ObjectEventClearHeldMovementIfFinished(objectEvent))
+            return;
+    }
+
+    if (!PeekObjectEventFollowMovementAction(&movementActionId))
+        return;
+
+    if (!ObjectEventSetHeldMovement(objectEvent, movementActionId))
+        DequeueObjectEventFollowMovement();
+}
+
+bool8 IsObjectEventFollowFinishedByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup)
+{
+    u8 objectEventId;
+
+    ValidateObjectEventFollow();
+    if (!sObjectEventFollow.active)
+        return TRUE;
+
+    if (TryGetObjectEventIdByLocalIdAndMap(localId, mapNum, mapGroup, &objectEventId))
+        return TRUE;
+
+    if (objectEventId != sObjectEventFollow.leaderObjectEventId
+     && objectEventId != sObjectEventFollow.followerObjectEventId)
+    {
+        return TRUE;
+    }
+
+    if (sObjectEventFollow.movementQueueLength != 0)
+        return FALSE;
+
+    return !IsObjectEventIdActive(sObjectEventFollow.followerObjectEventId)
+        || !ObjectEventIsHeldMovementActive(&gObjectEvents[sObjectEventFollow.followerObjectEventId]);
+}
 
 static const struct SpriteTemplate sCameraSpriteTemplate = {
     .tileTag = 0,
@@ -1198,6 +1517,7 @@ static void ClearAllObjectEvents(void)
 
 void ResetObjectEvents(void)
 {
+    StopObjectEventFollow();
     ClearLinkPlayerObjectEvents();
     ClearAllObjectEvents();
     ClearPlayerAvatarInfo();
@@ -1399,6 +1719,18 @@ void RemoveObjectEventByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup)
 static void RemoveObjectEventInternal(struct ObjectEvent *objectEvent)
 {
     struct SpriteFrameImage image;
+
+    if (sObjectEventFollow.active)
+    {
+        u8 objectEventId = GetObjectEventIdFromPtr(objectEvent);
+
+        if (objectEventId == sObjectEventFollow.leaderObjectEventId
+         || objectEventId == sObjectEventFollow.followerObjectEventId)
+        {
+            StopObjectEventFollow();
+        }
+    }
+
     image.size = GetObjectEventGraphicsInfo(objectEvent->graphicsId)->size;
     gSprites[objectEvent->spriteId].images = &image;
     DestroySprite(&gSprites[objectEvent->spriteId]);
@@ -4877,6 +5209,7 @@ bool8 ObjectEventSetHeldMovement(struct ObjectEvent *objectEvent, u8 movementAct
     objectEvent->heldMovementActive = TRUE;
     objectEvent->heldMovementFinished = FALSE;
     gSprites[objectEvent->spriteId].sActionFuncId = 0;
+    TryQueueLeaderFollowMovement(objectEvent, movementActionId);
     return FALSE;
 }
 
@@ -4928,6 +5261,8 @@ u8 ObjectEventGetHeldMovementActionId(struct ObjectEvent *objectEvent)
 
 void UpdateObjectEventCurrentMovement(struct ObjectEvent *objectEvent, struct Sprite *sprite, bool8 (*callback)(struct ObjectEvent *, struct Sprite *))
 {
+    ValidateObjectEventFollow();
+    TryStartFollowerQueuedMovement(objectEvent);
     DoGroundEffects_OnSpawn(objectEvent, sprite);
     TryEnableObjectEventAnim(objectEvent, sprite);
 
@@ -7537,6 +7872,15 @@ static void GetGroundEffectFlags_Ripple(struct ObjectEvent *objEvent, u32 *flags
         *flags |= GROUND_EFFECT_FLAG_RIPPLES;
 }
 
+static bool8 ShouldDisableEmeraldGrassGroundEffects(struct ObjectEvent *objEvent)
+{
+    if (ObjectEventIsFarawayIslandMew(objEvent))
+        return FALSE;
+
+    // Johto's imported grass tiles already convey the intended look on their own.
+    return TRUE;
+}
+
 static void GetGroundEffectFlags_ShortGrass(struct ObjectEvent *objEvent, u32 *flags)
 {
     if (MetatileBehavior_IsShortGrass(objEvent->currentMetatileBehavior)
@@ -7663,32 +8007,60 @@ static u8 GetReflectionTypeByMetatileBehavior(u32 behavior)
 
 u8 GetLedgeJumpDirection(s16 x, s16 y, u8 direction)
 {
-    static bool8 (*const ledgeBehaviorFuncs[])(u8) = {
-        [DIR_SOUTH - 1] = MetatileBehavior_IsJumpSouth,
-        [DIR_NORTH - 1] = MetatileBehavior_IsJumpNorth,
-        [DIR_WEST - 1]  = MetatileBehavior_IsJumpWest,
-        [DIR_EAST - 1]  = MetatileBehavior_IsJumpEast,
-    };
-
     u8 behavior;
-    u8 index = direction;
+    u8 normalizedDirection = direction;
 
-    if (index == DIR_NONE)
+    if (normalizedDirection == DIR_NONE)
         return DIR_NONE;
-    else if (index > DIR_EAST)
-        index -= DIR_EAST;
-
-    index--;
+    else if (normalizedDirection > DIR_EAST)
+        normalizedDirection -= DIR_EAST;
     behavior = MapGridGetMetatileBehaviorAt(x, y);
 
-    if (ledgeBehaviorFuncs[index](behavior) == TRUE)
-        return index + 1;
+    // Crystal-style corner ledges can be hopped from either matching side.
+    switch (behavior)
+    {
+    case MB_JUMP_EAST:
+        if (normalizedDirection == DIR_EAST)
+            return normalizedDirection;
+        break;
+    case MB_JUMP_WEST:
+        if (normalizedDirection == DIR_WEST)
+            return normalizedDirection;
+        break;
+    case MB_JUMP_NORTH:
+        if (normalizedDirection == DIR_NORTH)
+            return normalizedDirection;
+        break;
+    case MB_JUMP_SOUTH:
+        if (normalizedDirection == DIR_SOUTH)
+            return normalizedDirection;
+        break;
+    case MB_JUMP_NORTHEAST:
+        if (normalizedDirection == DIR_NORTH || normalizedDirection == DIR_EAST)
+            return normalizedDirection;
+        break;
+    case MB_JUMP_NORTHWEST:
+        if (normalizedDirection == DIR_NORTH || normalizedDirection == DIR_WEST)
+            return normalizedDirection;
+        break;
+    case MB_JUMP_SOUTHEAST:
+        if (normalizedDirection == DIR_SOUTH || normalizedDirection == DIR_EAST)
+            return normalizedDirection;
+        break;
+    case MB_JUMP_SOUTHWEST:
+        if (normalizedDirection == DIR_SOUTH || normalizedDirection == DIR_WEST)
+            return normalizedDirection;
+        break;
+    }
 
     return DIR_NONE;
 }
 
 static void SetObjectEventSpriteOamTableForLongGrass(struct ObjectEvent *objEvent, struct Sprite *sprite)
 {
+    if (ShouldDisableEmeraldGrassGroundEffects(objEvent))
+        return;
+
     if (objEvent->disableCoveringGroundEffects)
         return;
 
@@ -8069,6 +8441,18 @@ void filters_out_some_ground_effects(struct ObjectEvent *objEvent, u32 *flags)
                   | GROUND_EFFECT_FLAG_SHALLOW_FLOWING_WATER
                   | GROUND_EFFECT_FLAG_TALL_GRASS_ON_MOVE);
     }
+
+    if (ShouldDisableEmeraldGrassGroundEffects(objEvent))
+    {
+        objEvent->inShortGrass = FALSE;
+        *flags &= ~(GROUND_EFFECT_FLAG_TALL_GRASS_ON_SPAWN
+                  | GROUND_EFFECT_FLAG_TALL_GRASS_ON_MOVE
+                  | GROUND_EFFECT_FLAG_LONG_GRASS_ON_SPAWN
+                  | GROUND_EFFECT_FLAG_LONG_GRASS_ON_MOVE
+                  | GROUND_EFFECT_FLAG_LAND_IN_TALL_GRASS
+                  | GROUND_EFFECT_FLAG_LAND_IN_LONG_GRASS
+                  | GROUND_EFFECT_FLAG_SHORT_GRASS);
+    }
 }
 
 void FilterOutStepOnPuddleGroundEffectIfJumping(struct ObjectEvent *objEvent, u32 *flags)
@@ -8091,6 +8475,7 @@ static void DoGroundEffects_OnSpawn(struct ObjectEvent *objEvent, struct Sprite 
         UpdateObjectEventElevationAndPriority(objEvent, sprite);
         GetAllGroundEffectFlags_OnSpawn(objEvent, &flags);
         SetObjectEventSpriteOamTableForLongGrass(objEvent, sprite);
+        filters_out_some_ground_effects(objEvent, &flags);
         DoFlaggedGroundEffects(objEvent, sprite, flags);
         objEvent->triggerGroundEffectsOnMove = FALSE;
         objEvent->disableCoveringGroundEffects = 0;
@@ -8133,6 +8518,7 @@ static void DoGroundEffects_OnFinishStep(struct ObjectEvent *objEvent, struct Sp
         GetAllGroundEffectFlags_OnFinishStep(objEvent, &flags);
         SetObjectEventSpriteOamTableForLongGrass(objEvent, sprite);
         FilterOutStepOnPuddleGroundEffectIfJumping(objEvent, &flags);
+        filters_out_some_ground_effects(objEvent, &flags);
         DoFlaggedGroundEffects(objEvent, sprite, flags);
         objEvent->triggerGroundEffectsOnStop = 0;
         objEvent->landingJump = 0;

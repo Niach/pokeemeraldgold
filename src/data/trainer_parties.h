@@ -12434,3 +12434,63 @@ static const struct TrainerMonNoItemDefaultMoves sParty_MayLinkPlaceholder[] = {
     .species = SPECIES_KYOGRE,
     }
 };
+
+static const struct TrainerMonNoItemDefaultMoves sParty_SilverTotodile[] = {
+    {
+    .iv = 0,
+    .lvl = 5,
+    .species = SPECIES_TOTODILE,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_SilverChikorita[] = {
+    {
+    .iv = 0,
+    .lvl = 5,
+    .species = SPECIES_CHIKORITA,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_SilverCyndaquil[] = {
+    {
+    .iv = 0,
+    .lvl = 5,
+    .species = SPECIES_CYNDAQUIL,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Route30Joey[] = {
+    {
+    .iv = 0,
+    .lvl = 4,
+    .species = SPECIES_RATTATA,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Route30Mikey[] = {
+    {
+    .iv = 0,
+    .lvl = 2,
+    .species = SPECIES_PIDGEY,
+    },
+    {
+    .iv = 0,
+    .lvl = 4,
+    .species = SPECIES_RATTATA,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Route30Don[] = {
+    {
+    .iv = 0,
+    .lvl = 3,
+    .species = SPECIES_CATERPIE,
+    },
+    {
+    .iv = 0,
+    .lvl = 3,
+    .species = SPECIES_CATERPIE,
+    }
+};
+
+#include "johto_trainer_parties.h"

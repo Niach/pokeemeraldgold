@@ -1,0 +1,27 @@
+@ Manually maintained after Johto import. Imported scaffold replaced.
+
+GoldenrodHappinessRater_MapScripts::
+	.byte 0
+
+JohtoScript_GoldenrodHappinessRater_GoldenrodHappinessRaterPokefanMScript::
+	lock
+	faceplayer
+	msgbox Crystal_GoldenrodHappinessRater_GoldenrodHappinessRaterPokefanMText, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_GoldenrodHappinessRater_GoldenrodHappinessRaterTeacherScript::
+	goto JohtoCommon_EventScript_HappinessCheck
+
+JohtoScript_GoldenrodHappinessRater_GoldenrodHappinessRaterTwinScript::
+	lock
+	faceplayer
+	msgbox Crystal_GoldenrodHappinessRater_GoldenrodHappinessRaterTwinText, MSGBOX_DEFAULT
+	release
+	end
+
+JohtoScript_GoldenrodHappinessRater_HappinessRatersHouseBookshelf::
+	goto JohtoCommon_EventScript_DifficultBookshelf
+
+JohtoScript_GoldenrodHappinessRater_HappinessRatersHouseRadio::
+	goto JohtoCommon_EventScript_Radio2

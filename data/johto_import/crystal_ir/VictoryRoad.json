@@ -1,0 +1,2101 @@
+{
+  "crystal_map": "VictoryRoad",
+  "map_id": "VICTORY_ROAD",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 91,
+  "tileset": "TILESET_CAVE",
+  "environment": "CAVE",
+  "landmark": "LANDMARK_VICTORY_ROAD",
+  "music": "MUSIC_VICTORY_ROAD",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_NITE",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 10,
+  "height_blocks": 36,
+  "border_block": "1D",
+  "blk_path": "maps/VictoryRoad.blk",
+  "source_asm": "maps/VictoryRoad.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "VictoryRoadNoop1Scene",
+        "scene_id": "SCENE_VICTORYROAD_RIVAL_BATTLE"
+      },
+      {
+        "script": "VictoryRoadNoop2Scene",
+        "scene_id": "SCENE_VICTORYROAD_NOOP"
+      }
+    ],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 9,
+        "y": 67,
+        "dest_map": "VICTORY_ROAD_GATE",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 1,
+        "y": 49,
+        "dest_map": "VICTORY_ROAD",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 1,
+        "y": 35,
+        "dest_map": "VICTORY_ROAD",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 13,
+        "y": 31,
+        "dest_map": "VICTORY_ROAD",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 13,
+        "y": 17,
+        "dest_map": "VICTORY_ROAD",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 17,
+        "y": 33,
+        "dest_map": "VICTORY_ROAD",
+        "dest_warp_id": 7
+      },
+      {
+        "x": 17,
+        "y": 19,
+        "dest_map": "VICTORY_ROAD",
+        "dest_warp_id": 6
+      },
+      {
+        "x": 0,
+        "y": 11,
+        "dest_map": "VICTORY_ROAD",
+        "dest_warp_id": 9
+      },
+      {
+        "x": 0,
+        "y": 27,
+        "dest_map": "VICTORY_ROAD",
+        "dest_warp_id": 8
+      },
+      {
+        "x": 13,
+        "y": 5,
+        "dest_map": "ROUTE_23",
+        "dest_warp_id": 3
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 12,
+        "y": 8,
+        "scene": "SCENE_VICTORYROAD_RIVAL_BATTLE",
+        "script": "VictoryRoadRivalLeft"
+      },
+      {
+        "x": 13,
+        "y": 8,
+        "scene": "SCENE_VICTORYROAD_RIVAL_BATTLE",
+        "script": "VictoryRoadRivalRight"
+      }
+    ],
+    "bg_events": [
+      {
+        "x": 3,
+        "y": 29,
+        "kind": "BGEVENT_ITEM",
+        "script": "VictoryRoadHiddenMaxPotion"
+      },
+      {
+        "x": 3,
+        "y": 65,
+        "kind": "BGEVENT_ITEM",
+        "script": "VictoryRoadHiddenFullHeal"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 18,
+        "y": 13,
+        "sprite": "SPRITE_RIVAL",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_RIVAL_VICTORY_ROAD"
+      },
+      {
+        "x": 3,
+        "y": 28,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "VictoryRoadTMEarthquake",
+        "flag": "EVENT_VICTORY_ROAD_TM_EARTHQUAKE"
+      },
+      {
+        "x": 12,
+        "y": 48,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "VictoryRoadMaxRevive",
+        "flag": "EVENT_VICTORY_ROAD_MAX_REVIVE"
+      },
+      {
+        "x": 18,
+        "y": 29,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "VictoryRoadFullRestore",
+        "flag": "EVENT_VICTORY_ROAD_FULL_RESTORE"
+      },
+      {
+        "x": 15,
+        "y": 48,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "VictoryRoadFullHeal",
+        "flag": "EVENT_VICTORY_ROAD_FULL_HEAL"
+      },
+      {
+        "x": 7,
+        "y": 38,
+        "sprite": "SPRITE_POKE_BALL",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "VictoryRoadHPUp",
+        "flag": "EVENT_VICTORY_ROAD_HP_UP"
+      }
+    ]
+  },
+  "object_consts": [
+    "VICTORYROAD_RIVAL",
+    "VICTORYROAD_POKE_BALL1",
+    "VICTORYROAD_POKE_BALL2",
+    "VICTORYROAD_POKE_BALL3",
+    "VICTORYROAD_POKE_BALL4",
+    "VICTORYROAD_POKE_BALL5"
+  ],
+  "scene_ids": [
+    "SCENE_VICTORYROAD_NOOP",
+    "SCENE_VICTORYROAD_RIVAL_BATTLE"
+  ],
+  "scripts": {
+    "VictoryRoad_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script VictoryRoadNoop1Scene, SCENE_VICTORYROAD_RIVAL_BATTLE",
+        "scene_script VictoryRoadNoop2Scene, SCENE_VICTORYROAD_NOOP",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "VictoryRoadNoop1Scene",
+            "SCENE_VICTORYROAD_RIVAL_BATTLE"
+          ],
+          "raw": "scene_script VictoryRoadNoop1Scene, SCENE_VICTORYROAD_RIVAL_BATTLE"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "VictoryRoadNoop2Scene",
+            "SCENE_VICTORYROAD_NOOP"
+          ],
+          "raw": "scene_script VictoryRoadNoop2Scene, SCENE_VICTORYROAD_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "VictoryRoadNoop1Scene",
+      "label_refs": [
+        "VictoryRoadNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadRivalLeft": {
+      "raw_lines": [
+        "moveobject VICTORYROAD_RIVAL, 18, 11",
+        "turnobject PLAYER, DOWN",
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "special FadeOutMusic",
+        "pause 15",
+        "appear VICTORYROAD_RIVAL",
+        "applymovement VICTORYROAD_RIVAL, VictoryRoadRivalBattleApproachMovement1",
+        "scall VictoryRoadRivalNext",
+        "applymovement VICTORYROAD_RIVAL, VictoryRoadRivalBattleExitMovement1",
+        "disappear VICTORYROAD_RIVAL",
+        "setscene SCENE_VICTORYROAD_NOOP",
+        "playmapmusic",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "moveobject",
+          "args": [
+            "VICTORYROAD_RIVAL",
+            "18",
+            "11"
+          ],
+          "raw": "moveobject VICTORYROAD_RIVAL, 18, 11"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "VICTORYROAD_RIVAL"
+          ],
+          "raw": "appear VICTORYROAD_RIVAL"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "VICTORYROAD_RIVAL",
+            "VictoryRoadRivalBattleApproachMovement1"
+          ],
+          "raw": "applymovement VICTORYROAD_RIVAL, VictoryRoadRivalBattleApproachMovement1"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "VictoryRoadRivalNext"
+          ],
+          "raw": "scall VictoryRoadRivalNext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "VICTORYROAD_RIVAL",
+            "VictoryRoadRivalBattleExitMovement1"
+          ],
+          "raw": "applymovement VICTORYROAD_RIVAL, VictoryRoadRivalBattleExitMovement1"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "VICTORYROAD_RIVAL"
+          ],
+          "raw": "disappear VICTORYROAD_RIVAL"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_VICTORYROAD_NOOP"
+          ],
+          "raw": "setscene SCENE_VICTORYROAD_NOOP"
+        },
+        {
+          "command": "playmapmusic",
+          "args": [],
+          "raw": "playmapmusic"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "moveobject",
+      "label_refs": [
+        "VictoryRoadRivalNext"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "VictoryRoadRivalBattleApproachMovement1",
+        "VictoryRoadRivalBattleExitMovement1"
+      ],
+      "scene_refs": [
+        "SCENE_VICTORYROAD_NOOP"
+      ],
+      "std_calls": []
+    },
+    "VictoryRoadRivalRight": {
+      "raw_lines": [
+        "turnobject PLAYER, DOWN",
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "special FadeOutMusic",
+        "pause 15",
+        "appear VICTORYROAD_RIVAL",
+        "applymovement VICTORYROAD_RIVAL, VictoryRoadRivalBattleApproachMovement2",
+        "scall VictoryRoadRivalNext",
+        "applymovement VICTORYROAD_RIVAL, VictoryRoadRivalBattleExitMovement2",
+        "disappear VICTORYROAD_RIVAL",
+        "setscene SCENE_VICTORYROAD_NOOP",
+        "playmapmusic",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "VICTORYROAD_RIVAL"
+          ],
+          "raw": "appear VICTORYROAD_RIVAL"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "VICTORYROAD_RIVAL",
+            "VictoryRoadRivalBattleApproachMovement2"
+          ],
+          "raw": "applymovement VICTORYROAD_RIVAL, VictoryRoadRivalBattleApproachMovement2"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "VictoryRoadRivalNext"
+          ],
+          "raw": "scall VictoryRoadRivalNext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "VICTORYROAD_RIVAL",
+            "VictoryRoadRivalBattleExitMovement2"
+          ],
+          "raw": "applymovement VICTORYROAD_RIVAL, VictoryRoadRivalBattleExitMovement2"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "VICTORYROAD_RIVAL"
+          ],
+          "raw": "disappear VICTORYROAD_RIVAL"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_VICTORYROAD_NOOP"
+          ],
+          "raw": "setscene SCENE_VICTORYROAD_NOOP"
+        },
+        {
+          "command": "playmapmusic",
+          "args": [],
+          "raw": "playmapmusic"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [
+        "VictoryRoadRivalNext"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "VictoryRoadRivalBattleApproachMovement2",
+        "VictoryRoadRivalBattleExitMovement2"
+      ],
+      "scene_refs": [
+        "SCENE_VICTORYROAD_NOOP"
+      ],
+      "std_calls": []
+    },
+    "VictoryRoadRivalNext": {
+      "raw_lines": [
+        "turnobject PLAYER, DOWN",
+        "playmusic MUSIC_RIVAL_ENCOUNTER",
+        "opentext",
+        "writetext VictoryRoadRivalBeforeText",
+        "waitbutton",
+        "closetext",
+        "setevent EVENT_RIVAL_VICTORY_ROAD",
+        "checkevent EVENT_GOT_TOTODILE_FROM_ELM",
+        "iftrue .GotTotodile",
+        "checkevent EVENT_GOT_CHIKORITA_FROM_ELM",
+        "iftrue .GotChikorita",
+        "winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText",
+        "setlasttalked VICTORYROAD_RIVAL",
+        "loadtrainer RIVAL1, RIVAL1_5_TOTODILE",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmapafterbattle",
+        "sjump .AfterBattle"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_ENCOUNTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_ENCOUNTER"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "VictoryRoadRivalBeforeText"
+          ],
+          "raw": "writetext VictoryRoadRivalBeforeText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_RIVAL_VICTORY_ROAD"
+          ],
+          "raw": "setevent EVENT_RIVAL_VICTORY_ROAD"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TOTODILE_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_TOTODILE_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "VictoryRoadRivalNext.GotTotodile"
+          ],
+          "raw": "iftrue .GotTotodile"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_CHIKORITA_FROM_ELM"
+          ],
+          "raw": "checkevent EVENT_GOT_CHIKORITA_FROM_ELM"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "VictoryRoadRivalNext.GotChikorita"
+          ],
+          "raw": "iftrue .GotChikorita"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "VictoryRoadRivalDefeatText",
+            "VictoryRoadRivalVictoryText"
+          ],
+          "raw": "winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "VICTORYROAD_RIVAL"
+          ],
+          "raw": "setlasttalked VICTORYROAD_RIVAL"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "RIVAL1",
+            "RIVAL1_5_TOTODILE"
+          ],
+          "raw": "loadtrainer RIVAL1, RIVAL1_5_TOTODILE"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "VictoryRoadRivalNext.AfterBattle"
+          ],
+          "raw": "sjump .AfterBattle"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [
+        "VictoryRoadRivalNext.AfterBattle",
+        "VictoryRoadRivalNext.GotChikorita",
+        "VictoryRoadRivalNext.GotTotodile"
+      ],
+      "text_refs": [
+        "VictoryRoadRivalBeforeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadRivalNext.GotTotodile": {
+      "raw_lines": [
+        "winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText",
+        "setlasttalked VICTORYROAD_RIVAL",
+        "loadtrainer RIVAL1, RIVAL1_5_CHIKORITA",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmapafterbattle",
+        "sjump .AfterBattle"
+      ],
+      "commands": [
+        {
+          "command": "winlosstext",
+          "args": [
+            "VictoryRoadRivalDefeatText",
+            "VictoryRoadRivalVictoryText"
+          ],
+          "raw": "winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "VICTORYROAD_RIVAL"
+          ],
+          "raw": "setlasttalked VICTORYROAD_RIVAL"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "RIVAL1",
+            "RIVAL1_5_CHIKORITA"
+          ],
+          "raw": "loadtrainer RIVAL1, RIVAL1_5_CHIKORITA"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "VictoryRoadRivalNext.AfterBattle"
+          ],
+          "raw": "sjump .AfterBattle"
+        }
+      ],
+      "first_command": "winlosstext",
+      "label_refs": [
+        "VictoryRoadRivalNext.AfterBattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadRivalNext.GotChikorita": {
+      "raw_lines": [
+        "winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText",
+        "setlasttalked VICTORYROAD_RIVAL",
+        "loadtrainer RIVAL1, RIVAL1_5_CYNDAQUIL",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmapafterbattle",
+        "sjump .AfterBattle"
+      ],
+      "commands": [
+        {
+          "command": "winlosstext",
+          "args": [
+            "VictoryRoadRivalDefeatText",
+            "VictoryRoadRivalVictoryText"
+          ],
+          "raw": "winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "VICTORYROAD_RIVAL"
+          ],
+          "raw": "setlasttalked VICTORYROAD_RIVAL"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "RIVAL1",
+            "RIVAL1_5_CYNDAQUIL"
+          ],
+          "raw": "loadtrainer RIVAL1, RIVAL1_5_CYNDAQUIL"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "VictoryRoadRivalNext.AfterBattle"
+          ],
+          "raw": "sjump .AfterBattle"
+        }
+      ],
+      "first_command": "winlosstext",
+      "label_refs": [
+        "VictoryRoadRivalNext.AfterBattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadRivalNext.AfterBattle": {
+      "raw_lines": [
+        "playmusic MUSIC_RIVAL_AFTER",
+        "opentext",
+        "writetext VictoryRoadRivalAfterText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_RIVAL_AFTER"
+          ],
+          "raw": "playmusic MUSIC_RIVAL_AFTER"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "VictoryRoadRivalAfterText"
+          ],
+          "raw": "writetext VictoryRoadRivalAfterText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "playmusic",
+      "label_refs": [],
+      "text_refs": [
+        "VictoryRoadRivalAfterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadTMEarthquake": {
+      "raw_lines": [
+        "itemball TM_EARTHQUAKE"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "TM_EARTHQUAKE"
+          ],
+          "raw": "itemball TM_EARTHQUAKE"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "VictoryRoadMaxRevive",
+      "label_refs": [
+        "VictoryRoadMaxRevive"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadMaxRevive": {
+      "raw_lines": [
+        "itemball MAX_REVIVE"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "MAX_REVIVE"
+          ],
+          "raw": "itemball MAX_REVIVE"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "VictoryRoadFullRestore",
+      "label_refs": [
+        "VictoryRoadFullRestore"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadFullRestore": {
+      "raw_lines": [
+        "itemball FULL_RESTORE"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "FULL_RESTORE"
+          ],
+          "raw": "itemball FULL_RESTORE"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "VictoryRoadFullHeal",
+      "label_refs": [
+        "VictoryRoadFullHeal"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadFullHeal": {
+      "raw_lines": [
+        "itemball FULL_HEAL"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "FULL_HEAL"
+          ],
+          "raw": "itemball FULL_HEAL"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "VictoryRoadHPUp",
+      "label_refs": [
+        "VictoryRoadHPUp"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadHPUp": {
+      "raw_lines": [
+        "itemball HP_UP"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "HP_UP"
+          ],
+          "raw": "itemball HP_UP"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "VictoryRoadHiddenMaxPotion",
+      "label_refs": [
+        "VictoryRoadHiddenMaxPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadHiddenMaxPotion": {
+      "raw_lines": [
+        "hiddenitem MAX_POTION, EVENT_VICTORY_ROAD_HIDDEN_MAX_POTION"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "MAX_POTION",
+            "EVENT_VICTORY_ROAD_HIDDEN_MAX_POTION"
+          ],
+          "raw": "hiddenitem MAX_POTION, EVENT_VICTORY_ROAD_HIDDEN_MAX_POTION"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "VictoryRoadHiddenFullHeal",
+      "label_refs": [
+        "VictoryRoadHiddenFullHeal"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadHiddenFullHeal": {
+      "raw_lines": [
+        "hiddenitem FULL_HEAL, EVENT_VICTORY_ROAD_HIDDEN_FULL_HEAL"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "FULL_HEAL",
+            "EVENT_VICTORY_ROAD_HIDDEN_FULL_HEAL"
+          ],
+          "raw": "hiddenitem FULL_HEAL, EVENT_VICTORY_ROAD_HIDDEN_FULL_HEAL"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "VictoryRoad_MapEvents",
+      "label_refs": [
+        "VictoryRoad_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoad_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  9, 67, VICTORY_ROAD_GATE, 5",
+        "warp_event  1, 49, VICTORY_ROAD, 3",
+        "warp_event  1, 35, VICTORY_ROAD, 2",
+        "warp_event 13, 31, VICTORY_ROAD, 5",
+        "warp_event 13, 17, VICTORY_ROAD, 4",
+        "warp_event 17, 33, VICTORY_ROAD, 7",
+        "warp_event 17, 19, VICTORY_ROAD, 6",
+        "warp_event  0, 11, VICTORY_ROAD, 9",
+        "warp_event  0, 27, VICTORY_ROAD, 8",
+        "warp_event 13,  5, ROUTE_23, 3",
+        "def_coord_events",
+        "coord_event 12,  8, SCENE_VICTORYROAD_RIVAL_BATTLE, VictoryRoadRivalLeft",
+        "coord_event 13,  8, SCENE_VICTORYROAD_RIVAL_BATTLE, VictoryRoadRivalRight",
+        "def_bg_events",
+        "bg_event  3, 29, BGEVENT_ITEM, VictoryRoadHiddenMaxPotion",
+        "bg_event  3, 65, BGEVENT_ITEM, VictoryRoadHiddenFullHeal",
+        "def_object_events",
+        "object_event 18, 13, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_VICTORY_ROAD",
+        "object_event  3, 28, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadTMEarthquake, EVENT_VICTORY_ROAD_TM_EARTHQUAKE",
+        "object_event 12, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadMaxRevive, EVENT_VICTORY_ROAD_MAX_REVIVE",
+        "object_event 18, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadFullRestore, EVENT_VICTORY_ROAD_FULL_RESTORE",
+        "object_event 15, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadFullHeal, EVENT_VICTORY_ROAD_FULL_HEAL",
+        "object_event  7, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadHPUp, EVENT_VICTORY_ROAD_HP_UP"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "67",
+            "VICTORY_ROAD_GATE",
+            "5"
+          ],
+          "raw": "warp_event  9, 67, VICTORY_ROAD_GATE, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "1",
+            "49",
+            "VICTORY_ROAD",
+            "3"
+          ],
+          "raw": "warp_event  1, 49, VICTORY_ROAD, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "1",
+            "35",
+            "VICTORY_ROAD",
+            "2"
+          ],
+          "raw": "warp_event  1, 35, VICTORY_ROAD, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "13",
+            "31",
+            "VICTORY_ROAD",
+            "5"
+          ],
+          "raw": "warp_event 13, 31, VICTORY_ROAD, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "13",
+            "17",
+            "VICTORY_ROAD",
+            "4"
+          ],
+          "raw": "warp_event 13, 17, VICTORY_ROAD, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "33",
+            "VICTORY_ROAD",
+            "7"
+          ],
+          "raw": "warp_event 17, 33, VICTORY_ROAD, 7"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "19",
+            "VICTORY_ROAD",
+            "6"
+          ],
+          "raw": "warp_event 17, 19, VICTORY_ROAD, 6"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "11",
+            "VICTORY_ROAD",
+            "9"
+          ],
+          "raw": "warp_event  0, 11, VICTORY_ROAD, 9"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "27",
+            "VICTORY_ROAD",
+            "8"
+          ],
+          "raw": "warp_event  0, 27, VICTORY_ROAD, 8"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "13",
+            "5",
+            "ROUTE_23",
+            "3"
+          ],
+          "raw": "warp_event 13,  5, ROUTE_23, 3"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "12",
+            "8",
+            "SCENE_VICTORYROAD_RIVAL_BATTLE",
+            "VictoryRoadRivalLeft"
+          ],
+          "raw": "coord_event 12,  8, SCENE_VICTORYROAD_RIVAL_BATTLE, VictoryRoadRivalLeft"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "13",
+            "8",
+            "SCENE_VICTORYROAD_RIVAL_BATTLE",
+            "VictoryRoadRivalRight"
+          ],
+          "raw": "coord_event 13,  8, SCENE_VICTORYROAD_RIVAL_BATTLE, VictoryRoadRivalRight"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "29",
+            "BGEVENT_ITEM",
+            "VictoryRoadHiddenMaxPotion"
+          ],
+          "raw": "bg_event  3, 29, BGEVENT_ITEM, VictoryRoadHiddenMaxPotion"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "65",
+            "BGEVENT_ITEM",
+            "VictoryRoadHiddenFullHeal"
+          ],
+          "raw": "bg_event  3, 65, BGEVENT_ITEM, VictoryRoadHiddenFullHeal"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "18",
+            "13",
+            "SPRITE_RIVAL",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_RIVAL_VICTORY_ROAD"
+          ],
+          "raw": "object_event 18, 13, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_VICTORY_ROAD"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "28",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "VictoryRoadTMEarthquake",
+            "EVENT_VICTORY_ROAD_TM_EARTHQUAKE"
+          ],
+          "raw": "object_event  3, 28, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadTMEarthquake, EVENT_VICTORY_ROAD_TM_EARTHQUAKE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "12",
+            "48",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "VictoryRoadMaxRevive",
+            "EVENT_VICTORY_ROAD_MAX_REVIVE"
+          ],
+          "raw": "object_event 12, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadMaxRevive, EVENT_VICTORY_ROAD_MAX_REVIVE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "18",
+            "29",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "VictoryRoadFullRestore",
+            "EVENT_VICTORY_ROAD_FULL_RESTORE"
+          ],
+          "raw": "object_event 18, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadFullRestore, EVENT_VICTORY_ROAD_FULL_RESTORE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "15",
+            "48",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "VictoryRoadFullHeal",
+            "EVENT_VICTORY_ROAD_FULL_HEAL"
+          ],
+          "raw": "object_event 15, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadFullHeal, EVENT_VICTORY_ROAD_FULL_HEAL"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "38",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "VictoryRoadHPUp",
+            "EVENT_VICTORY_ROAD_HP_UP"
+          ],
+          "raw": "object_event  7, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadHPUp, EVENT_VICTORY_ROAD_HP_UP"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "VictoryRoadRivalBeforeText": {
+      "raw_lines": [
+        "text \"Hold it.\"",
+        "para \"\u2026Are you going to\"",
+        "line \"take the #MON\"",
+        "cont \"LEAGUE challenge?\"",
+        "para \"\u2026Don't make me\"",
+        "line \"laugh.\"",
+        "para \"You're so much\"",
+        "line \"weaker than I am.\"",
+        "para \"I'm not like I was\"",
+        "line \"before.\"",
+        "para \"I now have the\"",
+        "line \"best and strongest\"",
+        "para \"#MON with me.\"",
+        "line \"I'm invincible!\"",
+        "para \"<PLAYER>!\"",
+        "line \"I challenge you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hold it."
+        },
+        {
+          "command": "para",
+          "value": "\u2026Are you going to"
+        },
+        {
+          "command": "line",
+          "value": "take the #MON"
+        },
+        {
+          "command": "cont",
+          "value": "LEAGUE challenge?"
+        },
+        {
+          "command": "para",
+          "value": "\u2026Don't make me"
+        },
+        {
+          "command": "line",
+          "value": "laugh."
+        },
+        {
+          "command": "para",
+          "value": "You're so much"
+        },
+        {
+          "command": "line",
+          "value": "weaker than I am."
+        },
+        {
+          "command": "para",
+          "value": "I'm not like I was"
+        },
+        {
+          "command": "line",
+          "value": "before."
+        },
+        {
+          "command": "para",
+          "value": "I now have the"
+        },
+        {
+          "command": "line",
+          "value": "best and strongest"
+        },
+        {
+          "command": "para",
+          "value": "#MON with me."
+        },
+        {
+          "command": "line",
+          "value": "I'm invincible!"
+        },
+        {
+          "command": "para",
+          "value": "<PLAYER>!"
+        },
+        {
+          "command": "line",
+          "value": "I challenge you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "VictoryRoadRivalDefeatText": {
+      "raw_lines": [
+        "text \"\u2026I couldn't win\u2026\"",
+        "para \"I gave it every-\"",
+        "line \"thing I had\u2026\"",
+        "para \"What you possess,\"",
+        "line \"and what I lack\u2026\"",
+        "para \"I'm beginning to\"",
+        "line \"understand what\"",
+        "para \"that dragon master\"",
+        "line \"said to me\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026I couldn't win\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I gave it every-"
+        },
+        {
+          "command": "line",
+          "value": "thing I had\u2026"
+        },
+        {
+          "command": "para",
+          "value": "What you possess,"
+        },
+        {
+          "command": "line",
+          "value": "and what I lack\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I'm beginning to"
+        },
+        {
+          "command": "line",
+          "value": "understand what"
+        },
+        {
+          "command": "para",
+          "value": "that dragon master"
+        },
+        {
+          "command": "line",
+          "value": "said to me\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "VictoryRoadRivalAfterText": {
+      "raw_lines": [
+        "text \"\u2026I haven't given up\"",
+        "line \"on becoming the\"",
+        "cont \"greatest trainer\u2026\"",
+        "para \"I'm going to find\"",
+        "line \"out why I can't\"",
+        "para \"win and become\"",
+        "line \"stronger\u2026\"",
+        "para \"When I do, I will\"",
+        "line \"challenge you.\"",
+        "para \"And I'll beat you\"",
+        "line \"down with all my\"",
+        "cont \"power.\"",
+        "para \"\u2026Humph! You keep\"",
+        "line \"at it until then.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026I haven't given up"
+        },
+        {
+          "command": "line",
+          "value": "on becoming the"
+        },
+        {
+          "command": "cont",
+          "value": "greatest trainer\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I'm going to find"
+        },
+        {
+          "command": "line",
+          "value": "out why I can't"
+        },
+        {
+          "command": "para",
+          "value": "win and become"
+        },
+        {
+          "command": "line",
+          "value": "stronger\u2026"
+        },
+        {
+          "command": "para",
+          "value": "When I do, I will"
+        },
+        {
+          "command": "line",
+          "value": "challenge you."
+        },
+        {
+          "command": "para",
+          "value": "And I'll beat you"
+        },
+        {
+          "command": "line",
+          "value": "down with all my"
+        },
+        {
+          "command": "cont",
+          "value": "power."
+        },
+        {
+          "command": "para",
+          "value": "\u2026Humph! You keep"
+        },
+        {
+          "command": "line",
+          "value": "at it until then."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "VictoryRoadRivalVictoryText": {
+      "raw_lines": [
+        "text \"\u2026Humph!\"",
+        "para \"When it comes down\"",
+        "line \"to it, nothing can\"",
+        "cont \"beat power.\"",
+        "para \"I don't need any-\"",
+        "line \"thing else.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "\u2026Humph!"
+        },
+        {
+          "command": "para",
+          "value": "When it comes down"
+        },
+        {
+          "command": "line",
+          "value": "to it, nothing can"
+        },
+        {
+          "command": "cont",
+          "value": "beat power."
+        },
+        {
+          "command": "para",
+          "value": "I don't need any-"
+        },
+        {
+          "command": "line",
+          "value": "thing else."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "VictoryRoadRivalBattleApproachMovement1": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "VictoryRoadRivalBattleApproachMovement2": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step LEFT",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "VictoryRoadRivalBattleExitMovement1": {
+      "raw_lines": [
+        "step DOWN",
+        "step DOWN",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "VictoryRoadRivalBattleExitMovement2": {
+      "raw_lines": [
+        "step DOWN",
+        "step DOWN",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step RIGHT",
+        "step DOWN",
+        "step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "RIGHT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "VictoryRoad_MapScripts": {
+      "label_refs": [
+        "VictoryRoadNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadRivalLeft": {
+      "label_refs": [
+        "VictoryRoadRivalNext"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "VictoryRoadRivalBattleApproachMovement1",
+        "VictoryRoadRivalBattleExitMovement1"
+      ],
+      "scene_refs": [
+        "SCENE_VICTORYROAD_NOOP"
+      ],
+      "std_calls": []
+    },
+    "VictoryRoadRivalRight": {
+      "label_refs": [
+        "VictoryRoadRivalNext"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "VictoryRoadRivalBattleApproachMovement2",
+        "VictoryRoadRivalBattleExitMovement2"
+      ],
+      "scene_refs": [
+        "SCENE_VICTORYROAD_NOOP"
+      ],
+      "std_calls": []
+    },
+    "VictoryRoadRivalNext": {
+      "label_refs": [
+        "VictoryRoadRivalNext.AfterBattle",
+        "VictoryRoadRivalNext.GotChikorita",
+        "VictoryRoadRivalNext.GotTotodile"
+      ],
+      "text_refs": [
+        "VictoryRoadRivalBeforeText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadRivalNext.GotTotodile": {
+      "label_refs": [
+        "VictoryRoadRivalNext.AfterBattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadRivalNext.GotChikorita": {
+      "label_refs": [
+        "VictoryRoadRivalNext.AfterBattle"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadRivalNext.AfterBattle": {
+      "label_refs": [],
+      "text_refs": [
+        "VictoryRoadRivalAfterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadTMEarthquake": {
+      "label_refs": [
+        "VictoryRoadMaxRevive"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadMaxRevive": {
+      "label_refs": [
+        "VictoryRoadFullRestore"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadFullRestore": {
+      "label_refs": [
+        "VictoryRoadFullHeal"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadFullHeal": {
+      "label_refs": [
+        "VictoryRoadHPUp"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadHPUp": {
+      "label_refs": [
+        "VictoryRoadHiddenMaxPotion"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadHiddenMaxPotion": {
+      "label_refs": [
+        "VictoryRoadHiddenFullHeal"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoadHiddenFullHeal": {
+      "label_refs": [
+        "VictoryRoad_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "VictoryRoad_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 0,
+    "warp_events": 10,
+    "coord_events": 2,
+    "bg_events": 2,
+    "object_events": 6
+  }
+}

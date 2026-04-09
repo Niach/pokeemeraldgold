@@ -1,0 +1,915 @@
+{
+  "crystal_map": "CianwoodPokecenter1F",
+  "map_id": "CIANWOOD_POKECENTER_1F",
+  "group": "CIANWOOD",
+  "group_index": 22,
+  "map_index": 6,
+  "tileset": "TILESET_POKECENTER",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_CIANWOOD_CITY",
+  "music": "MUSIC_POKEMON_CENTER",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/Pokecenter1F.blk",
+  "source_asm": "maps/CianwoodPokecenter1F.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "CIANWOOD_CITY",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "dest_map": "CIANWOOD_CITY",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 0,
+        "y": 7,
+        "dest_map": "POKECENTER_2F",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 3,
+        "y": 1,
+        "sprite": "SPRITE_NURSE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodPokecenter1FNurseScript",
+        "flag": -1
+      },
+      {
+        "x": 1,
+        "y": 5,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_WALK_UP_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodPokecenter1FLassScript",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 3,
+        "sprite": "SPRITE_GYM_GUIDE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodGymGuideScript",
+        "flag": -1
+      },
+      {
+        "x": 8,
+        "y": 6,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodPokecenter1FSuperNerdScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "CIANWOODPOKECENTER1F_NURSE",
+    "CIANWOODPOKECENTER1F_LASS",
+    "CIANWOODPOKECENTER1F_GYM_GUIDE",
+    "CIANWOODPOKECENTER1F_SUPER_NERD"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "CianwoodPokecenter1F_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "CianwoodPokecenter1FNurseScript",
+      "label_refs": [
+        "CianwoodPokecenter1FNurseScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPokecenter1FNurseScript": {
+      "raw_lines": [
+        "jumpstd PokecenterNurseScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PokecenterNurseScript"
+          ],
+          "raw": "jumpstd PokecenterNurseScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterNurseScript"
+      ]
+    },
+    "CianwoodPokecenter1FLassScript": {
+      "raw_lines": [
+        "jumptextfaceplayer CianwoodPokecenter1FLassText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "CianwoodPokecenter1FLassText"
+          ],
+          "raw": "jumptextfaceplayer CianwoodPokecenter1FLassText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodPokecenter1FLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodGymGuideScript": {
+      "raw_lines": [
+        "faceplayer",
+        "checkevent EVENT_BEAT_CHUCK",
+        "iftrue .CianwoodGymGuideWinScript",
+        "opentext",
+        "writetext CianwoodGymGuideText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_CHUCK"
+          ],
+          "raw": "checkevent EVENT_BEAT_CHUCK"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CianwoodGymGuideScript.CianwoodGymGuideWinScript"
+          ],
+          "raw": "iftrue .CianwoodGymGuideWinScript"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CianwoodGymGuideText"
+          ],
+          "raw": "writetext CianwoodGymGuideText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "CianwoodGymGuideScript.CianwoodGymGuideWinScript"
+      ],
+      "text_refs": [
+        "CianwoodGymGuideText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodGymGuideScript.CianwoodGymGuideWinScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext CianwoodGymGuideWinText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CianwoodGymGuideWinText"
+          ],
+          "raw": "writetext CianwoodGymGuideWinText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodGymGuideWinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPokecenter1FSuperNerdScript": {
+      "raw_lines": [
+        "jumptextfaceplayer CianwoodPokecenter1FSuperNerdText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "CianwoodPokecenter1FSuperNerdText"
+          ],
+          "raw": "jumptextfaceplayer CianwoodPokecenter1FSuperNerdText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodPokecenter1FSuperNerdText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPokecenter1F_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  3,  7, CIANWOOD_CITY, 3",
+        "warp_event  4,  7, CIANWOOD_CITY, 3",
+        "warp_event  0,  7, POKECENTER_2F, 1",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FNurseScript, -1",
+        "object_event  1,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FLassScript, -1",
+        "object_event  5,  3, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodGymGuideScript, -1",
+        "object_event  8,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FSuperNerdScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "CIANWOOD_CITY",
+            "3"
+          ],
+          "raw": "warp_event  3,  7, CIANWOOD_CITY, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "CIANWOOD_CITY",
+            "3"
+          ],
+          "raw": "warp_event  4,  7, CIANWOOD_CITY, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "0",
+            "7",
+            "POKECENTER_2F",
+            "1"
+          ],
+          "raw": "warp_event  0,  7, POKECENTER_2F, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "3",
+            "1",
+            "SPRITE_NURSE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodPokecenter1FNurseScript",
+            "-1"
+          ],
+          "raw": "object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FNurseScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "1",
+            "5",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_WALK_UP_DOWN",
+            "0",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodPokecenter1FLassScript",
+            "-1"
+          ],
+          "raw": "object_event  1,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FLassScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "3",
+            "SPRITE_GYM_GUIDE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodGymGuideScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  3, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodGymGuideScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "6",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodPokecenter1FSuperNerdScript",
+            "-1"
+          ],
+          "raw": "object_event  8,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FSuperNerdScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "CianwoodPokecenter1FLassText": {
+      "raw_lines": [
+        "text \"Did you meet the\"",
+        "line \"#MANIAC?\"",
+        "para \"He's always brag-\"",
+        "line \"ging about his\"",
+        "cont \"rare #MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Did you meet the"
+        },
+        {
+          "command": "line",
+          "value": "#MANIAC?"
+        },
+        {
+          "command": "para",
+          "value": "He's always brag-"
+        },
+        {
+          "command": "line",
+          "value": "ging about his"
+        },
+        {
+          "command": "cont",
+          "value": "rare #MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CianwoodGymGuideText": {
+      "raw_lines": [
+        "text \"The #MON GYM\"",
+        "line \"trainers here are\"",
+        "cont \"macho bullies.\"",
+        "para \"If I stick around,\"",
+        "line \"they might come\"",
+        "cont \"after me.\"",
+        "para \"Here's some ad-\"",
+        "line \"vice: the GYM\"",
+        "para \"LEADER uses the\"",
+        "line \"fighting-type.\"",
+        "para \"So you should\"",
+        "line \"confound him with\"",
+        "cont \"psychic #MON.\"",
+        "para \"Wipe out his #-\"",
+        "line \"MON before they\"",
+        "para \"can use their\"",
+        "line \"physical strength.\"",
+        "para \"And those boulders\"",
+        "line \"in the middle of\"",
+        "cont \"the GYM?\"",
+        "para \"If you don't move\"",
+        "line \"them correctly,\"",
+        "para \"you won't reach\"",
+        "line \"the GYM LEADER.\"",
+        "para \"If you get stuck,\"",
+        "line \"go outside.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The #MON GYM"
+        },
+        {
+          "command": "line",
+          "value": "trainers here are"
+        },
+        {
+          "command": "cont",
+          "value": "macho bullies."
+        },
+        {
+          "command": "para",
+          "value": "If I stick around,"
+        },
+        {
+          "command": "line",
+          "value": "they might come"
+        },
+        {
+          "command": "cont",
+          "value": "after me."
+        },
+        {
+          "command": "para",
+          "value": "Here's some ad-"
+        },
+        {
+          "command": "line",
+          "value": "vice: the GYM"
+        },
+        {
+          "command": "para",
+          "value": "LEADER uses the"
+        },
+        {
+          "command": "line",
+          "value": "fighting-type."
+        },
+        {
+          "command": "para",
+          "value": "So you should"
+        },
+        {
+          "command": "line",
+          "value": "confound him with"
+        },
+        {
+          "command": "cont",
+          "value": "psychic #MON."
+        },
+        {
+          "command": "para",
+          "value": "Wipe out his #-"
+        },
+        {
+          "command": "line",
+          "value": "MON before they"
+        },
+        {
+          "command": "para",
+          "value": "can use their"
+        },
+        {
+          "command": "line",
+          "value": "physical strength."
+        },
+        {
+          "command": "para",
+          "value": "And those boulders"
+        },
+        {
+          "command": "line",
+          "value": "in the middle of"
+        },
+        {
+          "command": "cont",
+          "value": "the GYM?"
+        },
+        {
+          "command": "para",
+          "value": "If you don't move"
+        },
+        {
+          "command": "line",
+          "value": "them correctly,"
+        },
+        {
+          "command": "para",
+          "value": "you won't reach"
+        },
+        {
+          "command": "line",
+          "value": "the GYM LEADER."
+        },
+        {
+          "command": "para",
+          "value": "If you get stuck,"
+        },
+        {
+          "command": "line",
+          "value": "go outside."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CianwoodGymGuideWinText": {
+      "raw_lines": [
+        "text \"<PLAYER>! You won!\"",
+        "line \"I could tell by\"",
+        "cont \"looking at you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER>! You won!"
+        },
+        {
+          "command": "line",
+          "value": "I could tell by"
+        },
+        {
+          "command": "cont",
+          "value": "looking at you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CianwoodPokecenter1FUnusedText1": {
+      "raw_lines": [
+        "text \"Don't you get the\"",
+        "line \"urge to show off\"",
+        "para \"your #MON to\"",
+        "line \"friends?\"",
+        "para \"I wish I could\"",
+        "line \"show the #MON I\"",
+        "para \"raised to my pal\"",
+        "line \"in VIOLET.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Don't you get the"
+        },
+        {
+          "command": "line",
+          "value": "urge to show off"
+        },
+        {
+          "command": "para",
+          "value": "your #MON to"
+        },
+        {
+          "command": "line",
+          "value": "friends?"
+        },
+        {
+          "command": "para",
+          "value": "I wish I could"
+        },
+        {
+          "command": "line",
+          "value": "show the #MON I"
+        },
+        {
+          "command": "para",
+          "value": "raised to my pal"
+        },
+        {
+          "command": "line",
+          "value": "in VIOLET."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CianwoodPokecenter1FUnusedText2": {
+      "raw_lines": [
+        "text \"I've been battling\"",
+        "line \"my pal in VIOLET\"",
+        "para \"using a MOBILE\"",
+        "line \"ADAPTER link.\"",
+        "para \"I'm down 5-7\"",
+        "line \"against him. I've\"",
+        "cont \"gotta crank it up!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I've been battling"
+        },
+        {
+          "command": "line",
+          "value": "my pal in VIOLET"
+        },
+        {
+          "command": "para",
+          "value": "using a MOBILE"
+        },
+        {
+          "command": "line",
+          "value": "ADAPTER link."
+        },
+        {
+          "command": "para",
+          "value": "I'm down 5-7"
+        },
+        {
+          "command": "line",
+          "value": "against him. I've"
+        },
+        {
+          "command": "cont",
+          "value": "gotta crank it up!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CianwoodPokecenter1FSuperNerdText": {
+      "raw_lines": [
+        "text \"I love showing off\"",
+        "line \"the #MON that\"",
+        "para \"I've raised.\"",
+        "line \"Don't you?\"",
+        "para \"I'm going to get\"",
+        "line \"into a bunch of\"",
+        "para \"battles, and show\"",
+        "line \"off my #MON!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I love showing off"
+        },
+        {
+          "command": "line",
+          "value": "the #MON that"
+        },
+        {
+          "command": "para",
+          "value": "I've raised."
+        },
+        {
+          "command": "line",
+          "value": "Don't you?"
+        },
+        {
+          "command": "para",
+          "value": "I'm going to get"
+        },
+        {
+          "command": "line",
+          "value": "into a bunch of"
+        },
+        {
+          "command": "para",
+          "value": "battles, and show"
+        },
+        {
+          "command": "line",
+          "value": "off my #MON!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "PokecenterNurseScript"
+  ],
+  "dependencies": {
+    "CianwoodPokecenter1F_MapScripts": {
+      "label_refs": [
+        "CianwoodPokecenter1FNurseScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPokecenter1FNurseScript": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterNurseScript"
+      ]
+    },
+    "CianwoodPokecenter1FLassScript": {
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodPokecenter1FLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodGymGuideScript": {
+      "label_refs": [
+        "CianwoodGymGuideScript.CianwoodGymGuideWinScript"
+      ],
+      "text_refs": [
+        "CianwoodGymGuideText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodGymGuideScript.CianwoodGymGuideWinScript": {
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodGymGuideWinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPokecenter1FSuperNerdScript": {
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodPokecenter1FSuperNerdText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPokecenter1F_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 3,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 4
+  }
+}

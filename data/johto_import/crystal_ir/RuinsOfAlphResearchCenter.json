@@ -1,0 +1,2599 @@
+{
+  "crystal_map": "RuinsOfAlphResearchCenter",
+  "map_id": "RUINS_OF_ALPH_RESEARCH_CENTER",
+  "group": "DUNGEONS",
+  "group_index": 3,
+  "map_index": 28,
+  "tileset": "TILESET_FACILITY",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_RUINS_OF_ALPH",
+  "music": "MUSIC_UNION_CAVE",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/RuinsOfAlphResearchCenter.blk",
+  "source_asm": "maps/RuinsOfAlphResearchCenter.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "RuinsOfAlphResearchCenterNoopScene",
+        "scene_id": "SCENE_RUINSOFALPHRESEARCHCENTER_NOOP"
+      },
+      {
+        "script": "RuinsOfAlphResearchCenterGetUnownDexScene",
+        "scene_id": "SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_OBJECTS",
+        "script": "RuinsOfAlphResearchCenterScientistCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "RUINS_OF_ALPH_OUTSIDE",
+        "dest_warp_id": 6
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "RUINS_OF_ALPH_OUTSIDE",
+        "dest_warp_id": 6
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 6,
+        "y": 5,
+        "kind": "BGEVENT_READ",
+        "script": "RuinsOfAlphResearchCenterBookshelf"
+      },
+      {
+        "x": 3,
+        "y": 4,
+        "kind": "BGEVENT_READ",
+        "script": "RuinsOfAlphResearchCenterComputer"
+      },
+      {
+        "x": 7,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "RuinsOfAlphResearchCenterPrinter"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 4,
+        "y": 5,
+        "sprite": "SPRITE_SCIENTIST",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RuinsOfAlphResearchCenterScientist1Script",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 2,
+        "sprite": "SPRITE_SCIENTIST",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 2,
+        "movement_range_y": 1,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RuinsOfAlphResearchCenterScientist2Script",
+        "flag": -1
+      },
+      {
+        "x": 2,
+        "y": 5,
+        "sprite": "SPRITE_SCIENTIST",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "RuinsOfAlphResearchCenterScientist3Script",
+        "flag": "EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST"
+      }
+    ]
+  },
+  "object_consts": [
+    "RUINSOFALPHRESEARCHCENTER_SCIENTIST1",
+    "RUINSOFALPHRESEARCHCENTER_SCIENTIST2",
+    "RUINSOFALPHRESEARCHCENTER_SCIENTIST3"
+  ],
+  "scene_ids": [
+    "SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX",
+    "SCENE_RUINSOFALPHRESEARCHCENTER_NOOP"
+  ],
+  "scripts": {
+    "RuinsOfAlphResearchCenter_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script RuinsOfAlphResearchCenterNoopScene,        SCENE_RUINSOFALPHRESEARCHCENTER_NOOP",
+        "scene_script RuinsOfAlphResearchCenterGetUnownDexScene, SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX",
+        "def_callbacks",
+        "callback MAPCALLBACK_OBJECTS, RuinsOfAlphResearchCenterScientistCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "RuinsOfAlphResearchCenterNoopScene",
+            "SCENE_RUINSOFALPHRESEARCHCENTER_NOOP"
+          ],
+          "raw": "scene_script RuinsOfAlphResearchCenterNoopScene,        SCENE_RUINSOFALPHRESEARCHCENTER_NOOP"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "RuinsOfAlphResearchCenterGetUnownDexScene",
+            "SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX"
+          ],
+          "raw": "scene_script RuinsOfAlphResearchCenterGetUnownDexScene, SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_OBJECTS",
+            "RuinsOfAlphResearchCenterScientistCallback"
+          ],
+          "raw": "callback MAPCALLBACK_OBJECTS, RuinsOfAlphResearchCenterScientistCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "RuinsOfAlphResearchCenterNoopScene",
+      "label_refs": [
+        "RuinsOfAlphResearchCenterNoopScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterNoopScene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterGetUnownDexScene": {
+      "raw_lines": [
+        "sdefer RuinsOfAlphResearchCenterGetUnownDexScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "sdefer",
+          "args": [
+            "RuinsOfAlphResearchCenterGetUnownDexScript"
+          ],
+          "raw": "sdefer RuinsOfAlphResearchCenterGetUnownDexScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "sdefer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientistCallback": {
+      "raw_lines": [
+        "checkscene",
+        "ifequal SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX, .ShowScientist",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "checkscene",
+          "args": [],
+          "raw": "checkscene"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX",
+            "RuinsOfAlphResearchCenterScientistCallback.ShowScientist"
+          ],
+          "raw": "ifequal SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX, .ShowScientist"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "checkscene",
+      "label_refs": [
+        "RuinsOfAlphResearchCenterScientistCallback.ShowScientist"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientistCallback.ShowScientist": {
+      "raw_lines": [
+        "moveobject RUINSOFALPHRESEARCHCENTER_SCIENTIST3, 3, 7",
+        "appear RUINSOFALPHRESEARCHCENTER_SCIENTIST3",
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "moveobject",
+          "args": [
+            "RUINSOFALPHRESEARCHCENTER_SCIENTIST3",
+            "3",
+            "7"
+          ],
+          "raw": "moveobject RUINSOFALPHRESEARCHCENTER_SCIENTIST3, 3, 7"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "RUINSOFALPHRESEARCHCENTER_SCIENTIST3"
+          ],
+          "raw": "appear RUINSOFALPHRESEARCHCENTER_SCIENTIST3"
+        },
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "moveobject",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterGetUnownDexScript": {
+      "raw_lines": [
+        "applymovement RUINSOFALPHRESEARCHCENTER_SCIENTIST3, RuinsOfAlphResearchCenterApproachesComputerMovement",
+        "playsound SFX_BOOT_PC",
+        "pause 60",
+        "playsound SFX_SWITCH_POKEMON",
+        "pause 30",
+        "playsound SFX_TALLY",
+        "pause 30",
+        "playsound SFX_TRANSACTION",
+        "pause 30",
+        "turnobject RUINSOFALPHRESEARCHCENTER_SCIENTIST3, DOWN",
+        "opentext",
+        "writetext RuinsOfAlphResearchCenterModifiedDexText",
+        "waitbutton",
+        "closetext",
+        "applymovement RUINSOFALPHRESEARCHCENTER_SCIENTIST3, RuinsOfAlphResearchCenterApproachesPlayerMovement",
+        "opentext",
+        "writetext RuinsOfAlphResearchCenterDexUpgradedText",
+        "playsound SFX_ITEM",
+        "waitsfx",
+        "setflag ENGINE_UNOWN_DEX",
+        "writetext RuinsOfAlphResearchCenterScientist3Text",
+        "waitbutton",
+        "closetext",
+        "applymovement RUINSOFALPHRESEARCHCENTER_SCIENTIST3, RuinsOfAlphResearchCenterLeavesPlayerMovement",
+        "setscene SCENE_RUINSOFALPHRESEARCHCENTER_NOOP",
+        "special RestartMapMusic",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "applymovement",
+          "args": [
+            "RUINSOFALPHRESEARCHCENTER_SCIENTIST3",
+            "RuinsOfAlphResearchCenterApproachesComputerMovement"
+          ],
+          "raw": "applymovement RUINSOFALPHRESEARCHCENTER_SCIENTIST3, RuinsOfAlphResearchCenterApproachesComputerMovement"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_BOOT_PC"
+          ],
+          "raw": "playsound SFX_BOOT_PC"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "60"
+          ],
+          "raw": "pause 60"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_SWITCH_POKEMON"
+          ],
+          "raw": "playsound SFX_SWITCH_POKEMON"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "30"
+          ],
+          "raw": "pause 30"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_TALLY"
+          ],
+          "raw": "playsound SFX_TALLY"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "30"
+          ],
+          "raw": "pause 30"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_TRANSACTION"
+          ],
+          "raw": "playsound SFX_TRANSACTION"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "30"
+          ],
+          "raw": "pause 30"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "RUINSOFALPHRESEARCHCENTER_SCIENTIST3",
+            "DOWN"
+          ],
+          "raw": "turnobject RUINSOFALPHRESEARCHCENTER_SCIENTIST3, DOWN"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphResearchCenterModifiedDexText"
+          ],
+          "raw": "writetext RuinsOfAlphResearchCenterModifiedDexText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "RUINSOFALPHRESEARCHCENTER_SCIENTIST3",
+            "RuinsOfAlphResearchCenterApproachesPlayerMovement"
+          ],
+          "raw": "applymovement RUINSOFALPHRESEARCHCENTER_SCIENTIST3, RuinsOfAlphResearchCenterApproachesPlayerMovement"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphResearchCenterDexUpgradedText"
+          ],
+          "raw": "writetext RuinsOfAlphResearchCenterDexUpgradedText"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_ITEM"
+          ],
+          "raw": "playsound SFX_ITEM"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_UNOWN_DEX"
+          ],
+          "raw": "setflag ENGINE_UNOWN_DEX"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphResearchCenterScientist3Text"
+          ],
+          "raw": "writetext RuinsOfAlphResearchCenterScientist3Text"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "RUINSOFALPHRESEARCHCENTER_SCIENTIST3",
+            "RuinsOfAlphResearchCenterLeavesPlayerMovement"
+          ],
+          "raw": "applymovement RUINSOFALPHRESEARCHCENTER_SCIENTIST3, RuinsOfAlphResearchCenterLeavesPlayerMovement"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_RUINSOFALPHRESEARCHCENTER_NOOP"
+          ],
+          "raw": "setscene SCENE_RUINSOFALPHRESEARCHCENTER_NOOP"
+        },
+        {
+          "command": "special",
+          "args": [
+            "RestartMapMusic"
+          ],
+          "raw": "special RestartMapMusic"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "applymovement",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterDexUpgradedText",
+        "RuinsOfAlphResearchCenterModifiedDexText",
+        "RuinsOfAlphResearchCenterScientist3Text"
+      ],
+      "movement_refs": [
+        "RuinsOfAlphResearchCenterApproachesComputerMovement",
+        "RuinsOfAlphResearchCenterApproachesPlayerMovement",
+        "RuinsOfAlphResearchCenterLeavesPlayerMovement"
+      ],
+      "scene_refs": [
+        "SCENE_RUINSOFALPHRESEARCHCENTER_NOOP"
+      ],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientist3Script": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "readvar VAR_UNOWNCOUNT",
+        "ifequal NUM_UNOWN, .PrinterAvailable",
+        "writetext RuinsOfAlphResearchCenterScientist3Text",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_UNOWNCOUNT"
+          ],
+          "raw": "readvar VAR_UNOWNCOUNT"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "NUM_UNOWN",
+            "RuinsOfAlphResearchCenterScientist3Script.PrinterAvailable"
+          ],
+          "raw": "ifequal NUM_UNOWN, .PrinterAvailable"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphResearchCenterScientist3Text"
+          ],
+          "raw": "writetext RuinsOfAlphResearchCenterScientist3Text"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "RuinsOfAlphResearchCenterScientist3Script.PrinterAvailable"
+      ],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterScientist3Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientist3Script.PrinterAvailable": {
+      "raw_lines": [
+        "writetext RuinsOfAlphResearchCenterScientist3_PrinterAvailable",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphResearchCenterScientist3_PrinterAvailable"
+          ],
+          "raw": "writetext RuinsOfAlphResearchCenterScientist3_PrinterAvailable"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterScientist3_PrinterAvailable"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientist1Script": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "readvar VAR_UNOWNCOUNT",
+        "ifequal NUM_UNOWN, .GotAllUnown",
+        "checkflag ENGINE_UNOWN_DEX",
+        "iftrue .GotUnownDex",
+        "checkevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS",
+        "iftrue .UnownAppeared",
+        "writetext RuinsOfAlphResearchCenterScientist1Text",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_UNOWNCOUNT"
+          ],
+          "raw": "readvar VAR_UNOWNCOUNT"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "NUM_UNOWN",
+            "RuinsOfAlphResearchCenterScientist1Script.GotAllUnown"
+          ],
+          "raw": "ifequal NUM_UNOWN, .GotAllUnown"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_UNOWN_DEX"
+          ],
+          "raw": "checkflag ENGINE_UNOWN_DEX"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RuinsOfAlphResearchCenterScientist1Script.GotUnownDex"
+          ],
+          "raw": "iftrue .GotUnownDex"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_MADE_UNOWN_APPEAR_IN_RUINS"
+          ],
+          "raw": "checkevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RuinsOfAlphResearchCenterScientist1Script.UnownAppeared"
+          ],
+          "raw": "iftrue .UnownAppeared"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphResearchCenterScientist1Text"
+          ],
+          "raw": "writetext RuinsOfAlphResearchCenterScientist1Text"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "RuinsOfAlphResearchCenterScientist1Script.GotAllUnown",
+        "RuinsOfAlphResearchCenterScientist1Script.GotUnownDex",
+        "RuinsOfAlphResearchCenterScientist1Script.UnownAppeared"
+      ],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterScientist1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientist1Script.UnownAppeared": {
+      "raw_lines": [
+        "writetext RuinsOfAlphResearchCenterScientist1Text_UnownAppeared",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphResearchCenterScientist1Text_UnownAppeared"
+          ],
+          "raw": "writetext RuinsOfAlphResearchCenterScientist1Text_UnownAppeared"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterScientist1Text_UnownAppeared"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientist1Script.GotUnownDex": {
+      "raw_lines": [
+        "writetext RuinsOfAlphResearchCenterScientist1Text_GotUnownDex",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphResearchCenterScientist1Text_GotUnownDex"
+          ],
+          "raw": "writetext RuinsOfAlphResearchCenterScientist1Text_GotUnownDex"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterScientist1Text_GotUnownDex"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientist1Script.GotAllUnown": {
+      "raw_lines": [
+        "writetext RuinsOfAlphResearchCenterScientist1Text_GotAllUnown",
+        "waitbutton",
+        "closetext",
+        "clearevent EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphResearchCenterScientist1Text_GotAllUnown"
+          ],
+          "raw": "writetext RuinsOfAlphResearchCenterScientist1Text_GotAllUnown"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS"
+          ],
+          "raw": "clearevent EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterScientist1Text_GotAllUnown"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientist2Script": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "readvar VAR_UNOWNCOUNT",
+        "ifequal NUM_UNOWN, .GotAllUnown",
+        "checkevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS",
+        "iftrue .UnownAppeared",
+        "writetext RuinsOfAlphResearchCenterScientist2Text",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_UNOWNCOUNT"
+          ],
+          "raw": "readvar VAR_UNOWNCOUNT"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "NUM_UNOWN",
+            "RuinsOfAlphResearchCenterScientist2Script.GotAllUnown"
+          ],
+          "raw": "ifequal NUM_UNOWN, .GotAllUnown"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_MADE_UNOWN_APPEAR_IN_RUINS"
+          ],
+          "raw": "checkevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RuinsOfAlphResearchCenterScientist2Script.UnownAppeared"
+          ],
+          "raw": "iftrue .UnownAppeared"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphResearchCenterScientist2Text"
+          ],
+          "raw": "writetext RuinsOfAlphResearchCenterScientist2Text"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "RuinsOfAlphResearchCenterScientist2Script.GotAllUnown",
+        "RuinsOfAlphResearchCenterScientist2Script.UnownAppeared"
+      ],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterScientist2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientist2Script.UnownAppeared": {
+      "raw_lines": [
+        "writetext RuinsOfAlphResearchCenterScientist2Text_UnownAppeared",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphResearchCenterScientist2Text_UnownAppeared"
+          ],
+          "raw": "writetext RuinsOfAlphResearchCenterScientist2Text_UnownAppeared"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterScientist2Text_UnownAppeared"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientist2Script.GotAllUnown": {
+      "raw_lines": [
+        "writetext RuinsOfAlphResearchCenterScientist2Text_GotAllUnown",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphResearchCenterScientist2Text_GotAllUnown"
+          ],
+          "raw": "writetext RuinsOfAlphResearchCenterScientist2Text_GotAllUnown"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterScientist2Text_GotAllUnown"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterComputer": {
+      "raw_lines": [
+        "opentext",
+        "checkevent EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST",
+        "iftrue .SkipChecking",
+        "readvar VAR_UNOWNCOUNT",
+        "ifequal NUM_UNOWN, .GotAllUnown"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST"
+          ],
+          "raw": "checkevent EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RuinsOfAlphResearchCenterComputer.SkipChecking"
+          ],
+          "raw": "iftrue .SkipChecking"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_UNOWNCOUNT"
+          ],
+          "raw": "readvar VAR_UNOWNCOUNT"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "NUM_UNOWN",
+            "RuinsOfAlphResearchCenterComputer.GotAllUnown"
+          ],
+          "raw": "ifequal NUM_UNOWN, .GotAllUnown"
+        }
+      ],
+      "first_command": "opentext",
+      "fallthrough_label": "RuinsOfAlphResearchCenterComputer.SkipChecking",
+      "label_refs": [
+        "RuinsOfAlphResearchCenterComputer.GotAllUnown",
+        "RuinsOfAlphResearchCenterComputer.SkipChecking"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterComputer.SkipChecking": {
+      "raw_lines": [
+        "writetext RuinsOfAlphResearchCenterComputerText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphResearchCenterComputerText"
+          ],
+          "raw": "writetext RuinsOfAlphResearchCenterComputerText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterComputerText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterComputer.GotAllUnown": {
+      "raw_lines": [
+        "writetext RuinsOfAlphResearchCenterComputerText_GotAllUnown",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphResearchCenterComputerText_GotAllUnown"
+          ],
+          "raw": "writetext RuinsOfAlphResearchCenterComputerText_GotAllUnown"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterComputerText_GotAllUnown"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterPrinter": {
+      "raw_lines": [
+        "opentext",
+        "checkevent EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST",
+        "iftrue .SkipChecking",
+        "readvar VAR_UNOWNCOUNT",
+        "ifequal NUM_UNOWN, .PrinterAvailable"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST"
+          ],
+          "raw": "checkevent EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "RuinsOfAlphResearchCenterPrinter.SkipChecking"
+          ],
+          "raw": "iftrue .SkipChecking"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_UNOWNCOUNT"
+          ],
+          "raw": "readvar VAR_UNOWNCOUNT"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "NUM_UNOWN",
+            "RuinsOfAlphResearchCenterPrinter.PrinterAvailable"
+          ],
+          "raw": "ifequal NUM_UNOWN, .PrinterAvailable"
+        }
+      ],
+      "first_command": "opentext",
+      "fallthrough_label": "RuinsOfAlphResearchCenterPrinter.SkipChecking",
+      "label_refs": [
+        "RuinsOfAlphResearchCenterPrinter.PrinterAvailable",
+        "RuinsOfAlphResearchCenterPrinter.SkipChecking"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterPrinter.SkipChecking": {
+      "raw_lines": [
+        "writetext RuinsOfAlphResearchCenterPrinterText_DoesntWork",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphResearchCenterPrinterText_DoesntWork"
+          ],
+          "raw": "writetext RuinsOfAlphResearchCenterPrinterText_DoesntWork"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterPrinterText_DoesntWork"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterPrinter.PrinterAvailable": {
+      "raw_lines": [
+        "writetext RuinsOfAlphResearchCenterUnownPrinterText",
+        "waitbutton",
+        "special UnownPrinter",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "RuinsOfAlphResearchCenterUnownPrinterText"
+          ],
+          "raw": "writetext RuinsOfAlphResearchCenterUnownPrinterText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "special",
+          "args": [
+            "UnownPrinter"
+          ],
+          "raw": "special UnownPrinter"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "writetext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterUnownPrinterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterPhoto": {
+      "raw_lines": [
+        "jumptext RuinsOfAlphResearchCenterProfSilktreePhotoText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "RuinsOfAlphResearchCenterProfSilktreePhotoText"
+          ],
+          "raw": "jumptext RuinsOfAlphResearchCenterProfSilktreePhotoText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterProfSilktreePhotoText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterBookshelf": {
+      "raw_lines": [
+        "jumptext RuinsOfAlphResearchCenterAcademicBooksText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "RuinsOfAlphResearchCenterAcademicBooksText"
+          ],
+          "raw": "jumptext RuinsOfAlphResearchCenterAcademicBooksText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterAcademicBooksText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenter_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, RUINS_OF_ALPH_OUTSIDE, 6",
+        "warp_event  3,  7, RUINS_OF_ALPH_OUTSIDE, 6",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  6,  5, BGEVENT_READ, RuinsOfAlphResearchCenterBookshelf",
+        "bg_event  3,  4, BGEVENT_READ, RuinsOfAlphResearchCenterComputer",
+        "bg_event  7,  1, BGEVENT_READ, RuinsOfAlphResearchCenterPrinter",
+        "def_object_events",
+        "object_event  4,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist1Script, -1",
+        "object_event  5,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist2Script, -1",
+        "object_event  2,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist3Script, EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "RUINS_OF_ALPH_OUTSIDE",
+            "6"
+          ],
+          "raw": "warp_event  2,  7, RUINS_OF_ALPH_OUTSIDE, 6"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "RUINS_OF_ALPH_OUTSIDE",
+            "6"
+          ],
+          "raw": "warp_event  3,  7, RUINS_OF_ALPH_OUTSIDE, 6"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "6",
+            "5",
+            "BGEVENT_READ",
+            "RuinsOfAlphResearchCenterBookshelf"
+          ],
+          "raw": "bg_event  6,  5, BGEVENT_READ, RuinsOfAlphResearchCenterBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "4",
+            "BGEVENT_READ",
+            "RuinsOfAlphResearchCenterComputer"
+          ],
+          "raw": "bg_event  3,  4, BGEVENT_READ, RuinsOfAlphResearchCenterComputer"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "7",
+            "1",
+            "BGEVENT_READ",
+            "RuinsOfAlphResearchCenterPrinter"
+          ],
+          "raw": "bg_event  7,  1, BGEVENT_READ, RuinsOfAlphResearchCenterPrinter"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "5",
+            "SPRITE_SCIENTIST",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RuinsOfAlphResearchCenterScientist1Script",
+            "-1"
+          ],
+          "raw": "object_event  4,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist1Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "2",
+            "SPRITE_SCIENTIST",
+            "SPRITEMOVEDATA_WANDER",
+            "2",
+            "1",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RuinsOfAlphResearchCenterScientist2Script",
+            "-1"
+          ],
+          "raw": "object_event  5,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist2Script, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "5",
+            "SPRITE_SCIENTIST",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "RuinsOfAlphResearchCenterScientist3Script",
+            "EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST"
+          ],
+          "raw": "object_event  2,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist3Script, EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "RuinsOfAlphResearchCenterModifiedDexText": {
+      "raw_lines": [
+        "text \"Done!\"",
+        "para \"I modified your\"",
+        "line \"#DEX.\"",
+        "para \"I added an\"",
+        "line \"optional #DEX\"",
+        "para \"to store UNOWN\"",
+        "line \"data.\"",
+        "para \"It records them in\"",
+        "line \"the sequence that\"",
+        "cont \"they were caught.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Done!"
+        },
+        {
+          "command": "para",
+          "value": "I modified your"
+        },
+        {
+          "command": "line",
+          "value": "#DEX."
+        },
+        {
+          "command": "para",
+          "value": "I added an"
+        },
+        {
+          "command": "line",
+          "value": "optional #DEX"
+        },
+        {
+          "command": "para",
+          "value": "to store UNOWN"
+        },
+        {
+          "command": "line",
+          "value": "data."
+        },
+        {
+          "command": "para",
+          "value": "It records them in"
+        },
+        {
+          "command": "line",
+          "value": "the sequence that"
+        },
+        {
+          "command": "cont",
+          "value": "they were caught."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterDexUpgradedText": {
+      "raw_lines": [
+        "text \"<PLAYER>'s #DEX\"",
+        "line \"was upgraded.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER>'s #DEX"
+        },
+        {
+          "command": "line",
+          "value": "was upgraded."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterScientist3Text": {
+      "raw_lines": [
+        "text \"The UNOWN you\"",
+        "line \"catch will all be\"",
+        "cont \"recorded.\"",
+        "para \"Check to see how\"",
+        "line \"many kinds exist.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The UNOWN you"
+        },
+        {
+          "command": "line",
+          "value": "catch will all be"
+        },
+        {
+          "command": "cont",
+          "value": "recorded."
+        },
+        {
+          "command": "para",
+          "value": "Check to see how"
+        },
+        {
+          "command": "line",
+          "value": "many kinds exist."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterScientist3_PrinterAvailable": {
+      "raw_lines": [
+        "text \"You caught all the\"",
+        "line \"UNOWN variations?\"",
+        "para \"That's a great\"",
+        "line \"achievement!\"",
+        "para \"I've set up the\"",
+        "line \"printer here for\"",
+        "cont \"handling UNOWN.\"",
+        "para \"Feel free to use\"",
+        "line \"it anytime.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You caught all the"
+        },
+        {
+          "command": "line",
+          "value": "UNOWN variations?"
+        },
+        {
+          "command": "para",
+          "value": "That's a great"
+        },
+        {
+          "command": "line",
+          "value": "achievement!"
+        },
+        {
+          "command": "para",
+          "value": "I've set up the"
+        },
+        {
+          "command": "line",
+          "value": "printer here for"
+        },
+        {
+          "command": "cont",
+          "value": "handling UNOWN."
+        },
+        {
+          "command": "para",
+          "value": "Feel free to use"
+        },
+        {
+          "command": "line",
+          "value": "it anytime."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterScientist1Text": {
+      "raw_lines": [
+        "text \"The RUINS are\"",
+        "line \"about 1500 years\"",
+        "cont \"old.\"",
+        "para \"But it's not known\"",
+        "line \"why they were\"",
+        "cont \"built--or by whom.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The RUINS are"
+        },
+        {
+          "command": "line",
+          "value": "about 1500 years"
+        },
+        {
+          "command": "cont",
+          "value": "old."
+        },
+        {
+          "command": "para",
+          "value": "But it's not known"
+        },
+        {
+          "command": "line",
+          "value": "why they were"
+        },
+        {
+          "command": "cont",
+          "value": "built--or by whom."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterScientist1Text_GotUnownDex": {
+      "raw_lines": [
+        "text \"I wonder how many\"",
+        "line \"kinds of #MON\"",
+        "cont \"are in the RUINS?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I wonder how many"
+        },
+        {
+          "command": "line",
+          "value": "kinds of #MON"
+        },
+        {
+          "command": "cont",
+          "value": "are in the RUINS?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterScientist1Text_UnownAppeared": {
+      "raw_lines": [
+        "text \"#MON appeared\"",
+        "line \"in the RUINS?\"",
+        "para \"That's incredible\"",
+        "line \"news!\"",
+        "para \"We'll need to\"",
+        "line \"investigate this.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#MON appeared"
+        },
+        {
+          "command": "line",
+          "value": "in the RUINS?"
+        },
+        {
+          "command": "para",
+          "value": "That's incredible"
+        },
+        {
+          "command": "line",
+          "value": "news!"
+        },
+        {
+          "command": "para",
+          "value": "We'll need to"
+        },
+        {
+          "command": "line",
+          "value": "investigate this."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterScientist1Text_GotAllUnown": {
+      "raw_lines": [
+        "text \"Our investigation,\"",
+        "line \"with your help, is\"",
+        "para \"giving us insight\"",
+        "line \"into the RUINS.\"",
+        "para \"The RUINS appear\"",
+        "line \"to have been built\"",
+        "para \"as a habitat for\"",
+        "line \"#MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Our investigation,"
+        },
+        {
+          "command": "line",
+          "value": "with your help, is"
+        },
+        {
+          "command": "para",
+          "value": "giving us insight"
+        },
+        {
+          "command": "line",
+          "value": "into the RUINS."
+        },
+        {
+          "command": "para",
+          "value": "The RUINS appear"
+        },
+        {
+          "command": "line",
+          "value": "to have been built"
+        },
+        {
+          "command": "para",
+          "value": "as a habitat for"
+        },
+        {
+          "command": "line",
+          "value": "#MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterScientist2Text": {
+      "raw_lines": [
+        "text \"There are odd pat-\"",
+        "line \"terns drawn on the\"",
+        "para \"walls of the\"",
+        "line \"RUINS.\"",
+        "para \"They must be the\"",
+        "line \"keys for unravel-\"",
+        "cont \"ing the mystery\"",
+        "cont \"of the RUINS.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "There are odd pat-"
+        },
+        {
+          "command": "line",
+          "value": "terns drawn on the"
+        },
+        {
+          "command": "para",
+          "value": "walls of the"
+        },
+        {
+          "command": "line",
+          "value": "RUINS."
+        },
+        {
+          "command": "para",
+          "value": "They must be the"
+        },
+        {
+          "command": "line",
+          "value": "keys for unravel-"
+        },
+        {
+          "command": "cont",
+          "value": "ing the mystery"
+        },
+        {
+          "command": "cont",
+          "value": "of the RUINS."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterScientist2Text_UnownAppeared": {
+      "raw_lines": [
+        "text \"The strange #-\"",
+        "line \"MON you saw in the\"",
+        "cont \"RUINS?\"",
+        "para \"They appear to be\"",
+        "line \"very much like the\"",
+        "para \"drawings on the\"",
+        "line \"walls there.\"",
+        "para \"Hmm\u2026\"",
+        "para \"That must mean\"",
+        "line \"there are many\"",
+        "cont \"kinds of them\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "The strange #-"
+        },
+        {
+          "command": "line",
+          "value": "MON you saw in the"
+        },
+        {
+          "command": "cont",
+          "value": "RUINS?"
+        },
+        {
+          "command": "para",
+          "value": "They appear to be"
+        },
+        {
+          "command": "line",
+          "value": "very much like the"
+        },
+        {
+          "command": "para",
+          "value": "drawings on the"
+        },
+        {
+          "command": "line",
+          "value": "walls there."
+        },
+        {
+          "command": "para",
+          "value": "Hmm\u2026"
+        },
+        {
+          "command": "para",
+          "value": "That must mean"
+        },
+        {
+          "command": "line",
+          "value": "there are many"
+        },
+        {
+          "command": "cont",
+          "value": "kinds of them\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterUnusedText1": {
+      "raw_lines": [
+        "text \"We think something\"",
+        "line \"caused the cryptic\"",
+        "para \"patterns to appear\"",
+        "line \"in the RUINS.\"",
+        "para \"We've focused our\"",
+        "line \"studies on that.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "We think something"
+        },
+        {
+          "command": "line",
+          "value": "caused the cryptic"
+        },
+        {
+          "command": "para",
+          "value": "patterns to appear"
+        },
+        {
+          "command": "line",
+          "value": "in the RUINS."
+        },
+        {
+          "command": "para",
+          "value": "We've focused our"
+        },
+        {
+          "command": "line",
+          "value": "studies on that."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterUnusedText2": {
+      "raw_lines": [
+        "text \"According to my\"",
+        "line \"research\u2026\"",
+        "para \"Those mysterious\"",
+        "line \"patterns appeared\"",
+        "para \"when the #COM\"",
+        "line \"CENTER was built.\"",
+        "para \"It must mean that\"",
+        "line \"radio waves have\"",
+        "para \"some sort of a\"",
+        "line \"link\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "According to my"
+        },
+        {
+          "command": "line",
+          "value": "research\u2026"
+        },
+        {
+          "command": "para",
+          "value": "Those mysterious"
+        },
+        {
+          "command": "line",
+          "value": "patterns appeared"
+        },
+        {
+          "command": "para",
+          "value": "when the #COM"
+        },
+        {
+          "command": "line",
+          "value": "CENTER was built."
+        },
+        {
+          "command": "para",
+          "value": "It must mean that"
+        },
+        {
+          "command": "line",
+          "value": "radio waves have"
+        },
+        {
+          "command": "para",
+          "value": "some sort of a"
+        },
+        {
+          "command": "line",
+          "value": "link\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterScientist2Text_GotAllUnown": {
+      "raw_lines": [
+        "text \"Why did those\"",
+        "line \"ancient patterns\"",
+        "para \"appear on the wall\"",
+        "line \"now?\"",
+        "para \"The mystery\"",
+        "line \"deepens\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Why did those"
+        },
+        {
+          "command": "line",
+          "value": "ancient patterns"
+        },
+        {
+          "command": "para",
+          "value": "appear on the wall"
+        },
+        {
+          "command": "line",
+          "value": "now?"
+        },
+        {
+          "command": "para",
+          "value": "The mystery"
+        },
+        {
+          "command": "line",
+          "value": "deepens\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterComputerText": {
+      "raw_lines": [
+        "text \"RUINS OF ALPH\"",
+        "para \"Exploration\"",
+        "line \"Year 10\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "RUINS OF ALPH"
+        },
+        {
+          "command": "para",
+          "value": "Exploration"
+        },
+        {
+          "command": "line",
+          "value": "Year 10"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterComputerText_GotAllUnown": {
+      "raw_lines": [
+        "text \"Mystery #MON\"",
+        "line \"Name: UNOWN\"",
+        "para \"A total of {d:NUM_UNOWN}\"",
+        "line \"kinds found.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Mystery #MON"
+        },
+        {
+          "command": "line",
+          "value": "Name: UNOWN"
+        },
+        {
+          "command": "para",
+          "value": "A total of {d:NUM_UNOWN}"
+        },
+        {
+          "command": "line",
+          "value": "kinds found."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterPrinterText_DoesntWork": {
+      "raw_lines": [
+        "text \"This doesn't seem\"",
+        "line \"to work yet.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "This doesn't seem"
+        },
+        {
+          "command": "line",
+          "value": "to work yet."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterUnownPrinterText": {
+      "raw_lines": [
+        "text \"UNOWN may be\"",
+        "line \"printed out.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "UNOWN may be"
+        },
+        {
+          "command": "line",
+          "value": "printed out."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterProfSilktreePhotoText": {
+      "raw_lines": [
+        "text \"It's a photo of\"",
+        "line \"the RESEARCH\"",
+        "para \"CENTER'S founder,\"",
+        "line \"PROF.SILKTREE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's a photo of"
+        },
+        {
+          "command": "line",
+          "value": "the RESEARCH"
+        },
+        {
+          "command": "para",
+          "value": "CENTER'S founder,"
+        },
+        {
+          "command": "line",
+          "value": "PROF.SILKTREE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterAcademicBooksText": {
+      "raw_lines": [
+        "text \"There are many\"",
+        "line \"academic books.\"",
+        "para \"Ancient Ruins\u2026\"",
+        "line \"Mysteries of the\"",
+        "cont \"Ancients\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "There are many"
+        },
+        {
+          "command": "line",
+          "value": "academic books."
+        },
+        {
+          "command": "para",
+          "value": "Ancient Ruins\u2026"
+        },
+        {
+          "command": "line",
+          "value": "Mysteries of the"
+        },
+        {
+          "command": "cont",
+          "value": "Ancients\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "RuinsOfAlphResearchCenterApproachesComputerMovement": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step LEFT",
+        "turn_head UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "turn_head",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterApproachesPlayerMovement": {
+      "raw_lines": [
+        "step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "RuinsOfAlphResearchCenterLeavesPlayerMovement": {
+      "raw_lines": [
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [],
+  "dependencies": {
+    "RuinsOfAlphResearchCenter_MapScripts": {
+      "label_refs": [
+        "RuinsOfAlphResearchCenterNoopScene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterNoopScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterGetUnownDexScene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientistCallback": {
+      "label_refs": [
+        "RuinsOfAlphResearchCenterScientistCallback.ShowScientist"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientistCallback.ShowScientist": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterGetUnownDexScript": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterDexUpgradedText",
+        "RuinsOfAlphResearchCenterModifiedDexText",
+        "RuinsOfAlphResearchCenterScientist3Text"
+      ],
+      "movement_refs": [
+        "RuinsOfAlphResearchCenterApproachesComputerMovement",
+        "RuinsOfAlphResearchCenterApproachesPlayerMovement",
+        "RuinsOfAlphResearchCenterLeavesPlayerMovement"
+      ],
+      "scene_refs": [
+        "SCENE_RUINSOFALPHRESEARCHCENTER_NOOP"
+      ],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientist3Script": {
+      "label_refs": [
+        "RuinsOfAlphResearchCenterScientist3Script.PrinterAvailable"
+      ],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterScientist3Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientist3Script.PrinterAvailable": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterScientist3_PrinterAvailable"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientist1Script": {
+      "label_refs": [
+        "RuinsOfAlphResearchCenterScientist1Script.GotAllUnown",
+        "RuinsOfAlphResearchCenterScientist1Script.GotUnownDex",
+        "RuinsOfAlphResearchCenterScientist1Script.UnownAppeared"
+      ],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterScientist1Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientist1Script.UnownAppeared": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterScientist1Text_UnownAppeared"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientist1Script.GotUnownDex": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterScientist1Text_GotUnownDex"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientist1Script.GotAllUnown": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterScientist1Text_GotAllUnown"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientist2Script": {
+      "label_refs": [
+        "RuinsOfAlphResearchCenterScientist2Script.GotAllUnown",
+        "RuinsOfAlphResearchCenterScientist2Script.UnownAppeared"
+      ],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterScientist2Text"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientist2Script.UnownAppeared": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterScientist2Text_UnownAppeared"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterScientist2Script.GotAllUnown": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterScientist2Text_GotAllUnown"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterComputer": {
+      "label_refs": [
+        "RuinsOfAlphResearchCenterComputer.GotAllUnown",
+        "RuinsOfAlphResearchCenterComputer.SkipChecking"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterComputer.SkipChecking": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterComputerText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterComputer.GotAllUnown": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterComputerText_GotAllUnown"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterPrinter": {
+      "label_refs": [
+        "RuinsOfAlphResearchCenterPrinter.PrinterAvailable",
+        "RuinsOfAlphResearchCenterPrinter.SkipChecking"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterPrinter.SkipChecking": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterPrinterText_DoesntWork"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterPrinter.PrinterAvailable": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterUnownPrinterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterPhoto": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterProfSilktreePhotoText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenterBookshelf": {
+      "label_refs": [],
+      "text_refs": [
+        "RuinsOfAlphResearchCenterAcademicBooksText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "RuinsOfAlphResearchCenter_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 3,
+    "object_events": 3
+  }
+}

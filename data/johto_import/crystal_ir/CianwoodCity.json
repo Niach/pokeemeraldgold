@@ -1,0 +1,3068 @@
+{
+  "crystal_map": "CianwoodCity",
+  "map_id": "CIANWOOD_CITY",
+  "group": "CIANWOOD",
+  "group_index": 22,
+  "map_index": 3,
+  "tileset": "TILESET_JOHTO",
+  "environment": "TOWN",
+  "landmark": "LANDMARK_CIANWOOD_CITY",
+  "music": "MUSIC_ECRUTEAK_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_AUTO",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 15,
+  "height_blocks": 27,
+  "border_block": "35",
+  "blk_path": "maps/CianwoodCity.blk",
+  "source_asm": "maps/CianwoodCity.asm",
+  "connections": [
+    {
+      "direction": "east",
+      "map": "Route41",
+      "target_map_id": "ROUTE_41",
+      "offset": 0
+    }
+  ],
+  "events": {
+    "scene_scripts": [
+      {
+        "script": "CianwoodCityNoop1Scene",
+        "scene_id": "SCENE_CIANWOODCITY_NOOP"
+      },
+      {
+        "script": "CianwoodCityNoop2Scene",
+        "scene_id": "SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE"
+      }
+    ],
+    "callbacks": [
+      {
+        "type": "MAPCALLBACK_NEWMAP",
+        "script": "CianwoodCityFlypointAndSuicuneCallback"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 17,
+        "y": 41,
+        "dest_map": "MANIAS_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 8,
+        "y": 43,
+        "dest_map": "CIANWOOD_GYM",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 23,
+        "y": 43,
+        "dest_map": "CIANWOOD_POKECENTER_1F",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 15,
+        "y": 47,
+        "dest_map": "CIANWOOD_PHARMACY",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 9,
+        "y": 31,
+        "dest_map": "CIANWOOD_PHOTO_STUDIO",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 15,
+        "y": 37,
+        "dest_map": "CIANWOOD_LUGIA_SPEECH_HOUSE",
+        "dest_warp_id": 1
+      },
+      {
+        "x": 5,
+        "y": 17,
+        "dest_map": "POKE_SEERS_HOUSE",
+        "dest_warp_id": 1
+      }
+    ],
+    "coord_events": [
+      {
+        "x": 11,
+        "y": 16,
+        "scene": "SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE",
+        "script": "CianwoodCitySuicuneAndEusine"
+      }
+    ],
+    "bg_events": [
+      {
+        "x": 20,
+        "y": 34,
+        "kind": "BGEVENT_READ",
+        "script": "CianwoodCitySign"
+      },
+      {
+        "x": 7,
+        "y": 45,
+        "kind": "BGEVENT_READ",
+        "script": "CianwoodGymSign"
+      },
+      {
+        "x": 24,
+        "y": 43,
+        "kind": "BGEVENT_READ",
+        "script": "CianwoodPokecenterSign"
+      },
+      {
+        "x": 19,
+        "y": 47,
+        "kind": "BGEVENT_READ",
+        "script": "CianwoodPharmacySign"
+      },
+      {
+        "x": 8,
+        "y": 32,
+        "kind": "BGEVENT_READ",
+        "script": "CianwoodPhotoStudioSign"
+      },
+      {
+        "x": 8,
+        "y": 24,
+        "kind": "BGEVENT_READ",
+        "script": "CianwoodPokeSeerSign"
+      },
+      {
+        "x": 4,
+        "y": 19,
+        "kind": "BGEVENT_ITEM",
+        "script": "CianwoodCityHiddenRevive"
+      },
+      {
+        "x": 5,
+        "y": 29,
+        "kind": "BGEVENT_ITEM",
+        "script": "CianwoodCityHiddenMaxEther"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 21,
+        "y": 37,
+        "sprite": "SPRITE_STANDING_YOUNGSTER",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodCityYoungster",
+        "flag": -1
+      },
+      {
+        "x": 17,
+        "y": 33,
+        "sprite": "SPRITE_POKEFAN_M",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodCityPokefanM",
+        "flag": -1
+      },
+      {
+        "x": 14,
+        "y": 42,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_WALK_UP_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 2,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodCityLass",
+        "flag": -1
+      },
+      {
+        "x": 8,
+        "y": 16,
+        "sprite": "SPRITE_ROCK",
+        "movement": "SPRITEMOVEDATA_SMASHABLE_ROCK",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodCityRock",
+        "flag": -1
+      },
+      {
+        "x": 9,
+        "y": 17,
+        "sprite": "SPRITE_ROCK",
+        "movement": "SPRITEMOVEDATA_SMASHABLE_ROCK",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodCityRock",
+        "flag": -1
+      },
+      {
+        "x": 4,
+        "y": 25,
+        "sprite": "SPRITE_ROCK",
+        "movement": "SPRITEMOVEDATA_SMASHABLE_ROCK",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodCityRock",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 29,
+        "sprite": "SPRITE_ROCK",
+        "movement": "SPRITEMOVEDATA_SMASHABLE_ROCK",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodCityRock",
+        "flag": -1
+      },
+      {
+        "x": 10,
+        "y": 27,
+        "sprite": "SPRITE_ROCK",
+        "movement": "SPRITEMOVEDATA_SMASHABLE_ROCK",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodCityRock",
+        "flag": -1
+      },
+      {
+        "x": 4,
+        "y": 19,
+        "sprite": "SPRITE_ROCK",
+        "movement": "SPRITEMOVEDATA_SMASHABLE_ROCK",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodCityRock",
+        "flag": -1
+      },
+      {
+        "x": 10,
+        "y": 46,
+        "sprite": "SPRITE_POKEFAN_F",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodCityChucksWife",
+        "flag": -1
+      },
+      {
+        "x": 11,
+        "y": 21,
+        "sprite": "SPRITE_SUPER_NERD",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_CIANWOOD_CITY_EUSINE"
+      },
+      {
+        "x": 10,
+        "y": 14,
+        "sprite": "SPRITE_SUICUNE",
+        "movement": "SPRITEMOVEDATA_STILL",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "ObjectEvent",
+        "flag": "EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY"
+      }
+    ]
+  },
+  "object_consts": [
+    "CIANWOODCITY_STANDING_YOUNGSTER",
+    "CIANWOODCITY_POKEFAN_M",
+    "CIANWOODCITY_LASS",
+    "CIANWOODCITY_ROCK1",
+    "CIANWOODCITY_ROCK2",
+    "CIANWOODCITY_ROCK3",
+    "CIANWOODCITY_ROCK4",
+    "CIANWOODCITY_ROCK5",
+    "CIANWOODCITY_ROCK6",
+    "CIANWOODCITY_POKEFAN_F",
+    "CIANWOODCITY_EUSINE",
+    "CIANWOODCITY_SUICUNE"
+  ],
+  "scene_ids": [
+    "SCENE_CIANWOODCITY_NOOP",
+    "SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE",
+    "SCENE_ROUTE42_SUICUNE"
+  ],
+  "scripts": {
+    "CianwoodCity_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script CianwoodCityNoop1Scene, SCENE_CIANWOODCITY_NOOP",
+        "scene_script CianwoodCityNoop2Scene, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE",
+        "def_callbacks",
+        "callback MAPCALLBACK_NEWMAP, CianwoodCityFlypointAndSuicuneCallback"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "CianwoodCityNoop1Scene",
+            "SCENE_CIANWOODCITY_NOOP"
+          ],
+          "raw": "scene_script CianwoodCityNoop1Scene, SCENE_CIANWOODCITY_NOOP"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "CianwoodCityNoop2Scene",
+            "SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE"
+          ],
+          "raw": "scene_script CianwoodCityNoop2Scene, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        },
+        {
+          "command": "callback",
+          "args": [
+            "MAPCALLBACK_NEWMAP",
+            "CianwoodCityFlypointAndSuicuneCallback"
+          ],
+          "raw": "callback MAPCALLBACK_NEWMAP, CianwoodCityFlypointAndSuicuneCallback"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "CianwoodCityNoop1Scene",
+      "label_refs": [
+        "CianwoodCityNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityNoop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityNoop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityFlypointAndSuicuneCallback": {
+      "raw_lines": [
+        "setflag ENGINE_FLYPOINT_CIANWOOD",
+        "setevent EVENT_EUSINE_IN_BURNED_TOWER",
+        "checkevent EVENT_FOUGHT_EUSINE",
+        "iffalse .Done",
+        "disappear CIANWOODCITY_EUSINE"
+      ],
+      "commands": [
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_FLYPOINT_CIANWOOD"
+          ],
+          "raw": "setflag ENGINE_FLYPOINT_CIANWOOD"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_EUSINE_IN_BURNED_TOWER"
+          ],
+          "raw": "setevent EVENT_EUSINE_IN_BURNED_TOWER"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_FOUGHT_EUSINE"
+          ],
+          "raw": "checkevent EVENT_FOUGHT_EUSINE"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "CianwoodCityFlypointAndSuicuneCallback.Done"
+          ],
+          "raw": "iffalse .Done"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "CIANWOODCITY_EUSINE"
+          ],
+          "raw": "disappear CIANWOODCITY_EUSINE"
+        }
+      ],
+      "first_command": "setflag",
+      "fallthrough_label": "CianwoodCityFlypointAndSuicuneCallback.Done",
+      "label_refs": [
+        "CianwoodCityFlypointAndSuicuneCallback.Done"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityFlypointAndSuicuneCallback.Done": {
+      "raw_lines": [
+        "endcallback"
+      ],
+      "commands": [
+        {
+          "command": "endcallback",
+          "args": [],
+          "raw": "endcallback"
+        }
+      ],
+      "first_command": "endcallback",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCitySuicuneAndEusine": {
+      "raw_lines": [
+        "turnobject PLAYER, UP",
+        "showemote EMOTE_SHOCK, PLAYER, 15",
+        "pause 15",
+        "playsound SFX_WARP_FROM",
+        "applymovement CIANWOODCITY_SUICUNE, CianwoodCitySuicuneApproachMovement",
+        "turnobject PLAYER, DOWN",
+        "pause 15",
+        "playsound SFX_WARP_FROM",
+        "applymovement CIANWOODCITY_SUICUNE, CianwoodCitySuicuneDepartMovement",
+        "disappear CIANWOODCITY_SUICUNE",
+        "pause 10",
+        "setscene SCENE_CIANWOODCITY_NOOP",
+        "clearevent EVENT_SAW_SUICUNE_ON_ROUTE_42",
+        "setmapscene ROUTE_42, SCENE_ROUTE42_SUICUNE",
+        "checkevent EVENT_FOUGHT_EUSINE",
+        "iftrue .Done",
+        "setevent EVENT_FOUGHT_EUSINE",
+        "playmusic MUSIC_MYSTICALMAN_ENCOUNTER",
+        "appear CIANWOODCITY_EUSINE",
+        "applymovement CIANWOODCITY_EUSINE, CianwoodCityEusineApproachMovement",
+        "opentext",
+        "writetext EusineSuicuneText",
+        "waitbutton",
+        "closetext",
+        "winlosstext EusineBeatenText, 0",
+        "setlasttalked CIANWOODCITY_EUSINE",
+        "loadtrainer MYSTICALMAN, EUSINE",
+        "startbattle",
+        "dontrestartmapmusic",
+        "reloadmapafterbattle",
+        "playmusic MUSIC_MYSTICALMAN_ENCOUNTER",
+        "opentext",
+        "writetext EusineAfterText",
+        "waitbutton",
+        "closetext",
+        "applymovement CIANWOODCITY_EUSINE, CianwoodCityEusineDepartMovement",
+        "disappear CIANWOODCITY_EUSINE",
+        "pause 20",
+        "special FadeOutMusic",
+        "playmapmusic",
+        "pause 10"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "UP"
+          ],
+          "raw": "turnobject PLAYER, UP"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "PLAYER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, PLAYER, 15"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_WARP_FROM"
+          ],
+          "raw": "playsound SFX_WARP_FROM"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "CIANWOODCITY_SUICUNE",
+            "CianwoodCitySuicuneApproachMovement"
+          ],
+          "raw": "applymovement CIANWOODCITY_SUICUNE, CianwoodCitySuicuneApproachMovement"
+        },
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "DOWN"
+          ],
+          "raw": "turnobject PLAYER, DOWN"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "15"
+          ],
+          "raw": "pause 15"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_WARP_FROM"
+          ],
+          "raw": "playsound SFX_WARP_FROM"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "CIANWOODCITY_SUICUNE",
+            "CianwoodCitySuicuneDepartMovement"
+          ],
+          "raw": "applymovement CIANWOODCITY_SUICUNE, CianwoodCitySuicuneDepartMovement"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "CIANWOODCITY_SUICUNE"
+          ],
+          "raw": "disappear CIANWOODCITY_SUICUNE"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "10"
+          ],
+          "raw": "pause 10"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_CIANWOODCITY_NOOP"
+          ],
+          "raw": "setscene SCENE_CIANWOODCITY_NOOP"
+        },
+        {
+          "command": "clearevent",
+          "args": [
+            "EVENT_SAW_SUICUNE_ON_ROUTE_42"
+          ],
+          "raw": "clearevent EVENT_SAW_SUICUNE_ON_ROUTE_42"
+        },
+        {
+          "command": "setmapscene",
+          "args": [
+            "ROUTE_42",
+            "SCENE_ROUTE42_SUICUNE"
+          ],
+          "raw": "setmapscene ROUTE_42, SCENE_ROUTE42_SUICUNE"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_FOUGHT_EUSINE"
+          ],
+          "raw": "checkevent EVENT_FOUGHT_EUSINE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CianwoodCitySuicuneAndEusine.Done"
+          ],
+          "raw": "iftrue .Done"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_FOUGHT_EUSINE"
+          ],
+          "raw": "setevent EVENT_FOUGHT_EUSINE"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_MYSTICALMAN_ENCOUNTER"
+          ],
+          "raw": "playmusic MUSIC_MYSTICALMAN_ENCOUNTER"
+        },
+        {
+          "command": "appear",
+          "args": [
+            "CIANWOODCITY_EUSINE"
+          ],
+          "raw": "appear CIANWOODCITY_EUSINE"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "CIANWOODCITY_EUSINE",
+            "CianwoodCityEusineApproachMovement"
+          ],
+          "raw": "applymovement CIANWOODCITY_EUSINE, CianwoodCityEusineApproachMovement"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "EusineSuicuneText"
+          ],
+          "raw": "writetext EusineSuicuneText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "EusineBeatenText",
+            "0"
+          ],
+          "raw": "winlosstext EusineBeatenText, 0"
+        },
+        {
+          "command": "setlasttalked",
+          "args": [
+            "CIANWOODCITY_EUSINE"
+          ],
+          "raw": "setlasttalked CIANWOODCITY_EUSINE"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "MYSTICALMAN",
+            "EUSINE"
+          ],
+          "raw": "loadtrainer MYSTICALMAN, EUSINE"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "dontrestartmapmusic",
+          "args": [],
+          "raw": "dontrestartmapmusic"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "playmusic",
+          "args": [
+            "MUSIC_MYSTICALMAN_ENCOUNTER"
+          ],
+          "raw": "playmusic MUSIC_MYSTICALMAN_ENCOUNTER"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "EusineAfterText"
+          ],
+          "raw": "writetext EusineAfterText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "CIANWOODCITY_EUSINE",
+            "CianwoodCityEusineDepartMovement"
+          ],
+          "raw": "applymovement CIANWOODCITY_EUSINE, CianwoodCityEusineDepartMovement"
+        },
+        {
+          "command": "disappear",
+          "args": [
+            "CIANWOODCITY_EUSINE"
+          ],
+          "raw": "disappear CIANWOODCITY_EUSINE"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "20"
+          ],
+          "raw": "pause 20"
+        },
+        {
+          "command": "special",
+          "args": [
+            "FadeOutMusic"
+          ],
+          "raw": "special FadeOutMusic"
+        },
+        {
+          "command": "playmapmusic",
+          "args": [],
+          "raw": "playmapmusic"
+        },
+        {
+          "command": "pause",
+          "args": [
+            "10"
+          ],
+          "raw": "pause 10"
+        }
+      ],
+      "first_command": "turnobject",
+      "fallthrough_label": "CianwoodCitySuicuneAndEusine.Done",
+      "label_refs": [
+        "CianwoodCitySuicuneAndEusine.Done"
+      ],
+      "text_refs": [
+        "EusineAfterText",
+        "EusineSuicuneText"
+      ],
+      "movement_refs": [
+        "CianwoodCityEusineApproachMovement",
+        "CianwoodCityEusineDepartMovement",
+        "CianwoodCitySuicuneApproachMovement",
+        "CianwoodCitySuicuneDepartMovement"
+      ],
+      "scene_refs": [
+        "SCENE_CIANWOODCITY_NOOP",
+        "SCENE_ROUTE42_SUICUNE"
+      ],
+      "std_calls": []
+    },
+    "CianwoodCitySuicuneAndEusine.Done": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityChucksWife": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_GOT_HM02_FLY",
+        "iftrue .GotFly",
+        "writetext ChucksWifeEasierToFlyText",
+        "promptbutton",
+        "checkevent EVENT_BEAT_CHUCK",
+        "iftrue .BeatChuck",
+        "writetext ChucksWifeBeatChuckText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_HM02_FLY"
+          ],
+          "raw": "checkevent EVENT_GOT_HM02_FLY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CianwoodCityChucksWife.GotFly"
+          ],
+          "raw": "iftrue .GotFly"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ChucksWifeEasierToFlyText"
+          ],
+          "raw": "writetext ChucksWifeEasierToFlyText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_CHUCK"
+          ],
+          "raw": "checkevent EVENT_BEAT_CHUCK"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "CianwoodCityChucksWife.BeatChuck"
+          ],
+          "raw": "iftrue .BeatChuck"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ChucksWifeBeatChuckText"
+          ],
+          "raw": "writetext ChucksWifeBeatChuckText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "CianwoodCityChucksWife.BeatChuck",
+        "CianwoodCityChucksWife.GotFly"
+      ],
+      "text_refs": [
+        "ChucksWifeBeatChuckText",
+        "ChucksWifeEasierToFlyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityChucksWife.BeatChuck": {
+      "raw_lines": [
+        "writetext ChucksWifeGiveHMText",
+        "promptbutton",
+        "verbosegiveitem HM_FLY",
+        "iffalse .Done",
+        "setevent EVENT_GOT_HM02_FLY",
+        "writetext ChucksWifeFlySpeechText",
+        "promptbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "ChucksWifeGiveHMText"
+          ],
+          "raw": "writetext ChucksWifeGiveHMText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "HM_FLY"
+          ],
+          "raw": "verbosegiveitem HM_FLY"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "CianwoodCityChucksWife.Done"
+          ],
+          "raw": "iffalse .Done"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_HM02_FLY"
+          ],
+          "raw": "setevent EVENT_GOT_HM02_FLY"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "ChucksWifeFlySpeechText"
+          ],
+          "raw": "writetext ChucksWifeFlySpeechText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "CianwoodCityChucksWife.GotFly",
+      "label_refs": [
+        "CianwoodCityChucksWife.Done",
+        "CianwoodCityChucksWife.GotFly"
+      ],
+      "text_refs": [
+        "ChucksWifeFlySpeechText",
+        "ChucksWifeGiveHMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityChucksWife.GotFly": {
+      "raw_lines": [
+        "writetext ChucksWifeChubbyText",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "ChucksWifeChubbyText"
+          ],
+          "raw": "writetext ChucksWifeChubbyText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "CianwoodCityChucksWife.Done",
+      "label_refs": [
+        "CianwoodCityChucksWife.Done"
+      ],
+      "text_refs": [
+        "ChucksWifeChubbyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityChucksWife.Done": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityYoungster": {
+      "raw_lines": [
+        "jumptextfaceplayer CianwoodCityYoungsterText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "CianwoodCityYoungsterText"
+          ],
+          "raw": "jumptextfaceplayer CianwoodCityYoungsterText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodCityYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityPokefanM": {
+      "raw_lines": [
+        "jumptextfaceplayer CianwoodCityPokefanMText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "CianwoodCityPokefanMText"
+          ],
+          "raw": "jumptextfaceplayer CianwoodCityPokefanMText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodCityPokefanMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityLass": {
+      "raw_lines": [
+        "jumptextfaceplayer CianwoodCityLassText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "CianwoodCityLassText"
+          ],
+          "raw": "jumptextfaceplayer CianwoodCityLassText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodCityLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityUnusedScript": {
+      "raw_lines": [
+        "jumptextfaceplayer CianwoodCityUnusedText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "CianwoodCityUnusedText"
+          ],
+          "raw": "jumptextfaceplayer CianwoodCityUnusedText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodCityUnusedText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCitySign": {
+      "raw_lines": [
+        "jumptext CianwoodCitySignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "CianwoodCitySignText"
+          ],
+          "raw": "jumptext CianwoodCitySignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodCitySignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodGymSign": {
+      "raw_lines": [
+        "jumptext CianwoodGymSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "CianwoodGymSignText"
+          ],
+          "raw": "jumptext CianwoodGymSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodGymSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPharmacySign": {
+      "raw_lines": [
+        "jumptext CianwoodPharmacySignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "CianwoodPharmacySignText"
+          ],
+          "raw": "jumptext CianwoodPharmacySignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodPharmacySignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPhotoStudioSign": {
+      "raw_lines": [
+        "jumptext CianwoodPhotoStudioSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "CianwoodPhotoStudioSignText"
+          ],
+          "raw": "jumptext CianwoodPhotoStudioSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodPhotoStudioSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPokeSeerSign": {
+      "raw_lines": [
+        "jumptext CianwoodPokeSeerSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "CianwoodPokeSeerSignText"
+          ],
+          "raw": "jumptext CianwoodPokeSeerSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodPokeSeerSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPokecenterSign": {
+      "raw_lines": [
+        "jumpstd PokecenterSignScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PokecenterSignScript"
+          ],
+          "raw": "jumpstd PokecenterSignScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterSignScript"
+      ]
+    },
+    "CianwoodCityRock": {
+      "raw_lines": [
+        "jumpstd SmashRockScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "SmashRockScript"
+          ],
+          "raw": "jumpstd SmashRockScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "SmashRockScript"
+      ]
+    },
+    "CianwoodCityHiddenRevive": {
+      "raw_lines": [
+        "hiddenitem REVIVE, EVENT_CIANWOOD_CITY_HIDDEN_REVIVE"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "REVIVE",
+            "EVENT_CIANWOOD_CITY_HIDDEN_REVIVE"
+          ],
+          "raw": "hiddenitem REVIVE, EVENT_CIANWOOD_CITY_HIDDEN_REVIVE"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "CianwoodCityHiddenMaxEther",
+      "label_refs": [
+        "CianwoodCityHiddenMaxEther"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityHiddenMaxEther": {
+      "raw_lines": [
+        "hiddenitem MAX_ETHER, EVENT_CIANWOOD_CITY_HIDDEN_MAX_ETHER"
+      ],
+      "commands": [
+        {
+          "command": "hiddenitem",
+          "args": [
+            "MAX_ETHER",
+            "EVENT_CIANWOOD_CITY_HIDDEN_MAX_ETHER"
+          ],
+          "raw": "hiddenitem MAX_ETHER, EVENT_CIANWOOD_CITY_HIDDEN_MAX_ETHER"
+        }
+      ],
+      "first_command": "hiddenitem",
+      "fallthrough_label": "CianwoodCitySuicuneApproachMovement",
+      "label_refs": [
+        "CianwoodCitySuicuneApproachMovement"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCitySuicuneApproachMovement": {
+      "raw_lines": [
+        "set_sliding",
+        "fast_jump_step DOWN",
+        "fast_jump_step DOWN",
+        "fast_jump_step RIGHT",
+        "remove_sliding",
+        "step_end"
+      ],
+      "commands": [
+        {
+          "command": "set_sliding",
+          "args": [],
+          "raw": "set_sliding"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "DOWN"
+          ],
+          "raw": "fast_jump_step DOWN"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "DOWN"
+          ],
+          "raw": "fast_jump_step DOWN"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "RIGHT"
+          ],
+          "raw": "fast_jump_step RIGHT"
+        },
+        {
+          "command": "remove_sliding",
+          "args": [],
+          "raw": "remove_sliding"
+        },
+        {
+          "command": "step_end",
+          "args": [],
+          "raw": "step_end"
+        }
+      ],
+      "first_command": "set_sliding",
+      "fallthrough_label": "CianwoodCitySuicuneDepartMovement",
+      "label_refs": [
+        "CianwoodCitySuicuneDepartMovement"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCitySuicuneDepartMovement": {
+      "raw_lines": [
+        "set_sliding",
+        "fast_jump_step RIGHT",
+        "fast_jump_step UP",
+        "fast_jump_step RIGHT",
+        "fast_jump_step RIGHT",
+        "remove_sliding",
+        "step_end"
+      ],
+      "commands": [
+        {
+          "command": "set_sliding",
+          "args": [],
+          "raw": "set_sliding"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "RIGHT"
+          ],
+          "raw": "fast_jump_step RIGHT"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "UP"
+          ],
+          "raw": "fast_jump_step UP"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "RIGHT"
+          ],
+          "raw": "fast_jump_step RIGHT"
+        },
+        {
+          "command": "fast_jump_step",
+          "args": [
+            "RIGHT"
+          ],
+          "raw": "fast_jump_step RIGHT"
+        },
+        {
+          "command": "remove_sliding",
+          "args": [],
+          "raw": "remove_sliding"
+        },
+        {
+          "command": "step_end",
+          "args": [],
+          "raw": "step_end"
+        }
+      ],
+      "first_command": "set_sliding",
+      "fallthrough_label": "CianwoodCity_MapEvents",
+      "label_refs": [
+        "CianwoodCity_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCity_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 17, 41, MANIAS_HOUSE, 1",
+        "warp_event  8, 43, CIANWOOD_GYM, 1",
+        "warp_event 23, 43, CIANWOOD_POKECENTER_1F, 1",
+        "warp_event 15, 47, CIANWOOD_PHARMACY, 1",
+        "warp_event  9, 31, CIANWOOD_PHOTO_STUDIO, 1",
+        "warp_event 15, 37, CIANWOOD_LUGIA_SPEECH_HOUSE, 1",
+        "warp_event  5, 17, POKE_SEERS_HOUSE, 1",
+        "def_coord_events",
+        "coord_event 11, 16, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE, CianwoodCitySuicuneAndEusine",
+        "def_bg_events",
+        "bg_event 20, 34, BGEVENT_READ, CianwoodCitySign",
+        "bg_event  7, 45, BGEVENT_READ, CianwoodGymSign",
+        "bg_event 24, 43, BGEVENT_READ, CianwoodPokecenterSign",
+        "bg_event 19, 47, BGEVENT_READ, CianwoodPharmacySign",
+        "bg_event  8, 32, BGEVENT_READ, CianwoodPhotoStudioSign",
+        "bg_event  8, 24, BGEVENT_READ, CianwoodPokeSeerSign",
+        "bg_event  4, 19, BGEVENT_ITEM, CianwoodCityHiddenRevive",
+        "bg_event  5, 29, BGEVENT_ITEM, CianwoodCityHiddenMaxEther",
+        "def_object_events",
+        "object_event 21, 37, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityYoungster, -1",
+        "object_event 17, 33, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityPokefanM, -1",
+        "object_event 14, 42, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityLass, -1",
+        "object_event  8, 16, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1",
+        "object_event  9, 17, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1",
+        "object_event  4, 25, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1",
+        "object_event  5, 29, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1",
+        "object_event 10, 27, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1",
+        "object_event  4, 19, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1",
+        "object_event 10, 46, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1",
+        "object_event 11, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CIANWOOD_CITY_EUSINE",
+        "object_event 10, 14, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "17",
+            "41",
+            "MANIAS_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event 17, 41, MANIAS_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "8",
+            "43",
+            "CIANWOOD_GYM",
+            "1"
+          ],
+          "raw": "warp_event  8, 43, CIANWOOD_GYM, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "23",
+            "43",
+            "CIANWOOD_POKECENTER_1F",
+            "1"
+          ],
+          "raw": "warp_event 23, 43, CIANWOOD_POKECENTER_1F, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "15",
+            "47",
+            "CIANWOOD_PHARMACY",
+            "1"
+          ],
+          "raw": "warp_event 15, 47, CIANWOOD_PHARMACY, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "9",
+            "31",
+            "CIANWOOD_PHOTO_STUDIO",
+            "1"
+          ],
+          "raw": "warp_event  9, 31, CIANWOOD_PHOTO_STUDIO, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "15",
+            "37",
+            "CIANWOOD_LUGIA_SPEECH_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event 15, 37, CIANWOOD_LUGIA_SPEECH_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "17",
+            "POKE_SEERS_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event  5, 17, POKE_SEERS_HOUSE, 1"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "11",
+            "16",
+            "SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE",
+            "CianwoodCitySuicuneAndEusine"
+          ],
+          "raw": "coord_event 11, 16, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE, CianwoodCitySuicuneAndEusine"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "20",
+            "34",
+            "BGEVENT_READ",
+            "CianwoodCitySign"
+          ],
+          "raw": "bg_event 20, 34, BGEVENT_READ, CianwoodCitySign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "7",
+            "45",
+            "BGEVENT_READ",
+            "CianwoodGymSign"
+          ],
+          "raw": "bg_event  7, 45, BGEVENT_READ, CianwoodGymSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "24",
+            "43",
+            "BGEVENT_READ",
+            "CianwoodPokecenterSign"
+          ],
+          "raw": "bg_event 24, 43, BGEVENT_READ, CianwoodPokecenterSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "19",
+            "47",
+            "BGEVENT_READ",
+            "CianwoodPharmacySign"
+          ],
+          "raw": "bg_event 19, 47, BGEVENT_READ, CianwoodPharmacySign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "8",
+            "32",
+            "BGEVENT_READ",
+            "CianwoodPhotoStudioSign"
+          ],
+          "raw": "bg_event  8, 32, BGEVENT_READ, CianwoodPhotoStudioSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "8",
+            "24",
+            "BGEVENT_READ",
+            "CianwoodPokeSeerSign"
+          ],
+          "raw": "bg_event  8, 24, BGEVENT_READ, CianwoodPokeSeerSign"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "4",
+            "19",
+            "BGEVENT_ITEM",
+            "CianwoodCityHiddenRevive"
+          ],
+          "raw": "bg_event  4, 19, BGEVENT_ITEM, CianwoodCityHiddenRevive"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "5",
+            "29",
+            "BGEVENT_ITEM",
+            "CianwoodCityHiddenMaxEther"
+          ],
+          "raw": "bg_event  5, 29, BGEVENT_ITEM, CianwoodCityHiddenMaxEther"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "21",
+            "37",
+            "SPRITE_STANDING_YOUNGSTER",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodCityYoungster",
+            "-1"
+          ],
+          "raw": "object_event 21, 37, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityYoungster, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "17",
+            "33",
+            "SPRITE_POKEFAN_M",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodCityPokefanM",
+            "-1"
+          ],
+          "raw": "object_event 17, 33, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityPokefanM, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "14",
+            "42",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_WALK_UP_DOWN",
+            "0",
+            "2",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodCityLass",
+            "-1"
+          ],
+          "raw": "object_event 14, 42, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityLass, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "16",
+            "SPRITE_ROCK",
+            "SPRITEMOVEDATA_SMASHABLE_ROCK",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodCityRock",
+            "-1"
+          ],
+          "raw": "object_event  8, 16, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "9",
+            "17",
+            "SPRITE_ROCK",
+            "SPRITEMOVEDATA_SMASHABLE_ROCK",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodCityRock",
+            "-1"
+          ],
+          "raw": "object_event  9, 17, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "25",
+            "SPRITE_ROCK",
+            "SPRITEMOVEDATA_SMASHABLE_ROCK",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodCityRock",
+            "-1"
+          ],
+          "raw": "object_event  4, 25, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "29",
+            "SPRITE_ROCK",
+            "SPRITEMOVEDATA_SMASHABLE_ROCK",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodCityRock",
+            "-1"
+          ],
+          "raw": "object_event  5, 29, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "10",
+            "27",
+            "SPRITE_ROCK",
+            "SPRITEMOVEDATA_SMASHABLE_ROCK",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodCityRock",
+            "-1"
+          ],
+          "raw": "object_event 10, 27, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "19",
+            "SPRITE_ROCK",
+            "SPRITEMOVEDATA_SMASHABLE_ROCK",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodCityRock",
+            "-1"
+          ],
+          "raw": "object_event  4, 19, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "10",
+            "46",
+            "SPRITE_POKEFAN_F",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodCityChucksWife",
+            "-1"
+          ],
+          "raw": "object_event 10, 46, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "11",
+            "21",
+            "SPRITE_SUPER_NERD",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_CIANWOOD_CITY_EUSINE"
+          ],
+          "raw": "object_event 11, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CIANWOOD_CITY_EUSINE"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "10",
+            "14",
+            "SPRITE_SUICUNE",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "ObjectEvent",
+            "EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY"
+          ],
+          "raw": "object_event 10, 14, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "ChucksWifeEasierToFlyText": {
+      "raw_lines": [
+        "text \"You crossed the\"",
+        "line \"sea to get here?\"",
+        "para \"That must have\"",
+        "line \"been hard.\"",
+        "para \"It would be much\"",
+        "line \"easier if your\"",
+        "para \"#MON knew how\"",
+        "line \"to FLY\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You crossed the"
+        },
+        {
+          "command": "line",
+          "value": "sea to get here?"
+        },
+        {
+          "command": "para",
+          "value": "That must have"
+        },
+        {
+          "command": "line",
+          "value": "been hard."
+        },
+        {
+          "command": "para",
+          "value": "It would be much"
+        },
+        {
+          "command": "line",
+          "value": "easier if your"
+        },
+        {
+          "command": "para",
+          "value": "#MON knew how"
+        },
+        {
+          "command": "line",
+          "value": "to FLY\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ChucksWifeBeatChuckText": {
+      "raw_lines": [
+        "text \"But you can't use\"",
+        "line \"FLY without this\"",
+        "cont \"city's GYM BADGE.\"",
+        "para \"If you beat the\"",
+        "line \"GYM LEADER here,\"",
+        "cont \"come see me.\"",
+        "para \"I'll have a nice\"",
+        "line \"gift for you.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "But you can't use"
+        },
+        {
+          "command": "line",
+          "value": "FLY without this"
+        },
+        {
+          "command": "cont",
+          "value": "city's GYM BADGE."
+        },
+        {
+          "command": "para",
+          "value": "If you beat the"
+        },
+        {
+          "command": "line",
+          "value": "GYM LEADER here,"
+        },
+        {
+          "command": "cont",
+          "value": "come see me."
+        },
+        {
+          "command": "para",
+          "value": "I'll have a nice"
+        },
+        {
+          "command": "line",
+          "value": "gift for you."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ChucksWifeGiveHMText": {
+      "raw_lines": [
+        "text \"That's CIANWOOD's\"",
+        "line \"GYM BADGE!\"",
+        "para \"Then you should\"",
+        "line \"take this HM.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "That's CIANWOOD's"
+        },
+        {
+          "command": "line",
+          "value": "GYM BADGE!"
+        },
+        {
+          "command": "para",
+          "value": "Then you should"
+        },
+        {
+          "command": "line",
+          "value": "take this HM."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ChucksWifeFlySpeechText": {
+      "raw_lines": [
+        "text \"Teach FLY to your\"",
+        "line \"#MON.\"",
+        "para \"You will be able\"",
+        "line \"to FLY instantly\"",
+        "para \"to anywhere you \"",
+        "line \"have visited.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Teach FLY to your"
+        },
+        {
+          "command": "line",
+          "value": "#MON."
+        },
+        {
+          "command": "para",
+          "value": "You will be able"
+        },
+        {
+          "command": "line",
+          "value": "to FLY instantly"
+        },
+        {
+          "command": "para",
+          "value": "to anywhere you "
+        },
+        {
+          "command": "line",
+          "value": "have visited."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "ChucksWifeChubbyText": {
+      "raw_lines": [
+        "text \"My husband lost to\"",
+        "line \"you, so he needs\"",
+        "cont \"to train harder.\"",
+        "para \"That's good, since\"",
+        "line \"he was getting a\"",
+        "cont \"little chubby.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "My husband lost to"
+        },
+        {
+          "command": "line",
+          "value": "you, so he needs"
+        },
+        {
+          "command": "cont",
+          "value": "to train harder."
+        },
+        {
+          "command": "para",
+          "value": "That's good, since"
+        },
+        {
+          "command": "line",
+          "value": "he was getting a"
+        },
+        {
+          "command": "cont",
+          "value": "little chubby."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CianwoodCityYoungsterText": {
+      "raw_lines": [
+        "text \"If you use FLY,\"",
+        "line \"you can get back\"",
+        "para \"to OLIVINE in-\"",
+        "line \"stantly.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If you use FLY,"
+        },
+        {
+          "command": "line",
+          "value": "you can get back"
+        },
+        {
+          "command": "para",
+          "value": "to OLIVINE in-"
+        },
+        {
+          "command": "line",
+          "value": "stantly."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CianwoodCityPokefanMText": {
+      "raw_lines": [
+        "text \"Boulders to the\"",
+        "line \"north of town can\"",
+        "cont \"be crushed.\"",
+        "para \"They may be hiding\"",
+        "line \"something.\"",
+        "para \"Your #MON could\"",
+        "line \"use ROCK SMASH to\"",
+        "cont \"break them.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Boulders to the"
+        },
+        {
+          "command": "line",
+          "value": "north of town can"
+        },
+        {
+          "command": "cont",
+          "value": "be crushed."
+        },
+        {
+          "command": "para",
+          "value": "They may be hiding"
+        },
+        {
+          "command": "line",
+          "value": "something."
+        },
+        {
+          "command": "para",
+          "value": "Your #MON could"
+        },
+        {
+          "command": "line",
+          "value": "use ROCK SMASH to"
+        },
+        {
+          "command": "cont",
+          "value": "break them."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CianwoodCityLassText": {
+      "raw_lines": [
+        "text \"CHUCK, the GYM\"",
+        "line \"LEADER, spars with\"",
+        "para \"his fighting #-\"",
+        "line \"MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "CHUCK, the GYM"
+        },
+        {
+          "command": "line",
+          "value": "LEADER, spars with"
+        },
+        {
+          "command": "para",
+          "value": "his fighting #-"
+        },
+        {
+          "command": "line",
+          "value": "MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CianwoodCityUnusedText": {
+      "raw_lines": [
+        "text \"There are several\"",
+        "line \"islands between\"",
+        "cont \"here and OLIVINE.\"",
+        "para \"A mythical sea\"",
+        "line \"creature supposed-\"",
+        "cont \"ly lives there.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "There are several"
+        },
+        {
+          "command": "line",
+          "value": "islands between"
+        },
+        {
+          "command": "cont",
+          "value": "here and OLIVINE."
+        },
+        {
+          "command": "para",
+          "value": "A mythical sea"
+        },
+        {
+          "command": "line",
+          "value": "creature supposed-"
+        },
+        {
+          "command": "cont",
+          "value": "ly lives there."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EusineSuicuneText": {
+      "raw_lines": [
+        "text \"EUSINE: Yo,\"",
+        "line \"<PLAYER>.\"",
+        "para \"Wasn't that\"",
+        "line \"SUICUNE just now?\"",
+        "para \"I only caught a\"",
+        "line \"quick glimpse, but\"",
+        "para \"I thought I saw\"",
+        "line \"SUICUNE running on\"",
+        "cont \"the waves.\"",
+        "para \"SUICUNE is beau-\"",
+        "line \"tiful and grand.\"",
+        "para \"And it races\"",
+        "line \"through towns and\"",
+        "para \"roads at simply\"",
+        "line \"awesome speeds.\"",
+        "para \"It's wonderful\u2026\"",
+        "para \"I want to see\"",
+        "line \"SUICUNE up close\u2026\"",
+        "para \"I've decided.\"",
+        "para \"I'll battle you as\"",
+        "line \"a trainer to earn\"",
+        "cont \"SUICUNE's respect!\"",
+        "para \"Come on, <PLAYER>.\"",
+        "line \"Let's battle now!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "EUSINE: Yo,"
+        },
+        {
+          "command": "line",
+          "value": "<PLAYER>."
+        },
+        {
+          "command": "para",
+          "value": "Wasn't that"
+        },
+        {
+          "command": "line",
+          "value": "SUICUNE just now?"
+        },
+        {
+          "command": "para",
+          "value": "I only caught a"
+        },
+        {
+          "command": "line",
+          "value": "quick glimpse, but"
+        },
+        {
+          "command": "para",
+          "value": "I thought I saw"
+        },
+        {
+          "command": "line",
+          "value": "SUICUNE running on"
+        },
+        {
+          "command": "cont",
+          "value": "the waves."
+        },
+        {
+          "command": "para",
+          "value": "SUICUNE is beau-"
+        },
+        {
+          "command": "line",
+          "value": "tiful and grand."
+        },
+        {
+          "command": "para",
+          "value": "And it races"
+        },
+        {
+          "command": "line",
+          "value": "through towns and"
+        },
+        {
+          "command": "para",
+          "value": "roads at simply"
+        },
+        {
+          "command": "line",
+          "value": "awesome speeds."
+        },
+        {
+          "command": "para",
+          "value": "It's wonderful\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I want to see"
+        },
+        {
+          "command": "line",
+          "value": "SUICUNE up close\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I've decided."
+        },
+        {
+          "command": "para",
+          "value": "I'll battle you as"
+        },
+        {
+          "command": "line",
+          "value": "a trainer to earn"
+        },
+        {
+          "command": "cont",
+          "value": "SUICUNE's respect!"
+        },
+        {
+          "command": "para",
+          "value": "Come on, <PLAYER>."
+        },
+        {
+          "command": "line",
+          "value": "Let's battle now!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EusineBeatenText": {
+      "raw_lines": [
+        "text \"I hate to admit\"",
+        "line \"it, but you win.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I hate to admit"
+        },
+        {
+          "command": "line",
+          "value": "it, but you win."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "EusineAfterText": {
+      "raw_lines": [
+        "text \"You're amazing,\"",
+        "line \"<PLAYER>!\"",
+        "para \"No wonder #MON\"",
+        "line \"gravitate to you.\"",
+        "para \"I get it now.\"",
+        "para \"I'm going to keep\"",
+        "line \"searching for\"",
+        "cont \"SUICUNE.\"",
+        "para \"I'm sure we'll see\"",
+        "line \"each other again.\"",
+        "para \"See you around!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You're amazing,"
+        },
+        {
+          "command": "line",
+          "value": "<PLAYER>!"
+        },
+        {
+          "command": "para",
+          "value": "No wonder #MON"
+        },
+        {
+          "command": "line",
+          "value": "gravitate to you."
+        },
+        {
+          "command": "para",
+          "value": "I get it now."
+        },
+        {
+          "command": "para",
+          "value": "I'm going to keep"
+        },
+        {
+          "command": "line",
+          "value": "searching for"
+        },
+        {
+          "command": "cont",
+          "value": "SUICUNE."
+        },
+        {
+          "command": "para",
+          "value": "I'm sure we'll see"
+        },
+        {
+          "command": "line",
+          "value": "each other again."
+        },
+        {
+          "command": "para",
+          "value": "See you around!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CianwoodCitySignText": {
+      "raw_lines": [
+        "text \"CIANWOOD CITY\"",
+        "para \"A Port Surrounded\"",
+        "line \"by Rough Seas\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "CIANWOOD CITY"
+        },
+        {
+          "command": "para",
+          "value": "A Port Surrounded"
+        },
+        {
+          "command": "line",
+          "value": "by Rough Seas"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CianwoodGymSignText": {
+      "raw_lines": [
+        "text \"CIANWOOD CITY\"",
+        "line \"#MON GYM\"",
+        "para \"LEADER: CHUCK\"",
+        "para \"His Roaring Fists\"",
+        "line \"Do the Talking\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "CIANWOOD CITY"
+        },
+        {
+          "command": "line",
+          "value": "#MON GYM"
+        },
+        {
+          "command": "para",
+          "value": "LEADER: CHUCK"
+        },
+        {
+          "command": "para",
+          "value": "His Roaring Fists"
+        },
+        {
+          "command": "line",
+          "value": "Do the Talking"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CianwoodPharmacySignText": {
+      "raw_lines": [
+        "text \"500 Years of\"",
+        "line \"Tradition\"",
+        "para \"CIANWOOD CITY\"",
+        "line \"PHARMACY\"",
+        "para \"We Await Your\"",
+        "line \"Medicinal Queries\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "500 Years of"
+        },
+        {
+          "command": "line",
+          "value": "Tradition"
+        },
+        {
+          "command": "para",
+          "value": "CIANWOOD CITY"
+        },
+        {
+          "command": "line",
+          "value": "PHARMACY"
+        },
+        {
+          "command": "para",
+          "value": "We Await Your"
+        },
+        {
+          "command": "line",
+          "value": "Medicinal Queries"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CianwoodPhotoStudioSignText": {
+      "raw_lines": [
+        "text \"CIANWOOD CITY\"",
+        "line \"PHOTO STUDIO\"",
+        "para \"Take a Snapshot as\"",
+        "line \"a Keepsake!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "CIANWOOD CITY"
+        },
+        {
+          "command": "line",
+          "value": "PHOTO STUDIO"
+        },
+        {
+          "command": "para",
+          "value": "Take a Snapshot as"
+        },
+        {
+          "command": "line",
+          "value": "a Keepsake!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CianwoodPokeSeerSignText": {
+      "raw_lines": [
+        "text \"THE # SEER\"",
+        "line \"AHEAD\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "THE # SEER"
+        },
+        {
+          "command": "line",
+          "value": "AHEAD"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "CianwoodCityEusineApproachMovement": {
+      "raw_lines": [
+        "step UP",
+        "step UP",
+        "step UP",
+        "step UP",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "UP"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "CianwoodCityEusineDepartMovement": {
+      "raw_lines": [
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step DOWN",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "DOWN"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "PokecenterSignScript",
+    "SmashRockScript"
+  ],
+  "dependencies": {
+    "CianwoodCity_MapScripts": {
+      "label_refs": [
+        "CianwoodCityNoop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityNoop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityNoop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityFlypointAndSuicuneCallback": {
+      "label_refs": [
+        "CianwoodCityFlypointAndSuicuneCallback.Done"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityFlypointAndSuicuneCallback.Done": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCitySuicuneAndEusine": {
+      "label_refs": [
+        "CianwoodCitySuicuneAndEusine.Done"
+      ],
+      "text_refs": [
+        "EusineAfterText",
+        "EusineSuicuneText"
+      ],
+      "movement_refs": [
+        "CianwoodCityEusineApproachMovement",
+        "CianwoodCityEusineDepartMovement",
+        "CianwoodCitySuicuneApproachMovement",
+        "CianwoodCitySuicuneDepartMovement"
+      ],
+      "scene_refs": [
+        "SCENE_CIANWOODCITY_NOOP",
+        "SCENE_ROUTE42_SUICUNE"
+      ],
+      "std_calls": []
+    },
+    "CianwoodCitySuicuneAndEusine.Done": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityChucksWife": {
+      "label_refs": [
+        "CianwoodCityChucksWife.BeatChuck",
+        "CianwoodCityChucksWife.GotFly"
+      ],
+      "text_refs": [
+        "ChucksWifeBeatChuckText",
+        "ChucksWifeEasierToFlyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityChucksWife.BeatChuck": {
+      "label_refs": [
+        "CianwoodCityChucksWife.Done",
+        "CianwoodCityChucksWife.GotFly"
+      ],
+      "text_refs": [
+        "ChucksWifeFlySpeechText",
+        "ChucksWifeGiveHMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityChucksWife.GotFly": {
+      "label_refs": [
+        "CianwoodCityChucksWife.Done"
+      ],
+      "text_refs": [
+        "ChucksWifeChubbyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityChucksWife.Done": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityYoungster": {
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodCityYoungsterText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityPokefanM": {
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodCityPokefanMText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityLass": {
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodCityLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityUnusedScript": {
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodCityUnusedText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCitySign": {
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodCitySignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodGymSign": {
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodGymSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPharmacySign": {
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodPharmacySignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPhotoStudioSign": {
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodPhotoStudioSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPokeSeerSign": {
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodPokeSeerSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodPokecenterSign": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PokecenterSignScript"
+      ]
+    },
+    "CianwoodCityRock": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "SmashRockScript"
+      ]
+    },
+    "CianwoodCityHiddenRevive": {
+      "label_refs": [
+        "CianwoodCityHiddenMaxEther"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCityHiddenMaxEther": {
+      "label_refs": [
+        "CianwoodCitySuicuneApproachMovement"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCitySuicuneApproachMovement": {
+      "label_refs": [
+        "CianwoodCitySuicuneDepartMovement"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCitySuicuneDepartMovement": {
+      "label_refs": [
+        "CianwoodCity_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodCity_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 1,
+    "warp_events": 7,
+    "coord_events": 1,
+    "bg_events": 8,
+    "object_events": 12
+  }
+}

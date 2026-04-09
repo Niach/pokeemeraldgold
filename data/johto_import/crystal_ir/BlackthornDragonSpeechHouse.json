@@ -1,0 +1,475 @@
+{
+  "crystal_map": "BlackthornDragonSpeechHouse",
+  "map_id": "BLACKTHORN_DRAGON_SPEECH_HOUSE",
+  "group": "BLACKTHORN",
+  "group_index": 5,
+  "map_index": 3,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_BLACKTHORN_CITY",
+  "music": "MUSIC_AZALEA_TOWN",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/House1.blk",
+  "source_asm": "maps/BlackthornDragonSpeechHouse.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "BLACKTHORN_CITY",
+        "dest_warp_id": 2
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "BLACKTHORN_CITY",
+        "dest_warp_id": 2
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 3,
+        "sprite": "SPRITE_GRANNY",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornDragonSpeechHouseGrannyScript",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 5,
+        "sprite": "SPRITE_EKANS",
+        "movement": "SPRITEMOVEDATA_POKEMON",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "BlackthornDragonSpeechHouseDratiniScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "BLACKTHORNDRAGONSPEECHHOUSE_GRANNY",
+    "BLACKTHORNDRAGONSPEECHHOUSE_EKANS"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "BlackthornDragonSpeechHouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "BlackthornDragonSpeechHouseGrannyScript",
+      "label_refs": [
+        "BlackthornDragonSpeechHouseGrannyScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornDragonSpeechHouseGrannyScript": {
+      "raw_lines": [
+        "jumptextfaceplayer BlackthornDragonSpeechHouseGrannyText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "BlackthornDragonSpeechHouseGrannyText"
+          ],
+          "raw": "jumptextfaceplayer BlackthornDragonSpeechHouseGrannyText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornDragonSpeechHouseGrannyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornDragonSpeechHouseDratiniScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext BlackthornDragonSpeechHouseDratiniText",
+        "cry DRATINI",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BlackthornDragonSpeechHouseDratiniText"
+          ],
+          "raw": "writetext BlackthornDragonSpeechHouseDratiniText"
+        },
+        {
+          "command": "cry",
+          "args": [
+            "DRATINI"
+          ],
+          "raw": "cry DRATINI"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornDragonSpeechHouseDratiniText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornDragonSpeechHousePictureBookshelf": {
+      "raw_lines": [
+        "jumpstd PictureBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PictureBookshelfScript"
+          ],
+          "raw": "jumpstd PictureBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "BlackthornDragonSpeechHouseMagazineBookshelf": {
+      "raw_lines": [
+        "jumpstd MagazineBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "MagazineBookshelfScript"
+          ],
+          "raw": "jumpstd MagazineBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "BlackthornDragonSpeechHouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, BLACKTHORN_CITY, 2",
+        "warp_event  3,  7, BLACKTHORN_CITY, 2",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornDragonSpeechHouseGrannyScript, -1",
+        "object_event  5,  5, SPRITE_EKANS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornDragonSpeechHouseDratiniScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "BLACKTHORN_CITY",
+            "2"
+          ],
+          "raw": "warp_event  2,  7, BLACKTHORN_CITY, 2"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "BLACKTHORN_CITY",
+            "2"
+          ],
+          "raw": "warp_event  3,  7, BLACKTHORN_CITY, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "3",
+            "SPRITE_GRANNY",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornDragonSpeechHouseGrannyScript",
+            "-1"
+          ],
+          "raw": "object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornDragonSpeechHouseGrannyScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "5",
+            "SPRITE_EKANS",
+            "SPRITEMOVEDATA_POKEMON",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "BlackthornDragonSpeechHouseDratiniScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  5, SPRITE_EKANS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornDragonSpeechHouseDratiniScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "BlackthornDragonSpeechHouseGrannyText": {
+      "raw_lines": [
+        "text \"A clan of trainers\"",
+        "line \"who can freely\"",
+        "para \"command dragons\"",
+        "line \"live right here in\"",
+        "cont \"BLACKTHORN.\"",
+        "para \"As a result, there\"",
+        "line \"are many legends\"",
+        "para \"about dragons in\"",
+        "line \"this town.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A clan of trainers"
+        },
+        {
+          "command": "line",
+          "value": "who can freely"
+        },
+        {
+          "command": "para",
+          "value": "command dragons"
+        },
+        {
+          "command": "line",
+          "value": "live right here in"
+        },
+        {
+          "command": "cont",
+          "value": "BLACKTHORN."
+        },
+        {
+          "command": "para",
+          "value": "As a result, there"
+        },
+        {
+          "command": "line",
+          "value": "are many legends"
+        },
+        {
+          "command": "para",
+          "value": "about dragons in"
+        },
+        {
+          "command": "line",
+          "value": "this town."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BlackthornDragonSpeechHouseDratiniText": {
+      "raw_lines": [
+        "text \"DRATINI: Draa!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "DRATINI: Draa!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "MagazineBookshelfScript",
+    "PictureBookshelfScript"
+  ],
+  "dependencies": {
+    "BlackthornDragonSpeechHouse_MapScripts": {
+      "label_refs": [
+        "BlackthornDragonSpeechHouseGrannyScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornDragonSpeechHouseGrannyScript": {
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornDragonSpeechHouseGrannyText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornDragonSpeechHouseDratiniScript": {
+      "label_refs": [],
+      "text_refs": [
+        "BlackthornDragonSpeechHouseDratiniText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "BlackthornDragonSpeechHousePictureBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "BlackthornDragonSpeechHouseMagazineBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "MagazineBookshelfScript"
+      ]
+    },
+    "BlackthornDragonSpeechHouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 2
+  }
+}

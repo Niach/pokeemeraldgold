@@ -3,6 +3,7 @@
 import json
 import re
 from pathlib import Path
+from typing import Optional, Tuple
 
 try:
     from crystal_room_tilesets import build_generated_block_translations
@@ -23,28 +24,12 @@ AUTO_JOHTO_SCRIPTS_PATH = ROOT / "data" / "maps" / "johto_auto_scripts.inc"
 HEAL_LOCATIONS_PATH = ROOT / "src" / "data" / "heal_locations.json"
 
 SECTION_MARKERS = {
-    "warp_events": (
-        "def_warp_events",
-        "def_coord_events",
-        re.compile(r"warp_event\s+(\d+),\s+(\d+),\s*([A-Z0-9_]+),\s*(\d+)"),
-    ),
-    "coord_events": (
-        "def_coord_events",
-        "def_bg_events",
-        re.compile(r"coord_event\s+(\d+),\s+(\d+),\s*([A-Z0-9_]+),\s*([A-Za-z0-9_]+)"),
-    ),
-    "bg_events": (
-        "def_bg_events",
-        "def_object_events",
-        re.compile(r"bg_event\s+(\d+),\s+(\d+),\s*([A-Z0-9_]+),\s*([A-Za-z0-9_]+)"),
-    ),
-    "object_events": (
-        "def_object_events",
-        None,
-        re.compile(
-            r"object_event\s+(\d+),\s+(\d+),\s*([A-Z0-9_]+),\s*([A-Z0-9_]+),\s*(-?\d+),\s*(-?\d+),.*,\s*([A-Za-z0-9_]+),\s*(-?\d+)"
-        ),
-    ),
+    "scene_scripts": ("def_scene_scripts", "def_callbacks"),
+    "callbacks": ("def_callbacks", "def_warp_events"),
+    "warp_events": ("def_warp_events", "def_coord_events"),
+    "coord_events": ("def_coord_events", "def_bg_events"),
+    "bg_events": ("def_bg_events", "def_object_events"),
+    "object_events": ("def_object_events", None),
 }
 
 BLOCK_LABEL_RE = re.compile(r"^([A-Za-z0-9_]+)_Blocks:$")
@@ -54,6 +39,85 @@ ENDGROUP_RE = re.compile(r"^endgroup$")
 MAP_CONST_RE = re.compile(r"^map_const\s+([A-Z0-9_]+),\s*(\d+),\s*(\d+)$")
 LANDMARK_ENTRY_RE = re.compile(r"^landmark\s+(-?\d+),\s*(-?\d+),\s*([A-Za-z0-9_]+)$")
 LANDMARK_NAME_RE = re.compile(r'^([A-Za-z0-9_]+):\s+db\s+"([^"]*)@"$')
+LABEL_RE = re.compile(r"^([A-Za-z0-9_.]+)::?$|^(\.[A-Za-z0-9_]+)$")
+OBJECT_CONST_RE = re.compile(r"^const\s+([A-Z0-9_]+)$")
+STRING_COMMAND_RE = re.compile(r'^([A-Za-z0-9_]+)\s+"(.*)"$')
+
+TEXT_BLOCK_COMMANDS = {
+    "text",
+    "line",
+    "cont",
+    "para",
+    "page",
+    "prompt",
+    "done",
+    "text_ram",
+    "text_decimal",
+    "text_start",
+}
+
+MOVEMENT_COMMANDS = {
+    "step",
+    "slow_step",
+    "big_step",
+    "turn_head",
+    "fix_facing",
+    "remove_fixed_facing",
+    "step_sleep",
+    "jump_step",
+    "step_end",
+}
+
+TEXT_REF_COMMANDS = {
+    "writetext",
+    "farwritetext",
+    "jumptext",
+    "jumptextfaceplayer",
+}
+
+MOVEMENT_REF_COMMANDS = {
+    "applymovement",
+}
+
+STD_CALL_COMMANDS = {
+    "jumpstd",
+    "callstd",
+}
+
+BRANCH_COMMANDS = {
+    "jump",
+    "sjump",
+    "goto",
+    "call",
+    "scall",
+    "iftrue",
+    "iffalse",
+    "ifequal",
+    "ifnotequal",
+    "ifgreater",
+    "ifless",
+}
+
+SCRIPT_TERMINATOR_COMMANDS = {
+    "end",
+    "endall",
+    "endcallback",
+    "farjump",
+    "farjumptext",
+    "goto",
+    "jump",
+    "jumpopenedtext",
+    "jumpstd",
+    "jumptext",
+    "jumptextfaceplayer",
+    "return",
+    "sjump",
+}
+
+SCENE_REF_COMMANDS = {
+    "setscene",
+    "setmapscene",
+}
 
 
 def load_json(path: Path):
@@ -130,13 +194,28 @@ def parse_chunk_tokens(chunk) -> list[int]:
 
 
 def split_asm_args(line: str, prefix: str, expected_count: int):
+    return split_asm_args_range(line, prefix, expected_count, expected_count)
+
+
+def split_asm_args_range(line: str, prefix: str, min_count: int, max_count: int):
     if not line.startswith(prefix):
         raise ValueError(f"expected '{prefix}' line, found '{line}'")
     body = line[len(prefix):].strip()
     parts = [part.strip() for part in body.split(",")]
-    if len(parts) != expected_count:
-        raise ValueError(f"expected {expected_count} arguments for '{line}', found {len(parts)}")
+    if len(parts) < min_count or len(parts) > max_count:
+        if min_count == max_count:
+            expected_message = str(min_count)
+        else:
+            expected_message = f"{min_count}-{max_count}"
+        raise ValueError(f"expected {expected_message} arguments for '{line}', found {len(parts)}")
     return parts
+
+
+def parse_asm_value(token: str):
+    token = token.strip()
+    if re.fullmatch(r"-?\d+", token):
+        return int(token)
+    return token
 
 
 def resolve_crystal_path(path_str: str) -> Path:
@@ -404,29 +483,60 @@ def parse_landmark_data():
 JOHTO_LANDMARKS, CRYSTAL_LANDMARKS = parse_landmark_data()
 
 
-def parse_section(lines, start_marker, end_marker, pattern):
+def iter_section_lines(lines, start_marker, end_marker):
     collecting = False
-    events = []
     for raw_line in lines:
-        line = raw_line.strip()
+        line = strip_asm_comment(raw_line)
         if not collecting:
             if line == start_marker:
                 collecting = True
             continue
         if end_marker is not None and line == end_marker:
             break
-        if not line or line.startswith(";"):
+        if not line:
             continue
-        match = pattern.search(line)
-        if match:
-            events.append(match.groups())
-    return events
+        yield line
 
 
 def parse_crystal_events(source_path: Path):
     lines = source_path.read_text().splitlines()
+
+    scene_scripts = []
+    for line in iter_section_lines(lines, *SECTION_MARKERS["scene_scripts"]):
+        if line.startswith("scene_script "):
+            parts = split_asm_args_range(line, "scene_script ", 1, 2)
+            scene_scripts.append(
+                {
+                    "script": parts[0],
+                    "scene_id": parts[1] if len(parts) == 2 else None,
+                }
+            )
+        elif line.startswith("scene_const "):
+            parts = split_asm_args(line, "scene_const ", 1)
+            scene_scripts.append(
+                {
+                    "script": None,
+                    "scene_id": parts[0],
+                }
+            )
+
+    callbacks = []
+    for line in iter_section_lines(lines, *SECTION_MARKERS["callbacks"]):
+        if not line.startswith("callback "):
+            continue
+        callback_type, script = split_asm_args(line, "callback ", 2)
+        callbacks.append(
+            {
+                "type": callback_type,
+                "script": script,
+            }
+        )
+
     warp_events = []
-    for x, y, dest_map, warp_id in parse_section(lines, *SECTION_MARKERS["warp_events"]):
+    for line in iter_section_lines(lines, *SECTION_MARKERS["warp_events"]):
+        if not line.startswith("warp_event "):
+            continue
+        x, y, dest_map, warp_id = split_asm_args(line, "warp_event ", 4)
         warp_events.append(
             {
                 "x": int(x),
@@ -437,7 +547,10 @@ def parse_crystal_events(source_path: Path):
         )
 
     coord_events = []
-    for x, y, scene, script in parse_section(lines, *SECTION_MARKERS["coord_events"]):
+    for line in iter_section_lines(lines, *SECTION_MARKERS["coord_events"]):
+        if not line.startswith("coord_event "):
+            continue
+        x, y, scene, script = split_asm_args(line, "coord_event ", 4)
         coord_events.append(
             {
                 "x": int(x),
@@ -448,7 +561,10 @@ def parse_crystal_events(source_path: Path):
         )
 
     bg_events = []
-    for x, y, kind, script in parse_section(lines, *SECTION_MARKERS["bg_events"]):
+    for line in iter_section_lines(lines, *SECTION_MARKERS["bg_events"]):
+        if not line.startswith("bg_event "):
+            continue
+        x, y, kind, script = split_asm_args(line, "bg_event ", 4)
         bg_events.append(
             {
                 "x": int(x),
@@ -459,7 +575,24 @@ def parse_crystal_events(source_path: Path):
         )
 
     object_events = []
-    for x, y, sprite, movement, range_x, range_y, script, flag in parse_section(lines, *SECTION_MARKERS["object_events"]):
+    for line in iter_section_lines(lines, *SECTION_MARKERS["object_events"]):
+        if not line.startswith("object_event "):
+            continue
+        (
+            x,
+            y,
+            sprite,
+            movement,
+            range_x,
+            range_y,
+            time_start,
+            time_end,
+            palette,
+            object_type,
+            sight_range,
+            script,
+            flag,
+        ) = split_asm_args(line, "object_event ", 13)
         object_events.append(
             {
                 "x": int(x),
@@ -468,16 +601,266 @@ def parse_crystal_events(source_path: Path):
                 "movement": movement,
                 "movement_range_x": int(range_x),
                 "movement_range_y": int(range_y),
+                "time_range_start": parse_asm_value(time_start),
+                "time_range_end": parse_asm_value(time_end),
+                "palette": parse_asm_value(palette),
+                "object_type": object_type,
+                "trainer_sight_range": parse_asm_value(sight_range),
                 "script": script,
-                "flag": int(flag),
+                "flag": parse_asm_value(flag),
             }
         )
 
     return {
+        "scene_scripts": scene_scripts,
+        "callbacks": callbacks,
         "warp_events": warp_events,
         "coord_events": coord_events,
         "bg_events": bg_events,
         "object_events": object_events,
+    }
+
+
+def parse_object_constants(source_path: Path):
+    object_consts = []
+    collecting = False
+
+    for raw_line in source_path.read_text().splitlines():
+        line = strip_asm_comment(raw_line)
+        if not line:
+            continue
+        if line == "object_const_def":
+            collecting = True
+            continue
+        if not collecting:
+            continue
+
+        match = OBJECT_CONST_RE.match(line)
+        if match:
+            object_consts.append(match.group(1))
+            continue
+        break
+
+    return object_consts
+
+
+def scope_crystal_label(raw_label: str, current_global_label: Optional[str]) -> Tuple[str, Optional[str]]:
+    if raw_label.startswith("."):
+        if current_global_label is None:
+            return raw_label, current_global_label
+        return f"{current_global_label}{raw_label}", current_global_label
+    return raw_label, raw_label
+
+
+def parse_label_blocks(source_path: Path):
+    blocks = {}
+    scopes = {}
+    order = []
+    current_label = None
+    current_lines = []
+    current_scope = None
+    current_global_label = None
+
+    for raw_line in source_path.read_text().splitlines():
+        line = strip_asm_comment(raw_line)
+        if not line:
+            continue
+
+        label_match = LABEL_RE.match(line)
+        if label_match:
+            if current_label is not None:
+                blocks[current_label] = current_lines
+                scopes[current_label] = current_scope
+                order.append(current_label)
+            label_name = label_match.group(1) or label_match.group(2)
+            current_label, current_global_label = scope_crystal_label(label_name, current_global_label)
+            current_scope = current_global_label
+            current_lines = []
+            continue
+
+        if current_label is not None:
+            current_lines.append(line)
+
+    if current_label is not None:
+        blocks[current_label] = current_lines
+        scopes[current_label] = current_scope
+        order.append(current_label)
+
+    return blocks, scopes, order
+
+
+def classify_label_block(lines):
+    if not lines:
+        return "empty"
+
+    first_command = lines[0].split()[0]
+    if first_command in TEXT_BLOCK_COMMANDS:
+        return "text"
+    if first_command in MOVEMENT_COMMANDS:
+        return "movement"
+    return "script"
+
+
+def parse_text_block(lines):
+    commands = []
+    for line in lines:
+        command = line.split()[0]
+        value = line[len(command):].strip()
+        string_match = STRING_COMMAND_RE.match(line)
+        commands.append(
+            {
+                "command": command,
+                "value": string_match.group(2) if string_match else value,
+            }
+        )
+
+    return {
+        "raw_lines": lines,
+        "commands": commands,
+    }
+
+
+def parse_movement_block(lines):
+    steps = []
+    for line in lines:
+        command = line.split()[0]
+        args = line[len(command):].strip().split()
+        steps.append(
+            {
+                "command": command,
+                "args": args,
+            }
+        )
+
+    return {
+        "raw_lines": lines,
+        "steps": steps,
+    }
+
+
+def normalize_script_arg(arg: str, current_scope: Optional[str]) -> str:
+    if current_scope is not None and arg.startswith("."):
+        return f"{current_scope}{arg}"
+    return arg
+
+
+def parse_script_block(lines, current_scope=None):
+    commands = []
+    for line in lines:
+        command = line.split()[0]
+        arg_text = line[len(command):].strip()
+        args = [normalize_script_arg(part.strip(), current_scope) for part in arg_text.split(",")] if arg_text else []
+        commands.append(
+            {
+                "command": command,
+                "args": args,
+                "raw": line,
+            }
+        )
+
+    return {
+        "raw_lines": lines,
+        "commands": commands,
+        "first_command": commands[0]["command"] if commands else None,
+    }
+
+
+def extract_script_dependencies(script_block, known_labels):
+    label_refs = set()
+    text_refs = set()
+    movement_refs = set()
+    scene_refs = set()
+    std_calls = set()
+
+    for command in script_block["commands"]:
+        name = command["command"]
+        args = command["args"]
+
+        if name in TEXT_REF_COMMANDS and args and args[0] in known_labels:
+            text_refs.add(args[0])
+
+        if name == "trainer" and len(args) >= 5:
+            if args[3] in known_labels:
+                text_refs.add(args[3])
+            if args[4] in known_labels:
+                text_refs.add(args[4])
+            if len(args) >= 7 and args[6] in known_labels:
+                label_refs.add(args[6])
+
+        if name in MOVEMENT_REF_COMMANDS and len(args) > 1 and args[1] in known_labels:
+            movement_refs.add(args[1])
+
+        if name in STD_CALL_COMMANDS and args:
+            std_calls.add(args[0])
+
+        if name in BRANCH_COMMANDS and args and args[-1] in known_labels:
+            label_refs.add(args[-1])
+
+        if name == "setscene" and args:
+            scene_refs.add(args[0])
+        elif name == "setmapscene" and len(args) > 1:
+            scene_refs.add(args[1])
+
+    return {
+        "label_refs": sorted(label_refs),
+        "text_refs": sorted(text_refs),
+        "movement_refs": sorted(movement_refs),
+        "scene_refs": sorted(scene_refs),
+        "std_calls": sorted(std_calls),
+    }
+
+
+def parse_crystal_script_assets(source_path: Path, events: dict):
+    blocks, scopes, order = parse_label_blocks(source_path)
+    scripts = {}
+    texts = {}
+    movements = {}
+    dependencies = {}
+    std_calls = set()
+    known_labels = set(blocks)
+
+    for label, lines in blocks.items():
+        block_kind = classify_label_block(lines)
+        if block_kind == "text":
+            texts[label] = parse_text_block(lines)
+        elif block_kind == "movement":
+            movements[label] = parse_movement_block(lines)
+        elif block_kind == "script":
+            scripts[label] = parse_script_block(lines, scopes.get(label))
+
+    script_labels_in_order = [label for label in order if label in scripts]
+    for index, label in enumerate(script_labels_in_order[:-1]):
+        script_block = scripts[label]
+        commands = script_block["commands"]
+        if commands and commands[-1]["command"] not in SCRIPT_TERMINATOR_COMMANDS:
+            script_block["fallthrough_label"] = script_labels_in_order[index + 1]
+
+    for label, script_block in scripts.items():
+        refs = extract_script_dependencies(script_block, known_labels)
+        if script_block.get("fallthrough_label") is not None:
+            refs["label_refs"] = sorted(set(refs["label_refs"]) | {script_block["fallthrough_label"]})
+        script_block.update(refs)
+        dependencies[label] = refs
+        std_calls.update(refs["std_calls"])
+
+    scene_ids = []
+    for scene in events["scene_scripts"]:
+        if scene["scene_id"] is not None:
+            scene_ids.append(scene["scene_id"])
+    for callback in events["callbacks"]:
+        if callback["script"] in scripts:
+            scene_ids.extend(scripts[callback["script"]]["scene_refs"])
+    for script in scripts.values():
+        scene_ids.extend(script["scene_refs"])
+
+    return {
+        "object_consts": parse_object_constants(source_path),
+        "scene_ids": sorted(set(scene_ids)),
+        "scripts": scripts,
+        "texts": texts,
+        "movements": movements,
+        "std_calls": sorted(std_calls),
+        "dependencies": dependencies,
     }
 
 
@@ -534,6 +917,22 @@ def load_crystal_tilesets():
     return tilesets
 
 
+SUBSTITUTE_TAGS = {
+    "pokegear": ("#GEAR", "Pokegear", "PHONE_", "addcellnum", "checkcellnum", "specialphonecall"),
+    "radio": ("Radio", "radio", "MUSIC_POKEMON_TALK", "Radio1Script", "PokemonTalk"),
+    "decorations": ("describedecoration", "ToggleDecorationsVisibility", "ToggleMaptileDecorations", "DECODESC_"),
+    "day_time": ("VAR_WEEKDAY", "checktime", "SetDayOfWeek", "DST", "InitialSetDSTFlag", "InitialClearDSTFlag"),
+}
+
+
+def detect_substitute_tags(source_text: str):
+    tags = []
+    for tag, needles in SUBSTITUTE_TAGS.items():
+        if any(needle in source_text for needle in needles):
+            tags.append(tag)
+    return tags
+
+
 def extract_crystal_ir(crystal_map: str):
     metadata = CRYSTAL_MAP_DB.get(crystal_map)
     if metadata is None:
@@ -542,8 +941,11 @@ def extract_crystal_ir(crystal_map: str):
         raise ValueError(f"{crystal_map}: no block source found in blocks.asm")
 
     source_asm = resolve_crystal_path(metadata["source_asm"])
+    source_text = source_asm.read_text()
     ir = dict(metadata)
     ir["events"] = parse_crystal_events(source_asm)
+    ir.update(parse_crystal_script_assets(source_asm, ir["events"]))
+    ir["substitute_tags"] = detect_substitute_tags(source_text)
     ir["event_counts"] = {
         key: len(values)
         for key, values in ir["events"].items()
@@ -553,6 +955,10 @@ def extract_crystal_ir(crystal_map: str):
 
 def block_bytes_for_ir(ir) -> bytes:
     return resolve_crystal_path(ir["blk_path"]).read_bytes()
+
+
+def crystal_connection_offset_to_emerald(offset: int) -> int:
+    return offset * 2
 
 
 def target_name_from_entry(entry):
@@ -572,6 +978,16 @@ def target_name_constant_suffix(target_name: str) -> str:
 
 
 def region_map_section_from_landmark(landmark: str) -> str:
+    landmark_overrides = {
+        "LANDMARK_BURNED_TOWER": "MAPSEC_ECRUTEAK_CITY",
+        "LANDMARK_LIGHTHOUSE": "MAPSEC_OLIVINE_CITY",
+        "LANDMARK_MT_MORTAR": "MAPSEC_ROUTE_42",
+        "LANDMARK_TIN_TOWER": "MAPSEC_ECRUTEAK_CITY",
+        "LANDMARK_WHIRL_ISLANDS": "MAPSEC_ROUTE_41",
+    }
+    overridden = landmark_overrides.get(landmark)
+    if overridden is not None:
+        return overridden
     if landmark == "LANDMARK_SPECIAL":
         return "MAPSEC_DYNAMIC"
     if landmark.startswith("LANDMARK_"):

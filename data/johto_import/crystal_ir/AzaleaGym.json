@@ -1,0 +1,2544 @@
+{
+  "crystal_map": "AzaleaGym",
+  "map_id": "AZALEA_GYM",
+  "group": "AZALEA",
+  "group_index": 8,
+  "map_index": 5,
+  "tileset": "TILESET_ELITE_FOUR_ROOM",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_AZALEA_TOWN",
+  "music": "MUSIC_GYM",
+  "phone_service_flag": "TRUE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 8,
+  "border_block": "00",
+  "blk_path": "maps/AzaleaGym.blk",
+  "source_asm": "maps/AzaleaGym.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 4,
+        "y": 15,
+        "dest_map": "AZALEA_TOWN",
+        "dest_warp_id": 5
+      },
+      {
+        "x": 5,
+        "y": 15,
+        "dest_map": "AZALEA_TOWN",
+        "dest_warp_id": 5
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 3,
+        "y": 13,
+        "kind": "BGEVENT_READ",
+        "script": "AzaleaGymStatue"
+      },
+      {
+        "x": 6,
+        "y": 13,
+        "kind": "BGEVENT_READ",
+        "script": "AzaleaGymStatue"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 5,
+        "y": 7,
+        "sprite": "SPRITE_BUGSY",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "AzaleaGymBugsyScript",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 3,
+        "sprite": "SPRITE_BUG_CATCHER",
+        "movement": "SPRITEMOVEDATA_SPINRANDOM_FAST",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 2,
+        "script": "TrainerBugCatcherBenny",
+        "flag": -1
+      },
+      {
+        "x": 8,
+        "y": 8,
+        "sprite": "SPRITE_BUG_CATCHER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerBugCatcherAl",
+        "flag": -1
+      },
+      {
+        "x": 0,
+        "y": 2,
+        "sprite": "SPRITE_BUG_CATCHER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
+        "script": "TrainerBugCatcherJosh",
+        "flag": -1
+      },
+      {
+        "x": 4,
+        "y": 10,
+        "sprite": "SPRITE_TWIN",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerTwinsAmyandmay1",
+        "flag": -1
+      },
+      {
+        "x": 5,
+        "y": 10,
+        "sprite": "SPRITE_TWIN",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 1,
+        "script": "TrainerTwinsAmyandmay2",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 13,
+        "sprite": "SPRITE_GYM_GUIDE",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "AzaleaGymGuideScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "AZALEAGYM_BUGSY",
+    "AZALEAGYM_BUG_CATCHER1",
+    "AZALEAGYM_BUG_CATCHER2",
+    "AZALEAGYM_BUG_CATCHER3",
+    "AZALEAGYM_TWIN1",
+    "AZALEAGYM_TWIN2",
+    "AZALEAGYM_GYM_GUIDE"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "AzaleaGym_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "AzaleaGymBugsyScript",
+      "label_refs": [
+        "AzaleaGymBugsyScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymBugsyScript": {
+      "raw_lines": [
+        "faceplayer",
+        "opentext",
+        "checkevent EVENT_BEAT_BUGSY",
+        "iftrue .FightDone",
+        "writetext BugsyText_INeverLose",
+        "waitbutton",
+        "closetext",
+        "winlosstext BugsyText_ResearchIncomplete, 0",
+        "loadtrainer BUGSY, BUGSY1",
+        "startbattle",
+        "reloadmapafterbattle",
+        "setevent EVENT_BEAT_BUGSY",
+        "opentext",
+        "writetext Text_ReceivedHiveBadge",
+        "playsound SFX_GET_BADGE",
+        "waitsfx",
+        "setflag ENGINE_HIVEBADGE",
+        "readvar VAR_BADGES",
+        "scall AzaleaGymActivateRockets"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_BUGSY"
+          ],
+          "raw": "checkevent EVENT_BEAT_BUGSY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "AzaleaGymBugsyScript.FightDone"
+          ],
+          "raw": "iftrue .FightDone"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BugsyText_INeverLose"
+          ],
+          "raw": "writetext BugsyText_INeverLose"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "BugsyText_ResearchIncomplete",
+            "0"
+          ],
+          "raw": "winlosstext BugsyText_ResearchIncomplete, 0"
+        },
+        {
+          "command": "loadtrainer",
+          "args": [
+            "BUGSY",
+            "BUGSY1"
+          ],
+          "raw": "loadtrainer BUGSY, BUGSY1"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_BUGSY"
+          ],
+          "raw": "setevent EVENT_BEAT_BUGSY"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Text_ReceivedHiveBadge"
+          ],
+          "raw": "writetext Text_ReceivedHiveBadge"
+        },
+        {
+          "command": "playsound",
+          "args": [
+            "SFX_GET_BADGE"
+          ],
+          "raw": "playsound SFX_GET_BADGE"
+        },
+        {
+          "command": "waitsfx",
+          "args": [],
+          "raw": "waitsfx"
+        },
+        {
+          "command": "setflag",
+          "args": [
+            "ENGINE_HIVEBADGE"
+          ],
+          "raw": "setflag ENGINE_HIVEBADGE"
+        },
+        {
+          "command": "readvar",
+          "args": [
+            "VAR_BADGES"
+          ],
+          "raw": "readvar VAR_BADGES"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "AzaleaGymActivateRockets"
+          ],
+          "raw": "scall AzaleaGymActivateRockets"
+        }
+      ],
+      "first_command": "faceplayer",
+      "fallthrough_label": "AzaleaGymBugsyScript.FightDone",
+      "label_refs": [
+        "AzaleaGymActivateRockets",
+        "AzaleaGymBugsyScript.FightDone"
+      ],
+      "text_refs": [
+        "BugsyText_INeverLose",
+        "Text_ReceivedHiveBadge"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymBugsyScript.FightDone": {
+      "raw_lines": [
+        "checkevent EVENT_GOT_TM49_FURY_CUTTER",
+        "iftrue .GotFuryCutter",
+        "setevent EVENT_BEAT_TWINS_AMY_AND_MAY",
+        "setevent EVENT_BEAT_BUG_CATCHER_BENNY",
+        "setevent EVENT_BEAT_BUG_CATCHER_AL",
+        "setevent EVENT_BEAT_BUG_CATCHER_JOSH",
+        "writetext BugsyText_HiveBadgeSpeech",
+        "promptbutton",
+        "verbosegiveitem TM_FURY_CUTTER",
+        "iffalse .NoRoomForFuryCutter",
+        "setevent EVENT_GOT_TM49_FURY_CUTTER",
+        "writetext BugsyText_FuryCutterSpeech",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_GOT_TM49_FURY_CUTTER"
+          ],
+          "raw": "checkevent EVENT_GOT_TM49_FURY_CUTTER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "AzaleaGymBugsyScript.GotFuryCutter"
+          ],
+          "raw": "iftrue .GotFuryCutter"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_TWINS_AMY_AND_MAY"
+          ],
+          "raw": "setevent EVENT_BEAT_TWINS_AMY_AND_MAY"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_BUG_CATCHER_BENNY"
+          ],
+          "raw": "setevent EVENT_BEAT_BUG_CATCHER_BENNY"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_BUG_CATCHER_AL"
+          ],
+          "raw": "setevent EVENT_BEAT_BUG_CATCHER_AL"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_BEAT_BUG_CATCHER_JOSH"
+          ],
+          "raw": "setevent EVENT_BEAT_BUG_CATCHER_JOSH"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BugsyText_HiveBadgeSpeech"
+          ],
+          "raw": "writetext BugsyText_HiveBadgeSpeech"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "TM_FURY_CUTTER"
+          ],
+          "raw": "verbosegiveitem TM_FURY_CUTTER"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "AzaleaGymBugsyScript.NoRoomForFuryCutter"
+          ],
+          "raw": "iffalse .NoRoomForFuryCutter"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_GOT_TM49_FURY_CUTTER"
+          ],
+          "raw": "setevent EVENT_GOT_TM49_FURY_CUTTER"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BugsyText_FuryCutterSpeech"
+          ],
+          "raw": "writetext BugsyText_FuryCutterSpeech"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "checkevent",
+      "label_refs": [
+        "AzaleaGymBugsyScript.GotFuryCutter",
+        "AzaleaGymBugsyScript.NoRoomForFuryCutter"
+      ],
+      "text_refs": [
+        "BugsyText_FuryCutterSpeech",
+        "BugsyText_HiveBadgeSpeech"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymBugsyScript.GotFuryCutter": {
+      "raw_lines": [
+        "writetext BugsyText_BugMonsAreDeep",
+        "waitbutton"
+      ],
+      "commands": [
+        {
+          "command": "writetext",
+          "args": [
+            "BugsyText_BugMonsAreDeep"
+          ],
+          "raw": "writetext BugsyText_BugMonsAreDeep"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        }
+      ],
+      "first_command": "writetext",
+      "fallthrough_label": "AzaleaGymBugsyScript.NoRoomForFuryCutter",
+      "label_refs": [
+        "AzaleaGymBugsyScript.NoRoomForFuryCutter"
+      ],
+      "text_refs": [
+        "BugsyText_BugMonsAreDeep"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymBugsyScript.NoRoomForFuryCutter": {
+      "raw_lines": [
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "closetext",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymActivateRockets": {
+      "raw_lines": [
+        "ifequal 7, .RadioTowerRockets",
+        "ifequal 6, .GoldenrodRockets",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "ifequal",
+          "args": [
+            "7",
+            "AzaleaGymActivateRockets.RadioTowerRockets"
+          ],
+          "raw": "ifequal 7, .RadioTowerRockets"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "6",
+            "AzaleaGymActivateRockets.GoldenrodRockets"
+          ],
+          "raw": "ifequal 6, .GoldenrodRockets"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "ifequal",
+      "label_refs": [
+        "AzaleaGymActivateRockets.GoldenrodRockets",
+        "AzaleaGymActivateRockets.RadioTowerRockets"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymActivateRockets.GoldenrodRockets": {
+      "raw_lines": [
+        "jumpstd GoldenrodRocketsScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "GoldenrodRocketsScript"
+          ],
+          "raw": "jumpstd GoldenrodRocketsScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GoldenrodRocketsScript"
+      ]
+    },
+    "AzaleaGymActivateRockets.RadioTowerRockets": {
+      "raw_lines": [
+        "jumpstd RadioTowerRocketsScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RadioTowerRocketsScript"
+          ],
+          "raw": "jumpstd RadioTowerRocketsScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RadioTowerRocketsScript"
+      ]
+    },
+    "TrainerTwinsAmyandmay1": {
+      "raw_lines": [
+        "trainer TWINS, AMYANDMAY1, EVENT_BEAT_TWINS_AMY_AND_MAY, TwinsAmyandmay1SeenText, TwinsAmyandmay1BeatenText, 0, .AfterScript"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "TWINS",
+            "AMYANDMAY1",
+            "EVENT_BEAT_TWINS_AMY_AND_MAY",
+            "TwinsAmyandmay1SeenText",
+            "TwinsAmyandmay1BeatenText",
+            "0",
+            "TrainerTwinsAmyandmay1.AfterScript"
+          ],
+          "raw": "trainer TWINS, AMYANDMAY1, EVENT_BEAT_TWINS_AMY_AND_MAY, TwinsAmyandmay1SeenText, TwinsAmyandmay1BeatenText, 0, .AfterScript"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerTwinsAmyandmay1.AfterScript",
+      "label_refs": [
+        "TrainerTwinsAmyandmay1.AfterScript"
+      ],
+      "text_refs": [
+        "TwinsAmyandmay1BeatenText",
+        "TwinsAmyandmay1SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsAmyandmay1.AfterScript": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext TwinsAmyandmay1AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "TwinsAmyandmay1AfterBattleText"
+          ],
+          "raw": "writetext TwinsAmyandmay1AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "TwinsAmyandmay1AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsAmyandmay2": {
+      "raw_lines": [
+        "trainer TWINS, AMYANDMAY2, EVENT_BEAT_TWINS_AMY_AND_MAY, TwinsAmyandmay2SeenText, TwinsAmyandmay2BeatenText, 0, .AfterScript"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "TWINS",
+            "AMYANDMAY2",
+            "EVENT_BEAT_TWINS_AMY_AND_MAY",
+            "TwinsAmyandmay2SeenText",
+            "TwinsAmyandmay2BeatenText",
+            "0",
+            "TrainerTwinsAmyandmay2.AfterScript"
+          ],
+          "raw": "trainer TWINS, AMYANDMAY2, EVENT_BEAT_TWINS_AMY_AND_MAY, TwinsAmyandmay2SeenText, TwinsAmyandmay2BeatenText, 0, .AfterScript"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerTwinsAmyandmay2.AfterScript",
+      "label_refs": [
+        "TrainerTwinsAmyandmay2.AfterScript"
+      ],
+      "text_refs": [
+        "TwinsAmyandmay2BeatenText",
+        "TwinsAmyandmay2SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsAmyandmay2.AfterScript": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext TwinsAmyandmay2AfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "TwinsAmyandmay2AfterBattleText"
+          ],
+          "raw": "writetext TwinsAmyandmay2AfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "TwinsAmyandmay2AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherBenny": {
+      "raw_lines": [
+        "trainer BUG_CATCHER, BUG_CATCHER_BENNY, EVENT_BEAT_BUG_CATCHER_BENNY, BugCatcherBennySeenText, BugCatcherBennyBeatenText, 0, .AfterScript"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "BUG_CATCHER",
+            "BUG_CATCHER_BENNY",
+            "EVENT_BEAT_BUG_CATCHER_BENNY",
+            "BugCatcherBennySeenText",
+            "BugCatcherBennyBeatenText",
+            "0",
+            "TrainerBugCatcherBenny.AfterScript"
+          ],
+          "raw": "trainer BUG_CATCHER, BUG_CATCHER_BENNY, EVENT_BEAT_BUG_CATCHER_BENNY, BugCatcherBennySeenText, BugCatcherBennyBeatenText, 0, .AfterScript"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerBugCatcherBenny.AfterScript",
+      "label_refs": [
+        "TrainerBugCatcherBenny.AfterScript"
+      ],
+      "text_refs": [
+        "BugCatcherBennyBeatenText",
+        "BugCatcherBennySeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherBenny.AfterScript": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext BugCatcherBennyAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatcherBennyAfterBattleText"
+          ],
+          "raw": "writetext BugCatcherBennyAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "BugCatcherBennyAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherAl": {
+      "raw_lines": [
+        "trainer BUG_CATCHER, AL, EVENT_BEAT_BUG_CATCHER_AL, BugCatcherAlSeenText, BugCatcherAlBeatenText, 0, .AfterScript"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "BUG_CATCHER",
+            "AL",
+            "EVENT_BEAT_BUG_CATCHER_AL",
+            "BugCatcherAlSeenText",
+            "BugCatcherAlBeatenText",
+            "0",
+            "TrainerBugCatcherAl.AfterScript"
+          ],
+          "raw": "trainer BUG_CATCHER, AL, EVENT_BEAT_BUG_CATCHER_AL, BugCatcherAlSeenText, BugCatcherAlBeatenText, 0, .AfterScript"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerBugCatcherAl.AfterScript",
+      "label_refs": [
+        "TrainerBugCatcherAl.AfterScript"
+      ],
+      "text_refs": [
+        "BugCatcherAlBeatenText",
+        "BugCatcherAlSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherAl.AfterScript": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext BugCatcherAlAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatcherAlAfterBattleText"
+          ],
+          "raw": "writetext BugCatcherAlAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "BugCatcherAlAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherJosh": {
+      "raw_lines": [
+        "trainer BUG_CATCHER, JOSH, EVENT_BEAT_BUG_CATCHER_JOSH, BugCatcherJoshSeenText, BugCatcherJoshBeatenText, 0, .AfterScript"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "BUG_CATCHER",
+            "JOSH",
+            "EVENT_BEAT_BUG_CATCHER_JOSH",
+            "BugCatcherJoshSeenText",
+            "BugCatcherJoshBeatenText",
+            "0",
+            "TrainerBugCatcherJosh.AfterScript"
+          ],
+          "raw": "trainer BUG_CATCHER, JOSH, EVENT_BEAT_BUG_CATCHER_JOSH, BugCatcherJoshSeenText, BugCatcherJoshBeatenText, 0, .AfterScript"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerBugCatcherJosh.AfterScript",
+      "label_refs": [
+        "TrainerBugCatcherJosh.AfterScript"
+      ],
+      "text_refs": [
+        "BugCatcherJoshBeatenText",
+        "BugCatcherJoshSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherJosh.AfterScript": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext BugCatcherJoshAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BugCatcherJoshAfterBattleText"
+          ],
+          "raw": "writetext BugCatcherJoshAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "BugCatcherJoshAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymGuideScript": {
+      "raw_lines": [
+        "faceplayer",
+        "checkevent EVENT_BEAT_BUGSY",
+        "iftrue .AzaleaGymGuideWinScript",
+        "opentext",
+        "writetext AzaleaGymGuideText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "faceplayer",
+          "args": [],
+          "raw": "faceplayer"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_BUGSY"
+          ],
+          "raw": "checkevent EVENT_BEAT_BUGSY"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "AzaleaGymGuideScript.AzaleaGymGuideWinScript"
+          ],
+          "raw": "iftrue .AzaleaGymGuideWinScript"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AzaleaGymGuideText"
+          ],
+          "raw": "writetext AzaleaGymGuideText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "faceplayer",
+      "label_refs": [
+        "AzaleaGymGuideScript.AzaleaGymGuideWinScript"
+      ],
+      "text_refs": [
+        "AzaleaGymGuideText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymGuideScript.AzaleaGymGuideWinScript": {
+      "raw_lines": [
+        "opentext",
+        "writetext AzaleaGymGuideWinText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "AzaleaGymGuideWinText"
+          ],
+          "raw": "writetext AzaleaGymGuideWinText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "opentext",
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaGymGuideWinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymStatue": {
+      "raw_lines": [
+        "checkflag ENGINE_HIVEBADGE",
+        "iftrue .Beaten",
+        "jumpstd GymStatue1Script"
+      ],
+      "commands": [
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_HIVEBADGE"
+          ],
+          "raw": "checkflag ENGINE_HIVEBADGE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "AzaleaGymStatue.Beaten"
+          ],
+          "raw": "iftrue .Beaten"
+        },
+        {
+          "command": "jumpstd",
+          "args": [
+            "GymStatue1Script"
+          ],
+          "raw": "jumpstd GymStatue1Script"
+        }
+      ],
+      "first_command": "checkflag",
+      "label_refs": [
+        "AzaleaGymStatue.Beaten"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue1Script"
+      ]
+    },
+    "AzaleaGymStatue.Beaten": {
+      "raw_lines": [
+        "gettrainername STRING_BUFFER_4, BUGSY, BUGSY1",
+        "jumpstd GymStatue2Script"
+      ],
+      "commands": [
+        {
+          "command": "gettrainername",
+          "args": [
+            "STRING_BUFFER_4",
+            "BUGSY",
+            "BUGSY1"
+          ],
+          "raw": "gettrainername STRING_BUFFER_4, BUGSY, BUGSY1"
+        },
+        {
+          "command": "jumpstd",
+          "args": [
+            "GymStatue2Script"
+          ],
+          "raw": "jumpstd GymStatue2Script"
+        }
+      ],
+      "first_command": "gettrainername",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue2Script"
+      ]
+    },
+    "AzaleaGym_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  4, 15, AZALEA_TOWN, 5",
+        "warp_event  5, 15, AZALEA_TOWN, 5",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  3, 13, BGEVENT_READ, AzaleaGymStatue",
+        "bg_event  6, 13, BGEVENT_READ, AzaleaGymStatue",
+        "def_object_events",
+        "object_event  5,  7, SPRITE_BUGSY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaGymBugsyScript, -1",
+        "object_event  5,  3, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherBenny, -1",
+        "object_event  8,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherAl, -1",
+        "object_event  0,  2, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherJosh, -1",
+        "object_event  4, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay1, -1",
+        "object_event  5, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay2, -1",
+        "object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaleaGymGuideScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "15",
+            "AZALEA_TOWN",
+            "5"
+          ],
+          "raw": "warp_event  4, 15, AZALEA_TOWN, 5"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "15",
+            "AZALEA_TOWN",
+            "5"
+          ],
+          "raw": "warp_event  5, 15, AZALEA_TOWN, 5"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "3",
+            "13",
+            "BGEVENT_READ",
+            "AzaleaGymStatue"
+          ],
+          "raw": "bg_event  3, 13, BGEVENT_READ, AzaleaGymStatue"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "6",
+            "13",
+            "BGEVENT_READ",
+            "AzaleaGymStatue"
+          ],
+          "raw": "bg_event  6, 13, BGEVENT_READ, AzaleaGymStatue"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "7",
+            "SPRITE_BUGSY",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "AzaleaGymBugsyScript",
+            "-1"
+          ],
+          "raw": "object_event  5,  7, SPRITE_BUGSY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaGymBugsyScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "3",
+            "SPRITE_BUG_CATCHER",
+            "SPRITEMOVEDATA_SPINRANDOM_FAST",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_TRAINER",
+            "2",
+            "TrainerBugCatcherBenny",
+            "-1"
+          ],
+          "raw": "object_event  5,  3, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherBenny, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "8",
+            "8",
+            "SPRITE_BUG_CATCHER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerBugCatcherAl",
+            "-1"
+          ],
+          "raw": "object_event  8,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherAl, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "0",
+            "2",
+            "SPRITE_BUG_CATCHER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerBugCatcherJosh",
+            "-1"
+          ],
+          "raw": "object_event  0,  2, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherJosh, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "4",
+            "10",
+            "SPRITE_TWIN",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerTwinsAmyandmay1",
+            "-1"
+          ],
+          "raw": "object_event  4, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay1, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "5",
+            "10",
+            "SPRITE_TWIN",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "1",
+            "TrainerTwinsAmyandmay2",
+            "-1"
+          ],
+          "raw": "object_event  5, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay2, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "13",
+            "SPRITE_GYM_GUIDE",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "AzaleaGymGuideScript",
+            "-1"
+          ],
+          "raw": "object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaleaGymGuideScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "BugsyText_INeverLose": {
+      "raw_lines": [
+        "text \"I'm BUGSY!\"",
+        "line \"I never lose when\"",
+        "para \"it comes to bug\"",
+        "line \"#MON.\"",
+        "para \"My research is\"",
+        "line \"going to make me\"",
+        "para \"the authority on\"",
+        "line \"bug #MON!\"",
+        "para \"Let me demonstrate\"",
+        "line \"what I've learned\"",
+        "cont \"from my studies.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm BUGSY!"
+        },
+        {
+          "command": "line",
+          "value": "I never lose when"
+        },
+        {
+          "command": "para",
+          "value": "it comes to bug"
+        },
+        {
+          "command": "line",
+          "value": "#MON."
+        },
+        {
+          "command": "para",
+          "value": "My research is"
+        },
+        {
+          "command": "line",
+          "value": "going to make me"
+        },
+        {
+          "command": "para",
+          "value": "the authority on"
+        },
+        {
+          "command": "line",
+          "value": "bug #MON!"
+        },
+        {
+          "command": "para",
+          "value": "Let me demonstrate"
+        },
+        {
+          "command": "line",
+          "value": "what I've learned"
+        },
+        {
+          "command": "cont",
+          "value": "from my studies."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugsyText_ResearchIncomplete": {
+      "raw_lines": [
+        "text \"Whoa, amazing!\"",
+        "line \"You're an expert\"",
+        "cont \"on #MON!\"",
+        "para \"My research isn't\"",
+        "line \"complete yet.\"",
+        "para \"OK, you win. Take\"",
+        "line \"this BADGE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Whoa, amazing!"
+        },
+        {
+          "command": "line",
+          "value": "You're an expert"
+        },
+        {
+          "command": "cont",
+          "value": "on #MON!"
+        },
+        {
+          "command": "para",
+          "value": "My research isn't"
+        },
+        {
+          "command": "line",
+          "value": "complete yet."
+        },
+        {
+          "command": "para",
+          "value": "OK, you win. Take"
+        },
+        {
+          "command": "line",
+          "value": "this BADGE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Text_ReceivedHiveBadge": {
+      "raw_lines": [
+        "text \"<PLAYER> received\"",
+        "line \"HIVEBADGE.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "<PLAYER> received"
+        },
+        {
+          "command": "line",
+          "value": "HIVEBADGE."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugsyText_HiveBadgeSpeech": {
+      "raw_lines": [
+        "text \"Do you know the\"",
+        "line \"benefits of HIVE-\"",
+        "cont \"BADGE?\"",
+        "para \"If you have it,\"",
+        "line \"#MON up to L30\"",
+        "para \"will obey you,\"",
+        "line \"even traded ones.\"",
+        "para \"#MON that know\"",
+        "line \"CUT will be able\"",
+        "para \"to use it outside\"",
+        "line \"of battle too.\"",
+        "para \"Here, I also want\"",
+        "line \"you to have this.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Do you know the"
+        },
+        {
+          "command": "line",
+          "value": "benefits of HIVE-"
+        },
+        {
+          "command": "cont",
+          "value": "BADGE?"
+        },
+        {
+          "command": "para",
+          "value": "If you have it,"
+        },
+        {
+          "command": "line",
+          "value": "#MON up to L30"
+        },
+        {
+          "command": "para",
+          "value": "will obey you,"
+        },
+        {
+          "command": "line",
+          "value": "even traded ones."
+        },
+        {
+          "command": "para",
+          "value": "#MON that know"
+        },
+        {
+          "command": "line",
+          "value": "CUT will be able"
+        },
+        {
+          "command": "para",
+          "value": "to use it outside"
+        },
+        {
+          "command": "line",
+          "value": "of battle too."
+        },
+        {
+          "command": "para",
+          "value": "Here, I also want"
+        },
+        {
+          "command": "line",
+          "value": "you to have this."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugsyText_FuryCutterSpeech": {
+      "raw_lines": [
+        "text \"TM49 contains\"",
+        "line \"FURY CUTTER.\"",
+        "para \"If you don't miss,\"",
+        "line \"it gets stronger\"",
+        "cont \"every turn.\"",
+        "para \"The longer your\"",
+        "line \"battle goes, the\"",
+        "cont \"better it gets.\"",
+        "para \"Isn't that great?\"",
+        "line \"I discovered it!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "TM49 contains"
+        },
+        {
+          "command": "line",
+          "value": "FURY CUTTER."
+        },
+        {
+          "command": "para",
+          "value": "If you don't miss,"
+        },
+        {
+          "command": "line",
+          "value": "it gets stronger"
+        },
+        {
+          "command": "cont",
+          "value": "every turn."
+        },
+        {
+          "command": "para",
+          "value": "The longer your"
+        },
+        {
+          "command": "line",
+          "value": "battle goes, the"
+        },
+        {
+          "command": "cont",
+          "value": "better it gets."
+        },
+        {
+          "command": "para",
+          "value": "Isn't that great?"
+        },
+        {
+          "command": "line",
+          "value": "I discovered it!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugsyText_BugMonsAreDeep": {
+      "raw_lines": [
+        "text \"Bug #MON are\"",
+        "line \"deep. There are\"",
+        "para \"many mysteries to\"",
+        "line \"be explored.\"",
+        "para \"Study your favor-\"",
+        "line \"ites thoroughly.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Bug #MON are"
+        },
+        {
+          "command": "line",
+          "value": "deep. There are"
+        },
+        {
+          "command": "para",
+          "value": "many mysteries to"
+        },
+        {
+          "command": "line",
+          "value": "be explored."
+        },
+        {
+          "command": "para",
+          "value": "Study your favor-"
+        },
+        {
+          "command": "line",
+          "value": "ites thoroughly."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatcherBennySeenText": {
+      "raw_lines": [
+        "text \"Bug #MON evolve\"",
+        "line \"young. So they get\"",
+        "para \"stronger that much\"",
+        "line \"faster.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Bug #MON evolve"
+        },
+        {
+          "command": "line",
+          "value": "young. So they get"
+        },
+        {
+          "command": "para",
+          "value": "stronger that much"
+        },
+        {
+          "command": "line",
+          "value": "faster."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatcherBennyBeatenText": {
+      "raw_lines": [
+        "text \"Just evolving\"",
+        "line \"isn't enough!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Just evolving"
+        },
+        {
+          "command": "line",
+          "value": "isn't enough!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatcherBennyAfterBattleText": {
+      "raw_lines": [
+        "text \"#MON become\"",
+        "line \"stronger if they\"",
+        "cont \"evolve. Really!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "#MON become"
+        },
+        {
+          "command": "line",
+          "value": "stronger if they"
+        },
+        {
+          "command": "cont",
+          "value": "evolve. Really!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatcherAlSeenText": {
+      "raw_lines": [
+        "text \"Bug #MON are\"",
+        "line \"cool and tough!\"",
+        "para \"I'll prove it to\"",
+        "line \"you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Bug #MON are"
+        },
+        {
+          "command": "line",
+          "value": "cool and tough!"
+        },
+        {
+          "command": "para",
+          "value": "I'll prove it to"
+        },
+        {
+          "command": "line",
+          "value": "you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatcherAlBeatenText": {
+      "raw_lines": [
+        "text \"You proved how\"",
+        "line \"tough you are\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You proved how"
+        },
+        {
+          "command": "line",
+          "value": "tough you are\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatcherAlAfterBattleText": {
+      "raw_lines": [
+        "text \"They're so cool,\"",
+        "line \"but most girls\"",
+        "para \"don't like bug\"",
+        "line \"#MON.\"",
+        "para \"I don't know why\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "They're so cool,"
+        },
+        {
+          "command": "line",
+          "value": "but most girls"
+        },
+        {
+          "command": "para",
+          "value": "don't like bug"
+        },
+        {
+          "command": "line",
+          "value": "#MON."
+        },
+        {
+          "command": "para",
+          "value": "I don't know why\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatcherJoshSeenText": {
+      "raw_lines": [
+        "text \"You saved all the\"",
+        "line \"SLOWPOKE? Whew,\"",
+        "cont \"you're mighty!\"",
+        "para \"But my grown-up\"",
+        "line \"#MON are pretty\"",
+        "cont \"tough too!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You saved all the"
+        },
+        {
+          "command": "line",
+          "value": "SLOWPOKE? Whew,"
+        },
+        {
+          "command": "cont",
+          "value": "you're mighty!"
+        },
+        {
+          "command": "para",
+          "value": "But my grown-up"
+        },
+        {
+          "command": "line",
+          "value": "#MON are pretty"
+        },
+        {
+          "command": "cont",
+          "value": "tough too!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatcherJoshBeatenText": {
+      "raw_lines": [
+        "text \"Urrgggh!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Urrgggh!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BugCatcherJoshAfterBattleText": {
+      "raw_lines": [
+        "text \"I guess I should\"",
+        "line \"teach them better\"",
+        "cont \"moves\u2026\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I guess I should"
+        },
+        {
+          "command": "line",
+          "value": "teach them better"
+        },
+        {
+          "command": "cont",
+          "value": "moves\u2026"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TwinsAmyandmay1SeenText": {
+      "raw_lines": [
+        "text \"AMY: Hi! Are you\"",
+        "line \"challenging the\"",
+        "cont \"LEADER? No way!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "AMY: Hi! Are you"
+        },
+        {
+          "command": "line",
+          "value": "challenging the"
+        },
+        {
+          "command": "cont",
+          "value": "LEADER? No way!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TwinsAmyandmay1BeatenText": {
+      "raw_lines": [
+        "text \"AMY & MAY: Oh,\"",
+        "line \"double goodness!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "AMY & MAY: Oh,"
+        },
+        {
+          "command": "line",
+          "value": "double goodness!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TwinsAmyandmay1AfterBattleText": {
+      "raw_lines": [
+        "text \"AMY: You're\"",
+        "line \"really strong!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "AMY: You're"
+        },
+        {
+          "command": "line",
+          "value": "really strong!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TwinsAmyandmay2SeenText": {
+      "raw_lines": [
+        "text \"MAY: You want to\"",
+        "line \"see the LEADER?\"",
+        "cont \"We come first!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MAY: You want to"
+        },
+        {
+          "command": "line",
+          "value": "see the LEADER?"
+        },
+        {
+          "command": "cont",
+          "value": "We come first!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TwinsAmyandmay2BeatenText": {
+      "raw_lines": [
+        "text \"AMY & MAY: Oh,\"",
+        "line \"double goodness!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "AMY & MAY: Oh,"
+        },
+        {
+          "command": "line",
+          "value": "double goodness!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TwinsAmyandmay2AfterBattleText": {
+      "raw_lines": [
+        "text \"MAY: Our bug #-\"",
+        "line \"MON lost! Oh, what\"",
+        "cont \"a shame.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "MAY: Our bug #-"
+        },
+        {
+          "command": "line",
+          "value": "MON lost! Oh, what"
+        },
+        {
+          "command": "cont",
+          "value": "a shame."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaGymGuideText": {
+      "raw_lines": [
+        "text \"Yo, challenger!\"",
+        "para \"BUGSY's young, but\"",
+        "line \"his knowledge of\"",
+        "para \"bug #MON is for\"",
+        "line \"real.\"",
+        "para \"It's going to be\"",
+        "line \"tough without my\"",
+        "cont \"advice.\"",
+        "para \"Let's see\u2026 Bug\"",
+        "line \"#MON don't like\"",
+        "cont \"fire.\"",
+        "para \"Flying-type moves\"",
+        "line \"are super-effec-\"",
+        "cont \"tive too.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Yo, challenger!"
+        },
+        {
+          "command": "para",
+          "value": "BUGSY's young, but"
+        },
+        {
+          "command": "line",
+          "value": "his knowledge of"
+        },
+        {
+          "command": "para",
+          "value": "bug #MON is for"
+        },
+        {
+          "command": "line",
+          "value": "real."
+        },
+        {
+          "command": "para",
+          "value": "It's going to be"
+        },
+        {
+          "command": "line",
+          "value": "tough without my"
+        },
+        {
+          "command": "cont",
+          "value": "advice."
+        },
+        {
+          "command": "para",
+          "value": "Let's see\u2026 Bug"
+        },
+        {
+          "command": "line",
+          "value": "#MON don't like"
+        },
+        {
+          "command": "cont",
+          "value": "fire."
+        },
+        {
+          "command": "para",
+          "value": "Flying-type moves"
+        },
+        {
+          "command": "line",
+          "value": "are super-effec-"
+        },
+        {
+          "command": "cont",
+          "value": "tive too."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "AzaleaGymGuideWinText": {
+      "raw_lines": [
+        "text \"Well done! That\"",
+        "line \"was a great clash\"",
+        "para \"of talented young\"",
+        "line \"trainers.\"",
+        "para \"With people like\"",
+        "line \"you, the future of\"",
+        "cont \"#MON is bright!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Well done! That"
+        },
+        {
+          "command": "line",
+          "value": "was a great clash"
+        },
+        {
+          "command": "para",
+          "value": "of talented young"
+        },
+        {
+          "command": "line",
+          "value": "trainers."
+        },
+        {
+          "command": "para",
+          "value": "With people like"
+        },
+        {
+          "command": "line",
+          "value": "you, the future of"
+        },
+        {
+          "command": "cont",
+          "value": "#MON is bright!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "GoldenrodRocketsScript",
+    "GymStatue1Script",
+    "GymStatue2Script",
+    "RadioTowerRocketsScript"
+  ],
+  "dependencies": {
+    "AzaleaGym_MapScripts": {
+      "label_refs": [
+        "AzaleaGymBugsyScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymBugsyScript": {
+      "label_refs": [
+        "AzaleaGymActivateRockets",
+        "AzaleaGymBugsyScript.FightDone"
+      ],
+      "text_refs": [
+        "BugsyText_INeverLose",
+        "Text_ReceivedHiveBadge"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymBugsyScript.FightDone": {
+      "label_refs": [
+        "AzaleaGymBugsyScript.GotFuryCutter",
+        "AzaleaGymBugsyScript.NoRoomForFuryCutter"
+      ],
+      "text_refs": [
+        "BugsyText_FuryCutterSpeech",
+        "BugsyText_HiveBadgeSpeech"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymBugsyScript.GotFuryCutter": {
+      "label_refs": [
+        "AzaleaGymBugsyScript.NoRoomForFuryCutter"
+      ],
+      "text_refs": [
+        "BugsyText_BugMonsAreDeep"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymBugsyScript.NoRoomForFuryCutter": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymActivateRockets": {
+      "label_refs": [
+        "AzaleaGymActivateRockets.GoldenrodRockets",
+        "AzaleaGymActivateRockets.RadioTowerRockets"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymActivateRockets.GoldenrodRockets": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GoldenrodRocketsScript"
+      ]
+    },
+    "AzaleaGymActivateRockets.RadioTowerRockets": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RadioTowerRocketsScript"
+      ]
+    },
+    "TrainerTwinsAmyandmay1": {
+      "label_refs": [
+        "TrainerTwinsAmyandmay1.AfterScript"
+      ],
+      "text_refs": [
+        "TwinsAmyandmay1BeatenText",
+        "TwinsAmyandmay1SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsAmyandmay1.AfterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "TwinsAmyandmay1AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsAmyandmay2": {
+      "label_refs": [
+        "TrainerTwinsAmyandmay2.AfterScript"
+      ],
+      "text_refs": [
+        "TwinsAmyandmay2BeatenText",
+        "TwinsAmyandmay2SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerTwinsAmyandmay2.AfterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "TwinsAmyandmay2AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherBenny": {
+      "label_refs": [
+        "TrainerBugCatcherBenny.AfterScript"
+      ],
+      "text_refs": [
+        "BugCatcherBennyBeatenText",
+        "BugCatcherBennySeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherBenny.AfterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "BugCatcherBennyAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherAl": {
+      "label_refs": [
+        "TrainerBugCatcherAl.AfterScript"
+      ],
+      "text_refs": [
+        "BugCatcherAlBeatenText",
+        "BugCatcherAlSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherAl.AfterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "BugCatcherAlAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherJosh": {
+      "label_refs": [
+        "TrainerBugCatcherJosh.AfterScript"
+      ],
+      "text_refs": [
+        "BugCatcherJoshBeatenText",
+        "BugCatcherJoshSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBugCatcherJosh.AfterScript": {
+      "label_refs": [],
+      "text_refs": [
+        "BugCatcherJoshAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymGuideScript": {
+      "label_refs": [
+        "AzaleaGymGuideScript.AzaleaGymGuideWinScript"
+      ],
+      "text_refs": [
+        "AzaleaGymGuideText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymGuideScript.AzaleaGymGuideWinScript": {
+      "label_refs": [],
+      "text_refs": [
+        "AzaleaGymGuideWinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "AzaleaGymStatue": {
+      "label_refs": [
+        "AzaleaGymStatue.Beaten"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue1Script"
+      ]
+    },
+    "AzaleaGymStatue.Beaten": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GymStatue2Script"
+      ]
+    },
+    "AzaleaGym_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "radio"
+  ],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 7
+  }
+}

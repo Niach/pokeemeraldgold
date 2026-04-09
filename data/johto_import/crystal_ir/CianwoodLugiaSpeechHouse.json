@@ -1,0 +1,594 @@
+{
+  "crystal_map": "CianwoodLugiaSpeechHouse",
+  "map_id": "CIANWOOD_LUGIA_SPEECH_HOUSE",
+  "group": "CIANWOOD",
+  "group_index": 22,
+  "map_index": 9,
+  "tileset": "TILESET_HOUSE",
+  "environment": "INDOOR",
+  "landmark": "LANDMARK_CIANWOOD_CITY",
+  "music": "MUSIC_ECRUTEAK_CITY",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 4,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/House1.blk",
+  "source_asm": "maps/CianwoodLugiaSpeechHouse.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 2,
+        "y": 7,
+        "dest_map": "CIANWOOD_CITY",
+        "dest_warp_id": 6
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "dest_map": "CIANWOOD_CITY",
+        "dest_warp_id": 6
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [
+      {
+        "x": 0,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "CianwoodLugiaSpeechHouseBookshelf"
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "kind": "BGEVENT_READ",
+        "script": "CianwoodLugiaSpeechHouseBookshelf"
+      }
+    ],
+    "object_events": [
+      {
+        "x": 2,
+        "y": 4,
+        "sprite": "SPRITE_TEACHER",
+        "movement": "SPRITEMOVEDATA_STANDING_DOWN",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodLugiaSpeechHouseTeacherScript",
+        "flag": -1
+      },
+      {
+        "x": 6,
+        "y": 5,
+        "sprite": "SPRITE_LASS",
+        "movement": "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+        "movement_range_x": 1,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_GREEN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodLugiaSpeechHouseLassScript",
+        "flag": -1
+      },
+      {
+        "x": 0,
+        "y": 2,
+        "sprite": "SPRITE_TWIN",
+        "movement": "SPRITEMOVEDATA_STANDING_UP",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "CianwoodLugiaSpeechHouseTwinScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "CIANWOODLUGIASPEECHHOUSE_TEACHER",
+    "CIANWOODLUGIASPEECHHOUSE_LASS",
+    "CIANWOODLUGIASPEECHHOUSE_TWIN"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "CianwoodLugiaSpeechHouse_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "CianwoodLugiaSpeechHouseTeacherScript",
+      "label_refs": [
+        "CianwoodLugiaSpeechHouseTeacherScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodLugiaSpeechHouseTeacherScript": {
+      "raw_lines": [
+        "jumptextfaceplayer CianwoodLugiaSpeechHouseTeacherText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "CianwoodLugiaSpeechHouseTeacherText"
+          ],
+          "raw": "jumptextfaceplayer CianwoodLugiaSpeechHouseTeacherText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodLugiaSpeechHouseTeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodLugiaSpeechHouseLassScript": {
+      "raw_lines": [
+        "jumptextfaceplayer CianwoodLugiaSpeechHouseLassText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "CianwoodLugiaSpeechHouseLassText"
+          ],
+          "raw": "jumptextfaceplayer CianwoodLugiaSpeechHouseLassText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodLugiaSpeechHouseLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodLugiaSpeechHouseTwinScript": {
+      "raw_lines": [
+        "jumptextfaceplayer CianwoodLugiaSpeechHouseTwinText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "CianwoodLugiaSpeechHouseTwinText"
+          ],
+          "raw": "jumptextfaceplayer CianwoodLugiaSpeechHouseTwinText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodLugiaSpeechHouseTwinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodLugiaSpeechHouseBookshelf": {
+      "raw_lines": [
+        "jumpstd PictureBookshelfScript"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PictureBookshelfScript"
+          ],
+          "raw": "jumpstd PictureBookshelfScript"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "CianwoodLugiaSpeechHouse_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  2,  7, CIANWOOD_CITY, 6",
+        "warp_event  3,  7, CIANWOOD_CITY, 6",
+        "def_coord_events",
+        "def_bg_events",
+        "bg_event  0,  1, BGEVENT_READ, CianwoodLugiaSpeechHouseBookshelf",
+        "bg_event  1,  1, BGEVENT_READ, CianwoodLugiaSpeechHouseBookshelf",
+        "def_object_events",
+        "object_event  2,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseTeacherScript, -1",
+        "object_event  6,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseLassScript, -1",
+        "object_event  0,  2, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseTwinScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "2",
+            "7",
+            "CIANWOOD_CITY",
+            "6"
+          ],
+          "raw": "warp_event  2,  7, CIANWOOD_CITY, 6"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "3",
+            "7",
+            "CIANWOOD_CITY",
+            "6"
+          ],
+          "raw": "warp_event  3,  7, CIANWOOD_CITY, 6"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "0",
+            "1",
+            "BGEVENT_READ",
+            "CianwoodLugiaSpeechHouseBookshelf"
+          ],
+          "raw": "bg_event  0,  1, BGEVENT_READ, CianwoodLugiaSpeechHouseBookshelf"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "1",
+            "1",
+            "BGEVENT_READ",
+            "CianwoodLugiaSpeechHouseBookshelf"
+          ],
+          "raw": "bg_event  1,  1, BGEVENT_READ, CianwoodLugiaSpeechHouseBookshelf"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "2",
+            "4",
+            "SPRITE_TEACHER",
+            "SPRITEMOVEDATA_STANDING_DOWN",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodLugiaSpeechHouseTeacherScript",
+            "-1"
+          ],
+          "raw": "object_event  2,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseTeacherScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "6",
+            "5",
+            "SPRITE_LASS",
+            "SPRITEMOVEDATA_WALK_LEFT_RIGHT",
+            "1",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_GREEN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodLugiaSpeechHouseLassScript",
+            "-1"
+          ],
+          "raw": "object_event  6,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseLassScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "0",
+            "2",
+            "SPRITE_TWIN",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "CianwoodLugiaSpeechHouseTwinScript",
+            "-1"
+          ],
+          "raw": "object_event  0,  2, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodLugiaSpeechHouseTwinScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "CianwoodLugiaSpeechHouseTeacherText": {
+      "raw_lines": [
+        "text \"You came from\"",
+        "line \"OLIVINE?\"",
+        "para \"Do you remember\"",
+        "line \"the four islands\"",
+        "cont \"along the way?\"",
+        "para \"I heard that a \"",
+        "line \"mythical sea crea-\"",
+        "cont \"ture is hiding in\"",
+        "cont \"them.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You came from"
+        },
+        {
+          "command": "line",
+          "value": "OLIVINE?"
+        },
+        {
+          "command": "para",
+          "value": "Do you remember"
+        },
+        {
+          "command": "line",
+          "value": "the four islands"
+        },
+        {
+          "command": "cont",
+          "value": "along the way?"
+        },
+        {
+          "command": "para",
+          "value": "I heard that a "
+        },
+        {
+          "command": "line",
+          "value": "mythical sea crea-"
+        },
+        {
+          "command": "cont",
+          "value": "ture is hiding in"
+        },
+        {
+          "command": "cont",
+          "value": "them."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CianwoodLugiaSpeechHouseLassText": {
+      "raw_lines": [
+        "text \"I heard that you\"",
+        "line \"can only see it if\"",
+        "para \"you have a SILVER\"",
+        "line \"WING.\"",
+        "para \"It must have the\"",
+        "line \"same scent as the\"",
+        "cont \"creature.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I heard that you"
+        },
+        {
+          "command": "line",
+          "value": "can only see it if"
+        },
+        {
+          "command": "para",
+          "value": "you have a SILVER"
+        },
+        {
+          "command": "line",
+          "value": "WING."
+        },
+        {
+          "command": "para",
+          "value": "It must have the"
+        },
+        {
+          "command": "line",
+          "value": "same scent as the"
+        },
+        {
+          "command": "cont",
+          "value": "creature."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CianwoodLugiaSpeechHouseTwinText": {
+      "raw_lines": [
+        "text \"I've heard that\"",
+        "line \"the whirlpools\"",
+        "para \"around the islands\"",
+        "line \"are caused by the\"",
+        "cont \"sea creature.\"",
+        "para \"You might need a\"",
+        "line \"special move to\"",
+        "cont \"get past them.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I've heard that"
+        },
+        {
+          "command": "line",
+          "value": "the whirlpools"
+        },
+        {
+          "command": "para",
+          "value": "around the islands"
+        },
+        {
+          "command": "line",
+          "value": "are caused by the"
+        },
+        {
+          "command": "cont",
+          "value": "sea creature."
+        },
+        {
+          "command": "para",
+          "value": "You might need a"
+        },
+        {
+          "command": "line",
+          "value": "special move to"
+        },
+        {
+          "command": "cont",
+          "value": "get past them."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [
+    "PictureBookshelfScript"
+  ],
+  "dependencies": {
+    "CianwoodLugiaSpeechHouse_MapScripts": {
+      "label_refs": [
+        "CianwoodLugiaSpeechHouseTeacherScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodLugiaSpeechHouseTeacherScript": {
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodLugiaSpeechHouseTeacherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodLugiaSpeechHouseLassScript": {
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodLugiaSpeechHouseLassText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodLugiaSpeechHouseTwinScript": {
+      "label_refs": [],
+      "text_refs": [
+        "CianwoodLugiaSpeechHouseTwinText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "CianwoodLugiaSpeechHouseBookshelf": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PictureBookshelfScript"
+      ]
+    },
+    "CianwoodLugiaSpeechHouse_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 2,
+    "coord_events": 0,
+    "bg_events": 2,
+    "object_events": 3
+  }
+}

@@ -1,0 +1,417 @@
+{
+  "crystal_map": "Route36RuinsOfAlphGate",
+  "map_id": "ROUTE_36_RUINS_OF_ALPH_GATE",
+  "group": "VIOLET",
+  "group_index": 10,
+  "map_index": 16,
+  "tileset": "TILESET_GATE",
+  "environment": "GATE",
+  "landmark": "LANDMARK_ROUTE_36",
+  "music": "MUSIC_ROUTE_36",
+  "phone_service_flag": "FALSE",
+  "time_of_day": "PALETTE_DAY",
+  "fishgroup": "FISHGROUP_SHORE",
+  "width_blocks": 5,
+  "height_blocks": 4,
+  "border_block": "00",
+  "blk_path": "maps/NorthSouthGate.blk",
+  "source_asm": "maps/Route36RuinsOfAlphGate.asm",
+  "connections": [],
+  "events": {
+    "scene_scripts": [],
+    "callbacks": [],
+    "warp_events": [
+      {
+        "x": 4,
+        "y": 0,
+        "dest_map": "ROUTE_36",
+        "dest_warp_id": 3
+      },
+      {
+        "x": 5,
+        "y": 0,
+        "dest_map": "ROUTE_36",
+        "dest_warp_id": 4
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "dest_map": "RUINS_OF_ALPH_OUTSIDE",
+        "dest_warp_id": 9
+      },
+      {
+        "x": 5,
+        "y": 7,
+        "dest_map": "RUINS_OF_ALPH_OUTSIDE",
+        "dest_warp_id": 9
+      }
+    ],
+    "coord_events": [],
+    "bg_events": [],
+    "object_events": [
+      {
+        "x": 0,
+        "y": 4,
+        "sprite": "SPRITE_OFFICER",
+        "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
+        "movement_range_x": 0,
+        "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route36RuinsOfAlphGateOfficerScript",
+        "flag": -1
+      },
+      {
+        "x": 7,
+        "y": 5,
+        "sprite": "SPRITE_GRAMPS",
+        "movement": "SPRITEMOVEDATA_WANDER",
+        "movement_range_x": 1,
+        "movement_range_y": 2,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BROWN",
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 0,
+        "script": "Route36RuinsOfAlphGateGrampsScript",
+        "flag": -1
+      }
+    ]
+  },
+  "object_consts": [
+    "ROUTE36RUINSOFALPHGATE_OFFICER",
+    "ROUTE36RUINSOFALPHGATE_GRAMPS"
+  ],
+  "scene_ids": [],
+  "scripts": {
+    "Route36RuinsOfAlphGate_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "Route36RuinsOfAlphGateOfficerScript",
+      "label_refs": [
+        "Route36RuinsOfAlphGateOfficerScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36RuinsOfAlphGateOfficerScript": {
+      "raw_lines": [
+        "jumptextfaceplayer Route36RuinsOfAlphGateOfficerText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Route36RuinsOfAlphGateOfficerText"
+          ],
+          "raw": "jumptextfaceplayer Route36RuinsOfAlphGateOfficerText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Route36RuinsOfAlphGateOfficerText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36RuinsOfAlphGateGrampsScript": {
+      "raw_lines": [
+        "jumptextfaceplayer Route36RuinsOfAlphGateGrampsText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Route36RuinsOfAlphGateGrampsText"
+          ],
+          "raw": "jumptextfaceplayer Route36RuinsOfAlphGateGrampsText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Route36RuinsOfAlphGateGrampsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36RuinsOfAlphGate_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event  4,  0, ROUTE_36, 3",
+        "warp_event  5,  0, ROUTE_36, 4",
+        "warp_event  4,  7, RUINS_OF_ALPH_OUTSIDE, 9",
+        "warp_event  5,  7, RUINS_OF_ALPH_OUTSIDE, 9",
+        "def_coord_events",
+        "def_bg_events",
+        "def_object_events",
+        "object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route36RuinsOfAlphGateOfficerScript, -1",
+        "object_event  7,  5, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route36RuinsOfAlphGateGrampsScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "0",
+            "ROUTE_36",
+            "3"
+          ],
+          "raw": "warp_event  4,  0, ROUTE_36, 3"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "0",
+            "ROUTE_36",
+            "4"
+          ],
+          "raw": "warp_event  5,  0, ROUTE_36, 4"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "4",
+            "7",
+            "RUINS_OF_ALPH_OUTSIDE",
+            "9"
+          ],
+          "raw": "warp_event  4,  7, RUINS_OF_ALPH_OUTSIDE, 9"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "5",
+            "7",
+            "RUINS_OF_ALPH_OUTSIDE",
+            "9"
+          ],
+          "raw": "warp_event  5,  7, RUINS_OF_ALPH_OUTSIDE, 9"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "0",
+            "4",
+            "SPRITE_OFFICER",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route36RuinsOfAlphGateOfficerScript",
+            "-1"
+          ],
+          "raw": "object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route36RuinsOfAlphGateOfficerScript, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "7",
+            "5",
+            "SPRITE_GRAMPS",
+            "SPRITEMOVEDATA_WANDER",
+            "1",
+            "2",
+            "-1",
+            "-1",
+            "PAL_NPC_BROWN",
+            "OBJECTTYPE_SCRIPT",
+            "0",
+            "Route36RuinsOfAlphGateGrampsScript",
+            "-1"
+          ],
+          "raw": "object_event  7,  5, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route36RuinsOfAlphGateGrampsScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "Route36RuinsOfAlphGateOfficerText": {
+      "raw_lines": [
+        "text \"Don't you wonder\"",
+        "line \"who'd make some-\"",
+        "cont \"thing like this?\"",
+        "cont \"And why?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Don't you wonder"
+        },
+        {
+          "command": "line",
+          "value": "who'd make some-"
+        },
+        {
+          "command": "cont",
+          "value": "thing like this?"
+        },
+        {
+          "command": "cont",
+          "value": "And why?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route36RuinsOfAlphGateGrampsText": {
+      "raw_lines": [
+        "text \"Did you see that\"",
+        "line \"strange tree in\"",
+        "cont \"the road?\"",
+        "para \"That may explain\"",
+        "line \"why fewer people\"",
+        "para \"are visiting the\"",
+        "line \"RUINS OF ALPH.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Did you see that"
+        },
+        {
+          "command": "line",
+          "value": "strange tree in"
+        },
+        {
+          "command": "cont",
+          "value": "the road?"
+        },
+        {
+          "command": "para",
+          "value": "That may explain"
+        },
+        {
+          "command": "line",
+          "value": "why fewer people"
+        },
+        {
+          "command": "para",
+          "value": "are visiting the"
+        },
+        {
+          "command": "line",
+          "value": "RUINS OF ALPH."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {},
+  "std_calls": [],
+  "dependencies": {
+    "Route36RuinsOfAlphGate_MapScripts": {
+      "label_refs": [
+        "Route36RuinsOfAlphGateOfficerScript"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36RuinsOfAlphGateOfficerScript": {
+      "label_refs": [],
+      "text_refs": [
+        "Route36RuinsOfAlphGateOfficerText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36RuinsOfAlphGateGrampsScript": {
+      "label_refs": [],
+      "text_refs": [
+        "Route36RuinsOfAlphGateGrampsText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route36RuinsOfAlphGate_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [],
+  "event_counts": {
+    "scene_scripts": 0,
+    "callbacks": 0,
+    "warp_events": 4,
+    "coord_events": 0,
+    "bg_events": 0,
+    "object_events": 2
+  }
+}

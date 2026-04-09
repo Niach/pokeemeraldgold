@@ -31,6 +31,17 @@
     }
   ],
   "events": {
+    "scene_scripts": [
+      {
+        "script": "Route27Noop1Scene",
+        "scene_id": "SCENE_ROUTE27_FIRST_STEP_INTO_KANTO"
+      },
+      {
+        "script": "Route27Noop2Scene",
+        "scene_id": "SCENE_ROUTE27_NOOP"
+      }
+    ],
+    "callbacks": [],
     "warp_events": [
       {
         "x": 33,
@@ -81,6 +92,11 @@
         "movement": "SPRITEMOVEDATA_STANDING_UP",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
         "script": "TrainerCooltrainermBlake",
         "flag": -1
       },
@@ -91,6 +107,11 @@
         "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 4,
         "script": "TrainerCooltrainermBrian",
         "flag": -1
       },
@@ -101,6 +122,11 @@
         "movement": "SPRITEMOVEDATA_STANDING_UP",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 4,
         "script": "TrainerCooltrainerfReena",
         "flag": -1
       },
@@ -111,6 +137,11 @@
         "movement": "SPRITEMOVEDATA_SPINCLOCKWISE",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_RED",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 2,
         "script": "TrainerCooltrainerfMegan",
         "flag": -1
       },
@@ -121,6 +152,11 @@
         "movement": "SPRITEMOVEDATA_STANDING_LEFT",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
         "script": "TrainerPsychicGilbert",
         "flag": -1
       },
@@ -131,6 +167,11 @@
         "movement": "SPRITEMOVEDATA_STANDING_RIGHT",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": "PAL_NPC_BLUE",
+        "object_type": "OBJECTTYPE_TRAINER",
+        "trainer_sight_range": 3,
         "script": "TrainerBirdKeeperJose2",
         "flag": -1
       },
@@ -141,8 +182,13 @@
         "movement": "SPRITEMOVEDATA_STILL",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_ITEMBALL",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "Route27TMSolarbeam",
+        "flag": "EVENT_ROUTE_27_TM_SOLARBEAM"
       },
       {
         "x": 53,
@@ -151,8 +197,13 @@
         "movement": "SPRITEMOVEDATA_STILL",
         "movement_range_x": 0,
         "movement_range_y": 0,
-        "script": "OBJECTTYPE_ITEMBALL",
-        "flag": 0
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_ITEMBALL",
+        "trainer_sight_range": 0,
+        "script": "Route27RareCandy",
+        "flag": "EVENT_ROUTE_27_RARE_CANDY"
       },
       {
         "x": 21,
@@ -161,12 +212,3864 @@
         "movement": "SPRITEMOVEDATA_SPINRANDOM_SLOW",
         "movement_range_x": 0,
         "movement_range_y": 0,
+        "time_range_start": -1,
+        "time_range_end": -1,
+        "palette": 0,
+        "object_type": "OBJECTTYPE_SCRIPT",
+        "trainer_sight_range": 3,
         "script": "Route27FisherScript",
         "flag": -1
       }
     ]
   },
+  "object_consts": [
+    "ROUTE27_COOLTRAINER_M1",
+    "ROUTE27_COOLTRAINER_M2",
+    "ROUTE27_COOLTRAINER_F1",
+    "ROUTE27_COOLTRAINER_F2",
+    "ROUTE27_YOUNGSTER1",
+    "ROUTE27_YOUNGSTER2",
+    "ROUTE27_POKE_BALL1",
+    "ROUTE27_POKE_BALL2",
+    "ROUTE27_FISHER"
+  ],
+  "scene_ids": [
+    "SCENE_ROUTE27_FIRST_STEP_INTO_KANTO",
+    "SCENE_ROUTE27_NOOP"
+  ],
+  "scripts": {
+    "Route27_MapScripts": {
+      "raw_lines": [
+        "def_scene_scripts",
+        "scene_script Route27Noop1Scene, SCENE_ROUTE27_FIRST_STEP_INTO_KANTO",
+        "scene_script Route27Noop2Scene, SCENE_ROUTE27_NOOP",
+        "def_callbacks"
+      ],
+      "commands": [
+        {
+          "command": "def_scene_scripts",
+          "args": [],
+          "raw": "def_scene_scripts"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "Route27Noop1Scene",
+            "SCENE_ROUTE27_FIRST_STEP_INTO_KANTO"
+          ],
+          "raw": "scene_script Route27Noop1Scene, SCENE_ROUTE27_FIRST_STEP_INTO_KANTO"
+        },
+        {
+          "command": "scene_script",
+          "args": [
+            "Route27Noop2Scene",
+            "SCENE_ROUTE27_NOOP"
+          ],
+          "raw": "scene_script Route27Noop2Scene, SCENE_ROUTE27_NOOP"
+        },
+        {
+          "command": "def_callbacks",
+          "args": [],
+          "raw": "def_callbacks"
+        }
+      ],
+      "first_command": "def_scene_scripts",
+      "fallthrough_label": "Route27Noop1Scene",
+      "label_refs": [
+        "Route27Noop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route27Noop1Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route27Noop2Scene": {
+      "raw_lines": [
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "end",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FirstStepIntoKantoLeftScene": {
+      "raw_lines": [
+        "turnobject ROUTE27_FISHER, LEFT",
+        "showemote EMOTE_SHOCK, ROUTE27_FISHER, 15",
+        "applymovement ROUTE27_FISHER, Route27FisherStepLeftTwiceMovement",
+        "sjump FirstStepIntoKantoScene_Continue"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "ROUTE27_FISHER",
+            "LEFT"
+          ],
+          "raw": "turnobject ROUTE27_FISHER, LEFT"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "ROUTE27_FISHER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, ROUTE27_FISHER, 15"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE27_FISHER",
+            "Route27FisherStepLeftTwiceMovement"
+          ],
+          "raw": "applymovement ROUTE27_FISHER, Route27FisherStepLeftTwiceMovement"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "FirstStepIntoKantoScene_Continue"
+          ],
+          "raw": "sjump FirstStepIntoKantoScene_Continue"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [
+        "FirstStepIntoKantoScene_Continue"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "Route27FisherStepLeftTwiceMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FirstStepIntoKantoRightScene": {
+      "raw_lines": [
+        "turnobject ROUTE27_FISHER, LEFT",
+        "showemote EMOTE_SHOCK, ROUTE27_FISHER, 15",
+        "applymovement ROUTE27_FISHER, Route27FisherStepLeftOnceMovement"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "ROUTE27_FISHER",
+            "LEFT"
+          ],
+          "raw": "turnobject ROUTE27_FISHER, LEFT"
+        },
+        {
+          "command": "showemote",
+          "args": [
+            "EMOTE_SHOCK",
+            "ROUTE27_FISHER",
+            "15"
+          ],
+          "raw": "showemote EMOTE_SHOCK, ROUTE27_FISHER, 15"
+        },
+        {
+          "command": "applymovement",
+          "args": [
+            "ROUTE27_FISHER",
+            "Route27FisherStepLeftOnceMovement"
+          ],
+          "raw": "applymovement ROUTE27_FISHER, Route27FisherStepLeftOnceMovement"
+        }
+      ],
+      "first_command": "turnobject",
+      "fallthrough_label": "FirstStepIntoKantoScene_Continue",
+      "label_refs": [
+        "FirstStepIntoKantoScene_Continue"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "Route27FisherStepLeftOnceMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FirstStepIntoKantoScene_Continue": {
+      "raw_lines": [
+        "turnobject PLAYER, RIGHT",
+        "opentext",
+        "writetext Route27FisherHeyText",
+        "promptbutton",
+        "writetext Route27FisherText",
+        "waitbutton",
+        "closetext",
+        "setscene SCENE_ROUTE27_NOOP",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "turnobject",
+          "args": [
+            "PLAYER",
+            "RIGHT"
+          ],
+          "raw": "turnobject PLAYER, RIGHT"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route27FisherHeyText"
+          ],
+          "raw": "writetext Route27FisherHeyText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "Route27FisherText"
+          ],
+          "raw": "writetext Route27FisherText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "setscene",
+          "args": [
+            "SCENE_ROUTE27_NOOP"
+          ],
+          "raw": "setscene SCENE_ROUTE27_NOOP"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "turnobject",
+      "label_refs": [],
+      "text_refs": [
+        "Route27FisherHeyText",
+        "Route27FisherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_ROUTE27_NOOP"
+      ],
+      "std_calls": []
+    },
+    "Route27FisherScript": {
+      "raw_lines": [
+        "jumptextfaceplayer Route27FisherText"
+      ],
+      "commands": [
+        {
+          "command": "jumptextfaceplayer",
+          "args": [
+            "Route27FisherText"
+          ],
+          "raw": "jumptextfaceplayer Route27FisherText"
+        }
+      ],
+      "first_command": "jumptextfaceplayer",
+      "label_refs": [],
+      "text_refs": [
+        "Route27FisherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPsychicGilbert": {
+      "raw_lines": [
+        "trainer PSYCHIC_T, GILBERT, EVENT_BEAT_PSYCHIC_GILBERT, PsychicGilbertSeenText, PsychicGilbertBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "PSYCHIC_T",
+            "GILBERT",
+            "EVENT_BEAT_PSYCHIC_GILBERT",
+            "PsychicGilbertSeenText",
+            "PsychicGilbertBeatenText",
+            "0",
+            "TrainerPsychicGilbert.Script"
+          ],
+          "raw": "trainer PSYCHIC_T, GILBERT, EVENT_BEAT_PSYCHIC_GILBERT, PsychicGilbertSeenText, PsychicGilbertBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerPsychicGilbert.Script",
+      "label_refs": [
+        "TrainerPsychicGilbert.Script"
+      ],
+      "text_refs": [
+        "PsychicGilbertBeatenText",
+        "PsychicGilbertSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPsychicGilbert.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext PsychicGilbertAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "PsychicGilbertAfterBattleText"
+          ],
+          "raw": "writetext PsychicGilbertAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "PsychicGilbertAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2": {
+      "raw_lines": [
+        "trainer BIRD_KEEPER, JOSE2, EVENT_BEAT_BIRD_KEEPER_JOSE2, BirdKeeperJose2SeenText, BirdKeeperJose2BeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "BIRD_KEEPER",
+            "JOSE2",
+            "EVENT_BEAT_BIRD_KEEPER_JOSE2",
+            "BirdKeeperJose2SeenText",
+            "BirdKeeperJose2BeatenText",
+            "0",
+            "TrainerBirdKeeperJose2.Script"
+          ],
+          "raw": "trainer BIRD_KEEPER, JOSE2, EVENT_BEAT_BIRD_KEEPER_JOSE2, BirdKeeperJose2SeenText, BirdKeeperJose2BeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerBirdKeeperJose2.Script",
+      "label_refs": [
+        "TrainerBirdKeeperJose2.Script"
+      ],
+      "text_refs": [
+        "BirdKeeperJose2BeatenText",
+        "BirdKeeperJose2SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.Script": {
+      "raw_lines": [
+        "loadvar VAR_CALLERID, PHONE_BIRDKEEPER_JOSE",
+        "endifjustbattled",
+        "opentext",
+        "checkflag ENGINE_JOSE_READY_FOR_REMATCH",
+        "iftrue .WantsBattle",
+        "checkflag ENGINE_JOSE_HAS_STAR_PIECE",
+        "iftrue .HasStarPiece",
+        "checkcellnum PHONE_BIRDKEEPER_JOSE",
+        "iftrue .NumberAccepted",
+        "checkevent EVENT_JOSE_ASKED_FOR_PHONE_NUMBER",
+        "iftrue .AskedAlready",
+        "writetext BirdKeeperJose2AfterBattleText",
+        "promptbutton",
+        "setevent EVENT_JOSE_ASKED_FOR_PHONE_NUMBER",
+        "scall .AskNumber1",
+        "sjump .AskForNumber"
+      ],
+      "commands": [
+        {
+          "command": "loadvar",
+          "args": [
+            "VAR_CALLERID",
+            "PHONE_BIRDKEEPER_JOSE"
+          ],
+          "raw": "loadvar VAR_CALLERID, PHONE_BIRDKEEPER_JOSE"
+        },
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_JOSE_READY_FOR_REMATCH"
+          ],
+          "raw": "checkflag ENGINE_JOSE_READY_FOR_REMATCH"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerBirdKeeperJose2.WantsBattle"
+          ],
+          "raw": "iftrue .WantsBattle"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_JOSE_HAS_STAR_PIECE"
+          ],
+          "raw": "checkflag ENGINE_JOSE_HAS_STAR_PIECE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerBirdKeeperJose2.HasStarPiece"
+          ],
+          "raw": "iftrue .HasStarPiece"
+        },
+        {
+          "command": "checkcellnum",
+          "args": [
+            "PHONE_BIRDKEEPER_JOSE"
+          ],
+          "raw": "checkcellnum PHONE_BIRDKEEPER_JOSE"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerBirdKeeperJose2.NumberAccepted"
+          ],
+          "raw": "iftrue .NumberAccepted"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_JOSE_ASKED_FOR_PHONE_NUMBER"
+          ],
+          "raw": "checkevent EVENT_JOSE_ASKED_FOR_PHONE_NUMBER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerBirdKeeperJose2.AskedAlready"
+          ],
+          "raw": "iftrue .AskedAlready"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "BirdKeeperJose2AfterBattleText"
+          ],
+          "raw": "writetext BirdKeeperJose2AfterBattleText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_JOSE_ASKED_FOR_PHONE_NUMBER"
+          ],
+          "raw": "setevent EVENT_JOSE_ASKED_FOR_PHONE_NUMBER"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "TrainerBirdKeeperJose2.AskNumber1"
+          ],
+          "raw": "scall .AskNumber1"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerBirdKeeperJose2.AskForNumber"
+          ],
+          "raw": "sjump .AskForNumber"
+        }
+      ],
+      "first_command": "loadvar",
+      "label_refs": [
+        "TrainerBirdKeeperJose2.AskForNumber",
+        "TrainerBirdKeeperJose2.AskNumber1",
+        "TrainerBirdKeeperJose2.AskedAlready",
+        "TrainerBirdKeeperJose2.HasStarPiece",
+        "TrainerBirdKeeperJose2.NumberAccepted",
+        "TrainerBirdKeeperJose2.WantsBattle"
+      ],
+      "text_refs": [
+        "BirdKeeperJose2AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.AskedAlready": {
+      "raw_lines": [
+        "scall .AskNumber2"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "TrainerBirdKeeperJose2.AskNumber2"
+          ],
+          "raw": "scall .AskNumber2"
+        }
+      ],
+      "first_command": "scall",
+      "fallthrough_label": "TrainerBirdKeeperJose2.AskForNumber",
+      "label_refs": [
+        "TrainerBirdKeeperJose2.AskForNumber",
+        "TrainerBirdKeeperJose2.AskNumber2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.AskForNumber": {
+      "raw_lines": [
+        "askforphonenumber PHONE_BIRDKEEPER_JOSE",
+        "ifequal PHONE_CONTACTS_FULL, .PhoneFull",
+        "ifequal PHONE_CONTACT_REFUSED, .NumberDeclined",
+        "gettrainername STRING_BUFFER_3, BIRD_KEEPER, JOSE2",
+        "scall .RegisteredNumber",
+        "sjump .NumberAccepted"
+      ],
+      "commands": [
+        {
+          "command": "askforphonenumber",
+          "args": [
+            "PHONE_BIRDKEEPER_JOSE"
+          ],
+          "raw": "askforphonenumber PHONE_BIRDKEEPER_JOSE"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PHONE_CONTACTS_FULL",
+            "TrainerBirdKeeperJose2.PhoneFull"
+          ],
+          "raw": "ifequal PHONE_CONTACTS_FULL, .PhoneFull"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PHONE_CONTACT_REFUSED",
+            "TrainerBirdKeeperJose2.NumberDeclined"
+          ],
+          "raw": "ifequal PHONE_CONTACT_REFUSED, .NumberDeclined"
+        },
+        {
+          "command": "gettrainername",
+          "args": [
+            "STRING_BUFFER_3",
+            "BIRD_KEEPER",
+            "JOSE2"
+          ],
+          "raw": "gettrainername STRING_BUFFER_3, BIRD_KEEPER, JOSE2"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "TrainerBirdKeeperJose2.RegisteredNumber"
+          ],
+          "raw": "scall .RegisteredNumber"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerBirdKeeperJose2.NumberAccepted"
+          ],
+          "raw": "sjump .NumberAccepted"
+        }
+      ],
+      "first_command": "askforphonenumber",
+      "label_refs": [
+        "TrainerBirdKeeperJose2.NumberAccepted",
+        "TrainerBirdKeeperJose2.NumberDeclined",
+        "TrainerBirdKeeperJose2.PhoneFull",
+        "TrainerBirdKeeperJose2.RegisteredNumber"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.WantsBattle": {
+      "raw_lines": [
+        "scall .Rematch",
+        "winlosstext BirdKeeperJose2BeatenText, 0",
+        "readmem wJoseFightCount",
+        "ifequal 2, .Fight2",
+        "ifequal 1, .Fight1",
+        "ifequal 0, .LoadFight0"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "TrainerBirdKeeperJose2.Rematch"
+          ],
+          "raw": "scall .Rematch"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "BirdKeeperJose2BeatenText",
+            "0"
+          ],
+          "raw": "winlosstext BirdKeeperJose2BeatenText, 0"
+        },
+        {
+          "command": "readmem",
+          "args": [
+            "wJoseFightCount"
+          ],
+          "raw": "readmem wJoseFightCount"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "TrainerBirdKeeperJose2.Fight2"
+          ],
+          "raw": "ifequal 2, .Fight2"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "TrainerBirdKeeperJose2.Fight1"
+          ],
+          "raw": "ifequal 1, .Fight1"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "0",
+            "TrainerBirdKeeperJose2.LoadFight0"
+          ],
+          "raw": "ifequal 0, .LoadFight0"
+        }
+      ],
+      "first_command": "scall",
+      "fallthrough_label": "TrainerBirdKeeperJose2.Fight2",
+      "label_refs": [
+        "TrainerBirdKeeperJose2.Fight1",
+        "TrainerBirdKeeperJose2.Fight2",
+        "TrainerBirdKeeperJose2.LoadFight0",
+        "TrainerBirdKeeperJose2.Rematch"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.Fight2": {
+      "raw_lines": [
+        "checkevent EVENT_RESTORED_POWER_TO_KANTO",
+        "iftrue .LoadFight2"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_RESTORED_POWER_TO_KANTO"
+          ],
+          "raw": "checkevent EVENT_RESTORED_POWER_TO_KANTO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerBirdKeeperJose2.LoadFight2"
+          ],
+          "raw": "iftrue .LoadFight2"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerBirdKeeperJose2.Fight1",
+      "label_refs": [
+        "TrainerBirdKeeperJose2.Fight1",
+        "TrainerBirdKeeperJose2.LoadFight2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.Fight1": {
+      "raw_lines": [
+        "checkevent EVENT_BEAT_ELITE_FOUR",
+        "iftrue .LoadFight1"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_ELITE_FOUR"
+          ],
+          "raw": "checkevent EVENT_BEAT_ELITE_FOUR"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerBirdKeeperJose2.LoadFight1"
+          ],
+          "raw": "iftrue .LoadFight1"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerBirdKeeperJose2.LoadFight0",
+      "label_refs": [
+        "TrainerBirdKeeperJose2.LoadFight0",
+        "TrainerBirdKeeperJose2.LoadFight1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.LoadFight0": {
+      "raw_lines": [
+        "loadtrainer BIRD_KEEPER, JOSE2",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wJoseFightCount, 1",
+        "clearflag ENGINE_JOSE_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "BIRD_KEEPER",
+            "JOSE2"
+          ],
+          "raw": "loadtrainer BIRD_KEEPER, JOSE2"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wJoseFightCount",
+            "1"
+          ],
+          "raw": "loadmem wJoseFightCount, 1"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_JOSE_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_JOSE_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.LoadFight1": {
+      "raw_lines": [
+        "loadtrainer BIRD_KEEPER, JOSE1",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wJoseFightCount, 2",
+        "clearflag ENGINE_JOSE_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "BIRD_KEEPER",
+            "JOSE1"
+          ],
+          "raw": "loadtrainer BIRD_KEEPER, JOSE1"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wJoseFightCount",
+            "2"
+          ],
+          "raw": "loadmem wJoseFightCount, 2"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_JOSE_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_JOSE_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.LoadFight2": {
+      "raw_lines": [
+        "loadtrainer BIRD_KEEPER, JOSE3",
+        "startbattle",
+        "reloadmapafterbattle",
+        "clearflag ENGINE_JOSE_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "BIRD_KEEPER",
+            "JOSE3"
+          ],
+          "raw": "loadtrainer BIRD_KEEPER, JOSE3"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_JOSE_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_JOSE_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.HasStarPiece": {
+      "raw_lines": [
+        "scall .Gift",
+        "verbosegiveitem STAR_PIECE",
+        "iffalse .NoRoom",
+        "clearflag ENGINE_JOSE_HAS_STAR_PIECE",
+        "sjump .NumberAccepted"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "TrainerBirdKeeperJose2.Gift"
+          ],
+          "raw": "scall .Gift"
+        },
+        {
+          "command": "verbosegiveitem",
+          "args": [
+            "STAR_PIECE"
+          ],
+          "raw": "verbosegiveitem STAR_PIECE"
+        },
+        {
+          "command": "iffalse",
+          "args": [
+            "TrainerBirdKeeperJose2.NoRoom"
+          ],
+          "raw": "iffalse .NoRoom"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_JOSE_HAS_STAR_PIECE"
+          ],
+          "raw": "clearflag ENGINE_JOSE_HAS_STAR_PIECE"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerBirdKeeperJose2.NumberAccepted"
+          ],
+          "raw": "sjump .NumberAccepted"
+        }
+      ],
+      "first_command": "scall",
+      "label_refs": [
+        "TrainerBirdKeeperJose2.Gift",
+        "TrainerBirdKeeperJose2.NoRoom",
+        "TrainerBirdKeeperJose2.NumberAccepted"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.NoRoom": {
+      "raw_lines": [
+        "sjump .PackFull"
+      ],
+      "commands": [
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerBirdKeeperJose2.PackFull"
+          ],
+          "raw": "sjump .PackFull"
+        }
+      ],
+      "first_command": "sjump",
+      "label_refs": [
+        "TrainerBirdKeeperJose2.PackFull"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.AskNumber1": {
+      "raw_lines": [
+        "jumpstd AskNumber1MScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "AskNumber1MScript"
+          ],
+          "raw": "jumpstd AskNumber1MScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber1MScript"
+      ]
+    },
+    "TrainerBirdKeeperJose2.AskNumber2": {
+      "raw_lines": [
+        "jumpstd AskNumber2MScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "AskNumber2MScript"
+          ],
+          "raw": "jumpstd AskNumber2MScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber2MScript"
+      ]
+    },
+    "TrainerBirdKeeperJose2.RegisteredNumber": {
+      "raw_lines": [
+        "jumpstd RegisteredNumberMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RegisteredNumberMScript"
+          ],
+          "raw": "jumpstd RegisteredNumberMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RegisteredNumberMScript"
+      ]
+    },
+    "TrainerBirdKeeperJose2.NumberAccepted": {
+      "raw_lines": [
+        "jumpstd NumberAcceptedMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "NumberAcceptedMScript"
+          ],
+          "raw": "jumpstd NumberAcceptedMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberAcceptedMScript"
+      ]
+    },
+    "TrainerBirdKeeperJose2.NumberDeclined": {
+      "raw_lines": [
+        "jumpstd NumberDeclinedMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "NumberDeclinedMScript"
+          ],
+          "raw": "jumpstd NumberDeclinedMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberDeclinedMScript"
+      ]
+    },
+    "TrainerBirdKeeperJose2.PhoneFull": {
+      "raw_lines": [
+        "jumpstd PhoneFullMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PhoneFullMScript"
+          ],
+          "raw": "jumpstd PhoneFullMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PhoneFullMScript"
+      ]
+    },
+    "TrainerBirdKeeperJose2.Rematch": {
+      "raw_lines": [
+        "jumpstd RematchMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RematchMScript"
+          ],
+          "raw": "jumpstd RematchMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchMScript"
+      ]
+    },
+    "TrainerBirdKeeperJose2.Gift": {
+      "raw_lines": [
+        "jumpstd GiftMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "GiftMScript"
+          ],
+          "raw": "jumpstd GiftMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GiftMScript"
+      ]
+    },
+    "TrainerBirdKeeperJose2.PackFull": {
+      "raw_lines": [
+        "jumpstd PackFullMScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PackFullMScript"
+          ],
+          "raw": "jumpstd PackFullMScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PackFullMScript"
+      ]
+    },
+    "TrainerCooltrainermBlake": {
+      "raw_lines": [
+        "trainer COOLTRAINERM, BLAKE, EVENT_BEAT_COOLTRAINERM_BLAKE, CooltrainermBlakeSeenText, CooltrainermBlakeBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "COOLTRAINERM",
+            "BLAKE",
+            "EVENT_BEAT_COOLTRAINERM_BLAKE",
+            "CooltrainermBlakeSeenText",
+            "CooltrainermBlakeBeatenText",
+            "0",
+            "TrainerCooltrainermBlake.Script"
+          ],
+          "raw": "trainer COOLTRAINERM, BLAKE, EVENT_BEAT_COOLTRAINERM_BLAKE, CooltrainermBlakeSeenText, CooltrainermBlakeBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerCooltrainermBlake.Script",
+      "label_refs": [
+        "TrainerCooltrainermBlake.Script"
+      ],
+      "text_refs": [
+        "CooltrainermBlakeBeatenText",
+        "CooltrainermBlakeSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermBlake.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext CooltrainermBlakeAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CooltrainermBlakeAfterBattleText"
+          ],
+          "raw": "writetext CooltrainermBlakeAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainermBlakeAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermBrian": {
+      "raw_lines": [
+        "trainer COOLTRAINERM, BRIAN, EVENT_BEAT_COOLTRAINERM_BRIAN, CooltrainermBrianSeenText, CooltrainermBrianBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "COOLTRAINERM",
+            "BRIAN",
+            "EVENT_BEAT_COOLTRAINERM_BRIAN",
+            "CooltrainermBrianSeenText",
+            "CooltrainermBrianBeatenText",
+            "0",
+            "TrainerCooltrainermBrian.Script"
+          ],
+          "raw": "trainer COOLTRAINERM, BRIAN, EVENT_BEAT_COOLTRAINERM_BRIAN, CooltrainermBrianSeenText, CooltrainermBrianBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerCooltrainermBrian.Script",
+      "label_refs": [
+        "TrainerCooltrainermBrian.Script"
+      ],
+      "text_refs": [
+        "CooltrainermBrianBeatenText",
+        "CooltrainermBrianSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermBrian.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext CooltrainermBrianAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CooltrainermBrianAfterBattleText"
+          ],
+          "raw": "writetext CooltrainermBrianAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainermBrianAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena": {
+      "raw_lines": [
+        "trainer COOLTRAINERF, REENA1, EVENT_BEAT_COOLTRAINERF_REENA, CooltrainerfReenaSeenText, CooltrainerfReenaBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "COOLTRAINERF",
+            "REENA1",
+            "EVENT_BEAT_COOLTRAINERF_REENA",
+            "CooltrainerfReenaSeenText",
+            "CooltrainerfReenaBeatenText",
+            "0",
+            "TrainerCooltrainerfReena.Script"
+          ],
+          "raw": "trainer COOLTRAINERF, REENA1, EVENT_BEAT_COOLTRAINERF_REENA, CooltrainerfReenaSeenText, CooltrainerfReenaBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerCooltrainerfReena.Script",
+      "label_refs": [
+        "TrainerCooltrainerfReena.Script"
+      ],
+      "text_refs": [
+        "CooltrainerfReenaBeatenText",
+        "CooltrainerfReenaSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.Script": {
+      "raw_lines": [
+        "loadvar VAR_CALLERID, PHONE_COOLTRAINERF_REENA",
+        "endifjustbattled",
+        "opentext",
+        "checkflag ENGINE_REENA_READY_FOR_REMATCH",
+        "iftrue .WantsBattle",
+        "checkcellnum PHONE_COOLTRAINERF_REENA",
+        "iftrue .NumberAccepted",
+        "checkevent EVENT_REENA_ASKED_FOR_PHONE_NUMBER",
+        "iftrue .AskedAlready",
+        "writetext CooltrainerfReenaAfterBattleText",
+        "promptbutton",
+        "setevent EVENT_REENA_ASKED_FOR_PHONE_NUMBER",
+        "scall .AskNumber1",
+        "sjump .AskForNumber"
+      ],
+      "commands": [
+        {
+          "command": "loadvar",
+          "args": [
+            "VAR_CALLERID",
+            "PHONE_COOLTRAINERF_REENA"
+          ],
+          "raw": "loadvar VAR_CALLERID, PHONE_COOLTRAINERF_REENA"
+        },
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "checkflag",
+          "args": [
+            "ENGINE_REENA_READY_FOR_REMATCH"
+          ],
+          "raw": "checkflag ENGINE_REENA_READY_FOR_REMATCH"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerCooltrainerfReena.WantsBattle"
+          ],
+          "raw": "iftrue .WantsBattle"
+        },
+        {
+          "command": "checkcellnum",
+          "args": [
+            "PHONE_COOLTRAINERF_REENA"
+          ],
+          "raw": "checkcellnum PHONE_COOLTRAINERF_REENA"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerCooltrainerfReena.NumberAccepted"
+          ],
+          "raw": "iftrue .NumberAccepted"
+        },
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_REENA_ASKED_FOR_PHONE_NUMBER"
+          ],
+          "raw": "checkevent EVENT_REENA_ASKED_FOR_PHONE_NUMBER"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerCooltrainerfReena.AskedAlready"
+          ],
+          "raw": "iftrue .AskedAlready"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CooltrainerfReenaAfterBattleText"
+          ],
+          "raw": "writetext CooltrainerfReenaAfterBattleText"
+        },
+        {
+          "command": "promptbutton",
+          "args": [],
+          "raw": "promptbutton"
+        },
+        {
+          "command": "setevent",
+          "args": [
+            "EVENT_REENA_ASKED_FOR_PHONE_NUMBER"
+          ],
+          "raw": "setevent EVENT_REENA_ASKED_FOR_PHONE_NUMBER"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "TrainerCooltrainerfReena.AskNumber1"
+          ],
+          "raw": "scall .AskNumber1"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerCooltrainerfReena.AskForNumber"
+          ],
+          "raw": "sjump .AskForNumber"
+        }
+      ],
+      "first_command": "loadvar",
+      "label_refs": [
+        "TrainerCooltrainerfReena.AskForNumber",
+        "TrainerCooltrainerfReena.AskNumber1",
+        "TrainerCooltrainerfReena.AskedAlready",
+        "TrainerCooltrainerfReena.NumberAccepted",
+        "TrainerCooltrainerfReena.WantsBattle"
+      ],
+      "text_refs": [
+        "CooltrainerfReenaAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.AskedAlready": {
+      "raw_lines": [
+        "scall .AskNumber2"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "TrainerCooltrainerfReena.AskNumber2"
+          ],
+          "raw": "scall .AskNumber2"
+        }
+      ],
+      "first_command": "scall",
+      "fallthrough_label": "TrainerCooltrainerfReena.AskForNumber",
+      "label_refs": [
+        "TrainerCooltrainerfReena.AskForNumber",
+        "TrainerCooltrainerfReena.AskNumber2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.AskForNumber": {
+      "raw_lines": [
+        "askforphonenumber PHONE_COOLTRAINERF_REENA",
+        "ifequal PHONE_CONTACTS_FULL, .PhoneFull",
+        "ifequal PHONE_CONTACT_REFUSED, .NumberDeclined",
+        "gettrainername STRING_BUFFER_3, COOLTRAINERF, REENA1",
+        "scall .RegisteredNumber",
+        "sjump .NumberAccepted"
+      ],
+      "commands": [
+        {
+          "command": "askforphonenumber",
+          "args": [
+            "PHONE_COOLTRAINERF_REENA"
+          ],
+          "raw": "askforphonenumber PHONE_COOLTRAINERF_REENA"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PHONE_CONTACTS_FULL",
+            "TrainerCooltrainerfReena.PhoneFull"
+          ],
+          "raw": "ifequal PHONE_CONTACTS_FULL, .PhoneFull"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "PHONE_CONTACT_REFUSED",
+            "TrainerCooltrainerfReena.NumberDeclined"
+          ],
+          "raw": "ifequal PHONE_CONTACT_REFUSED, .NumberDeclined"
+        },
+        {
+          "command": "gettrainername",
+          "args": [
+            "STRING_BUFFER_3",
+            "COOLTRAINERF",
+            "REENA1"
+          ],
+          "raw": "gettrainername STRING_BUFFER_3, COOLTRAINERF, REENA1"
+        },
+        {
+          "command": "scall",
+          "args": [
+            "TrainerCooltrainerfReena.RegisteredNumber"
+          ],
+          "raw": "scall .RegisteredNumber"
+        },
+        {
+          "command": "sjump",
+          "args": [
+            "TrainerCooltrainerfReena.NumberAccepted"
+          ],
+          "raw": "sjump .NumberAccepted"
+        }
+      ],
+      "first_command": "askforphonenumber",
+      "label_refs": [
+        "TrainerCooltrainerfReena.NumberAccepted",
+        "TrainerCooltrainerfReena.NumberDeclined",
+        "TrainerCooltrainerfReena.PhoneFull",
+        "TrainerCooltrainerfReena.RegisteredNumber"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.WantsBattle": {
+      "raw_lines": [
+        "scall .Rematch",
+        "winlosstext CooltrainerfReenaBeatenText, 0",
+        "readmem wReenaFightCount",
+        "ifequal 2, .Fight2",
+        "ifequal 1, .Fight1",
+        "ifequal 0, .LoadFight0"
+      ],
+      "commands": [
+        {
+          "command": "scall",
+          "args": [
+            "TrainerCooltrainerfReena.Rematch"
+          ],
+          "raw": "scall .Rematch"
+        },
+        {
+          "command": "winlosstext",
+          "args": [
+            "CooltrainerfReenaBeatenText",
+            "0"
+          ],
+          "raw": "winlosstext CooltrainerfReenaBeatenText, 0"
+        },
+        {
+          "command": "readmem",
+          "args": [
+            "wReenaFightCount"
+          ],
+          "raw": "readmem wReenaFightCount"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "2",
+            "TrainerCooltrainerfReena.Fight2"
+          ],
+          "raw": "ifequal 2, .Fight2"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "1",
+            "TrainerCooltrainerfReena.Fight1"
+          ],
+          "raw": "ifequal 1, .Fight1"
+        },
+        {
+          "command": "ifequal",
+          "args": [
+            "0",
+            "TrainerCooltrainerfReena.LoadFight0"
+          ],
+          "raw": "ifequal 0, .LoadFight0"
+        }
+      ],
+      "first_command": "scall",
+      "fallthrough_label": "TrainerCooltrainerfReena.Fight2",
+      "label_refs": [
+        "TrainerCooltrainerfReena.Fight1",
+        "TrainerCooltrainerfReena.Fight2",
+        "TrainerCooltrainerfReena.LoadFight0",
+        "TrainerCooltrainerfReena.Rematch"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.Fight2": {
+      "raw_lines": [
+        "checkevent EVENT_RESTORED_POWER_TO_KANTO",
+        "iftrue .LoadFight2"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_RESTORED_POWER_TO_KANTO"
+          ],
+          "raw": "checkevent EVENT_RESTORED_POWER_TO_KANTO"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerCooltrainerfReena.LoadFight2"
+          ],
+          "raw": "iftrue .LoadFight2"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerCooltrainerfReena.Fight1",
+      "label_refs": [
+        "TrainerCooltrainerfReena.Fight1",
+        "TrainerCooltrainerfReena.LoadFight2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.Fight1": {
+      "raw_lines": [
+        "checkevent EVENT_BEAT_ELITE_FOUR",
+        "iftrue .LoadFight1"
+      ],
+      "commands": [
+        {
+          "command": "checkevent",
+          "args": [
+            "EVENT_BEAT_ELITE_FOUR"
+          ],
+          "raw": "checkevent EVENT_BEAT_ELITE_FOUR"
+        },
+        {
+          "command": "iftrue",
+          "args": [
+            "TrainerCooltrainerfReena.LoadFight1"
+          ],
+          "raw": "iftrue .LoadFight1"
+        }
+      ],
+      "first_command": "checkevent",
+      "fallthrough_label": "TrainerCooltrainerfReena.LoadFight0",
+      "label_refs": [
+        "TrainerCooltrainerfReena.LoadFight0",
+        "TrainerCooltrainerfReena.LoadFight1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.LoadFight0": {
+      "raw_lines": [
+        "loadtrainer COOLTRAINERF, REENA1",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wReenaFightCount, 1",
+        "clearflag ENGINE_REENA_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "COOLTRAINERF",
+            "REENA1"
+          ],
+          "raw": "loadtrainer COOLTRAINERF, REENA1"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wReenaFightCount",
+            "1"
+          ],
+          "raw": "loadmem wReenaFightCount, 1"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_REENA_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_REENA_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.LoadFight1": {
+      "raw_lines": [
+        "loadtrainer COOLTRAINERF, REENA2",
+        "startbattle",
+        "reloadmapafterbattle",
+        "loadmem wReenaFightCount, 2",
+        "clearflag ENGINE_REENA_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "COOLTRAINERF",
+            "REENA2"
+          ],
+          "raw": "loadtrainer COOLTRAINERF, REENA2"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "loadmem",
+          "args": [
+            "wReenaFightCount",
+            "2"
+          ],
+          "raw": "loadmem wReenaFightCount, 2"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_REENA_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_REENA_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.LoadFight2": {
+      "raw_lines": [
+        "loadtrainer COOLTRAINERF, REENA3",
+        "startbattle",
+        "reloadmapafterbattle",
+        "clearflag ENGINE_REENA_READY_FOR_REMATCH",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "loadtrainer",
+          "args": [
+            "COOLTRAINERF",
+            "REENA3"
+          ],
+          "raw": "loadtrainer COOLTRAINERF, REENA3"
+        },
+        {
+          "command": "startbattle",
+          "args": [],
+          "raw": "startbattle"
+        },
+        {
+          "command": "reloadmapafterbattle",
+          "args": [],
+          "raw": "reloadmapafterbattle"
+        },
+        {
+          "command": "clearflag",
+          "args": [
+            "ENGINE_REENA_READY_FOR_REMATCH"
+          ],
+          "raw": "clearflag ENGINE_REENA_READY_FOR_REMATCH"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "loadtrainer",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.AskNumber1": {
+      "raw_lines": [
+        "jumpstd AskNumber1FScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "AskNumber1FScript"
+          ],
+          "raw": "jumpstd AskNumber1FScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber1FScript"
+      ]
+    },
+    "TrainerCooltrainerfReena.AskNumber2": {
+      "raw_lines": [
+        "jumpstd AskNumber2FScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "AskNumber2FScript"
+          ],
+          "raw": "jumpstd AskNumber2FScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber2FScript"
+      ]
+    },
+    "TrainerCooltrainerfReena.RegisteredNumber": {
+      "raw_lines": [
+        "jumpstd RegisteredNumberFScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RegisteredNumberFScript"
+          ],
+          "raw": "jumpstd RegisteredNumberFScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RegisteredNumberFScript"
+      ]
+    },
+    "TrainerCooltrainerfReena.NumberAccepted": {
+      "raw_lines": [
+        "jumpstd NumberAcceptedFScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "NumberAcceptedFScript"
+          ],
+          "raw": "jumpstd NumberAcceptedFScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberAcceptedFScript"
+      ]
+    },
+    "TrainerCooltrainerfReena.NumberDeclined": {
+      "raw_lines": [
+        "jumpstd NumberDeclinedFScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "NumberDeclinedFScript"
+          ],
+          "raw": "jumpstd NumberDeclinedFScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberDeclinedFScript"
+      ]
+    },
+    "TrainerCooltrainerfReena.PhoneFull": {
+      "raw_lines": [
+        "jumpstd PhoneFullFScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "PhoneFullFScript"
+          ],
+          "raw": "jumpstd PhoneFullFScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PhoneFullFScript"
+      ]
+    },
+    "TrainerCooltrainerfReena.Rematch": {
+      "raw_lines": [
+        "jumpstd RematchFScript",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "jumpstd",
+          "args": [
+            "RematchFScript"
+          ],
+          "raw": "jumpstd RematchFScript"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "jumpstd",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchFScript"
+      ]
+    },
+    "TrainerCooltrainerfMegan": {
+      "raw_lines": [
+        "trainer COOLTRAINERF, MEGAN, EVENT_BEAT_COOLTRAINERF_MEGAN, CooltrainerfMeganSeenText, CooltrainerfMeganBeatenText, 0, .Script"
+      ],
+      "commands": [
+        {
+          "command": "trainer",
+          "args": [
+            "COOLTRAINERF",
+            "MEGAN",
+            "EVENT_BEAT_COOLTRAINERF_MEGAN",
+            "CooltrainerfMeganSeenText",
+            "CooltrainerfMeganBeatenText",
+            "0",
+            "TrainerCooltrainerfMegan.Script"
+          ],
+          "raw": "trainer COOLTRAINERF, MEGAN, EVENT_BEAT_COOLTRAINERF_MEGAN, CooltrainerfMeganSeenText, CooltrainerfMeganBeatenText, 0, .Script"
+        }
+      ],
+      "first_command": "trainer",
+      "fallthrough_label": "TrainerCooltrainerfMegan.Script",
+      "label_refs": [
+        "TrainerCooltrainerfMegan.Script"
+      ],
+      "text_refs": [
+        "CooltrainerfMeganBeatenText",
+        "CooltrainerfMeganSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfMegan.Script": {
+      "raw_lines": [
+        "endifjustbattled",
+        "opentext",
+        "writetext CooltrainerfMeganAfterBattleText",
+        "waitbutton",
+        "closetext",
+        "end"
+      ],
+      "commands": [
+        {
+          "command": "endifjustbattled",
+          "args": [],
+          "raw": "endifjustbattled"
+        },
+        {
+          "command": "opentext",
+          "args": [],
+          "raw": "opentext"
+        },
+        {
+          "command": "writetext",
+          "args": [
+            "CooltrainerfMeganAfterBattleText"
+          ],
+          "raw": "writetext CooltrainerfMeganAfterBattleText"
+        },
+        {
+          "command": "waitbutton",
+          "args": [],
+          "raw": "waitbutton"
+        },
+        {
+          "command": "closetext",
+          "args": [],
+          "raw": "closetext"
+        },
+        {
+          "command": "end",
+          "args": [],
+          "raw": "end"
+        }
+      ],
+      "first_command": "endifjustbattled",
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainerfMeganAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TohjoFallsSign": {
+      "raw_lines": [
+        "jumptext TohjoFallsSignText"
+      ],
+      "commands": [
+        {
+          "command": "jumptext",
+          "args": [
+            "TohjoFallsSignText"
+          ],
+          "raw": "jumptext TohjoFallsSignText"
+        }
+      ],
+      "first_command": "jumptext",
+      "label_refs": [],
+      "text_refs": [
+        "TohjoFallsSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route27TMSolarbeam": {
+      "raw_lines": [
+        "itemball TM_SOLARBEAM"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "TM_SOLARBEAM"
+          ],
+          "raw": "itemball TM_SOLARBEAM"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "Route27RareCandy",
+      "label_refs": [
+        "Route27RareCandy"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route27RareCandy": {
+      "raw_lines": [
+        "itemball RARE_CANDY"
+      ],
+      "commands": [
+        {
+          "command": "itemball",
+          "args": [
+            "RARE_CANDY"
+          ],
+          "raw": "itemball RARE_CANDY"
+        }
+      ],
+      "first_command": "itemball",
+      "fallthrough_label": "Route27_MapEvents",
+      "label_refs": [
+        "Route27_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route27_MapEvents": {
+      "raw_lines": [
+        "db 0, 0",
+        "def_warp_events",
+        "warp_event 33,  7, ROUTE_27_SANDSTORM_HOUSE, 1",
+        "warp_event 26,  5, TOHJO_FALLS, 1",
+        "warp_event 36,  5, TOHJO_FALLS, 2",
+        "def_coord_events",
+        "coord_event 18, 10, SCENE_ROUTE27_FIRST_STEP_INTO_KANTO, FirstStepIntoKantoLeftScene",
+        "coord_event 19, 10, SCENE_ROUTE27_FIRST_STEP_INTO_KANTO, FirstStepIntoKantoRightScene",
+        "def_bg_events",
+        "bg_event 25,  7, BGEVENT_READ, TohjoFallsSign",
+        "def_object_events",
+        "object_event 48,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermBlake, -1",
+        "object_event 58,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainermBrian, -1",
+        "object_event 72, 10, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainerfReena, -1",
+        "object_event 37,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfMegan, -1",
+        "object_event 65,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicGilbert, -1",
+        "object_event 58, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperJose2, -1",
+        "object_event 60, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route27TMSolarbeam, EVENT_ROUTE_27_TM_SOLARBEAM",
+        "object_event 53, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route27RareCandy, EVENT_ROUTE_27_RARE_CANDY",
+        "object_event 21, 10, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 3, Route27FisherScript, -1"
+      ],
+      "commands": [
+        {
+          "command": "db",
+          "args": [
+            "0",
+            "0"
+          ],
+          "raw": "db 0, 0"
+        },
+        {
+          "command": "def_warp_events",
+          "args": [],
+          "raw": "def_warp_events"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "33",
+            "7",
+            "ROUTE_27_SANDSTORM_HOUSE",
+            "1"
+          ],
+          "raw": "warp_event 33,  7, ROUTE_27_SANDSTORM_HOUSE, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "26",
+            "5",
+            "TOHJO_FALLS",
+            "1"
+          ],
+          "raw": "warp_event 26,  5, TOHJO_FALLS, 1"
+        },
+        {
+          "command": "warp_event",
+          "args": [
+            "36",
+            "5",
+            "TOHJO_FALLS",
+            "2"
+          ],
+          "raw": "warp_event 36,  5, TOHJO_FALLS, 2"
+        },
+        {
+          "command": "def_coord_events",
+          "args": [],
+          "raw": "def_coord_events"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "18",
+            "10",
+            "SCENE_ROUTE27_FIRST_STEP_INTO_KANTO",
+            "FirstStepIntoKantoLeftScene"
+          ],
+          "raw": "coord_event 18, 10, SCENE_ROUTE27_FIRST_STEP_INTO_KANTO, FirstStepIntoKantoLeftScene"
+        },
+        {
+          "command": "coord_event",
+          "args": [
+            "19",
+            "10",
+            "SCENE_ROUTE27_FIRST_STEP_INTO_KANTO",
+            "FirstStepIntoKantoRightScene"
+          ],
+          "raw": "coord_event 19, 10, SCENE_ROUTE27_FIRST_STEP_INTO_KANTO, FirstStepIntoKantoRightScene"
+        },
+        {
+          "command": "def_bg_events",
+          "args": [],
+          "raw": "def_bg_events"
+        },
+        {
+          "command": "bg_event",
+          "args": [
+            "25",
+            "7",
+            "BGEVENT_READ",
+            "TohjoFallsSign"
+          ],
+          "raw": "bg_event 25,  7, BGEVENT_READ, TohjoFallsSign"
+        },
+        {
+          "command": "def_object_events",
+          "args": [],
+          "raw": "def_object_events"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "48",
+            "7",
+            "SPRITE_COOLTRAINER_M",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerCooltrainermBlake",
+            "-1"
+          ],
+          "raw": "object_event 48,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermBlake, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "58",
+            "6",
+            "SPRITE_COOLTRAINER_M",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "4",
+            "TrainerCooltrainermBrian",
+            "-1"
+          ],
+          "raw": "object_event 58,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainermBrian, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "72",
+            "10",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_STANDING_UP",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "4",
+            "TrainerCooltrainerfReena",
+            "-1"
+          ],
+          "raw": "object_event 72, 10, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainerfReena, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "37",
+            "6",
+            "SPRITE_COOLTRAINER_F",
+            "SPRITEMOVEDATA_SPINCLOCKWISE",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_RED",
+            "OBJECTTYPE_TRAINER",
+            "2",
+            "TrainerCooltrainerfMegan",
+            "-1"
+          ],
+          "raw": "object_event 37,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfMegan, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "65",
+            "7",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_LEFT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerPsychicGilbert",
+            "-1"
+          ],
+          "raw": "object_event 65,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicGilbert, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "58",
+            "13",
+            "SPRITE_YOUNGSTER",
+            "SPRITEMOVEDATA_STANDING_RIGHT",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "PAL_NPC_BLUE",
+            "OBJECTTYPE_TRAINER",
+            "3",
+            "TrainerBirdKeeperJose2",
+            "-1"
+          ],
+          "raw": "object_event 58, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperJose2, -1"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "60",
+            "12",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "Route27TMSolarbeam",
+            "EVENT_ROUTE_27_TM_SOLARBEAM"
+          ],
+          "raw": "object_event 60, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route27TMSolarbeam, EVENT_ROUTE_27_TM_SOLARBEAM"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "53",
+            "12",
+            "SPRITE_POKE_BALL",
+            "SPRITEMOVEDATA_STILL",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_ITEMBALL",
+            "0",
+            "Route27RareCandy",
+            "EVENT_ROUTE_27_RARE_CANDY"
+          ],
+          "raw": "object_event 53, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route27RareCandy, EVENT_ROUTE_27_RARE_CANDY"
+        },
+        {
+          "command": "object_event",
+          "args": [
+            "21",
+            "10",
+            "SPRITE_FISHER",
+            "SPRITEMOVEDATA_SPINRANDOM_SLOW",
+            "0",
+            "0",
+            "-1",
+            "-1",
+            "0",
+            "OBJECTTYPE_SCRIPT",
+            "3",
+            "Route27FisherScript",
+            "-1"
+          ],
+          "raw": "object_event 21, 10, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 3, Route27FisherScript, -1"
+        }
+      ],
+      "first_command": "db",
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "texts": {
+    "Route27FisherHeyText": {
+      "raw_lines": [
+        "text \"Hey!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hey!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "Route27FisherText": {
+      "raw_lines": [
+        "text \"Do you know what\"",
+        "line \"you just did?\"",
+        "para \"You've taken your\"",
+        "line \"first step into\"",
+        "cont \"KANTO.\"",
+        "para \"Check your #-\"",
+        "line \"GEAR MAP and see.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Do you know what"
+        },
+        {
+          "command": "line",
+          "value": "you just did?"
+        },
+        {
+          "command": "para",
+          "value": "You've taken your"
+        },
+        {
+          "command": "line",
+          "value": "first step into"
+        },
+        {
+          "command": "cont",
+          "value": "KANTO."
+        },
+        {
+          "command": "para",
+          "value": "Check your #-"
+        },
+        {
+          "command": "line",
+          "value": "GEAR MAP and see."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermBlakeSeenText": {
+      "raw_lines": [
+        "text \"You look pretty\"",
+        "line \"strong.\"",
+        "cont \"Let me battle you!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You look pretty"
+        },
+        {
+          "command": "line",
+          "value": "strong."
+        },
+        {
+          "command": "cont",
+          "value": "Let me battle you!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermBlakeBeatenText": {
+      "raw_lines": [
+        "text \"Yow!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Yow!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermBlakeAfterBattleText": {
+      "raw_lines": [
+        "text \"If you prevail on\"",
+        "line \"this harsh trek,\"",
+        "para \"the truth will be\"",
+        "line \"revealed!\"",
+        "para \"Heh, sorry, I just\"",
+        "line \"wanted to say\"",
+        "cont \"something cool.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "If you prevail on"
+        },
+        {
+          "command": "line",
+          "value": "this harsh trek,"
+        },
+        {
+          "command": "para",
+          "value": "the truth will be"
+        },
+        {
+          "command": "line",
+          "value": "revealed!"
+        },
+        {
+          "command": "para",
+          "value": "Heh, sorry, I just"
+        },
+        {
+          "command": "line",
+          "value": "wanted to say"
+        },
+        {
+          "command": "cont",
+          "value": "something cool."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermBrianSeenText": {
+      "raw_lines": [
+        "text \"Hm? You're good,\"",
+        "line \"aren't you?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Hm? You're good,"
+        },
+        {
+          "command": "line",
+          "value": "aren't you?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermBrianBeatenText": {
+      "raw_lines": [
+        "text \"Just as I thought!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Just as I thought!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainermBrianAfterBattleText": {
+      "raw_lines": [
+        "text \"A good trainer can\"",
+        "line \"recognize other\"",
+        "cont \"good trainers.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "A good trainer can"
+        },
+        {
+          "command": "line",
+          "value": "recognize other"
+        },
+        {
+          "command": "cont",
+          "value": "good trainers."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfReenaSeenText": {
+      "raw_lines": [
+        "text \"You shouldn't\"",
+        "line \"underestimate the\"",
+        "para \"wild #MON in\"",
+        "line \"these parts.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You shouldn't"
+        },
+        {
+          "command": "line",
+          "value": "underestimate the"
+        },
+        {
+          "command": "para",
+          "value": "wild #MON in"
+        },
+        {
+          "command": "line",
+          "value": "these parts."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfReenaBeatenText": {
+      "raw_lines": [
+        "text \"Oh! You're much\"",
+        "line \"too strong!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh! You're much"
+        },
+        {
+          "command": "line",
+          "value": "too strong!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfReenaAfterBattleText": {
+      "raw_lines": [
+        "text \"You're just a kid,\"",
+        "line \"but you're not to\"",
+        "para \"be underestimated\"",
+        "line \"either.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You're just a kid,"
+        },
+        {
+          "command": "line",
+          "value": "but you're not to"
+        },
+        {
+          "command": "para",
+          "value": "be underestimated"
+        },
+        {
+          "command": "line",
+          "value": "either."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfMeganSeenText": {
+      "raw_lines": [
+        "text \"It's rare to see\"",
+        "line \"anyone come here.\"",
+        "para \"Are you training\"",
+        "line \"on your own?\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "It's rare to see"
+        },
+        {
+          "command": "line",
+          "value": "anyone come here."
+        },
+        {
+          "command": "para",
+          "value": "Are you training"
+        },
+        {
+          "command": "line",
+          "value": "on your own?"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfMeganBeatenText": {
+      "raw_lines": [
+        "text \"Oh! You're really\"",
+        "line \"strong!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Oh! You're really"
+        },
+        {
+          "command": "line",
+          "value": "strong!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "CooltrainerfMeganAfterBattleText": {
+      "raw_lines": [
+        "text \"I'm checking out\"",
+        "line \"pre- and post-\"",
+        "cont \"evolution #MON.\"",
+        "para \"Evolution really\"",
+        "line \"does make #MON\"",
+        "cont \"stronger.\"",
+        "para \"But evolved forms\"",
+        "line \"also learn moves\"",
+        "cont \"later on.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "I'm checking out"
+        },
+        {
+          "command": "line",
+          "value": "pre- and post-"
+        },
+        {
+          "command": "cont",
+          "value": "evolution #MON."
+        },
+        {
+          "command": "para",
+          "value": "Evolution really"
+        },
+        {
+          "command": "line",
+          "value": "does make #MON"
+        },
+        {
+          "command": "cont",
+          "value": "stronger."
+        },
+        {
+          "command": "para",
+          "value": "But evolved forms"
+        },
+        {
+          "command": "line",
+          "value": "also learn moves"
+        },
+        {
+          "command": "cont",
+          "value": "later on."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PsychicGilbertSeenText": {
+      "raw_lines": [
+        "text \"Don't say a thing!\"",
+        "para \"Let me guess what\"",
+        "line \"you're thinking.\"",
+        "para \"Mmmmmmm\u2026\"",
+        "para \"I got it! You're\"",
+        "line \"on the #MON\"",
+        "cont \"LEAGUE challenge!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Don't say a thing!"
+        },
+        {
+          "command": "para",
+          "value": "Let me guess what"
+        },
+        {
+          "command": "line",
+          "value": "you're thinking."
+        },
+        {
+          "command": "para",
+          "value": "Mmmmmmm\u2026"
+        },
+        {
+          "command": "para",
+          "value": "I got it! You're"
+        },
+        {
+          "command": "line",
+          "value": "on the #MON"
+        },
+        {
+          "command": "cont",
+          "value": "LEAGUE challenge!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PsychicGilbertBeatenText": {
+      "raw_lines": [
+        "text \"You're too much!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "You're too much!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "PsychicGilbertAfterBattleText": {
+      "raw_lines": [
+        "text \"With your skills,\"",
+        "line \"you'll do well at\"",
+        "cont \"the LEAGUE.\"",
+        "para \"That's what my\"",
+        "line \"premonition says.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "With your skills,"
+        },
+        {
+          "command": "line",
+          "value": "you'll do well at"
+        },
+        {
+          "command": "cont",
+          "value": "the LEAGUE."
+        },
+        {
+          "command": "para",
+          "value": "That's what my"
+        },
+        {
+          "command": "line",
+          "value": "premonition says."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BirdKeeperJose2SeenText": {
+      "raw_lines": [
+        "text \"Tweet! Tweet!\"",
+        "line \"Tetweet!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Tweet! Tweet!"
+        },
+        {
+          "command": "line",
+          "value": "Tetweet!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BirdKeeperJose2BeatenText": {
+      "raw_lines": [
+        "text \"Tweet!\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "Tweet!"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "BirdKeeperJose2AfterBattleText": {
+      "raw_lines": [
+        "text \"BIRD KEEPERS like\"",
+        "line \"me mimic bird\"",
+        "para \"whistles to com-\"",
+        "line \"mand #MON.\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "BIRD KEEPERS like"
+        },
+        {
+          "command": "line",
+          "value": "me mimic bird"
+        },
+        {
+          "command": "para",
+          "value": "whistles to com-"
+        },
+        {
+          "command": "line",
+          "value": "mand #MON."
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    },
+    "TohjoFallsSignText": {
+      "raw_lines": [
+        "text \"TOHJO FALLS\"",
+        "para \"THE LINK BETWEEN\"",
+        "line \"KANTO AND JOHTO\"",
+        "done"
+      ],
+      "commands": [
+        {
+          "command": "text",
+          "value": "TOHJO FALLS"
+        },
+        {
+          "command": "para",
+          "value": "THE LINK BETWEEN"
+        },
+        {
+          "command": "line",
+          "value": "KANTO AND JOHTO"
+        },
+        {
+          "command": "done",
+          "value": ""
+        }
+      ]
+    }
+  },
+  "movements": {
+    "Route27FisherStepLeftTwiceMovement": {
+      "raw_lines": [
+        "step LEFT",
+        "step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    },
+    "Route27FisherStepLeftOnceMovement": {
+      "raw_lines": [
+        "step LEFT",
+        "step_end"
+      ],
+      "steps": [
+        {
+          "command": "step",
+          "args": [
+            "LEFT"
+          ]
+        },
+        {
+          "command": "step_end",
+          "args": []
+        }
+      ]
+    }
+  },
+  "std_calls": [
+    "AskNumber1FScript",
+    "AskNumber1MScript",
+    "AskNumber2FScript",
+    "AskNumber2MScript",
+    "GiftMScript",
+    "NumberAcceptedFScript",
+    "NumberAcceptedMScript",
+    "NumberDeclinedFScript",
+    "NumberDeclinedMScript",
+    "PackFullMScript",
+    "PhoneFullFScript",
+    "PhoneFullMScript",
+    "RegisteredNumberFScript",
+    "RegisteredNumberMScript",
+    "RematchFScript",
+    "RematchMScript"
+  ],
+  "dependencies": {
+    "Route27_MapScripts": {
+      "label_refs": [
+        "Route27Noop1Scene"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route27Noop1Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route27Noop2Scene": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FirstStepIntoKantoLeftScene": {
+      "label_refs": [
+        "FirstStepIntoKantoScene_Continue"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "Route27FisherStepLeftTwiceMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FirstStepIntoKantoRightScene": {
+      "label_refs": [
+        "FirstStepIntoKantoScene_Continue"
+      ],
+      "text_refs": [],
+      "movement_refs": [
+        "Route27FisherStepLeftOnceMovement"
+      ],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "FirstStepIntoKantoScene_Continue": {
+      "label_refs": [],
+      "text_refs": [
+        "Route27FisherHeyText",
+        "Route27FisherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [
+        "SCENE_ROUTE27_NOOP"
+      ],
+      "std_calls": []
+    },
+    "Route27FisherScript": {
+      "label_refs": [],
+      "text_refs": [
+        "Route27FisherText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPsychicGilbert": {
+      "label_refs": [
+        "TrainerPsychicGilbert.Script"
+      ],
+      "text_refs": [
+        "PsychicGilbertBeatenText",
+        "PsychicGilbertSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerPsychicGilbert.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "PsychicGilbertAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2": {
+      "label_refs": [
+        "TrainerBirdKeeperJose2.Script"
+      ],
+      "text_refs": [
+        "BirdKeeperJose2BeatenText",
+        "BirdKeeperJose2SeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.Script": {
+      "label_refs": [
+        "TrainerBirdKeeperJose2.AskForNumber",
+        "TrainerBirdKeeperJose2.AskNumber1",
+        "TrainerBirdKeeperJose2.AskedAlready",
+        "TrainerBirdKeeperJose2.HasStarPiece",
+        "TrainerBirdKeeperJose2.NumberAccepted",
+        "TrainerBirdKeeperJose2.WantsBattle"
+      ],
+      "text_refs": [
+        "BirdKeeperJose2AfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.AskedAlready": {
+      "label_refs": [
+        "TrainerBirdKeeperJose2.AskForNumber",
+        "TrainerBirdKeeperJose2.AskNumber2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.AskForNumber": {
+      "label_refs": [
+        "TrainerBirdKeeperJose2.NumberAccepted",
+        "TrainerBirdKeeperJose2.NumberDeclined",
+        "TrainerBirdKeeperJose2.PhoneFull",
+        "TrainerBirdKeeperJose2.RegisteredNumber"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.WantsBattle": {
+      "label_refs": [
+        "TrainerBirdKeeperJose2.Fight1",
+        "TrainerBirdKeeperJose2.Fight2",
+        "TrainerBirdKeeperJose2.LoadFight0",
+        "TrainerBirdKeeperJose2.Rematch"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.Fight2": {
+      "label_refs": [
+        "TrainerBirdKeeperJose2.Fight1",
+        "TrainerBirdKeeperJose2.LoadFight2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.Fight1": {
+      "label_refs": [
+        "TrainerBirdKeeperJose2.LoadFight0",
+        "TrainerBirdKeeperJose2.LoadFight1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.LoadFight0": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.LoadFight1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.LoadFight2": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.HasStarPiece": {
+      "label_refs": [
+        "TrainerBirdKeeperJose2.Gift",
+        "TrainerBirdKeeperJose2.NoRoom",
+        "TrainerBirdKeeperJose2.NumberAccepted"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.NoRoom": {
+      "label_refs": [
+        "TrainerBirdKeeperJose2.PackFull"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerBirdKeeperJose2.AskNumber1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber1MScript"
+      ]
+    },
+    "TrainerBirdKeeperJose2.AskNumber2": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber2MScript"
+      ]
+    },
+    "TrainerBirdKeeperJose2.RegisteredNumber": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RegisteredNumberMScript"
+      ]
+    },
+    "TrainerBirdKeeperJose2.NumberAccepted": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberAcceptedMScript"
+      ]
+    },
+    "TrainerBirdKeeperJose2.NumberDeclined": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberDeclinedMScript"
+      ]
+    },
+    "TrainerBirdKeeperJose2.PhoneFull": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PhoneFullMScript"
+      ]
+    },
+    "TrainerBirdKeeperJose2.Rematch": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchMScript"
+      ]
+    },
+    "TrainerBirdKeeperJose2.Gift": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "GiftMScript"
+      ]
+    },
+    "TrainerBirdKeeperJose2.PackFull": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PackFullMScript"
+      ]
+    },
+    "TrainerCooltrainermBlake": {
+      "label_refs": [
+        "TrainerCooltrainermBlake.Script"
+      ],
+      "text_refs": [
+        "CooltrainermBlakeBeatenText",
+        "CooltrainermBlakeSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermBlake.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainermBlakeAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermBrian": {
+      "label_refs": [
+        "TrainerCooltrainermBrian.Script"
+      ],
+      "text_refs": [
+        "CooltrainermBrianBeatenText",
+        "CooltrainermBrianSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainermBrian.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainermBrianAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena": {
+      "label_refs": [
+        "TrainerCooltrainerfReena.Script"
+      ],
+      "text_refs": [
+        "CooltrainerfReenaBeatenText",
+        "CooltrainerfReenaSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.Script": {
+      "label_refs": [
+        "TrainerCooltrainerfReena.AskForNumber",
+        "TrainerCooltrainerfReena.AskNumber1",
+        "TrainerCooltrainerfReena.AskedAlready",
+        "TrainerCooltrainerfReena.NumberAccepted",
+        "TrainerCooltrainerfReena.WantsBattle"
+      ],
+      "text_refs": [
+        "CooltrainerfReenaAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.AskedAlready": {
+      "label_refs": [
+        "TrainerCooltrainerfReena.AskForNumber",
+        "TrainerCooltrainerfReena.AskNumber2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.AskForNumber": {
+      "label_refs": [
+        "TrainerCooltrainerfReena.NumberAccepted",
+        "TrainerCooltrainerfReena.NumberDeclined",
+        "TrainerCooltrainerfReena.PhoneFull",
+        "TrainerCooltrainerfReena.RegisteredNumber"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.WantsBattle": {
+      "label_refs": [
+        "TrainerCooltrainerfReena.Fight1",
+        "TrainerCooltrainerfReena.Fight2",
+        "TrainerCooltrainerfReena.LoadFight0",
+        "TrainerCooltrainerfReena.Rematch"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.Fight2": {
+      "label_refs": [
+        "TrainerCooltrainerfReena.Fight1",
+        "TrainerCooltrainerfReena.LoadFight2"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.Fight1": {
+      "label_refs": [
+        "TrainerCooltrainerfReena.LoadFight0",
+        "TrainerCooltrainerfReena.LoadFight1"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.LoadFight0": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.LoadFight1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.LoadFight2": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfReena.AskNumber1": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber1FScript"
+      ]
+    },
+    "TrainerCooltrainerfReena.AskNumber2": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "AskNumber2FScript"
+      ]
+    },
+    "TrainerCooltrainerfReena.RegisteredNumber": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RegisteredNumberFScript"
+      ]
+    },
+    "TrainerCooltrainerfReena.NumberAccepted": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberAcceptedFScript"
+      ]
+    },
+    "TrainerCooltrainerfReena.NumberDeclined": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "NumberDeclinedFScript"
+      ]
+    },
+    "TrainerCooltrainerfReena.PhoneFull": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "PhoneFullFScript"
+      ]
+    },
+    "TrainerCooltrainerfReena.Rematch": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": [
+        "RematchFScript"
+      ]
+    },
+    "TrainerCooltrainerfMegan": {
+      "label_refs": [
+        "TrainerCooltrainerfMegan.Script"
+      ],
+      "text_refs": [
+        "CooltrainerfMeganBeatenText",
+        "CooltrainerfMeganSeenText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TrainerCooltrainerfMegan.Script": {
+      "label_refs": [],
+      "text_refs": [
+        "CooltrainerfMeganAfterBattleText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "TohjoFallsSign": {
+      "label_refs": [],
+      "text_refs": [
+        "TohjoFallsSignText"
+      ],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route27TMSolarbeam": {
+      "label_refs": [
+        "Route27RareCandy"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route27RareCandy": {
+      "label_refs": [
+        "Route27_MapEvents"
+      ],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    },
+    "Route27_MapEvents": {
+      "label_refs": [],
+      "text_refs": [],
+      "movement_refs": [],
+      "scene_refs": [],
+      "std_calls": []
+    }
+  },
+  "substitute_tags": [
+    "pokegear",
+    "day_time"
+  ],
   "event_counts": {
+    "scene_scripts": 2,
+    "callbacks": 0,
     "warp_events": 3,
     "coord_events": 2,
     "bg_events": 1,
